@@ -157,12 +157,10 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-8 content-end text-[rgba(33,37,41,1)] transform transition-all min-h-[277px] duration-300 break-inside-avoid mb-8 ${
-                animatingItems.has(testimonial.id) ? 'animate-fade-in-up' : ''
-              }`}
+              className={`${testimonial.bgColor} rounded-2xl p-8 content-end text-[rgba(33,37,41,1)] mb-8 testiminal-card `}
             >
-              <div className="relative mb-6">
-                <p className="text-lg leading-relaxed md:pl-4 line-clamp-4">
+              <div className="relative mb-6 line-clamp-4 testimonial-message">
+                <p className="text-lg leading-relaxed md:pl-4 ">
                   "{testimonial.message}"
                 </p>
               </div>

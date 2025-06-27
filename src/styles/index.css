@@ -120,9 +120,16 @@ z-index: -1;
   }
 }
 
-/* .border: 1px solid rgba(255, 255, 255, 0.1); */
+.testiminal-card .testimonial-message {
+  max-height: 140px; 
+  transition: all 2s ease;
+}
 
-
+.testiminal-card:hover .testimonial-message {
+  transition: all 2s ease;
+  max-height: 500px;
+  display: block ;
+}
 
 
 .team-first-banner .first {

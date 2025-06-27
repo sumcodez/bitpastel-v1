@@ -63,7 +63,7 @@ const Footer = () => {
               </div>
               <div className='hidden md:block'>
               <p className='mt-6 text-[15px] md:pb-6 pb-2 type-footer'>CONNECT WITH US:</p>
-              <div className="flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
+              <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                   <Image
                     src="/images/img_basilfacebooksolid.svg"

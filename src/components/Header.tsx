@@ -84,9 +84,9 @@ const Header = () => {
     <>
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
-        <div className="flex md:justify-between justify-center items-center py-6">
+        <div className="flex md:justify-between justify-center items-center md:py-6 py-4">
           <Link href="/">
-            <Image src={logoSrc} alt="Logo" width={125} height={48} className="h-12 w-auto" />
+            <Image src={logoSrc} alt="Logo" width={125} height={48} className="md:h-12 h-8 w-auto" />
           </Link>
           <nav className="hidden md:flex space-x-8 items-center">
             <Link href="/#services" onClick={(e) => handleLinkClick(e, 'services')} className={getLinkClass('services')}>

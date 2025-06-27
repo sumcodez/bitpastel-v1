@@ -40,12 +40,12 @@ const CtaSection = () => {
                 <br />
                 we can help you unlock for your business!
               </h2>
-              <p className="md:text-white mb-8 leading-relaxed max-w-[80%] md:max-w-[100%] mr-auto">
+              <p className="md:text-white mb-8 leading-relaxed max-w-[100%] md:max-w-[100%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
               </p>
-              <button className="btn font-inter h-auto text-white font-[400] md:w-auto w-full h bg-green-btn">
+              <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter">
                 Contact Us
               </button>
             </div>

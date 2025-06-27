@@ -20,7 +20,7 @@ const HeroSection = () => {
 
       {/* Mobile background image on top */}
       <div
-        className="block md:hidden w-full h-[360px]  bg-cover bg-[position:80%_10%] bg-no-repeat"
+        className="block md:hidden w-full h-[450px] bg-cover bg-[position:76%_10%] bg-no-repeat"
         style={{
           backgroundImage: `
             url('/images/img_rectangle_48.png')
@@ -56,7 +56,7 @@ const HeroSection = () => {
             ))}
           </div>
 
-          <button className="btn leading-normal bg-primary-teal md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
           onClick={() => setIsModalOpen(true)}
           >
             Let’s Work Together
