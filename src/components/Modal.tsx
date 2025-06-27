@@ -174,7 +174,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay transition-opacity duration-200 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay transition-opacity duration-500 ${
         isAnimating ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={handleOverlayClick}
@@ -184,7 +184,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
           isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
       >
-        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+        <div className=" rounded-lg shadow-xl overflow-hidden">
           <div className="p-6 modal-body">
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left side - Image and details */}
@@ -209,7 +209,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     Satisfied Client Worldwide
                   </h2>
 
-                  <div className="grid grid-cols-4 ">
+                  <div className="grid lg:grid-cols-4 md:grid-cols-2 md:gap-6">
                     <div className="text-center">
                       <Image
                         src="/images/modal-1.png"
@@ -258,14 +258,19 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       <p className="text-[#212529] text-[12px]">Support</p>
                     </div>
                   </div>
-                  <div className="flex pt-6">
-                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+                  <div className="flex flex-wrap justify-center pt-6 text-center">
+                    {/* UK - Visible on all screens */}
+                    <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+442081446579">UK: +44 2081 446579</a>
                     </p>
-                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+
+                    {/* US - Hidden on md, visible only on lg */}
+                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
                     </p>
-                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+
+                    {/* IN - Hidden on md, visible only on lg */}
+                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
                       <a href="tel:+919830566248">IN: +91 9830 566 248</a>
                     </p>
                   </div>
@@ -273,19 +278,17 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
               </div>
               {/* Right side - Form */}
               <div className="lg:w-[40%] md:w-[50%] w-full ">
-                 <div className="md:hidden">
-                    <Image
+                <div className="md:hidden">
+                  <Image
                     src={'/images/quote_banner_mob02.png'}
-                     alt="bitpastel client image"
+                    alt="bitpastel client image"
                     className="w-full h-auto object-cover"
                     width={400}
                     height={400}
-
-                    />
-                  </div>
-                <div className='bg-white p-[35px] shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]'>
-                 
-                  <h2 className='text-center mb-4 font-light text-[#606568]'>Get a Free Quote</h2>
+                  />
+                </div>
+                <div className="bg-white p-[35px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
+                  <h2 className="text-center mb-4 font-light text-[#606568]">Get a Free Quote</h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
                     <div className="space-y-2">
                       {/* Combined "I want" and service selection */}
@@ -453,7 +456,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </button>
 
                       {/* Privacy Policy */}
-                      <p className="text-xs mt-1 text-gray-500 text-center">
+                      <p className="text-[11px] mt-1 text-gray-500 text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
                         <a href="#" className="text-blue-500 hover:underline">
                           Privacy Policy
