@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown, Paperclip } from "lucide-react";
 import * as countryCodesList from "country-codes-list";
+
 export default function JoinTeam() {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +18,22 @@ export default function JoinTeam() {
   });
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsCountryDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const experienceOptions = [
     "Fresher",
     "1 year",
@@ -26,6 +43,7 @@ export default function JoinTeam() {
     "5+ years",
     "10+ years",
   ];
+  
   const noticePeriodOptions = [
     "Immediately",
     "15 days",
@@ -34,10 +52,12 @@ export default function JoinTeam() {
     "3 months",
     "More than 3 months"
   ];
+
   const myCountryCodesObject = countryCodesList.customList(
     "countryCode",
     "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
   );
+
   const countryCodes = Object.entries(myCountryCodesObject)
     .map(([countryCode, value]) => {
       const match = value.match(/\[(\w+)\] (.*?): \+?(\d+)/);
@@ -49,49 +69,55 @@ export default function JoinTeam() {
       };
     })
     .filter(Boolean);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
   const handleInputChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, resume: e.target.files![0] }));
     }
   };
-    const handleSubmit = async (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Validate required fields
     const {
-        name,
-        email,
-        mobile,
-        countryCode,
-        currentLocation,
-        qualification,
-        experience,
-        noticePeriod,
-        referredBy,
-        resume,
+      name,
+      email,
+      mobile,
+      countryCode,
+      currentLocation,
+      qualification,
+      experience,
+      noticePeriod,
+      referredBy,
+      resume,
     } = formData;
+    
     if (
-        !name ||
-        !email ||
-        !mobile ||
-        !countryCode ||
-        !currentLocation ||
-        !qualification ||
-        !experience ||
-        !noticePeriod ||
-        !resume
+      !name ||
+      !email ||
+      !mobile ||
+      !countryCode ||
+      !currentLocation ||
+      !qualification ||
+      !experience ||
+      !noticePeriod ||
+      !resume
     ) {
-        alert("Please fill in all required fields including the resume.");
-        return;
+      alert("Please fill in all required fields including the resume.");
+      return;
     }
+
     // Create FormData instead of URLSearchParams
     const formDataToSend = new FormData();
     formDataToSend.append("name", name);
@@ -104,27 +130,31 @@ export default function JoinTeam() {
     formDataToSend.append("notice_period", noticePeriod);
     formDataToSend.append("referred_by", referredBy || "");
     formDataToSend.append("resume", resume);
+
     try {
-        const response = await fetch("https://www.bitpastel.com/api/sendemail.php/", {
+      const response = await fetch("https://www.bitpastel.com/api/sendemail.php/", {
         method: "POST",
-        body: formDataToSend, // No Content-Type header needed - browser will set it automatically with boundary
-        });
-        if (response.ok) {
+        body: formDataToSend,
+      });
+      
+      if (response.ok) {
         const result = await response.text();
         console.log("Success:", result);
         alert("Thank you! Your application has been submitted.");
-        } else {
+      } else {
         console.error("Failed to submit:", response.status);
         alert("Something went wrong. Please try again.");
-        }
+      }
     } catch (error) {
-        console.error("Network error:", error);
-        alert("Network error. Please check your connection.");
+      console.error("Network error:", error);
+      alert("Network error. Please check your connection.");
     }
-    };
+  };
+
   const handleAttachmentClick = () => {
     fileInputRef.current?.click();
   };
+
   return (
     <div className="max-w-4xl mx-auto p-6" id="joinTeamForm">
       <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
@@ -146,7 +176,7 @@ export default function JoinTeam() {
               />
             </div>
             <div className="flex gap-2 pb-1 border-b border-gray-200">
-              <div className="relative">
+              <div className="relative" ref={dropdownRef}>
                 <button
                   type="button"
                   onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
@@ -156,7 +186,7 @@ export default function JoinTeam() {
                     <img
                       src={`https://flagsapi.com/${countryCodes.find(c => c?.code === formData.countryCode)?.country}/flat/64.png`}
                       alt="Country flag"
-                      className="w-5 h-3.5 object-cover"
+                      className="w-10 h-8 object-cover"
                     />
                   )}
                   <span className="text-gray-900">{formData.countryCode}</span>
@@ -172,19 +202,22 @@ export default function JoinTeam() {
                       if (!country) return null;
                       return (
                         <button
-                          
                           key={country.code + country.country}
                           type="button"
                           onClick={() => {
                             handleInputChange("countryCode", country.code);
                             setIsCountryDropdownOpen(false);
                           }}
-                          className="w-full p-3 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 min-w-[180px] justify-start"
+                          className={`w-full p-3 text-left transition-colors flex items-center gap-3 min-w-[250px] justify-start ${
+                            formData.countryCode === country.code 
+                              ? 'bg-[rgba(0,0,0,0.12)]' 
+                              : 'hover:bg-[rgba(0,0,0,0.04)]'
+                          }`}
                         >
                           <img
                             src={`https://flagsapi.com/${country.country}/flat/64.png`}
                             alt={`${country.name} flag`}
-                            className="w-6 h-4 object-cover"
+                            className="w-10 h-8 object-cover"
                           />
                           <span className="text-gray-900 text-sm font-medium">
                             {country.name} {country.code}
@@ -226,7 +259,11 @@ export default function JoinTeam() {
               >
                 <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">Select Notice Period</option>
                 {noticePeriodOptions.map((option, index) => (
-                  <option key={index} value={option}>
+                  <option 
+                    key={index} 
+                    value={option}
+                    className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                  >
                     {option}
                   </option>
                 ))}
@@ -258,20 +295,24 @@ export default function JoinTeam() {
               />
             </div>
             <div>
-                <select
-                    name="experience"
-                    value={formData.experience}
-                    onChange={handleChange}
-                    className="w-full p-2 border-b border-[#04ff04] focus:outline-none focus:border-blue-500 appearance-none bg-transparent text-[#B3B3B3] text-[19px] font-source font-thin"
-                    required
-                >
-                    <option value="" className="text-[#B3B3B3]">Select experience</option>
-                    {experienceOptions.map((option, index) => (
-                    <option key={index} value={option} className="text-black">
-                        {option}
-                    </option>
-                    ))}
-                </select>
+              <select
+                name="experience"
+                value={formData.experience}
+                onChange={handleChange}
+                className="w-full p-2 border-b border-[#04ff04] focus:outline-none focus:border-blue-500 appearance-none bg-transparent text-[#B3B3B3] text-[19px] font-source font-thin"
+                required
+              >
+                <option value="" className="text-[#B3B3B3]">Select experience</option>
+                {experienceOptions.map((option, index) => (
+                  <option 
+                    key={index} 
+                    value={option} 
+                    className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <input
@@ -313,19 +354,19 @@ export default function JoinTeam() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center pt-6 gap-2">
-            <button
-                type="submit"
-                className="bg-green-btn text-white font-medium py-2 px-28 rounded transition duration-200 text-center"
-            >
-                Send
-            </button>
-            {/* Privacy Policy */}
-            <p className="text-gray-500 text-center font-roboto text-[10px]">
-                By clicking "Send", you agree to our{' '}
-                <a href="#" className="text-blue-500 hover:underline">
-                Privacy Policy
-                </a>
-            </p>
+          <button
+            type="submit"
+            className="bg-green-btn text-white font-medium py-2 px-28 rounded transition duration-200 text-center"
+          >
+            Send
+          </button>
+          {/* Privacy Policy */}
+          <p className="text-gray-500 text-center font-roboto text-[10px]">
+            By clicking "Send", you agree to our{' '}
+            <a href="#" className="text-blue-500 hover:underline">
+              Privacy Policy
+            </a>
+          </p>
         </div>
       </form>
     </div>
