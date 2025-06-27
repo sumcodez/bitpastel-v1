@@ -70,7 +70,7 @@ const CultureSection = () => {
               className="rounded-[40px] w-full h-full"
             />
           </div>
-          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 gap-4">
+          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 md:gap-6 gap-4">
             {features.map((feature, index) => (
               <div 
                 key={feature.id}
