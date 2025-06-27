@@ -1,6 +1,15 @@
 'use client';
 import Card from '@/components/ui/Card';
+import Link from 'next/link';
 export default function Home() {
+     const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        setTimeout(() => {
+          window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+        }, 100);
+      }
+  };
   const jobListings = [
     {
       title: "Marketing Manager",
@@ -55,11 +64,14 @@ export default function Home() {
         <div className="text-center mb-8">
           <p className="text-gray-700 text-base max-w-4xl mx-auto leading-relaxed">
             To apply for any of the current job openings, please go to the respective box below and click on the{' '}
-            <span className="text-blue-600 font-semibold">"Apply"</span> button.
+            <span className=" font-semibold">"Apply"</span> button.
           </p>
           <p className="text-gray-700 text-base mt-2">
             If you don't see any suitable vacancy, send your resume{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-700 underline font-medium">here</a>{' '}
+            <button className="text-accent-green font-medium pr-1"
+            onClick={() => scrollToSection('joinTeamForm')}
+            >
+                here </button>{ }
             and we'll get in touch with you as soon as there is any opening that matches your profile.
           </p>
         </div>

@@ -143,7 +143,7 @@ vertical-align: middle;
   justify-content: center;
 }
 .show-more-btn:hover {
-  background: var(--primary-teal);
+  background: var(--text-accent-green);
   color: var(--primary-white) !important;
 }
 

@@ -72,8 +72,8 @@ const Header = () => {
 
   const getLinkClass = (section: string) => {
     return `transition-colors ${
-      activeSection === section ? 'text-primary-teal' : isScrolled ? 'text-gray-800' : 'text-white'
-    } hover:text-primary-teal`;
+      activeSection === section ? 'text-accent-green' : isScrolled ? 'text-gray-800' : 'text-white'
+    } hover:text-accent-green`;
   };
 
   const logoSrc = isScrolled
