@@ -1,0 +1,482 @@
+'use client';
+
+import type React from 'react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import * as countryCodesList from 'country-codes-list';
+
+interface ModalProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+// Custom ChevronDown component
+const ChevronDown = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6 9L12 15L18 9"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const services = [
+  'Web Development',
+  'Mobile App Development',
+  'E-commerce Solutions',
+  'Digital Marketing',
+  'UI/UX Design',
+  'Custom Software',
+  'Other',
+];
+
+const myCountryCodesObject = countryCodesList.customList(
+  'countryCode',
+  '[{countryCode}] {countryNameEn}: +{countryCallingCode}'
+);
+
+const countryCodes1 = Object.entries(myCountryCodesObject)
+  .map(([countryCode, value]) => {
+    const match = value.match(/\[(\w+)\] (.*?): \+?(\d+)/);
+    if (!match) return null;
+
+    return {
+      code: `+${match[3]}`,
+      country: match[1],
+      name: match[2],
+    };
+  })
+  .filter(Boolean);
+
+const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setIsVisible(true);
+      // Small delay to ensure the element is rendered before starting animation
+      setTimeout(() => setIsAnimating(true), 10);
+    } else {
+      setIsAnimating(false);
+      // Wait for animation to complete before hiding
+      setTimeout(() => setIsVisible(false), 200);
+    }
+  }, [open]);
+
+  const handleClose = () => {
+    onClose();
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
+  const [formData, setFormData] = useState({
+    service: '',
+    fullName: '',
+    email: '',
+    countryCode: '+91', // Default to India
+    mobile: '',
+    message: '',
+  });
+
+  const [validationErrors, setValidationErrors] = useState({
+    service: false,
+    fullName: false,
+    email: false,
+    mobile: false,
+  });
+
+  const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    const errors = {
+      service: !formData.service,
+      fullName: !formData.fullName,
+      email: !formData.email,
+      mobile: formData.mobile ? !/^\d+$/.test(formData.mobile) : false,
+    };
+
+    setValidationErrors(errors);
+
+    if (Object.values(errors).some(Boolean)) {
+      return; // Don't submit if any errors
+    }
+
+    const payload = {
+      name: formData.fullName,
+      email: formData.email,
+      phone: `${formData.countryCode} ${formData.mobile}`,
+      phone_no: formData.mobile,
+      phone_code: countryCodes1.find((c) => c?.code === formData.countryCode)?.country || '',
+      choice: formData.service,
+      message: formData.message,
+    };
+
+    const formEncoded = new URLSearchParams(payload as any).toString();
+
+    try {
+      const response = await fetch('https://www.bitpastel.com/api/quote.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formEncoded,
+      });
+
+      if (response.ok) {
+        const result = await response.text();
+        console.log('Success:', result);
+        alert('Thank you! Your request has been submitted.');
+        onClose();
+      } else {
+        console.error('Failed to submit form:', response.status);
+        alert('Oops! Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error. Please try again later.');
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+
+    // Reset error on change if field is now filled
+    if (value.trim() !== '' && validationErrors[field as keyof typeof validationErrors]) {
+      setValidationErrors((prev) => ({ ...prev, [field]: false }));
+    }
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay transition-opacity duration-200 ${
+        isAnimating ? 'opacity-100' : 'opacity-0'
+      }`}
+      onClick={handleOverlayClick}
+    >
+      <div
+        className={`relative modal-container w-full max-w-4xl mx-4 transform transition-all duration-500 ${
+          isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
+        }`}
+      >
+        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+          <div className="p-6 modal-body">
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Left side - Image and details */}
+              <div className="lg:w-[60%] md:w-[50%] md:block hidden">
+                <div className="mb-6">
+                  {/* <img
+                    src="/images/bitpastel_Clientele_5_new.png"
+                    alt="bitpastel client image"
+                    className="w-full h-auto object-cover"
+                  /> */}
+                  <Image
+                    src={'/images/bitpastel_Clientele_5_new.png'}
+                    alt="bitpastel client image"
+                    className="w-full h-auto object-cover"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+
+                <div className="modal-details">
+                  <h2 className="text-2xl font-bold mb-6 text-gray-800">
+                    Satisfied Client Worldwide
+                  </h2>
+
+                  <div className="grid grid-cols-4 ">
+                    <div className="text-center">
+                      <Image
+                        src="/images/modal-1.png"
+                        alt="modal-1"
+                        width={30}
+                        height={30}
+                        className="mx-auto mb-2"
+                      />
+                      <h6 className="text-[#099]">800</h6>
+                      <p className="text-[#212529] text-[12px]">Clients</p>
+                    </div>
+
+                    <div className="text-center">
+                      <Image
+                        src="/images/modal-2-updated.png"
+                        alt="modal-2"
+                        width={30}
+                        height={30}
+                        className="mx-auto mb-2"
+                      />
+                      <h6 className="text-[#099]">150+</h6>
+                      <p className="text-[#212529] text-[12px]">Projects</p>
+                    </div>
+
+                    <div className="text-center ">
+                      <Image
+                        src="/images/modal-3.png"
+                        alt="modal-2"
+                        width={30}
+                        height={30}
+                        className="mx-auto mb-2"
+                      />
+                      <h6 className="text-[#099]">99%</h6>
+                      <p className="text-[#212529] text-[12px]">Success Rate</p>
+                    </div>
+
+                    <div className="text-center">
+                      <Image
+                        src="/images/modal-4.png"
+                        alt="modal-2"
+                        width={30}
+                        height={30}
+                        className="mx-auto mb-2"
+                      />
+                      <h6 className="text-[#099]">24/7</h6>
+                      <p className="text-[#212529] text-[12px]">Support</p>
+                    </div>
+                  </div>
+                  <div className="flex pt-6">
+                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+                      <a href="tel:+442081446579">UK: +44 2081 446579</a>
+                    </p>
+                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+                      <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
+                    </p>
+                    <p className="relative text-[#099] text-[14px] w-1/3 justify-center text-center">
+                      <a href="tel:+919830566248">IN: +91 9830 566 248</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Right side - Form */}
+              <div className="lg:w-[40%] md:w-[50%] w-full ">
+                 <div className="md:hidden">
+                    <Image
+                    src={'/images/quote_banner_mob02.png'}
+                     alt="bitpastel client image"
+                    className="w-full h-auto object-cover"
+                    width={400}
+                    height={400}
+
+                    />
+                  </div>
+                <div className='bg-white p-[35px] shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]'>
+                 
+                  <h2 className='text-center mb-4 font-light text-[#606568]'>Get a Free Quote</h2>
+                  <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
+                    <div className="space-y-2">
+                      {/* Combined "I want" and service selection */}
+                      <div className="relative pb-1 border-b border-gray-200">
+                        <button
+                          type="button"
+                          onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
+                          className={`w-full flex items-center focus:outline-none py-2 px-0 h-auto justify-start ${
+                            validationErrors.service ? 'text-red-500' : ''
+                          }`}
+                        >
+                          <span className="text-gray-600">I want</span>
+                          <span
+                            className={`ml-12 text-[#2a2a2a] font-light ${
+                              validationErrors.service ? 'text-red-500' : 'text-gray-900'
+                            }`}
+                          >
+                            {formData.service || 'select*'}
+                          </span>
+                          <ChevronDown
+                            className={`ml-auto w-4 h-4 text-gray-400 transition-transform ${
+                              isServiceDropdownOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+
+                        {isServiceDropdownOpen && (
+                          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto">
+                            {services.map((service) => (
+                              <button
+                                key={service}
+                                type="button"
+                                onClick={() => {
+                                  handleInputChange('service', service);
+                                  setIsServiceDropdownOpen(false);
+                                  setValidationErrors((prev) => ({ ...prev, service: false }));
+                                }}
+                                className="w-full p-3 text-left hover:bg-gray-50 transition-colors justify-start"
+                              >
+                                {service}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Error Message */}
+                        {validationErrors.service && (
+                          <p className="text-xs text-red-500 mt-1">Please select a service.</p>
+                        )}
+                      </div>
+
+                      {/* Full Name */}
+                      <div className="pb-1 mt-1 border-b border-gray-200">
+                        <input
+                          type="text"
+                          placeholder="Full Name"
+                          value={formData.fullName}
+                          onChange={(e) => handleInputChange('fullName', e.target.value)}
+                          className={`w-full focus:outline-none py-2 ${validationErrors.fullName ? 'placeholder-red-500' : ''}`}
+                        />
+
+                        {validationErrors.fullName && (
+                          <p className="text-xs text-red-500 mt-1">Please enter your full name.</p>
+                        )}
+                      </div>
+
+                      {/* Email */}
+                      <div className="pb-1 mt-1 border-b border-gray-200">
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className={`w-full focus:outline-none py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
+                        />
+                        {validationErrors.email && (
+                          <p className="text-xs text-red-500 mt-1">
+                            {formData.email
+                              ? 'Please enter a valid email.'
+                              : 'Please enter your email.'}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Mobile Number */}
+                      <div className="flex gap-2 pb-1 mt-1 border-b border-gray-200">
+                        <div className="relative">
+                          <button
+                            type="button"
+                            onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                            className="flex items-center gap-2 focus:outline-none min-w-[80px] py-2 px-0 h-auto"
+                          >
+                            <span className="text-gray-900">{formData.countryCode}</span>
+                            <ChevronDown
+                              className={`w-4 h-4 text-gray-400 transition-transform ${isCountryDropdownOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+
+                          {isCountryDropdownOpen && (
+                            <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 max-h-60 w-64 overflow-y-auto">
+                              {countryCodes1.map((country) => {
+                                if (!country) return null;
+                                return (
+                                  <button
+                                    key={country.code + country.country}
+                                    type="button"
+                                    onClick={() => {
+                                      handleInputChange('countryCode', country.code);
+                                      setIsCountryDropdownOpen(false);
+                                    }}
+                                    className="w-full p-3 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 justify-start"
+                                  >
+                                    {/* Flag image */}
+                                    <img
+                                      src={`https://flagsapi.com/${country.country}/flat/64.png`}
+                                      alt={`${country.name} flag`}
+                                      className="w-6 h-4 object-cover"
+                                    />
+
+                                    {/* Country name */}
+                                    <span className="text-gray-900 text-sm font-medium">
+                                      {country.name} {country.code}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+
+                        <input
+                          type="tel"
+                          placeholder="Mobile number (optional)"
+                          value={formData.mobile}
+                          onChange={(e) => handleInputChange('mobile', e.target.value)}
+                          className="flex-1 focus:outline-none py-2"
+                        />
+                      </div>
+                      {validationErrors.mobile && (
+                        <p className="text-xs text-red-500 mt-1">
+                          Please enter a valid mobile number.
+                        </p>
+                      )}
+
+                      {/* Message */}
+                      <div className="pb-1 border-b border-gray-200">
+                        <textarea
+                          placeholder="Message (optional)"
+                          value={formData.message}
+                          onChange={(e) => handleInputChange('message', e.target.value)}
+                          rows={2}
+                          className="w-full focus:outline-none resize-none min-h-[60px] py-2"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Buttons and Footer - Fixed at bottom */}
+                    <div className="space-y-3 pt-4">
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        className="w-full bg-[#23b428] text-white py-2 px-6 rounded-lg transition-colors duration-200"
+                      >
+                        Lets Work Together
+                      </button>
+
+                      {/* Privacy Policy */}
+                      <p className="text-xs mt-1 text-gray-500 text-center">
+                        By clicking "Lets Work Together", you agree to our{' '}
+                        <a href="#" className="text-blue-500 hover:underline">
+                          Privacy Policy
+                        </a>
+                      </p>
+
+                      {/* Chat Button */}
+                      <button
+                        type="button"
+                        className="w-full border-2 border-[#23b428] text-[#23b428] hover:bg-green-50 py-2 px-6 rounded-lg transition-colors duration-200"
+                      >
+                        Chat with Us
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Modal;
