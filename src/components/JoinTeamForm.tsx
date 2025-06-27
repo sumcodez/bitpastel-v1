@@ -20,6 +20,25 @@ export default function JoinTeam() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email is invalid.";
+    if (!formData.mobile.trim()) newErrors.mobile = "Mobile number is required.";
+    else if (!/^\d{7,15}$/.test(formData.mobile)) newErrors.mobile = "Invalid mobile number.";
+    if (!formData.currentLocation.trim()) newErrors.currentLocation = "Current location is required.";
+    // if (!formData.qualification.trim()) newErrors.qualification = "Qualification is required.";
+    // if (!formData.experience.trim()) newErrors.experience = "Please select your experience.";
+    // if (!formData.noticePeriod.trim()) newErrors.noticePeriod = "Please select your notice period.";
+    if (!formData.resume) newErrors.resume = "Please attach your resume.";
+
+    return newErrors;
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -89,6 +108,14 @@ export default function JoinTeam() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
     // Validate required fields
     const {
       name,
@@ -164,18 +191,30 @@ export default function JoinTeam() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column */}
           <div className="space-y-6">
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
-                required
-              />
+            <div
+              className={`flex items-end gap-4 border-b pb-1 ${
+                errors.name ? "border-red-500" : "border-gray-300"
+              }`}
+            >
+              <div className="flex-1">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                />
+              </div>
+
+              {errors.name && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.name}
+                </p>
+              )}
             </div>
-            <div className="flex gap-2 pb-1 border-b border-gray-200">
+
+            <div className={`flex gap-2 pb-1 border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
               <div className="relative" ref={dropdownRef}>
                 <button
                   type="button"
@@ -197,7 +236,9 @@ export default function JoinTeam() {
                   />
                 </button>
                 {isCountryDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 max-h-60 max-w-80 overflow-y-auto">
+                    <div  className={`absolute top-full left-0 bg-white rounded-lg shadow-lg z-20 max-h-60 max-w-80 overflow-y-auto
+                          ${errors.mobile ? "border border-red-500" : "border border-gray-200"}`}
+                    >
                     {countryCodes.map((country) => {
                       if (!country) return null;
                       return (
@@ -228,16 +269,31 @@ export default function JoinTeam() {
                   </div>
                 )}
               </div>
-              <input
-                type="tel"
-                name="mobile"
-                placeholder="Mobile number"
-                value={formData.mobile}
-                onChange={handleChange}
-                className="flex-1 focus:outline-none py-2 text-[#B3B3B3] text-[19px] font-source font-thin"
-                required
-              />
+                <div
+                  className="flex items-end gap-4"
+                >
+                <div className="flex-1">
+                  <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile number"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    className="w-full py-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                  />
+                </div>
+
+                {errors.mobile && (
+                  <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                    {errors.mobile}
+                  </p>
+                )}
+              </div>
             </div>
+
+
             <div>
               <input
                 type="text"
@@ -246,7 +302,6 @@ export default function JoinTeam() {
                 value={formData.qualification}
                 onChange={handleChange}
                 className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
-                required
               />
             </div>
             <div>
@@ -255,7 +310,6 @@ export default function JoinTeam() {
                 value={formData.noticePeriod}
                 onChange={handleChange}
                 className="w-full p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none"
-                required
               >
                 <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">Select Notice Period</option>
                 {noticePeriodOptions.map((option, index) => (
@@ -272,35 +326,54 @@ export default function JoinTeam() {
           </div>
           {/* Right Column */}
           <div className="space-y-6">
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
-                required
-              />
+
+            <div
+              className={`flex items-end gap-4 border-b pb-1 ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              }`}
+            >
+              <div className="flex-1">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                />
+              </div>
+
+              {errors.email && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.email}
+                </p>
+              )}
             </div>
-            <div>
+
+            <div className={`flex items-end gap-4 border-b pb-1 !mt-11 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
               <input
                 type="text"
                 name="currentLocation"
                 placeholder="Current Location"
                 value={formData.currentLocation}
                 onChange={handleChange}
-                className="w-full mt-1 p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
-                required
+                className="flex-1 text-[#B3B3B3] text-[16px] sm:text-[19px] font-source font-thin focus:outline-none bg-transparent"
               />
+
+              {errors.currentLocation && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.currentLocation}
+                </p>
+              )}
             </div>
+
+
             <div>
               <select
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
                 className="w-full p-2 border-b border-[#04ff04] focus:outline-none focus:border-blue-500 appearance-none bg-transparent text-[#B3B3B3] text-[19px] font-source font-thin"
-                required
               >
                 <option value="" className="text-[#B3B3B3]">Select experience</option>
                 {experienceOptions.map((option, index) => (
@@ -335,9 +408,8 @@ export default function JoinTeam() {
             onChange={handleFileChange}
             accept=".pdf,.doc,.docx"
             className="hidden"
-            required
           />
-          <div className="flex items-center gap-3 pb-1 border-b border-gray-200">
+          <div className={`flex items-center gap-3 pb-1 border-b ${errors.resume ? "border-red-500" : "border-gray-300"}`}>
             <button
               type="button"
               onClick={handleAttachmentClick}
@@ -351,6 +423,7 @@ export default function JoinTeam() {
                 {formData.resume.name}
               </span>
             )}
+            {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
           </div>
         </div>
         <div className="flex flex-col items-center justify-center pt-6 gap-2">
