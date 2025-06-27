@@ -10,7 +10,7 @@ export const viewport = {
 
 export const metadata = {
   title: 'Bitpastel',
-  description: 'This is a Bitpastel website Create By Palash',
+  description: 'Bitpastel Solution Private Limited',
   icons: {
     icon: [
       { url: '/img_bitpastellogo02300dpi_3.png', type: 'image/x-icon' }

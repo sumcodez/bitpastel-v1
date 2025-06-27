@@ -49,7 +49,7 @@ export default function Home() {
     alert(`Applied for ${jobTitle} position!`);
   };
   return (
-    <div className="min-h-screen md:py-16 py-14 px-4">
+    <div className="min-h-screen md:pt-20 md:pb-16 pb-14 pt-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8">
