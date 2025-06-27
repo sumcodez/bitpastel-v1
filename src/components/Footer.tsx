@@ -138,7 +138,7 @@ const Footer = () => {
                   Clientele
                 </Link>
                 <Link
-                  href="/careers"
+                  href="/career"
                   className={`block hover:text-gray-300 transition-colors `}
                 >
                   Career
@@ -252,7 +252,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className={`nav-item flex flex-col items-center ${isActive('/careers') ? 'active' : ''}`}>
-            <Link href="/careers" className="flex flex-col items-center">
+            <Link href="/career" className="flex flex-col items-center">
          <svg _ngcontent-c8="" xmlSpace="preserve" xmlnsXlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 40 40" height="24px" id="Layer_1" version="1.1" viewBox="0 0 40 40" width="24px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px" className="ng-star-inserted"><g _ngcontent-c8=""><path _ngcontent-c8="" d="M-108.89-148.45c-0.683-1.322-1.774-2.043-3.27-2.069c-1.535-0.026-3.07-0.006-4.606-0.006
          c-0.133,0-0.267,0-0.449,0c0-0.153,0-0.283,0-0.413c0-1.105,0.006-2.211-0.002-3.316c-0.013-1.999-1.637-3.637-3.631-3.641
          c-4.36-0.008-8.72-0.008-13.081,0c-1.993,0.004-3.62,1.644-3.631,3.641c-0.007,1.226-0.001,2.453-0.001,3.729

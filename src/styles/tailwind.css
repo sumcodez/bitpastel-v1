@@ -254,4 +254,44 @@ justify-content: center !important;
     padding-left: 50px;
     padding-right: 50px;
 }
+.card{
+      box-shadow: 1px 1px 4px #ccc;
+      position: relative;
+}
+.card:hover{
+  transition: all .4s ease;
+    cursor: pointer;
+    -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
+    transform: translate3D(0, -1px, 0) scale(1.03);
+    transition: all .5s ease;
+}
+
+.card .card-button{
+ position: relative;
+}
+.card .card-button:before{
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    border: 10px solid var(--btn-green);
+}
+.card .card-button:hover::before{
+animation-name: hvr-ripple-out;
+}
+
+@keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0
+    }
+}
 /* ==================hero section ==================== */
