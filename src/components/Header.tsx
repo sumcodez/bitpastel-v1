@@ -96,7 +96,7 @@ const Header = () => {
               Stories
             </Link>
             <Link href="/team" className={isScrolled ? 'text-gray-800 hover:text-primary-teal' : 'text-white hover:text-primary-teal'}>
-              Culture
+              Cultur
             </Link>
             <button className="bg-green-btn px-5 py-2 text-white rounded hover:bg-opacity-90"
             onClick={() => setIsModalOpen(true)}
