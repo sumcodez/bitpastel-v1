@@ -89,14 +89,25 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     }
   };
 
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     service: '',
-    fullName: '',
+    fullName: '', // Add this line
     email: '',
     countryCode: '+91', // Default to India
     mobile: '',
     message: '',
-  });
+  };
+
+  // const [formData, setFormData] = useState({
+  //   service: '',
+  //   fullName: '',
+  //   email: '',
+  //   countryCode: '+91', // Default to India
+  //   mobile: '',
+  //   message: '',
+  // });
+
+  const [formData, setFormData] = useState(initialFormData);
 
   const [validationErrors, setValidationErrors] = useState({
     service: false,
@@ -150,6 +161,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
         const result = await response.text();
         console.log('Success:', result);
         alert('Thank you! Your request has been submitted.');
+        setFormData(initialFormData); // Reset form data
         onClose();
       } else {
         console.error('Failed to submit form:', response.status);
@@ -205,7 +217,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                 </div>
 
                 <div className="modal-details">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-800">
+                  <h2 className="text-2xl font-bold mb-6 text-gray-800 font-source">
                     Satisfied Client Worldwide
                   </h2>
 
@@ -230,7 +242,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">150+</h6>
+                      <h6 className="text-[#099]">1000</h6>
                       <p className="text-[#212529] text-[12px]">Projects</p>
                     </div>
 
@@ -242,8 +254,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">99%</h6>
-                      <p className="text-[#212529] text-[12px]">Success Rate</p>
+                      <h6 className="text-[#099]">30M</h6>
+                      <p className="text-[#212529] text-[12px]">Lines of Code</p>
                     </div>
 
                     <div className="text-center">
@@ -254,8 +266,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">24/7</h6>
-                      <p className="text-[#212529] text-[12px]">Support</p>
+                      <h6 className="text-[#099]">32</h6>
+                      <p className="text-[#212529] text-[12px]">Countries</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap justify-center pt-6 text-center">

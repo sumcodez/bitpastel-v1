@@ -193,7 +193,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-28">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 mt-28">
       <div className="max-w-4xl mx-auto">
         <button onClick={handleBackButtonClick} className="mb-6 text-blue-600 hover:text-blue-800 transition-colors">
           Back to Job Listings
