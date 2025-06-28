@@ -156,11 +156,13 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const [initialShowCount, setInitialShowCount] = useState(6);
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const isMobile = window.innerWidth < 768;
-      const count = isMobile ? 3 : 6;
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      const count = mobile ? 3 : 6;
       setInitialShowCount(count);
       setVisibleTestimonials(testimonials.slice(0, count));
     };
@@ -185,15 +187,17 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       <div className="container mx-auto px-4">
         <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-16 mb-8">Stories</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[23px] w-full">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full">
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col h-[250px] hover:h-auto transition-all duration-300 ease-in-out`}
+              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col ${
+                !isMobile ? 'h-[250px] hover:h-auto transition-all duration-300 ease-in-out' : 'w-full'
+              }`}
             >
               <div className="flex-grow overflow-hidden">
-                <div className="line-clamp-4 hover:line-clamp-none transition-all duration-300">
-                  <p className="text-[16px] leading-relaxed">
+                <div className={`${!isMobile ? 'line-clamp-4 hover:line-clamp-none transition-all duration-300' : ''}`}>
+                  <p className={`${isMobile ? 'text-[12px]' : 'text-[16px]'} leading-relaxed`}>
                     "{testimonial.message}"
                   </p>
                 </div>
@@ -207,8 +211,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   className="rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-[600] text-[20px] font-source">{testimonial.name}</h4>
-                  <p className="opacity-90 italic text-[16px]">{testimonial.title}</p>
+                  <h4 className={`font-[600] ${isMobile ? 'text-[12px]' : 'text-[20px]'} font-source`}>{testimonial.name}</h4>
+                  <p className={`opacity-90 italic ${isMobile ? 'text-[12px]' : 'text-[16px]'}`}>{testimonial.title}</p>
                 </div>
               </div>
             </div>
