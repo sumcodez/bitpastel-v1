@@ -1,62 +1,80 @@
 'use client';
 import Card from '@/components/ui/Card';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+
 export default function Home() {
-     const scrollToSection = (id: string) => {
+  const router = useRouter();
+  
+  const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-        setTimeout(() => {
-          window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-        }, 100);
-      }
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+      }, 100);
+    }
   };
   const jobListings = [
     {
+      id: "1",
       title: "Marketing Manager",
       hashtags: ["#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))"
     },
     {
+      id: "2",
       title: "Back End Developer",
       hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#Plugins", "#WordPress", "#WooCommerce", "#Shopify"],
       experience: "Experience : 2 - 5 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
+      id: "3",
       title: "Shopify Developer",
       hashtags: ["#Shopify", "#RubyonRails"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))"
     },
     {
+      id: "4",
       title: "Senior WordPress Developer",
       hashtags: ["#WordPress", "#WooCommerce"," #PHP", "#MySQL" ,"#JavaScript" ,"#Plugins"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))"
     },
     {
+      id: "5",
       title: "Full Stack Developer",
       hashtags: ["#Shopify", "#RubyonRails"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0, 103, 183), rgb(140, 13, 99))"
     },
     {
+      id: "6",
       title: "PHP Development - Internship",
       hashtags: ["#Shopify", "#RubyonRails"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
+      id: "7",
       title: "UI/UX Designer Intern",
       hashtags: ["#Shopify", "#RubyonRails"],
       experience: "Experience : 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     }
   ];
+
   const handleApply = (jobTitle: string) => {
-    alert(`Applied for ${jobTitle} position!`);
+    // alert(`Applied for ${jobTitle} position!`);
   };
+  
+  const handleApplyClick = (id: string) => {
+    router.push(`career/applyJob/${id}`); // Navigate to job detail page
+  };
+
   return (
     <div className="min-h-screen md:pt-20 md:pb-16 pb-14 pt-20 px-4" id='#jobCards'>
       <div className="max-w-6xl mx-auto">
@@ -79,12 +97,13 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center md:max-w-[80%] mx-auto">
           {jobListings.map((job, index) => (
             <Card
-              key={index}
+              key={job.id}
               title={job.title}
               hashtags={job.hashtags}
               experience={job.experience}
               gradientColors={job.gradientColors}
               onApply={() => handleApply(job.title)}
+              onClick={() => handleApplyClick(job.id)}
               className="animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             />

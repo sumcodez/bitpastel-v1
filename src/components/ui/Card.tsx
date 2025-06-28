@@ -3,28 +3,33 @@
 import Image from "next/image";
 
 interface JobCardProps {
+  id?: string;
   title: string;
   hashtags: string[];
   experience: string;
   onApply?: () => void;
+  onClick?: () => void;
   className?: string;
   gradientColors?: string;
   style?: React.CSSProperties;
 }
 
 export default function Card({  
+  id,
   title, 
   hashtags, 
   experience, 
   onApply,
+  onClick,
   className = "",
   gradientColors = "linear-gradient(to right, #7e5bef, #3b82f6)", // default fallback
   style
 }: JobCardProps) {
   return (
-    <div 
+    <div
       className={`w-full mx-auto bg-white rounded-[15px] card transition-all overflow-hidden flex flex-col gap-2 ${className}`}
       style={style}
+      onClick={onClick}
     >
       {/* Gradient Header */}
       <div 
