@@ -29,42 +29,42 @@ const SatisfiedClientSection = () => {
     },
   ];
   return (
-      <section className="pt-12 lg:pt-16  bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className=" leading-[45px] font-source font-bold text-center text-dark md:mb-12 mb-0">
-            Satisfied Clientele Worldwide
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-12 gap-4 items-center">
-            {/* Map Section - Takes full width on mobile, remaining space on desktop */}
-            <div className="relative w-full bg-cover bg-center rounded-lg">
-              <Image
-                src="/images/MAp.png"
-                alt="World Map with Pointers"
-                width={998}
-                height={574}
-                className="w-full h-full object-contain"
-              />
-            </div>
+    <section className="pt-12 lg:pt-16  bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className=" leading-[45px] font-source font-bold text-center text-dark md:mb-12 mb-0">
+          Satisfied Clientele Worldwide
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-12 gap-4 items-center">
+          {/* Map Section - Takes full width on mobile, remaining space on desktop */}
+          <div className="relative w-full bg-cover bg-center rounded-lg">
+            <Image
+              src="/images/MAp.png"
+              alt="World Map with Pointers"
+              width={998}
+              height={574}
+              className="w-full h-full object-contain"
+            />
+          </div>
 
-            {/* Stats Section - Auto width on desktop, full width on mobile */}
-            <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 gap-6 lg:pl-12 w-auto">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <Image
-                    src={stat.icon}
-                    alt={stat.label}
-                    width={34}
-                    height={34}
-                    className="mx-auto mb-2 md:h-auto h-10"
-                  />
-                  <h2 className=" font-source font-bold text-[#2A2A2A]">{stat.value}</h2>
-                  <div className={`font-source md:text-[16px] text-[12px] font-bold ${stat.color}`}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
+          {/* Stats Section - Auto width on desktop, full width on mobile */}
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 gap-6 lg:pl-12 w-auto">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <Image
+                  src={stat.icon}
+                  alt={stat.label}
+                  width={34}
+                  height={34}
+                  className="mx-auto mb-2 md:h-auto h-10"
+                />
+                <h2 className=" font-source font-bold text-[#2A2A2A] text-[35px]">{stat.value}</h2>
+                <div className={`font-source md:text-[16px] text-[12px] font-bold ${stat.color}`}>{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   )
 }
 

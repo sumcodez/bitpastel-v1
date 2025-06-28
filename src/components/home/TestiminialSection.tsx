@@ -156,7 +156,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const [initialShowCount, setInitialShowCount] = useState(6);
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -180,7 +179,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   };
 
   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
-  
 
   return (
     <section id="stories" className="pt-12 lg:pt-16">
@@ -191,18 +189,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col transition-all duration-300 ease-in-out ${
-                expandedCard === testimonial.id ? 'h-auto min-h-[250px]' : 'h-[250px]'
-              }`}
-              onMouseEnter={() => setExpandedCard(testimonial.id)}
-              onMouseLeave={() => setExpandedCard(null)}
+              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col h-[250px] hover:h-auto transition-all duration-300 ease-in-out`}
             >
-              <div className={`flex-grow overflow-hidden transition-all duration-300 ${
-                expandedCard === testimonial.id ? 'overflow-y-auto' : 'overflow-hidden'
-              }`}>
-                <p className="text-lg leading-relaxed">
-                  "{testimonial.message}"
-                </p>
+              <div className="flex-grow overflow-hidden">
+                <div className="line-clamp-4 hover:line-clamp-none transition-all duration-300">
+                  <p className="text-[16px] leading-relaxed">
+                    "{testimonial.message}"
+                  </p>
+                </div>
               </div>
               <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-transparent">
                 <Image
@@ -213,8 +207,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   className="rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-[600] font-source">{testimonial.name}</h4>
-                  <p className="opacity-90 italic text-sm">{testimonial.title}</p>
+                  <h4 className="font-[600] text-[20px] font-source">{testimonial.name}</h4>
+                  <p className="opacity-90 italic text-[16px]">{testimonial.title}</p>
                 </div>
               </div>
             </div>
