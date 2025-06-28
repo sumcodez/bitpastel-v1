@@ -92,14 +92,71 @@ const defaultTestimonials: Testimonial[] = [
   }
 ];
 
+// const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
+//   testimonials = defaultTestimonials,
+// }) => {
+//   const [showAll, setShowAll] = useState(false);
+//   const [initialShowCount, setInitialShowCount] = useState(6);
+//   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
+//   const [animatingItems, setAnimatingItems] = useState<Set<string>>(new Set());
+//   const [isAnimating, setIsAnimating] = useState(false);
+
+//   useEffect(() => {
+//     const handleResize = () => {
+//       const isMobile = window.innerWidth < 768;
+//       const count = isMobile ? 3 : 6;
+//       setInitialShowCount(count);
+//       setVisibleTestimonials(testimonials.slice(0, count));
+//     };
+
+//     handleResize();
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, [testimonials]);
+
+//   const loadMoreTestimonials = () => {
+//     if (isAnimating) return;
+//     setIsAnimating(true);
+    
+//     // Show all testimonials with animation
+//     const newItems = testimonials.slice(visibleTestimonials.length);
+    
+//     newItems.forEach((testimonial, index) => {
+//       setTimeout(() => {
+//         setVisibleTestimonials(prev => [...prev, testimonial]);
+        
+//         setAnimatingItems(prev => {
+//           const newSet = new Set(prev);
+//           newSet.add(testimonial.id);
+//           return newSet;
+//         });
+
+//         setTimeout(() => {
+//           setAnimatingItems(prev => {
+//             const newSet = new Set(prev);
+//             newSet.delete(testimonial.id);
+//             return newSet;
+//           });
+//           if (index === newItems.length - 1) {
+//             setIsAnimating(false);
+//             setShowAll(true);
+//           }
+//         }, 300);
+//       }, index * 150);
+//     });
+//   };
+
+//   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
+
+
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const [initialShowCount, setInitialShowCount] = useState(6);
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
-  const [animatingItems, setAnimatingItems] = useState<Set<string>>(new Set());
   const [isAnimating, setIsAnimating] = useState(false);
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,64 +174,47 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const loadMoreTestimonials = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    
-    // Show all testimonials with animation
-    const newItems = testimonials.slice(visibleTestimonials.length);
-    
-    newItems.forEach((testimonial, index) => {
-      setTimeout(() => {
-        setVisibleTestimonials(prev => [...prev, testimonial]);
-        
-        setAnimatingItems(prev => {
-          const newSet = new Set(prev);
-          newSet.add(testimonial.id);
-          return newSet;
-        });
-
-        setTimeout(() => {
-          setAnimatingItems(prev => {
-            const newSet = new Set(prev);
-            newSet.delete(testimonial.id);
-            return newSet;
-          });
-          if (index === newItems.length - 1) {
-            setIsAnimating(false);
-            setShowAll(true);
-          }
-        }, 300);
-      }, index * 150);
-    });
+    setVisibleTestimonials(testimonials);
+    setIsAnimating(false);
+    setShowAll(true);
   };
 
   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
+  
 
   return (
     <section id="stories" className="pt-12 lg:pt-16">
       <div className="container mx-auto px-4">
         <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-16 mb-8">Stories</h2>
 
-        <div className="columns-1 lg:columns-2 gap-8 space-y-8 mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[23px] w-full">
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-8 content-end text-[rgba(33,37,41,1)] mb-8 testiminal-card `}
+              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col transition-all duration-300 ease-in-out ${
+                expandedCard === testimonial.id ? 'h-auto min-h-[250px]' : 'h-[250px]'
+              }`}
+              onMouseEnter={() => setExpandedCard(testimonial.id)}
+              onMouseLeave={() => setExpandedCard(null)}
             >
-              <div className="relative mb-6 line-clamp-4 testimonial-message">
-                <p className="text-lg leading-relaxed md:pl-4 ">
+              <div className={`flex-grow overflow-hidden transition-all duration-300 ${
+                expandedCard === testimonial.id ? 'overflow-y-auto' : 'overflow-hidden'
+              }`}>
+                <p className="text-lg leading-relaxed">
                   "{testimonial.message}"
                 </p>
               </div>
-              <div className="flex items-center space-x-4 mt-auto pt-4">
+              <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-transparent">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
                   width={56}
                   height={56}
-                  className=""
+                  className="rounded-full object-cover"
                 />
                 <div>
                   <h4 className="font-[600] font-source">{testimonial.name}</h4>
-                  <p className="opacity-90 italic">{testimonial.title}</p>
+                  <p className="opacity-90 italic text-sm">{testimonial.title}</p>
                 </div>
               </div>
             </div>
