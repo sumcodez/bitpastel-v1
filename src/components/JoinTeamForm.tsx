@@ -357,7 +357,7 @@ export default function JoinTeam() {
                 placeholder="Current Location"
                 value={formData.currentLocation}
                 onChange={handleChange}
-                className="flex-1 text-[#B3B3B3] text-[16px] sm:text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                className="flex-1 text-[#B3B3B3] text-[16px] p-2 sm:text-[19px] font-source font-thin focus:outline-none bg-transparent"
               />
 
               {errors.currentLocation && (
