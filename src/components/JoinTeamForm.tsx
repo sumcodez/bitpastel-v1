@@ -2,13 +2,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown, Paperclip } from "lucide-react";
 import * as countryCodesList from "country-codes-list";
+import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 export default function JoinTeam() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    mobile: "",
-    countryCode: "+91",
+    // mobile: "",
+    // countryCode: "+91",
+    phone: "",
     currentLocation: "",
     qualification: "",
     experience: "",
@@ -28,8 +31,9 @@ export default function JoinTeam() {
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
     else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email is invalid.";
-    if (!formData.mobile.trim()) newErrors.mobile = "Mobile number is required.";
-    else if (!/^\d{7,15}$/.test(formData.mobile)) newErrors.mobile = "Invalid mobile number.";
+    // if (!formData.mobile.trim()) newErrors.mobile = "Mobile number is required.";
+    // else if (!/^\d{7,15}$/.test(formData.mobile)) newErrors.mobile = "Invalid mobile number.";    
+    if (!formData.phone) newErrors.phone = "Phone number is required.";
     if (!formData.currentLocation.trim()) newErrors.currentLocation = "Current location is required.";
     // if (!formData.qualification.trim()) newErrors.qualification = "Qualification is required.";
     // if (!formData.experience.trim()) newErrors.experience = "Please select your experience.";
@@ -72,22 +76,22 @@ export default function JoinTeam() {
     "More than 3 months"
   ];
 
-  const myCountryCodesObject = countryCodesList.customList(
-    "countryCode",
-    "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
-  );
+  // const myCountryCodesObject = countryCodesList.customList(
+  //   "countryCode",
+  //   "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
+  // );
 
-  const countryCodes = Object.entries(myCountryCodesObject)
-    .map(([countryCode, value]) => {
-      const match = value.match(/\[(\w+)\] (.*?): \+?(\d+)/);
-      if (!match) return null;
-      return {
-        code: `+${match[3]}`,
-        country: match[1],
-        name: match[2],
-      };
-    })
-    .filter(Boolean);
+  // const countryCodes = Object.entries(myCountryCodesObject)
+  //   .map(([countryCode, value]) => {
+  //     const match = value.match(/\[(\w+)\] (.*?): \+?(\d+)/);
+  //     if (!match) return null;
+  //     return {
+  //       code: `+${match[3]}`,
+  //       country: match[1],
+  //       name: match[2],
+  //     };
+  //   })
+  //   .filter(Boolean);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -120,8 +124,9 @@ export default function JoinTeam() {
     const {
       name,
       email,
-      mobile,
-      countryCode,
+      // mobile,
+      // countryCode,
+      phone,
       currentLocation,
       qualification,
       experience,
@@ -133,8 +138,9 @@ export default function JoinTeam() {
     if (
       !name ||
       !email ||
-      !mobile ||
-      !countryCode ||
+      // !mobile ||
+      // !countryCode ||
+      !phone ||
       !currentLocation ||
       !qualification ||
       !experience ||
@@ -149,7 +155,7 @@ export default function JoinTeam() {
     const formDataToSend = new FormData();
     formDataToSend.append("name", name);
     formDataToSend.append("email", email);
-    formDataToSend.append("phone", `${countryCode} ${mobile}`);
+    formDataToSend.append("phone", phone || ""); // Use phone instead of mobile
     formDataToSend.append("url", window.location.pathname);
     formDataToSend.append("current_location", currentLocation);
     formDataToSend.append("qualification", qualification);
@@ -214,83 +220,21 @@ export default function JoinTeam() {
               )}
             </div>
 
+            {/* Phone number */}
             <div className={`flex gap-2 pb-1 border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
-              <div className="relative" ref={dropdownRef}>
-                <button
-                  type="button"
-                  onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                  className="flex items-center gap-2 focus:outline-none min-w-[80px] py-2 px-0 h-auto"
-                >
-                  {formData.countryCode && (
-                    <img
-                      src={`https://flagsapi.com/${countryCodes.find(c => c?.code === formData.countryCode)?.country}/flat/64.png`}
-                      alt="Country flag"
-                      className="w-10 h-8 object-cover"
-                    />
-                  )}
-                  <span className="text-gray-900">{formData.countryCode}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-gray-400 transition-transform ${
-                      isCountryDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {isCountryDropdownOpen && (
-                    <div  className={`absolute top-full left-0 bg-white rounded-lg shadow-lg z-20 max-h-60 max-w-80 overflow-y-auto
-                          ${errors.mobile ? "border border-red-500" : "border border-gray-200"}`}
-                    >
-                    {countryCodes.map((country) => {
-                      if (!country) return null;
-                      return (
-                        <button
-                          key={country.code + country.country}
-                          type="button"
-                          onClick={() => {
-                            handleInputChange("countryCode", country.code);
-                            setIsCountryDropdownOpen(false);
-                          }}
-                          className={`w-full p-3 text-left transition-colors flex items-center gap-3 min-w-[250px] justify-start ${
-                            formData.countryCode === country.code 
-                              ? 'bg-[rgba(0,0,0,0.12)]' 
-                              : 'hover:bg-[rgba(0,0,0,0.04)]'
-                          }`}
-                        >
-                          <img
-                            src={`https://flagsapi.com/${country.country}/flat/64.png`}
-                            alt={`${country.name} flag`}
-                            className="w-10 h-8 object-cover"
-                          />
-                          <span className="text-gray-900 text-sm font-medium">
-                            {country.name} {country.code}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-                <div
-                  className="flex items-end gap-4"
-                >
-                <div className="flex-1">
-                  <input
-                    type="tel"
-                    name="mobile"
-                    placeholder="Mobile number"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    className="w-full py-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
-                  />
-                </div>
-
-                {errors.mobile && (
-                  <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                    {errors.mobile}
-                  </p>
-                )}
-              </div>
+              <PhoneInput
+                international
+                defaultCountry="IN" // Default to India
+                value={formData.phone}
+                onChange={(value) => handleInputChange('phone', value || '')}
+                placeholder="Mobile number (optional)"
+                className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.phone}
+                </p>
+              )}
             </div>
 
 
@@ -350,7 +294,7 @@ export default function JoinTeam() {
               )}
             </div>
 
-            <div className={`flex items-end gap-4 border-b pb-1 !mt-11 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
+            <div className={`flex items-end gap-4 border-b pb-1 !mt-5 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
               <input
                 type="text"
                 name="currentLocation"
