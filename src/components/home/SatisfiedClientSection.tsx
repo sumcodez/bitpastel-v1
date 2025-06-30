@@ -29,9 +29,9 @@ const SatisfiedClientSection = () => {
     },
   ];
   return (
-    <section className="pt-12 lg:pt-16  bg-white">
+    <section className="pt-12 lg:pt-16  bg-white" id='#client'>
       <div className="container mx-auto px-4">
-        <h2 className=" leading-[45px] font-source font-bold text-center text-dark md:mb-12 mb-0">
+        <h2 className=" md:leading-[45px] leading-[24px] font-source font-bold text-center text-dark md:mb-12 mb-8">
           Satisfied Clientele Worldwide
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-12 gap-4 items-center">
@@ -47,7 +47,7 @@ const SatisfiedClientSection = () => {
           </div>
 
           {/* Stats Section - Auto width on desktop, full width on mobile */}
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 gap-6 lg:pl-12 w-auto items-end">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 md:gap-6 gap-2 lg:pl-12 w-auto items-end">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <Image

@@ -21,6 +21,15 @@ const Footer = () => {
     return pathname === href || pathname.startsWith(href + '/');
   };
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <footer className="">
       <div className="desktop-footer bg-primary-dark text-white md:pt-16 pt-12 lg:pt-16 md:pb-6 pb-20 footer">
@@ -46,7 +55,7 @@ const Footer = () => {
               >
                 Technopolis, 11th Floor, BP Block, Sector V,
                 <br />
-                 Salt Lake City, Kolkata - 700091
+                Salt Lake City, Kolkata - 700091
               </a>
               <div className="md:hidden block space-y-2">
                 <a className="block" href="tel:+1 (872) 444 6679">
@@ -67,35 +76,35 @@ const Footer = () => {
                 <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a href="https://www.facebook.com/bitpastel" target="_blank">
-                    <Image
-                      src="/images/img_basilfacebooksolid.svg"
-                      alt="Facebook"
-                      width={16}
-                      height={16}
+                      <Image
+                        src="/images/img_basilfacebooksolid.svg"
+                        alt="Facebook"
+                        width={16}
+                        height={16}
                       />
-                      </a>
+                    </a>
                   </div>
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                     <a href="https://www.instagram.com/bitpastel.ai/" target="_blank">
-                    <Image
-                      src="/images/img_mingcuteinstagramfill.svg"
-                      alt="Instagram"
-                      width={16}
-                      height={16}
+                    <a href="https://www.instagram.com/bitpastel.ai/" target="_blank">
+                      <Image
+                        src="/images/img_mingcuteinstagramfill.svg"
+                        alt="Instagram"
+                        width={16}
+                        height={16}
                       />
-                      </a>
+                    </a>
                   </div>
                   {/* <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                   <Image src="/images/img_primetwitter.svg" alt="Twitter" width={16} height={16} />
                 </div> */}
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                     <a href="https://www.linkedin.com/company/bitpastel" target="_blank">
-                    <Image
-                      src="/images/img_uillinkedin.svg"
-                      alt="LinkedIn"
-                      width={16}
-                      height={16}
-                    />
+                    <a href="https://www.linkedin.com/company/bitpastel" target="_blank">
+                      <Image
+                        src="/images/img_uillinkedin.svg"
+                        alt="LinkedIn"
+                        width={16}
+                        height={16}
+                      />
                     </a>
                   </div>
                 </div>
@@ -132,18 +141,20 @@ const Footer = () => {
                     <Link href="/team" className={`block hover:text-gray-300 transition-colors `}>
                       Culture
                     </Link>
-                    <Link
-                      href="/clientele"
-                      className={`block hover:text-gray-300 transition-colors `}
+                    <a
+                      href="/#client"
+                      onClick={() => scrollToSection('#client')}
+                      className={`block hover:text-gray-300 transition-colors cursor-pointer`}
                     >
                       Clientele
-                    </Link>
+                    </a>
                     <Link href="/career" className={`block hover:text-gray-300 transition-colors `}>
                       Career
                     </Link>
                     <Link
-                      href="/#partner"
-                      className={`block hover:text-gray-300 transition-colors `}
+                      href="https://www.bitpastel.com/studio/"
+                      target="_blank"
+                      className={`block hover:text-gray-300 transition-colors cursor-pointer`}
                     >
                       Partner
                     </Link>
@@ -211,9 +222,8 @@ const Footer = () => {
                 Copyright © Bitpastel Solution Private Limited 2025
                 <br />
                 All Rights Reserved
-                <a className="block" href="/privacy">
-                  Privacy Policy
-                </a>
+                <span className="px-2">|</span>
+                <a href="/privacy">Privacy Policy</a>
               </p>
             </div>
           </div>

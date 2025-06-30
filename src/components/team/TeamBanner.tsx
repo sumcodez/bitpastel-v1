@@ -68,7 +68,7 @@ const TeamBanner = () => {
             ))}
           </div>
 
-          <button className="btn leading-normal bg-primary-teal md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8  font-inter"
           onClick={() => scrollToSection('team')}
           >
            Meet the Team

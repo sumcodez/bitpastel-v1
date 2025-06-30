@@ -201,7 +201,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left side - Image and details */}
               <div className="lg:w-[60%] md:w-[50%] md:block hidden">
-                <div className="mb-6">
+                <div className="mb-3">
                   {/* <img
                     src="/images/bitpastel_Clientele_5_new.png"
                     alt="bitpastel client image"

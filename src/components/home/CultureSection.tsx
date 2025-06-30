@@ -57,7 +57,7 @@ const CultureSection = () => {
   return (
     <section id='culture' className="pt-12 lg:pt-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-[#2a2a2a] font-source font-bold text-center text-dark md:mb-16 mb-8">
+        <h2 className="text-[#2a2a2a] font-source font-bold text-center text-dark md:mb-16 mb-12">
           Why work with us?
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center gap-12">

@@ -185,7 +185,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section id="stories" className="pt-12 lg:pt-16">
       <div className="container mx-auto px-4">
-        <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-16 mb-8">Stories</h2>
+        <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-16 mb-12">Stories</h2>
 
         <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full">
           {visibleTestimonials.map((testimonial) => (
@@ -220,7 +220,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         </div>
 
         {hasMoreTestimonials && (
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center md:mt-12 mt-12">
             <button
               onClick={loadMoreTestimonials}
               disabled={isAnimating}

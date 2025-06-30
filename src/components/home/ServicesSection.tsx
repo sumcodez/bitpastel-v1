@@ -62,7 +62,7 @@ const ServicesSection = () => {
 
             <section id="services" className="pt-12 lg:pt-16  bg-white">
               <div className="container mx-auto px-4">
-                <h2 className=" font-[600] font-source text-center text-dark md:mb-6 mb-8">Our Services</h2>
+                <h2 className=" font-[600] font-source text-center text-dark md:mb-6 mb-12">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
                   {services.map((service, index) => (
                     <div

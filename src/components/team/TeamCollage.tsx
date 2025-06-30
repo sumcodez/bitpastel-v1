@@ -19,11 +19,11 @@ const TeamCollage = () => {
   }
 
   return (
-    <section className="md:pt-16 pt-14 md:pb-16 pb-14 relative" id="team">
+    <section className="md:pt-16 pt-12 md:pb-16 pb-12 relative" id="team">
       <div className="container mx-auto px-4">
         <div className="collage-area townhall-2024">
 
-          <h2 className="text-accent-green font-bold text-center mb-4">Bitpastel Townhall 2024</h2>
+          <h2 className="text-accent-green font-bold text-center md:mb-16 mb-12">Bitpastel Townhall 2024</h2>
 
           <div className="collage-wrapper hidden lg:block">
             <div className="space-y-4">
@@ -80,9 +80,9 @@ return(
 
         </div>
 
-        <div className="collage-area townhall-2023 pt-14">
+        <div className="collage-area townhall-2023 md:pt-16 pt-12">
 
-          <h2 className="text-accent-green font-bold text-center mb-4">Year-end Celebration 2023</h2>
+          <h2 className="text-accent-green font-bold text-center md:mb-16 mb-12">Year-end Celebration 2023</h2>
 
           <div className="collage-wrapper hidden lg:block">
             <div className="space-y-4">
@@ -140,9 +140,9 @@ return(
         </div>
 
         
-        <div className="collage-area townhall-2023 pt-14">
+        <div className="collage-area townhall-2023 md:pt-16 pt-12">
 
-          <h2 className="text-accent-green font-bold text-center mb-4">Year-end Celebration 2023</h2>
+          <h2 className="text-accent-green font-bold text-center md:mb-16 mb-12">Year-end Celebration 2023</h2>
 
           <div className="collage-wrapper hidden lg:block">
             <div className="space-y-4">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 const TechPartnerSection = () => {
   return (
-      <section className="pt-12 lg:pt-16 ">
+      <section className="pt-12 lg:pt-16 " id='#partner'>
         <div className="mx-auto ">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
             <div

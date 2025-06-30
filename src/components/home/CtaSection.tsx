@@ -3,9 +3,9 @@ import Button from '@/components/ui/Button'
 
 const CtaSection = () => {
   return (
-    <section className="py-14 md:py-16 cta-section">
+    <section className="py-12 md:py-16 cta-section">
       <div className="container mx-auto px-4">
-        <div className="relative md:rounded-2xl overflow-hidden flex flex-col md:block">
+        <div className="relative md:rounded-[40px] overflow-hidden flex flex-col md:block">
           {/* Background for mobile and desktop */}
           <div 
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
@@ -18,7 +18,7 @@ const CtaSection = () => {
           {/* Background for mobile only */}
           <div 
             className="md:hidden block w-full min-h-[250px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
-                       bg-[position:50%_10%] rounded-tl-[20px] rounded-bl-[20px]"
+                       bg-[position:50%_10%] rounded-tl-[20px] rounded-bl-[0px]"
             style={{
               backgroundImage: "url('/images/CTA.png')"
             }}
@@ -47,7 +47,7 @@ const CtaSection = () => {
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
               </p>
-              <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8 font-inter">
+              <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white md:mt-8 mt-4 font-inter">
                 Contact Us
               </button>
             </div>
