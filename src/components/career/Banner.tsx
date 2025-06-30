@@ -35,9 +35,9 @@ const Banner = () => {
             ></div>
       
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:h-full pt-[40px] md:pt-[60px] md:text-left text-center">
-              <div className="md:h-full content-center mx-auto  max-w-[280px] md:max-w-[100%]">
-                <h1 className="md:text-white md:leading-[48px] leading-[30px] mb-6">
+            <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
+              <div className="md:h-full content-center mx-auto max-w-[100%]">
+                <h1 className="md:text-white md:leading-[48px] leading-[30px] mb-4">
                   <span>Work</span>
                   <span className="font-bold lg:inline inline pl-2">@ Bitpastel</span>
                   <br/>
@@ -58,12 +58,12 @@ const Banner = () => {
                         height={24}
                         className="w-auto invert md:invert-0"
                       />
-                      <p className="md:leading-[44px] leading-[24px] text-[16px] font-[400]">{text}</p>
+                      <p className="md:leading-[35px] leading-[24px] text-[16px] font-[400]">{text}</p>
                     </div>
                   ))}
                 </div>
       
-                <button className="btn leading-normal bg-primary-teal md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
+                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8 font-inter"
                 onClick={() => scrollToSection('#jobCards')}
                 >
                  Explore Opportunities

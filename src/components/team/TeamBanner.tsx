@@ -39,9 +39,9 @@ const TeamBanner = () => {
       ></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:h-full pt-[40px] md:pt-[60px] md:text-left text-center">
-        <div className="md:h-full content-center mx-auto  max-w-[280px] md:max-w-[100%]">
-          <h1 className="md:text-white md:leading-[48px] leading-[30px] mb-6">
+      <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
+        <div className="md:h-full content-center mx-auto max-w-[100%]">
+          <h1 className="md:text-white md:leading-[48px] leading-[30px] mb-4">
             <span>The </span>
             <span className="font-bold lg:inline inline">Team </span>
             who 
@@ -63,7 +63,7 @@ const TeamBanner = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="md:leading-[44px] leading-[24px] text-[16px] font-[400]">{text}</p>
+                <p className="md:leading-[35px] leading-[24px] text-[16px] font-[400]">{text}</p>
               </div>
             ))}
           </div>

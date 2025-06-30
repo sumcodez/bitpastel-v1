@@ -76,25 +76,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen md:pt-20 md:pb-16 pb-14 pt-20 px-4" id='#jobCards'>
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen md:pt-20 md:pb-16 pb-14" id='#jobCards'>
+      <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-8">
           <p className="text-gray-700 text-base max-w-4xl mx-auto leading-relaxed">
             To apply for any of the current job openings, please go to the respective box below and click on the{' '}
-            <span className=" font-semibold">"Apply"</span> button.
+            <span className=" font-semibold text-accent-green">"Apply"</span> button.
           </p>
           <p className="text-gray-700 text-base mt-2">
             If you don't see any suitable vacancy, send your resume{' '}
             <button className="text-accent-green font-medium pr-1"
             onClick={() => scrollToSection('joinTeamForm')}
             >
-                here </button>{ }
+                here </button>
             and we'll get in touch with you as soon as there is any opening that matches your profile.
           </p>
         </div>
         {/* Job Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center md:max-w-[80%] mx-auto">
+        <div className="grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 gap-8 justify-items-center mx-auto grid-card-custom max-w-full">
           {jobListings.map((job, index) => (
             <Card
               key={job.id}
