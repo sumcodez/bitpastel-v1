@@ -242,7 +242,7 @@ export default function JoinTeam() {
               <input
                 type="text"
                 name="qualification"
-                placeholder="Qualification"
+                placeholder="Qualification (Optional)"
                 value={formData.qualification}
                 onChange={handleChange}
                 className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
@@ -253,9 +253,9 @@ export default function JoinTeam() {
                 name="noticePeriod"
                 value={formData.noticePeriod}
                 onChange={handleChange}
-                className="w-full p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none"
               >
-                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">Select Notice Period</option>
+                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">Notice Period (Optional)</option>
                 {noticePeriodOptions.map((option, index) => (
                   <option 
                     key={index} 
@@ -319,7 +319,7 @@ export default function JoinTeam() {
                 onChange={handleChange}
                 className="w-full p-2 border-b border-[#04ff04] focus:outline-none focus:border-blue-500 appearance-none bg-transparent text-[#B3B3B3] text-[19px] font-source font-thin"
               >
-                <option value="" className="text-[#B3B3B3]">Select experience</option>
+                <option value="" className="text-[#B3B3B3]">Select experience (Optional)</option>
                 {experienceOptions.map((option, index) => (
                   <option 
                     key={index} 
@@ -335,10 +335,10 @@ export default function JoinTeam() {
               <input
                 type="text"
                 name="referredBy"
-                placeholder="Referred By (if any)"
+                placeholder="Referred By (Optional)"
                 value={formData.referredBy}
                 onChange={handleChange}
-                className="w-full p-2 border-b text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
               />
             </div>
           </div>
