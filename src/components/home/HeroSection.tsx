@@ -31,7 +31,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-white md:leading-[40px] leading-[30px] mb-8">
+          <h1 className="md:text-white md:leading-[40px] leading-[25px] md:mb-8 mb-4">
             <span>Crafting </span>
             <span className="font-bold lg:inline md:block inline">Digital Solutions</span>
             <span className="block"> for your business</span>
@@ -43,7 +43,7 @@ const HeroSection = () => {
               'Web & Mobile App Development',
               'Marketing Solutions',
             ].map((text, idx) => (
-              <div key={idx} className="flex md:gap-4 gap-2 mb-1 items-center">
+              <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -51,12 +51,12 @@ const HeroSection = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="md:leading-[35px] leading-[24px] font-roboto text-[16px] font-[400]">{text}</p>
+                <p className="font-roboto  text-[16px] font-[400]">{text}</p>
               </div>
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8  font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px]  font-inter"
           onClick={() => setIsModalOpen(true)}
           >
             Let’s Work Together

@@ -82,9 +82,9 @@ const Header = () => {
 
   return (
     <>
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 trasition-[background] md:h-[70px] h-[50px] border-b  border-transparent content-center duration-200 ${isScrolled ? 'bg-white border-[#f5f5f5]' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
-        <div className="flex md:justify-between justify-center items-center md:py-6 py-4">
+        <div className="flex md:justify-between justify-center items-center">
           <Link href="/">
             <Image src={logoSrc} alt="Logo" width={125} height={48} className="md:h-12 h-8 w-auto" />
           </Link>

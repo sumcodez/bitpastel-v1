@@ -62,14 +62,14 @@ const ServicesSection = () => {
 
             <section id="services" className="pt-12 lg:pt-16  bg-white">
               <div className="container mx-auto px-4">
-                <h2 className=" font-[600] font-source text-center text-dark md:mb-6 mb-12">Our Services</h2>
+                <h2 className=" font-[600] font-source text-center text-dark md:mb-0 mb-3">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
                   {services.map((service, index) => (
                     <div
                       key={service.id}
                       onClick={() => handleClick(index)}
                       // className="text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer py-10"
-                      className={`card-element text-center transition-shadow duration-300m md:min-w-[275px] min-w-[unset] cursor-pointer md:py-10 pt:0 pb-10 md:bg-transparent ${service.bgColor} md:rounded rounded-[8px] md:min-h-full min-h-[160px]
+                      className={`card-element text-center transition-shadow duration-300m md:min-w-[275px] min-w-[unset] cursor-pointer md:py-8 pt:0 pb-8 md:bg-transparent ${service.bgColor} md:rounded rounded-[8px] md:min-h-full min-h-[160px]
                         ${
             activeIndex === index ? 'active' : ''
           }

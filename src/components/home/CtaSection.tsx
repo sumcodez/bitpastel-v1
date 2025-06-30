@@ -17,7 +17,7 @@ const CtaSection = () => {
 
           {/* Background for mobile only */}
           <div 
-            className="md:hidden block w-full min-h-[250px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
+            className="md:hidden block w-full min-h-[280px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
                        bg-[position:50%_10%] rounded-tl-[20px] rounded-bl-[0px]"
             style={{
               backgroundImage: "url('/images/CTA.png')"
@@ -33,21 +33,21 @@ const CtaSection = () => {
           ></div>
 
           {/* Content */}
-          <div className="relative px-[16px] md:py-[66px] pt-[40px] pb-[0px] lg:px-[66px] md:bg-transparent text-[rgba(42,42,42,1)]">
+          <div className="relative px-[16px] md:py-[66px] pt-[20px] pb-[0px] lg:px-[66px] md:bg-transparent text-[rgba(42,42,42,1)]">
             <div className="lg:max-w-[520px] md:max-w-[480px] max-w-full">
-              <h2 className="font-bold font-source md:text-white mb-6 leading-tight">
+              <h2 className="font-bold font-source md:text-white md:mb-4 mb-4 leading-tight">
                 Discover the digital 
                 < br className=''/>
                 possibilities we can help you 
                 <br className=''/>
                 unlock for your business!
               </h2>
-              <p className="md:text-white mb-8 leading-relaxed max-w-[100%] md:max-w-[60%] mr-auto">
+              <p className="md:text-white md:mb-8 mb-4 leading-relaxed max-w-[100%] md:max-w-[60%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
               </p>
-              <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white md:mt-8 mt-4 font-inter">
+              <button className="btn leading-normal bg-green-btn md:w-auto text-white md:mt-1 mt-1 font-inter">
                 Contact Us
               </button>
             </div>

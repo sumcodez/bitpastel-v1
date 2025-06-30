@@ -31,7 +31,7 @@ const SatisfiedClientSection = () => {
   return (
     <section className="pt-12 lg:pt-16  bg-white" id='#client'>
       <div className="container mx-auto px-4">
-        <h2 className=" md:leading-[45px] leading-[24px] font-source font-bold text-center text-dark md:mb-12 mb-8">
+        <h2 className=" md:leading-[1] font-source font-bold text-center text-dark mb-2">
           Satisfied Clientele Worldwide
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-28 gap-4 items-center">
@@ -47,7 +47,7 @@ const SatisfiedClientSection = () => {
           </div>
 
           {/* Stats Section - Auto width on desktop, full width on mobile */}
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 md:gap-6 gap-2 lg:pl-12 w-auto items-end">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 md:gap-8 gap-2 lg:pl-12 w-auto items-end">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <Image
@@ -55,9 +55,9 @@ const SatisfiedClientSection = () => {
                   alt={stat.label}
                   width={34}
                   height={34}
-                  className="mx-auto mb-2 md:h-auto h-10"
+                  className="mx-auto mb-4 md:h-auto h-10"
                 />
-                <h2 className=" font-source font-bold text-[#2A2A2A] text-[35px]">{stat.value}</h2>
+                <h2 className=" font-source font-bold text-[#2A2A2A] leading-[1] text-[35px]">{stat.value}</h2>
                 <div className={`font-source md:text-[16px] text-[12px] font-bold ${stat.color}`}>{stat.label}</div>
               </div>
             ))}

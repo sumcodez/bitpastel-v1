@@ -57,10 +57,10 @@ const CultureSection = () => {
   return (
     <section id='culture' className="pt-12 lg:pt-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-[#2a2a2a] font-source font-bold text-center text-dark md:mb-16 mb-12">
+        <h2 className="text-[#2a2a2a] font-source font-bold text-center text-dark md:mb-8 mb-3">
           Why work with us?
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-10">
           <div className="">
             <Image
               src="/images/img_rectangle_51.png"
@@ -70,41 +70,33 @@ const CultureSection = () => {
               className="rounded-[40px] w-full h-full"
             />
           </div>
-          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 md:gap-6 gap-4">
+          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 md:gap-12 gap-6">
             {features.map((feature, index) => (
               <div 
                 key={feature.id}
                 className={`p-0 relative 
                   `}
               >
-                <div className="flex space-x-4 mb-2 flex-row  gap-0 text-left h-auto justify-start ">
+                <div className="flex space-x-4 mb-4 flex-row gap-0 text-left justify-start ">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
                     width={24}
                     height={24}
-                    className='md:w-[auto] md:h-[auto] '
+                    className=''
                   />
-                  <h3 className={`font-bold font-source md:text-[rgba(42,42,42,1)] md:leading-[40px] leading-[24px]`}>
+                  <h3 className={`font-bold font-source md:text-[rgba(42,42,42,1)] leading-[1]`}>
                     {feature.title}
                   </h3>
                 </div>
                 {/* <ul className='mobile-none'> */}
-                <ul className='pl-[55px]'>
+                <ul className='md:pl-[57px] pl-[20px]'>
                   {feature.items.map((item, index) => (
-                    <li key={index} className="leading-[36px]">
+                    <li key={index} className="md:leading-[1] leading-[normal] md:text-[16px] text-[12px] md:mb-3 mb-1">
                       {item}
                     </li>
                   ))}
                 </ul>
-                {/* <div className='mobile-block'>
-                  <h3 className={`font-bold font-source text-center mb-3 leading-[24px] ${feature.mobileTextColor}`}>{feature.title}</h3>
-                  <ul className='pl-0'>
-                    {feature.items.map((item, index) => (
-                      <li className="leading-[15px] text-[12px]" key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div> */}
               </div>
             ))}
           </div>
