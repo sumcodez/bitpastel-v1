@@ -4,6 +4,8 @@ import type React from 'react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import * as countryCodesList from 'country-codes-list';
+import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 interface ModalProps {
   open: boolean;
@@ -93,8 +95,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     service: '',
     fullName: '', // Add this line
     email: '',
-    countryCode: '+91', // Default to India
-    mobile: '',
+    // countryCode: '+91', // Default to India
+    // mobile: '',
+    phone: '',
     message: '',
   };
 
@@ -112,8 +115,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   const [validationErrors, setValidationErrors] = useState({
     service: false,
     fullName: false,
-    email: false,
-    mobile: false,
+    email: false
   });
 
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
@@ -126,8 +128,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     const errors = {
       service: !formData.service,
       fullName: !formData.fullName,
-      email: !formData.email,
-      mobile: formData.mobile ? !/^\d+$/.test(formData.mobile) : false,
+      email: !formData.email
     };
 
     setValidationErrors(errors);
@@ -136,14 +137,29 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
       return; // Don't submit if any errors
     }
 
+    let phoneCode = '';
+    let phoneNumber = '';
+    
+    if (formData.phone) {
+      try {
+        const parsedNumber = parsePhoneNumber(formData.phone);
+        if (parsedNumber) {
+          phoneCode = `+${parsedNumber.countryCallingCode}`;
+          phoneNumber = parsedNumber.nationalNumber;
+        }
+      } catch (error) {
+        console.error('Error parsing phone number:', error);
+      }
+    }
+
     const payload = {
       name: formData.fullName,
       email: formData.email,
-      phone: `${formData.countryCode} ${formData.mobile}`,
-      phone_no: formData.mobile,
-      phone_code: countryCodes1.find((c) => c?.code === formData.countryCode)?.country || '',
+      phone: formData.phone, // Full formatted number
+      phone_no: phoneNumber, // Just the number part
+      phone_code: phoneCode.replace('+', ''), // Country code without +
       choice: formData.service,
-      message: formData.message,
+      message: formData.message
     };
 
     const formEncoded = new URLSearchParams(payload as any).toString();
@@ -386,64 +402,17 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </div>
 
                       {/* Mobile Number */}
-                      <div className="flex gap-2 pb-1 mt-1 border-b border-gray-200">
-                        <div className="relative">
-                          <button
-                            type="button"
-                            onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                            className="flex items-center gap-2 focus:outline-none min-w-[80px] py-2 px-0 h-auto"
-                          >
-                            <span className="text-gray-900">{formData.countryCode}</span>
-                            <ChevronDown
-                              className={`w-4 h-4 text-gray-400 transition-transform ${isCountryDropdownOpen ? 'rotate-180' : ''}`}
-                            />
-                          </button>
-
-                          {isCountryDropdownOpen && (
-                            <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 max-h-60 w-64 overflow-y-auto">
-                              {countryCodes1.map((country) => {
-                                if (!country) return null;
-                                return (
-                                  <button
-                                    key={country.code + country.country}
-                                    type="button"
-                                    onClick={() => {
-                                      handleInputChange('countryCode', country.code);
-                                      setIsCountryDropdownOpen(false);
-                                    }}
-                                    className="w-full p-3 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 justify-start"
-                                  >
-                                    {/* Flag image */}
-                                    <img
-                                      src={`https://flagsapi.com/${country.country}/flat/64.png`}
-                                      alt={`${country.name} flag`}
-                                      className="w-6 h-4 object-cover"
-                                    />
-
-                                    {/* Country name */}
-                                    <span className="text-gray-900 text-sm font-medium">
-                                      {country.name} {country.code}
-                                    </span>
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          )}
-                        </div>
-
-                        <input
-                          type="tel"
+                      <div className="pb-1 border-b border-gray-200">
+                        <PhoneInput
+                          international
+                          defaultCountry="IN" // Default to India
+                          value={formData.phone}
+                          onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
-                          value={formData.mobile}
-                          onChange={(e) => handleInputChange('mobile', e.target.value)}
-                          className="flex-1 focus:outline-none py-2"
+                          className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
                         />
                       </div>
-                      {validationErrors.mobile && (
-                        <p className="text-xs text-red-500 mt-1">
-                          Please enter a valid mobile number.
-                        </p>
-                      )}
+
 
                       {/* Message */}
                       <div className="pb-1 border-b border-gray-200">
