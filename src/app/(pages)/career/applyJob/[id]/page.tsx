@@ -83,28 +83,28 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     },
     {
       id: "4",
-      title: "Front End Developer",
-      hashtags: ["#React", "#Angular", "#Vue", "#HTML", "#CSS", "#JavaScript", "#UI"],
-      experience: "Experience: 2 - 5 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
-      description: "Join our team as a Front End Developer to design and develop user-friendly interfaces.",
+      title: "Senior WordPress Developer",
+      hashtags: ["#WordPress", "#WooCommerce", "#PHP", "#MySQL", "#JavaScript", "#Plugins"],
+      experience: "Experience: 2 - 6 Years",
+      gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))",
+      description: "We are looking for a Senior WordPress Developer to lead our WordPress projects.",
       responsibilities: [
-        "Develop responsive web applications",
-        "Collaborate with designers to implement UI/UX",
-        "Optimize applications for maximum speed",
-        "Ensure cross-browser compatibility"
+        "Develop custom WordPress themes and plugins",
+        "Optimize WordPress performance",
+        "Manage WooCommerce implementations",
+        "Mentor junior developers"
       ],
       requirements: [
-        "Proficiency in HTML, CSS, and JavaScript",
-        "Experience with front-end frameworks",
-        "Understanding of responsive design",
-        "Problem-solving skills"
+        "5+ years of WordPress development experience",
+        "Expertise in PHP and MySQL",
+        "Strong knowledge of JavaScript",
+        "Experience with WooCommerce"
       ]
     },
     {
       id: "5",
       title: "Full Stack Developer",
-      hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#Plugins", "#WordPress", "#WooCommerce", "#Shopify", "#React", "#Angular", "#Vue", "#HTML", "#CSS"],
+      hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#React", "#Angular", "#Vue", "#HTML", "#CSS"],
       experience: "Experience: 2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))",
       description: "We are seeking a Full Stack Developer to develop and maintain complex web applications.",
@@ -123,42 +123,42 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     },
     {
       id: "6",
-      title: "Mobile Developer",
-      hashtags: ["#Swift", "#Kotlin", "#Flutter", "#ReactNative", "#Android", "#iOS", "#UI"],
-      experience: "Experience: 2 - 5 Years",
+      title: "PHP Development - Internship",
+      hashtags: ["#PHP", "#MySQL", "#JavaScript", "#HTML", "#CSS"],
+      experience: "Experience: Freshers welcome",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
-      description: "Join our team as a Mobile Developer to create and maintain mobile applications.",
+      description: "We are offering PHP internship opportunities for aspiring developers.",
       responsibilities: [
-        "Design and develop mobile applications",
-        "Collaborate with designers to implement UI/UX",
-        "Optimize applications for performance",
-        "Ensure compatibility across devices"
+        "Assist in developing web applications",
+        "Learn and implement PHP best practices",
+        "Participate in code reviews",
+        "Support senior developers"
       ],
       requirements: [
-        "Proficiency in Swift or Kotlin",
-        "Experience with mobile development frameworks",
-        "Understanding of mobile UI/UX principles",
-        "Problem-solving skills"
+        "Basic understanding of PHP",
+        "Familiarity with HTML, CSS, and JavaScript",
+        "Eagerness to learn",
+        "Good problem-solving skills"
       ]
     },
     {
       id: "7",
-      title: "DevOps Engineer",
-      hashtags: ["#AWS", "#Docker", "#Kubernetes", "#CI/CD", "#Linux", "#Scripting"],
-      experience: "Experience: 2 - 6 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))",
-      description: "We are seeking a DevOps Engineer to manage and optimize the development and deployment processes.",
+      title: "UI/UX Designer Intern",
+      hashtags: ["#UI", "#UX", "#Figma", "#AdobeXD", "#Photoshop", "#Illustrator"],
+      experience: "Experience: Freshers welcome",
+      gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
+      description: "We are looking for a creative UI/UX Design Intern to join our team.",
       responsibilities: [
-        "Implement CI/CD pipelines",
-        "Manage cloud infrastructure",
-        "Automate deployment processes",
-        "Monitor system performance and reliability"
+        "Assist in creating wireframes and prototypes",
+        "Help design user interfaces",
+        "Participate in user research",
+        "Support design team with various projects"
       ],
       requirements: [
-        "Experience with cloud platforms (AWS, Azure)",
-        "Proficiency in Docker and Kubernetes",
-        "Strong scripting skills (Python, Bash)",
-        "Understanding of system administration"    
+        "Basic knowledge of design tools (Figma, Adobe XD)",
+        "Understanding of UI/UX principles",
+        "Creative thinking",
+        "Good communication skills"
       ]
     }
   ];
