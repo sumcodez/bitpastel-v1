@@ -1,7 +1,19 @@
+'use client';
 import React from 'react'
 import Image from 'next/image'
 
 const TeamBanner = () => {
+
+  
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
       {/* Desktop background image */}
@@ -56,7 +68,9 @@ const TeamBanner = () => {
             ))}
           </div>
 
-          <button className="btn leading-normal bg-primary-teal md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter">
+          <button className="btn leading-normal bg-primary-teal md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
+          onClick={() => scrollToSection('team')}
+          >
            Meet the Team
           </button>
         </div>

@@ -8,7 +8,7 @@
     --primary-teal: #009999;
     --primary-dark: rgba(42, 42, 42, 1);
     --primary-green: rgba(82, 208, 156, 1);
-    --btn-green: rgba(62, 203, 144, 1);
+    --btn-green: #52D09C;
 
     --primary-green-light: #3ecb9033;
     --primary-blue: rgba(159, 221, 238, 1);
@@ -31,6 +31,37 @@
     --text-accent-coral: #f5747e;
     --text-white: #ffffff;
   }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* font-family: 'Roboto' , 'Inter', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 38px ;
+}
+h2 {
+  font-size: 36px ;
+}
+h3 {
+  font-size: 20px ;
+}
+p,
+div {
+  font-size: 16px;
+}
+button {
+  font-size: 16px;
 }
 
 @layer utilities {
@@ -124,9 +155,7 @@ vertical-align: middle;
 .header-scrolled a {
   color: var(--text-dark);
 }
-.header-scrolled img {
-  /* filter: invert(1); */
-}
+
 .header-scrolled .toggle-ham-icon{
   filter: invert(1);
 ;

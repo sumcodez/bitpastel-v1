@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -27,7 +27,6 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-8 mb-8 align-top footer-wrapper">
             <div className="space-y-3 col-start-1 md:col-span-1 md:col-start-auto">
-              
               <Link href="/">
                 <Image
                   src="/images/img_bitpastellogo02300dpi_3.png"
@@ -37,15 +36,17 @@ const Footer = () => {
                   className="h-16 w-auto"
                 />
               </Link>
-               <p className='md:hidden block mt-6 text-[15px] md:pb-6 pb-2 type-footer'>INFORMATION</p>
+              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer">
+                INFORMATION
+              </p>
               <a
                 href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
                 target="_blank"
                 className="text-sm leading-relaxed block"
               >
-                Technopolis, 11th Floor, BP Block,
+                Technopolis, 11th Floor, BP Block, Sector V,
                 <br />
-                Sector V, Salt Lake City, Kolkata - 700091
+                 Salt Lake City, Kolkata - 700091
               </a>
               <div className="md:hidden block space-y-2">
                 <a className="block" href="tel:+1 (872) 444 6679">
@@ -61,146 +62,156 @@ const Footer = () => {
                   <span>connect@bitpastel.com</span>
                 </a>
               </div>
-              <div className='hidden md:block'>
-              <p className='mt-6 text-[15px] md:pb-6 pb-2 type-footer'>CONNECT WITH US:</p>
-              <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
-                <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image
-                    src="/images/img_basilfacebooksolid.svg"
-                    alt="Facebook"
-                    width={16}
-                    height={16}
-                  />
-                </div>
-                <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image
-                    src="/images/img_mingcuteinstagramfill.svg"
-                    alt="Instagram"
-                    width={16}
-                    height={16}
-                  />
-                </div>
-                {/* <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
+              <div className="hidden md:block">
+                <p className="mt-6 text-[16px] md:pb-6 pb-2 type-footer">CONNECT WITH US:</p>
+                <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
+                  <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
+                    <a href="https://www.facebook.com/bitpastel" target="_blank">
+                    <Image
+                      src="/images/img_basilfacebooksolid.svg"
+                      alt="Facebook"
+                      width={16}
+                      height={16}
+                      />
+                      </a>
+                  </div>
+                  <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
+                     <a href="https://www.instagram.com/bitpastel.ai/" target="_blank">
+                    <Image
+                      src="/images/img_mingcuteinstagramfill.svg"
+                      alt="Instagram"
+                      width={16}
+                      height={16}
+                      />
+                      </a>
+                  </div>
+                  {/* <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                   <Image src="/images/img_primetwitter.svg" alt="Twitter" width={16} height={16} />
                 </div> */}
-                <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image src="/images/img_uillinkedin.svg" alt="LinkedIn" width={16} height={16} />
+                  <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
+                     <a href="https://www.linkedin.com/company/bitpastel" target="_blank">
+                    <Image
+                      src="/images/img_uillinkedin.svg"
+                      alt="LinkedIn"
+                      width={16}
+                      height={16}
+                    />
+                    </a>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
 
-            <div className='md:max-w-[300px] mx-auto w-full'>
-              <p className='h-[75px] type-footer' >QUICK LINKS</p>
-            <div className='grid grid-cols-2'>
-            <div className="">
-               
-              <div className="space-y-4 text-sm">
-                <Link
-                  href="/"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="#"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Portfolio
-                </Link>
-                <Link
-                  href="/#services"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Services
-                </Link>
-                <Link
-                  href="/#stories"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Stories
-                </Link>
+            <div className="md:max-w-[300px] mx-auto w-full">
+              <p className="h-[75px] type-footer">QUICK LINKS</p>
+              <div className="grid grid-cols-2">
+                <div className="">
+                  <div className="space-y-4 text-sm">
+                    <Link href="/" className={`block hover:text-gray-300 transition-colors `}>
+                      Home
+                    </Link>
+                    <Link href="#" className={`block hover:text-gray-300 transition-colors `}>
+                      Portfolio
+                    </Link>
+                    <Link
+                      href="/#services"
+                      className={`block hover:text-gray-300 transition-colors `}
+                    >
+                      Services
+                    </Link>
+                    <Link
+                      href="/#stories"
+                      className={`block hover:text-gray-300 transition-colors `}
+                    >
+                      Stories
+                    </Link>
+                  </div>
+                </div>
+                <div className="md:ml-auto">
+                  <div className="space-y-4 text-sm">
+                    <Link href="/team" className={`block hover:text-gray-300 transition-colors `}>
+                      Culture
+                    </Link>
+                    <Link
+                      href="/clientele"
+                      className={`block hover:text-gray-300 transition-colors `}
+                    >
+                      Clientele
+                    </Link>
+                    <Link href="/career" className={`block hover:text-gray-300 transition-colors `}>
+                      Career
+                    </Link>
+                    <Link
+                      href="/#partner"
+                      className={`block hover:text-gray-300 transition-colors `}
+                    >
+                      Partner
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="md:ml-auto">
-               
-              <div className="space-y-4 text-sm">
-                <Link
-                  href="/team"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Culture
-                </Link>
-                <Link
-                  href="/clientele"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Clientele
-                </Link>
-                <Link
-                  href="/career"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Career
-                </Link>
-                <Link
-                  href="/#partner"
-                  className={`block hover:text-gray-300 transition-colors `}
-                >
-                  Partner
-                </Link>
-              </div>
-            </div>
-               </div>
-               </div>
             <div className="text-sm md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
-              <p className='md:hidden block mt-6 text-[15px] md:pb-6 pb-2 type-footer'>CONNECT WITH US:</p>
+              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer">
+                CONNECT WITH US:
+              </p>
               <div className="md:hidden flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image
-                    src="/images/img_basilfacebooksolid.svg"
-                    alt="Facebook"
-                    width={16}
-                    height={16}
-                  />
+                  <a href="https://www.facebook.com/bitpastel" target="_blank">
+                    <Image
+                      src="/images/img_basilfacebooksolid.svg"
+                      alt="Facebook"
+                      width={16}
+                      height={16}
+                    />
+                  </a>
                 </div>
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image
-                    src="/images/img_mingcuteinstagramfill.svg"
-                    alt="Instagram"
-                    width={16}
-                    height={16}
-                  />
+                  <a href="https://www.instagram.com/bitpastel.ai/" target="_blank">
+                    <Image
+                      src="/images/img_mingcuteinstagramfill.svg"
+                      alt="Instagram"
+                      width={16}
+                      height={16}
+                    />
+                  </a>
                 </div>
                 {/* <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                   <Image src="/images/img_primetwitter.svg" alt="Twitter" width={16} height={16} />
                 </div> */}
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                  <Image src="/images/img_uillinkedin.svg" alt="LinkedIn" width={16} height={16} />
+                  <a href="https://www.linkedin.com/company/bitpastel" target="_blank">
+                    <Image
+                      src="/images/img_uillinkedin.svg"
+                      alt="LinkedIn"
+                      width={16}
+                      height={16}
+                    />
+                  </a>
                 </div>
               </div>
               <div>
-                <p className='hidden md:block h-[75px] type-footer'>INFORMATION</p>
-              <div className="md:block hidden mt-0 space-y-4">
-                <a className="block" href="tel:+1 (872) 444 6679">
-                  <span>US: +1 (872) 444 6679</span>
-                </a>
-                <a className="block" href="tel:+44 2081 446579">
-                  <span>UK: +44 2081 446579</span>
-                </a>
-                <a className="block" href="tel:+91 9830 566 248">
-                  <span>IN: +91 9830 566 248</span>
-                </a>
-                <a className="mt-4 block" href="mailto:connect@bitpastel.com">
-                  <span>connect@bitpastel.com</span>
-                </a>
-              </div>
+                <p className="hidden md:block h-[75px] type-footer">INFORMATION</p>
+                <div className="md:block hidden mt-0 space-y-4">
+                  <a className="block" href="tel:+1 (872) 444 6679">
+                    <span>US: +1 (872) 444 6679</span>
+                  </a>
+                  <a className="block" href="tel:+44 2081 446579">
+                    <span>UK: +44 2081 446579</span>
+                  </a>
+                  <a className="block" href="tel:+91 9830 566 248">
+                    <span>IN: +91 9830 566 248</span>
+                  </a>
+                  <a className="mt-4 block" href="mailto:connect@bitpastel.com">
+                    <span>connect@bitpastel.com</span>
+                  </a>
+                </div>
               </div>
               <p className="md:hidden block text-center md:text-sm text-[12px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025
                 <br />
                 All Rights Reserved
-                <a className="block" href="/">
+                <a className="block" href="/privacy">
                   Privacy Policy
                 </a>
               </p>
@@ -212,7 +223,7 @@ const Footer = () => {
           >
             <p className="text-center md:text-sm text-[12px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
               Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
-              <a href="/">Privacy Policy</a>
+              <a href="/privacy">Privacy Policy</a>
             </p>
           </div>
         </div>
@@ -221,39 +232,120 @@ const Footer = () => {
         <div className="footer-mobile-nav flex justify-around items-center py-2 ">
           <div className={`nav-item flex flex-col items-center ${isActive('/') ? 'active' : ''}`}>
             <Link href="/" className="flex flex-col items-center">
-             <svg _ngcontent-c8="" fill="none" height="20" viewBox="0 0 24 21" width="20" className=""><path _ngcontent-c8="" d="M9.6 13.3382H9.35V13.5882V20.75H3.85V11.1176V10.8676H3.6H0.637691L12 0.340803L23.3623 10.8676H20.4H20.15V11.1176V20.75H14.65V13.5882V13.3382H14.4H9.6Z" stroke="#008B8B" stroke-width="1.5"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Home
-              </span>
+              <svg
+                _ngcontent-c8=""
+                fill="none"
+                height="20"
+                viewBox="0 0 24 21"
+                width="20"
+                className=""
+              >
+                <path
+                  _ngcontent-c8=""
+                  d="M9.6 13.3382H9.35V13.5882V20.75H3.85V11.1176V10.8676H3.6H0.637691L12 0.340803L23.3623 10.8676H20.4H20.15V11.1176V20.75H14.65V13.5882V13.3382H14.4H9.6Z"
+                  stroke="#008B8B"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Home</span>
             </Link>
           </div>
-          <div className={`nav-item flex flex-col items-center ${isActive('/#services') ? 'active' : ''}`}>
+          <div
+            className={`nav-item flex flex-col items-center ${isActive('/#services') ? 'active' : ''}`}
+          >
             <Link href="/#services" className="flex flex-col items-center">
-             <svg _ngcontent-c8="" fill="none" height="20" viewBox="0 0 21 21" width="20" className=""><path _ngcontent-c8="" d="M17.7693 11.494L17.7526 11.633L17.8624 11.7199L20.0543 13.4524L20.0543 13.4524L20.0593 13.4563C20.1627 13.5337 20.1963 13.6691 20.1229 13.8026L18.0241 17.4362L18.0241 17.4362L18.0221 17.4398C17.9524 17.5652 17.8101 17.6114 17.6892 17.5649C17.6888 17.5648 17.6884 17.5646 17.6881 17.5645L15.0788 16.5155L14.9476 16.4628L14.8348 16.5481C14.311 16.9441 13.7391 17.2868 13.1192 17.5398L12.9863 17.594L12.9662 17.7362L12.5724 20.5187L12.5722 20.5187L12.5712 20.5289C12.5589 20.6517 12.4544 20.75 12.3081 20.75H8.10809C7.97586 20.75 7.86228 20.6621 7.82951 20.5108L7.43688 17.7362L7.41676 17.594L7.28382 17.5398C6.66319 17.2865 6.10467 16.9568 5.56898 16.5486L5.456 16.4626L5.32422 16.5155L2.72031 17.5623C2.58309 17.6052 2.44453 17.5542 2.38101 17.4398L2.38104 17.4398L2.37895 17.4362L0.281622 13.8052C0.219213 13.6833 0.252532 13.5302 0.34897 13.4522L2.56573 11.7208L2.68202 11.6299L2.6587 11.4843C2.60846 11.1703 2.58309 10.8291 2.58309 10.5C2.58309 10.1767 2.62051 9.83648 2.67183 9.51575L2.69514 9.37005L2.57886 9.27923L0.360732 7.54673L0.360762 7.54669L0.356844 7.54375C0.253522 7.46626 0.219906 7.33095 0.293255 7.19738L2.39208 3.56379L2.39211 3.56381L2.39413 3.56016C2.46376 3.43483 2.60605 3.38865 2.727 3.43507L5.33735 4.48446L5.46856 4.53721L5.58137 4.45191C6.10516 4.05588 6.67707 3.71322 7.29694 3.46021L7.42988 3.40595L7.45 3.26378L7.84359 0.482435C7.86535 0.339958 7.97252 0.25 8.10809 0.25H12.3081C12.4514 0.25 12.5651 0.34759 12.5857 0.482495C12.5858 0.482775 12.5858 0.483055 12.5859 0.483335L12.9793 3.26378L12.9994 3.40595L13.1324 3.46021C13.753 3.71353 14.3115 4.04322 14.8472 4.45136L14.9602 4.53744L15.092 4.48446L17.6959 3.43766C17.8331 3.39479 17.9717 3.44583 18.0352 3.56016L18.0351 3.56018L18.0372 3.56379L20.1346 7.1948C20.197 7.3167 20.1637 7.46982 20.0672 7.54777C20.0669 7.54803 20.0666 7.54828 20.0663 7.54853L17.8505 9.27923L17.7342 9.37005L17.7575 9.51575C17.8078 9.82998 17.8331 10.158 17.8331 10.5C17.8331 10.8421 17.8078 11.1731 17.7693 11.494ZM6.02059 10.5C6.02059 12.8037 7.9044 14.6875 10.2081 14.6875C12.5118 14.6875 14.3956 12.8037 14.3956 10.5C14.3956 8.1963 12.5118 6.3125 10.2081 6.3125C7.9044 6.3125 6.02059 8.1963 6.02059 10.5Z" stroke="#008B8B" stroke-width="1.5"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Services
-              </span>
+              <svg
+                _ngcontent-c8=""
+                fill="none"
+                height="20"
+                viewBox="0 0 21 21"
+                width="20"
+                className=""
+              >
+                <path
+                  _ngcontent-c8=""
+                  d="M17.7693 11.494L17.7526 11.633L17.8624 11.7199L20.0543 13.4524L20.0543 13.4524L20.0593 13.4563C20.1627 13.5337 20.1963 13.6691 20.1229 13.8026L18.0241 17.4362L18.0241 17.4362L18.0221 17.4398C17.9524 17.5652 17.8101 17.6114 17.6892 17.5649C17.6888 17.5648 17.6884 17.5646 17.6881 17.5645L15.0788 16.5155L14.9476 16.4628L14.8348 16.5481C14.311 16.9441 13.7391 17.2868 13.1192 17.5398L12.9863 17.594L12.9662 17.7362L12.5724 20.5187L12.5722 20.5187L12.5712 20.5289C12.5589 20.6517 12.4544 20.75 12.3081 20.75H8.10809C7.97586 20.75 7.86228 20.6621 7.82951 20.5108L7.43688 17.7362L7.41676 17.594L7.28382 17.5398C6.66319 17.2865 6.10467 16.9568 5.56898 16.5486L5.456 16.4626L5.32422 16.5155L2.72031 17.5623C2.58309 17.6052 2.44453 17.5542 2.38101 17.4398L2.38104 17.4398L2.37895 17.4362L0.281622 13.8052C0.219213 13.6833 0.252532 13.5302 0.34897 13.4522L2.56573 11.7208L2.68202 11.6299L2.6587 11.4843C2.60846 11.1703 2.58309 10.8291 2.58309 10.5C2.58309 10.1767 2.62051 9.83648 2.67183 9.51575L2.69514 9.37005L2.57886 9.27923L0.360732 7.54673L0.360762 7.54669L0.356844 7.54375C0.253522 7.46626 0.219906 7.33095 0.293255 7.19738L2.39208 3.56379L2.39211 3.56381L2.39413 3.56016C2.46376 3.43483 2.60605 3.38865 2.727 3.43507L5.33735 4.48446L5.46856 4.53721L5.58137 4.45191C6.10516 4.05588 6.67707 3.71322 7.29694 3.46021L7.42988 3.40595L7.45 3.26378L7.84359 0.482435C7.86535 0.339958 7.97252 0.25 8.10809 0.25H12.3081C12.4514 0.25 12.5651 0.34759 12.5857 0.482495C12.5858 0.482775 12.5858 0.483055 12.5859 0.483335L12.9793 3.26378L12.9994 3.40595L13.1324 3.46021C13.753 3.71353 14.3115 4.04322 14.8472 4.45136L14.9602 4.53744L15.092 4.48446L17.6959 3.43766C17.8331 3.39479 17.9717 3.44583 18.0352 3.56016L18.0351 3.56018L18.0372 3.56379L20.1346 7.1948C20.197 7.3167 20.1637 7.46982 20.0672 7.54777C20.0669 7.54803 20.0666 7.54828 20.0663 7.54853L17.8505 9.27923L17.7342 9.37005L17.7575 9.51575C17.8078 9.82998 17.8331 10.158 17.8331 10.5C17.8331 10.8421 17.8078 11.1731 17.7693 11.494ZM6.02059 10.5C6.02059 12.8037 7.9044 14.6875 10.2081 14.6875C12.5118 14.6875 14.3956 12.8037 14.3956 10.5C14.3956 8.1963 12.5118 6.3125 10.2081 6.3125C7.9044 6.3125 6.02059 8.1963 6.02059 10.5Z"
+                  stroke="#008B8B"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Services</span>
             </Link>
           </div>
-          <div className={`nav-item flex flex-col items-center ${isActive('/#stories') ? 'active' : ''}`}>
+          <div
+            className={`nav-item flex flex-col items-center ${isActive('/#stories') ? 'active' : ''}`}
+          >
             <Link href="/#stories" className="flex flex-col items-center">
-             <svg _ngcontent-c8="" xmlSpace="preserve" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" className=""><path _ngcontent-c8="" d="M5.184 19.249a1.03 1.03 0 0 1-.124-.007c-.651-.071-.864-.79-.869-1.452a153.58 153.58 0 0 1-.002-1.516v-.383c-.433-.132-.87-.275-1.206-.509-1.247-.866-1.889-2.045-1.905-3.53-.02-1.909-.019-4.191-.001-6.413.018-2.158 1.594-3.753 3.746-4.086.199-.028.414-.043.679-.043 3.002-.002 6.005-.004 9.007-.001 2.115.002 3.894 1.283 4.329 3.33.061.285.093.819.094 1.152.007 1.942.005 3.902 0 5.922-.003 1.048-.331 2.08-.966 2.854-.636.776-1.436 1.178-2.458 1.378-.315.061-.774.04-1.036.041-.66.003-1.331.003-1.979.003-.681 0-1.385 0-2.077.004-.015 0-.05.01-.067.021-1.318.872-2.61 1.734-4.144 2.76-.172.115-.684.475-1.021.475zm5.709-16.988-5.391.003c-.215 0-.384.011-.533.034-1.681.259-2.865 1.615-2.879 3.295-.019 2.215-.018 4.217.002 6.12.012 1.158.514 2.089 1.493 2.769.326.227.714.389 1.186.496l.371.084v.58l-.001.634c-.001.494-.001 1.005.002 1.507.001.126.048.28.264.304a.148.148 0 0 0 .021.001c.06 0 .136-.033.245-.106a920.783 920.783 0 0 1 4.148-2.763c.171-.113.385-.178.588-.179.694-.003 1.399-.004 2.081-.004.648 0 1.317 0 1.975-.003.218-.001.473-.008.71-.054 1.633-.318 2.734-1.661 2.738-3.342.005-2.018.004-4.026-.003-5.966a3.63 3.63 0 0 0-.072-.736c-.339-1.596-1.679-2.67-3.333-2.672-1.202-.002-2.407-.002-3.612-.002z" fill="#008B8B"></path><path _ngcontent-c8="" d="M10.003 6.591c-1.722 0-3.444.002-5.166-.001-.644-.001-1.072-.53-.853-1.053.133-.318.402-.481.772-.514.067-.006.135-.003.203-.003 3.363 0 6.725-.001 10.088.002.147 0 .302.008.441.047.404.112.637.475.576.866-.056.36-.414.647-.834.653-.481.007-.963.002-1.444.002l-3.783.001zM8.262 9.043c-1.143 0-2.286.003-3.429-.001-.609-.003-1.011-.452-.879-.967.083-.322.4-.566.769-.589.054-.003.109-.004.163-.004h6.797c.509 0 .852.234.937.631.101.472-.272.91-.806.925-.496.014-.993.005-1.49.005H8.262zm1.056 1.67c0 .432-.35.782-.782.782H4.711a.782.782 0 1 1 0-1.564h3.825c.432 0 .782.35.782.782z" fill="#008B8B"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Stories
-              </span>
+              <svg
+                _ngcontent-c8=""
+                xmlSpace="preserve"
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+                className=""
+              >
+                <path
+                  _ngcontent-c8=""
+                  d="M5.184 19.249a1.03 1.03 0 0 1-.124-.007c-.651-.071-.864-.79-.869-1.452a153.58 153.58 0 0 1-.002-1.516v-.383c-.433-.132-.87-.275-1.206-.509-1.247-.866-1.889-2.045-1.905-3.53-.02-1.909-.019-4.191-.001-6.413.018-2.158 1.594-3.753 3.746-4.086.199-.028.414-.043.679-.043 3.002-.002 6.005-.004 9.007-.001 2.115.002 3.894 1.283 4.329 3.33.061.285.093.819.094 1.152.007 1.942.005 3.902 0 5.922-.003 1.048-.331 2.08-.966 2.854-.636.776-1.436 1.178-2.458 1.378-.315.061-.774.04-1.036.041-.66.003-1.331.003-1.979.003-.681 0-1.385 0-2.077.004-.015 0-.05.01-.067.021-1.318.872-2.61 1.734-4.144 2.76-.172.115-.684.475-1.021.475zm5.709-16.988-5.391.003c-.215 0-.384.011-.533.034-1.681.259-2.865 1.615-2.879 3.295-.019 2.215-.018 4.217.002 6.12.012 1.158.514 2.089 1.493 2.769.326.227.714.389 1.186.496l.371.084v.58l-.001.634c-.001.494-.001 1.005.002 1.507.001.126.048.28.264.304a.148.148 0 0 0 .021.001c.06 0 .136-.033.245-.106a920.783 920.783 0 0 1 4.148-2.763c.171-.113.385-.178.588-.179.694-.003 1.399-.004 2.081-.004.648 0 1.317 0 1.975-.003.218-.001.473-.008.71-.054 1.633-.318 2.734-1.661 2.738-3.342.005-2.018.004-4.026-.003-5.966a3.63 3.63 0 0 0-.072-.736c-.339-1.596-1.679-2.67-3.333-2.672-1.202-.002-2.407-.002-3.612-.002z"
+                  fill="#008B8B"
+                ></path>
+                <path
+                  _ngcontent-c8=""
+                  d="M10.003 6.591c-1.722 0-3.444.002-5.166-.001-.644-.001-1.072-.53-.853-1.053.133-.318.402-.481.772-.514.067-.006.135-.003.203-.003 3.363 0 6.725-.001 10.088.002.147 0 .302.008.441.047.404.112.637.475.576.866-.056.36-.414.647-.834.653-.481.007-.963.002-1.444.002l-3.783.001zM8.262 9.043c-1.143 0-2.286.003-3.429-.001-.609-.003-1.011-.452-.879-.967.083-.322.4-.566.769-.589.054-.003.109-.004.163-.004h6.797c.509 0 .852.234.937.631.101.472-.272.91-.806.925-.496.014-.993.005-1.49.005H8.262zm1.056 1.67c0 .432-.35.782-.782.782H4.711a.782.782 0 1 1 0-1.564h3.825c.432 0 .782.35.782.782z"
+                  fill="#008B8B"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Stories</span>
             </Link>
           </div>
-          <div className={`nav-item flex flex-col items-center ${isActive('/team') ? 'active' : ''}`}>
+          <div
+            className={`nav-item flex flex-col items-center ${isActive('/team') ? 'active' : ''}`}
+          >
             <Link href="/team" className="flex flex-col items-center">
-              <svg _ngcontent-c8="" fill="none" height="24" stroke="#008B8B" viewBox="0 0 24 24" width="24" className="ng-star-inserted"><path _ngcontent-c8="" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Team
-              </span>
+              <svg
+                _ngcontent-c8=""
+                fill="none"
+                height="24"
+                stroke="#008B8B"
+                viewBox="0 0 24 24"
+                width="24"
+                className="ng-star-inserted"
+              >
+                <path
+                  _ngcontent-c8=""
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Team</span>
             </Link>
           </div>
-          <div className={`nav-item flex flex-col items-center ${isActive('/careers') ? 'active' : ''}`}>
+          <div
+            className={`nav-item flex flex-col items-center ${isActive('/careers') ? 'active' : ''}`}
+          >
             <Link href="/career" className="flex flex-col items-center">
-         <svg _ngcontent-c8="" xmlSpace="preserve" xmlnsXlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 40 40" height="24px" id="Layer_1" version="1.1" viewBox="0 0 40 40" width="24px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px" className="ng-star-inserted"><g _ngcontent-c8=""><path _ngcontent-c8="" d="M-108.89-148.45c-0.683-1.322-1.774-2.043-3.27-2.069c-1.535-0.026-3.07-0.006-4.606-0.006
+              <svg
+                _ngcontent-c8=""
+                xmlSpace="preserve"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                enable-background="new 0 0 40 40"
+                height="24px"
+                id="Layer_1"
+                version="1.1"
+                viewBox="0 0 40 40"
+                width="24px"
+                x="0px"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px"
+                className="ng-star-inserted"
+              >
+                <g _ngcontent-c8="">
+                  <path
+                    _ngcontent-c8=""
+                    d="M-108.89-148.45c-0.683-1.322-1.774-2.043-3.27-2.069c-1.535-0.026-3.07-0.006-4.606-0.006
          c-0.133,0-0.267,0-0.449,0c0-0.153,0-0.283,0-0.413c0-1.105,0.006-2.211-0.002-3.316c-0.013-1.999-1.637-3.637-3.631-3.641
          c-4.36-0.008-8.72-0.008-13.081,0c-1.993,0.004-3.62,1.644-3.631,3.641c-0.007,1.226-0.001,2.453-0.001,3.729
          c-0.152,0-0.282,0-0.412,0c-1.498,0-2.997-0.001-4.495,0c-1.887,0.002-3.295,1.127-3.726,2.973
@@ -272,12 +364,28 @@ const Footer = () => {
          c-1.61-0.004-3.219-0.001-4.829-0.001c-0.147,0-0.294,0-0.472,0c0-0.875,0-1.739,0-2.63c5.768,0,11.547,0,17.355,0
          c0,0.881,0,1.737,0,2.63c-0.148,0-0.279,0-0.411,0c-1.573,0-3.145,0-4.718,0c-0.635,0-0.975,0.262-0.969,0.745
          c0.006,0.479,0.342,0.727,0.987,0.727c3.784,0,7.569,0,11.353,0c1.565,0,2.474,0.906,2.474,2.466c0.001,1.696,0,3.391,0,5.087
-         C-109.986-141.378-109.986-141.256-109.986-141.112z" fill="#008B8B"></path><path _ngcontent-c8="" d="M-123.926-145.362c-2.307-0.003-4.615-0.003-6.922,0c-0.535,0.001-0.811,0.28-0.812,0.82
+         C-109.986-141.378-109.986-141.256-109.986-141.112z"
+                    fill="#008B8B"
+                  ></path>
+                  <path
+                    _ngcontent-c8=""
+                    d="M-123.926-145.362c-2.307-0.003-4.615-0.003-6.922,0c-0.535,0.001-0.811,0.28-0.812,0.82
          c-0.003,1.117-0.003,2.234,0,3.351c0.001,0.563,0.272,0.837,0.832,0.838c1.141,0.003,2.283,0.001,3.424,0.001
          c1.154,0,2.307,0.002,3.461-0.001c0.558-0.001,0.83-0.276,0.831-0.839c0.003-1.117,0.003-2.234,0-3.351
          C-123.115-145.083-123.39-145.362-123.926-145.362z M-124.592-141.853c-1.854,0-3.701,0-5.573,0c0-0.661,0-1.328,0-2.017
-         c1.85,0,3.697,0,5.573,0C-124.592-143.181-124.592-142.531-124.592-141.853z" fill="#008B8B"></path><path _ngcontent-c8="" d="M-127.363-149.053c0.406-0.007,0.711-0.314,0.716-0.723c0.006-0.426-0.306-0.746-0.728-0.748
-         c-0.414-0.001-0.748,0.33-0.744,0.741C-128.115-149.373-127.777-149.047-127.363-149.053z" fill="#008B8B"></path></g><path _ngcontent-c8="" d="M39.447,14.585c0,6.069,0,12.138,0,18.207c-0.082,0.295-0.151,0.594-0.25,0.883
+         c1.85,0,3.697,0,5.573,0C-124.592-143.181-124.592-142.531-124.592-141.853z"
+                    fill="#008B8B"
+                  ></path>
+                  <path
+                    _ngcontent-c8=""
+                    d="M-127.363-149.053c0.406-0.007,0.711-0.314,0.716-0.723c0.006-0.426-0.306-0.746-0.728-0.748
+         c-0.414-0.001-0.748,0.33-0.744,0.741C-128.115-149.373-127.777-149.047-127.363-149.053z"
+                    fill="#008B8B"
+                  ></path>
+                </g>
+                <path
+                  _ngcontent-c8=""
+                  d="M39.447,14.585c0,6.069,0,12.138,0,18.207c-0.082,0.295-0.151,0.594-0.25,0.883
        c-0.692,2.02-2.518,3.285-4.751,3.285c-9.401,0.002-18.802,0.001-28.203,0.001c-0.112,0-0.224-0.001-0.336-0.006
        c-2.04-0.094-3.749-1.361-4.415-3.28c-0.1-0.288-0.168-0.588-0.25-0.883c0-6.069,0-12.138,0-18.207
        c0.027-0.092,0.066-0.183,0.079-0.277c0.352-2.544,2.764-4.778,5.335-4.864c1.85-0.062,3.704-0.034,5.556-0.047
@@ -302,18 +410,35 @@ const Footer = () => {
        c3.33-0.012,6.661-0.007,9.991-0.008C25.467,9.397,25.6,9.385,25.747,9.378z M18.396,24.335c0,0.485,0.008,0.97-0.003,1.455
        c-0.007,0.326,0.143,0.499,0.459,0.502c0.995,0.008,1.99,0.007,2.985,0c0.29-0.002,0.459-0.147,0.457-0.464
        c-0.005-0.995-0.006-1.99,0.001-2.985c0.002-0.335-0.168-0.483-0.476-0.485c-0.982-0.006-1.965-0.006-2.947,0
-       c-0.335,0.002-0.488,0.178-0.479,0.522C18.407,23.365,18.396,23.85,18.396,24.335z" fill="#008B8B"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Careers
-              </span>
+       c-0.335,0.002-0.488,0.178-0.479,0.522C18.407,23.365,18.396,23.85,18.396,24.335z"
+                  fill="#008B8B"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Careers</span>
             </Link>
           </div>
-          <div className={`nav-item flex flex-col items-center ${isActive('/contact') ? 'active' : ''}`}>
+          <div
+            className={`nav-item flex flex-col items-center ${isActive('/contact') ? 'active' : ''}`}
+          >
             <Link href="/contact" className="flex flex-col items-center">
-             <svg _ngcontent-c8="" fill="none" height="20" viewBox="0 0 23 23" width="20" className="ng-star-inserted"><path _ngcontent-c8="" d="M21.9577 16.7225V19.8839C21.9589 20.1774 21.8988 20.4679 21.7812 20.7368C21.6637 21.0057 21.4912 21.247 21.275 21.4454C21.0587 21.6438 20.8034 21.7949 20.5254 21.8889C20.2474 21.9829 19.9528 22.0179 19.6605 21.9914C16.4178 21.6391 13.303 20.5311 10.5664 18.7563C8.02024 17.1384 5.86158 14.9798 4.24367 12.4336C2.46275 9.68454 1.35445 6.55458 1.00855 3.29735C0.98222 3.00594 1.01685 2.71225 1.11024 2.43496C1.20364 2.15767 1.35374 1.90287 1.551 1.68677C1.74827 1.47067 1.98837 1.29802 2.25601 1.1798C2.52366 1.06157 2.81299 1.00038 3.10558 1.0001H6.26693C6.77833 0.995069 7.27412 1.17617 7.66188 1.50964C8.04964 1.84311 8.30292 2.30621 8.37449 2.81261C8.50792 3.82431 8.75538 4.81767 9.11214 5.77374C9.25392 6.15091 9.2846 6.56082 9.20056 6.9549C9.11651 7.34898 8.92126 7.71071 8.63794 7.99722L7.29963 9.33552C8.79975 11.9737 10.9841 14.1581 13.6223 15.6582L14.9606 14.3199C15.2471 14.0366 15.6089 13.8413 16.0029 13.7573C16.397 13.6732 16.8069 13.7039 17.1841 13.8457C18.1402 14.2025 19.1335 14.4499 20.1452 14.5834C20.6571 14.6556 21.1246 14.9134 21.4588 15.3078C21.793 15.7022 21.9706 16.2057 21.9577 16.7225Z" stroke="#008B8B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-              <span className={`text-xs mt-1 `}>
-                Contact
-              </span>
+              <svg
+                _ngcontent-c8=""
+                fill="none"
+                height="20"
+                viewBox="0 0 23 23"
+                width="20"
+                className="ng-star-inserted"
+              >
+                <path
+                  _ngcontent-c8=""
+                  d="M21.9577 16.7225V19.8839C21.9589 20.1774 21.8988 20.4679 21.7812 20.7368C21.6637 21.0057 21.4912 21.247 21.275 21.4454C21.0587 21.6438 20.8034 21.7949 20.5254 21.8889C20.2474 21.9829 19.9528 22.0179 19.6605 21.9914C16.4178 21.6391 13.303 20.5311 10.5664 18.7563C8.02024 17.1384 5.86158 14.9798 4.24367 12.4336C2.46275 9.68454 1.35445 6.55458 1.00855 3.29735C0.98222 3.00594 1.01685 2.71225 1.11024 2.43496C1.20364 2.15767 1.35374 1.90287 1.551 1.68677C1.74827 1.47067 1.98837 1.29802 2.25601 1.1798C2.52366 1.06157 2.81299 1.00038 3.10558 1.0001H6.26693C6.77833 0.995069 7.27412 1.17617 7.66188 1.50964C8.04964 1.84311 8.30292 2.30621 8.37449 2.81261C8.50792 3.82431 8.75538 4.81767 9.11214 5.77374C9.25392 6.15091 9.2846 6.56082 9.20056 6.9549C9.11651 7.34898 8.92126 7.71071 8.63794 7.99722L7.29963 9.33552C8.79975 11.9737 10.9841 14.1581 13.6223 15.6582L14.9606 14.3199C15.2471 14.0366 15.6089 13.8413 16.0029 13.7573C16.397 13.6732 16.8069 13.7039 17.1841 13.8457C18.1402 14.2025 19.1335 14.4499 20.1452 14.5834C20.6571 14.6556 21.1246 14.9134 21.4588 15.3078C21.793 15.7022 21.9706 16.2057 21.9577 16.7225Z"
+                  stroke="#008B8B"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+              <span className={`text-xs mt-1 `}>Contact</span>
             </Link>
           </div>
         </div>

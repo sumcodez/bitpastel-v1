@@ -51,12 +51,12 @@ const HeroSection = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="md:leading-[44px] leading-[24px] text-[16px] font-[400]">{text}</p>
+                <p className="md:leading-[44px] leading-[24px] font-roboto text-[16px] font-[400]">{text}</p>
               </div>
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white md:text-[rgba(30,30,30,1)] md:bg-[rgba(255,255,255,1)] mt-8 hover:text-white hover:bg-green-btn transition-all duration-200 font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8  font-inter"
           onClick={() => setIsModalOpen(true)}
           >
             Let’s Work Together

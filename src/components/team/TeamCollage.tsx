@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 
 const TeamCollage = () => {
@@ -18,7 +19,7 @@ const TeamCollage = () => {
   }
 
   return (
-    <section className="md:pt-16 pt-14 md:pb-16 pb-14 relative">
+    <section className="md:pt-16 pt-14 md:pb-16 pb-14 relative" id="team">
       <div className="container mx-auto px-4">
         <div className="collage-area townhall-2024">
 

@@ -47,7 +47,7 @@ const SatisfiedClientSection = () => {
           </div>
 
           {/* Stats Section - Auto width on desktop, full width on mobile */}
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 gap-6 lg:pl-12 w-auto">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 gap-6 lg:pl-12 w-auto items-end">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <Image
