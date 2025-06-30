@@ -1,7 +1,8 @@
 'use client';
 
 import { notFound, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import JoinTeam from '@/components/JoinTeamForm'
 
 interface JobListing {
   id: string;
@@ -18,6 +19,14 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
   const [job, setJob] = useState<JobListing | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const jobWithForm = ["2", "4"];
+
+  const formRef = useRef<HTMLDivElement>(null);
+  // Function to handle smooth scrolling
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   // Mock data - replace with your actual data fetching
   const jobListings: JobListing[] = [
@@ -227,7 +236,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
               <button 
                 className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md transition-colors"
-                onClick={() => alert(`Applied for ${job.title} position!`)}
+                onClick={scrollToForm}
               >
                 Apply Now
               </button>
@@ -263,14 +272,30 @@ export default function JobDetail({ params }: { params: { id: string } }) {
               </div>
             )}
 
+
+
             {/* Apply Button at Bottom */}
-            <div className="pt-6 border-t border-gray-200">
+            {/* <div className="pt-6 border-t border-gray-200">
               <button 
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
                 onClick={() => alert(`Applied for ${job.title} position!`)}
               >
                 Apply for this Position
               </button>
+            </div> */}
+
+            {/* Apply Div */}
+            <div className="pt-6 border-t border-gray-200" ref={formRef}>
+              {jobWithForm.includes(job.id) ? (
+                <JoinTeam title='Apply Now'/>
+              ) : (
+                <button 
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
+                  onClick={() => alert(`Applied for ${job.title} position!`)}
+                >
+                  Apply via Naukri.com
+                </button>
+              )}
             </div>
           </div>
         </div>

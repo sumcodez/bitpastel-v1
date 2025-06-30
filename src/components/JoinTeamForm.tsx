@@ -5,7 +5,13 @@ import * as countryCodesList from "country-codes-list";
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
-export default function JoinTeam() {
+
+interface JoinTeamProps{
+  title?: string;
+}
+
+export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
+  // Form state 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -219,7 +225,8 @@ export default function JoinTeam() {
   return (
     <div className="max-w-4xl mx-auto p-6" id="joinTeamForm">
       <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
-        Join Our Team
+        {title}
+        {/* Join Our Team */}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="grid md:grid-cols-2 gap-8">
@@ -322,7 +329,7 @@ export default function JoinTeam() {
               )}
             </div>
 
-            <div className={`flex items-end gap-4 border-b pb-1 !mt-5 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
+            <div className={`flex items-end gap-4 border-b pb-1 !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
               <input
                 type="text"
                 name="currentLocation"
