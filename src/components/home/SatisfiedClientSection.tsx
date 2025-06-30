@@ -34,11 +34,11 @@ const SatisfiedClientSection = () => {
         <h2 className=" md:leading-[45px] leading-[24px] font-source font-bold text-center text-dark md:mb-12 mb-8">
           Satisfied Clientele Worldwide
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-12 gap-4 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-28 gap-4 items-center">
           {/* Map Section - Takes full width on mobile, remaining space on desktop */}
           <div className="relative w-full bg-cover bg-center rounded-lg">
             <Image
-              src="/images/MAp.png"
+              src="/images/MAP.png"
               alt="World Map with Pointers"
               width={998}
               height={574}

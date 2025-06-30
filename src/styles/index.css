@@ -203,7 +203,7 @@
     font-weight: 600 !important;
 }
 .life-at-bitpastel .common-lb {
-    visibility: hidden;
+    /* visibility: hidden; */
     display: grid
 ;
     grid-template-columns: 1fr 1fr;
