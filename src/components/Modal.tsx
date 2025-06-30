@@ -110,6 +110,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   //   message: '',
   // });
 
+  const [defaultCountry, setDefaultCountry] = useState<string>("IN");
+  const [isLoading, setIsLoading] = useState(true);
+
   const [formData, setFormData] = useState(initialFormData);
 
   const [validationErrors, setValidationErrors] = useState({
@@ -120,6 +123,25 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+
+  // Detect user's country based on IP
+  useEffect(() => {
+    const detectCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        if (data.country) {
+          setDefaultCountry(data.country);
+        }
+      } catch (error) {
+        console.error("Could not detect country, using default:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    detectCountry();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -199,6 +221,10 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   };
 
   if (!isVisible) return null;
+
+  if (isLoading) {
+    return <div className="max-w-4xl mx-auto p-6 text-center">Loading...</div>;
+  }
 
   return (
     <div
@@ -405,7 +431,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       <div className="pb-1 border-b border-gray-200">
                         <PhoneInput
                           international
-                          defaultCountry="IN" // Default to India
+                          defaultCountry={defaultCountry as any} // Default to India
                           value={formData.phone}
                           onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
