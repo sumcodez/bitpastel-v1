@@ -38,7 +38,7 @@ const SatisfiedClientSection = () => {
           {/* Map Section - Takes full width on mobile, remaining space on desktop */}
           <div className="relative w-full bg-cover bg-center rounded-lg">
             <Image
-              src="/images/MAP.png"
+              src="/images/MAP.svg"
               alt="World Map with Pointers"
               width={998}
               height={574}
