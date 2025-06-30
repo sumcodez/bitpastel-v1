@@ -19,11 +19,35 @@ export default function JoinTeam() {
     referredBy: "",
     resume: null as File | null,
   });
+
+  const [defaultCountry, setDefaultCountry] = useState<string>("IN");
+  const [isLoading, setIsLoading] = useState(true);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+
+  // Detect user's country based on IP
+  useEffect(() => {
+    const detectCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        if (data.country) {
+          setDefaultCountry(data.country);
+        }
+      } catch (error) {
+        console.error("Could not detect country, using default:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    detectCountry();
+  }, []);
+
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -188,6 +212,10 @@ export default function JoinTeam() {
     fileInputRef.current?.click();
   };
 
+  if (isLoading) {
+    return <div className="max-w-4xl mx-auto p-6 text-center">Loading...</div>;
+  }
+
   return (
     <div className="max-w-4xl mx-auto p-6" id="joinTeamForm">
       <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
@@ -224,11 +252,11 @@ export default function JoinTeam() {
             <div className={`flex gap-2 pb-1 border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
               <PhoneInput
                 international
-                defaultCountry="IN" // Default to India
+                defaultCountry={defaultCountry as any} // Default to India
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
-                className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
+                className="!border-none !p-0 [&>input]:!text-[#B3B3B3] [&>input]:!text-[19px] [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B3B3B3]"
               />
               {errors.phone && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
