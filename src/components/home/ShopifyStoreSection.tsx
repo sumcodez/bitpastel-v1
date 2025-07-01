@@ -5,8 +5,9 @@ const ShopifyStoreSection = () => {
   return (
       <section className="pt-12 lg:pt-16 ">
         <div className="container mx-auto px-4  ">
-          <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] md:p-8 px-4 pt-4 pb-12 bg-primary-mint md:text-left text-center ">
-            <div className="lg:w-1/2 w-full lg:pr-12 lg:pl-8">
+          {/* <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] md:p-8 px-4 pt-4 pb-12 bg-primary-mint md:text-left text-center "> */}
+          <div className="flex flex-col lg:flex-row items-center md:gap-0 gap-12 rounded-[40px] bg-primary-mint md:text-left text-center pt-[20px] px-[20px] pb-12 md:p-0 ">
+            <div className="lg:w-1/2 w-full md:px-[50px]">
               <h2 className="text-[35px] font-bold text-[#2a2a2a] mb-6 md:leading-[45px] leading-[24px]">
                 Managing 200+ Shopify Stores
                 <br/>
@@ -23,7 +24,7 @@ const ShopifyStoreSection = () => {
                 Explore Our Portfolio
               </button>
             </div>
-            <div className="lg:w-1/2 w-full md:order-last order-first">
+            <div className="lg:w-1/2 md:py-[11px] md:pr-[11px] w-full md:order-last order-first">
               <Image
                 src="/images/shopify_client_image.jpg"
                 alt="Team working together"
