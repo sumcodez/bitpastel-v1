@@ -26,6 +26,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
   const jobWithForm = ['2', '4'];
 
+  const jobWithFormAndButton = ["5"];
+
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
   const scrollToForm = () => {
@@ -61,7 +63,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Strong analytical skills',
         'Excellent communication abilities',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Collaboration', 'Attention to detail', 'Time management'],
       desiredCandidateProfile: [
         'Self-motivated and results-oriented',
@@ -100,7 +102,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Knowledge of RESTful APIs',
         'Understanding of front-end technologies',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -128,7 +130,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Familiarity with e-commerce best practices',
         'Problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -157,7 +159,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Strong knowledge of JavaScript',
         'Experience with WooCommerce',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -197,7 +199,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Familiarity with RESTful APIs',
         'Strong problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -210,7 +212,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '6',
       title: 'PHP Development - Internship',
       hashtags: ['#PHP', '#MySQL', '#JavaScript', '#HTML', '#CSS'],
-      experience: 'Freshers welcome',
+      experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are offering PHP internship opportunities for aspiring developers.',
       responsibilities: [
@@ -225,7 +227,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Eagerness to learn',
         'Good problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -238,7 +240,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '7',
       title: 'UI/UX Designer Intern',
       hashtags: ['#UI', '#UX', '#Figma', '#AdobeXD', '#Photoshop', '#Illustrator'],
-      experience: 'Freshers welcome',
+      experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are looking for a creative UI/UX Design Intern to join our team.',
       responsibilities: [
@@ -253,7 +255,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Creative thinking',
         'Good communication skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -314,10 +316,10 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   return (
     <div className="relative">
       <JobDetailsBanner
-        jobTitle="Senior React Developer"
+        jobTitle={job.title}
         backgroundImage="/images/Job-details.png"
         benefits={customBenefits}
-        applyButtonText="Apply for this position"
+        applyButtonText="Apply Now"
         scrollToId="applicationForm"
       />
 
@@ -338,7 +340,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Technical Skills:</h3>
                 </div>
                 <div className="col-md-8 md:w-2/3">
-                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
                     {job.requirements.map((skill, index) => (
                       <li key={index}>{skill}</li>
                     ))}
@@ -353,7 +355,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Soft Skills:</h3>
                 </div>
                 <div className="col-md-8 md:w-2/3">
-                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
                     {job.softSkills.map((skill, index) => (
                       <li key={index}>{skill}</li>
                     ))}
@@ -368,7 +370,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Desired Candidate Profile:</h3>
                 </div>
                 <div className="col-md-8 md:w-2/3">
-                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
                     {job.desiredCandidateProfile.map((profile, index) => (
                       <li key={index}>{profile}</li>
                     ))}
@@ -377,8 +379,9 @@ export default function JobDetail({ params }: { params: { id: string } }) {
               </div>
             )}
           </div>
+
           {/* Apply Div */}
-          <div className="pt-6" ref={formRef} id="applicationForm">
+          {/* <div className="pt-6" ref={formRef} id="applicationForm">
             {jobWithForm.includes(job.id) ? (
               <JoinTeam title="Apply Now" />
             ) : (
@@ -389,7 +392,42 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 Apply via Naukri.com
               </button>
             )}
+          </div> */}
+
+
+          {/* Apply Div */}
+          <div className="pt-6" ref={formRef} id="applicationForm">
+            {jobWithForm.includes(job.id) ? (
+              <JoinTeam title="Apply Now" />
+            ) : jobWithFormAndButton.includes(job.id) ? (
+              <>
+                <div className="flex gap-[99px] mb-6 items-center justify-center">
+                  <button
+                    className="flex items-center justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-600 hover:bg-green-700 text-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                    onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
+                  >
+                    Apply via Naukri
+                  </button>
+                  <button
+                    className="flex items-center justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-600 hover:bg-green-700 text-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                    onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Apply Now
+                  </button>
+                </div>
+                <JoinTeam title="Apply Now" />
+              </>
+            ) : (
+              <button
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
+                onClick={() => alert(`Applied for ${job.title} position!`)}
+              >
+                Apply via Naukri.com
+              </button>
+            )}
           </div>
+
+
         </div>
       </div>
     </div>

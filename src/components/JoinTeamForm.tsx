@@ -283,14 +283,17 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
                 className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
               />
             </div>
-            <div>
+
+            <div className="relative cursor-pointer group">
               <select
                 name="noticePeriod"
                 value={formData.noticePeriod}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
-                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">Notice Period (Optional)</option>
+                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                  Notice Period (Optional)
+                </option>
                 {noticePeriodOptions.map((option, index) => (
                   <option 
                     key={index} 
@@ -301,8 +304,18 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
                   </option>
                 ))}
               </select>
+              
+              {/* Custom dropdown display */}
+              <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
+                <span className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                  {formData.noticePeriod || "Notice Period (Optional)"}
+                </span>
+                <ChevronDown className="h-4 w-4 text-black" />
+              </div>
             </div>
+
           </div>
+
           {/* Right Column */}
           <div className="space-y-6">
 
@@ -347,25 +360,36 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
             </div>
 
 
-            <div>
+            <div className="relative cursor-pointer group">
               <select
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] focus:outline-none focus:border-blue-500 appearance-none bg-transparent text-[#B3B3B3] text-[19px] font-source font-thin"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
-                <option value="" className="text-[#B3B3B3]">Select experience (Optional)</option>
+                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                  Select experience (Optional)
+                </option>
                 {experienceOptions.map((option, index) => (
                   <option 
                     key={index} 
-                    value={option} 
+                    value={option}
                     className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
                     {option}
                   </option>
                 ))}
               </select>
+              
+              {/* Custom dropdown display */}
+              <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
+                <span className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                  {formData.experience || "Select experience (Optional)"}
+                </span>
+                <ChevronDown className="h-4 w-4 text-black" />
+              </div>
             </div>
+
             <div>
               <input
                 type="text"
@@ -395,7 +419,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
               className="flex items-center gap-2 text-[#B3B3B3] text-[19px] font-source font-thin"
             >
               <Paperclip className="w-5 h-5" />
-              <span>Attach CV/Resume</span>
+              <span>Attach your CV/Resume</span>
             </button>
             {formData.resume && (
               <span className="text-sm text-gray-600">

@@ -56,7 +56,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'International Director & Co-founder, Food for Life Global, USA',
     message: 'Ayan and his team were excellent to work with. He was a great communicator, took the time to understand my needs and always delivered as promised. I will hire him again in the future.',
     image: '/images/img_image_51x56.png',
-    bgColor: 'bg-primary-green'
+    bgColor: 'bg-[#82EAB3]'
   },
   {
     id: '6',
@@ -80,7 +80,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'International Director & Co-founder, Food for Life Global, USA',
     message: 'Ayan and his team were excellent to work with. He was a great communicator, took the time to understand my needs and always delivered as promised. I will hire him again in the future.',
     image: '/images/img_image_51x56.png',
-    bgColor: 'bg-primary-green'
+    bgColor: 'bg-[#82EAB3]'
   },
   {
     id: '9',
