@@ -301,11 +301,34 @@ justify-content: center !important;
     transform: translate3D(0, -1px, 0) scale(1.03);
     transition: all .5s ease;
 } */
+ .ripple-btn{
 
-.card .card-button{
+   position: relative;
+   display: inline-block;
+    padding: 5px;
+    font-size: 16px !important;
+    font-family: "Source Sans Pro", sans-serif;
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 280px;
+    max-width: 280px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25rem;
+    cursor: pointer;
+  }
+.card-button,
+.ripple-btn
+{
+
  position: relative;
 }
-.card .card-button:before{
+.card-button:before,
+.ripple-btn:before
+{
     content: '';
     position: absolute;
     border-radius: 5px;
@@ -317,7 +340,8 @@ justify-content: center !important;
     animation-duration: 1s;
     border: 10px solid var(--btn-green);
 }
-.card .card-button:hover::before{
+.card-button:hover::before,
+.ripple-btn:hover::before{
 animation-name: hvr-ripple-out;
 }
 
@@ -404,6 +428,7 @@ display: block;
   cursor: pointer;
   transition: all .4s ease;
 }
+.card-button
 
 .card:hover{
     -webkit-transform: translate3D(0, -1px, 0) scale(1.03);

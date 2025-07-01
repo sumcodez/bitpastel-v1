@@ -17,12 +17,14 @@ interface JobDetailsBannerProps {
   scrollToId?: string;
   overlayGradient?: string;
   overlayColor?: string;
+  buttonanimation?: string
 }
 
 const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
   jobTitle = "Full Stack Developer",
   backgroundImage = "/images/Job-details.png",
   mobileBackgroundImage,
+  buttonanimation,
   benefits = [
     {
       text: 'Dynamic Teams working on new ideas',
@@ -123,7 +125,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
             </div>
   
             <button 
-              className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px] font-inter"
+              className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px] font-inter`}
               onClick={() => scrollToSection(scrollToId)}
             >
               {applyButtonText}

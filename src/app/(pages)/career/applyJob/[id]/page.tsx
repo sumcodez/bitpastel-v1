@@ -321,12 +321,14 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         benefits={customBenefits}
         applyButtonText="Apply Now"
         scrollToId="applicationForm"
+        buttonanimation = "ripple-btn"
       />
 
       {/* Job Details Content */}
-      <div className="container mx-auto pt-12 lg:pt-16">
-        <div className="overflow-hidden md:ml-[214px] px-4 md:px-0">
-          <div className="inner p-6 text-[16px] font-roboto text-[#2A2A2A]">
+      <div className='md:pt-16 pt-12'>
+      <div className="container mx-auto px-4 ">
+        <div className=" px-4 ">
+          <div className="inner text-[16px] font-roboto text-[#2A2A2A]">
             <p className="mb-10">
               {job.description}
               <br />
@@ -397,7 +399,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
 
           {/* Apply Div */}
-          <div className="pt-6 ml-[-214px] mt-[50px]" ref={formRef} id="applicationForm">
+          <div className="pt-6" ref={formRef} id="applicationForm">
             {jobWithForm.includes(job.id) ? (
               <JoinTeam title="Apply Now" />
             ) : jobWithFormAndButton.includes(job.id) ? (
@@ -430,6 +432,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
 
         </div>
+      </div>
+              
       </div>
     </div>
   );
