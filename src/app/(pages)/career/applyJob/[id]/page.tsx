@@ -325,7 +325,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
       {/* Job Details Content */}
       <div className="container mx-auto pt-12 lg:pt-16">
-        <div className="job-details overflow-hidden">
+        <div className="overflow-hidden md:ml-[214px] px-4 md:px-0">
           <div className="inner p-6 text-[16px] font-roboto text-[#2A2A2A]">
             <p className="mb-10">
               {job.description}
@@ -396,7 +396,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
 
           {/* Apply Div */}
-          <div className="pt-6" ref={formRef} id="applicationForm">
+          <div className="pt-6 ml-[-214px]" ref={formRef} id="applicationForm">
             {jobWithForm.includes(job.id) ? (
               <JoinTeam title="Apply Now" />
             ) : jobWithFormAndButton.includes(job.id) ? (

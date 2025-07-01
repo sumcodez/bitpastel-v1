@@ -241,7 +241,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Full Name"
+                  placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
@@ -368,7 +368,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
                 className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
                 <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">
-                  Select experience (Optional)
+                  Years of experience (Optional)
                 </option>
                 {experienceOptions.map((option, index) => (
                   <option 
@@ -384,7 +384,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
                 <span className="text-[#B3B3B3] text-[19px] font-source font-thin">
-                  {formData.experience || "Select experience (Optional)"}
+                  {formData.experience || "Years of experience (Optional)"}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
