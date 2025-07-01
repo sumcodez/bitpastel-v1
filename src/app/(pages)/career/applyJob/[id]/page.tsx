@@ -335,7 +335,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
             </p>
 
             {job.requirements && job.requirements.length > 0 && (
-              <div className="row flex flex-col md:flex-row mb-6">
+              <div className="row flex flex-col md:flex-row">
                 <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Technical Skills:</h3>
                 </div>
@@ -350,7 +350,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
             )}
 
             {job.softSkills && job.softSkills.length > 0 && (
-              <div className="row flex flex-col md:flex-row mb-6">
+              <div className="row flex flex-col md:flex-row mt-[73px]">
                 <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Soft Skills:</h3>
                 </div>
@@ -365,7 +365,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
             )}
 
             {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
-              <div className="row flex flex-col md:flex-row mb-6">
+              <div className="row flex flex-col md:flex-row mt-[73px]">
                 <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
                   <h3 className="text-[18px] font-source font-semibold text-gray-800">Desired Candidate Profile:</h3>
                 </div>
@@ -378,6 +378,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 </div>
               </div>
             )}
+          
           </div>
 
           {/* Apply Div */}
@@ -396,7 +397,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
 
           {/* Apply Div */}
-          <div className="pt-6 ml-[-214px]" ref={formRef} id="applicationForm">
+          <div className="pt-6 ml-[-214px] mt-[50px]" ref={formRef} id="applicationForm">
             {jobWithForm.includes(job.id) ? (
               <JoinTeam title="Apply Now" />
             ) : jobWithFormAndButton.includes(job.id) ? (
