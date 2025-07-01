@@ -405,7 +405,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
             {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center pt-6 gap-2">
+        <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
           <button
             type="submit"
             className="bg-green-btn text-white font-medium py-2 px-28 rounded transition duration-200 text-center"

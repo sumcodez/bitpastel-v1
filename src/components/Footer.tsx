@@ -38,14 +38,14 @@ const Footer = () => {
             <div className="space-y-3 col-start-1 md:col-span-1 md:col-start-auto">
               <Link href="/">
                 <Image
-                  src="/images/img_bitpastellogo02300dpi_3.png"
+                  src="/images/Footer-logo.png"
                   alt="Bitpastel Logo"
                   width={196}
                   height={75}
-                  className="h-16 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
-              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer">
+              <p className="md:hidden leading-[1] block mt-6 text-[16px] md:pb-6 pb-2 type-footer le">
                 INFORMATION
               </p>
               <a
@@ -72,7 +72,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="hidden md:block">
-                <p className="mt-6 text-[16px] md:pb-6 pb-2 type-footer">CONNECT WITH US:</p>
+                <p className="mt-6 text-[16px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US:</p>
                 <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a href="https://www.facebook.com/bitpastel" target="_blank">
@@ -112,7 +112,7 @@ const Footer = () => {
             </div>
 
             <div className="md:max-w-[300px] mx-auto w-full">
-              <p className="h-[75px] type-footer">QUICK LINKS</p>
+              <p className="h-[75px] type-footer leading-[1]">QUICK LINKS</p>
               <div className="grid grid-cols-2">
                 <div className="">
                   <div className="space-y-4 text-sm">
@@ -163,7 +163,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-sm md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
-              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer">
+              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer leading-[1]">
                 CONNECT WITH US:
               </p>
               <div className="md:hidden flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
@@ -202,7 +202,7 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <p className="hidden md:block h-[75px] type-footer">INFORMATION</p>
+                <p className="hidden md:block h-[75px] type-footer leading-[1]">INFORMATION</p>
                 <div className="md:block hidden mt-0 space-y-4">
                   <a className="block" href="tel:+1 (872) 444 6679">
                     <span>US: +1 (872) 444 6679</span>

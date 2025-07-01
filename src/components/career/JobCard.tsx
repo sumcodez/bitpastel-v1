@@ -76,15 +76,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen md:pt-20 md:pb-16 pb-14" id='#jobCards'>
+    <div className="min-h-screen md:py-14  py-12" id='#jobCards'>
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-8">
-          <p className="text-gray-700 text-base max-w-4xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-base max-w-4xl mx-auto leading-relaxed md:block inline">
             To apply for any of the current job openings, please go to the respective box below and click on the{' '}
             <span className=" font-semibold text-accent-green">"Apply"</span> button.
           </p>
-          <p className="text-gray-700 text-base mt-2">
+          <p className="text-gray-700 text-base mt-2 md:block inline">
             If you don't see any suitable vacancy, send your resume{' '}
             <button className="text-accent-green font-medium pr-1"
             onClick={() => scrollToSection('joinTeamForm')}

@@ -32,7 +32,7 @@ const TechPartnerSection = () => {
                     alt="Check"
                     width={24}
                     height={24}
-                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px]'
+                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
                   <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Perfectly managed worry-free delivery</p>
                 </div>
@@ -43,6 +43,7 @@ const TechPartnerSection = () => {
                     alt="Check"
                     width={24}
                     height={24}
+                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
                   <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Fast turn-around time</p>
                 </div>
@@ -52,6 +53,7 @@ const TechPartnerSection = () => {
                     alt="Check"
                     width={24}
                     height={24}
+                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] mt-[-5px]'
                   />
                   <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Multi-layered Quality Assurance</p>
                 </div>
@@ -61,6 +63,7 @@ const TechPartnerSection = () => {
                     alt="Check"
                     width={24}
                     height={24}
+                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
                   <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Idea, Confidentiality & Data Protection</p>
                 </div>
@@ -70,6 +73,7 @@ const TechPartnerSection = () => {
                     alt="Check"
                     width={24}
                     height={24}
+                    className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
                   <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>30 days free maintenance</p>
                 </div>

@@ -1,7 +1,9 @@
+
+
 'use client';
 import React from 'react'
 import Image from 'next/image'
-const Banner = () => {
+const JobDetailsBanner = () => {
      const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -19,7 +21,7 @@ const Banner = () => {
                 backgroundImage: `
                   linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%),
                   linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-                  url('/images/career.png')
+                  url('/images/Job-details.png')
                 `,
               }}
             ></div>
@@ -29,7 +31,7 @@ const Banner = () => {
               className="block md:hidden w-full h-[450px]  bg-cover bg-[position:70%_10%] bg-no-repeat"
               style={{
                 backgroundImage: `
-                  url('/images/career.png')
+                  url('/images/Job-details.png')
                 `
               }}
             ></div>
@@ -76,4 +78,4 @@ const Banner = () => {
   )
 }
 
-export default Banner
+export default JobDetailsBanner

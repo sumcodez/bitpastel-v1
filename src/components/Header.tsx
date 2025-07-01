@@ -77,7 +77,7 @@ const Header = () => {
   };
 
   const logoSrc = isScrolled
-    ? '/images/img_bitpastellogo02300dpi_3.png'
+    ? '/images/bitpastel_logo.png'
     : '/images/img_bitpastellogo02300dpi_1.png';
 
   return (
@@ -86,7 +86,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex md:justify-between justify-center items-center">
           <Link href="/">
-            <Image src={logoSrc} alt="Logo" width={125} height={48} className="md:h-12 h-8 w-auto" />
+            <Image src={logoSrc} alt="Logo" width={110} height={70} className="md:h-12 h-8 w-[122px] object-contain" />
           </Link>
           <nav className="hidden md:flex space-x-8 items-center">
             <Link href="/#services" onClick={(e) => handleLinkClick(e, 'services')} className={getLinkClass('services')}>
