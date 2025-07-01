@@ -212,7 +212,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '6',
       title: 'PHP Development - Internship',
       hashtags: ['#PHP', '#MySQL', '#JavaScript', '#HTML', '#CSS'],
-      experience: 'Freshers welcome',
+      experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are offering PHP internship opportunities for aspiring developers.',
       responsibilities: [
@@ -240,7 +240,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '7',
       title: 'UI/UX Designer Intern',
       hashtags: ['#UI', '#UX', '#Figma', '#AdobeXD', '#Photoshop', '#Illustrator'],
-      experience: 'Freshers welcome',
+      experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are looking for a creative UI/UX Design Intern to join our team.',
       responsibilities: [

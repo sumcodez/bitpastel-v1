@@ -55,14 +55,14 @@ export default function Home() {
       id: "6",
       title: "PHP Development - Internship",
       hashtags: ["#PHP", "#MySQL", "#JavaScript", "#HTML", "#CSS"],
-      experience: "2 - 6 Years",
+      experience: "0 - 1 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
       id: "7",
       title: "UI/UX Designer Intern",
       hashtags: ["#UI", "#UX", "#Figma", "#AdobeXD", "#Photoshop", "#Illustrator"],
-      experience: "2 - 6 Years",
+      experience: "0 - 1 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     }
   ];
