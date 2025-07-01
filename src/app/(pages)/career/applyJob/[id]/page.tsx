@@ -63,7 +63,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Strong analytical skills',
         'Excellent communication abilities',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Collaboration', 'Attention to detail', 'Time management'],
       desiredCandidateProfile: [
         'Self-motivated and results-oriented',
@@ -102,7 +102,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Knowledge of RESTful APIs',
         'Understanding of front-end technologies',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -130,7 +130,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Familiarity with e-commerce best practices',
         'Problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -159,7 +159,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Strong knowledge of JavaScript',
         'Experience with WooCommerce',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -199,7 +199,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Familiarity with RESTful APIs',
         'Strong problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -227,7 +227,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Eagerness to learn',
         'Good problem-solving skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',
@@ -255,7 +255,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Creative thinking',
         'Good communication skills',
       ],
-      location: 'Remote',
+      location: 'Kolkata',
       softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
       desiredCandidateProfile: [
         'Strong problem-solving skills',

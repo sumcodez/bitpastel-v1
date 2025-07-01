@@ -342,7 +342,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   />
                 </div>
                 <div className="bg-white p-[35px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
-                  <h2 className="text-center mb-4 font-light text-[#606568]">Get a Free Quote</h2>
+                  <h2 className="text-center text-[36px] font-source mb-4 font-light text-[#606568]">Get a Free Quote</h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
                     <div className="space-y-2">
                       {/* Combined "I want" and service selection */}
