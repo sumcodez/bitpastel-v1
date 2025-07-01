@@ -37,7 +37,7 @@ const Banner = () => {
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
               <div className="md:h-full content-center mx-auto max-w-[100%]">
-                <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-8 mb-4">
+                <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-5 mb-4">
                   <span>Work</span>
                   <span className="font-bold lg:inline md:block inline pl-2">@ Bitpastel</span>
                   <br/>
@@ -63,7 +63,7 @@ const Banner = () => {
                   ))}
                 </div>
       
-                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px]  font-inter"
+                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px]  font-inter"
                 onClick={() => scrollToSection('#jobCards')}
                 >
                  Explore Opportunities

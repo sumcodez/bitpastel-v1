@@ -80,7 +80,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
           <div className="md:h-full content-center mx-auto max-w-[100%]">
-            <h1 className="md:text-white text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-8 mb-4 font-roboto">
+            <h1 className="md:text-white text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-5 mb-4 font-roboto">
               <span>{jobTitle}</span>
             </h1>
   
@@ -123,7 +123,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
             </div>
   
             <button 
-              className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px] font-inter"
+              className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px] font-inter"
               onClick={() => scrollToSection(scrollToId)}
             >
               {applyButtonText}

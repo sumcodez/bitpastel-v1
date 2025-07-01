@@ -104,8 +104,6 @@ export default function Home() {
               gradientColors={job.gradientColors}
               onApply={() => handleApply(job.title)}
               onClick={() => handleApplyClick(job.id)}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
             />
           ))}
         </div>
