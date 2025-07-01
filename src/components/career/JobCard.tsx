@@ -20,49 +20,49 @@ export default function Home() {
       id: "1",
       title: "Marketing Manager",
       hashtags: ["#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))"
     },
     {
       id: "2",
       title: "Back End Developer",
       hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#Plugins", "#WordPress", "#WooCommerce", "#Shopify"],
-      experience: "Experience : 2 - 5 Years",
+      experience: "2 - 5 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
       id: "3",
       title: "Shopify Developer",
       hashtags: ["#Shopify", "#RubyonRails"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))"
     },
     {
       id: "4",
       title: "Senior WordPress Developer",
       hashtags: ["#WordPress", "#WooCommerce"," #PHP", "#MySQL" ,"#JavaScript" ,"#Plugins"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))"
     },
     {
       id: "5",
       title: "Full Stack Developer",
       hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#React", "#Angular", "#Vue", "#HTML", "#CSS"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0, 103, 183), rgb(140, 13, 99))"
     },
     {
       id: "6",
       title: "PHP Development - Internship",
       hashtags: ["#PHP", "#MySQL", "#JavaScript", "#HTML", "#CSS"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
       id: "7",
       title: "UI/UX Designer Intern",
       hashtags: ["#UI", "#UX", "#Figma", "#AdobeXD", "#Photoshop", "#Illustrator"],
-      experience: "Experience : 2 - 6 Years",
+      experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     }
   ];

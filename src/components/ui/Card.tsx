@@ -47,7 +47,7 @@ export default function Card({
           {/* Hashtags */}
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
-              <div className=" rounded-full  flex items-center justify-center mt-0.5 flex-shrink-0">
+              <div className=" rounded-full  flex items-center justify-center mt-1.5 flex-shrink-0">
                 <Image
                 src={'/images/badge.png'}
                 alt='badge icon'
@@ -78,7 +78,7 @@ export default function Card({
               />
             </div>
             <span className="">
-              {experience}
+              Experience: {experience}
             </span>
           </div>
         </div>

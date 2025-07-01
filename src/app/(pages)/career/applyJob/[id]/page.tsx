@@ -2,7 +2,8 @@
 
 import { notFound, useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
-import JoinTeam from '@/components/JoinTeamForm'
+import JoinTeam from '@/components/JoinTeamForm';
+import JobDetailsBanner from '@/components/career/JobDetailsBanner';
 
 interface JobListing {
   id: string;
@@ -13,6 +14,9 @@ interface JobListing {
   description: string;
   responsibilities?: string[];
   requirements?: string[];
+  location?: string;
+  softSkills?: string[];
+  desiredCandidateProfile?: string[];
 }
 
 export default function JobDetail({ params }: { params: { id: string } }) {
@@ -20,7 +24,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const [job, setJob] = useState<JobListing | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const jobWithForm = ["2", "4"];
+  const jobWithForm = ['2', '4'];
 
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
@@ -31,151 +35,239 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   // Mock data - replace with your actual data fetching
   const jobListings: JobListing[] = [
     {
-      id: "1",
-      title: "Marketing Manager",
-      hashtags: ["#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"],
-      experience: "Experience: 2 - 6 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))",
-      description: "We are looking for an experienced Marketing Manager to lead our marketing efforts and drive brand awareness.",
+      id: '1',
+      title: 'Marketing Manager',
+      hashtags: [
+        '#Upwork',
+        '#Freelancer',
+        '#OnlineBidding',
+        '#Leadership',
+        '#Itservice',
+        '#Itsales',
+      ],
+      experience: '2 - 6 Years',
+      gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
+      description:
+        'We are looking for an experienced Marketing Manager to lead our marketing efforts and drive brand awareness.',
       responsibilities: [
-        "Develop and implement marketing strategies",
-        "Manage digital marketing campaigns",
-        "Analyze market trends and competitors",
-        "Collaborate with sales and product teams"
+        'Develop and implement marketing strategies',
+        'Manage digital marketing campaigns',
+        'Analyze market trends and competitors',
+        'Collaborate with sales and product teams',
       ],
       requirements: [
         "Bachelor's degree in Marketing or related field",
-        "Proven experience in digital marketing",
-        "Strong analytical skills",
-        "Excellent communication abilities"
-      ]
+        'Proven experience in digital marketing',
+        'Strong analytical skills',
+        'Excellent communication abilities',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Collaboration', 'Attention to detail', 'Time management'],
+      desiredCandidateProfile: [
+        'Self-motivated and results-oriented',
+        'Ability to work independently and in a team',
+        'Strong organizational skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "2",
-      title: "Back End Developer",
-      hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#Plugins", "#WordPress", "#WooCommerce", "#Shopify"],
-      experience: "Experience: 2 - 5 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
-      description: "Join our team as a Back End Developer to build and maintain our server-side applications.",
+      id: '2',
+      title: 'Back End Developer',
+      hashtags: [
+        '#PHP',
+        '#MySQL',
+        '#CodeIgniter',
+        '#Laravel',
+        '#JavaScript',
+        '#Plugins',
+        '#WordPress',
+        '#WooCommerce',
+        '#Shopify',
+      ],
+      experience: '2 - 5 Years',
+      gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
+      description:
+        'Join our team as a Back End Developer to build and maintain our server-side applications.',
       responsibilities: [
-        "Develop and maintain server-side logic",
-        "Ensure high performance and responsiveness",
-        "Integrate front-end components",
-        "Implement security and data protection"
+        'Develop and maintain server-side logic',
+        'Ensure high performance and responsiveness',
+        'Integrate front-end components',
+        'Implement security and data protection',
       ],
       requirements: [
-        "Proficiency in PHP and MySQL",
-        "Experience with Laravel or CodeIgniter",
-        "Knowledge of RESTful APIs",
-        "Understanding of front-end technologies"
-      ]
+        'Proficiency in PHP and MySQL',
+        'Experience with Laravel or CodeIgniter',
+        'Knowledge of RESTful APIs',
+        'Understanding of front-end technologies',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "3",
-      title: "Shopify Developer",
-      hashtags: ["#Shopify", "#RubyonRails"],
-      experience: "Experience: 2 - 6 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))",
-      description: "We are seeking a Shopify Developer to create and manage e-commerce websites.",
+      id: '3',
+      title: 'Shopify Developer',
+      hashtags: ['#Shopify', '#RubyonRails'],
+      experience: '2 - 6 Years',
+      gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
+      description: 'We are seeking a Shopify Developer to create and manage e-commerce websites.',
       responsibilities: [
-        "Design and develop Shopify themes",
-        "Customize Shopify stores",
-        "Integrate third-party applications",
-        "Optimize store performance"
+        'Design and develop Shopify themes',
+        'Customize Shopify stores',
+        'Integrate third-party applications',
+        'Optimize store performance',
       ],
       requirements: [
-        "Experience with Shopify Liquid",
-        "Proficiency in HTML, CSS, and JavaScript",
-        "Familiarity with e-commerce best practices",
-        "Problem-solving skills"
-      ]
+        'Experience with Shopify Liquid',
+        'Proficiency in HTML, CSS, and JavaScript',
+        'Familiarity with e-commerce best practices',
+        'Problem-solving skills',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "4",
-      title: "Senior WordPress Developer",
-      hashtags: ["#WordPress", "#WooCommerce", "#PHP", "#MySQL", "#JavaScript", "#Plugins"],
-      experience: "Experience: 2 - 6 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))",
-      description: "We are looking for a Senior WordPress Developer to lead our WordPress projects.",
+      id: '4',
+      title: 'Senior WordPress Developer',
+      hashtags: ['#WordPress', '#WooCommerce', '#PHP', '#MySQL', '#JavaScript', '#Plugins'],
+      experience: '2 - 6 Years',
+      gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
+      description:
+        'We are looking for a Senior WordPress Developer to lead our WordPress projects.',
       responsibilities: [
-        "Develop custom WordPress themes and plugins",
-        "Optimize WordPress performance",
-        "Manage WooCommerce implementations",
-        "Mentor junior developers"
+        'Develop custom WordPress themes and plugins',
+        'Optimize WordPress performance',
+        'Manage WooCommerce implementations',
+        'Mentor junior developers',
       ],
       requirements: [
-        "5+ years of WordPress development experience",
-        "Expertise in PHP and MySQL",
-        "Strong knowledge of JavaScript",
-        "Experience with WooCommerce"
-      ]
+        '5+ years of WordPress development experience',
+        'Expertise in PHP and MySQL',
+        'Strong knowledge of JavaScript',
+        'Experience with WooCommerce',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "5",
-      title: "Full Stack Developer",
-      hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#React", "#Angular", "#Vue", "#HTML", "#CSS"],
-      experience: "Experience: 2 - 6 Years",
-      gradientColors: "linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))",
-      description: "We are seeking a Full Stack Developer to develop and maintain complex web applications.",
+      id: '5',
+      title: 'Full Stack Developer',
+      hashtags: [
+        '#PHP',
+        '#MySQL',
+        '#CodeIgniter',
+        '#Laravel',
+        '#JavaScript',
+        '#React',
+        '#Angular',
+        '#Vue',
+        '#HTML',
+        '#CSS',
+      ],
+      experience: '2 - 6 Years',
+      gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
+      description:
+        'We are seeking a Full Stack Developer to develop and maintain complex web applications.',
       responsibilities: [
-        "Design and develop user interfaces",
-        "Implement server-side logic",
-        "Collaborate with cross-functional teams",
-        "Optimize applications for maximum speed"
+        'Design and develop user interfaces',
+        'Implement server-side logic',
+        'Collaborate with cross-functional teams',
+        'Optimize applications for maximum speed',
       ],
       requirements: [
-        "Proficiency in both front-end and back-end technologies",
-        "Experience with databases (MySQL, MongoDB)",
-        "Familiarity with RESTful APIs",
-        "Strong problem-solving skills"
-      ]
+        'Proficiency in both front-end and back-end technologies',
+        'Experience with databases (MySQL, MongoDB)',
+        'Familiarity with RESTful APIs',
+        'Strong problem-solving skills',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "6",
-      title: "PHP Development - Internship",
-      hashtags: ["#PHP", "#MySQL", "#JavaScript", "#HTML", "#CSS"],
-      experience: "Experience: Freshers welcome",
-      gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
-      description: "We are offering PHP internship opportunities for aspiring developers.",
+      id: '6',
+      title: 'PHP Development - Internship',
+      hashtags: ['#PHP', '#MySQL', '#JavaScript', '#HTML', '#CSS'],
+      experience: 'Freshers welcome',
+      gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
+      description: 'We are offering PHP internship opportunities for aspiring developers.',
       responsibilities: [
-        "Assist in developing web applications",
-        "Learn and implement PHP best practices",
-        "Participate in code reviews",
-        "Support senior developers"
+        'Assist in developing web applications',
+        'Learn and implement PHP best practices',
+        'Participate in code reviews',
+        'Support senior developers',
       ],
       requirements: [
-        "Basic understanding of PHP",
-        "Familiarity with HTML, CSS, and JavaScript",
-        "Eagerness to learn",
-        "Good problem-solving skills"
-      ]
+        'Basic understanding of PHP',
+        'Familiarity with HTML, CSS, and JavaScript',
+        'Eagerness to learn',
+        'Good problem-solving skills',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
     },
     {
-      id: "7",
-      title: "UI/UX Designer Intern",
-      hashtags: ["#UI", "#UX", "#Figma", "#AdobeXD", "#Photoshop", "#Illustrator"],
-      experience: "Experience: Freshers welcome",
-      gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))",
-      description: "We are looking for a creative UI/UX Design Intern to join our team.",
+      id: '7',
+      title: 'UI/UX Designer Intern',
+      hashtags: ['#UI', '#UX', '#Figma', '#AdobeXD', '#Photoshop', '#Illustrator'],
+      experience: 'Freshers welcome',
+      gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
+      description: 'We are looking for a creative UI/UX Design Intern to join our team.',
       responsibilities: [
-        "Assist in creating wireframes and prototypes",
-        "Help design user interfaces",
-        "Participate in user research",
-        "Support design team with various projects"
+        'Assist in creating wireframes and prototypes',
+        'Help design user interfaces',
+        'Participate in user research',
+        'Support design team with various projects',
       ],
       requirements: [
-        "Basic knowledge of design tools (Figma, Adobe XD)",
-        "Understanding of UI/UX principles",
-        "Creative thinking",
-        "Good communication skills"
-      ]
-    }
+        'Basic knowledge of design tools (Figma, Adobe XD)',
+        'Understanding of UI/UX principles',
+        'Creative thinking',
+        'Good communication skills',
+      ],
+      location: 'Remote',
+      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      desiredCandidateProfile: [
+        'Strong problem-solving skills',
+        'Ability to work independently and in a team',
+        'Excellent communication skills',
+        'Adaptability to changing environments',
+      ],
+    },
   ];
 
   useEffect(() => {
     // Simulate API fetch
     const fetchJob = () => {
-      const foundJob = jobListings.find(job => job.id === params.id);
+      const foundJob = jobListings.find((job) => job.id === params.id);
       if (foundJob) {
         setJob(foundJob);
       }
@@ -201,102 +293,102 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     router.push('/career');
   };
 
-  return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 mt-28">
-      <div className="max-w-4xl mx-auto">
-        <button onClick={handleBackButtonClick} className="mb-6 text-blue-600 hover:text-blue-800 transition-colors">
-          Back to Job Listings
-        </button>
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          {/* Job Header with Gradient */}
-          <div 
-            className="h-48 flex items-end p-6"
-            style={{ background: job.gradientColors }}
-          >
-            <h1 className="text-3xl font-bold text-white">{job.title}</h1>
-          </div>
+  const customBenefits = [
+    {
+      text: job.hashtags.join(', '),
+      icon: '/job-details/1.png',
+      alt: 'Check icon',
+    },
+    {
+      text: job.experience,
+      icon: '/job-details/3.png',
+      alt: 'Check icon',
+    },
+    {
+      text: job.location ?? 'Location not specified',
+      icon: '/job-details/2.png',
+      alt: 'Check icon',
+    },
+  ];
 
-          {/* Job Content */}
-          <div className="p-6 md:p-8">
-            {/* Basic Info */}
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
-                <span className="text-gray-700 font-medium mr-4">{job.experience}</span>
-                <div className="flex flex-wrap gap-2">
-                  {job.hashtags.map((tag, index) => (
-                    <span 
-                      key={index} 
-                      className="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+  return (
+    <div className="relative">
+      <JobDetailsBanner
+        jobTitle="Senior React Developer"
+        backgroundImage="/images/Job-details.png"
+        benefits={customBenefits}
+        applyButtonText="Apply for this position"
+        scrollToId="applicationForm"
+      />
+
+      {/* Job Details Content */}
+      <div className="container mx-auto pt-12 lg:pt-16">
+        <div className="job-details overflow-hidden">
+          <div className="inner p-6 text-[16px] font-roboto text-[#2A2A2A]">
+            <p className="mb-10">
+              {job.description}
+              <br />
+              <br />
+              The current position requires the following skills:
+            </p>
+
+            {job.requirements && job.requirements.length > 0 && (
+              <div className="row flex flex-col md:flex-row mb-6">
+                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
+                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Technical Skills:</h3>
+                </div>
+                <div className="col-md-8 md:w-2/3">
+                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                    {job.requirements.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
+            )}
 
-              <button 
-                className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md transition-colors"
-                onClick={scrollToForm}
-              >
-                Apply Now
-              </button>
-            </div>
-
-            {/* Job Description */}
-            <div className="mb-8">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800">Job Description</h2>
-              <p className="text-gray-600 leading-relaxed">{job.description}</p>
-            </div>
-
-            {/* Responsibilities */}
-            {job.responsibilities && (
-              <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4 text-gray-800">Key Responsibilities</h2>
-                <ul className="list-disc pl-5 space-y-2 text-gray-600">
-                  {job.responsibilities.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
+            {job.softSkills && job.softSkills.length > 0 && (
+              <div className="row flex flex-col md:flex-row mb-6">
+                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
+                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Soft Skills:</h3>
+                </div>
+                <div className="col-md-8 md:w-2/3">
+                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                    {job.softSkills.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
 
-            {/* Requirements */}
-            {job.requirements && (
-              <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4 text-gray-800">Requirements</h2>
-                <ul className="list-disc pl-5 space-y-2 text-gray-600">
-                  {job.requirements.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
+            {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
+              <div className="row flex flex-col md:flex-row mb-6">
+                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
+                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Desired Candidate Profile:</h3>
+                </div>
+                <div className="col-md-8 md:w-2/3">
+                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                    {job.desiredCandidateProfile.map((profile, index) => (
+                      <li key={index}>{profile}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
-
-
-
-            {/* Apply Button at Bottom */}
-            {/* <div className="pt-6 border-t border-gray-200">
-              <button 
+          </div>
+          {/* Apply Div */}
+          <div className="pt-6" ref={formRef} id="applicationForm">
+            {jobWithForm.includes(job.id) ? (
+              <JoinTeam title="Apply Now" />
+            ) : (
+              <button
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
                 onClick={() => alert(`Applied for ${job.title} position!`)}
               >
-                Apply for this Position
+                Apply via Naukri.com
               </button>
-            </div> */}
-
-            {/* Apply Div */}
-            <div className="pt-6 border-t border-gray-200" ref={formRef}>
-              {jobWithForm.includes(job.id) ? (
-                <JoinTeam title='Apply Now'/>
-              ) : (
-                <button 
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
-                  onClick={() => alert(`Applied for ${job.title} position!`)}
-                >
-                  Apply via Naukri.com
-                </button>
-              )}
-            </div>
+            )}
           </div>
         </div>
       </div>

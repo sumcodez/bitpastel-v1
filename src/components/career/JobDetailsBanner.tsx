@@ -1,81 +1,138 @@
-
-
 'use client';
-import React from 'react'
-import Image from 'next/image'
-const JobDetailsBanner = () => {
-     const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-        setTimeout(() => {
-          window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-        }, 100);
-      }
-  };
-  return (
-    <div>
-          <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
-            <div
-              className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `
-                  linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%),
-                  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-                  url('/images/Job-details.png')
-                `,
-              }}
-            ></div>
-      
-            {/* Mobile background image on top */}
-            <div
-              className="block md:hidden w-full h-[450px]  bg-cover bg-[position:70%_10%] bg-no-repeat"
-              style={{
-                backgroundImage: `
-                  url('/images/Job-details.png')
-                `
-              }}
-            ></div>
-      
-            {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
-              <div className="md:h-full content-center mx-auto max-w-[100%]">
-                <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-8 mb-4">
-                  <span>Work</span>
-                  <span className="font-bold lg:inline md:block inline pl-2">@ Bitpastel</span>
-                  <br/>
-                   on Awesome Projects
-                </h1>
-      
-                <div className="md:text-white text-[#212529]">
-                  {[
-                    'Dynamic Teams working on new ideas',
-                    'Enjoy a Happy work enviroment',
-                    'Fast-track career progress',
-                  ].map((text, idx) => (
-                    <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
-                      <Image
-                        src="/images/img_materialsymbolscheckrounded.svg"
-                        alt="Check"
-                        width={24}
-                        height={24}
-                        className="w-auto invert md:invert-0"
-                      />
-                      <p className="font-roboto  text-[16px] font-[400]">{text}</p>
-                    </div>
-                  ))}
-                </div>
-      
-                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px]  font-inter"
-                onClick={() => scrollToSection('#jobCards')}
-                >
-                 Explore Opportunities
-                </button>
-              </div>
-            </div>
-          </section>
-        
-    </div>
-  )
+import React from 'react';
+import Image from 'next/image';
+
+interface BenefitItem {
+  text: string;
+  icon: string;
+  alt: string;
 }
 
-export default JobDetailsBanner
+interface JobDetailsBannerProps {
+  jobTitle: string;
+  backgroundImage: string;
+  mobileBackgroundImage?: string; // Optional if same as desktop
+  benefits: BenefitItem[];
+  applyButtonText?: string;
+  scrollToId?: string;
+  overlayGradient?: string;
+  overlayColor?: string;
+}
+
+const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
+  jobTitle = "Full Stack Developer",
+  backgroundImage = "/images/Job-details.png",
+  mobileBackgroundImage,
+  benefits = [
+    {
+      text: 'Dynamic Teams working on new ideas',
+      icon: '/images/img_materialsymbolscheckrounded.svg',
+      alt: 'Check icon'
+    },
+    {
+      text: 'Enjoy a Happy work environment',
+      icon: '/images/img_materialsymbolscheckrounded.svg',
+      alt: 'Check icon'
+    },
+    {
+      text: 'Fast-track career progress',
+      icon: '/images/img_materialsymbolscheckrounded.svg',
+      alt: 'Check icon'
+    }
+  ],
+  applyButtonText = "Apply Now",
+  scrollToId = "jobCards",
+  overlayGradient = "linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%)",
+  overlayColor = "rgba(0, 0, 0, 0.2)"
+}) => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  return (
+    <div>
+      <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
+        {/* Desktop Background */}
+        <div
+          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `
+              ${overlayGradient},
+              linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
+              url(${backgroundImage})
+            `,
+          }}
+        ></div>
+  
+        {/* Mobile Background */}
+        <div
+          className="block md:hidden w-full h-[450px] bg-cover bg-[position:70%_10%] bg-no-repeat"
+          style={{
+            backgroundImage: `url(${mobileBackgroundImage || backgroundImage})`
+          }}
+        ></div>
+  
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
+          <div className="md:h-full content-center mx-auto max-w-[100%]">
+            <h1 className="md:text-white text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-8 mb-4 font-roboto">
+              <span>{jobTitle}</span>
+            </h1>
+  
+            <div className="md:text-white text-[#212529]">
+              {/* First Benefit */}
+              <div className="flex md:gap-4 gap-2 mb-[15px] items-start">
+                <Image
+                  src={benefits[0].icon}
+                  alt={benefits[0].alt}
+                  width={24}
+                  height={24}
+                  className="w-auto invert md:invert-0 mt-1.5"
+                />
+                <p className="font-roboto text-[18px] font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
+              </div>
+              
+              {/* Second Benefit */}
+              <div className="flex md:gap-4 gap-2 mb-[15px] items-center">
+                <Image
+                  src={benefits[1].icon}
+                  alt={benefits[1].alt}
+                  width={24}
+                  height={24}
+                  className="w-auto invert md:invert-0"
+                />
+                <p className="font-roboto text-[18px] font-[400]">Experience: {benefits[1].text}</p>
+              </div>
+              
+              {/* Third Benefit */}
+              <div className="flex md:gap-4 gap-2 mb-[15px] items-center">
+                <Image
+                  src={benefits[2].icon}
+                  alt={benefits[2].alt}
+                  width={24}
+                  height={24}
+                  className="w-auto invert md:invert-0"
+                />
+                <p className="font-roboto text-[18px] font-[400]">Location: {benefits[2].text}</p>
+              </div>
+            </div>
+  
+            <button 
+              className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px] font-inter"
+              onClick={() => scrollToSection(scrollToId)}
+            >
+              {applyButtonText}
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default JobDetailsBanner;
