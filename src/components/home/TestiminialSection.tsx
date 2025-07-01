@@ -191,11 +191,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} md:rounded-[20px] testimonial-card-parent rounded-[10px] md:px-12 px-8 py-8 text-[rgba(33,37,41,1)] flex flex-col`}
+              className={`${testimonial.bgColor} md:rounded-[20px] ${!isMobile ? "testimonial-card-parent" : ""} rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
             >
               <div className="flex-grow">
-                <div className= {`testimonial-card-content ${!isMobile ? 'testimonial-card-content' : ''}`}>
-                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[16px] line-clamp-4'} leading-relaxed`}>
+                <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>
+                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[16px] line-clamp-4 leading-[26px]'} `}>
                     "{testimonial.message}"
                   </p>
                 </div>
