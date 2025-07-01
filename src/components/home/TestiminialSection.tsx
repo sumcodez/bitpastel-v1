@@ -187,11 +187,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       <div className="container mx-auto px-4">
         <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-8 mb-3">Stories</h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-dark">
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-6 text-[rgba(33,37,41,1)] flex flex-col ${
+              className={`${testimonial.bgColor} rounded-2xl px-12 py-8 text-[rgba(33,37,41,1)] flex flex-col ${
                 !isMobile ? 'h-[250px] hover:h-auto transition-all duration-300 ease-in-out' : 'w-full'
               }`}
             >

@@ -90,7 +90,7 @@ const CultureSection = () => {
                   </h3>
                 </div>
                 {/* <ul className='mobile-none'> */}
-                <ul className='md:pl-[57px] pl-[20px]'>
+                <ul className='md:pl-[57px] pl-[20px] text-dark '>
                   {feature.items.map((item, index) => (
                     <li key={index} className="md:leading-[1] leading-[normal] md:text-[16px] text-[12px] md:mb-3 mb-1">
                       {item}

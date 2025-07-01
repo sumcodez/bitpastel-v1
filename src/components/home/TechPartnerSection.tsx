@@ -25,7 +25,7 @@ const TechPartnerSection = () => {
                 <span className="font-black text-accent-green">Tech Partner</span>
                 <span className="font-semibold"> out there</span>
               </h2>
-              <div className="md:space-y-3 space-y-2 leading-[1]">
+              <div className="md:space-y-3 space-y-2 leading-[1] text-dark ">
                 <div className='flex md:gap-4 gap-2 align-middle'>
                   <Image
                     src="/images/img_materialsymbolscheckrounded_teal_300.svg"
@@ -34,7 +34,7 @@ const TechPartnerSection = () => {
                     height={24}
                     className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
-                  <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Perfectly managed worry-free delivery</p>
+                  <p className='font-[400] font-roboto text-dark '>Perfectly managed worry-free delivery</p>
                 </div>
 
                <div className='flex md:gap-4 gap-2 align-middle'>
@@ -45,7 +45,7 @@ const TechPartnerSection = () => {
                     height={24}
                     className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
-                  <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Fast turn-around time</p>
+                  <p className='font-[400] font-roboto text-dark '>Fast turn-around time</p>
                 </div>
                  <div className='flex md:gap-4 gap-2 align-middle'>
                   <Image
@@ -55,7 +55,7 @@ const TechPartnerSection = () => {
                     height={24}
                     className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] mt-[-5px]'
                   />
-                  <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Multi-layered Quality Assurance</p>
+                  <p className='font-[400] font-roboto text-dark '>Multi-layered Quality Assurance</p>
                 </div>
                  <div className='flex md:gap-4 gap-2 align-middle'>
                   <Image
@@ -65,7 +65,7 @@ const TechPartnerSection = () => {
                     height={24}
                     className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
-                  <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>Idea, Confidentiality & Data Protection</p>
+                  <p className='font-[400] font-roboto text-dark '>Idea, Confidentiality & Data Protection</p>
                 </div>
                <div className='flex md:gap-4 gap-2 align-middle'>
                   <Image
@@ -75,7 +75,7 @@ const TechPartnerSection = () => {
                     height={24}
                     className='md:w-[auto] w-[20px] md:h-[auto] h-[20px] md:mt-[-5px] mt-[-2px]'
                   />
-                  <p className='font-[400] font-roboto text-[rgba(33,37,41,1)]'>30 days free maintenance</p>
+                  <p className='font-[400] font-roboto text-dark '>30 days free maintenance</p>
                 </div>
               </div>
             </div>
