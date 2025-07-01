@@ -31,14 +31,14 @@ const SatisfiedClientSection = () => {
   return (
     <section className="pt-12 lg:pt-16  bg-white" id='#client'>
       <div className="container mx-auto px-4">
-        <h2 className=" md:leading-[1] font-source font-bold text-center text-dark mb-2">
+        <h2 className=" md:leading-[1] font-source font-bold text-center text-dark md:mb-8 mb-3">
           Satisfied Clientele Worldwide
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] md:gap-28 gap-4 items-center">
           {/* Map Section - Takes full width on mobile, remaining space on desktop */}
           <div className="relative w-full bg-cover bg-center rounded-lg">
             <Image
-              src="/images/MAP.svg"
+              src="/images/new_map.png"
               alt="World Map with Pointers"
               width={998}
               height={574}
@@ -47,7 +47,7 @@ const SatisfiedClientSection = () => {
           </div>
 
           {/* Stats Section - Auto width on desktop, full width on mobile */}
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-1 md:gap-8 gap-2 lg:pl-12 w-auto items-end">
+          <div className="grid grid-cols-4 h-full md:grid-cols-4 lg:grid-cols-1 md:gap-8 gap-2 lg:pl-12 w-auto items-end">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <Image

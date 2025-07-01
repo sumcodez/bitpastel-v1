@@ -465,7 +465,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Privacy Policy */}
                       <p className="text-[11px] mt-1 text-gray-500 text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
-                        <a href="#" className="text-blue-500 hover:underline">
+                        <a href="#" className="text-[#23b428]">
                           Privacy Policy
                         </a>
                       </p>

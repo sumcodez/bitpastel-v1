@@ -13,7 +13,7 @@ export const metadata = {
   description: 'Bitpastel is a software development company that specializes in Shopify Plus Development, E-commerce Development, Mobile Apps, Websites, Web Services, UI Design & Custom Software Systems for startups & enterprises',
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' }
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }
     ],
   },
 }
