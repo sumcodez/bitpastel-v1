@@ -191,24 +191,22 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl px-12 py-8 text-[rgba(33,37,41,1)] flex flex-col ${
-                !isMobile ? 'h-[250px] hover:h-auto transition-all duration-300 ease-in-out' : 'w-full'
-              }`}
+              className={`${testimonial.bgColor} md:rounded-[20px] testimonial-card-parent rounded-[10px] md:px-12 px-8 py-8 text-[rgba(33,37,41,1)] flex flex-col`}
             >
-              <div className="flex-grow overflow-hidden">
-                <div className={`${!isMobile ? 'line-clamp-4 hover:line-clamp-none transition-all duration-300' : ''}`}>
-                  <p className={`${isMobile ? 'text-[12px]' : 'text-[16px]'} leading-relaxed`}>
+              <div className="flex-grow">
+                <div className= {`testimonial-card-content ${!isMobile ? 'testimonial-card-content' : ''}`}>
+                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[16px] line-clamp-4'} leading-relaxed`}>
                     "{testimonial.message}"
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-transparent">
+              <div className="flex items-top space-x-4 mt-4 pt-4 border-t border-transparent">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
                   width={56}
                   height={56}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover md:h-[56px] md:w-[56px] w-[30px] h-[30px]"
                 />
                 <div>
                   <h4 className={`font-[600] ${isMobile ? 'text-[12px]' : 'text-[20px]'} font-source`}>{testimonial.name}</h4>

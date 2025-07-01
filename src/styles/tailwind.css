@@ -343,6 +343,21 @@ width: 100%;
 .instagram-area-top {
     grid-template-columns: 60% 40% !important;
 }
+
+.testimonial-card-parent .testimonial-card-content{
+  max-height: 104px;
+  transition: all 3s ease;
+}
+.testimonial-card-parent .testimonial-card-content p{
+  transition: all 3s ease;
+}
+.testimonial-card-parent:hover .testimonial-card-content{
+  max-height: 500px;
+}
+.testimonial-card-parent:hover .testimonial-card-content p{
+overflow: visible ;
+display: block;
+}
 @media screen and (max-width: 767px) {
     .instagram-area-top {
         grid-template-columns: 1fr !important;
