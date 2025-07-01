@@ -35,7 +35,7 @@ const Banner = () => {
             ></div>
       
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
+            <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
               <div className="md:h-full content-center mx-auto max-w-[100%]">
                 <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-8 mb-4">
                   <span>Work</span>
