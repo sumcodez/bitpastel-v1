@@ -457,7 +457,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Submit Button */}
                       <button
                         type="submit"
-                        className="w-full bg-[#23b428] text-white py-2 px-6 rounded-lg transition-colors duration-200"
+                        className="w-full btn bg-[#23b428] text-white transition-colors duration-200"
                       >
                         Lets Work Together
                       </button>
@@ -473,7 +473,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Chat Button */}
                       <button
                         type="button"
-                        className="w-full border-2 border-[#23b428] text-[#23b428] hover:bg-green-50 py-2 px-6 rounded-lg transition-colors duration-200"
+                        className="w-full btn border-[1px] border-[#23b428] text-[#23b428] hover:bg-[#23b428] hover:text-white transition-all duration-300"
                       >
                         Chat with Us
                       </button>

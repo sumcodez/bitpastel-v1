@@ -77,7 +77,7 @@ const Header = () => {
   };
 
   const logoSrc = isScrolled
-    ? '/images/bitpastel_logo.png'
+    ? '/images/bitpastel_logo_pastel.png'
     : '/images/img_bitpastellogo02300dpi_1.png';
 
   return (

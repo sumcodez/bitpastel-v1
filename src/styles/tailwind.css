@@ -335,7 +335,10 @@ animation-name: hvr-ripple-out;
 width: 100%;
 }
 .life-at-bitpastel .img {
-    width: 100%;
+    width: auto;
+}
+.title-top-spaccer .icon-title img{
+  width: 40px !important;
 }
 .instagram-area-top {
     grid-template-columns: 60% 40% !important;
@@ -345,6 +348,31 @@ width: 100%;
         grid-template-columns: 1fr !important;
         margin-top: 0 !important;
     }
+    .life-at-bitpastel .common-lb {
+    grid-template-columns: 1fr;
+}
+    .life-at-bitpastel .common-lb.fourth-lb,
+     .spacer-top {
+        margin-top: 70px;
+    }
+        .title-top-spaccer {
+        padding-top: 45px;
+        padding-bottom: 20px;
+    }
+    .activity-job li {
+    text-align: center !important;
+}
+.title-middle {
+        padding-top: 70px;
+    }
+        .title-spaccer {
+        padding: 70px 20px 0;
+    }
+    .title-top-spaccer .icon-title img {
+    width: 30px !important;
+    height: 30px;
+    right: 7px;
+}
 }
 
 

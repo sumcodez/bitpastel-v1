@@ -13,9 +13,9 @@ return (
         />
       </div>
       <div className="img rt">
-        <div className="icon-title">
-          <h2 className="tt txt-start tx-till bottom-spaccer">
-            Bitpastel<br />
+        <div className="icon-title md:inline-block">
+          <h2 className="tt txt-start text-accent-green md:mb-0 bottom-spaccer leading-[normal] font-[600]">
+            Bitpastel< br className="md:block hidden"/>
             Townhall 2024
           </h2>
         </div>
@@ -108,20 +108,21 @@ return (
   </div>
 
   <div className="common-lb third-lb lazy-image-section">
-    <div className="img lt top-speccer title-top-spaccer">
-      <div className="icon-title">
-        <p className="tt txt-start tx-till bottom-spaccer">
+    <div className=" lt top-speccer title-top-spaccer">
+      <div className="icon-title relative inline-block">
+        <h4 className="tt md:text-start text-center text-accent-green lg:text-[32px] md:text-[39px] text-[24px]  leading-[normal] font-[600]  bottom-spaccer">
           Year-end<br />
           Celebration 2023
-        </p>
+        </h4>
         <img
-          className="celeberation-icon"
+          className="celeberation-icon w-[40px]"
           src="/images/kisspng-emoji-sticker-confetti-party-emoticon-congrats-5abd8ba4cd10c4.99105313152237149284 (1).png"
+          alt="celeberation-icon"
         />
       </div>
       <ul className="activity-job">
-        <li><span>#teamlunch</span></li>
-        <li><span>#holidayseason</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#teamlunch</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#holidayseason</span></li>
       </ul>
     </div>
     <div className="img rt">
@@ -157,7 +158,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h2 className="tt text-center font-[400]">Bitpastel Townhall 2023</h2>
+    <h4 className="tt text-center lg:text-[32px] md:text-[39px] text-[24px]  leading-[normal] text-accent-green font-[600] md:py-[40px]">Bitpastel Townhall 2023</h4>
   </div>
 
   <div className="first-part">
@@ -268,7 +269,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <p className="tt tx-till">Culture at Bitpastel</p>
+    <h4 className="tt text-center text-accent-green lg:text-[32px] md:text-[39px] text-[24px] leading-[normal] font-[600]">Culture at Bitpastel</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -293,14 +294,14 @@ return (
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
-    <div className="img lt top-speccer">
-      <p className="tt txt-start tx-till bottom-spaccer">
+    <div className="img lt top-speccer inline-block">
+      <h4 className="tt md:text-start text-center text-accent-green lg:text-[32px] md:text-[39px] text-[24px]  leading-[normal] font-[600] bottom-spaccer">
         Year-end<br />
         Celebration 2022
-      </p>
+      </h4>
       <ul className="activity-job">
-        <li><span>#movietime</span></li>
-        <li><span>#teamdinner</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#movietime</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#teamdinner</span></li>
       </ul>
     </div>
     <div className="img rt">
@@ -336,7 +337,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <p className="tt tx-till">Sunday Brunch at Westin</p>
+    <h4 className="tt text-accent-green lg:text-[32px] md:text-[39px] text-[24px]  font-[600] leading-[normal] text-center md:py-[40px]">Sunday Brunch at Westin</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -361,14 +362,14 @@ return (
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
-    <div className="img lt top-speccer">
-      <p className="tt txt-start bottom-spaccer tx-till">
+    <div className="img lt top-speccer inline-block w-[auto]">
+      <h4 className="tt md:text-start text-center bottom-spaccer lg:text-[32px] md:text-[39px] text-[24px] font-[600] leading-[normal] text-accent-green">
         Bitpastel<br />
         Townhall 2022
-      </p>
+      </h4>
       <ul className="activity-job">
-        <li><span>#BitpastelDay</span></li>
-        <li><span>#5yearsofawesomeness</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#BitpastelDay</span></li>
+        <li className="md:text-[16px] text-[15px]"><span>#5yearsofawesomeness</span></li>
       </ul>
     </div>
     <div className="img lt">
@@ -446,7 +447,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h2 className="tt text-center font-[400]">Bitpastel Townhall 2021</h2>
+    <h4 className="tt text-center lg:text-[32px] md:text-[39px] text-[24px] font-[600] leading-[normal] md:py-[40px] text-accent-green">Bitpastel Townhall 2021</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -492,7 +493,7 @@ return (
   </div>
 
   <div className="img lt title-spaccer">
-    <p className="tt text-center tx-till culture">Culture at Bitpastel</p>
+    <h4 className="tt text-center text-accent-green leading-[normal] culture lg:text-[32px] md:text-[39px] text-[24px] font-[600]">Culture at Bitpastel</h4>
     <p className="desc text-center desc-spaccer">
       At Bitpastel, we have a progressive next generation work culture
     </p>
