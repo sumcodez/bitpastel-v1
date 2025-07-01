@@ -374,6 +374,18 @@ width: 100%;
     right: 7px;
 }
 }
+.modal-container input::placeholder,
+.modal-container textarea::placeholder
+{
+  color:#B3B3B3;
+  font-weight: 100;
+}
+.modal-container input:focus-visible{
+  border:none;
+  outline: none;
+}
+
+
 
 
 /* ==================hero section ==================== */

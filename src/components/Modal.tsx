@@ -354,16 +354,16 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                             validationErrors.service ? 'text-red-500' : ''
                           }`}
                         >
-                          <span className="text-gray-600">I want</span>
+                          <span className="text-[#575757] font-[100]">I want</span>
                           <span
-                            className={`ml-12 text-[#2a2a2a] font-light ${
-                              validationErrors.service ? 'text-red-500' : 'text-gray-900'
+                            className={`ml-12 text-[#B3B3B3] font-light ${
+                              validationErrors.service ? 'text-red-500' : ''
                             }`}
                           >
                             {formData.service || 'select*'}
                           </span>
                           <ChevronDown
-                            className={`ml-auto w-4 h-4 text-gray-400 transition-transform ${
+                            className={`ml-auto mr-[20px] w-4 h-4 text-[#B3B3B3] transition-transform ${
                               isServiceDropdownOpen ? 'rotate-180' : ''
                             }`}
                           />

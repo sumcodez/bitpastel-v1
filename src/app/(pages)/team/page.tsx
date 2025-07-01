@@ -5,6 +5,7 @@ import TeamBanner from '@/components/team/TeamBanner'
 import TeamEngage from '@/components/team/TeamEngage'
 import NewTeamtestimonial from '@/components/team/NewTeamtestimonial'
 import NewTeamCollage from '@/components/team/NewTeamCollage'
+import Common_banner from '@/components/ui/Common_banner'
 const page = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const page = () => {
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}
      <TeamEngage/>
+     <Common_banner/>
     </div>
     </>
   )
