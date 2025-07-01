@@ -46,6 +46,7 @@ body {
   padding: 0;
   font-size: 16px;
   box-sizing: border-box;
+  color: #2a2a2a;
 }
 h1 {
   font-size: 38px ;
@@ -293,13 +294,13 @@ justify-content: center !important;
       box-shadow: 1px 1px 4px #ccc;
       position: relative;
 }
-.card:hover{
+/* .card:hover{
   transition: all .4s ease;
     cursor: pointer;
     -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
     transform: translate3D(0, -1px, 0) scale(1.03);
     transition: all .5s ease;
-}
+} */
 
 .card .card-button{
  position: relative;
@@ -329,4 +330,22 @@ animation-name: hvr-ripple-out;
         opacity: 0
     }
 }
+
+.life-at-bitpastel .common-lb img {
+width: 100%;
+}
+.life-at-bitpastel .img {
+    width: 100%;
+}
+.instagram-area-top {
+    grid-template-columns: 60% 40% !important;
+}
+@media screen and (max-width: 767px) {
+    .instagram-area-top {
+        grid-template-columns: 1fr !important;
+        margin-top: 0 !important;
+    }
+}
+
+
 /* ==================hero section ==================== */

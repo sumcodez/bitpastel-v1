@@ -84,7 +84,7 @@ export default function Home() {
             To apply for any of the current job openings, please go to the respective box below and click on the{' '}
             <span className=" font-semibold text-accent-green">"Apply"</span> button.
           </p>
-          <p className="text-gray-700 text-base mt-2 md:block inline">
+          <p className="text-gray-700 text-base md:block inline">
             If you don't see any suitable vacancy, send your resume{' '}
             <button className="text-accent-green font-medium pr-1"
             onClick={() => scrollToSection('joinTeamForm')}

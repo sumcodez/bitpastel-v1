@@ -1,6 +1,6 @@
 const NewTeamCollage = () => {
 return (
-<section className="life-at-bitpastel team-image-wrapper">
+<section className="life-at-bitpastel team-image-wrapper md:pt-[100px] pt-12">
   <div className="top-align-thumbnail">
     <div className="common-lb instagram-area-top fourth-lb lazy-image-section">
       <div className="img lt">
@@ -14,10 +14,10 @@ return (
       </div>
       <div className="img rt">
         <div className="icon-title">
-          <p className="tt txt-start tx-till bottom-spaccer">
+          <h2 className="tt txt-start tx-till bottom-spaccer">
             Bitpastel<br />
             Townhall 2024
-          </p>
+          </h2>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <p className="tt tx-till">Bitpastel Townhall 2023</p>
+    <h2 className="tt text-center font-[400]">Bitpastel Townhall 2023</h2>
   </div>
 
   <div className="first-part">
@@ -446,7 +446,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <p className="tt tx-till">Bitpastel Townhall 2021</p>
+    <h2 className="tt text-center font-[400]">Bitpastel Townhall 2021</h2>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">

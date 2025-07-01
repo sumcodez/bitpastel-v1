@@ -31,13 +31,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-white md:leading-[40px] leading-[25px] md:mb-8 mb-4">
+          <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-8 mb-4">
             <span>Crafting </span>
             <span className="font-bold lg:inline md:block inline">Digital Solutions</span>
             <span className="block"> for your business</span>
           </h1>
 
-          <div className="md:text-white">
+          <div className="md:text-white text-[#212529]">
             {[
               'Shopify Plus & eCom Development',
               'Web & Mobile App Development',
@@ -51,7 +51,7 @@ const HeroSection = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="font-roboto  text-[16px] font-[400]">{text}</p>
+                <p className="font-roboto text-[18px] font-[400]">{text}</p>
               </div>
             ))}
           </div>

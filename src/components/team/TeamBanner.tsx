@@ -30,7 +30,7 @@ const TeamBanner = () => {
 
       {/* Mobile background image on top */}
       <div
-        className="block md:hidden w-full h-[360px]  bg-cover bg-[position:80%_10%] bg-no-repeat"
+        className="block md:hidden w-full h-[450px]  bg-cover bg-[position:76%_10%] bg-no-repeat"
         style={{
           backgroundImage: `
             url('/images/team_banner.jpg')
@@ -41,7 +41,7 @@ const TeamBanner = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-white md:leading-[48px] leading-[30px] mb-4">
+          <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-8 mb-4">
             <span>The </span>
             <span className="font-bold lg:inline inline">Team </span>
             who 
@@ -49,13 +49,13 @@ const TeamBanner = () => {
             makes it happen
           </h1>
 
-          <div className="md:text-white">
+          <div className="md:text-white text-[#212529]">
             {[
               'Shopify Plus & eCom Development',
               'Web & Mobile App Development',
               'Marketing Solutions',
             ].map((text, idx) => (
-              <div key={idx} className="flex md:gap-4 gap-2 mb-1 items-center">
+              <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -63,12 +63,12 @@ const TeamBanner = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="md:leading-[35px] leading-[24px] text-[16px] font-[400]">{text}</p>
+                <p className="font-roboto text-[18px] font-[400]">{text}</p>
               </div>
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-8  font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[10px] font-inter"
           onClick={() => scrollToSection('team')}
           >
            Meet the Team
