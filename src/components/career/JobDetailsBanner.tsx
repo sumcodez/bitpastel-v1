@@ -18,33 +18,33 @@ interface JobDetailsBannerProps {
   scrollToId?: string;
   overlayGradient?: string;
   overlayColor?: string;
-  buttonanimation?: string
+  buttonanimation?: string;
 }
 
 const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
-  jobTitle = "Full Stack Developer",
-  backgroundImage = "/images/apply-job.png",
+  jobTitle = 'Full Stack Developer',
+  backgroundImage = '/images/apply-job.png',
   mobileBackgroundImage,
   buttonanimation,
   benefits = [
     {
       text: 'Dynamic Teams working on new ideas',
       icon: '/images/img_materialsymbolscheckrounded.svg',
-      alt: 'Check icon'
+      alt: 'Check icon',
     },
     {
       text: 'Enjoy a Happy work environment',
       icon: '/images/img_materialsymbolscheckrounded.svg',
-      alt: 'Check icon'
+      alt: 'Check icon',
     },
     {
       text: 'Fast-track career progress',
       icon: '/images/img_materialsymbolscheckrounded.svg',
-      alt: 'Check icon'
-    }
+      alt: 'Check icon',
+    },
   ],
-  applyButtonText = "Apply Now",
-  scrollToId = "jobCards",
+  applyButtonText = 'Apply Now',
+  scrollToId = 'jobCards',
   // overlayGradient = "none",
   // overlayColor = "rgba(255, 255, 255, 0.2)"
 }) => {
@@ -72,12 +72,11 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
         {/* Mobile Background */}
         <div
-  className="md:hidden h-[250px] absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: 'url("/images/job_details_mob2.jpg")',
-  }}
-></div>
-
+          className="md:hidden h-[250px] absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("/images/job_details_mob2.jpg")',
+          }}
+        ></div>
 
         {/* Content - Modified to align right */}
         <div className="relative z-10 container mx-auto px-4 md:h-full text-left">
@@ -85,7 +84,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
             <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-2 md:text-left ">
               <span>{jobTitle}</span>
             </h1>
-  
+
             <div className="md:text-primary-white text-title md:text-left text-center mt-[1.8rem]">
               {/* First Benefit */}
               <div className="flex md:gap-4 gap-2 mb-[5px] items-start">
@@ -96,21 +95,32 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mt-1.5"
                 />
-                <p className="text-title font-roboto text-left subheading font-[400]  whitespace-normal break-words">{benefits[0].text}</p>
+                <p className="text-title font-roboto text-left subheading font-[400]  whitespace-normal break-words">
+                  {benefits[0].text}
+                </p>
               </div>
-              
+
               {/* Second Benefit */}
               <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
                 <Image
-                  src={benefits[1].icon}
-                  alt={benefits[1].alt}
+                  src="/images/img_materialsymbolscheckrounded.svg"
+                  alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0 mb-[0.368rem] mt-1"
+                  className="w-auto md:block hidden"
                 />
-                <p className="subheading font-[400] text-left text-title font-roboto">Experience: {benefits[1].text}</p>
+                <Image
+                  src="/images/img_materialsymbolscheckrounded_teal_300.svg"
+                  alt="Check"
+                  width={24}
+                  height={24}
+                  className="w-auto md:hidden block"
+                />
+                <p className="subheading font-[400] text-left text-title font-roboto">
+                  Experience: {benefits[1].text}
+                </p>
               </div>
-              
+
               {/* Third Benefit */}
               <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
                 <Image
@@ -120,11 +130,13 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="subheading font-[400] text-left text-title font-roboto">Location: {benefits[2].text}</p>
+                <p className="subheading font-[400] text-left text-title font-roboto">
+                  Location: {benefits[2].text}
+                </p>
               </div>
             </div>
-  
-            <button 
+
+            <button
               className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-primary-white mt-[25px] font-roboto`}
               onClick={() => scrollToSection(scrollToId)}
             >

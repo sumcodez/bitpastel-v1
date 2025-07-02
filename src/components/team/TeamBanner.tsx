@@ -1,10 +1,8 @@
 'use client';
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
 const TeamBanner = () => {
-
-  
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -34,7 +32,7 @@ const TeamBanner = () => {
         style={{
           backgroundImage: `
             url('/images/team_banner.jpg')
-          `
+          `,
         }}
       ></div>
 
@@ -44,8 +42,8 @@ const TeamBanner = () => {
           <h1 className="md:text-primary-white text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
             <span>The </span>
             <span className="font-[700] lg:inline inline">Team </span>
-            who 
-            <br/>
+            who
+            <br />
             makes it happen
           </h1>
 
@@ -61,22 +59,30 @@ const TeamBanner = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0"
+                  className="w-auto md:block hidden"
+                />
+                <Image
+                  src="/images/img_materialsymbolscheckrounded_teal_300.svg"
+                  alt="Check"
+                  width={24}
+                  height={24}
+                  className="w-auto md:hidden block"
                 />
                 <p className=" md:text-[20px] text-[16px] font-[400] font-roboto">{text}</p>
               </div>
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
-          onClick={() => scrollToSection('team')}
+          <button
+            className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
+            onClick={() => scrollToSection('team')}
           >
-           Meet the Team
+            Meet the Team
           </button>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TeamBanner
+export default TeamBanner;
