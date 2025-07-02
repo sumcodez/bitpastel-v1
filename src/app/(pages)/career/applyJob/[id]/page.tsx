@@ -257,7 +257,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '6',
       title: 'PHP Development - Internship',
       hashtags: ["#PHP", "#MySQL", "#JavaScript", "#Plugins"],
-      experience: '0 - 1 Years',
+      experience: 'Fresher',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are offering a PHP Development internship opportunity for passionate and aspiring developers to gain hands-on experience in web development.',
       responsibilities: [
@@ -272,7 +272,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Eagerness to learn and grow in a professional environment',
         'Good analytical and problem-solving skills',
       ],
-      location: 'Work from Home',
+      location: 'Kolkata',
       softSkills: [
         'Problem-solving',
         'Attention to detail',
@@ -290,7 +290,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '7',
       title: 'UI/UX Designer Intern',
       hashtags: ["GraphicDesign", "#Logo", "#WebDesign", "#AppDesign", "#UI", "#UX"],
-      experience: '0 - 1 Years',
+      experience: 'Fresher',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are looking for a creative UI/UX Design Intern to join our team.',
       responsibilities: [
