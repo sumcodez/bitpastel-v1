@@ -398,6 +398,9 @@ button {
   display: block;
 }
 @media screen and (max-width: 767px) {
+  .title{
+    font-size: 22px;
+  }
   .instagram-area-top {
     grid-template-columns: 1fr !important;
     margin-top: 0 !important;

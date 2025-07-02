@@ -31,7 +31,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-primary-white text-title md:leading-[40px] font-source leading-[25px] md:mb-5 mb-4">
+          <h1 className="md:text-primary-white text-title md:title text-[23px] md:leading-[40px] font-source leading-[25px] md:mb-5 mb-4">
             <span>Crafting </span>
             <span className="font-bold lg:inline md:block inline">Digital Solutions</span>
             <span className="block"> for your business</span>
@@ -51,7 +51,7 @@ const HeroSection = () => {
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="font-source text-[18px] font-[400]">{text}</p>
+                <p className=" text-[18px] font-[400] font-roboto">{text}</p>
               </div>
             ))}
           </div>

@@ -400,9 +400,11 @@
     justify-content: center;
   }
 
-  h1,
+  h1{
+    font-size: 23px;
+  }
   h2 {
-    font-size: 22px !important;
+    font-size: 22px;
   }
   .hero-section h1 {
     line-height: 30px !important;
@@ -485,7 +487,7 @@
     padding: 0 !important;
   }
   .cta-section .container h2 {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 }
 

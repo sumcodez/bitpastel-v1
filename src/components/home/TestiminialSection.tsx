@@ -227,7 +227,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       <div className="container mx-auto px-4">
         <h2 className="font-source font-bold text-center text-title title md:mb-8 mb-3">Stories</h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title">
+        {/* <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title"> */}
+        <div className="columns-1 md:columns-2 gap-8 space-y-8 mx-auto w-full text-title">
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -235,7 +236,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>
-                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'} `}>
+                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'} min-h-[70px]`}>
                     "{testimonial.message}"
                   </p>
                 </div>
@@ -258,7 +259,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         </div>
 
         {hasMoreTestimonials && (
-          <div className="flex justify-center md:mt-8 mt-5">
+          <div className="flex justify-center md:mt-8 mt-7">
             <button
               onClick={loadMoreTestimonials}
               disabled={isAnimating}

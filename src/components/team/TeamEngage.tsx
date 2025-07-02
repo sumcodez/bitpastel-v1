@@ -18,7 +18,7 @@ const TeamEngage = () => {
           </div>
           <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 rounded-tl-[40px] rounded-bl-[40px] content-center overflow-hidden">
             {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}
-            <h2 className=" md:leading-[45px] leading-[24px] font-source md:font-[600] font-bold md:text-[35px] text-dark md:mb-8 mb-4 ">
+            <h2 className=" md:leading-[45px] leading-[24px] font-source md:font-[600] font-bold title md:text-[35px] title text-title md:mb-8 mb-4 ">
               Work on awesome Ideas &
               <br />
               Technologies
@@ -32,7 +32,7 @@ const TeamEngage = () => {
                 Visit our <button className="inline-block">Careers</button> page to find out about
                 open positions.
               </p>
-              <button className="btn font-inter mt-6 h-auto text-white font-[400] bg-green-btn">
+              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn">
                 Find Opportunities
               </button>
             </div>
