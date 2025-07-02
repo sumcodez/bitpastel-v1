@@ -22,7 +22,7 @@ interface JobDetailsBannerProps {
 
 const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
   jobTitle = "Full Stack Developer",
-  backgroundImage = "/images/Job-details.png",
+  backgroundImage = "/images/apply-job.png",
   mobileBackgroundImage,
   buttonanimation,
   benefits = [
@@ -44,8 +44,8 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
   ],
   applyButtonText = "Apply Now",
   scrollToId = "jobCards",
-  overlayGradient = "linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%)",
-  overlayColor = "rgba(0, 0, 0, 0.2)"
+  // overlayGradient = "none",
+  // overlayColor = "rgba(255, 255, 255, 0.2)"
 }) => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -58,14 +58,12 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
   return (
     <div>
-      <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
+      <section className="relative lg:h-[470px] md:h-[400px] h-auto overflow-hidden">
         {/* Desktop Background */}
         <div
           className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `
-              ${overlayGradient},
-              linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
               url(${backgroundImage})
             `,
           }}
@@ -79,10 +77,10 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
           }}
         ></div>
   
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
-          <div className="md:h-full content-center mx-auto max-w-[100%]">
-            <h1 className="md:text-white text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-5 mb-4 font-roboto">
+        {/* Content - Modified to align right */}
+        <div className="relative z-10 container mx-auto pl-[10rem] pr-[1rem] md:h-full pt-[20px] md:pt-[60px] text-left">
+          <div className="md:h-full content-center mx-auto max-w-[100%] md:ml-auto md:mr-0 md:max-w-[50%]">
+            <h1 className="text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-5 mb-4 font-roboto">
               <span>{jobTitle}</span>
             </h1>
   
@@ -96,7 +94,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mt-1.5"
                 />
-                <p className="font-roboto text-[18px] font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
+                <p className="text-[#2A2A2A] font-roboto text-[18px] font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
               </div>
               
               {/* Second Benefit */}
@@ -106,9 +104,9 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   alt={benefits[1].alt}
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0"
+                  className="w-auto invert md:invert-0 mb-[0.368rem] mt-1"
                 />
-                <p className="font-roboto text-[18px] font-[400]">Experience: {benefits[1].text}</p>
+                <p className="text-[#2A2A2A] font-roboto text-[18px] font-[400]">Experience: {benefits[1].text}</p>
               </div>
               
               {/* Third Benefit */}
@@ -120,7 +118,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="font-roboto text-[18px] font-[400]">Location: {benefits[2].text}</p>
+                <p className="text-[#2A2A2A] font-roboto text-[18px] font-[400]">Location: {benefits[2].text}</p>
               </div>
             </div>
   

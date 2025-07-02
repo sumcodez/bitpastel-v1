@@ -298,17 +298,17 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const customBenefits = [
     {
       text: job.hashtags.join(', '),
-      icon: '/job-details/1.png',
+      icon: '/job-details/badge.png',
       alt: 'Check icon',
     },
     {
       text: job.experience,
-      icon: '/job-details/3.png',
+      icon: '/job-details/power_career.png',
       alt: 'Check icon',
     },
     {
       text: job.location ?? 'Location not specified',
-      icon: '/job-details/2.png',
+      icon: '/job-details/placeholder_career.png',
       alt: 'Check icon',
     },
   ];
@@ -317,7 +317,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     <div className="relative">
       <JobDetailsBanner
         jobTitle={job.title}
-        backgroundImage="/images/Job-details.png"
+        backgroundImage="/images/apply-job.png"
         benefits={customBenefits}
         applyButtonText="Apply Now"
         scrollToId="applicationForm"
@@ -326,7 +326,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
 
       {/* Job Details Content */}
       <div className='md:pt-16 pt-12'>
-      <div className="container mx-auto px-4 ">
+      <div className="container mx-auto p-20">
         <div className=" px-4 ">
           <div className="inner text-[16px] font-roboto text-[#2A2A2A]">
             <p className="mb-10">
@@ -421,12 +421,14 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 <JoinTeam title="Apply Now" />
               </>
             ) : (
-              <button
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
-                onClick={() => alert(`Applied for ${job.title} position!`)}
-              >
-                Apply via Naukri.com
-              </button>
+              <div className='flex justify-center items-center'>
+                <button
+                  className="w-[20%] items-center bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors mt-10 mb-10"
+                  onClick={() => alert(`Applied for ${job.title} position!`)}
+                >
+                  Apply via Naukri.com
+                </button>
+              </div>
             )}
           </div>
 
