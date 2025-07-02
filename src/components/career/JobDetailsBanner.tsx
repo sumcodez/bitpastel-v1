@@ -80,7 +80,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
         {/* Content - Modified to align right */}
         <div className="relative z-10 container mx-auto pl-[10rem] pr-[1rem] md:h-full pt-[20px] md:pt-[60px] text-left">
           <div className="md:h-full content-center mx-auto max-w-[100%] md:ml-auto md:mr-0 md:max-w-[50%]">
-            <h1 className=" text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
+            <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
               <span>{jobTitle}</span>
             </h1>
   
@@ -94,7 +94,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mt-1.5"
                 />
-                <p className="text-title font-roboto md:text-[20px] text-[16px] font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
+                <p className="text-title font-roboto subheading font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
               </div>
               
               {/* Second Benefit */}
@@ -106,7 +106,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mb-[0.368rem] mt-1"
                 />
-                <p className=" md:text-[20px] text-[16px] font-[400] text-title font-roboto">Experience: {benefits[1].text}</p>
+                <p className="sunheading font-[400] text-title font-roboto">Experience: {benefits[1].text}</p>
               </div>
               
               {/* Third Benefit */}
@@ -118,7 +118,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="md:text-[20px] text-[16px] font-[400] text-title font-roboto">Location: {benefits[2].text}</p>
+                <p className="sunheading font-[400] text-title font-roboto">Location: {benefits[2].text}</p>
               </div>
             </div>
   

@@ -4,13 +4,10 @@ import { ChevronDown, Paperclip } from "lucide-react";
 import * as countryCodesList from "country-codes-list";
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-
-
 interface JoinTeamProps{
   title?: string;
   className?: string
 }
-
 export default function JoinTeam({title = "Join Our Team", className}: JoinTeamProps) {
   // Form state 
   const [formData, setFormData] = useState({
@@ -26,16 +23,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     referredBy: "",
     resume: null as File | null,
   });
-
   const [defaultCountry, setDefaultCountry] = useState<string>("IN");
   const [isLoading, setIsLoading] = useState(true);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-
   // Detect user's country based on IP
   useEffect(() => {
     const detectCountry = async () => {
@@ -51,14 +44,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
         setIsLoading(false);
       }
     };
-
     detectCountry();
   }, []);
-
-
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
-
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
     else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email is invalid.";
@@ -70,10 +59,8 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     // if (!formData.experience.trim()) newErrors.experience = "Please select your experience.";
     // if (!formData.noticePeriod.trim()) newErrors.noticePeriod = "Please select your notice period.";
     if (!formData.resume) newErrors.resume = "Please attach your resume.";
-
     return newErrors;
   };
-
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -81,13 +68,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
         setIsCountryDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
   const experienceOptions = [
     "Fresher",
     "1 year",
@@ -106,12 +91,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     "3 months",
     "More than 3 months"
   ];
-
   // const myCountryCodesObject = countryCodesList.customList(
   //   "countryCode",
   //   "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
   // );
-
   // const countryCodes = Object.entries(myCountryCodesObject)
   //   .map(([countryCode, value]) => {
   //     const match = value.match(/\[(\w+)\] (.*?): \+?(\d+)/);
@@ -123,33 +106,27 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
   //     };
   //   })
   //   .filter(Boolean);
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const handleInputChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, resume: e.target.files![0] }));
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-
     setErrors({});
     // Validate required fields
     const {
@@ -181,7 +158,6 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
       alert("Please fill in all required fields including the resume.");
       return;
     }
-
     // Create FormData instead of URLSearchParams
     const formDataToSend = new FormData();
     formDataToSend.append("name", name);
@@ -194,7 +170,6 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     formDataToSend.append("notice_period", noticePeriod);
     formDataToSend.append("referred_by", referredBy || "");
     formDataToSend.append("resume", resume);
-
     try {
       const response = await fetch("https://www.bitpastel.com/api/sendemail.php/", {
         method: "POST",
@@ -214,15 +189,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
       alert("Network error. Please check your connection.");
     }
   };
-
   const handleAttachmentClick = () => {
     fileInputRef.current?.click();
   };
-
   if (isLoading) {
     return <div className="max-w-4xl mx-auto p-6 text-center">Loading...</div>;
   }
-
   return (
     <div className={`${className ?? ""} max-w-4xl mx-auto p-6`} id="joinTeamForm">
       <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
@@ -248,14 +220,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
-
               {errors.name && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
                   {errors.name}
                 </p>
               )}
             </div>
-
             {/* Phone number */}
             <div className={`flex gap-2 pb-1 border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
               <PhoneInput
@@ -272,8 +242,6 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
-
-
             <div>
               <input
                 type="text"
@@ -284,7 +252,6 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
               />
             </div>
-
             <div className="relative cursor-pointer group">
               <select
                 name="noticePeriod"
@@ -314,12 +281,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
             </div>
-
           </div>
-
           {/* Right Column */}
           <div className="space-y-6">
-
             <div
               className={`flex items-end gap-4 border-b pb-1 ${
                 errors.email ? "border-red-500" : "border-gray-300"
@@ -335,14 +299,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
-
               {errors.email && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
                   {errors.email}
                 </p>
               )}
             </div>
-
             <div className={`flex items-end gap-4 border-b pb-1 !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
               <input
                 type="text"
@@ -352,15 +314,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 onChange={handleChange}
                 className="flex-1 text-[#B3B3B3] text-[16px] p-2 sm:text-[19px] font-source font-thin focus:outline-none bg-transparent"
               />
-
               {errors.currentLocation && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
                   {errors.currentLocation}
                 </p>
               )}
             </div>
-
-
             <div className="relative cursor-pointer group">
               <select
                 name="experience"
@@ -390,7 +349,6 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
             </div>
-
             <div>
               <input
                 type="text"
@@ -449,3 +407,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     </div>
   );
 }
+
+
+
+
+
+
+

@@ -1,10 +1,8 @@
 'use client';
-
 import { notFound, useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import JoinTeam from '@/components/JoinTeamForm';
 import JobDetailsBanner from '@/components/career/JobDetailsBanner';
-
 interface JobListing {
   id: string;
   title: string;
@@ -18,22 +16,17 @@ interface JobListing {
   softSkills?: string[];
   desiredCandidateProfile?: string[];
 }
-
 export default function JobDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
   const [job, setJob] = useState<JobListing | null>(null);
   const [loading, setLoading] = useState(true);
-
   const jobWithForm = ['2', '4'];
-
   const jobWithFormAndButton = ["5"];
-
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
   // Mock data - replace with your actual data fetching
   const jobListings: JobListing[] = [
     {
@@ -43,203 +36,265 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         '#Upwork',
         '#Freelancer',
         '#OnlineBidding',
-        '#Leadership',
-        '#Itservice',
-        '#Itsales',
+        '#ClientCommunication',
+        '#ITSales',
+        '#BusinessDevelopment',
       ],
-      experience: '2 - 6 Years',
+      experience: '0 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
       description:
-        'We are looking for an experienced Marketing Manager to lead our marketing efforts and drive brand awareness.',
+        'We are looking for a Marketing Manager with strong communication skills and experience in online bidding, client handling, and business development across international markets.',
       responsibilities: [
-        'Develop and implement marketing strategies',
-        'Manage digital marketing campaigns',
-        'Analyze market trends and competitors',
-        'Collaborate with sales and product teams',
+        'Write proposals, estimate costs, and negotiate on platforms like Upwork and Freelancer',
+        'Handle international clients (US, UK, EU) effectively',
+        'Understand and adapt to general IT outsourcing business needs',
+        'Collaborate with project managers and technical teams for project planning',
       ],
       requirements: [
-        "Bachelor's degree in Marketing or related field",
-        'Proven experience in digital marketing',
-        'Strong analytical skills',
-        'Excellent communication abilities',
+        'Fluent in English (written and spoken)',
+        'Strong presentation and business analysis skills',
+        'Experienced in online bidding, proposal writing, and negotiation',
+        'Basic awareness of web and app development',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Collaboration', 'Attention to detail', 'Time management'],
+      softSkills: [
+        'Very good Team player',
+        'Delivery Oriented',
+        'Adaptable to challenges',
+        'Problem solver',
+      ],
       desiredCandidateProfile: [
-        'Self-motivated and results-oriented',
-        'Ability to work independently and in a team',
-        'Strong organizational skills',
-        'Adaptability to changing environments',
+        'Must have experience in bidding or working on online marketplaces like Upwork / Freelancer',
+        'Freshers can also apply',
+        'Must have worked with international clients (UK, US, EU)',
+        'Fluent in English (written and spoken)',
       ],
     },
     {
       id: '2',
       title: 'Back End Developer',
       hashtags: [
+        '#NodeJS',
         '#PHP',
-        '#MySQL',
-        '#CodeIgniter',
         '#Laravel',
-        '#JavaScript',
-        '#Plugins',
-        '#WordPress',
-        '#WooCommerce',
-        '#Shopify',
+        '#CodeIgniter',
+        '#Python',
+        '#Django',
+        '#MySQL',
+        '#MongoDB',
+        '#APIs',
+        '#CloudComputing',
       ],
       experience: '2 - 5 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description:
-        'Join our team as a Back End Developer to build and maintain our server-side applications.',
+        'We are seeking a skilled Back End Developer with hands-on experience in modern web technologies, cloud platforms, and scalable architecture. Join our team to work on impactful and innovative web solutions.',
       responsibilities: [
-        'Develop and maintain server-side logic',
-        'Ensure high performance and responsiveness',
-        'Integrate front-end components',
-        'Implement security and data protection',
+        'Develop and maintain server-side applications using NodeJS, PHP (Laravel/CodeIgniter), or Python (Django/Flask)',
+        'Design and manage SQL/NoSQL databases (MySQL, MongoDB)',
+        'Build RESTful APIs for web and mobile apps',
+        'Integrate third-party APIs such as Stripe, PayPal, Google Maps, etc.',
+        'Deploy, monitor, and maintain applications on AWS, GCP, or Azure',
+        'Collaborate with front-end developers and DevOps teams',
+        'Ensure data protection, application security, and optimal performance',
       ],
       requirements: [
-        'Proficiency in PHP and MySQL',
-        'Experience with Laravel or CodeIgniter',
-        'Knowledge of RESTful APIs',
-        'Understanding of front-end technologies',
+        'Proficiency in backend languages like PHP, NodeJS, or Python',
+        'Strong database skills (MySQL, MongoDB)',
+        'Experience with RESTful API development',
+        'Knowledge of HTML5, CSS3, JavaScript, jQuery, AJAX',
+        'Familiarity with cloud platforms (AWS, GCP, Azure)',
+        'Experience with version control tools (Git, Bitbucket)',
+        'Understanding of scalable app architecture and deployment strategies',
+        'Exposure to containerization (Docker) and CI/CD pipelines',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      softSkills: [
+        'Excellent problem-solving and analytical thinking',
+        'Strong communication and team collaboration',
+        'Delivery-focused with attention to detail',
+        'Creative and innovative mindset',
+        'Adaptable to dynamic environments',
+        'Very good team player',
+        'Delivery Oriented',
+        'Innovative and able to think in creative fashion',
+        'Adaptable to challenges',
+        'Problem solver',
+      ],
       desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+        'Passionate about backend technologies and scalable applications',
+        'Comfortable with cloud and modern DevOps tools',
+        'Interested to learn & work with latest/upcoming technologies',
+        'Familiarity with Agile/Scrum methodologies',
+        'Self-motivated and able to handle challenging tasks',
       ],
     },
     {
       id: '3',
       title: 'Shopify Developer',
-      hashtags: ['#Shopify', '#RubyonRails'],
+      hashtags: [
+"#Shopify", "#RubyonRails"
+      ],
       experience: '2 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
-      description: 'We are seeking a Shopify Developer to create and manage e-commerce websites.',
+      description:
+        'We are seeking a skilled Shopify Developer with expertise in Shopify & Shopify Plus to build, customize, and maintain high-performance eCommerce websites.',
       responsibilities: [
-        'Design and develop Shopify themes',
-        'Customize Shopify stores',
-        'Integrate third-party applications',
-        'Optimize store performance',
+        'Design, develop, and customize Shopify themes',
+        'Migrate websites from other eCommerce platforms to Shopify',
+        'Extend Shopify functionalities using Liquid, storefront APIs, and metafields',
+        'Integrate third-party and platform-supported apps into Shopify sites',
+        'Configure Shopify settings such as payment methods, taxes, shipping, and navigation',
+        'Optimize Shopify site performance and page speed',
+        'Implement SEO and CRO best practices',
+        'Ensure pixel-perfect development and attention to detail in design',
       ],
       requirements: [
-        'Experience with Shopify Liquid',
-        'Proficiency in HTML, CSS, and JavaScript',
-        'Familiarity with e-commerce best practices',
-        'Problem-solving skills',
+        'Minimum 2 years of experience in Shopify website development',
+        'Strong expertise in Shopify & Shopify Plus platforms',
+        'Proficiency with Shopify Liquid templating language',
+        'Experience with storefront APIs, AJAX Cart, and dynamic sections',
+        'Strong knowledge of HTML5, CSS3, JavaScript (ES5/6)',
+        'Experience with SCSS, PHP, MySQL, and WordPress (preferred)',
+        'Familiarity with third-party integrations and Shopify app ecosystem',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      softSkills: [
+        'Problem-solving mindset',
+        'High attention to detail',
+        'Strong team collaboration',
+        'Time management and delivery focus',
+        'Proactive and passionate about eCommerce technology',
+      ],
       desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+        'Excellent communication and collaboration skills',
+        'Ability to work independently or in a team environment',
+        'Adaptable to changing project requirements and fast-paced workflows',
+        'A passion for building strong development teams and scalable solutions',
       ],
     },
     {
       id: '4',
       title: 'Senior WordPress Developer',
-      hashtags: ['#WordPress', '#WooCommerce', '#PHP', '#MySQL', '#JavaScript', '#Plugins'],
+      hashtags: [
+"#WordPress", "#WooCommerce"," #PHP", "#MySQL" ,"#JavaScript" ,"#Plugins"
+      ],
       experience: '2 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
       description:
-        'We are looking for a Senior WordPress Developer to lead our WordPress projects.',
+        'We are looking for a passionate and experienced Senior WordPress Developer to lead complex WordPress projects, develop custom plugins, and help shape modern web experiences.',
       responsibilities: [
         'Develop custom WordPress themes and plugins',
-        'Optimize WordPress performance',
-        'Manage WooCommerce implementations',
-        'Mentor junior developers',
+        'Optimize WordPress website performance and scalability',
+        'Manage and customize WooCommerce implementations',
+        'Work on complex SQL queries and data-intensive applications',
+        'Mentor and support junior developers in the team',
+        'Integrate third-party APIs and services as needed',
       ],
       requirements: [
-        '5+ years of WordPress development experience',
-        'Expertise in PHP and MySQL',
-        'Strong knowledge of JavaScript',
-        'Experience with WooCommerce',
+        '2 - 6 years of hands-on WordPress development experience',
+        'Strong expertise in WordPress, WooCommerce, and plugin customization',
+        'Solid knowledge of PHP and MySQL',
+        'Experience with JavaScript, jQuery, and AJAX',
+        'Experience with CodeIgniter or Laravel (preferred)',
+        'Excellent skills in writing and optimizing SQL queries',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      softSkills: [
+        'Very good team player',
+        'Delivery oriented',
+        'Innovative and able to think in creative fashion',
+        'Adaptable to challenges',
+        'Problem solver',
+      ],
       desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+        'Looking for a rewarding role',
+        'Interested to learn & work with latest/upcoming technologies like Angular, Node.js, Shopify',
+        'Self-motivated and eager to contribute to project success',
+        'Open to collaboration and continuous learning',
       ],
     },
     {
       id: '5',
       title: 'Full Stack Developer',
       hashtags: [
-        '#PHP',
-        '#MySQL',
-        '#CodeIgniter',
-        '#Laravel',
-        '#JavaScript',
-        '#React',
-        '#Angular',
-        '#Vue',
-        '#HTML',
-        '#CSS',
+"#FullStackDeveloper", "#FrontEndDeveloper", "#BackEndDeveloper"
       ],
-      experience: '2 - 6 Years',
+      experience: '0 - 3 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
       description:
-        'We are seeking a Full Stack Developer to develop and maintain complex web applications.',
+        'We are seeking a Full Stack Developer with hands-on experience in both front-end and back-end technologies to build scalable web applications and APIs.',
       responsibilities: [
-        'Design and develop user interfaces',
-        'Implement server-side logic',
-        'Collaborate with cross-functional teams',
-        'Optimize applications for maximum speed',
+        'Develop and maintain user interfaces using modern frameworks like React, Angular, or Vue.js',
+        'Implement server-side logic using Node.js and Express',
+        'Work with databases such as MySQL and PostgreSQL',
+        'Translate business requirements into scalable technical solutions',
+        'Collaborate with team members in an Agile environment',
+        'Consume and build RESTful APIs',
+        'Use version control tools like Git to manage codebase',
       ],
       requirements: [
-        'Proficiency in both front-end and back-end technologies',
-        'Experience with databases (MySQL, MongoDB)',
-        'Familiarity with RESTful APIs',
-        'Strong problem-solving skills',
+        'Proficiency in TypeScript, JavaScript, ES6, and DOM manipulation',
+        'Strong knowledge of HTML5 and CSS3',
+        'Experience with NodeJS fundamentals and Express framework',
+        'Working knowledge of MySQL and PostgreSQL (preferred)',
+        'Familiarity with Git, GitHub, and task tracking tools like JIRA',
+        'Experience in building full-stack web applications',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      softSkills: [
+        'Problem-solving',
+        'Attention to detail',
+        'Team collaboration',
+        'Time management',
+        'Independent working ability',
+        'Experience working in an Agile environment',
+        'Creative thinking and animation knowledge with GSAP',
+      ],
       desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+        '0 - 3 years of experience in Full Stack Development',
+        'Eager to work on both front-end and back-end projects',
+        'Adaptable to new technologies and project requirements',
+        'Passion for building modern web applications and scalable systems',
       ],
     },
     {
       id: '6',
       title: 'PHP Development - Internship',
-      hashtags: ['#PHP', '#MySQL', '#JavaScript', '#HTML', '#CSS'],
+      hashtags: ["#PHP", "#MySQL", "#JavaScript", "#Plugins"],
       experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
-      description: 'We are offering PHP internship opportunities for aspiring developers.',
+      description: 'We are offering a PHP Development internship opportunity for passionate and aspiring developers to gain hands-on experience in web development.',
       responsibilities: [
-        'Assist in developing web applications',
-        'Learn and implement PHP best practices',
-        'Participate in code reviews',
-        'Support senior developers',
+        'Assist in developing and maintaining web applications',
+        'Learn and implement PHP, JavaScript, and MySQL best practices',
+        'Support senior developers and participate in code reviews',
+        'Collaborate with the team on real-world projects',
       ],
       requirements: [
-        'Basic understanding of PHP',
-        'Familiarity with HTML, CSS, and JavaScript',
-        'Eagerness to learn',
-        'Good problem-solving skills',
+        'Working knowledge of PHP, JavaScript, and MySQL',
+        'Basic understanding of HTML and CSS',
+        'Eagerness to learn and grow in a professional environment',
+        'Good analytical and problem-solving skills',
       ],
-      location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
+      location: 'Work from Home',
+      softSkills: [
+        'Problem-solving',
+        'Attention to detail',
+        'Team collaboration',
+        'Time management',
+      ],
       desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+        'Are available for the work from home job/internship',
+        'Can start the work from home job/internship immediately',
+        'Are available for a minimum duration of 6 months',
+        'Have relevant skills and interests',
       ],
     },
     {
       id: '7',
       title: 'UI/UX Designer Intern',
-      hashtags: ['#UI', '#UX', '#Figma', '#AdobeXD', '#Photoshop', '#Illustrator'],
+      hashtags: ["GraphicDesign", "#Logo", "#WebDesign", "#AppDesign", "#UI", "#UX"],
       experience: '0 - 1 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))',
       description: 'We are looking for a creative UI/UX Design Intern to join our team.',
@@ -250,22 +305,20 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Support design team with various projects',
       ],
       requirements: [
-        'Basic knowledge of design tools (Figma, Adobe XD)',
-        'Understanding of UI/UX principles',
-        'Creative thinking',
-        'Good communication skills',
+        'Innovative and able to think in creative fashion',
+        'Web & Mobile App Layout Designing Skills',
       ],
       location: 'Kolkata',
-      softSkills: ['Problem-solving', 'Attention to detail', 'Team collaboration', 'Time management'],
-      desiredCandidateProfile: [
-        'Strong problem-solving skills',
-        'Ability to work independently and in a team',
-        'Excellent communication skills',
-        'Adaptability to changing environments',
+      softSkills: [
+        'Very good Team player',
+        'Delivery Oriented',
+        'Innovative and able to think in creative fashion',
+        'Adaptable to challenges',
+        'Problem solver',
       ],
-    },
+      desiredCandidateProfile: [],
+    }
   ];
-
   useEffect(() => {
     // Simulate API fetch
     const fetchJob = () => {
@@ -275,10 +328,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       }
       setLoading(false);
     };
-
     fetchJob();
   }, [params.id]);
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -286,15 +337,12 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       </div>
     );
   }
-
   if (!job) {
     return notFound();
   }
-
   const handleBackButtonClick = () => {
     router.push('/career');
   };
-
   const customBenefits = [
     {
       text: job.hashtags.join(', '),
@@ -312,7 +360,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       alt: 'Check icon',
     },
   ];
-
   return (
     <div className="relative">
       <JobDetailsBanner
@@ -323,7 +370,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         scrollToId="applicationForm"
         buttonanimation = "ripple-btn"
       />
-
       {/* Job Details Content */}
       {/* className='md:pt-16 pt-12' */}
       <div className='pt-16'>
@@ -336,7 +382,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 <br />
                 The current position requires the following skills:
               </p>
-
               {job.requirements && job.requirements.length > 0 && (
                 <div className="flex flex-col md:flex-row gap-8"> {/* Added gap for better spacing */}
                   <div className="md:w-1/3">
@@ -351,7 +396,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 </div>
               )}
-
               {job.softSkills && job.softSkills.length > 0 && (
                 <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
                   <div className="md:w-1/3">
@@ -366,7 +410,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 </div>
               )}
-
               {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
                 <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
                   <div className="md:w-1/3">
@@ -382,7 +425,6 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 </div>
               )}
             </div>
-
             {/* Apply Div */}
             <div className="pt-14" ref={formRef} id="applicationForm">
               {jobWithForm.includes(job.id) ? (

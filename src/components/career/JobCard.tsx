@@ -15,7 +15,7 @@ export default function Home() {
       }, 100);
     }
   };
-  const jobListings = [
+ const jobListings = [
     {
       id: "1",
       title: "Marketing Manager",
