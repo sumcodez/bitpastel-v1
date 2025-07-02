@@ -80,7 +80,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
         {/* Content - Modified to align right */}
         <div className="relative z-10 container mx-auto pl-[10rem] pr-[1rem] md:h-full pt-[20px] md:pt-[60px] text-left">
           <div className="md:h-full content-center mx-auto max-w-[100%] md:ml-auto md:mr-0 md:max-w-[50%]">
-            <h1 className="text-[#2A2A2A] md:leading-[38px] leading-[25px] md:mb-5 mb-4 font-roboto">
+            <h1 className="md:text-primary-white text-title title md:leading-[35px] font-source leading-[25px] md:mb-5 mb-4 text-center md:text-left ">
               <span>{jobTitle}</span>
             </h1>
   

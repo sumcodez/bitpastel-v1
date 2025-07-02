@@ -79,7 +79,7 @@ const Header = () => {
 
   const getLinkClass = (section: string) => {
     return `transition-colors ${
-      activeSection === section ? 'text-accent-green' : shouldApplyScrolledStyle ? 'text-gray-800' : 'text-white'
+      activeSection === section ? 'text-accent-green' : shouldApplyScrolledStyle ? 'text-gray-800' : 'text-primary-white'
     } hover:text-accent-green`;
   };
 
@@ -90,7 +90,7 @@ const Header = () => {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
-        shouldApplyScrolledStyle ? 'bg-white border-[#f5f5f5]' : 'bg-transparent border-transparent'
+        shouldApplyScrolledStyle ? 'bg-[#ffffff] border-[#f5f5f5]' : 'bg-transparent border-transparent'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex md:justify-between justify-center items-center">
@@ -104,10 +104,10 @@ const Header = () => {
               <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
                 Stories
               </Link>
-              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-gray-800 hover:text-primary-teal' : 'text-white hover:text-primary-teal'}>
+              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-gray-800 hover:text-primary-teal' : 'text-primary-white hover:text-primary-teal'}>
                 Culture
               </Link>
-              <button className="bg-green-btn px-5 py-2 text-white rounded hover:bg-opacity-90"
+              <button className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90"
               onClick={() => setIsModalOpen(true)}
               >Chat with Us</button>
             </nav>
