@@ -33,7 +33,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '1',
       title: 'Marketing Manager',
       hashtags: [
-"#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"
+        "#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"
       ],
       experience: '0 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
@@ -128,7 +128,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '3',
       title: 'Shopify Developer',
       hashtags: [
-"#Shopify", "#RubyonRails"
+        "#Shopify", "#RubyonRails"
       ],
       experience: '2 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
@@ -172,7 +172,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '4',
       title: 'Senior WordPress Developer',
       hashtags: [
-"#WordPress", "#WooCommerce"," #PHP", "#MySQL" ,"#JavaScript" ,"#Plugins"
+        "#WordPress", "#WooCommerce"," #PHP", "#MySQL" ,"#JavaScript" ,"#Plugins"
       ],
       experience: '2 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(15, 134, 178), rgb(7, 62, 152))',
@@ -213,7 +213,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '5',
       title: 'Full Stack Developer',
       hashtags: [
-"#FullStackDeveloper", "#FrontEndDeveloper", "#BackEndDeveloper"
+        "#FullStackDeveloper", "#FrontEndDeveloper", "#BackEndDeveloper"
       ],
       experience: '0 - 3 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
