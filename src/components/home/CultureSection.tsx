@@ -57,7 +57,7 @@ const CultureSection = () => {
   return (
     <section id='culture' className="pt-12 lg:pt-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-[#2a2a2a] font-source font-bold text-center text-dark md:mb-8 mb-3">
+        <h2 className="tfont-source font-bold text-center text-title title md:mb-8 mb-3">
           Why work with us?
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-10">
@@ -85,14 +85,14 @@ const CultureSection = () => {
                     height={24}
                     className=''
                   />
-                  <h3 className={`font-bold font-source md:text-[rgba(42,42,42,1)] leading-[1]`}>
+                  <h3 className={`font-bold font-source text-title subheading leading-[1]`}>
                     {feature.title}
                   </h3>
                 </div>
                 {/* <ul className='mobile-none'> */}
-                <ul className='md:pl-[57px] pl-[20px] text-dark '>
+                <ul className='md:pl-[57px] pl-[20px] text-title'>
                   {feature.items.map((item, index) => (
-                    <li key={index} className="md:leading-[1] leading-[normal] md:text-[16px] text-[12px] md:mb-3 mb-1">
+                    <li key={index} className="md:leading-[1] leading-[normal] font-roboto md:text-[16px] text-[12px] md:mb-3 mb-1">
                       {item}
                     </li>
                   ))}

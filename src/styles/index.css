@@ -58,7 +58,7 @@
 .type-footer{
   position: relative;
 }
-.type-footer::before{
+/* .type-footer::before{
   content: "";
   position: absolute;
     top: 22px;
@@ -66,14 +66,13 @@
   width: 61px;
   height:1px;
   background: rgba(255, 255, 255, 0.1);
-  /* z-index: -1; */
-}
-@media screen and (max-width:767px) {
+} */
+/* @media screen and (max-width:767px) {
   .type-footer::before{
     left:50%;
     transform: translateX(-50%);
   }
-}
+} */
 
 /* .testiminal-card .testimonial-message {
   max-height: 140px; 
@@ -401,9 +400,11 @@
     justify-content: center;
   }
 
-  h1,
+  h1{
+    font-size: 23px;
+  }
   h2 {
-    font-size: 22px !important;
+    font-size: 22px;
   }
   .hero-section h1 {
     line-height: 30px !important;
@@ -486,7 +487,7 @@
     padding: 0 !important;
   }
   .cta-section .container h2 {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 }
 

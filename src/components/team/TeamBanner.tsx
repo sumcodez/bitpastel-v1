@@ -41,19 +41,19 @@ const TeamBanner = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] leading-[25px] md:mb-5 mb-4">
+          <h1 className="md:text-primary-white text-title md:title text-[23px] md:leading-[40px] font-source leading-[25px] md:mb-5 mb-4 font-[600]">
             <span>The </span>
-            <span className="font-bold lg:inline inline">Team </span>
+            <span className="font-[700] lg:inline inline">Team </span>
             who 
             <br/>
             makes it happen
           </h1>
 
-          <div className="md:text-white text-[#212529]">
+          <div className="md:text-primary-white text-title ">
             {[
-              'Shopify Plus & eCom Development',
-              'Web & Mobile App Development',
-              'Marketing Solutions',
+              'We are serious about Quality',
+              'We are passionate about our Craft',
+              'Always Super-charged... Super-fast…',
             ].map((text, idx) => (
               <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
                 <Image
@@ -68,7 +68,7 @@ const TeamBanner = () => {
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px] font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-inter"
           onClick={() => scrollToSection('team')}
           >
            Meet the Team

@@ -79,7 +79,7 @@ const Header = () => {
 
   const getLinkClass = (section: string) => {
     return `transition-colors ${
-      activeSection === section ? 'text-accent-green' : shouldApplyScrolledStyle ? 'text-gray-800' : 'text-white'
+      activeSection === section ? 'text-accent-green' : isScrolled ? 'text-gray-800' : 'text-white'
     } hover:text-accent-green`;
   };
 
@@ -89,32 +89,30 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 trasition-[background] md:h-[70px] h-[50px] border-b border-transparent content-center duration-200 ${
-        shouldApplyScrolledStyle ? 'bg-white border-[#f5f5f5]' : 'bg-transparent'
-      }`}>
-        <div className="container mx-auto px-4">
-          <div className="flex md:justify-between justify-center items-center">
-            <Link href="/">
-              <Image src={logoSrc} alt="Logo" width={110} height={70} className="md:h-12 h-8 w-[122px] object-contain" />
+    <header className={`fixed top-0 left-0 right-0 z-50 trasition-[background] md:h-[70px] h-[50px] border-b  border-transparent content-center duration-200 ${isScrolled ? 'bg-white border-[#f5f5f5]' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4">
+        <div className="flex md:justify-between justify-center items-center">
+          <Link href="/">
+            <Image src={logoSrc} alt="Logo" width={110} height={70} className="md:h-12 h-8 w-[122px] object-contain" />
+          </Link>
+          <nav className="hidden md:flex space-x-8 items-center">
+            <Link href="/#services" onClick={(e) => handleLinkClick(e, 'services')} className={getLinkClass('services')}>
+              Services
             </Link>
-            <nav className="hidden md:flex space-x-8 items-center">
-              <Link href="/#services" onClick={(e) => handleLinkClick(e, 'services')} className={getLinkClass('services')}>
-                Services
-              </Link>
-              <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
-                Stories
-              </Link>
-              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-gray-800 hover:text-primary-teal' : 'text-white hover:text-primary-teal'}>
-                Culture
-              </Link>
-              <button className="bg-green-btn px-5 py-2 text-white rounded hover:bg-opacity-90"
-              onClick={() => setIsModalOpen(true)}
-              >Chat with Us</button>
-            </nav>
-          </div>
+            <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
+              Stories
+            </Link>
+            <Link href="/team" className={isScrolled ? 'text-gray-800 hover:text-primary-teal' : 'text-white hover:text-primary-teal'}>
+              Culture
+            </Link>
+            <button className="bg-green-btn px-5 py-2 text-white rounded hover:bg-opacity-90"
+            onClick={() => setIsModalOpen(true)}
+            >Chat with Us</button>
+          </nav>
         </div>
-      </header>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </div>
+    </header>
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

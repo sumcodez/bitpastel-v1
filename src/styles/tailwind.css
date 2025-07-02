@@ -21,6 +21,7 @@
     --primary-white-transparent: #ffffff19;
 
     /* Text Colors */
+    --text-title: #2A2A2A;
     --text-primary: #1e1e1e;
     --text-secondary: #212529;
     --text-dark: #212529;
@@ -29,7 +30,7 @@
     --text-accent-blue: #55b8d0;
     --text-accent-yellow: #f0c638;
     --text-accent-coral: #f5747e;
-    --text-white: #ffffff;
+    --text-white: #D2D2D2;
   }
 }
 
@@ -51,7 +52,7 @@ h1 {
   font-size: 38px;
 }
 h2 {
-  font-size: 36px;
+  font-size: 38px;
 }
 h3 {
   font-size: 20px;
@@ -64,7 +65,21 @@ button {
   font-size: 16px;
 }
 
+.title{
+  font-size: 38px;
+}
+.subheading{
+  font-size: 20px;
+}
+.paragraph{
+  font-size: 16px;
+}
+
+
 @layer utilities {
+  .text-title{
+    color: var(--text-title);
+  }
   .bg-green-btn {
     background-color: var(--btn-green);
   }
@@ -122,9 +137,13 @@ button {
     letter-spacing: 0%;
     text-align: center;
     vertical-align: middle;
+    color: #FFFFFF;
   }
 
   /* Text Colors */
+  .text-primary-white{
+    color: var(--primary-white);
+  }
   .text-primary {
     color: var(--text-primary);
   }
@@ -379,6 +398,9 @@ button {
   display: block;
 }
 @media screen and (max-width: 767px) {
+  .title{
+    font-size: 22px;
+  }
   .instagram-area-top {
     grid-template-columns: 1fr !important;
     margin-top: 0 !important;
