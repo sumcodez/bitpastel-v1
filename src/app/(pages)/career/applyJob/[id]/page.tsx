@@ -427,7 +427,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 <JoinTeam title="Apply Now" />
               ) : jobWithFormAndButton.includes(job.id) ? (
                 <>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 pt-14">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 pt-14">
                     <button
                       className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                       onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
@@ -445,7 +445,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 </>
               ) : jobWithOneButtonAndForm.includes(job.id) ? (
                 <>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 pt-14">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 pt-14">
                     <button
                       className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                       onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
@@ -453,7 +453,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                       Apply Now
                     </button>
                   </div>
-                  <JoinTeam title="Apply Now" />
+                  <JoinTeam title="Apply Now" className='pt-14'/>
                 </>
               ) : (
                 <div className='flex justify-center pt-14'>
