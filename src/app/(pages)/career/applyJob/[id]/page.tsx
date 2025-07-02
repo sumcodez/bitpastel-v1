@@ -406,13 +406,13 @@ export default function JobDetail({ params }: { params: { id: string } }) {
               <>
                 <div className="flex gap-[99px] mb-6 items-center justify-center">
                   <button
-                    className="flex items-center justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                    className="flex items-center ripple-btn justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                     onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
                   >
                     Apply via Naukri
                   </button>
                   <button
-                    className="flex items-center justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                    className="flex items-center ripple-btn justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                     onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Apply Now
@@ -423,7 +423,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
             ) : (
               <div className='flex justify-center items-center'>
                 <button
-                  className="min-w-[280px] max-w-[280px] items-center bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors mt-10 mb-10"
+                  className="min-w-[280px] max-w-[280px] ripple-btn items-center bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors mt-10 mb-10"
                   onClick={() => alert(`Applied for ${job.title} position!`)}
                 >
                   Apply via Naukri.com

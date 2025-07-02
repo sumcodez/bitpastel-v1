@@ -341,8 +341,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     height={400}
                   />
                 </div>
-                <div className="bg-white p-[35px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
-                  <h2 className="text-center text-[36px] font-source mb-4 font-light text-[#606568]">Get a Free Quote</h2>
+                <div className="bg-[#fff] p-[35px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
+                  <h2 className="text-center text-[38px] font-source mb-4 font-light text-[#606568]">Get a Free Quote</h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
                     <div className="space-y-2">
                       {/* Combined "I want" and service selection */}
@@ -370,7 +370,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         </button>
 
                         {isServiceDropdownOpen && (
-                          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto">
+                          <div className="absolute top-full left-0 right-0 mt-1 bg-[#ffffff] border border-gray-200 rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto">
                             {services.map((service) => (
                               <button
                                 key={service}
@@ -457,7 +457,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Submit Button */}
                       <button
                         type="submit"
-                        className="w-full btn bg-[#23b428] text-white transition-colors duration-200"
+                        className="w-full btn bg-green-btn text-primary-white transition-colors duration-200"
                       >
                         Lets Work Together
                       </button>
@@ -465,7 +465,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Privacy Policy */}
                       <p className="text-[11px] mt-1 text-gray-500 text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
-                        <a href="#" className="text-[#23b428]">
+                        <a href="#" className="text-[#52d09c]">
                           Privacy Policy
                         </a>
                       </p>
@@ -473,7 +473,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Chat Button */}
                       <button
                         type="button"
-                        className="w-full btn border-[1px] border-[#23b428] text-[#23b428] hover:bg-[#23b428] hover:text-white transition-all duration-300"
+                        className="w-full text-[#52d09c] border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
                       >
                         Chat with Us
                       </button>

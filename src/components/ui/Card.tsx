@@ -27,7 +27,7 @@ export default function Card({
 }: JobCardProps) {
   return (
     <div
-      className={`w-full mx-auto bg-white rounded-[15px] card transition-all overflow-hidden flex flex-col gap-2 ${className}`}
+      className={`w-full mx-auto bg-[#ffffff] rounded-[15px] card transition-all overflow-hidden flex flex-col gap-2 ${className}`}
       style={style}
       onClick={onClick}
     >
@@ -36,7 +36,7 @@ export default function Card({
         className="h-20 flex items-center justify-center relative flex-shrink-0"
         style={{ background: gradientColors }}
       >
-        <p className="text-white text-lg font-semibold text-center px-4">
+        <p className="text-primary-white text-lg font-semibold text-center px-4">
           {title}
         </p>
       </div>
