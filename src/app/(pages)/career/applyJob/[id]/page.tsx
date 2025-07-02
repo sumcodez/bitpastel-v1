@@ -325,117 +325,99 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       />
 
       {/* Job Details Content */}
-      <div className='md:pt-16 pt-12'>
-      <div className="container mx-auto p-20">
-        <div className=" px-4 ">
-          <div className="inner text-[16px] font-roboto text-[#2A2A2A]">
-            <p className="mb-10">
-              {job.description}
-              <br />
-              <br />
-              The current position requires the following skills:
-            </p>
+      {/* className='md:pt-16 pt-12' */}
+      <div className='pt-16'>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto"> {/* Added max-width and mx-auto for centering */}
+            <div className="inner text-[16px] font-roboto text-[#2A2A2A]">
+              <p className="mb-10"> {/* Added text-center for the description */}
+                {job.description}
+                <br />
+                <br />
+                The current position requires the following skills:
+              </p>
 
-            {job.requirements && job.requirements.length > 0 && (
-              <div className="row flex flex-col md:flex-row">
-                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
-                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Technical Skills:</h3>
+              {job.requirements && job.requirements.length > 0 && (
+                <div className="flex flex-col md:flex-row gap-8"> {/* Added gap for better spacing */}
+                  <div className="md:w-1/3">
+                    <h3 className="text-[20px] font-source font-semibold text-gray-800">Technical Skills:</h3>
+                  </div>
+                  <div className="md:w-2/3">
+                    <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
+                      {job.requirements.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="col-md-8 md:w-2/3">
-                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
-                    {job.requirements.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+              )}
 
-            {job.softSkills && job.softSkills.length > 0 && (
-              <div className="row flex flex-col md:flex-row mt-[73px]">
-                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
-                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Soft Skills:</h3>
+              {job.softSkills && job.softSkills.length > 0 && (
+                <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
+                  <div className="md:w-1/3">
+                    <h3 className="text-[20px] font-source font-semibold text-gray-800">Soft Skills:</h3>
+                  </div>
+                  <div className="md:w-2/3">
+                    <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
+                      {job.softSkills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="col-md-8 md:w-2/3">
-                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
-                    {job.softSkills.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+              )}
 
-            {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
-              <div className="row flex flex-col md:flex-row mt-[73px]">
-                <div className="col-md-4 md:w-1/3 mb-4 md:mb-0">
-                  <h3 className="text-[18px] font-source font-semibold text-gray-800">Desired Candidate Profile:</h3>
+              {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
+                <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
+                  <div className="md:w-1/3">
+                    <h3 className="text-[20px] font-source font-semibold text-gray-800">Desired Candidate Profile:</h3>
+                  </div>
+                  <div className="md:w-2/3">
+                    <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
+                      {job.desiredCandidateProfile.map((profile, index) => (
+                        <li key={index}>{profile}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="col-md-8 md:w-2/3">
-                  <ul className="list-[circle] pl-5 text-gray-700 space-y-2 text-[16px] font-roboto">
-                    {job.desiredCandidateProfile.map((profile, index) => (
-                      <li key={index}>{profile}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          
-          </div>
+              )}
+            </div>
 
-          {/* Apply Div */}
-          {/* <div className="pt-6" ref={formRef} id="applicationForm">
-            {jobWithForm.includes(job.id) ? (
-              <JoinTeam title="Apply Now" />
-            ) : (
-              <button
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors"
-                onClick={() => alert(`Applied for ${job.title} position!`)}
-              >
-                Apply via Naukri.com
-              </button>
-            )}
-          </div> */}
-
-
-          {/* Apply Div */}
-          <div className="pt-6" ref={formRef} id="applicationForm">
-            {jobWithForm.includes(job.id) ? (
-              <JoinTeam title="Apply Now" />
-            ) : jobWithFormAndButton.includes(job.id) ? (
-              <>
-                <div className="flex gap-[99px] mb-6 items-center justify-center">
-                  <button
-                    className="flex items-center ripple-btn justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
-                    onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
-                  >
-                    Apply via Naukri
-                  </button>
-                  <button
-                    className="flex items-center ripple-btn justify-center flex-1 min-h-[40px] max-h-[40px] min-w-[280px] max-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
-                    onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Apply Now
-                  </button>
-                </div>
+            {/* Apply Div */}
+            <div className="pt-14" ref={formRef} id="applicationForm">
+              {jobWithForm.includes(job.id) ? (
                 <JoinTeam title="Apply Now" />
-              </>
-            ) : (
-              <div className='flex justify-center items-center'>
-                <button
-                  className="min-w-[280px] max-w-[280px] ripple-btn items-center bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors mt-10 mb-10"
-                  onClick={() => alert(`Applied for ${job.title} position!`)}
-                >
-                  Apply via Naukri.com
-                </button>
-              </div>
-            )}
+              ) : jobWithFormAndButton.includes(job.id) ? (
+                <>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 pt-14">
+                    <button
+                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
+                    >
+                      Apply via Naukri
+                    </button>
+                    <button
+                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                  <JoinTeam title="Apply Now" className='pt-14'/>
+                </>
+              ) : (
+                <div className='flex justify-center pt-14'>
+                  <button
+                    className="ripple-btn min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors my-10"
+                    onClick={() => alert(`Applied for ${job.title} position!`)}
+                  >
+                    Apply via Naukri.com
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
-
-
         </div>
-      </div>
-              
       </div>
     </div>
   );

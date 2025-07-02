@@ -8,9 +8,10 @@ import 'react-phone-number-input/style.css';
 
 interface JoinTeamProps{
   title?: string;
+  className?: string
 }
 
-export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
+export default function JoinTeam({title = "Join Our Team", className}: JoinTeamProps) {
   // Form state 
   const [formData, setFormData] = useState({
     name: "",
@@ -223,7 +224,7 @@ export default function JoinTeam({title = "Join Our Team"}: JoinTeamProps) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6" id="joinTeamForm">
+    <div className={`${className ?? ""} max-w-4xl mx-auto p-6`} id="joinTeamForm">
       <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
         {title}
         {/* Join Our Team */}

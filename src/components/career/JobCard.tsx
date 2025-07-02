@@ -47,21 +47,21 @@ export default function Home() {
     {
       id: "5",
       title: "Full Stack Developer",
-      hashtags: ["#PHP", "#MySQL", "#CodeIgniter", "#Laravel", "#JavaScript", "#React", "#Angular", "#Vue", "#HTML", "#CSS"],
+      hashtags: ["#FullStackDeveloper", "#FrontEndDeveloper", "#BackEndDeveloper"],
       experience: "2 - 6 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0, 103, 183), rgb(140, 13, 99))"
     },
     {
       id: "6",
       title: "PHP Development - Internship",
-      hashtags: ["#PHP", "#MySQL", "#JavaScript", "#HTML", "#CSS"],
+      hashtags: ["#PHP", "#MySQL", "#JavaScript", "#Plugins"],
       experience: "0 - 1 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     },
     {
       id: "7",
       title: "UI/UX Designer Intern",
-      hashtags: ["#UI", "#UX", "#Figma", "#AdobeXD", "#Photoshop", "#Illustrator"],
+      hashtags: ["GraphicDesign", "#Logo", "#WebDesign", "#AppDesign", "#UI", "#UX"],
       experience: "0 - 1 Years",
       gradientColors: "linear-gradient(-45deg, rgb(108, 50, 182), rgb(29, 160, 163))"
     }
