@@ -89,7 +89,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'The people at Bitpastel are professionals, the SRS (Software Requirement Specification) that the team is working on is the exact translation of my insights and idea\'s about the app. Bitpastel gives me the guarantee that the app will be all I wanted it to be, and more... I highly recommend them for your next project',
     image: '/images/Anthony.jpg',
-    bgColor: 'bg-[#FFEA97]',
+    bgColor: 'bg-[#82EAB3]',
   },
   {
     id: '9',
@@ -98,7 +98,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been doing custom HubSpot COS development for us and our expectations have been consistently exceeded. There is always a great turnaround on project requests and they are available for talking through upcoming work and ready to take on new challenges.',
     image: '/images/Brandon_P.jpg',
-    bgColor: 'bg-[#82EAB3]',
+    bgColor: 'bg-[#FFEA97]',
   },
   {
     id: '10',
