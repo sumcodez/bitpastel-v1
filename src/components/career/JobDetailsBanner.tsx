@@ -84,7 +84,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               <span>{jobTitle}</span>
             </h1>
   
-            <div className="md:text-primary-white text-title md:text-left text-center">
+            <div className="md:text-primary-white text-title md:text-left text-center mt-[1.8rem]">
               {/* First Benefit */}
               <div className="flex md:gap-4 gap-0 mb-[15px] items-start">
                 <Image
@@ -123,7 +123,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
             </div>
   
             <button 
-              className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-primary-white mt-[15px] font-roboto`}
+              className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-primary-white mt-[25px] font-roboto`}
               onClick={() => scrollToSection(scrollToId)}
             >
               {applyButtonText}
