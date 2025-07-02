@@ -237,7 +237,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg md:hidden z-50">
+      <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
         <div className="footer-mobile-nav flex justify-around items-center py-2 ">
           <div className={`nav-item flex flex-col items-center ${isActive('/') ? 'active' : ''}`}>
             <Link href="/" className="flex flex-col items-center">
