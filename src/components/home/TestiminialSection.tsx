@@ -62,7 +62,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "Ayan and the Bitpastel team are a reliable and dedicated group. Whenever I reach out to the team about back-end or front-end tasks that need to be completed, they're not only quick to respond but I can rely on their turnaround time. Since partnering with them, my mind has been at ease knowing that they will get the job done so that I can focus on other tasks. It has been a pleasure working with them!",
     image: '/images/img_image_2.png',
-    bgColor: 'bg-[#FFEA97]',
+    bgColor: 'bg-[#9FDDEE]',
   },
   {
     id: '6',
@@ -71,7 +71,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Ayan and his team were very helpful, responsive and knowledgeable. This contract has been completed but I will continue to work with Ayan. I would recommend his services to anyone looking to build a website or improve their online presence. The design was very clean. Ayan was also a pleasure to work with and made the process of completing this task much easier.',
     image: '/images/img_image_3.png',
-    bgColor: 'bg-[#9FDDEE]',
+    bgColor: 'bg-[#FFEA97]',
   },
   {
     id: '7',
