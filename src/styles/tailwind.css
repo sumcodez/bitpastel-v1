@@ -392,6 +392,7 @@ button {
 }
 .testimonial-card-parent:hover .testimonial-card-content {
   max-height: 100%;
+  height: auto;
 }
 .testimonial-card-parent:hover .testimonial-card-content p {
   overflow: visible;
