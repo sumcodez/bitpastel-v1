@@ -72,7 +72,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="hidden md:block">
-                <p className="mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US:</p>
+                <p className="mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US</p>
                 <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a href="https://www.facebook.com/bitpastel" target="_blank">
@@ -149,13 +149,13 @@ const Footer = () => {
                       Clientele
                     </a>
                     <Link href="/career" className={`block hover:text-gray-300 transition-colors `}>
-                      Career
+                      Careers
                     </Link>
                     <Link
                       href="/partner"
                       className={`block hover:text-gray-300 transition-colors cursor-pointer`}
                     >
-                      Partner
+                      Partners
                     </Link>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ const Footer = () => {
             </div>
             <div className="text-[13px] md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
               <p className="md:hidden block mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">
-                CONNECT WITH US:
+                CONNECT WITH US
               </p>
               <div className="md:hidden flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
