@@ -123,7 +123,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
             </div>
   
             <button 
-              className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px] font-roboto`}
+              className={`${buttonanimation} btn leading-normal bg-green-btn md:w-auto w-[100%] text-primary-white mt-[15px] font-roboto`}
               onClick={() => scrollToSection(scrollToId)}
             >
               {applyButtonText}
