@@ -34,8 +34,8 @@ const Footer = () => {
     <footer className="">
       <div className="desktop-footer bg-primary-dark text-white md:pt-16 pt-12 lg:pt-16 md:pb-6 pb-20 footer">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-8 mb-8 align-top footer-wrapper">
-            <div className="space-y-3 col-start-1 md:col-span-1 md:col-start-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-8 align-top footer-wrapper">
+            <div className="md:space-y-3 col-start-1 md:col-span-1 md:col-start-auto">
               <Link href="/">
                 <Image
                   src="/images/Footer-logo.png"
@@ -45,13 +45,13 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
               </Link>
-              <p className="md:hidden leading-[1] block mt-6  md:pb-6 pb-2 type-footer text-[13px]">
+              <p className="md:hidden leading-[1] block md:mt-0 mt-8 h-[40px] md:pb-6 pb-2 type-footer text-[13px]">
                 INFORMATION
               </p>
               <a
                 href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
                 target="_blank"
-                className="text-[13px] leading-relaxed block"
+                className="text-[13px] md:mb-0 mb-[1rem] leading-relaxed block"
               >
                 Technopolis, 11th Floor, BP Block, Sector V,
                 <br />

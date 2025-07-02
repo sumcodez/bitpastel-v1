@@ -58,10 +58,10 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
   return (
     <div>
-      <section className="relative lg:h-[470px] md:h-[400px] h-auto overflow-hidden">
+      <section className="relative lg:h-[470px] md:h-[400px] h-[400px] overflow-hidden">
         {/* Desktop Background */}
         <div
-          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className=" absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `
               url(${backgroundImage})
@@ -69,24 +69,16 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
           }}
         ></div>
   
-        {/* Mobile Background */}
-        <div
-          className="block md:hidden w-full h-[450px] bg-cover bg-[position:70%_10%] bg-no-repeat"
-          style={{
-            backgroundImage: `url(${mobileBackgroundImage || backgroundImage})`
-          }}
-        ></div>
-  
         {/* Content - Modified to align right */}
-        <div className="relative z-10 container mx-auto pl-[10rem] pr-[1rem] md:h-full pt-[20px] md:pt-[60px] text-left">
-          <div className="md:h-full content-center mx-auto max-w-[100%] md:ml-auto md:mr-0 md:max-w-[50%]">
-            <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
+        <div className="relative z-10 container mx-auto px-4 md:h-full  pt-[80px] text-left">
+          <div className="md:h-full content-center mx-auto max-w-[100%] ml-auto md:max-w-[450px] lg:mr-[100px] mr-0">
+            <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 md:text-left ">
               <span>{jobTitle}</span>
             </h1>
   
             <div className="md:text-primary-white text-title md:text-left text-center mt-[1.8rem]">
               {/* First Benefit */}
-              <div className="flex md:gap-4 gap-0 mb-[15px] items-start">
+              <div className="flex md:gap-4 gap-2 mb-[10px] items-start">
                 <Image
                   src={benefits[0].icon}
                   alt={benefits[0].alt}
@@ -94,11 +86,11 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mt-1.5"
                 />
-                <p className="text-title font-roboto subheading font-[400] max-w-[80%] md:max-w-[450px] whitespace-normal break-words">{benefits[0].text}</p>
+                <p className="text-title font-roboto text-left subheading font-[400]  whitespace-normal break-words">{benefits[0].text}</p>
               </div>
               
               {/* Second Benefit */}
-              <div className="flex md:gap-4 gap-0 mb-[15px] items-center">
+              <div className="flex md:gap-4 gap-2 mb-[10px] items-center">
                 <Image
                   src={benefits[1].icon}
                   alt={benefits[1].alt}
@@ -106,11 +98,11 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mb-[0.368rem] mt-1"
                 />
-                <p className="subheading font-[400] text-title font-roboto">Experience: {benefits[1].text}</p>
+                <p className="subheading font-[400] text-left text-title font-roboto">Experience: {benefits[1].text}</p>
               </div>
               
               {/* Third Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[15px] items-center">
+              <div className="flex md:gap-4 gap-2 mb-[10px] items-center">
                 <Image
                   src={benefits[2].icon}
                   alt={benefits[2].alt}
@@ -118,7 +110,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="subheading font-[400] text-title font-roboto">Location: {benefits[2].text}</p>
+                <p className="subheading font-[400] text-left text-title font-roboto">Location: {benefits[2].text}</p>
               </div>
             </div>
   
