@@ -33,7 +33,7 @@ const CtaSection = () => {
           ></div>
 
           {/* Content */}
-          <div className="relative px-[16px] md:py-[60px] pt-[20px] pb-[0px] lg:px-[60px] md:bg-transparent text-[rgba(42,42,42,1)]">
+          <div className="relative px-[16px] md:py-[60px] pt-[40px] pb-[0px] md:text-left text-center lg:px-[60px] md:bg-transparent text-title">
             <div className="lg:max-w-[520px] md:max-w-[480px] max-w-full">
               <h2 className="font-bold font-source md:text-primary-white title text-title md:mb-4 mb-4 leading-tight">
                 Discover the digital 

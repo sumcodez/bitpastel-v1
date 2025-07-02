@@ -401,6 +401,9 @@ button {
   .title{
     font-size: 22px;
   }
+  .subheading{
+    font-size: 20px;
+  }
   .instagram-area-top {
     grid-template-columns: 1fr !important;
     margin-top: 0 !important;

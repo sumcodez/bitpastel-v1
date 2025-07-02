@@ -462,15 +462,6 @@
     gap: 20px;
   }
 
-  /* .our-services-wrapper .active .mobile-block{
-  opacity: 1;
-}
-.our-services-wrapper .active .mobile-none{
-  opacity: 0;
-} */
-  .our-services-wrapper div h3 {
-    font-size: 16px !important;
-  }
   .mobile-none img {
     width: 40px;
   }

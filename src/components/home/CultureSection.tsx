@@ -77,7 +77,7 @@ const CultureSection = () => {
                 className={`p-0 relative 
                   `}
               >
-                <div className="flex space-x-4 mb-4 flex-row gap-0 text-left justify-start ">
+                <div className="flex md:space-x-4 space-x-3 mb-4 flex-row gap-0 text-left justify-start ">
                   <Image
                     src={feature.icon}
                     alt={feature.title}

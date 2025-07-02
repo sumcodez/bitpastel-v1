@@ -57,7 +57,7 @@ const SatisfiedClientSection = () => {
                   height={34}
                   className="mx-auto mb-4 md:h-auto h-10"
                 />
-                <h2 className=" font-source font-bold text-title text-title leading-[1]">{stat.value}</h2>
+                <h2 className=" font-source font-bold text-title text-title md:title text-[20px] leading-[1]">{stat.value}</h2>
                 <div className={`font-source md:text-[16px] text-[12px] font-bold ${stat.color}`}>{stat.label}</div>
               </div>
             ))}
