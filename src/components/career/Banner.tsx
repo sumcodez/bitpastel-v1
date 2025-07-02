@@ -50,7 +50,7 @@ const Banner = () => {
                     'Enjoy a Happy work enviroment',
                     'Fast-track career progress',
                   ].map((text, idx) => (
-                    <div key={idx} className="flex md:gap-4 gap-0 mb-[15px] items-center">
+                    <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
                       <Image
                         src="/images/img_materialsymbolscheckrounded.svg"
                         alt="Check"

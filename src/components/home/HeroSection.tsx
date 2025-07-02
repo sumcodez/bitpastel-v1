@@ -43,7 +43,7 @@ const HeroSection = () => {
               'Web & Mobile App Development',
               'Marketing Solutions',
             ].map((text, idx) => (
-              <div key={idx} className="flex md:gap-4 gap-0 mb-[15px] items-center">
+              <div key={idx} className="flex md:gap-4 gap-2 mb-[15px] items-center">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"

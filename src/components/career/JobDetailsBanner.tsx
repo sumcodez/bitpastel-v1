@@ -110,7 +110,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               </div>
               
               {/* Third Benefit */}
-              <div className="flex md:gap-4 gap-0 mb-[15px] items-center">
+              <div className="flex md:gap-4 gap-2 mb-[15px] items-center">
                 <Image
                   src={benefits[2].icon}
                   alt={benefits[2].alt}
