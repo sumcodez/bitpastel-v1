@@ -14,7 +14,7 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Check if current page is the career apply page
-  const isCareerApplyPage = pathname.startsWith('/career/applyJob/');
+  const isCareerApplyPage = pathname.startsWith('/career/applyJob/') || pathname.startsWith('/partner') || pathname.startsWith('/privacy');
 
   // Combine scrolled state with career apply page check
   const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage;
