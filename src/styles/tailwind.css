@@ -637,8 +637,16 @@ button {
     color: #2a2a2a;
 }
 
-
 @media (max-width: 767px) {
+  .become-partner-form-area .form-button{
+    min-width: 100%;
+    max-width: 100%;
+  }
+      .become-partner-circle {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+    }
   .partner-refer-circle {
     width: 75px;
     height: 75px;

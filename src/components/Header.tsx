@@ -93,11 +93,11 @@ const Header = () => {
         shouldApplyScrolledStyle ? 'bg-[#ffffff] border-[#f5f5f5]' : 'bg-transparent border-transparent'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex md:justify-between justify-center items-center">
+          <div className="flex lg:justify-between justify-center items-center">
             <Link href="/">
               <Image src={logoSrc} alt="Logo" width={110} height={70} className="md:h-12 h-8 w-[122px] object-contain" />
             </Link>
-            <nav className="hidden md:flex space-x-8 items-center">
+            <nav className="hidden lg:flex space-x-8 items-center">
               <Link href="/#services" onClick={(e) => handleLinkClick(e, 'services')} className={getLinkClass('services')}>
                 Services
               </Link>

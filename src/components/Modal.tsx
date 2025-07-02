@@ -263,7 +263,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     Satisfied Client Worldwide
                   </h2>
 
-                  <div className="grid lg:grid-cols-4 md:grid-cols-2 md:gap-6">
+                  <div className="grid lg:grid-cols-4 md:grid-cols-2 md:gap-6 lg:px-[50px]">
                     <div className="text-center">
                       <Image
                         src="/images/modal-1.png"
@@ -453,7 +453,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     </div>
 
                     {/* Buttons and Footer - Fixed at bottom */}
-                    <div className="space-y-3 pt-4">
+                    <div className=" pt-4">
                       {/* Submit Button */}
                       <button
                         type="submit"
@@ -463,7 +463,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </button>
 
                       {/* Privacy Policy */}
-                      <p className="text-[11px] mt-1 text-gray-500 text-center">
+                      <p className="text-[11px] mt-[3px] text-gray-500 text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
                         <a href="#" className="text-[#52d09c]">
                           Privacy Policy
@@ -473,7 +473,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Chat Button */}
                       <button
                         type="button"
-                        className="w-full text-[#52d09c] border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
+                        className="w-full text-[#52d09c] mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
                       >
                         Chat with Us
                       </button>
