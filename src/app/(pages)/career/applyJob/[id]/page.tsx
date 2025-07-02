@@ -20,8 +20,9 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
   const [job, setJob] = useState<JobListing | null>(null);
   const [loading, setLoading] = useState(true);
-  const jobWithForm = ['2', '4'];
-  const jobWithFormAndButton = ["5"];
+  const jobWithForm = ['4'];
+  const jobWithOneButtonAndForm = ['3', '5', '6'];
+  const jobWithFormAndButton = ["1"];
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
   const scrollToForm = () => {
@@ -441,6 +442,18 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                     </button>
                   </div>
                   <JoinTeam title="Apply Now" className='pt-14'/>
+                </>
+              ) : jobWithOneButtonAndForm.includes(job.id) ? (
+                <>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 pt-14">
+                    <button
+                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                  <JoinTeam title="Apply Now" />
                 </>
               ) : (
                 <div className='flex justify-center pt-14'>
