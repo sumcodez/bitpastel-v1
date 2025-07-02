@@ -33,12 +33,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       id: '1',
       title: 'Marketing Manager',
       hashtags: [
-        '#Upwork',
-        '#Freelancer',
-        '#OnlineBidding',
-        '#ClientCommunication',
-        '#ITSales',
-        '#BusinessDevelopment',
+"#Upwork", "#Freelancer", "#OnlineBidding", "#Leadership", "#Itservice", "#Itsales"
       ],
       experience: '0 - 6 Years',
       gradientColors: 'linear-gradient(-45deg, rgb(0,103,183), rgb(140, 13,99))',
