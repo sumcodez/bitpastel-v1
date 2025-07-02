@@ -236,12 +236,12 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>
-                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'} min-h-[70px]`}>
+                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'}`}>
                     "{testimonial.message}"
                   </p>
                 </div>
               </div>
-              <div className="flex items-top space-x-4 mt-4 pt-4 border-t border-transparent">
+              <div className="flex items-top space-x-4 mt-4 pt-4 border-t border-transparent md:min-h-[80px]">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
