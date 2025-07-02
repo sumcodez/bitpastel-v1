@@ -152,8 +152,7 @@ const Footer = () => {
                       Career
                     </Link>
                     <Link
-                      href="https://www.bitpastel.com/studio/"
-                      target="_blank"
+                      href="/partner"
                       className={`block hover:text-gray-300 transition-colors cursor-pointer`}
                     >
                       Partner
