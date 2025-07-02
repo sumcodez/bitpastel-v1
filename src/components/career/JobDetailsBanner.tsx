@@ -88,7 +88,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
   
             <div className="md:text-primary-white text-title md:text-left text-center mt-[1.8rem]">
               {/* First Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[10px] items-start">
+              <div className="flex md:gap-4 gap-2 mb-[5px] items-start">
                 <Image
                   src={benefits[0].icon}
                   alt={benefits[0].alt}
@@ -100,7 +100,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               </div>
               
               {/* Second Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[10px] items-center">
+              <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
                 <Image
                   src={benefits[1].icon}
                   alt={benefits[1].alt}
@@ -112,7 +112,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               </div>
               
               {/* Third Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[10px] items-center">
+              <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
                 <Image
                   src={benefits[2].icon}
                   alt={benefits[2].alt}
