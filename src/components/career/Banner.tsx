@@ -63,7 +63,7 @@ const Banner = () => {
                   ))}
                 </div>
       
-                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-inter"
+                <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
                 onClick={() => scrollToSection('#jobCards')}
                 >
                  Explore Opportunities
