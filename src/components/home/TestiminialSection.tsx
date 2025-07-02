@@ -263,7 +263,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             <button
               onClick={loadMoreTestimonials}
               disabled={isAnimating}
-              className={`group flex btn items-center space-x-3 md:w-[auto] w-full transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn ${
+              className={`group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn ${
                 isAnimating ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >
