@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FloatingFooter = () => {
   return (
-    <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white shadow-lg md:hidden z-50">
+    <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-[#ffffff] shadow-lg lg:hidden z-50">
       <div className="footer-mobile-nav flex justify-around items-center py-2">
         {/* Home */}
         <div className="nav-item active flex flex-col items-center active">

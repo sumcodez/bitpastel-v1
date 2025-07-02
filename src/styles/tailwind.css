@@ -384,14 +384,14 @@ button {
 }
 
 .testimonial-card-parent .testimonial-card-content {
-  max-height: 104px;
+  height: 70px;
   transition: all 3s ease;
 }
 .testimonial-card-parent .testimonial-card-content p {
   transition: all 3s ease;
 }
 .testimonial-card-parent:hover .testimonial-card-content {
-  max-height: 500px;
+  max-height: 100%;
 }
 .testimonial-card-parent:hover .testimonial-card-content p {
   overflow: visible;
