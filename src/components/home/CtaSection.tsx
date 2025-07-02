@@ -9,18 +9,18 @@ const CtaSection = () => {
           {/* Background for mobile and desktop */}
           <div 
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
-                       md:bg-[position:50%_10%]"
+                       md:bg-[position:50%_65%]"
             style={{
-              backgroundImage: "url('/images/Cta_new_bg.png')"
+              backgroundImage: "url('/images/discover_new_img.jpg')"
             }}
           ></div>
 
           {/* Background for mobile only */}
           <div 
-            className="md:hidden block w-full min-h-[280px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
-                       bg-[position:50%_10%] rounded-tl-[20px] rounded-bl-[0px]"
+            className="md:hidden block w-full min-h-[400px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
+                       bg-[position:100%_10%] rounded-tl-[20px] rounded-bl-[0px]"
             style={{
-              backgroundImage: "url('/images/CTA.png')"
+              backgroundImage: "url('/images/discover_new_img.jpg')"
             }}
           ></div>
 
@@ -35,19 +35,19 @@ const CtaSection = () => {
           {/* Content */}
           <div className="relative px-[16px] md:py-[60px] pt-[20px] pb-[0px] lg:px-[60px] md:bg-transparent text-[rgba(42,42,42,1)]">
             <div className="lg:max-w-[520px] md:max-w-[480px] max-w-full">
-              <h2 className="font-bold font-source md:text-white text-[#2a2a2a] md:mb-4 mb-4 leading-tight">
+              <h2 className="font-bold font-source md:text-primary-white title text-title md:mb-4 mb-4 leading-tight">
                 Discover the digital 
                 < br className=''/>
                 possibilities we can help you 
                 <br className=''/>
                 unlock for your business!
               </h2>
-              <p className="md:text-white text-dark md:mb-8 mb-4 leading-relaxed max-w-[100%] md:max-w-[60%] mr-auto">
+              <p className="md:text-primary-white text-title md:mb-8 mb-4 leading-relaxed max-w-[100%] md:max-w-[60%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
               </p>
-              <button className="btn leading-normal bg-green-btn md:w-auto text-white md:mt-1 mt-1 font-inter">
+              <button className="btn leading-normal bg-green-btn md:w-auto md:mt-1 mt-1 font-roboto">
                 Contact Us
               </button>
             </div>

@@ -45,34 +45,34 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
               </Link>
-              <p className="md:hidden leading-[1] block mt-6 text-[16px] md:pb-6 pb-2 type-footer le">
+              <p className="md:hidden leading-[1] block mt-6  md:pb-6 pb-2 type-footer text-[13px]">
                 INFORMATION
               </p>
               <a
                 href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
                 target="_blank"
-                className="text-sm leading-relaxed block"
+                className="text-[13px] leading-relaxed block"
               >
                 Technopolis, 11th Floor, BP Block, Sector V,
                 <br />
                 Salt Lake City, Kolkata - 700091
               </a>
-              <div className="md:hidden block space-y-2">
-                <a className="block" href="tel:+1 (872) 444 6679">
+              <div className="md:hidden block space-y-2 text-[13px]">
+                <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                   <span>US: +1 (872) 444 6679</span>
                 </a>
-                <a className="block" href="tel:+44 2081 446579">
+                <a className="block text-[13px]" href="tel:+44 2081 446579">
                   <span>UK: +44 2081 446579</span>
                 </a>
-                <a className="block" href="tel:+91 9830 566 248">
+                <a className="block text-[13px]" href="tel:+91 9830 566 248">
                   <span>IN: +91 9830 566 248</span>
                 </a>
-                <a className="mt-4 block" href="mailto:connect@bitpastel.com">
+                <a className="mt-4 block text-[13px]" href="mailto:connect@bitpastel.com">
                   <span>connect@bitpastel.com</span>
                 </a>
               </div>
               <div className="hidden md:block">
-                <p className="mt-6 text-[16px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US:</p>
+                <p className="mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US:</p>
                 <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a href="https://www.facebook.com/bitpastel" target="_blank">
@@ -112,32 +112,32 @@ const Footer = () => {
             </div>
 
             <div className="md:max-w-[300px] mx-auto w-full">
-              <p className="h-[75px] type-footer leading-[1]">QUICK LINKS</p>
+              <p className="h-[50px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
               <div className="grid grid-cols-2">
                 <div className="">
-                  <div className="space-y-4 text-sm">
-                    <Link href="/" className={`block hover:text-gray-300 transition-colors `}>
+                  <div className="space-y-4 text-[13px]">
+                    <Link href="/" className={`block hover:text-gray-300 transition-colors text-[13px]`}>
                       Home
                     </Link>
-                    <Link href="#" className={`block hover:text-gray-300 transition-colors `}>
+                    <Link href="#" className={`block hover:text-gray-300 transition-colors text-[13px]`}>
                       Portfolio
                     </Link>
                     <Link
                       href="/#services"
-                      className={`block hover:text-gray-300 transition-colors `}
+                      className={`block hover:text-gray-300 transition-colors text-[13px]`}
                     >
                       Services
                     </Link>
                     <Link
                       href="/#stories"
-                      className={`block hover:text-gray-300 transition-colors `}
+                      className={`block hover:text-gray-300 transition-colors text-[13px]`}
                     >
                       Stories
                     </Link>
                   </div>
                 </div>
                 <div className="md:ml-auto">
-                  <div className="space-y-4 text-sm">
+                  <div className="space-y-4 text-[13px]">
                     <Link href="/team" className={`block hover:text-gray-300 transition-colors `}>
                       Culture
                     </Link>
@@ -161,8 +161,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="text-sm md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
-              <p className="md:hidden block mt-6 text-[16px] md:pb-6 pb-2 type-footer leading-[1]">
+            <div className="text-[13px] md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
+              <p className="md:hidden block mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">
                 CONNECT WITH US:
               </p>
               <div className="md:hidden flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
@@ -201,23 +201,23 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <p className="hidden md:block h-[75px] type-footer leading-[1]">INFORMATION</p>
+                <p className="hidden md:block h-[50px] type-footer leading-[1] text-[13px]">INFORMATION</p>
                 <div className="md:block hidden mt-0 space-y-4">
-                  <a className="block" href="tel:+1 (872) 444 6679">
+                  <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                     <span>US: +1 (872) 444 6679</span>
                   </a>
-                  <a className="block" href="tel:+44 2081 446579">
+                  <a className="block text-[13px]" href="tel:+44 2081 446579">
                     <span>UK: +44 2081 446579</span>
                   </a>
-                  <a className="block" href="tel:+91 9830 566 248">
+                  <a className="block text-[13px]" href="tel:+91 9830 566 248">
                     <span>IN: +91 9830 566 248</span>
                   </a>
-                  <a className="mt-4 block" href="mailto:connect@bitpastel.com">
+                  <a className="mt-4 block text-[13px]" href="mailto:connect@bitpastel.com">
                     <span>connect@bitpastel.com</span>
                   </a>
                 </div>
               </div>
-              <p className="md:hidden block text-center md:text-sm text-[12px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
+              <p className="md:hidden block text-center text-white text-[13px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025
                 <br />
                 All Rights Reserved
@@ -230,7 +230,7 @@ const Footer = () => {
             className="pt-6 md:block hidden"
             style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
           >
-            <p className="text-center md:text-sm text-[12px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
+            <p className="text-center md:text-[13px] text-[13px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
               Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
               <a href="/privacy">Privacy Policy</a>
             </p>
@@ -256,7 +256,7 @@ const Footer = () => {
                   stroke-width="1.5"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Home</span>
+              <span className={`text-[11px] mt-1 `}>Home</span>
             </Link>
           </div>
           <div
@@ -278,7 +278,7 @@ const Footer = () => {
                   stroke-width="1.5"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Services</span>
+              <span className={`text-[11px] mt-1 `}>Services</span>
             </Link>
           </div>
           <div
@@ -305,7 +305,7 @@ const Footer = () => {
                   fill="#008B8B"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Stories</span>
+              <span className={`text-[11px] mt-1 `}>Stories</span>
             </Link>
           </div>
           <div
@@ -329,7 +329,7 @@ const Footer = () => {
                   stroke-width="1.5"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Team</span>
+              <span className={`text-[11px] mt-1 `}>Team</span>
             </Link>
           </div>
           <div
@@ -423,7 +423,7 @@ const Footer = () => {
                   fill="#008B8B"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Careers</span>
+              <span className={`text-[11px] mt-1 `}>Careers</span>
             </Link>
           </div>
           <div
@@ -447,7 +447,7 @@ const Footer = () => {
                   stroke-width="1.5"
                 ></path>
               </svg>
-              <span className={`text-xs mt-1 `}>Contact</span>
+              <span className={`text-[11px] mt-1 `}>Contact</span>
             </Link>
           </div>
         </div>

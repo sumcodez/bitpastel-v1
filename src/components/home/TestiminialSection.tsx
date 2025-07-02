@@ -225,9 +225,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section id="stories" className="pt-12 lg:pt-16">
       <div className="container mx-auto px-4">
-        <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-8 mb-3">Stories</h2>
+        <h2 className="font-source font-bold text-center text-title title md:mb-8 mb-3">Stories</h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-dark">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title">
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -235,7 +235,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>
-                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[16px] line-clamp-4 leading-[26px]'} `}>
+                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'} `}>
                     "{testimonial.message}"
                   </p>
                 </div>
@@ -249,8 +249,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   className="rounded-full object-cover md:h-[56px] md:w-[56px] w-[30px] h-[30px]"
                 />
                 <div>
-                  <h4 className={`font-[600] ${isMobile ? 'text-[12px]' : 'text-[20px]'} font-source`}>{testimonial.name}</h4>
-                  <p className={`opacity-90 italic ${isMobile ? 'text-[12px]' : 'text-[16px]'}`}>{testimonial.title}</p>
+                  <h4 className={`font-[600] ${isMobile ? 'text-[12px]' : 'paragraph'} font-source`}>{testimonial.name}</h4>
+                  <p className={`font-roboto italic ${isMobile ? 'text-[12px]' : 'text-[13px]'}`}>{testimonial.title}</p>
                 </div>
               </div>
             </div>
@@ -262,7 +262,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             <button
               onClick={loadMoreTestimonials}
               disabled={isAnimating}
-              className={`group flex btn items-center space-x-3 md:w-[auto] w-full transition-all duration-300 focus:outline-none font-inter h-auto text-white font-[400] bg-green-btn ${
+              className={`group flex btn items-center space-x-3 md:w-[auto] w-full transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn ${
                 isAnimating ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >

@@ -72,7 +72,7 @@ const Header = () => {
 
   const getLinkClass = (section: string) => {
     return `transition-colors ${
-      activeSection === section ? 'text-accent-green' : isScrolled ? 'text-gray-800' : 'text-white'
+      activeSection === section ? 'text-accent-green' : isScrolled ? 'text-gray-800' : 'text-primary-white'
     } hover:text-accent-green`;
   };
 
@@ -95,10 +95,10 @@ const Header = () => {
             <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
               Stories
             </Link>
-            <Link href="/team" className={isScrolled ? 'text-gray-800 hover:text-primary-teal' : 'text-white hover:text-primary-teal'}>
+            <Link href="/team" className={isScrolled ? 'text-gray-800 hover:text-primary-teal' : 'text-primary-white hover:text-primary-teal'}>
               Culture
             </Link>
-            <button className="bg-green-btn px-5 py-2 text-white rounded hover:bg-opacity-90"
+            <button className="bg-green-btn px-5 py-2 text-primary-white rounded hover:bg-opacity-90"
             onClick={() => setIsModalOpen(true)}
             >Chat with Us</button>
           </nav>

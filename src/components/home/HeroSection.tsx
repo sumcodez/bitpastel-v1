@@ -31,13 +31,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:h-full pt-[20px] md:pt-[60px] text-left ">
         <div className="md:h-full content-center mx-auto max-w-[100%]">
-          <h1 className="md:text-white text-[#2A2A2A] md:leading-[40px] font-source leading-[25px] md:mb-5 mb-4">
+          <h1 className="md:text-primary-white text-title md:leading-[40px] font-source leading-[25px] md:mb-5 mb-4">
             <span>Crafting </span>
             <span className="font-bold lg:inline md:block inline">Digital Solutions</span>
             <span className="block"> for your business</span>
           </h1>
 
-          <div className="md:text-white text-[#212529] ">
+          <div className="md:text-primary-white text-title ">
             {[
               'Shopify Plus & eCom Development',
               'Web & Mobile App Development',
@@ -56,7 +56,7 @@ const HeroSection = () => {
             ))}
           </div>
 
-          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] text-white mt-[15px]  font-inter"
+          <button className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-inter"
           onClick={() => setIsModalOpen(true)}
           >
             Let’s Work Together

@@ -60,9 +60,9 @@ const ServicesSection = () => {
   ];
   return (
 
-            <section id="services" className="pt-12 lg:pt-16  bg-white">
+            <section id="services" className="pt-12 lg:pt-16">
               <div className="container mx-auto px-4">
-                <h2 className=" font-[600] font-source text-center text-dark md:mb-0 mb-3">Our Services</h2>
+                <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
                   {services.map((service, index) => (
                     <div
@@ -81,13 +81,13 @@ const ServicesSection = () => {
                       >
                         <Image src={service.icon} alt={service.title} width={36} height={36} />
                       </div>
-                      <h3 className={` font-bold md:text-[rgba(30,30,30,1)] md:mb-1 mb-0 ${service.mobileTextColor}`}>{service.title}</h3>
-                      <p className="-relaxed md:max-w-[275px] max-w-[unset] w-full mx-auto text-[rgba(59,59,61,1)]">
+                      <h3 className={` subheading font-bold md:text-title md:mb-1 mb-0 ${service.mobileTextColor}`}>{service.title}</h3>
+                      <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title">
                         {service.description}
                       </p>
                       </div>
                       <div className='collapsible-element text-left content-center'>
-                        <p className='text-[rgba(59,59,61,1)] text-[16px] leading-[20px]'>
+                        <p className='paragraph text-title text-[16px] leading-[20px]'>
                           {service.description}
                         </p>
                       </div>
