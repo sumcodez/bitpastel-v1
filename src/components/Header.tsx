@@ -104,7 +104,7 @@ const Header = () => {
               <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
                 Stories
               </Link>
-              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-gray-800 hover:text-primary-teal' : 'text-primary-white hover:text-primary-teal'}>
+              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-primary-white hover:text-accent-green' : 'text-primary-white hover:text-accent-green'}>
                 Culture
               </Link>
               <button className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90"
