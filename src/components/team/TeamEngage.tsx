@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button';
 import { Link } from 'lucide-react';
 const TeamEngage = () => {
   return (
-    <section className="pt-[45px] pb-[90px]">
+    <section className="pt-[45px] pb-[45px]">
       <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
           <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-full">
