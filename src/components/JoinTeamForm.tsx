@@ -27,9 +27,12 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
   const [defaultCountry, setDefaultCountry] = useState<string>("IN");
   const [isLoading, setIsLoading] = useState(true);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+
   // Detect user's country based on IP
   useEffect(() => {
     const detectCountry = async () => {
@@ -47,6 +50,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     };
     detectCountry();
   }, []);
+
+
+
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
     if (!formData.name.trim()) newErrors.name = "Name is required.";
@@ -62,6 +68,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     if (!formData.resume) newErrors.resume = "Please attach your resume.";
     return newErrors;
   };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -74,6 +81,14 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+
+  useEffect(() => {
+    const validationErrors = validateForm();
+    setIsFormValid(Object.keys(validationErrors).length === 0);
+  }, [formData]);
+
+
   const experienceOptions = [
     "Fresher",
     "1 year",
@@ -391,7 +406,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
           <button
             type="submit"
-            className="bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center"
+            // className="bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center"
+              className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
+                !isFormValid ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+              disabled={!isFormValid}
           >
             Send
           </button>
