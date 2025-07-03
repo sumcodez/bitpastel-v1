@@ -147,7 +147,7 @@ const BecomePartner = () => {
                   />
                 </div>
                 <button 
-                  className="form-button bg-green-btn text-primary-white" 
+                  className="form-button bg-green-btn" 
                   type="submit" 
                   disabled={isSubmitting}
                 >
