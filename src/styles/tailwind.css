@@ -388,21 +388,34 @@ button {
   grid-template-columns: 60% 40% !important;
 }
 
-.testimonial-card-parent .testimonial-card-content {
+/* .testimonial-card-parent .testimonial-card-content {
   height: 70px;
   transition: all 3s ease;
+} */
+ 
+@media screen and (min-width:991px) {
+  
+  .testimonial-card-parent .testimonial-card-content p {
+    max-height: 70px;
+    overflow: hidden;
+    opacity: 1;
+    padding-bottom: 0;
+    transition: 
+      max-height 0.5s ease,
+      padding 0.3s ease,
+      opacity 0.3s ease;
+  }
+  
+  .testimonial-card-parent:hover .testimonial-card-content p {
+    max-height: 1000px; /* Choose a large enough value */
+    padding-bottom: 20px;
+    opacity: 1;
+    display: block;
+  }
 }
-.testimonial-card-parent .testimonial-card-content p {
-  transition: all 3s ease;
-}
-.testimonial-card-parent:hover .testimonial-card-content {
-  max-height: 100%;
-  height: auto;
-}
-.testimonial-card-parent:hover .testimonial-card-content p {
-  overflow: visible;
-  display: block;
-}
+
+
+
 .partner-refer-list:last-child {
     border-bottom: 0;
     padding-bottom: 0;
