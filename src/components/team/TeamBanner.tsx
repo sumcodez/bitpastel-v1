@@ -28,7 +28,7 @@ const TeamBanner = () => {
 
       {/* Mobile background image on top */}
       <div
-        className="block md:hidden w-full h-[450px]  bg-cover bg-[position:76%_10%] bg-no-repeat"
+        className="block md:hidden w-full h-[430px]  bg-cover bg-[position:76%_10%] bg-no-repeat"
         style={{
           backgroundImage: `
             url('/images/team_banner.jpg')

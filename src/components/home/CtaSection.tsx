@@ -16,10 +16,10 @@ const CtaSection = () => {
 
           {/* Background for mobile only */}
           <div 
-            className="md:hidden block w-full min-h-[400px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
+            className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
                        bg-[position:100%_10%] rounded-tl-[20px] rounded-bl-[0px]"
             style={{
-              backgroundImage: "url('/images/discover_new_img.jpg')"
+              backgroundImage: "url('/images/Contact-us.png')"
             }}
           ></div>
 
