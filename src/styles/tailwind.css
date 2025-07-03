@@ -449,6 +449,12 @@ button {
   color: #212529;
   font-weight: 100;
 }
+input::placeholder,
+textarea::placeholder {
+  color: #212529;
+  font-weight: 100;
+}
+
 .modal-container input:focus-visible {
   border: none;
   outline: none;

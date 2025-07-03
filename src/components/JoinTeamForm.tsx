@@ -192,10 +192,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     fileInputRef.current?.click();
   };
   if (isLoading) {
-    return <div className="max-w-[800px] mx-auto p-6 text-center">Loading...</div>;
+    return <div className="max-w-[800px] mx-auto px-4 p-6 text-center">Loading...</div>;
   }
   return (
-    <div className={`${className ?? ""} max-w-[800px] mx-auto md:pt-[90px] pt-[70px]`} id="joinTeamForm">
+    <div className={`${className ?? ""} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px]`} id="joinTeamForm">
       <h2 className="title text-title font-semibold font-source text-center mb-8">
         {title}
         {/* Join Our Team */}
@@ -205,7 +205,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           {/* Left Column */}
           <div className="space-y-6">
             <div
-              className={`flex items-end gap-4 border-b pb-1 ${
+              className={`flex items-end gap-4 border-b ${
                 errors.name ? "border-red-500" : "border-gray-300"
               }`}
             >
@@ -216,7 +216,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                  className="w-full p-2 text-[#212529] subheading font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
               {errors.name && (
@@ -225,15 +225,20 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
+
+
             {/* Phone number */}
-            <div className={`flex gap-2 pb-1 border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
+
+
+
+            <div className={`flex gap-2 border-b ${errors.mobile ? "border-red-500" : "border-[#04ff04]"} `}>
               <PhoneInput
                 international
                 defaultCountry={defaultCountry as any} // Default to India
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
-                className="!border-none !p-0 [&>input]:!text-[#B3B3B3] [&>input]:!text-[19px] [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B3B3B3]"
+                className="!border-none w-full !p-0 [&>input]:!text-[#212529] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {errors.phone && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
@@ -241,31 +246,35 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
-            <div>
+
+
+
+            <div className={`flex gap-2 border-b ${errors.mobile ? "border-red-500" : "border-[#04ff04]"} `}>
               <input
                 type="text"
                 name="qualification"
                 placeholder="Qualification (Optional)"
                 value={formData.qualification}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
+                className="w-full p-2 text-[#212529] subheading font-source font-thin focus:outline-none"
               />
             </div>
-            <div className="relative cursor-pointer group">
+
+            <div className={`relative cursor-pointer group border-b  ${errors.mobile ? "border-red-500" : "border-[#04ff04]"} `}>
               <select
                 name="noticePeriod"
                 value={formData.noticePeriod}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+                className="w-full p-2  text-text-[#212529] subheading font-source font-thin bg-transparent focus:outline-none cursor-pointer"
               >
-                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                <option value="" className="text-[#212529] subheading font-source font-thin">
                   Notice Period (Optional)
                 </option>
                 {noticePeriodOptions.map((option, index) => (
                   <option 
                     key={index} 
                     value={option}
-                    className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                    className="text-[#212529] subheadingfont-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
                     {option}
                   </option>
@@ -273,18 +282,18 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               </select>
               
               {/* Custom dropdown display */}
-              <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-[#B3B3B3] text-[19px] font-source font-thin">
+              {/* <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
+                <span className="text-[#212529] subheading font-source font-thin">
                   {formData.noticePeriod || "Notice Period (Optional)"}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
-              </div>
+              </div> */}
             </div>
           </div>
           {/* Right Column */}
-          <div className="space-y-6">
+          <div className="">
             <div
-              className={`flex items-end gap-4 border-b pb-1 ${
+              className={`flex items-end gap-4 border-b pb- ${
                 errors.email ? "border-red-500" : "border-gray-300"
               }`}
             >
@@ -295,7 +304,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-2 text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                  className="w-full p-2 text-[#212529] subheading font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
               {errors.email && (
@@ -304,14 +313,14 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
-            <div className={`flex items-end gap-4 border-b pb-1 !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
+            <div className={`flex items-end gap-4 border-b ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
               <input
                 type="text"
                 name="currentLocation"
                 placeholder="Current Location"
                 value={formData.currentLocation}
                 onChange={handleChange}
-                className="flex-1 text-[#B3B3B3] text-[16px] p-2 sm:text-[19px] font-source font-thin focus:outline-none bg-transparent"
+                className="flex-1 text-[#212529] subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
               />
               {errors.currentLocation && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
@@ -319,14 +328,14 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
-            <div className="relative cursor-pointer group">
+            <div className="relative cursor-pointer group border-b border-[#04ff04]">
               <select
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+                className="w-full p-2  text-[#212529] subheading font-source font-thin  bg-transparent focus:outline-none cursor-pointer"
               >
-                <option value="" className="text-[#B3B3B3] text-[19px] font-source font-thin">
+                <option value="" className="text-[#212529] subheading font-source font-thin">
                   Years of experience (Optional)
                 </option>
                 {experienceOptions.map((option, index) => (
@@ -341,27 +350,32 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               </select>
               
               {/* Custom dropdown display */}
-              <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-[#B3B3B3] text-[19px] font-source font-thin">
+              {/* <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
+                <span className="text-[#212529] subheading font-source font-thin">
                   {formData.experience || "Years of experience (Optional)"}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
-              </div>
+              </div> */}
             </div>
-            <div>
+            <div className="border-b border-[#04ff04]">
               <input
                 type="text"
                 name="referredBy"
                 placeholder="Referred By (Optional)"
                 value={formData.referredBy}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#B3B3B3] text-[19px] font-source font-thin focus:outline-none"
+                className="w-full p-2  text-[#212529] subheading font-source font-thin focus:outline-none"
               />
             </div>
           </div>
+
         </div>
         {/* File input section */}
-        <div className="pt-6">
+
+
+
+
+        <div className="">
           <input
             type="file"
             name="resume"
@@ -370,11 +384,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             accept=".pdf,.doc,.docx"
             className="hidden"
           />
-          <div className={`flex items-center gap-3 pb-1 border-b ${errors.resume ? "border-red-500" : "border-gray-300"}`}>
+          <div className={`flex items-center gap-3 border-b ${errors.resume ? "border-red-500" : "border-gray-300"}`}>
             <button
               type="button"
               onClick={handleAttachmentClick}
-              className="flex items-center gap-2 text-[#B3B3B3] text-[19px] font-source font-thin"
+              className="flex items-center gap-2 pb-[5px] text-[#212529] subheading font-source font-thin"
             >
               <Paperclip className="w-5 h-5" />
               <span>Attach your CV/Resume</span>
@@ -387,6 +401,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
           </div>
         </div>
+
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
           <button
             type="submit"
@@ -395,7 +410,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             Send
           </button>
           {/* Privacy Policy */}
-          <p className="text-title text-center font-roboto text-[10px]">
+          <p className="text-[#212529] text-center font-roboto text-[13px]">
             By clicking "Send", you agree to our{' '}
             <a href="#" className="text-blue-500 hover:underline">
               Privacy Policy

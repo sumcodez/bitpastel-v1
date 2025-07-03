@@ -87,7 +87,7 @@ const ServicesSection = () => {
                       >
                         <Image src={service.icon} alt={service.title} width={36} height={36} />
                       </div>
-                      <h3 className={` subheading font-bold md:text-title md:mb-1 mb-0 md:h-auto h-[60px] content-center ${service.mobileTextColor}`}>{service.title}</h3>
+                      <h3 className={` subheading font-bold md:text-title md:mb-1 mb-0 md:h-auto h-[60px] md:leading-[normal] leading-[23px] content-center ${service.mobileTextColor}`}>{service.title}</h3>
                       <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title">
                         {service.description}
                       </p>
