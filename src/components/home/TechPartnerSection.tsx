@@ -6,7 +6,7 @@ const TechPartnerSection = () => {
     <section className="md:pt-[70px] pt-[70px]" id="#partner">
       <div className="mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
-          <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-full">
+          <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-[auto]">
             <Image
               src="/images/person-client.png"
               alt="Team collaboration"
