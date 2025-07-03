@@ -55,7 +55,7 @@ const CultureSection = () => {
   ];
 
   return (
-    <section id='culture' className="pt-[45px] bg-[#ffffff]">
+    <section id='culture' className="pt-[90px] bg-[#ffffff]">
       <div className="container mx-auto px-4">
         <h2 className="tfont-source font-bold text-center text-title title md:mb-8 mb-3">
           Why work with us?

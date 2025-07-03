@@ -29,7 +29,7 @@ const SatisfiedClientSection = () => {
     },
   ];
   return (
-    <section className="pt-[45px]" id='#client'>
+    <section className="pt-[90px]" id='#client'>
       <div className="container mx-auto px-4">
         <h2 className=" md:leading-[1] font-source font-bold text-center text-title title md:mb-8 mb-3">
           Satisfied Clientele Worldwide
