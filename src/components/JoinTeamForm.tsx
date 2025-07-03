@@ -232,7 +232,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-2 text-[#212529] subheading font-source font-thin focus:outline-none bg-transparent"
+                  className="w-full p-2 text-[#B2B2B2] subheading font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
               {errors.name && (
@@ -249,7 +249,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
-                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-[#212529] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-[#B2B2B2] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {errors.phone && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
@@ -264,7 +264,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 placeholder="Qualification (Optional)"
                 value={formData.qualification}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#212529] subheading font-source font-thin focus:outline-none"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B2B2B2] subheading font-source font-thin focus:outline-none"
               />
             </div>
             <div className="relative cursor-pointer group">
@@ -272,16 +272,16 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 name="noticePeriod"
                 value={formData.noticePeriod}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-text-[#212529] subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+                className="w-full p-2 border-b border-[#04ff04] text-text-[#B2B2B2] subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
-                <option value="" className="text-[#212529] subheading font-source font-thin">
+                <option value="" className="text-[#B2B2B2] subheading font-source font-thin">
                   Notice Period (Optional)
                 </option>
                 {noticePeriodOptions.map((option, index) => (
                   <option 
                     key={index} 
                     value={option}
-                    className="text-[#212529] subheadingfont-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                    className="text-[#B2B2B2] subheadingfont-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
                     {option}
                   </option>
@@ -290,7 +290,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-[#212529] subheading font-source font-thin">
+                <span className="text-[#B2B2B2] subheading font-source font-thin">
                   {formData.noticePeriod || "Notice Period (Optional)"}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
@@ -311,7 +311,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-2 text-[#212529] subheading font-source font-thin focus:outline-none bg-transparent"
+                  className="w-full p-2 text-[#B2B2B2] subheading font-source font-thin focus:outline-none bg-transparent"
                 />
               </div>
               {errors.email && (
@@ -327,7 +327,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 placeholder="Current Location"
                 value={formData.currentLocation}
                 onChange={handleChange}
-                className="flex-1 text-[#212529] subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
+                className="flex-1 text-[#B2B2B2] subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
               />
               {errors.currentLocation && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
@@ -340,9 +340,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#212529] subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B2B2B2] subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
-                <option value="" className="text-[#212529] subheading font-source font-thin">
+                <option value="" className="text-[#B2B2B2] subheading font-source font-thin">
                   Years of experience (Optional)
                 </option>
                 {experienceOptions.map((option, index) => (
@@ -358,7 +358,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-[#212529] subheading font-source font-thin">
+                <span className="text-[#B2B2B2] subheading font-source font-thin">
                   {formData.experience || "Years of experience (Optional)"}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
@@ -371,7 +371,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 placeholder="Referred By (Optional)"
                 value={formData.referredBy}
                 onChange={handleChange}
-                className="w-full p-2 border-b border-[#04ff04] text-[#212529] subheading font-source font-thin focus:outline-none"
+                className="w-full p-2 border-b border-[#04ff04] text-[#B2B2B2] subheading font-source font-thin focus:outline-none"
               />
             </div>
           </div>
@@ -390,7 +390,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             <button
               type="button"
               onClick={handleAttachmentClick}
-              className="flex items-center gap-2 pb-[5px] text-[#212529] subheading font-source font-thin"
+              className="flex items-center gap-2 pb-[5px] text-[#B2B2B2] subheading font-source font-thin"
             >
               <Paperclip className="w-5 h-5" />
               <span>Attach your CV/Resume</span>
@@ -415,7 +415,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             Send
           </button>
           {/* Privacy Policy */}
-          <p className="text-[#212529] text-center font-roboto text-[10px]">
+          <p className="text-[#B2B2B2] text-center font-roboto text-[10px]">
             By clicking "Send", you agree to our{' '}
             <Link href="/privacy-policys" className=" text-[#52d09c] hover:underline">
               Privacy Policy
