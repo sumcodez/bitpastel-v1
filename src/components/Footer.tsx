@@ -32,10 +32,10 @@ const Footer = () => {
 
   return (
     <footer className="">
-      <div className="desktop-footer bg-primary-dark text-white md:pt-16 pt-12 lg:pt-16 md:pb-6 pb-20 footer">
+      <div className="desktop-footer bg-primary-dark text-white lg:pt-16 pt-12 lg:pb-6 pb-20 footer">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-8 align-top footer-wrapper">
-            <div className="md:space-y-3 col-start-1 md:col-span-1 md:col-start-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-8 align-top footer-wrapper">
+            <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
               <Link href="/">
                 <Image
                   src="/images/Footer-logo.png"
@@ -45,19 +45,19 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
               </Link>
-              <p className="md:hidden leading-[1] block md:mt-0 mt-8 h-[40px] md:pb-6 pb-2 type-footer text-[13px]">
+              <p className="lg:hidden leading-[1] block lg:mt-0 mt-8 h-[40px] lg:pb-6 pb-2 type-footer text-[13px]">
                 INFORMATION
               </p>
               <a
                 href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
                 target="_blank"
-                className="text-[13px] md:mb-0 mb-[1rem] leading-relaxed block"
+                className="text-[13px] lg:mb-0 mb-[1rem] leading-relaxed block"
               >
                 Technopolis, 11th Floor, BP Block, Sector V,
                 <br />
                 Salt Lake City, Kolkata - 700091
               </a>
-              <div className="md:hidden block space-y-2 text-[13px]">
+              <div className="lg:hidden block space-y-2 text-[13px]">
                 <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                   <span>US: +1 (872) 444 6679</span>
                 </a>
@@ -71,9 +71,9 @@ const Footer = () => {
                   <span>connect@bitpastel.com</span>
                 </a>
               </div>
-              <div className="hidden md:block">
-                <p className="mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US</p>
-                <div className="flex md:space-x-4 space-x-6 pt-2 md:pt-0 social-media-wrapper">
+              <div className="hidden lg:block">
+                <p className="mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US</p>
+                <div className="flex lg:space-x-4 space-x-6 pt-2 lg:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a href="https://www.facebook.com/bitpastel" target="_blank">
                       <Image
@@ -111,7 +111,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="md:max-w-[300px] mx-auto w-full">
+            <div className="lg:max-w-[300px] mx-auto w-full">
               <p className="h-[50px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
               <div className="grid grid-cols-2">
                 <div className="">
@@ -136,7 +136,7 @@ const Footer = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="md:ml-auto">
+                <div className="lg:ml-auto">
                   <div className="space-y-4 text-[13px]">
                     <Link href="/team" className={`block hover:text-gray-300 transition-colors `}>
                       Culture
@@ -161,11 +161,11 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="text-[13px] md:space-y-0 space-y-4 md:ml-auto  col-start-1 md:col-span-1 md:col-start-auto">
-              <p className="md:hidden block mt-6 text-[13px] md:pb-6 pb-2 type-footer leading-[1]">
+            <div className="text-[13px] lg:space-y-0 space-y-4 lg:ml-auto  col-start-1 lg:col-span-1 lg:col-start-auto">
+              <p className="lg:hidden block mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">
                 CONNECT WITH US
               </p>
-              <div className="md:hidden flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
+              <div className="lg:hidden flex space-x-4 pt-2 lg:pt-0 social-media-wrapper">
                 <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                   <a href="https://www.facebook.com/bitpastel" target="_blank">
                     <Image
@@ -201,8 +201,8 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <p className="hidden md:block h-[50px] type-footer leading-[1] text-[13px]">INFORMATION</p>
-                <div className="md:block hidden mt-0 space-y-4">
+                <p className="hidden lg:block h-[50px] type-footer leading-[1] text-[13px]">INFORMATION</p>
+                <div className="lg:block hidden mt-0 space-y-4">
                   <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                     <span>US: +1 (872) 444 6679</span>
                   </a>
@@ -217,7 +217,7 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-              <p className="md:hidden block text-center text-white text-[13px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
+              <p className="lg:hidden block text-center text-white text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025
                 <br />
                 All Rights Reserved
@@ -227,10 +227,10 @@ const Footer = () => {
             </div>
           </div>
           <div
-            className="pt-6 md:block hidden"
+            className="pt-6 lg:block hidden"
             style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
           >
-            <p className="text-center md:text-[13px] text-[13px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
+            <p className="text-center lg:text-[13px] text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
               Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
               <a href="/privacy">Privacy Policy</a>
             </p>

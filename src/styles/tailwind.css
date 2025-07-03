@@ -490,10 +490,8 @@ button {
 }
 .partner-refer-title-area h2 {
   color: #2a2a2a;
-  font-size: 38px;
   font-style: normal;
   font-weight: 600;
-  line-height: 48px;
   padding: 13px 0 9px;
 }
 .partner-refer-area p {
@@ -524,7 +522,6 @@ button {
 }
 .partner-refer-list h3 {
   color: #2a2a2a;
-  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
@@ -636,10 +633,10 @@ button {
   height: 40px;
 }
 .become-partner-title-area h2{
-    font-size: 38px;
+    /* font-size: 38px; */
     font-style: normal;
     font-weight: 600;
-    line-height: 48px;
+    /* line-height: 48px; */
     padding: 13px 0 10px;
     color: #2a2a2a;
 }
@@ -668,7 +665,6 @@ button {
     padding: 15px 0 15px 45px;
   }
   .partner-refer-list h3 {
-    font-size: 18px;
     line-height: 22px;
     padding-bottom: 10px;
   }
@@ -689,7 +685,6 @@ button {
     height: 50px;
   }
   .partner-refer-title-area h2 {
-    font-size: 22px;
     line-height: 1.5;
     text-align: center;
   }
@@ -705,9 +700,6 @@ button {
   }
   .become-partner-form-area {
     margin-top: 20px;
-  }
-  .become-partner-title-area h2 {
-    font-size: 38px;
   }
   .become-partner-circle svg {
     width: 50px;
@@ -726,6 +718,6 @@ button {
   .partner-btn {
     width: 100%;
     padding: 11px 30px 12px;
-    font-size: 17px;
+    font-size: 16px;
   }
 }

@@ -121,8 +121,8 @@ return (
         />
       </div>
       <ul className="activity-job">
-        <li className="md:text-[16px] text-[15px]"><span>#teamlunch</span></li>
-        <li className="md:text-[16px] text-[15px]"><span>#holidayseason</span></li>
+        <li className="paragraph"><span>#teamlunch</span></li>
+        <li className="paragraph"><span>#holidayseason</span></li>
       </ul>
     </div>
     <div className="img rt">
@@ -269,7 +269,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h4 className="tt text-center text-till title leading-[normal] font-[600]">Culture at Bitpastel</h4>
+    <h4 className="tt text-center text-till title leading-[normal] font-[600] md:py-[40px]">Culture at Bitpastel</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -300,8 +300,8 @@ return (
         Celebration 2022
       </h4>
       <ul className="activity-job">
-        <li className="md:text-[16px] text-[15px]"><span>#movietime</span></li>
-        <li className="md:text-[16px] text-[15px]"><span>#teamdinner</span></li>
+        <li className="paragraph"><span>#movietime</span></li>
+        <li className="paragraph"><span>#teamdinner</span></li>
       </ul>
     </div>
     <div className="img rt">
@@ -368,8 +368,8 @@ return (
         Townhall 2022
       </h4>
       <ul className="activity-job">
-        <li className="md:text-[16px] text-[15px]"><span>#BitpastelDay</span></li>
-        <li className="md:text-[16px] text-[15px]"><span>#5yearsofawesomeness</span></li>
+        <li className="paragraph"><span>#BitpastelDay</span></li>
+        <li className="paragraph"><span>#5yearsofawesomeness</span></li>
       </ul>
     </div>
     <div className="img lt">

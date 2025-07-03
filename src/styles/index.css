@@ -369,6 +369,18 @@
     }
 }
 
+
+@media screen and (max-width: 1024px) {
+    .footer .footer-wrapper {
+    text-align: center;
+  }
+  .footer .footer-wrapper img {
+    margin: 0 auto;
+  }
+  .footer .social-media-wrapper {
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 767px) {
       .top-align-thumbnail .rt {
         top: 0 !important;

@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import { Link } from 'lucide-react';
+import Link from 'next/link';
 const TeamEngage = () => {
   return (
     <section className="md:py-[100px] py-[70px]">
@@ -25,12 +24,12 @@ const TeamEngage = () => {
               Technologies
             </h2>
             <div className='max-w-[500px]'>
-              <p className="md:leading-[30px] leading-[20px] text-[16px] text-[#212529]">
+              <p className="md:leading-[30px] leading-[20px] text-[16px] text-title">
                 At Bitpastel, we create with curiosity. We continue to go forward with an inclusive
                 view for creating equal opportunities for all our employees.
               </p>
-              <p className="md:leading-[30px] leading-[30px] text-[#212529]">
-                Visit our <Link className="inline-block underline" href='/careers'>Careers</Link> page to find out about
+              <p className="md:leading-[30px] leading-[30px] text-title">
+                Visit our <Link className="inline-block underline" href='/career'> Careers </Link> page to find out about
                 open positions.
               </p>
               <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn">
