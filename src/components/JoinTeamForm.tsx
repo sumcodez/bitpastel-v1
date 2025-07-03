@@ -79,8 +79,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     "2 years",
     "3 years",
     "4 years",
-    "5+ years",
-    "10+ years",
+    "5+ years"
   ];
   
   const noticePeriodOptions = [
