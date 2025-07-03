@@ -1,0 +1,26 @@
+name: Daily GitHub Backup
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # Runs every day at 3 AM UTC (8:30 AM IST)
+  workflow_dispatch:      # Optional: allows you to manually trigger
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create backup zip
+        run: |
+          mkdir backup
+          zip -r backup/website-$(date +'%Y-%m-%d').zip . -x "*.git*" "node_modules/*" ".next/*"
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-backup
+          path: backup/
+          retention-days: 30  # Automatically delete after 30 days (can be 1–90)
