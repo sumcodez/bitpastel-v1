@@ -30,7 +30,7 @@ const TeamEngage = () => {
                 view for creating equal opportunities for all our employees.
               </p>
               <p className="md:leading-[30px] leading-[30px] text-[#212529]">
-                Visit our <button className="inline-block underline">Careers</button> page to find out about
+                Visit our <Link className="inline-block underline" href='/careers'>Careers</Link> page to find out about
                 open positions.
               </p>
               <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn">
