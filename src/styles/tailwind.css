@@ -399,7 +399,7 @@ button {
     max-height: 70px;
     overflow: hidden;
     opacity: 1;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
     transition: 
       max-height 0.5s ease,
       padding 0.3s ease,
@@ -407,8 +407,8 @@ button {
   }
   
   .testimonial-card-parent:hover .testimonial-card-content p {
-    max-height: 1000px; /* Choose a large enough value */
-    padding-bottom: 20px;
+    max-height: 100%; /* Choose a large enough value */
+    /* padding-bottom: 20px; */
     opacity: 1;
     display: block;
   }
