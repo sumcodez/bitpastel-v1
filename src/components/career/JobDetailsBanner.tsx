@@ -102,19 +102,19 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
               {/* Second Benefit */}
               <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
-                <Image
+                {/* <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
                   width={24}
                   height={24}
                   className="w-auto md:block hidden"
-                />
+                /> */}
                 <Image
-                  src="/images/img_materialsymbolscheckrounded_teal_300.svg"
-                  alt="Check"
+                  src={benefits[1].icon}
+                  alt={benefits[1].alt}
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block"
+                  className="w-auto invert md:invert-0"
                 />
                 <p className="subheading font-[400] text-left text-title font-roboto">
                   Experience: {benefits[1].text}
