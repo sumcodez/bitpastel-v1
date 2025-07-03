@@ -49,7 +49,7 @@ const PartnerRefer = () => {
                 </svg>
               </div>
               <h2 className="font-source">Refer & Earn</h2>
-              <p className="font-source">
+              <p className="font-roboto">
                 If you think we are good, please share your experience when you refer.
               </p>
             </div>
@@ -87,7 +87,7 @@ const PartnerRefer = () => {
                   ></path>
                 </svg>
                 <h3 className="font-source">Set it up!</h3>
-                <p className="font-source">
+                <p className="font-roboto">
                   Help set the stage by setting up a conference call or an email
                 </p>
               </div>
@@ -135,7 +135,7 @@ const PartnerRefer = () => {
                   </defs>
                 </svg>
                 <h3 className="font-source">Help us finalize</h3>
-                <p className="font-source">We may need some help in the finalizing the project</p>
+                <p className="font-roboto">We may need some help in the finalizing the project</p>
               </div>
 
               <div className="partner-refer-list">
@@ -169,7 +169,7 @@ const PartnerRefer = () => {
                   ></path>
                 </svg>
                 <h3 className="font-source">Keep earning rewards</h3>
-                <p className="font-source">
+                <p className="font-roboto">
                   Start collecting rewards as soon as the project generates revenue
                 </p>
               </div>
@@ -195,7 +195,7 @@ const PartnerRefer = () => {
                   ></path>
                 </svg>
                 <h3 className="font-source">Transparent reward tracking</h3>
-                <p className="font-source">Accrued rewards can be tracked transparently</p>
+                <p className="font-roboto">Accrued rewards can be tracked transparently</p>
               </div>
 
               <div className="partner-refer-list">
@@ -239,7 +239,7 @@ const PartnerRefer = () => {
                   ></path>
                 </svg>
                 <h3 className="font-source">Redeem your rewards</h3>
-                <p className="font-source">
+                <p className="font-roboto">
                   Redeem your rewards as discounts on your next bill
                 </p>
               </div>

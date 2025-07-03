@@ -35,7 +35,7 @@ const PartnerService = () => {
             <h3 className="font-source font-[600] text-[#B2B2B2] md:text-[20px] text-[20px] lg:min-h-[unset] md:pt-[19px] md:pb-[25px] pt-[15px] pb-[10px] md:min-h-[100px]">
               Shopify Development
             </h3>
-            <p className="text-[#B2B2B2] font-source font-[300] md:text-[16px] text-[16px] ">
+            <p className="text-[#B2B2B2] font-roboto font-[300] md:text-[16px] text-[16px] ">
               Shopify Plus design & development, migration, app integration, private apps & custom
               e-commerce development and implementation
             </p>
@@ -81,7 +81,7 @@ const PartnerService = () => {
             <h3 className="font-source font-[600] text-[#B2B2B2] md:text-[20px] text-[20px] lg:min-h-[unset] md:pt-[19px] md:pb-[25px] pt-[15px] pb-[10px] md:min-h-[100px]">
               Web App Development
             </h3>
-            <p className="text-[#B2B2B2] font-source font-[300] md:text-[16px] text-[16px] md:pr-[40px]">
+            <p className="text-[#B2B2B2] font-roboto font-[300] md:text-[16px] text-[16px] md:pr-[40px]">
               Websites & Custom Development in Angular, React JS, Node.js, MongoDB, PHP, MySQL,
               Webflow, Wordpress
             </p>
@@ -120,7 +120,7 @@ const PartnerService = () => {
             <h3 className="font-source font-[600] text-[#B2B2B2] md:text-[20px] text-[20px] lg:min-h-[unset] md:pt-[19px] md:pb-[25px] pt-[15px] pb-[10px] md:min-h-[100px]">
               UI/UX
             </h3>
-            <p className="text-[#B2B2B2] font-source font-[300] md:text-[16px] text-[16px]">
+            <p className="text-[#B2B2B2] font-roboto font-[300] md:text-[16px] text-[16px]">
               Figma, Invision, XD, Sketch - Wireframing, Mobile App Design, Responsive Web Design,
               HTML5, CSS3, SASS, PSD to HTML
             </p>
