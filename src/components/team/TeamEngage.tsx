@@ -1,7 +1,10 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const TeamEngage = () => {
+  const router = useRouter();
   return (
     <section className="md:py-[100px] py-[70px]">
       <div className="mx-auto">
@@ -28,11 +31,11 @@ const TeamEngage = () => {
                 At Bitpastel, we create with curiosity. We continue to go forward with an inclusive
                 view for creating equal opportunities for all our employees.
               </p>
-              <p className="md:leading-[30px] leading-[30px] text-title">
-                Visit our <Link className="inline-block underline" href='/career'> Careers </Link> page to find out about
+              <p className="md:leading-[30px] leading-[30px] text-title text-[#009999]">
+                Visit our <Link className="inline-block underline text-[#009999]" href='/career'> Careers </Link> page to find out about
                 open positions.
               </p>
-              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn">
+              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" onClick={() => router.push('/career')}>
                 Find Opportunities
               </button>
             </div>

@@ -743,3 +743,23 @@ textarea::placeholder {
     font-size: 16px;
   }
 }
+
+
+
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .safari-fix {
+    min-height: 0;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+  }
+  
+  /* Fix for image container */
+  .safari-image-fix {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
