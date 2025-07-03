@@ -14,7 +14,7 @@ return (
       </div>
       <div className="img rt">
         <div className="icon-title md:inline-block">
-          <h2 className="tt txt-start title md:text-left text-center text-accent-green md:mb-0 bottom-spaccer leading-[normal] font-[600]">
+          <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 bottom-spaccer leading-[normal] font-[600]">
             Bitpastel< br className="md:block hidden"/>
             Townhall 2024
           </h2>
@@ -110,7 +110,7 @@ return (
   <div className="common-lb third-lb lazy-image-section">
     <div className=" lt top-speccer title-top-spaccer">
       <div className="icon-title relative inline-block">
-        <h4 className="tt md:text-start text-center text-accent-green title leading-[normal] font-[600]  bottom-spaccer">
+        <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]  bottom-spaccer">
           Year-end<br />
           Celebration 2023
         </h4>
@@ -158,7 +158,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h4 className="tt text-center title  leading-[normal] text-accent-green font-[600] md:py-[40px]">Bitpastel Townhall 2023</h4>
+    <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">Bitpastel Townhall 2023</h4>
   </div>
 
   <div className="first-part">
@@ -269,7 +269,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h4 className="tt text-center text-accent-green title leading-[normal] font-[600]">Culture at Bitpastel</h4>
+    <h4 className="tt text-center text-till title leading-[normal] font-[600]">Culture at Bitpastel</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -295,7 +295,7 @@ return (
 
   <div className="common-lb fourth-lb lazy-image-section">
     <div className="img lt top-speccer inline-block">
-      <h4 className="tt md:text-start text-center text-accent-green title  leading-[normal] font-[600] bottom-spaccer">
+      <h4 className="tt md:text-start text-center text-till title  leading-[normal] font-[600] bottom-spaccer">
         Year-end<br />
         Celebration 2022
       </h4>
@@ -337,7 +337,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h4 className="tt text-accent-green title font-[600] leading-[normal] text-center md:py-[40px]">Sunday Brunch at Westin</h4>
+    <h4 className="tt text-till title font-[600] leading-[normal] text-center md:py-[40px]">Sunday Brunch at Westin</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -363,7 +363,7 @@ return (
 
   <div className="common-lb fourth-lb lazy-image-section">
     <div className="img lt top-speccer inline-block w-[auto]">
-      <h4 className="tt md:text-start text-center bottom-spaccer title font-[600] leading-[normal] text-accent-green">
+      <h4 className="tt md:text-start text-center bottom-spaccer title font-[600] leading-[normal] text-till">
         Bitpastel<br />
         Townhall 2022
       </h4>
@@ -447,7 +447,7 @@ return (
   </div>
 
   <div className="title-middle">
-    <h4 className="tt text-center title font-[600] leading-[normal] md:py-[40px] text-accent-green">Bitpastel Townhall 2021</h4>
+    <h4 className="tt text-center title font-[600] leading-[normal] md:py-[40px] text-till">Bitpastel Townhall 2021</h4>
   </div>
 
   <div className="common-lb fourth-lb lazy-image-section">
@@ -493,7 +493,7 @@ return (
   </div>
 
   <div className="img lt title-spaccer">
-    <h4 className="tt text-center text-accent-green leading-[normal] culture title font-[600]">Culture at Bitpastel</h4>
+    <h4 className="tt text-center text-till leading-[normal] culture title font-[600]">Culture at Bitpastel</h4>
     <p className="desc text-center desc-spaccer">
       At Bitpastel, we have a progressive next generation work culture
     </p>
