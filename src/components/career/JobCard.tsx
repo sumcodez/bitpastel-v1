@@ -48,7 +48,7 @@ export default function Home() {
       id: "5",
       title: "Full Stack Developer",
       hashtags: ["#FullStackDeveloper", "#FrontEndDeveloper", "#BackEndDeveloper"],
-      experience: "2 - 6 Years",
+      experience: "2 - 5 Years",
       gradientColors: "linear-gradient(-45deg, rgb(0, 103, 183), rgb(140, 13, 99))"
     },
     {
@@ -82,11 +82,11 @@ export default function Home() {
         <div className="text-center mb-[30px]">
           <p className="text-title max-w-4xl paragraph mx-auto leading-relaxed md:block inline">
             To apply for any of the current job openings, please go to the respective box below and click on the
-            <span className=" font-semibold text-accent-green">"Apply"</span> button.
+            <span className=" font-semibold  text-accent-green">"Apply"</span> button.
           </p>
           <p className="text-title paragraph md:block inline">
             If you don't see any suitable vacancy, send your resume
-            <button className="text-accent-green font-medium pr-1"
+            <button className="text-accent-green font-medium px-1 hover:text-[#B2B2B2]"
             onClick={() => scrollToSection('joinTeamForm')}
             >
                 here </button>

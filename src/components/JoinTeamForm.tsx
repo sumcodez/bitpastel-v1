@@ -4,6 +4,7 @@ import { ChevronDown, Paperclip } from "lucide-react";
 import * as countryCodesList from "country-codes-list";
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import Link from "next/link";
 interface JoinTeamProps{
   title?: string;
   className?: string
@@ -233,7 +234,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
-                className="!border-none w-full !p-0 [&>input]:!text-[#212529] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-[#212529] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {errors.phone && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
@@ -397,9 +398,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           {/* Privacy Policy */}
           <p className="text-[#212529] text-center font-roboto text-[10px]">
             By clicking "Send", you agree to our{' '}
-            <a href="#" className="text-blue-500 hover:underline">
+            <Link href="/privacy-policys" className=" text-[#52d09c] hover:underline">
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </div>
       </form>

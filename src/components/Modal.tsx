@@ -435,7 +435,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           value={formData.phone}
                           onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
-                          className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
+                          className="!border-none gap-[20px] !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
                         />
                       </div>
 
