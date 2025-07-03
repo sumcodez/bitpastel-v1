@@ -66,7 +66,7 @@ const ServicesSection = () => {
   ];
   return (
 
-            <section id="services" className="pt-[90px]">
+            <section id="services" className="md:pt-[90px] pt-[60px]">
               <div className="container mx-auto px-4 overflow-hidden">
                 <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">

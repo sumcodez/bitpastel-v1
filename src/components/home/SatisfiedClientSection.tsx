@@ -29,7 +29,7 @@ const SatisfiedClientSection = () => {
     },
   ];
   return (
-    <section className="pt-[90px]" id='#client'>
+    <section className="md:pt-[100px] pt-[64px]" id='#client'>
       <div className="container mx-auto px-4">
         <h2 className=" md:leading-[1] font-source font-bold text-center text-title title md:mb-8 mb-3">
           Satisfied Clientele Worldwide
@@ -58,7 +58,7 @@ const SatisfiedClientSection = () => {
                   className="mx-auto mb-3 md:h-auto h-10"
                 />
                 <h2 className=" font-source font-bold text-title text-title md:title title leading-[1]">{stat.value}</h2>
-                <div className={`font-source paragraph font-bold ${stat.color}`}>{stat.label}</div>
+                <div className={`font-source md:paragraph text-[13px] font-bold ${stat.color}`}>{stat.label}</div>
               </div>
             ))}
           </div>
