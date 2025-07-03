@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 const ShopifyStoreSection = () => {
   return (
-      <section className="pt-12 lg:pt-16 ">
+      <section className="pt-[45px]">
         <div className="container mx-auto px-4  ">
           {/* <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] md:p-8 px-4 pt-4 pb-12 bg-primary-mint md:text-left text-center "> */}
           <div className="flex flex-col lg:flex-row items-center md:gap-0 gap-12 rounded-[40px] bg-primary-mint md:text-left text-center pt-[20px] px-[20px] pb-12 md:p-0 ">

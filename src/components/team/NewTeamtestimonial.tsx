@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewTeamtestimonial = () => {
   return (
-    <section className='realative md:pt-14 pt-12'>
+    <section className='realative pt-[45px]'>
       <div className="">
            <div className="team-first-banner mx-auto">
   <div className="first">

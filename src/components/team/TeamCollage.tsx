@@ -19,7 +19,7 @@ const TeamCollage = () => {
   }
 
   return (
-    <section className="md:pt-16 pt-12 md:pb-16 pb-12 relative" id="team">
+    <section className="pt-[45px] relative" id="team">
       <div className="container mx-auto px-4">
         <div className="collage-area townhall-2024">
 

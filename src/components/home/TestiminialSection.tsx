@@ -223,7 +223,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
 
   return (
-    <section id="stories" className="pt-12 lg:pt-16">
+    <section id="stories" className="pt-[45px]">
       <div className="container mx-auto px-4">
         <h2 className="font-source font-bold text-center text-title title md:mb-8 mb-3">Stories</h2>
 

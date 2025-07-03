@@ -259,7 +259,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                 </div>
 
                 <div className="modal-details">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-800 font-source">
+                  <h2 className="subheading font-bold mb-6 text-title font-source">
                     Satisfied Client Worldwide
                   </h2>
 
@@ -341,8 +341,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     height={400}
                   />
                 </div>
-                <div className="bg-[#fff] p-[35px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
-                  <h2 className="text-center text-[38px] font-source mb-4 font-light text-[#606568]">Get a Free Quote</h2>
+                <div className="bg-[#fff] md:p-[35px] p-[15px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
+                  <h2 className="text-center title font-source mb-4 font-light text-title ">Get a Free Quote</h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
                     <div className="space-y-2">
                       {/* Combined "I want" and service selection */}
@@ -354,16 +354,16 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                             validationErrors.service ? 'text-red-500' : ''
                           }`}
                         >
-                          <span className="text-[#575757] font-[100]">I want</span>
+                          <span className="text-[#212529] font-[100]">I want</span>
                           <span
-                            className={`ml-12 text-[#B3B3B3] font-light ${
+                            className={`ml-12 text-[#212529] font-light ${
                               validationErrors.service ? 'text-red-500' : ''
                             }`}
                           >
                             {formData.service || 'select*'}
                           </span>
                           <ChevronDown
-                            className={`ml-auto mr-[20px] w-4 h-4 text-[#B3B3B3] transition-transform ${
+                            className={`ml-auto mr-[20px] w-4 h-4 text-[#212529] transition-transform ${
                               isServiceDropdownOpen ? 'rotate-180' : ''
                             }`}
                           />
@@ -463,7 +463,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </button>
 
                       {/* Privacy Policy */}
-                      <p className="text-[11px] mt-[3px] text-gray-500 text-center">
+                      <p className="text-[11px] mt-[3px] text-[#212529] text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
                         <a href="#" className="text-[#52d09c]">
                           Privacy Policy

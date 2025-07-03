@@ -197,7 +197,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
   }
   return (
     <div className={`${className ?? ""} max-w-4xl mx-auto p-6`} id="joinTeamForm">
-      <h2 className="text-[32px] font-semibold font-source text-gray-900 text-center mb-8">
+      <h2 className="text-[32px] font-semibold font-source text-title text-center mb-8">
         {title}
         {/* Join Our Team */}
       </h2>
@@ -396,7 +396,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             Send
           </button>
           {/* Privacy Policy */}
-          <p className="text-gray-500 text-center font-roboto text-[10px]">
+          <p className="text-title text-center font-roboto text-[10px]">
             By clicking "Send", you agree to our{' '}
             <a href="#" className="text-blue-500 hover:underline">
               Privacy Policy

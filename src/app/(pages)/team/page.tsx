@@ -16,7 +16,7 @@ const page = () => {
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}
      <TeamEngage/>
-     <Common_banner/>
+     {/* <Common_banner/> */}
     </div>
     </>
   )

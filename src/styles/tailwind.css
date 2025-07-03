@@ -298,7 +298,6 @@ button {
   padding-right: 16px;
 }
 .modal-details h2 {
-  font-size: 24px !important;
   font-weight: 600;
   padding-top: 36px;
   text-align: center;
@@ -441,7 +440,7 @@ button {
 }
 .modal-container input::placeholder,
 .modal-container textarea::placeholder {
-  color: #b3b3b3;
+  color: #212529;
   font-weight: 100;
 }
 .modal-container input:focus-visible {
@@ -522,7 +521,7 @@ button {
 }
 .partner-refer-list h3 {
   color: #2a2a2a;
-  font-size: 24px;
+  font-size: 2px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
@@ -629,7 +628,7 @@ button {
   border: none;
   padding: 0 30px;
   border-radius: 5px;
-  color: #fff ;
+  color: #B2B2B2;
   outline: 0 ;
   height: 40px;
 }

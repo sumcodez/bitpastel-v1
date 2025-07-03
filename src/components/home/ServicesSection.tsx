@@ -14,6 +14,7 @@ const ServicesSection = () => {
       description: 'Automate processes, boost efficiency with intelligent applications',
       icon: '/images/img_vector.svg',
       bgColor: 'bg-primary-green-light',
+      bgcolorCollapsed:'#d8f5e9',
       mobileTextColor: "text-[rgba(62,203,144,1)]",
     },
     {
@@ -22,6 +23,7 @@ const ServicesSection = () => {
       description: 'Shopify Plus design, development, migration, apps, custom solutions',
       icon: '/images/img_hugeiconsshopify.svg',
       bgColor: 'bg-primary-yellow-light',
+      bgcolorCollapsed: '#fcf4d7',
       mobileTextColor: "text-[rgba(240,198,56,1)]",
       
     },
@@ -31,6 +33,7 @@ const ServicesSection = () => {
       description: 'Custom websites in React, Angular, PHP, WordPress, Webflow',
       icon: '/images/img_icoutlinelaptop.svg',
       bgColor: 'bg-primary-coral-light',
+      bgcolorCollapsed:'#fde3e5',
        mobileTextColor: "text-[rgba(245,116,126,1)]",
     },
     {
@@ -39,6 +42,7 @@ const ServicesSection = () => {
       description: 'Creative designs for branding, marketing, and visual storytelling',
       icon: '/images/img_iconoirdesignnib.svg',
       bgColor: 'bg-primary-yellow-light',
+      bgcolorCollapsed:'#fcf4d7',
       mobileTextColor: "text-[rgba(240,198,56,1)]",
     },
     {
@@ -47,6 +51,7 @@ const ServicesSection = () => {
       description: 'Custom e-commerce platforms designed to grow your brand',
       icon: '/images/img_bicartplus.svg',
       bgColor: 'bg-primary-coral-light',
+      bgcolorCollapsed:'#fde3e5',
       mobileTextColor: "text-[rgba(245,116,126,1)]",
     },
     {
@@ -55,13 +60,14 @@ const ServicesSection = () => {
       description: 'Flexible SaaS applications tailored to your business goals',
       icon: '/images/img_lineiconscloudiot2.svg',
       bgColor: 'bg-primary-green-light',
+      bgcolorCollapsed:'#d8f5e9',
       mobileTextColor: "text-[rgba(62,203,144,1)]",
     },
   ];
   return (
 
-            <section id="services" className="pt-12 lg:pt-16">
-              <div className="container mx-auto px-4">
+            <section id="services" className="pt-[45px]">
+              <div className="container mx-auto px-4 overflow-hidden">
                 <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
                   {services.map((service, index) => (
@@ -77,7 +83,7 @@ const ServicesSection = () => {
                     >
                       <div className='mobile-none'>
                       <div
-                        className={`${service.bgColor} w-20 md:h-20 h-auto rounded-full flex items-center justify-center mx-auto mb-6`}
+                        className={`${service.bgColor} mobile-bg-transparent w-20 md:h-20 h-auto rounded-full flex items-center justify-center mx-auto mb-6 `}
                       >
                         <Image src={service.icon} alt={service.title} width={36} height={36} />
                       </div>
@@ -86,7 +92,7 @@ const ServicesSection = () => {
                         {service.description}
                       </p>
                       </div>
-                      <div className='collapsible-element text-left content-center'>
+                      <div className={`collapsible-element text-left content-center${activeIndex === index ? 'active' : ''}`} style={{background:service.bgcolorCollapsed}}>
                         <p className='paragraph text-title text-[16px] leading-[20px]'>
                           {service.description}
                         </p>

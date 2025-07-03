@@ -14,7 +14,7 @@ const TeamTestimonials = () => {
               width={307}
               height={307}
             />
-            <div className="massage-arapper max-w-[735px] mx-auto text-white md:p-0 p-6 md:text-left text-center">
+            <div className="massage-arapper max-w-[735px] mx-auto text-primary-white md:p-0 p-6 md:text-left text-center">
               <p className="mb-10">
                 “At Bitpastel, I’ve grown through meaningful challenges as a Backend Engineer and
                 Team Lead. I build systems, lead teams, and value our open, supportive culture
@@ -58,7 +58,7 @@ const TeamTestimonials = () => {
               width={307}
               height={307}
             />
-            <div className="massage-arapper max-w-[735px] mx-auto text-white md:p-0 p-6 md:text-left text-center">
+            <div className="massage-arapper max-w-[735px] mx-auto text-primary-white md:p-0 p-6 md:text-left text-center">
               <p className="mb-10">
                 “At Bitpastel, I’ve grown through meaningful challenges as a Backend Engineer and
                 Team Lead. I build systems, lead teams, and value our open, supportive culture

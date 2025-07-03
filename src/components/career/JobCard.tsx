@@ -76,7 +76,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen md:py-14  py-12" id='#jobCards'>
+    <div className="min-h-screen pt-[45px]" id='#jobCards'>
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-8">
