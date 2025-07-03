@@ -4,17 +4,18 @@ import Button from '@/components/ui/Button';
 import { Link } from 'lucide-react';
 const TeamEngage = () => {
   return (
-    <section className="pt-[45px] pb-[45px]">
+    <section className="md:py-[100px] py-[70px]">
       <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
           <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-full">
-            <Image
-              src="/images/person-client.png"
-              alt="Team collaboration"
-              width={711}
-              height={406}
-              className="w-full md:h-full h-[280px] md:object-contain object-cover md:object-center object-right"
-            />
+                      <Image
+                        src="/images/person-client.png"
+                        alt="Team collaboration"
+                        width={711}
+                        height={406}
+                        className="w-full md:h-full h-[280px] md:object-unset object-cover md:object-center object-right"
+                      />
+                   
           </div>
           <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 rounded-tl-[40px] rounded-bl-[40px] content-center overflow-hidden">
             {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}

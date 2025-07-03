@@ -1,6 +1,6 @@
 const NewTeamCollage = () => {
 return (
-<section className="life-at-bitpastel team-image-wrapper md:pt-[90px] pt-[70px]">
+<section className="life-at-bitpastel team-image-wrapper md:pt-[100px] pt-[70px]">
   <div className="top-align-thumbnail">
     <div className="common-lb instagram-area-top fourth-lb lazy-image-section">
       <div className="img lt">
