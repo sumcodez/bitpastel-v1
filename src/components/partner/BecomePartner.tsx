@@ -11,6 +11,13 @@ type FormData = {
   message: string;
 };
 
+type FormErrors = {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+};
+
 const BecomePartner = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -19,6 +26,7 @@ const BecomePartner = () => {
     message: ''
   });
 
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState('');
   const [defaultCountry, setDefaultCountry] = useState('IN');
@@ -40,16 +48,60 @@ const BecomePartner = () => {
     detectCountry();
   }, []);
 
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    
+    // Phone validation
+    if (!formData.phone) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\+?[\d\s\-()]{8,20}$/.test(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
+    
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors({ ...errors, [name]: undefined });
+    }
   };
 
   const handlePhoneChange = (value?: string) => {
     setFormData({ ...formData, phone: value || '' });
+    if (errors.phone) {
+      setErrors({ ...errors, phone: undefined });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     setStatus('');
 
@@ -107,44 +159,69 @@ const BecomePartner = () => {
           <div className="px-[15px]">
             <div className="become-partner-form-area">
               <form onSubmit={handleSubmit}>
-                <div className="become-input">
-                  <input 
-                    type="text" 
-                    name="name" 
-                    placeholder="Name" 
-                    value={formData.name} 
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="become-input flex items-start">
+                  <div className="flex-1">
+                    <input 
+                      type="text" 
+                      name="name" 
+                      placeholder="Name" 
+                      value={formData.name} 
+                      onChange={handleChange}
+                    />
+                  </div>
+                  {errors.name && (
+                    <span className="text-red-500 text-sm ml-2 mt-2">
+                      {errors.name}
+                    </span>
+                  )}
                 </div>
-                <div className="become-input">
-                  <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Email Address" 
-                    value={formData.email} 
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="become-input flex items-start">
+                  <div className="flex-1">
+                    <input 
+                      type="email" 
+                      name="email" 
+                      placeholder="Email Address" 
+                      value={formData.email} 
+                      onChange={handleChange}
+                    />
+                  </div>
+                  {errors.email && (
+                    <span className="text-red-500 text-sm ml-2 mt-2">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
-                <div className="become-input">
-                  <PhoneInput
-                    international
-                    defaultCountry={defaultCountry as any}
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                    placeholder="Phone"
-                    className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
-                  />
+                <div className="become-input flex items-start">
+                  <div className="flex-1">
+                    <PhoneInput
+                      international
+                      defaultCountry={defaultCountry as any}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
+                      placeholder="Phone"
+                      className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
+                    />
+                  </div>
+                  {errors.phone && (
+                    <span className="text-red-500 text-sm ml-2 mt-2">
+                      {errors.phone}
+                    </span>
+                  )}
                 </div>
-                <div className="become-textarea">
-                  <textarea 
-                    name="message" 
-                    placeholder="Your Message" 
-                    value={formData.message} 
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="become-textarea flex items-start">
+                  <div className="flex-1">
+                    <textarea 
+                      name="message" 
+                      placeholder="Your Message" 
+                      value={formData.message} 
+                      onChange={handleChange}
+                    />
+                  </div>
+                  {errors.message && (
+                    <span className="text-red-500 text-sm ml-2 mt-2">
+                      {errors.message}
+                    </span>
+                  )}
                 </div>
                 <button 
                   className="form-button bg-green-btn" 
