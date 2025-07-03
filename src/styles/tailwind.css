@@ -468,6 +468,16 @@ textarea::placeholder {
   font-weight: 100;
 }
 
+
+
+.become-partner-form-area form input::placeholder,
+.become-partner-form-area form textarea::placeholder {
+  color: #b2b2b2;
+}
+
+
+
+
 .modal-container input:focus-visible {
   border: none;
   outline: none;
