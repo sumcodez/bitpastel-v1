@@ -192,11 +192,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     fileInputRef.current?.click();
   };
   if (isLoading) {
-    return <div className="max-w-4xl mx-auto p-6 text-center">Loading...</div>;
+    return <div className="max-w-[800px] mx-auto p-6 text-center">Loading...</div>;
   }
   return (
-    <div className={`${className ?? ""} max-w-4xl mx-auto p-6`} id="joinTeamForm">
-      <h2 className="text-[32px] font-semibold font-source text-title text-center mb-8">
+    <div className={`${className ?? ""} max-w-[800px] mx-auto md:pt-[90px] pt-[70px]`} id="joinTeamForm">
+      <h2 className="title text-title font-semibold font-source text-center mb-8">
         {title}
         {/* Join Our Team */}
       </h2>

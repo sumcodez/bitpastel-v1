@@ -315,6 +315,9 @@ button {
   box-shadow: 1px 1px 4px #ccc;
   position: relative;
 }
+.card:hover{
+  transform: translate3D(0, -1px, 0) scale(1.03);
+}
 /* .card:hover{
   transition: all .4s ease;
     cursor: pointer;
