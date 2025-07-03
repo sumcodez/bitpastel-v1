@@ -3,6 +3,7 @@ import { notFound, useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import JoinTeam from '@/components/JoinTeamForm';
 import JobDetailsBanner from '@/components/career/JobDetailsBanner';
+import Common_banner from '@/components/ui/Common_banner';
 interface JobListing {
   id: string;
   title: string;
@@ -357,7 +358,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     },
   ];
   return (
-    <div className="relative">
+    <>
+    <section className="relative">
       <JobDetailsBanner
         jobTitle={job.title}
         backgroundImage="/images/apply-job.png"
@@ -469,6 +471,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <Common_banner/>
+    </>
   );
 }
