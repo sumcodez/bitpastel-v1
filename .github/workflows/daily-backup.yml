@@ -2,8 +2,8 @@ name: Daily GitHub Backup
 
 on:
   schedule:
-    - cron: '0 3 * * *' # Runs every day at 3 AM UTC (8:30 AM IST)
-  workflow_dispatch:      # Optional: allows you to manually trigger
+    - cron: '0 3 * * *' # Every day at 3 AM UTC (8:30 AM IST)
+  workflow_dispatch:
 
 jobs:
   backup:
@@ -13,14 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get today's date
+        id: get_date
+        run: echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
       - name: Create backup zip
         run: |
           mkdir backup
-          zip -r backup/website-$(date +'%Y-%m-%d').zip . -x "*.git*" "node_modules/*" ".next/*"
+          zip -r backup/website-${{ steps.get_date.outputs.date }}.zip . -x "*.git*" "node_modules/*" ".next/*"
 
       - name: Upload backup artifact
         uses: actions/upload-artifact@v4
         with:
-          name: website-backup
+          name: website-backup-${{ steps.get_date.outputs.date }}
           path: backup/
-          retention-days: 30  # Automatically delete after 30 days (can be 1–90)
+          retention-days: 30
