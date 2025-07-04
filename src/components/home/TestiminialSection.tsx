@@ -232,7 +232,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} md:rounded-[20px] ${!isMobile ? "testimonial-card-parent" : ""} rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
+              className={`${testimonial.bgColor} overflow-auto md:rounded-[20px] ${!isMobile ? "testimonial-card-parent" : ""} rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>

@@ -403,13 +403,12 @@ input:focus-visible{
 } */
  
 @media screen and (min-width:991px) {
-  
   .testimonial-card-parent .testimonial-card-content p {
     max-height: 70px;
     min-height: 70px;
     overflow: hidden;
     opacity: 1;
-    /* padding-bottom: 0; */
+    padding-bottom: 0;
     transition: 
       max-height 0.5s ease,
       padding 0.3s ease,
@@ -417,8 +416,8 @@ input:focus-visible{
   }
   
   .testimonial-card-parent:hover .testimonial-card-content p {
-    max-height: 100%; /* Choose a large enough value */
-    /* padding-bottom: 20px; */
+    max-height: 500px; 
+    padding-bottom: 20px;
     opacity: 1;
     display: block;
   }
@@ -549,6 +548,9 @@ textarea::placeholder {
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+.partner-service-item:hover svg path {
+    stroke: #0cc;
 }
 .partner-refer-title-area h2 {
   color: #2a2a2a;
