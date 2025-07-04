@@ -386,7 +386,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   <br />
                   The current position requires the following skills:
                 </p>
-                {job.requirements && job.requirements.length > 0 && (
+                {job.requirements && (
                   <div className="flex flex-col md:flex-row gap-8"> {/* Added gap for better spacing */}
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">Technical Skills:</h3>
@@ -400,7 +400,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                     </div>
                   </div>
                 )}
-                {job.softSkills && job.softSkills.length > 0 && (
+                {job.softSkills && (
                   <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">Soft Skills:</h3>
@@ -414,7 +414,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                     </div>
                   </div>
                 )}
-                {job.desiredCandidateProfile && job.desiredCandidateProfile.length > 0 && (
+                {job.desiredCandidateProfile && (
                   <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">Desired Candidate Profile:</h3>
@@ -442,7 +442,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                           window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
                         }
                       >
-                        Apply via Naukri
+                        Apply via Naukri.com
                       </button>
                       <button
                         className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
