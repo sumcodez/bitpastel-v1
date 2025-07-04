@@ -240,7 +240,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
         }`}
       >
         <div className=" rounded-lg shadow-xl overflow-hidden">
-          <div className="pt-[30px] px-[30px] pb-[35px]">
+          <div className="md:pt-[30px] md:px-[30px] md:pb-[35px]">
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left side - Image and details */}
               <div className="lg:w-[60%] md:w-[50%] md:flex md:flex-col hidden">
@@ -315,17 +315,17 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   </div>
                   <div className="flex flex-wrap justify-center pt-6 text-center">
                     {/* UK - Visible on all screens */}
-                    <p className="text-[#099] text-[16px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] border-right text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+442081446579">UK: +44 2081 446579</a>
                     </p>
 
                     {/* US - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] text-[16px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] border-right text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
                     </p>
 
                     {/* IN - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] text-[16px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
+                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
                       <a href="tel:+919830566248">IN: +91 9830 566 248</a>
                     </p>
                   </div>
@@ -466,7 +466,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Privacy Policy */}
                       <p className="text-[11px] mt-[3px] text-white text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
-                        <Link href="/privacy-policys" className="text-[#52d09c]"
+                        <Link href="/privacy-policys" className="text-till"
                         onClick={onClose}
                         >
                           Privacy Policy
@@ -483,6 +483,22 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     </div>
                   </form>
                 </div>
+                <div className="flex flex-wrap gap-4 flex-col justify-center pt-6 pb-5 text-center md:hidden">
+                    {/* UK - Visible on all screens */}
+                    <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
+                      <a href="tel:+442081446579">UK: +44 2081 446579</a>
+                    </p>
+
+                    {/* US - Hidden on md, visible only on lg */}
+                    <p className="text-[#099]  text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
+                      <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
+                    </p>
+
+                    {/* IN - Hidden on md, visible only on lg */}
+                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
+                      <a href="tel:+919830566248">IN: +91 9830 566 248</a>
+                    </p>
+                  </div>
               </div>
             </div>
           </div>
