@@ -159,7 +159,7 @@ const BecomePartner = () => {
           <div className="px-[15px]">
             <div className="become-partner-form-area">
               <form onSubmit={handleSubmit}>
-                <div className="become-input flex items-start">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
                   <div className="flex-1">
                     <input 
                       type="text" 
@@ -175,7 +175,7 @@ const BecomePartner = () => {
                     </span>
                   )}
                 </div>
-                <div className="become-input flex items-start">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
                   <div className="flex-1">
                     <input 
                       type="email" 
@@ -191,7 +191,7 @@ const BecomePartner = () => {
                     </span>
                   )}
                 </div>
-                <div className="become-input flex items-start">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
                   <div className="flex-1">
                     <PhoneInput
                       international
@@ -199,7 +199,7 @@ const BecomePartner = () => {
                       value={formData.phone}
                       onChange={handlePhoneChange}
                       placeholder="Phone"
-                      className="!border-none !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
+                      className="!border-none border-b-0 !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
                     />
                   </div>
                   {errors.phone && (
@@ -208,7 +208,7 @@ const BecomePartner = () => {
                     </span>
                   )}
                 </div>
-                <div className="become-textarea flex items-start">
+                <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <textarea 
                       name="message" 
@@ -224,7 +224,7 @@ const BecomePartner = () => {
                   )}
                 </div>
                 <button 
-                  className="form-button bg-green-btn" 
+                  className="form-button mt-[30px] bg-green-btn" 
                   type="submit" 
                   disabled={isSubmitting}
                 >

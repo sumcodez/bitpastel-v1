@@ -659,7 +659,7 @@ textarea::placeholder {
   background-color: transparent;
   border: none;
   outline: 0;
-  border-bottom: 1px solid #7e7e7e;
+  /* border-bottom: 1px solid #7e7e7e; */
   padding: 15px 0;
 }
 .become-textarea {
@@ -676,7 +676,7 @@ textarea::placeholder {
   background-color: transparent;
   border: none;
   outline: 0;
-  border-bottom: 1px solid #7e7e7e;
+  /* border-bottom: 1px solid #7e7e7e; */
   padding: 15px 0;
   resize: none;
   overflow: auto;
@@ -688,7 +688,7 @@ textarea::placeholder {
 .become-partner-form-area .form-button {
   min-width: 120px;
   max-width: 120px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   border: none;
   padding: 0 30px;
   border-radius: 5px;
