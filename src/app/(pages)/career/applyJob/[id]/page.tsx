@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from 'react';
 import JoinTeam from '@/components/JoinTeamForm';
 import JobDetailsBanner from '@/components/career/JobDetailsBanner';
 import Common_banner from '@/components/ui/Common_banner';
+
+
 interface JobListing {
   id: string;
   title: string;
@@ -16,14 +18,15 @@ interface JobListing {
   location?: string;
   softSkills?: string[];
   desiredCandidateProfile?: string[];
+  naukriLink?: string;
 }
 export default function JobDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
   const [job, setJob] = useState<JobListing | null>(null);
   const [loading, setLoading] = useState(true);
-  const jobWithForm = ['4'];
-  const jobWithOneButtonAndForm = ['3', '5', '6'];
-  const jobWithFormAndButton = ["1"];
+  const jobWithForm = ['7'];
+  const jobWithOneButtonAndForm = ['3','6'];
+  const jobWithFormAndButton = ["4"];
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
   const scrollToForm = () => {
@@ -66,6 +69,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Must have worked with international clients (UK, US, EU)',
         'Fluent in English (written and spoken)',
       ],
+      naukriLink: 'https://www.naukri.com/bidding-jobs-in-kolkata?expJD=true'
     },
     {
       id: '2',
@@ -125,6 +129,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Familiarity with Agile/Scrum methodologies',
         'Self-motivated and able to handle challenging tasks',
       ],
+      naukriLink: 'https://www.naukri.com/jobs-in-india?expJD=true'
     },
     {
       id: '3',
@@ -169,6 +174,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Adaptable to changing project requirements and fast-paced workflows',
         'A passion for building strong development teams and scalable solutions',
       ],
+      naukriLink: '#'
     },
     {
       id: '4',
@@ -210,6 +216,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Self-motivated and eager to contribute to project success',
         'Open to collaboration and continuous learning',
       ],
+      naukriLink: 'https://www.naukri.com/job-listings-110425021224'
     },
     {
       id: '5',
@@ -254,6 +261,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Adaptable to new technologies and project requirements',
         'Passion for building modern web applications and scalable systems',
       ],
+      naukriLink: 'https://www.naukri.com/jobs-in-india?expJD=true'
     },
     {
       id: '6',
@@ -287,6 +295,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Are available for a minimum duration of 6 months',
         'Have relevant skills and interests',
       ],
+      naukriLink: '#'
     },
     {
       id: '7',
@@ -314,6 +323,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Problem solver',
       ],
       desiredCandidateProfile: [],
+      naukriLink: '#'
     }
   ];
   useEffect(() => {
@@ -432,7 +442,9 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                     <div className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-16 pt-14">
                       <button
                         className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
-                        onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                          window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
+                        }
                       >
                         Apply via Naukri
                       </button>
@@ -461,7 +473,9 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   <div className='flex justify-center pt-14'>
                     <button
                       className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors my-10"
-                      onClick={() => alert(`Applied for ${job.title} position!`)}
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                        window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
+                      }
                     >
                       Apply via Naukri.com
                     </button>
