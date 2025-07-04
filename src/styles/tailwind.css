@@ -685,6 +685,10 @@ textarea::placeholder {
 .become-input {
   position: relative;
 }
+.PhoneInputInput{
+  background: transparent;
+  color:#ffffff !important;
+}
 .become-partner-form-area .form-button {
   min-width: 120px;
   max-width: 120px;

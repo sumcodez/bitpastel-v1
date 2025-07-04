@@ -191,7 +191,9 @@ const BecomePartner = () => {
                     </span>
                   )}
                 </div>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
+
+
+                {/* <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
                   <div className="flex-1">
                     <PhoneInput
                       international
@@ -207,7 +209,37 @@ const BecomePartner = () => {
                       {errors.phone}
                     </span>
                   )}
-                </div>
+                </div> */}
+
+
+
+         <div className={`relative flex gap-2 py-[8px] border-b `}
+            >
+              <PhoneInput
+                international
+                defaultCountry={defaultCountry as any}
+                value={formData.phone}
+                onChange={(value) => handlePhoneChange(value)}
+                placeholder="Mobile number (optional)"
+                className="!border-none bg-transparent gap-[20px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
+              />
+              {!formData.phone && (
+                <p className="text-white absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                  Mobile number (optional)
+                </p>
+              )}
+              {errors.phone && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
+
+
+
+
+
+
                 <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <textarea 

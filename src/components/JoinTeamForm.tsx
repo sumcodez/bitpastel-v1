@@ -1,37 +1,36 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown, Paperclip } from "lucide-react";
-import * as countryCodesList from "country-codes-list";
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronDown, Paperclip } from 'lucide-react';
+import * as countryCodesList from 'country-codes-list';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import Link from "next/link";
-interface JoinTeamProps{
+import Link from 'next/link';
+interface JoinTeamProps {
   title?: string;
-  className?: string
+  className?: string;
 }
-export default function JoinTeam({title = "Join Our Team", className}: JoinTeamProps) {
-  // Form state 
+export default function JoinTeam({ title = 'Join Our Team', className }: JoinTeamProps) {
+  // Form state
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     // mobile: "",
     // countryCode: "+91",
-    phone: "",
-    currentLocation: "",
-    qualification: "",
-    experience: "",
-    noticePeriod: "",
-    referredBy: "",
+    phone: '',
+    currentLocation: '',
+    qualification: '',
+    experience: '',
+    noticePeriod: '',
+    referredBy: '',
     resume: null as File | null,
   });
-  const [defaultCountry, setDefaultCountry] = useState<string>("IN");
+  const [defaultCountry, setDefaultCountry] = useState<string>('IN');
   const [isLoading, setIsLoading] = useState(true);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
 
   // Detect user's country based on IP
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           setDefaultCountry(data.country);
         }
       } catch (error) {
-        console.error("Could not detect country, using default:", error);
+        console.error('Could not detect country, using default:', error);
       } finally {
         setIsLoading(false);
       }
@@ -51,21 +50,20 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     detectCountry();
   }, []);
 
-
-
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
-    if (!formData.email.trim()) newErrors.email = "Email is required.";
-    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email is invalid.";
+    if (!formData.name.trim()) newErrors.name = 'Name is required.';
+    if (!formData.email.trim()) newErrors.email = 'Email is required.';
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Email is invalid.';
     // if (!formData.mobile.trim()) newErrors.mobile = "Mobile number is required.";
-    // else if (!/^\d{7,15}$/.test(formData.mobile)) newErrors.mobile = "Invalid mobile number.";    
-    if (!formData.phone) newErrors.phone = "Phone number is required.";
-    if (!formData.currentLocation.trim()) newErrors.currentLocation = "Current location is required.";
+    // else if (!/^\d{7,15}$/.test(formData.mobile)) newErrors.mobile = "Invalid mobile number.";
+    if (!formData.phone) newErrors.phone = 'Phone number is required.';
+    if (!formData.currentLocation.trim())
+      newErrors.currentLocation = 'Current location is required.';
     // if (!formData.qualification.trim()) newErrors.qualification = "Qualification is required.";
     // if (!formData.experience.trim()) newErrors.experience = "Please select your experience.";
     // if (!formData.noticePeriod.trim()) newErrors.noticePeriod = "Please select your notice period.";
-    if (!formData.resume) newErrors.resume = "Please attach your resume.";
+    if (!formData.resume) newErrors.resume = 'Please attach your resume.';
     return newErrors;
   };
 
@@ -76,35 +74,26 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
         setIsCountryDropdownOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
 
   useEffect(() => {
     const validationErrors = validateForm();
     setIsFormValid(Object.keys(validationErrors).length === 0);
   }, [formData]);
 
+  const experienceOptions = ['Fresher', '1 year', '2 years', '3 years', '4 years', '5+ years'];
 
-  const experienceOptions = [
-    "Fresher",
-    "1 year",
-    "2 years",
-    "3 years",
-    "4 years",
-    "5+ years"
-  ];
-  
   const noticePeriodOptions = [
-    "Immediately",
-    "15 days",
-    "1 month",
-    "2 months",
-    "3 months",
-    "More than 3 months"
+    'Immediately',
+    '15 days',
+    '1 month',
+    '2 months',
+    '3 months',
+    'More than 3 months',
   ];
   // const myCountryCodesObject = countryCodesList.customList(
   //   "countryCode",
@@ -121,9 +110,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
   //     };
   //   })
   //   .filter(Boolean);
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -157,7 +144,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
       referredBy,
       resume,
     } = formData;
-    
+
     if (
       !name ||
       !email ||
@@ -170,38 +157,38 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
       !noticePeriod ||
       !resume
     ) {
-      alert("Please fill in all required fields including the resume.");
+      alert('Please fill in all required fields including the resume.');
       return;
     }
     // Create FormData instead of URLSearchParams
     const formDataToSend = new FormData();
-    formDataToSend.append("name", name);
-    formDataToSend.append("email", email);
-    formDataToSend.append("phone", phone || ""); // Use phone instead of mobile
-    formDataToSend.append("url", window.location.pathname);
-    formDataToSend.append("current_location", currentLocation);
-    formDataToSend.append("qualification", qualification);
-    formDataToSend.append("experience", experience);
-    formDataToSend.append("notice_period", noticePeriod);
-    formDataToSend.append("referred_by", referredBy || "");
-    formDataToSend.append("resume", resume);
+    formDataToSend.append('name', name);
+    formDataToSend.append('email', email);
+    formDataToSend.append('phone', phone || ''); // Use phone instead of mobile
+    formDataToSend.append('url', window.location.pathname);
+    formDataToSend.append('current_location', currentLocation);
+    formDataToSend.append('qualification', qualification);
+    formDataToSend.append('experience', experience);
+    formDataToSend.append('notice_period', noticePeriod);
+    formDataToSend.append('referred_by', referredBy || '');
+    formDataToSend.append('resume', resume);
     try {
-      const response = await fetch("https://www.bitpastel.com/api/sendemail.php/", {
-        method: "POST",
+      const response = await fetch('https://www.bitpastel.com/api/sendemail.php/', {
+        method: 'POST',
         body: formDataToSend,
       });
-      
+
       if (response.ok) {
         const result = await response.text();
-        console.log("Success:", result);
-        alert("Thank you! Your application has been submitted.");
+        console.log('Success:', result);
+        alert('Thank you! Your application has been submitted.');
       } else {
-        console.error("Failed to submit:", response.status);
-        alert("Something went wrong. Please try again.");
+        console.error('Failed to submit:', response.status);
+        alert('Something went wrong. Please try again.');
       }
     } catch (error) {
-      console.error("Network error:", error);
-      alert("Network error. Please check your connection.");
+      console.error('Network error:', error);
+      alert('Network error. Please check your connection.');
     }
   };
   const handleAttachmentClick = () => {
@@ -211,7 +198,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     return <div className="max-w-[800px] mx-auto px-4 p-6 text-center">Loading...</div>;
   }
   return (
-    <div className={`${className ?? ""} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px]`} id="joinTeamForm">
+    <div
+      className={`${className ?? ''} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px]`}
+      id="joinTeamForm"
+    >
       <h2 className="title text-title font-semibold font-source text-center mb-8">
         {title}
         {/* Join Our Team */}
@@ -222,7 +212,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b  ${
-                errors.name ? "border-red-500" : "border-gray-300"
+                errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
@@ -242,26 +232,28 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               )}
             </div>
             {/* Phone number */}
-            <div className={`relative flex gap-2 pt-[6px] border-b ${errors.mobile ? "border-red-500" : "border-gray-300"}`}>
-  <PhoneInput
-    international
-    defaultCountry={defaultCountry as any}
-    value={formData.phone}
-    onChange={(value) => handleInputChange('phone', value || '')}
-    placeholder="Mobile number (optional)"
-    className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
-  />
-  {!formData.phone && (
-    <p className="text-white absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
-      Mobile number (optional)
-    </p>
-  )}
-  {errors.phone && (
-    <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-      {errors.phone}
-    </p>
-  )}
-</div>
+            <div
+              className={`relative flex gap-2 pt-[6px] border-b ${errors.mobile ? 'border-red-500' : 'border-gray-300'}`}
+            >
+              <PhoneInput
+                international
+                defaultCountry={defaultCountry as any}
+                value={formData.phone}
+                onChange={(value) => handleInputChange('phone', value || '')}
+                placeholder="Mobile number (optional)"
+                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+              />
+              {!formData.phone && (
+                <p className="text-white absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                  Mobile number (optional)
+                </p>
+              )}
+              {errors.phone && (
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
             <div className="border-b border-[#04ff04]">
               <input
                 type="text"
@@ -283,8 +275,8 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   Notice Period (Optional)
                 </option>
                 {noticePeriodOptions.map((option, index) => (
-                  <option 
-                    key={index} 
+                  <option
+                    key={index}
                     value={option}
                     className="text-title subheadingfont-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
@@ -292,11 +284,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   </option>
                 ))}
               </select>
-              
+
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
                 <span className="text-title subheading font-source font-thin">
-                  {formData.noticePeriod || "Notice Period (Optional)"}
+                  {formData.noticePeriod || 'Notice Period (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
@@ -306,7 +298,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b pb- ${
-                errors.email ? "border-red-500" : "border-gray-300"
+                errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
@@ -325,7 +317,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                 </p>
               )}
             </div>
-            <div className={`flex items-end gap-4 border-b !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}>
+            <div
+              className={`flex items-end gap-4 border-b !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}
+            >
               <input
                 type="text"
                 name="currentLocation"
@@ -351,8 +345,8 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   Years of experience (Optional)
                 </option>
                 {experienceOptions.map((option, index) => (
-                  <option 
-                    key={index} 
+                  <option
+                    key={index}
                     value={option}
                     className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
@@ -360,11 +354,11 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
                   </option>
                 ))}
               </select>
-              
+
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2">
                 <span className="text-title subheading font-source font-thin">
-                  {formData.experience || "Years of experience (Optional)"}
+                  {formData.experience || 'Years of experience (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
@@ -391,7 +385,9 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
             accept=".pdf,.doc,.docx"
             className="hidden"
           />
-          <div className={`flex items-center gap-3 border-b ${errors.resume ? "border-red-500" : "border-gray-300"}`}>
+          <div
+            className={`flex items-center gap-3 border-b ${errors.resume ? 'border-red-500' : 'border-gray-300'}`}
+          >
             <button
               type="button"
               onClick={handleAttachmentClick}
@@ -401,9 +397,7 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
               <span>Attach your CV/Resume</span>
             </button>
             {formData.resume && (
-              <span className="text-sm text-gray-600">
-                {formData.resume.name}
-              </span>
+              <span className="text-sm text-gray-600">{formData.resume.name}</span>
             )}
             {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
           </div>
@@ -412,10 +406,10 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
           <button
             type="submit"
             // className="bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center"
-              className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
-                !isFormValid ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-              disabled={!isFormValid}
+            className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
+              !isFormValid ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+            disabled={!isFormValid}
           >
             Send
           </button>
@@ -431,10 +425,3 @@ export default function JoinTeam({title = "Join Our Team", className}: JoinTeamP
     </div>
   );
 }
-
-
-
-
-
-
-

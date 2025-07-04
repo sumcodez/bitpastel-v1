@@ -429,16 +429,23 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </div>
 
                       {/* Mobile Number */}
-                      <div className="pb-1 border-b border-gray-200">
-                        <PhoneInput
-                          international
-                          defaultCountry={defaultCountry as any} // Default to India
-                          value={formData.phone}
-                          onChange={(value) => handleInputChange('phone', value || '')}
-                          placeholder="Mobile number (optional)"
-                          className="!border-none gap-[20px] !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
-                        />
-                      </div>
+                     <div
+              className={`relative flex gap-2 pt-[6px] border-b `}
+            >
+              <PhoneInput
+                international
+                defaultCountry={defaultCountry as any}
+                value={formData.phone}
+                onChange={(value) => handleInputChange('phone', value || '')}
+                placeholder="Mobile number (optional)"
+                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+              />
+              {!formData.phone && (
+                <p className="text-white absolute top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none">
+                  Mobile number (optional)
+                </p>
+              )}
+            </div>
 
 
                       {/* Message */}
