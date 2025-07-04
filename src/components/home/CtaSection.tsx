@@ -2,7 +2,7 @@ import React from 'react'
 
 const CtaSection = () => {
   return (
-    <section className="md:py-[106px] py-[70px] cta-section">
+    <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
       <div className="container mx-auto px-4">
         <div className="relative md:rounded-[40px] overflow-hidden flex flex-col md:block">
           {/* Background for mobile and desktop */}

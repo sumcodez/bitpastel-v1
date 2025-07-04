@@ -3,6 +3,7 @@ import { notFound, useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import JoinTeam from '@/components/JoinTeamForm';
 import JobDetailsBanner from '@/components/career/JobDetailsBanner';
+import Common_banner from '@/components/ui/Common_banner';
 interface JobListing {
   id: string;
   title: string;
@@ -357,7 +358,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     },
   ];
   return (
-    <div className="relative">
+    <>
+    <section className="relative">
       <JobDetailsBanner
         jobTitle={job.title}
         backgroundImage="/images/apply-job.png"
@@ -429,13 +431,13 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 <>
                   <div className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-16 pt-14">
                     <button
-                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      className="ripple-btn basis-1/3 flex-1 min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                       onClick={() => alert(`Applied for ${job.title} via Naukri!`)}
                     >
                       Apply via Naukri
                     </button>
                     <button
-                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      className="ripple-btn basis-1/3 flex-1 min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                       onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Apply Now
@@ -447,7 +449,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 <>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 pt-14">
                     <button
-                      className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
+                      className="ripple-btn min-h-[40px] basis-1/3 flex-1 min-w-[280px] bg-green-btn text-primary-white font-[16px] font-source py-3 px-6 rounded-md transition-colors"
                       onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Apply Now
@@ -458,7 +460,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
               ) : (
                 <div className='flex justify-center pt-14'>
                   <button
-                    className="ripple-btn min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors my-10"
+                    className="ripple-btn basis-1/3 flex-1 min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors my-10"
                     onClick={() => alert(`Applied for ${job.title} position!`)}
                   >
                     Apply via Naukri.com
@@ -469,6 +471,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <Common_banner/>
+        </>
   );
 }

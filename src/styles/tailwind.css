@@ -466,12 +466,12 @@ input:focus-visible{
 }
 .modal-container input::placeholder,
 .modal-container textarea::placeholder {
-  color: #212529;
+  color: #B2B2B2;
   font-weight: 100;
 }
 input::placeholder,
 textarea::placeholder {
-  color: #212529;
+  color: #B2B2B2;
   font-weight: 100;
 }
 
