@@ -58,7 +58,7 @@ const SatisfiedClientSection = () => {
                   className="mx-auto mb-3 md:h-auto h-10"
                 />
                 <h2 className=" font-source font-bold text-title text-title md:title title leading-[1]">{stat.value}</h2>
-                <div className={`font-source md:paragraph text-[13px] font-bold ${stat.color}`}>{stat.label}</div>
+                <div className={`font-source md:paragraph text-[13px] md:text-[20px] font-bold ${stat.color}`}>{stat.label}</div>
               </div>
             ))}
           </div>
