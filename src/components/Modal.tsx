@@ -274,7 +274,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         className="mx-auto mb-2"
                       />
                       <h6 className="text-[#099]">800</h6>
-                      <p className="text-[#212529] text-[12px]">Clients</p>
+                      <p className="text-[#212529] text-[13px]">Clients</p>
                     </div>
 
                     <div className="text-center">
@@ -286,7 +286,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         className="mx-auto mb-2"
                       />
                       <h6 className="text-[#099]">1000</h6>
-                      <p className="text-[#212529] text-[12px]">Projects</p>
+                      <p className="text-[#212529] text-[13px]">Projects</p>
                     </div>
 
                     <div className="text-center ">
@@ -298,7 +298,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         className="mx-auto mb-2"
                       />
                       <h6 className="text-[#099]">30M</h6>
-                      <p className="text-[#212529] text-[12px]">Lines of Code</p>
+                      <p className="text-[#212529] text-[13px]">Lines of Code</p>
                     </div>
 
                     <div className="text-center">
@@ -310,22 +310,22 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         className="mx-auto mb-2"
                       />
                       <h6 className="text-[#099]">32</h6>
-                      <p className="text-[#212529] text-[12px]">Countries</p>
+                      <p className="text-[#212529] text-[13px]">Countries</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap justify-center pt-6 text-center">
                     {/* UK - Visible on all screens */}
-                    <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] text-[16px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+442081446579">UK: +44 2081 446579</a>
                     </p>
 
                     {/* US - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] text-[16px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
                     </p>
 
                     {/* IN - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
+                    <p className="text-[#099] text-[16px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
                       <a href="tel:+919830566248">IN: +91 9830 566 248</a>
                     </p>
                   </div>
@@ -464,7 +464,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </button>
 
                       {/* Privacy Policy */}
-                      <p className="text-[11px] mt-[3px] text-[#212529] text-center">
+                      <p className="text-[11px] mt-[3px] text-white text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
                         <Link href="/privacy-policys" className="text-[#52d09c]"
                         onClick={onClose}

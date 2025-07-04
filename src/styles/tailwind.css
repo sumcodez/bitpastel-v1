@@ -239,6 +239,7 @@ input:focus-visible{
     transform: translateY(100px);
   }
 }
+
 .animate-fade-in-up {
   animation: fadeInUp 1s ease forwards;
 }
@@ -465,6 +466,10 @@ input:focus-visible{
     height: 30px;
     right: 7px;
   }
+}
+.modal-container input.PhoneInputInput::placeholder{
+  color: var(--text-dark);
+
 }
 .modal-container input::placeholder,
 .modal-container textarea::placeholder {
