@@ -269,7 +269,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
                 name="noticePeriod"
                 value={formData.noticePeriod}
                 onChange={handleChange}
-                className="w-full p-2 text-text-white subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+                className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
               >
                 <option value="" className="text-title subheading font-source font-thin">
                   Notice Period (Optional)
@@ -278,7 +278,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
                   <option
                     key={index}
                     value={option}
-                    className="text-title subheadingfont-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                    className="text-title subheading font-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
                   >
                     {option}
                   </option>
@@ -287,7 +287,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
 
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-title subheading font-source font-thin">
+                <span className="text-white subheading font-source font-thin">
                   {formData.noticePeriod || 'Notice Period (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
@@ -357,7 +357,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
 
               {/* Custom dropdown display */}
               <div className="flex justify-between items-center w-full p-2">
-                <span className="text-title subheading font-source font-thin">
+                <span className="text-white subheading font-source font-thin">
                   {formData.experience || 'Years of experience (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
