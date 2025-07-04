@@ -105,34 +105,29 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Ensure data protection, application security, and optimal performance',
       ],
       requirements: [
-        'Proficiency in backend languages like PHP, NodeJS, or Python',
-        'Strong database skills (MySQL, MongoDB)',
-        'Experience with RESTful API development',
-        'Knowledge of HTML5, CSS3, JavaScript, jQuery, AJAX',
-        'Familiarity with cloud platforms (AWS, GCP, Azure)',
-        'Experience with version control tools (Git, Bitbucket)',
-        'Understanding of scalable app architecture and deployment strategies',
-        'Exposure to containerization (Docker) and CI/CD pipelines',
+        "Proven experience in backend development using NodeJS, PHP (Laravel/CodeIgniter), or Python (Django/Flask)",
+        "Proficient in database design and management using MySQL, MongoDB, or other SQL/NoSQL databases",
+        "Strong experience with RESTful API development for web and mobile platforms",
+        "Solid understanding of HTML5, CSS3, JavaScript, jQuery, AJAX",
+        "Familiarity with third-party API integrations (e.g., Stripe, PayPal, Google Maps, Facebook, etc.)",
+        "Hands-on experience with cloud platforms such as AWS, Google Cloud Platform (GCP), or Microsoft Azure",
+        "Competent with version control tools like Git or Bitbucket",
+        "Experience in deploying and maintaining applications on cloud servers",
+        "Experience in developing scalable applications",
+        "Exposure to containerization tools like Docker",
+        "Understanding of CI/CD pipelines",
+        "Familiarity with Agile/Scrum methodologies"
       ],
       location: 'Kolkata',
       softSkills: [
-        'Excellent problem-solving and analytical thinking',
-        'Strong communication and team collaboration',
-        'Delivery-focused with attention to detail',
-        'Creative and innovative mindset',
-        'Adaptable to dynamic environments',
-        'Very good team player',
-        'Delivery Oriented',
-        'Innovative and able to think in creative fashion',
-        'Adaptable to challenges',
-        'Problem solver',
+        "Excellent problem-solving and analytical thinking abilities",
+        "Strong communication skills and a proactive approach to collaboration",
+        "Delivery-focused with attention to detail",
+        "Creative mindset and ability to innovate on the go",
+        "Comfortable working in fast-paced, dynamic environments"
       ],
       desiredCandidateProfile: [
-        'Passionate about backend technologies and scalable applications',
-        'Comfortable with cloud and modern DevOps tools',
-        'Interested to learn & work with latest/upcoming technologies',
-        'Familiarity with Agile/Scrum methodologies',
-        'Self-motivated and able to handle challenging tasks',
+        'Interested to learn & work with latest/upcoming technologies'
       ],
       naukriLink: 'https://www.naukri.com/jobs-in-india?expJD=true'
     },
@@ -157,13 +152,22 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Ensure pixel-perfect development and attention to detail in design',
       ],
       requirements: [
-        'Minimum 2 years of experience in Shopify website development',
-        'Strong expertise in Shopify & Shopify Plus platforms',
-        'Proficiency with Shopify Liquid templating language',
-        'Experience with storefront APIs, AJAX Cart, and dynamic sections',
-        'Strong knowledge of HTML5, CSS3, JavaScript (ES5/6)',
-        'Experience with SCSS, PHP, MySQL, and WordPress (preferred)',
-        'Familiarity with third-party integrations and Shopify app ecosystem',
+        "A minimum of 2 years of experience in Shopify Website Development",
+        "Strong knowledge of Shopify & Shopify Plus platforms & theme customization",
+        "Experience in migrating websites from other eCommerce platforms to Shopify",
+        "Experience in extending Shopify functionalities to the next level using storefront APIs, liquid programming, meta fields, etc",
+        "Experience in integrating third-party and platform-supported apps in the sites",
+        "Experience in setting up payment methods, navigation, shipping methods, and taxes in the Shopify platform",
+        "Page speed optimization of Shopify sites",
+        "Implementing SEO/CRO best practices in Shopify sites",
+        "Producing high-quality of work with a strong focus on detail",
+        "Expert-level knowledge of Shopify Liquid templating language",
+        "Proficiency in working with different Shopify JS APIs (storefront, AJAX Cart, Sections etc)",
+        "An expertise in HTML5, CSS3 and JavaScript/ECMA Script 5/6",
+        "A knowledge of SCSS (preferred)",
+        "Experience with WordPress (preferred)",
+        "Proficiency in PHP/MYSQL and AJAX (preferred)",
+        "Passion for building a team"
       ],
       location: 'Kolkata',
       softSkills: [
@@ -200,12 +204,11 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Integrate third-party APIs and services as needed',
       ],
       requirements: [
-        '2 - 6 years of hands-on WordPress development experience',
-        'Strong expertise in WordPress, WooCommerce, and plugin customization',
-        'Solid knowledge of PHP and MySQL',
-        'Experience with JavaScript, jQuery, and AJAX',
-        'Experience with CodeIgniter or Laravel (preferred)',
-        'Excellent skills in writing and optimizing SQL queries',
+        "At least 2 - 6 Years of web development experience in WordPress Development",
+        "Strong knowledge in WordPress, WooCommerce & Plugin development",
+        "Experience in any one of PHP Frameworks - CodeIgniter or Laravel is desired",
+        "Experience in JavaScript, jQuery, AJAX is required",
+        "Excellent in handling complex SQL queries is desired"
       ],
       location: 'Kolkata',
       softSkills: [
@@ -216,10 +219,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Problem solver',
       ],
       desiredCandidateProfile: [
-        'Looking for a rewarding role',
-        'Interested to learn & work with latest/upcoming technologies like Angular, Node.js, Shopify',
-        'Self-motivated and eager to contribute to project success',
-        'Open to collaboration and continuous learning',
+        "Looking for a rewarding role",
+        "Interested to learn & work with latest/upcoming technologies like Angular, Node JS, Shopify"
       ],
       naukriLink: 'https://www.naukri.com/job-listings-110425021224'
     },
@@ -234,13 +235,16 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       description:
         'We are seeking a Full Stack Developer with hands-on experience in both front-end and back-end technologies to build scalable web applications and APIs.',
       responsibilities: [
-        'Develop and maintain user interfaces using modern frameworks like React, Angular, or Vue.js',
-        'Implement server-side logic using Node.js and Express',
-        'Work with databases such as MySQL and PostgreSQL',
-        'Translate business requirements into scalable technical solutions',
-        'Collaborate with team members in an Agile environment',
-        'Consume and build RESTful APIs',
-        'Use version control tools like Git to manage codebase',
+        "Hands-on experience with front-end frameworks (React, Angular, Vue.js)",
+        "Strong working knowledge of TypeScript, MySQL, Express",
+        "Strong proficiency in TypeScript, JavaScript including DOM manipulation and the JavaScript object model, ES6",
+        "Strong understanding of HTML5, CSS3",
+        "Strong understanding of NodeJS fundamentals",
+        "Knowledge and experience working with PostgreSQL is a major plus",
+        "Familiarity with RESTful APIs",
+        "Knowledge of tools like Git, GitHub, JIRA and others that make coding more efficient and easier to share",
+        "Solid front-end and back-end software development experience",
+        "Ability to understand business requirements and translate them into technical requirements"
       ],
       requirements: [
         'Proficiency in TypeScript, JavaScript, ES6, and DOM manipulation',
@@ -252,19 +256,12 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       ],
       location: 'Kolkata',
       softSkills: [
-        'Problem-solving',
-        'Attention to detail',
-        'Team collaboration',
-        'Time management',
-        'Independent working ability',
-        'Experience working in an Agile environment',
-        'Creative thinking and animation knowledge with GSAP',
+        "Experience working in an Agile environment",
+        "Strong knowledge of GSAP",
+        "Should be able to work independently and with the team"
       ],
       desiredCandidateProfile: [
         '0 - 3 years of experience in Full Stack Development',
-        'Eager to work on both front-end and back-end projects',
-        'Adaptable to new technologies and project requirements',
-        'Passion for building modern web applications and scalable systems',
       ],
       naukriLink: 'https://www.naukri.com/jobs-in-india?expJD=true'
     },
@@ -282,23 +279,17 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Collaborate with the team on real-world projects',
       ],
       requirements: [
-        'Working knowledge of PHP, JavaScript, and MySQL',
-        'Basic understanding of HTML and CSS',
-        'Eagerness to learn and grow in a professional environment',
-        'Good analytical and problem-solving skills',
+        'Working with PHP, JavaScript, MySql'
       ],
       location: 'Kolkata',
       softSkills: [
-        'Problem-solving',
-        'Attention to detail',
-        'Team collaboration',
-        'Time management',
+
       ],
       desiredCandidateProfile: [
-        'Are available for the work from home job/internship',
-        'Can start the work from home job/internship immediately',
-        'Are available for a minimum duration of 6 months',
-        'Have relevant skills and interests',
+        "Are available for the work from home job/internship",
+        "Can start the work from home job/internship immediately",
+        "Are available for a minimum duration of 6 months",
+        "Have relevant skills and interests"
       ],
       naukriLink: '#'
     },
