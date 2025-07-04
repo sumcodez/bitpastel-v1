@@ -12,7 +12,7 @@ const ServicesSection = () => {
       id: 'ai',
       title: 'Artificial Intelligence',
       description: 'Automate processes, boost efficiency with intelligent applications',
-      icon: '/images/img_vector.svg',
+      icon: '/images/AI icon.svg',
       bgColor: 'bg-primary-green-light',
       bgcolorCollapsed:'#d8f5e9',
       mobileTextColor: "text-[rgba(62,203,144,1)]",
