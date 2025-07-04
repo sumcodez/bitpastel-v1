@@ -7,7 +7,7 @@ const ShopifyStoreSection = () => {
       <div className="container mx-auto px-4  ">
         {/* <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] md:p-8 px-4 pt-4 pb-12 bg-primary-mint md:text-left text-center "> */}
         <div className="flex flex-col lg:flex-row items-center md:gap-0 gap-12 rounded-[40px] bg-primary-mint md:text-left text-center pt-[20px] px-[20px] pb-12 md:p-0 ">
-          <div className="lg:w-1/2 w-full xl:px-[55px] md:pl-[40px] md:pr-[20px] md:py-[40px]">
+          <div className="lg:w-1/2 w-full xl:px-[55px] md:pl-[40px] md:pr-[20px] md:pt-[30px] md:pb-[40px]">
             <h2 className=" font-source font-bold text-title title mb-6 md:leading-[45px] leading-[normal]">
               Managing 200+ Shopify Stores
               <br />
