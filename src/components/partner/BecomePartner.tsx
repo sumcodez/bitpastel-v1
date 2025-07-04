@@ -159,7 +159,7 @@ const BecomePartner = () => {
           <div className="px-[15px]">
             <div className="become-partner-form-area">
               <form onSubmit={handleSubmit}>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <input 
                       type="text" 
@@ -167,6 +167,7 @@ const BecomePartner = () => {
                       placeholder="Name" 
                       value={formData.name} 
                       onChange={handleChange}
+                      className='subheading'
                     />
                   </div>
                   {errors.name && (
@@ -175,7 +176,7 @@ const BecomePartner = () => {
                     </span>
                   )}
                 </div>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <input 
                       type="email" 
@@ -183,6 +184,7 @@ const BecomePartner = () => {
                       placeholder="Email Address" 
                       value={formData.email} 
                       onChange={handleChange}
+                      className='subheading'
                     />
                   </div>
                   {errors.email && (
@@ -247,6 +249,7 @@ const BecomePartner = () => {
                       placeholder="Your Message" 
                       value={formData.message} 
                       onChange={handleChange}
+                      className='subheading'
                     />
                   </div>
                   {errors.message && (
