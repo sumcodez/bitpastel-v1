@@ -224,7 +224,7 @@ const BecomePartner = () => {
                 className="!border-none bg-transparent gap-[20px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
               />
               {!formData.phone && (
-                <p className="text-white absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                <p className="text-white subheading absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
                   Mobile number (optional)
                 </p>
               )}
