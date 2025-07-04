@@ -421,7 +421,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 )}
               </div>
               {/* Apply Div */}
-              <div className="pt-14" ref={formRef} id="applicationForm">
+              <div className="md:pt-14" ref={formRef} id="applicationForm">
                 {jobWithForm.includes(job.id) ? (
                   <JoinTeam title="Apply Now" />
                 ) : jobWithFormAndButton.includes(job.id) ? (
