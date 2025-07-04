@@ -240,10 +240,10 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
         }`}
       >
         <div className=" rounded-lg shadow-xl overflow-hidden">
-          <div className="p-6 modal-body">
+          <div className="pt-[30px] px-[30px] pb-[35px]">
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left side - Image and details */}
-              <div className="lg:w-[60%] md:w-[50%] md:block hidden">
+              <div className="lg:w-[60%] md:w-[50%] md:flex md:flex-col hidden">
                 <div className="mb-3">
                   {/* <img
                     src="/images/bitpastel_Clientele_5_new.png"
@@ -259,8 +259,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   />
                 </div>
 
-                <div className="modal-details">
-                  <h2 className="subheading font-bold mb-6 text-title font-source">
+                <div className="modal-details mt-auto">
+                  <h2 className="subheading font-bold md:mb-10 mb-6 text-title font-source">
                     Satisfied Client Worldwide
                   </h2>
 

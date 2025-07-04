@@ -141,13 +141,13 @@ const Footer = () => {
                     <Link href="/team" className={`block hover:text-gray-300 transition-colors `}>
                       Culture
                     </Link>
-                    <a
-                      href="/#client"
+                    <Link
+                    href="/#client"
                       onClick={() => scrollToSection('#client')}
                       className={`block hover:text-gray-300 transition-colors cursor-pointer`}
                     >
                       Clientele
-                    </a>
+                    </Link>
                     <Link href="/career" className={`block hover:text-gray-300 transition-colors `}>
                       Careers
                     </Link>
