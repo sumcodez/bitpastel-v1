@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
@@ -23,7 +23,7 @@ const BecomePartner = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -41,7 +41,7 @@ const BecomePartner = () => {
           setDefaultCountry(data.country);
         }
       } catch (error) {
-        console.error("Could not detect country, using default:", error);
+        console.error('Could not detect country, using default:', error);
       }
     };
 
@@ -50,26 +50,26 @@ const BecomePartner = () => {
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
-    
+
     // Name validation
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     // Email validation
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
     }
-    
+
     // Phone validation
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required';
     } else if (!/^\+?[\d\s\-()]{8,20}$/.test(formData.phone)) {
       newErrors.phone = 'Please enter a valid phone number';
     }
-    
+
     // Message validation
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
@@ -97,25 +97,25 @@ const BecomePartner = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
     setStatus('');
 
     try {
-      const response = await fetch("https://www.bitpastel.com/api/partnersSendEmail.php", {
-        method: "POST",
+      const response = await fetch('https://www.bitpastel.com/api/partnersSendEmail.php', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: formData.message
+          message: formData.message,
         } as Record<string, string>).toString(),
       });
 
@@ -123,11 +123,11 @@ const BecomePartner = () => {
         setStatus("Success! We'll get back to you soon.");
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
-        setStatus("Something went wrong. Please try again later.");
+        setStatus('Something went wrong. Please try again later.');
       }
     } catch (error) {
-      console.error("Submission error:", error);
-      setStatus("Error occurred. Please try again.");
+      console.error('Submission error:', error);
+      setStatus('Error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -161,39 +161,34 @@ const BecomePartner = () => {
               <form onSubmit={handleSubmit}>
                 <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
-                    <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Name" 
-                      value={formData.name} 
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={formData.name}
                       onChange={handleChange}
-                      className='subheading'
+                      className="subheading"
                     />
                   </div>
                   {errors.name && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">
-                      {errors.name}
-                    </span>
+                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.name}</span>
                   )}
                 </div>
                 <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Email Address" 
-                      value={formData.email} 
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={formData.email}
                       onChange={handleChange}
-                      className='subheading'
+                      className="subheading"
                     />
                   </div>
                   {errors.email && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">
-                      {errors.email}
-                    </span>
+                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.email}</span>
                   )}
                 </div>
-
 
                 {/* <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
                   <div className="flex-1">
@@ -213,62 +208,54 @@ const BecomePartner = () => {
                   )}
                 </div> */}
 
-
-
-         <div className={`relative flex gap-2 py-[8px] border-b `}
-            >
-              <PhoneInput
-                international
-                defaultCountry={defaultCountry as any}
-                value={formData.phone}
-                onChange={(value) => handlePhoneChange(value)}
-                placeholder="Mobile number (optional)"
-                className="!border-none bg-transparent gap-[20px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
-              />
-              {!formData.phone && (
-                <p className="text-white subheading absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
-                  Mobile number (optional)
-                </p>
-              )}
-              {errors.phone && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                  {errors.phone}
-                </p>
-              )}
-            </div>
-
-
-
-
-
+                <div className={`relative flex gap-2 py-[8px] border-b `}>
+                  <PhoneInput
+                    international
+                    defaultCountry={defaultCountry as any}
+                    value={formData.phone}
+                    onChange={(value) => handlePhoneChange(value)}
+                    placeholder="Mobile number (optional)"
+                    className="!border-none bg-transparent gap-[20px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
+                  />
+                  {!formData.phone && (
+                    <p className="text-white subheading absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                      Mobile number (optional)
+                    </p>
+                  )}
+                  {errors.phone && (
+                    <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                      {errors.phone}
+                    </p>
+                  )}
+                </div>
 
                 <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
-                    <textarea 
-                      name="message" 
-                      placeholder="Your Message" 
-                      value={formData.message} 
+                    <textarea
+                      name="message"
+                      placeholder="Your Message"
+                      value={formData.message}
                       onChange={handleChange}
-                      className='subheading'
+                      className="subheading"
                     />
                   </div>
                   {errors.message && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">
-                      {errors.message}
-                    </span>
+                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.message}</span>
                   )}
                 </div>
-                <button 
-                  className="form-button mt-[30px] bg-green-btn" 
-                  type="submit" 
+                <button
+                  className="form-button mt-[30px] bg-green-btn"
+                  type="submit"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
                 {status && (
-                  <p className={`mt-3 text-center ${
-                    status.includes('Success') ? 'text-green-500' : 'text-red-500'
-                  }`}>
+                  <p
+                    className={`mt-3 text-center ${
+                      status.includes('Success') ? 'text-green-500' : 'text-red-500'
+                    }`}
+                  >
                     {status}
                   </p>
                 )}
