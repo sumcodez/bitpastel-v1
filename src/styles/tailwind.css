@@ -30,7 +30,8 @@
     --text-accent-blue: #55b8d0;
     --text-accent-yellow: #f0c638;
     --text-accent-coral: #f5747e;
-    --text-white: #D2D2D2;
+    --text-white: #B2B2B2;
+
   }
 }
 
@@ -40,7 +41,6 @@
   box-sizing: border-box;
 }
 body {
-  /* font-family: 'Roboto' , 'Inter', sans-serif; */
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
@@ -67,6 +67,7 @@ button {
 
 .title{
   font-size: 38px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .subheading{
   font-size: 20px;
@@ -404,6 +405,7 @@ input:focus-visible{
   
   .testimonial-card-parent .testimonial-card-content p {
     max-height: 70px;
+    min-height: 70px;
     overflow: hidden;
     opacity: 1;
     /* padding-bottom: 0; */

@@ -95,7 +95,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0 mt-1.5"
                 />
-                <p className="text-title font-roboto text-left subheading font-[400]  whitespace-normal break-words">
+                <p className="text-title font-roboto text-left md:text-[20px]  paragraph font-[400]  whitespace-normal break-words">
                   {benefits[0].text}
                 </p>
               </div>
@@ -116,7 +116,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="subheading font-[400] text-left text-title font-roboto">
+                <p className="md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Experience: {benefits[1].text}
                 </p>
               </div>
@@ -130,7 +130,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   height={24}
                   className="w-auto invert md:invert-0"
                 />
-                <p className="subheading font-[400] text-left text-title font-roboto">
+                <p className=" md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Location: {benefits[2].text}
                 </p>
               </div>

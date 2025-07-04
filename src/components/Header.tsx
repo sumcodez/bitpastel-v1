@@ -90,7 +90,7 @@ const Header = () => {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
-        shouldApplyScrolledStyle ? 'bg-[#ffffff] border-[#f5f5f5]' : 'bg-transparent border-transparent'
+        shouldApplyScrolledStyle ? 'bg-[#ffffff] border-b border-[#f5f5f5]' : 'bg-transparent border-transparent'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex lg:justify-between justify-center items-center">
@@ -104,7 +104,7 @@ const Header = () => {
               <Link href="/#stories" onClick={(e) => handleLinkClick(e, 'stories')} className={getLinkClass('stories')}>
                 Stories
               </Link>
-              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-title hover:text-accent-green' : 'text-primary-white hover:text-accent-green'}>
+              <Link href="/team" className={shouldApplyScrolledStyle ? 'text-title ' : 'text-primary-white '}>
                 Culture
               </Link>
               <button className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90"

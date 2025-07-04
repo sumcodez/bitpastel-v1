@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import * as countryCodesList from 'country-codes-list';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import Link from 'next/link';
 
 interface ModalProps {
   open: boolean;
@@ -356,7 +357,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         >
                           <span className="text-[#212529] font-[100]">I want</span>
                           <span
-                            className={`ml-12 text-[#212529] font-light ${
+                            className={`ml-12 text-[#B2B2B2] font-light ${
                               validationErrors.service ? 'text-red-500' : ''
                             }`}
                           >
@@ -465,9 +466,11 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Privacy Policy */}
                       <p className="text-[11px] mt-[3px] text-[#212529] text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
-                        <a href="#" className="text-[#52d09c]">
+                        <Link href="/privacy-policys" className="text-[#52d09c]"
+                        onClick={onClose}
+                        >
                           Privacy Policy
-                        </a>
+                        </Link>
                       </p>
 
                       {/* Chat Button */}

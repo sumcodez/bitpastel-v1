@@ -58,7 +58,7 @@ const HeroSection = () => {
                     height={24}
                     className="w-auto md:hidden block"
                   />
-                  <p className=" md:text-[20px] text-[16px] font-[400] font-roboto">{text}</p>
+                  <p className="  md:text-[20px]  paragraph font-[400] font-roboto">{text}</p>
                 </div>
               ))}
             </div>

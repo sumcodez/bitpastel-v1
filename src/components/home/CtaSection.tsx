@@ -1,7 +1,13 @@
-import React from 'react'
+'use client';
 
+import React from 'react'
+import Image from 'next/image'
+import { useState } from 'react';
+import Modal from '@/components/Modal';
 const CtaSection = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
   return (
+     <>
     <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
       <div className="container mx-auto px-4">
         <div className="relative md:rounded-[40px] overflow-hidden flex flex-col md:block">
@@ -46,7 +52,9 @@ const CtaSection = () => {
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
               </p>
-              <button className="btn leading-normal bg-green-btn md:w-auto md:mt-1 mt-1 font-roboto">
+              <button className="btn leading-normal bg-green-btn md:w-auto md:mt-1 mt-1 font-roboto"
+              onClick={() => setIsModalOpen(true)}
+              >
                 Contact Us
               </button>
             </div>
@@ -54,6 +62,9 @@ const CtaSection = () => {
         </div>
       </div>
     </section>
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+   
+    </>
   )
 }
 

@@ -27,11 +27,11 @@ const TeamEngage = () => {
               Technologies
             </h2>
             <div className='max-w-[500px]'>
-              <p className="md:leading-[30px] leading-[20px] text-[16px] text-title">
+              <p className="md:leading-[30px] leading-[20px] text-title">
                 At Bitpastel, we create with curiosity. We continue to go forward with an inclusive
                 view for creating equal opportunities for all our employees.
               </p>
-              <p className="md:leading-[30px] leading-[30px] text-title text-[#009999]">
+              <p className="md:leading-[30px] leading-[30px] text-title">
                 Visit our <Link className="inline-block underline text-[#009999]" href='/career'> Careers </Link> page to find out about
                 open positions.
               </p>

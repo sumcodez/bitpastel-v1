@@ -4,12 +4,12 @@ const PrivacyPolicy = () => {
   return (
     <>
       <div className="relative">
-        <div className="title flex align-center items-center justify-center min-h-[350px] bg-primary-teal mt-[72px]">
-          <h1 className="text-primary-white font-source font-[400] text-[38px]">Privacy Policy</h1>
+        <div className="title flex align-center items-center justify-center min-h-[350px] bg-primary-teal mt-[70px]">
+          <h1 className="text-primary-white font-source font-[400] title">Privacy Policy</h1>
         </div>
-        <div className="privacy-content pt-10">
+        <div className="privacy-content md:py-[100px] py-[70px]">
           <div className="container mx-auto px-4">
-            <p className="mb-6 text-[16px]">
+            <p className="mb-6 ">
               Bitpastel recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. 
               This Policy describes how we treat user information we collect on www.bitpastel.com and other offline sources. 
               This Privacy Policy applies to current and former visitors to our website. 
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Information we collect</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Information we collect</h5>
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   <span className="font-semibold">Contact information: </span> 
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">We collect information in different ways</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">We collect information in different ways</h5>
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   <span className="font-semibold">We collect information directly from you: </span> 
@@ -56,7 +56,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Use of your personal information</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Use of your personal information</h5>
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   <span className="font-semibold">We use information to contact you: </span>
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Sharing of information with third-parties</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Sharing of information with third-parties</h5>
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   <span className="font-semibold">We may share information with third parties who perform services on our behalf: </span> 
@@ -94,7 +94,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Miscellaneous Communications</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Miscellaneous Communications</h5>
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   We can use this data to contact you via call, email, SMS, social networking websites or other electronic communication channels for promotion, 
@@ -107,7 +107,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Third party sites</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Third party sites</h5>
               <ul className='list-none pl-5 space-y-2'>
                 <li>
                   If you click on one of the links to third party websites, you may be taken to websites we do not control. 
@@ -119,7 +119,7 @@ const PrivacyPolicy = () => {
             </article>
 
             <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Updates to this policy</h5>
+              <h5 className="font-source mb-3 subheading font-[600]">Updates to this policy</h5>
               <ul className='list-none pl-5 space-y-2'>
                 <li>
                     This Privacy Policy was last updated on 31st October 2018. From time to time we may change our privacy practices. 
@@ -128,8 +128,8 @@ const PrivacyPolicy = () => {
               </ul>
             </article>
 
-            <article className="mb-8">
-              <h5 className="font-source mb-3 text-[20px] font-[600]">Jurisdiction</h5>
+            <article className="">
+              <h5 className="font-source mb-3 subheading font-[600]">Jurisdiction</h5>
               <ul className='list-none pl-5 space-y-2'>
                 <li>
                   If you choose to visit the website, your visit and any dispute over privacy is subject to this Policy and the website's terms of use. 
