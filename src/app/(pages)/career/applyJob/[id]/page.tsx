@@ -51,10 +51,15 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         'Collaborate with project managers and technical teams for project planning',
       ],
       requirements: [
-        'Fluent in English (written and spoken)',
-        'Strong presentation and business analysis skills',
-        'Experienced in online bidding, proposal writing, and negotiation',
-        'Basic awareness of web and app development',
+        "Very strong communication skills",
+        "Fluent in English (written and spoken)",
+        "Understanding of general IT outsourcing business",
+        "Experienced in working with different bidding sites - Upwork, Freelancer, etc",
+        "Experienced in handling international clients (US, UK, EU)",
+        "Writing proposals, deciding costing, estimation, online bidding and negotiations",
+        "Strong presentation and business analysis skills",
+        "Basic awareness of web and app development (you don't need to be a coder)",
+        "Ability to liaise with project managers and technical team leaders"
       ],
       location: 'Kolkata',
       softSkills: [
