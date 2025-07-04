@@ -171,17 +171,8 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       ],
       location: 'Kolkata',
       softSkills: [
-        'Problem-solving mindset',
-        'High attention to detail',
-        'Strong team collaboration',
-        'Time management and delivery focus',
-        'Proactive and passionate about eCommerce technology',
       ],
       desiredCandidateProfile: [
-        'Excellent communication and collaboration skills',
-        'Ability to work independently or in a team environment',
-        'Adaptable to changing project requirements and fast-paced workflows',
-        'A passion for building strong development teams and scalable solutions',
       ],
       naukriLink: '#'
     },
