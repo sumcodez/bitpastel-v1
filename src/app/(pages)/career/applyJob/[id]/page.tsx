@@ -367,7 +367,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
         />
         {/* Job Details Content */}
         {/* className='md:pt-16 pt-12' */}
-        <div className='pt-16 text-title'>
+        <div className='md:pt-[90px] pt-[70px] text-title'>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto"> {/* Added max-width and mx-auto for centering */}
               <div className="inner paragraph font-roboto text-title">
@@ -392,7 +392,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 )}
                 {job.softSkills && (
-                  <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
+                  <div className="flex flex-col md:flex-row gap-4 md:mt-[65px] mt-[30px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">Soft Skills:</h3>
                     </div>
@@ -406,7 +406,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 )}
                 {job.desiredCandidateProfile && (
-                  <div className="flex flex-col md:flex-row gap-8 mt-[65px]">
+                  <div className="flex flex-col md:flex-row gap-4 md:mt-[65px] mt-[30px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">Desired Candidate Profile:</h3>
                     </div>
@@ -421,7 +421,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 )}
               </div>
               {/* Apply Div */}
-              <div className="md:pt-14" ref={formRef} id="applicationForm">
+              <div className="md:pt-[90px] pt-[70px]" ref={formRef} id="applicationForm">
                 {jobWithForm.includes(job.id) ? (
                   <JoinTeam title="Apply Now" />
                 ) : jobWithFormAndButton.includes(job.id) ? (
@@ -446,7 +446,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </>
                 ) : jobWithOneButtonAndForm.includes(job.id) ? (
                   <>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 pt-14">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:pt-[90px] pt-[70px]">
                       <button
                         className="ripple-btn min-h-[40px] md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
                         onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
@@ -454,12 +454,12 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                         Apply Now
                       </button>
                     </div>
-                    <JoinTeam title="Apply Now" className='pt-14'/>
+                    <JoinTeam title="Apply Now" className='pt-8'/>
                   </>
                 ) : (
-                  <div className='flex justify-center pt-14'>
+                  <div className='flex justify-center'>
                     <button
-                      className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors my-10"
+                      className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors"
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                         window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
                       }

@@ -59,7 +59,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
   return (
     <div>
-      <section className="relative lg:h-[470px] md:mt-[70px] mt-[50px] h-[300px] overflow-hidden">
+      <section className="relative lg:h-[470px] md:mt-[70px] mt-[50px] h-auto overflow-hidden">
         {/* Desktop Background */}
         <div
           className="md:block hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -80,7 +80,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
         {/* Content - Modified to align right */}
         <div className="relative z-10 container mx-auto px-4 md:h-full text-left">
-          <div className="md:h-full content-center mx-auto max-w-[450px] ml-auto md:max-w-[450px] lg:mr-[100px] mr-0 md:pl-0 pl-5 md:pt-[0] pt-[60px]">
+          <div className="md:h-full content-center mx-auto max-w-[450px] ml-auto md:max-w-[450px] lg:mr-[100px] mr-0  md:pt-[0] pt-[30px]">
             <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-2 md:text-left ">
               <span>{jobTitle}</span>
             </h1>
