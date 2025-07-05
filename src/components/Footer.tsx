@@ -142,7 +142,7 @@ const Footer = () => {
               <p className="h-[50px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
               <div className="grid grid-cols-2">
                 <div className="">
-                  <div className="space-y-4 text-[13px]">
+                  {/* <div className="space-y-4 text-[13px]">
                     <Link href="/" className={`block hover:text-gray-300 transition-colors text-[13px]`}>
                       Home
                     </Link>
@@ -161,7 +161,23 @@ const Footer = () => {
                     >
                       Stories
                     </Link>
+                  </div> */}
+
+                <div className="space-y-4 text-[13px]">
+                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
+                    <Link href="/">Home</Link>
                   </div>
+                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
+                    <Link href="#">Portfolio</Link>
+                  </div>
+                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
+                    <Link href="/#services">Services</Link>
+                  </div>
+                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
+                    <Link href="/#stories">Stories</Link>
+                  </div>
+                </div>
+
                 </div>
                 <div className="lg:ml-auto">
                   <div className="space-y-4 text-[13px]">
