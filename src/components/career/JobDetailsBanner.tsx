@@ -98,7 +98,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                 {/* <p className="text-title font-roboto text-left md:text-[20px]  paragraph font-[400]  whitespace-normal break-words">
                   {benefits[0].text}
                 </p> */}
-                <div className="flex flex-wrap gap-2 text-title font-roboto text-left md:text-[20px] paragraph font-[400] whitespace-normal break-words">
+                <div className="flex flex-wrap gap-0.5 text-title font-roboto text-left md:text-[20px] paragraph font-[400] whitespace-normal break-words">
                   {Array.isArray(benefits[0].text)
                     ? benefits[0].text.map((tag: string, index: number) => (
                         <span key={index} className="text-title font-roboto">
