@@ -48,7 +48,7 @@ const Footer = () => {
               <p className="lg:hidden leading-[1] block lg:mt-0 mt-8 h-[40px] lg:pb-6 pb-2 type-footer text-[13px]">
                 INFORMATION
               </p>
-              <a
+              {/* <a
                 href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
                 target="_blank"
                 className="text-[13px] lg:mb-0 mb-[1rem] leading-relaxed block"
@@ -56,7 +56,21 @@ const Footer = () => {
                 Technopolis, 11th Floor, BP Block, Sector V,
                 <br />
                 Salt Lake City, Kolkata - 700091
-              </a>
+              </a> */}
+              <div className="text-[13px] lg:mb-0 mb-[1rem] leading-relaxed block">
+                <a
+                  href="https://www.google.com/maps/place/Technopolis+Building/@22.5797323,88.4351652,17z/data=!4m14!1m7!3m6!1s0x3a0275a701908349:0x8d6c12852bc079bc!2sTechnopolis+Building!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494!3m5!1s0x3a0275a701908349:0x8d6c12852bc079bc!8m2!3d22.5797323!4d88.4377401!16s%2Fg%2F11hblq2494?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="inline">
+                    Technopolis, 11th Floor, BP Block, Sector V,
+                    <br />
+                    Salt Lake City, Kolkata - 700091
+                  </span>
+                </a>
+              </div>
+
               <div className="lg:hidden block space-y-2 text-[13px]">
                 <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                   <span>US: +1 (872) 444 6679</span>
