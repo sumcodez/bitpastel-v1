@@ -26,7 +26,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(true);
   const jobWithForm = ['7'];
   const jobWithOneButtonAndForm = ['3','6'];
-  const jobWithFormAndButton = ["4"];
+  const jobWithFormAndButton = ["4","1"];
   const formRef = useRef<HTMLDivElement>(null);
   // Function to handle smooth scrolling
   const scrollToForm = () => {
