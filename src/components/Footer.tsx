@@ -163,20 +163,29 @@ const Footer = () => {
                     </Link>
                   </div> */}
 
-                <div className="space-y-4 text-[13px]">
-                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
-                    <Link href="/">Home</Link>
+                  <div className="space-y-4 text-[13px]">
+                    <div className="block text-[13px]">
+                      <Link href="/" className="hover:text-gray-300 transition-colors">
+                        Home
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link href="#" className="hover:text-gray-300 transition-colors">
+                        Portfolio
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link href="/#services" className="hover:text-gray-300 transition-colors">
+                        Services
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link href="/#stories" className="hover:text-gray-300 transition-colors">
+                        Stories
+                      </Link>
+                    </div>
                   </div>
-                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
-                    <Link href="#">Portfolio</Link>
-                  </div>
-                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
-                    <Link href="/#services">Services</Link>
-                  </div>
-                  <div className="block hover:text-gray-300 transition-colors text-[13px]">
-                    <Link href="/#stories">Stories</Link>
-                  </div>
-                </div>
+
 
                 </div>
                 <div className="lg:ml-auto">
