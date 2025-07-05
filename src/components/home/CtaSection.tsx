@@ -50,7 +50,7 @@ const CtaSection = () => {
               <p className="md:text-primary-white text-title md:mb-8 mb-4 leading-relaxed max-w-[100%] md:max-w-[92%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
-                are eager to know about your business
+                are eager to know about your business.
               </p>
               <button className="btn leading-normal bg-green-btn md:w-auto font-roboto"
               onClick={() => setIsModalOpen(true)}
