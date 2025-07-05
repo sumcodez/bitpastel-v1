@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-8 align-top footer-wrapper">
             <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
-              <Link href="/">
+              {/* <Link href="/">
                 <Image
                   src="/images/Footer-logo.png"
                   alt="Bitpastel Logo"
@@ -44,7 +44,20 @@ const Footer = () => {
                   height={75}
                   className="h-12 w-auto"
                 />
+              </Link> */}
+
+              <Link href="/" legacyBehavior>
+                <a className="inline-block">
+                  <Image
+                    src="/images/Footer-logo.png"
+                    alt="Bitpastel Logo"
+                    width={196}
+                    height={75}
+                    className="h-12 w-auto"
+                  />
+                </a>
               </Link>
+
               <p className="lg:hidden leading-[1] block lg:mt-0 mt-8 h-[40px] lg:pb-6 pb-2 type-footer text-[13px]">
                 INFORMATION
               </p>
