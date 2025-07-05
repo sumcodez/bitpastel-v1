@@ -339,7 +339,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   };
   const customBenefits = [
     {
-      text: job.hashtags.join(', '),
+      text: job.hashtags,
       icon: '/job-details/badge.png',
       alt: 'Check icon',
     },
