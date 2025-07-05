@@ -212,7 +212,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b  ${
-                errors.name ? 'border-red-500' : 'border-gray-300'
+                errors.name ? 'border-red-500' : formData.name ? 'border-[#04ff04]' : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
@@ -233,7 +233,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             </div>
             {/* Phone number */}
             <div
-              className={`relative flex gap-2 pt-[6px] border-b ${errors.mobile ? 'border-red-500' : 'border-gray-300'}`}
+              className={`relative flex gap-2 pt-[6px] border-b ${errors.mobile ? 'border-red-500' : formData.phone ? 'border-[#04ff04]' : 'border-gray-300'}`}
             >
               <PhoneInput
                 international
@@ -298,7 +298,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b pb- ${
-                errors.email ? 'border-red-500' : 'border-gray-300'
+                errors.email ? 'border-red-500' : formData.email ? 'border-[#04ff04]' : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
@@ -318,7 +318,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
               )}
             </div>
             <div
-              className={`flex items-end gap-4 border-b !mt-6 ${errors.currentLocation ? 'border-red-500' : 'border-gray-300'}`}
+              className={`flex items-end gap-4 border-b !mt-6 ${errors.currentLocation ? 'border-red-500' : formData.currentLocation ? 'border-[#04ff04]' : 'border-gray-300'}`}
             >
               <input
                 type="text"
@@ -386,7 +386,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             className="hidden"
           />
           <div
-            className={`flex items-center gap-3 border-b ${errors.resume ? 'border-red-500' : 'border-gray-300'}`}
+            className={`flex items-center gap-3 border-b ${errors.resume ? 'border-red-500' : formData.resume ? 'border-[#04ff04]' : 'border-gray-300'}`}
           >
             <button
               type="button"
