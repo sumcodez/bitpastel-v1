@@ -267,43 +267,43 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   <div className="grid lg:grid-cols-4 md:grid-cols-2 md:gap-6 lg:px-[50px]">
                     <div className="text-center">
                       <Image
-                        src="/images/modal-1.png"
+                        src="/images/img_fasolidusers.svg"
                         alt="modal-1"
                         width={30}
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">800</h6>
+                      <h6 className="text-[#099]">900</h6>
                       <p className="text-[#212529] text-[13px]">Clients</p>
                     </div>
 
                     <div className="text-center">
                       <Image
-                        src="/images/modal-2-updated.png"
+                        src="/images/Bulb.svg"
                         alt="modal-2"
                         width={30}
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">1000</h6>
+                      <h6 className="text-[#099]">1400+</h6>
                       <p className="text-[#212529] text-[13px]">Projects</p>
                     </div>
 
                     <div className="text-center ">
                       <Image
-                        src="/images/modal-3.png"
+                        src="/images/img_group.svg"
                         alt="modal-2"
                         width={30}
                         height={30}
                         className="mx-auto mb-2"
                       />
-                      <h6 className="text-[#099]">30M</h6>
+                      <h6 className="text-[#099]">50M</h6>
                       <p className="text-[#212529] text-[13px]">Lines of Code</p>
                     </div>
 
                     <div className="text-center">
                       <Image
-                        src="/images/modal-4.png"
+                        src="/images/img_tdesignlocationfilled.svg"
                         alt="modal-2"
                         width={30}
                         height={30}
