@@ -217,6 +217,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             >
               <div className="flex-1">
                 <input
+                  autoComplete="new-text-2"
+                  readOnly
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -303,6 +306,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             >
               <div className="flex-1">
                 <input
+                  autoComplete="new-text-2"
+                  readOnly
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
                   type="email"
                   name="email"
                   placeholder="Email Address"
