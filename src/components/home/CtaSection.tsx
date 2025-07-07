@@ -10,7 +10,7 @@ const CtaSection = () => {
      <>
     <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
       <div className="container mx-auto px-4">
-        <div className="relative overflow-hidden flex flex-col md:block">
+        <div className="relative md:rounded-[20px] overflow-hidden flex md:mx-0 mx-4 flex-col md:block">
           {/* Background for mobile and desktop */}
           <div 
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
@@ -22,8 +22,8 @@ const CtaSection = () => {
 
           {/* Background for mobile only */}
           <div 
-            className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover md:ml-0 ml-4  bg-no-repeat md:h-auto 
-                       bg-[position:73%_10%] rounded-bl-[20px] rounded-tl-[20px]"
+            className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
+                       bg-[position:73%_10%] rounded-[20px]"
             style={{
               backgroundImage: "url('/images/Contact-us.png')"
             }}
