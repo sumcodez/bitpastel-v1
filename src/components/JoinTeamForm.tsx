@@ -359,7 +359,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
                 placeholder="Current Location"
                 value={formData.currentLocation}
                 onChange={handleChange}
-                className="flex-1 text-title subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
+                className="flex-1 text-title mt-1.5 subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
               />
               {errors.currentLocation && (
                 <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
