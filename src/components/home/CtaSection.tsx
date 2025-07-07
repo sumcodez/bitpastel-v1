@@ -23,7 +23,7 @@ const CtaSection = () => {
           {/* Background for mobile only */}
           <div 
             className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
-                       bg-[position:73%_10%] rounded-[20px]"
+                       bg-[position:73%_10%] rounded-[40px]"
             style={{
               backgroundImage: "url('/images/Contact-us.png')"
             }}
