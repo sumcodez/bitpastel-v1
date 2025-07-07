@@ -290,7 +290,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               />
               {!formData.phone && (
                 <p className="text-white absolute top-[16px] subheading left-[130px] whitespace-nowrap font-[100] pointer-events-none">
-                  Mobile number (optional)
+                  Mobile number
                 </p>
               )}
               {errors.phone && (
