@@ -5,6 +5,13 @@ import * as countryCodesList from 'country-codes-list';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
+
+import ReCAPTCHA from 'react-google-recaptcha';
+
+
+
+
+
 interface JoinTeamProps {
   title?: string;
   className?: string;
@@ -31,6 +38,10 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
+
 
   // Detect user's country based on IP
   useEffect(() => {
@@ -124,6 +135,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -160,6 +172,12 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
       alert('Please fill in all required fields including the resume.');
       return;
     }
+
+    if (!captchaToken) {
+      alert("Please verify that you're not a robot.");
+      return;
+    }
+    
     // Create FormData instead of URLSearchParams
     const formDataToSend = new FormData();
     formDataToSend.append('name', name);
@@ -421,16 +439,24 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
           </div>
         </div>
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
+
+          <ReCAPTCHA
+            sitekey="YOUR_SITE_KEY" // reCAPTCHA v2 site key
+            onChange={(token) => setCaptchaToken(token)}
+            className="mb-4"
+          />
+
           <button
             type="submit"
             // className="bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center"
             className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
               !isFormValid ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-            disabled={!isFormValid}
+            disabled={!isFormValid || !captchaToken}
           >
             Send
           </button>
+
           {/* Privacy Policy */}
           <p className="text-white text-center font-roboto text-[10px]">
             By clicking "Send", you agree to our{' '}
