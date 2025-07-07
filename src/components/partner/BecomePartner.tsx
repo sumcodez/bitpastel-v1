@@ -133,6 +133,15 @@ const BecomePartner = () => {
     }
   };
 
+
+  const isFormValid =
+  formData.name.trim() !== '' &&
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+  formData.phone.replace(/\D/g, '').length >= 8 &&
+  formData.phone.replace(/\D/g, '').length <= 15 &&
+  formData.message.trim() !== '';
+
+
   return (
     <section className="become-partner-area" id="become-a-partner">
       <div className="container mx-auto px-4">
@@ -258,7 +267,7 @@ const BecomePartner = () => {
                 <button
                   className="form-button mt-[30px] bg-green-btn"
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !isFormValid}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
