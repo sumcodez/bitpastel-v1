@@ -24,7 +24,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
     experience: "",
     noticePeriod: "",
     referredBy: "",
-    jobTitle: "",
+    jobTitle: jobTitle || "",
     job_title: "",
     resume: null as File | null,
   })
