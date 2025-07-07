@@ -444,6 +444,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           value={formData.phone}
                           onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
+                          autoComplete="new-text-4"
+                          readOnly
+                          onFocus={(e) => e.target.removeAttribute('readOnly')}
                           className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
                         />
                         {!formData.phone && (
@@ -456,6 +459,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Message */}
                       <div className="pb-1 border-b border-gray-200">
                         <textarea
+                          autoComplete="new-text-8"
+                          readOnly
+                          onFocus={(e) => e.target.removeAttribute('readOnly')}
                           placeholder="Message (optional)"
                           value={formData.message}
                           onChange={(e) => handleInputChange('message', e.target.value)}
