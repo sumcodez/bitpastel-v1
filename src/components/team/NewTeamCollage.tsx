@@ -3,9 +3,9 @@ const NewTeamCollage = () => {
     <section className="life-at-bitpastel team-image-wrapper md:pt-[100px] pt-[70px]" id="team">
       <div className="">
         <div className="common-lb third-lb lazy-image-section">
-          <div className=" lt top-speccer title-top-spaccer">
+          <div className=" lt top-speccer md:mb-0 mb-[50px]">
             <div className="icon-title relative inline-block">
-              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] bottom-spaccer">
+              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Escape Rooms
               </h4>
             </div>
@@ -86,9 +86,9 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt top-speccer title-top-spaccer">
+          <div className=" rt order-first md:order-last md:py-0 py-[70px] relative md:top-[-120px]">
             <div className="icon-title relative inline-block">
-              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] bottom-spaccer">
+              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Ice Breaker - Coffee
                 <br />
                 Evening
@@ -97,10 +97,10 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="common-lb third-lb lazy-image-section">
-          <div className=" lt top-speccer title-top-spaccer">
+        <div className="common-lb third-lb lazy-image-section relative md:top-[-120px]">
+          <div className=" lt top-speccer md:pt-[70px] md:pb-[0px] py-[40px]">
             <div className="icon-title relative inline-block">
-              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] bottom-spaccer">
+              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Christmas Celebration at
                 <br />
                 Office 2024
@@ -118,7 +118,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="common-lb third-lb lazy-image-section">
+        <div className="common-lb third-lb lazy-image-section relative md:top-[-120px]">
           <div className="img lt">
             <img
               alt="Cultural Programme"
@@ -129,9 +129,9 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt top-speccer title-top-spaccer">
+          <div className=" rt order-first md:order-last top-speccer relative md:top-[-90px] md:py-0 py-[70px]">
             <div className="icon-title relative inline-block">
-              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] bottom-spaccer">
+              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Ethnic Day Celebration
                 <br />
                 at Office 2024
@@ -140,16 +140,11 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-
-
-        <div className="title-middle">
-          <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">
+        <div className="pt-[60px] lg:mt-[-200px] md:mt-[-120px] md:mb-[90px]">
+          <h4 className="tt text-center title  leading-[normal] text-till font-[600]">
             Birthday Celebration at Office
           </h4>
         </div>
-
-
-
 
         <div className="common-lb fourth-lb">
           <div className="img lt">
@@ -172,30 +167,70 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
+        <div className="title-middle">
+          <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">
+            Work Anniversary Celebration
+            <br />
+            at Office 2024
+          </h4>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-        <div className="common-lb instagram-area-top fourth-lb lazy-image-section">
+        <div className="common-lb fourth-lb">
           <div className="img lt">
             <img
               alt="Award & Recognition"
               className="lazy"
-              src="/images/cover_15-07-2024.png"
+              src="/images/Team-Page-Image/Wrk-anivrsry2.png"
               height="1000"
               width="700"
             />
           </div>
           <div className="img rt">
+            <img
+              alt="Cultural Programme"
+              className="lazy"
+              src="/images/Team-Page-Image/Wrk-anivrsry.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+        </div>
+
+        <div className="common-lb third-lb lazy-image-section">
+          <div className="img lt">
+            <img
+              alt="Cultural Programme"
+              className="lazy"
+              src="/images/Team-Page-Image/2024BTH-13.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+
+          <div className=" rt order-first md:order-last top-speccer md:py-0 py-[70px]">
+            <div className="icon-title relative inline-block">
+              <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] ">
+                Team Meetup
+                <br />
+                #Movie #Coffee
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-[70%_30%] grid-cols-1 md:py-[70px] lazy-image-section">
+          <div className="img lt">
+            <img
+              alt="Award & Recognition"
+              className="lazy w-full"
+              src="/images/cover_15-07-2024.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+          <div className="img rt md:pt-0 pt-[70px]">
             <div className="icon-title md:inline-block">
-              <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 bottom-spaccer leading-[normal] font-[600]">
+              <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 leading-[normal] font-[600]">
                 Bitpastel
                 <br className="md:block hidden" />
                 Townhall 2024
