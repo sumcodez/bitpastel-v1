@@ -244,6 +244,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
+                autoComplete="new-text-852"
+                readOnly
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 className="!border-none gap-[20px] subheading font-roboto w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {!formData.phone && (
@@ -259,6 +262,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             </div>
             <div className="border-b border-[#04ff04]">
               <input
+                autoComplete="new-text-99"
+                readOnly
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="qualification"
                 placeholder="Qualification (Optional)"
@@ -327,6 +333,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
               className={`flex items-end gap-4 border-b !mt-6 ${errors.currentLocation ? 'border-red-500' : formData.currentLocation ? 'border-[#04ff04]' : 'border-gray-300'}`}
             >
               <input
+                autoComplete="new-text-754"
+                readOnly
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="currentLocation"
                 placeholder="Current Location"
@@ -371,6 +380,9 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             </div>
             <div className="border-b border-[#04ff04]">
               <input
+                autoComplete="new-text-452"
+                readOnly
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="referredBy"
                 placeholder="Referred By (Optional)"
