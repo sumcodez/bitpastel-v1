@@ -452,7 +452,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
             type="submit"
             // className="bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center"
             className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
-              !isFormValid ? 'opacity-50 cursor-not-allowed' : ''
+              !isFormValid || !captchaToken ? 'opacity-50 cursor-not-allowed' : ''
             }`}
             disabled={!isFormValid || !captchaToken}
           >
