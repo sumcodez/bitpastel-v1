@@ -27,9 +27,11 @@ const BecomePartner = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const [touchedFields, setTouchedFields] = useState<{ [key: string]: boolean }>({})
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState('');
   const [defaultCountry, setDefaultCountry] = useState('IN');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Detect user's country
   useEffect(() => {
@@ -48,62 +50,82 @@ const BecomePartner = () => {
     detectCountry();
   }, []);
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
+  const validateForm = () => {
+    const newErrors: FormErrors = {}
 
-    // Name validation
+    // Name validation (required)
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required"
     }
 
-    // Email validation
+    // Email validation (required)
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required"
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = "Please enter a valid email"
     }
 
-    // Phone validation
-    if (!formData.phone) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^\+?[\d\s\-()]{8,20}$/.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
+    // Phone validation (optional - only validate if provided)
+    if (formData.phone && !/^\+?[\d\s\-()]{8,20}$/.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number"
     }
 
-    // Message validation
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
+    // Message is optional - no validation needed
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    return newErrors
+  }
+
+  // Validate form whenever formData changes, but only show errors for touched fields
+  useEffect(() => {
+    const validationErrors = validateForm()
+
+    // Only show errors for fields that have been touched
+    const filteredErrors: FormErrors = {}
+    Object.keys(validationErrors).forEach((key) => {
+      if (touchedFields[key]) {
+        filteredErrors[key as keyof FormErrors] = validationErrors[key as keyof FormErrors]
+      }
+    })
+
+    setErrors(filteredErrors)
+  }, [formData, touchedFields])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
-      setErrors({ ...errors, [name]: undefined });
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value })
+
+    // Mark field as touched if it had content and now it's empty
+    if (value === "" && formData[name as keyof FormData]) {
+      setTouchedFields((prev) => ({ ...prev, [name]: true }))
     }
-  };
+  }
 
   const handlePhoneChange = (value?: string) => {
-    setFormData({ ...formData, phone: value || '' });
-    if (errors.phone) {
-      setErrors({ ...errors, phone: undefined });
+    setFormData({ ...formData, phone: value || "" })
+
+    // Mark phone field as touched if it becomes empty after having content
+    if (!value && formData.phone) {
+      setTouchedFields((prev) => ({ ...prev, phone: true }))
     }
-  };
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
+    const validationErrors = validateForm()
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      // Mark all fields with errors as touched
+      const touchedUpdate: { [key: string]: boolean } = {}
+      Object.keys(validationErrors).forEach((key) => {
+        touchedUpdate[key] = true
+      })
+      setTouchedFields((prev) => ({ ...prev, ...touchedUpdate }))
+      return
     }
 
-    setIsSubmitting(true);
-    setStatus('');
+    setIsSubmitting(true)
+    setStatus("")
 
     try {
       const response = await fetch('https://www.bitpastel.com/api/partnersSendEmail.php', {
@@ -120,7 +142,7 @@ const BecomePartner = () => {
       });
 
       if (response.ok) {
-        setStatus("Success! We'll get back to you soon.");
+        setIsSuccess(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         setStatus('Something went wrong. Please try again later.');
@@ -133,14 +155,45 @@ const BecomePartner = () => {
     }
   };
 
+  // Check if form is valid (only required fields: name and email)
+  const isFormValid = formData.name.trim() !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
 
-  const isFormValid =
-  formData.name.trim() !== '' &&
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-  formData.phone.replace(/\D/g, '').length >= 8 &&
-  formData.phone.replace(/\D/g, '').length <= 15 &&
-  formData.message.trim() !== '';
-
+  if (isSuccess) {
+    return (
+      <section className="become-partner-area" id="become-a-partner">
+        <div className="container mx-auto px-4">
+          <div className="grid mx-[-15px] md:grid-cols-2 grid-cols-1 font-source">
+            <div className="px-[15px]">
+              <div className="become-partner-title-area">
+                <div className="become-partner-circle">
+                  <svg
+                    fill="none"
+                    height="64"
+                    viewBox="0 0 80 64"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68 31.0002V31.4127L76.7125 22.7002C79.45 19.9627 79.45 15.5377 76.7125 12.8002L66.95 3.05019C64.2125 0.312695 59.7875 0.312695 57.05 3.05019L52.0375 8.06269C51.7 8.02519 51.35 8.00019 51 8.00019H37C32.3625 8.00019 28.55 11.5002 28.05 16.0002H28V31.0002C28 33.7627 30.2375 36.0002 33 36.0002C35.7625 36.0002 38 33.7627 38 31.0002V20.0002H58C63.525 20.0002 68 24.4752 68 30.0002V31.0002ZM42 24.0002V31.0002C42 35.9752 37.975 40.0002 33 40.0002C28.025 40.0002 24 35.9752 24 31.0002V16.1752C19.5125 16.9502 15.775 20.2127 14.5 24.7002L12.4375 31.9002L3.2875 41.0502C0.55 43.7877 0.55 48.2127 3.2875 50.9502L13.05 60.7127C15.7875 63.4502 20.2125 63.4502 22.95 60.7127L27.6625 56.0002C27.775 56.0002 27.8875 56.0127 28 56.0127H48C51.3125 56.0127 54 53.3252 54 50.0127C54 49.3127 53.875 48.6377 53.6625 48.0127H54C57.3125 48.0127 60 45.3252 60 42.0127C60 40.4127 59.375 38.9627 58.35 37.8877C61.5625 37.2627 63.9875 34.4377 64 31.0377V30.9877C63.9875 27.1377 60.8625 24.0127 57 24.0127H42V24.0002Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <h2 className="font-source title font-[700] text-title">Become a Partner</h2>
+              </div>
+            </div>
+            <div className="px-[15px]">
+              <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg h-full min-h-[400px] flex items-center justify-center">
+                <div className="text-white p-6 text-center rounded w-full">
+                  <p className="text-[20px] font-source">Thank You for connecting with us!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="become-partner-area" id="become-a-partner">
@@ -166,38 +219,52 @@ const BecomePartner = () => {
             </div>
           </div>
           <div className="px-[15px]">
-            <div className="become-partner-form-area">
+            <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg relative min-h-[400px]">
+              {isSubmitting && (
+                <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
+                  <div className="text-center">
+                    <p className="text-white mb-4">Submitting your form...</p>
+                    <div className="loader mt-2">
+                      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-white border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
+                    </div>
+                  </div>
+                </div>
+              )}
               <form onSubmit={handleSubmit}>
                 <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
                       autoComplete="new-text-4"
                       readOnly
-                      onFocus={(e) => e.target.removeAttribute('readOnly')}
+                      onFocus={(e) => e.target.removeAttribute("readOnly")}
                       type="text"
                       name="name"
                       placeholder="Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="subheading"
+                      onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
                     />
                   </div>
                   {errors.name && (
                     <span className="text-red-500 text-sm ml-2 mt-2">{errors.name}</span>
                   )}
                 </div>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
+                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] mt-4">
                   <div className="flex-1">
                     <input
                       autoComplete="new-text-3"
                       readOnly
-                      onFocus={(e) => e.target.removeAttribute('readOnly')}
+                      onFocus={(e) => e.target.removeAttribute("readOnly")}
                       type="email"
                       name="email"
                       placeholder="Email Address"
                       value={formData.email}
                       onChange={handleChange}
-                      className="subheading"
+                      onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
                     />
                   </div>
                   {errors.email && (
@@ -205,39 +272,19 @@ const BecomePartner = () => {
                   )}
                 </div>
 
-                {/* <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] ">
-                  <div className="flex-1">
-                    <PhoneInput
-                      international
-                      defaultCountry={defaultCountry as any}
-                      value={formData.phone}
-                      onChange={handlePhoneChange}
-                      placeholder="Phone"
-                      className="!border-none border-b-0 !p-0 [&>input]:focus:outline-none [&>input]:py-2 [&>input]:flex-1"
-                    />
-                  </div>
-                  {errors.phone && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">
-                      {errors.phone}
-                    </span>
-                  )}
-                </div> */}
-
-                <div className={`relative flex gap-2 py-[8px] border-b `}>
+                <div className={`relative flex gap-2 py-[8px] border-b-[1px] border-[#B2B2B2] mt-4`}>
                   <PhoneInput
                     international
                     defaultCountry={defaultCountry as any}
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
                     placeholder="Mobile number (optional)"
-                    // autoComplete="new-text-14"
-                    // readOnly
-                    // onFocus={(e) => e.target.removeAttribute('readOnly')}
+                    disabled={isSubmitting}
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
                     <p className="text-white subheading absolute md:top-[16px] lg:left-[130px] md:left-[68px] left-[75px] top-[16px] whitespace-nowrap font-[100] pointer-events-none">
-                      Mobile number
+                      Mobile number(Optional)
                     </p>
                   )}
                   {errors.phone && (
@@ -247,7 +294,7 @@ const BecomePartner = () => {
                   )}
                 </div>
 
-                <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2]">
+                <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2] mt-4">
                   <div className="flex-1">
                     <textarea
                       autoComplete="new-text-178"
@@ -257,7 +304,8 @@ const BecomePartner = () => {
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="subheading"
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
                     />
                   </div>
                   {errors.message && (
@@ -265,7 +313,7 @@ const BecomePartner = () => {
                   )}
                 </div>
                 <button
-                  className="form-button mt-[30px] bg-green-btn"
+                  className="form-button mt-[30px] bg-green-btn w-full py-3 rounded disabled:opacity-50"
                   type="submit"
                   disabled={isSubmitting || !isFormValid}
                 >
