@@ -400,12 +400,12 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
                         {/* Error Message */}
                         {validationErrors.service && (
-                          <p className="text-xs text-red-500 mt-1">Please select a service.</p>
+                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">Please select a service.</p>
                         )}
                       </div>
 
                       {/* Full Name */}
-                      <div className="pb-1 mt-1 border-b border-gray-200">
+                      <div className="pb-1 mt-1 border-b border-gray-200 relative">
                         <input
                           autoComplete="new-text"
                           readOnly
@@ -418,12 +418,12 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         />
 
                         {validationErrors.fullName && (
-                          <p className="text-xs text-red-500 mt-1">Please enter your full name.</p>
+                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">Please enter your full name.</p>
                         )}
                       </div>
 
                       {/* Email */}
-                      <div className="pb-1 mt-1 border-b border-gray-200">
+                      <div className="pb-1 mt-1 border-b border-gray-200 relative">
                         <input
                           autoComplete="new-text-1"
                           readOnly
@@ -435,7 +435,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           className={`w-full focus:outline-none py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
                         />
                         {validationErrors.email && (
-                          <p className="text-xs text-red-500 mt-1">
+                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
                             {formData.email
                               ? 'Please enter a valid email.'
                               : 'Please enter your email.'}
@@ -457,7 +457,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
                         />
                         {!formData.phone && (
-                          <p className="text-white absolute top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none">
+                          <p className="text-white z-10 top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none absolute right-0">
                             Mobile number (optional)
                           </p>
                         )}
