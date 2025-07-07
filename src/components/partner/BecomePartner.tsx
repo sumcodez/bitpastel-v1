@@ -237,7 +237,7 @@ const BecomePartner = () => {
                   />
                   {!formData.phone && (
                     <p className="text-white subheading absolute md:top-[16px] lg:left-[130px] md:left-[68px] left-[75px] top-[16px] whitespace-nowrap font-[100] pointer-events-none">
-                      Mobile number (optional)
+                      Mobile number
                     </p>
                   )}
                   {errors.phone && (
