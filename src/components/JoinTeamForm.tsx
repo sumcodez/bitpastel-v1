@@ -177,7 +177,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
       alert("Please verify that you're not a robot.");
       return;
     }
-    
+
     // Create FormData instead of URLSearchParams
     const formDataToSend = new FormData();
     formDataToSend.append('name', name);
@@ -441,7 +441,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
 
           <ReCAPTCHA
-            sitekey="YOUR_SITE_KEY" // reCAPTCHA v2 site key
+            sitekey="6LftAmQUAAAAAMg0JJS9zKJ3lR3MCqhNwt1MUfkK" // reCAPTCHA v2 site key
             onChange={(token) => setCaptchaToken(token)}
             className="mb-4"
           />
