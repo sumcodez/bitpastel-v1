@@ -222,7 +222,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
       {isSubmitting && (
         <div className="absolute inset-0 bg-transparent bg-opacity-90 flex flex-col items-center justify-center z-10 rounded-lg">
           <div className="text-white text-xl mb-4 font-semibold">Sending your application...</div>
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black"></div>
         </div>
       )}
 
