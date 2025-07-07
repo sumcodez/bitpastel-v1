@@ -36,7 +36,7 @@ export default function Card({
         className="h-20 flex items-center justify-center relative flex-shrink-0"
         style={{ background: gradientColors }}
       >
-        <p className="text-primary-white text-lg font-semibold text-center px-4">
+        <p className="text-primary-white subheading font-semibold text-center px-4 font-source">
           {title}
         </p>
       </div>

@@ -39,7 +39,7 @@ const Banner = () => {
           <div className="md:h-full content-center mx-auto md:max-w-[100%] max-w-[310px]">
             <h1 className="md:text-primary-white text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
               <span>Work</span>
-              <span className="font-bold lg:inline md:block inline pl-2">@ Bitpastel</span>
+              <span className="font-bold inline pl-2">@ Bitpastel</span>
               <br />
               on Awesome Projects
             </h1>

@@ -253,7 +253,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   <Image
                     src={'/images/modal-new-img-desktop.png'}
                     alt="bitpastel client image"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover "
                     width={400}
                     height={300}
                   />
@@ -271,7 +271,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         alt="modal-1"
                         width={30}
                         height={30}
-                        className="mx-auto mb-2"
+                        className="mx-auto mb-2 h-[30px]"
                       />
                       <h6 className="text-[#099]">900</h6>
                       <p className="text-[#212529] text-[13px]">Clients</p>
@@ -283,7 +283,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         alt="modal-2"
                         width={30}
                         height={30}
-                        className="mx-auto mb-2"
+                        className="mx-auto mb-2 h-[30px]"
                       />
                       <h6 className="text-[#099]">1400+</h6>
                       <p className="text-[#212529] text-[13px]">Projects</p>
@@ -295,7 +295,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         alt="modal-2"
                         width={30}
                         height={30}
-                        className="mx-auto mb-2"
+                        className="mx-auto mb-2 h-[30px]"
                       />
                       <h6 className="text-[#099]">50M</h6>
                       <p className="text-[#212529] text-[13px]">Lines of Code</p>
@@ -307,7 +307,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         alt="modal-2"
                         width={30}
                         height={30}
-                        className="mx-auto mb-2"
+                        className="mx-auto mb-2 h-[30px]"
                       />
                       <h6 className="text-[#099]">32</h6>
                       <p className="text-[#212529] text-[13px]">Countries</p>

@@ -31,7 +31,7 @@ const TeamBanner = () => {
         className="block md:hidden w-full h-[220px]  bg-cover bg-[position:76%_10%] bg-no-repeat"
         style={{
           backgroundImage: `
-            url('/images/team_banner.jpg')
+            url('/images/team-banner-mobile.png')
           `,
         }}
       ></div>
