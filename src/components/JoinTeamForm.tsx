@@ -211,7 +211,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
   if (isSubmitted) {
     return (
       <div className={`${className ?? ""} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px] text-center`}>
-        <p className="text-[#009999] text-lg font-roboto">Thank you {formData.name} for your job application!</p>
+        <p className="text-[#009999] text-[20px] font-roboto">Thank you {formData.name} for your job application!</p>
       </div>
     )
   }
@@ -221,8 +221,40 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
       {/* Loading overlay */}
       {isSubmitting && (
         <div className="absolute inset-0 bg-transparent bg-opacity-90 flex flex-col items-center justify-center z-10 rounded-lg">
-          <div className="text-white text-xl mb-4 font-semibold">Sending your application...</div>
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black"></div>
+        <svg
+          style={{
+            left: "50%",
+            top: "50%",
+            position: "absolute",
+            transform: "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
+          }}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 187.3 93.7"
+          height="150px"
+          width="200px"
+        >
+          <path
+            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="4"
+            fill="none"
+            id="outline"
+            stroke="#009999"
+          />
+          <path
+            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="4"
+            stroke="#009999"
+            fill="none"
+            opacity="0.05"
+            id="outline-bg"
+          />
+        </svg>
         </div>
       )}
 
