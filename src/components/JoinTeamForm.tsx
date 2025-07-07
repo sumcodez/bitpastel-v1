@@ -440,6 +440,7 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
         </div>
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
 
+          {/* ReCAPTCHA ( I am not a robot captcha ) */}
           {isFormValid && (
             <ReCAPTCHA
               sitekey="6LdSzGEUAAAAABG0EhsRTOkyJUyTqwFz6gpNX8g1" // reCAPTCHA v2 site key
