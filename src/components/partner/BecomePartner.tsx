@@ -162,6 +162,9 @@ const BecomePartner = () => {
                 <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
+                      autoComplete="new-text-4"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
                       type="text"
                       name="name"
                       placeholder="Name"
@@ -177,6 +180,9 @@ const BecomePartner = () => {
                 <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
+                      autoComplete="new-text-3"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
                       type="email"
                       name="email"
                       placeholder="Email Address"
