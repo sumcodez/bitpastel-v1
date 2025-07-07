@@ -217,7 +217,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
   }
 
   return (
-    <div className={`${className ?? ""} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px] relative`} id="joinTeamForm">
+    <div className={`${className ?? ""} max-w-[800px] mx-auto md:pt-[90px] pt-[70px] relative`} id="joinTeamForm">
       {/* Loading overlay */}
       {isSubmitting && (
         <div className="absolute inset-0 bg-transparent bg-opacity-90 flex flex-col items-center justify-center z-10 rounded-lg">
