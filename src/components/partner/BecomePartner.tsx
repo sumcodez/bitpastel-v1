@@ -162,7 +162,7 @@ const BecomePartner = () => {
                   />
                 </svg>
               </div>
-              <h2 className="font-source title text-title">Become a Partner</h2>
+              <h2 className="font-source title font-[700] text-title">Become a Partner</h2>
             </div>
           </div>
           <div className="px-[15px]">

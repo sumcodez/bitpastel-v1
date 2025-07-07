@@ -4,7 +4,7 @@ const PartnerService = () => {
   return (
     <section className="partner-service-area relative bg-[#282828] md:pt-[77px] md:pb-[87px] py-[50px]">
       <div className="container px-4 mx-auto">
-        <h2 className="font-source text-white md:pb-0 pb-[15px] leading-[normal] subheading md:text-left text-center md:max-w-[unset] max-w-[300px] md:mx-0 mx-auto font-[600]">
+        <h2 className="font-source text-white title md:pb-0 pb-[15px] leading-[normal] md:text-left text-center md:max-w-[unset] max-w-[300px] md:mx-0 mx-auto font-[600]">
           Is there anyone from your circle who may need our services?
         </h2>
         <div className="grid md:grid-cols-3 grid-cols-1 md:pt-[60px] mx-[-20px]">

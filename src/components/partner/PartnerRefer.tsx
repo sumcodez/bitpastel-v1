@@ -48,7 +48,7 @@ const PartnerRefer = () => {
                   ></path>
                 </svg>
               </div>
-              <h2 className="font-source title text-title">Refer & Earn</h2>
+              <h2 className="font-source title font-[700] text-title">Refer & Earn</h2>
               <p className="font-roboto">
                 If you think we are good, please share your experience when you refer.
               </p>

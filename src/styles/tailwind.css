@@ -555,7 +555,6 @@ textarea::placeholder {
 .partner-refer-title-area h2 {
   color: #2a2a2a;
   font-style: normal;
-  font-weight: 600;
   padding: 13px 0 9px;
 }
 .partner-refer-area p {
@@ -701,10 +700,7 @@ textarea::placeholder {
   height: 40px;
 }
 .become-partner-title-area h2{
-    /* font-size: 38px; */
     font-style: normal;
-    font-weight: 600;
-    /* line-height: 48px; */
     padding: 13px 0 10px;
     color: #2a2a2a;
 }
