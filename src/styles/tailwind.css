@@ -713,6 +713,10 @@ textarea::placeholder {
 }
 
 @media (max-width: 767px) {
+  .header-logo a svg{
+    width: 70px;
+    height: 40px;
+  }
   .become-partner-form-area .form-button{
     min-width: 100%;
     max-width: 100%;
@@ -811,4 +815,9 @@ textarea::placeholder {
     -webkit-align-items: center;
     align-items: center;
   }
+}
+
+.become-partner-form-area .PhoneInputCountry {
+    gap: 0;
+    margin-right: 0;
 }

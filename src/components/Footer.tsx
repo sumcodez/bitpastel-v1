@@ -34,7 +34,7 @@ const Footer = () => {
     <footer className="">
       <div className="desktop-footer bg-primary-dark text-white lg:pt-16 pt-12 lg:pb-6 pb-20 footer">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-8 align-top footer-wrapper">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[90px] lg:gap-8 mb-8 align-top footer-wrapper">
             <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
               {/* <Link href="/">
                 <Image

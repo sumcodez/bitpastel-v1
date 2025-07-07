@@ -241,10 +241,10 @@ export default function JoinTeam({ title = 'Join Our Team', className }: JoinTea
                 value={formData.phone}
                 onChange={(value) => handleInputChange('phone', value || '')}
                 placeholder="Mobile number (optional)"
-                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                className="!border-none gap-[20px] subheading font-roboto w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {!formData.phone && (
-                <p className="text-white absolute top-[14px] subheading left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                <p className="text-white absolute top-[16px] subheading left-[130px] whitespace-nowrap font-[100] pointer-events-none">
                   Mobile number (optional)
                 </p>
               )}

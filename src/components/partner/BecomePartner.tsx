@@ -215,10 +215,10 @@ const BecomePartner = () => {
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
                     placeholder="Mobile number (optional)"
-                    className="!border-none bg-transparent gap-[20px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
+                    className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
-                    <p className="text-white subheading absolute top-[14px] left-[130px] whitespace-nowrap font-[100] pointer-events-none">
+                    <p className="text-white subheading absolute md:top-[16px] lg:left-[130px] md:left-[68px] left-[75px] top-[16px] whitespace-nowrap font-[100] pointer-events-none">
                       Mobile number (optional)
                     </p>
                   )}

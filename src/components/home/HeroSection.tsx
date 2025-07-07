@@ -20,10 +20,10 @@ const HeroSection = () => {
 
         {/* Mobile background image on top */}
         <div
-          className="block md:hidden w-full h-[430px] bg-cover bg-[position:76%_10%] bg-no-repeat"
+          className="block md:hidden w-full h-[220px] bg-cover bg-[position:76%_10%] bg-no-repeat"
           style={{
             backgroundImage: `
-            url('/images/img_rectangle_48.png')
+            url('/images/banner-for-mobile.jpg')
           `,
           }}
         ></div>

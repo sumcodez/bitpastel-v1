@@ -10,7 +10,7 @@ const CtaSection = () => {
      <>
     <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
       <div className="container mx-auto px-4">
-        <div className="relative md:rounded-[40px] overflow-hidden flex flex-col md:block">
+        <div className="relative md:rounded-[40px] overflow-hidden flex md:mx-0 mx-4 flex-col md:block">
           {/* Background for mobile and desktop */}
           <div 
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
@@ -22,8 +22,8 @@ const CtaSection = () => {
 
           {/* Background for mobile only */}
           <div 
-            className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover ml-4  bg-no-repeat md:h-auto 
-                       bg-[position:100%_10%] rounded-tl-[20px] rounded-bl-[0px]"
+            className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
+                       bg-[position:73%_10%] rounded-[20px]"
             style={{
               backgroundImage: "url('/images/Contact-us.png')"
             }}
@@ -42,10 +42,8 @@ const CtaSection = () => {
             <div className="lg:max-w-[520px] md:max-w-[480px] max-w-full">
               <h2 className="font-bold font-source md:text-primary-white title text-title md:mb-4 mb-4 md:leading-[45px] leading-[normal]">
                 Discover the digital 
-                < br className=''/>
-                possibilities we can help you 
-                <br className=''/>
-                unlock for your business!
+                < span className='md:block inline md:pl-0 pl-[5px]'>possibilities we can help you </span>
+                <span className='md:block inline md:pl-0 pl-[5px]'> unlock for your business!</span>
               </h2>
               <p className="md:text-primary-white text-title md:mb-8 mb-4 leading-relaxed max-w-[100%] md:max-w-[92%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
