@@ -151,6 +151,26 @@ const NewTeamCollage = () => {
 
 
 
+        <div className="common-lb fourth-lb">
+          <div className="img lt">
+            <img
+              alt="Award & Recognition"
+              className="lazy"
+              src="/images/Team-Page-Image/Birthday000.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+          <div className="img rt">
+            <img
+              alt="Cultural Programme"
+              className="lazy"
+              src="/images/Team-Page-Image/2024BTH-14.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+        </div>
 
 
 
