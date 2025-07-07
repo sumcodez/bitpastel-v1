@@ -454,7 +454,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                         Apply Now
                       </button>
                     </div>
-                    <JoinTeam title="Apply Now" className='pt-8'/>
+                    <JoinTeam title="Apply Now" className='pt-8' jobTitle={job.title}/>
                   </>
                 ) : (
                   <div className='flex justify-center'>
