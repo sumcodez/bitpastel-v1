@@ -423,7 +423,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
               {/* Apply Div */}
               <div className="md:pt-[90px] pt-[70px]" ref={formRef} id="applicationForm">
                 {jobWithForm.includes(job.id) ? (
-                  <JoinTeam title="Apply Now" />
+                  <JoinTeam title="Apply Now" jobTitle={job.title}/>
                 ) : jobWithFormAndButton.includes(job.id) ? (
                   <>
                     <div className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-16 pt-14">
@@ -442,7 +442,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                         Apply Now
                       </button>
                     </div>
-                    <JoinTeam title="Apply Now" className='pt-14'/>
+                    <JoinTeam title="Apply Now" className='pt-14' jobTitle={job.title}/>
                   </>
                 ) : jobWithOneButtonAndForm.includes(job.id) ? (
                   <>
