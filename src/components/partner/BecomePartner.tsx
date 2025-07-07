@@ -230,9 +230,9 @@ const BecomePartner = () => {
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
                     placeholder="Mobile number (optional)"
-                    autoComplete="new-text-14"
-                    readOnly
-                    onFocus={(e) => e.target.removeAttribute('readOnly')}
+                    // autoComplete="new-text-14"
+                    // readOnly
+                    // onFocus={(e) => e.target.removeAttribute('readOnly')}
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
