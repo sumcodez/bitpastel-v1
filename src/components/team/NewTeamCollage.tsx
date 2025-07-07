@@ -218,7 +218,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-[70%_30%] grid-cols-1 md:py-[70px] lazy-image-section">
+        <div className="grid md:grid-cols-[60%_40%] place-items-center grid-cols-1 md:py-[70px] lazy-image-section">
           <div className="img lt">
             <img
               alt="Award & Recognition"
@@ -228,7 +228,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt md:pt-0 pt-[70px]">
+          <div className="img rt md:order-last order-first md:pt-0 md:pb-0 pt-[50px] pb-[70px]">
             <div className="icon-title md:inline-block">
               <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 leading-[normal] font-[600]">
                 Bitpastel
@@ -274,7 +274,7 @@ const NewTeamCollage = () => {
             <img
               alt="Cultural Programme"
               className="lazy"
-              src="/images/right_15-07-2024.png"
+              src="/images/Team-Page-Image/02-right.png"
               height="1000"
               width="700"
             />
@@ -286,7 +286,7 @@ const NewTeamCollage = () => {
             <img
               alt="Award & Recognition"
               className="lazy"
-              src="/images/L4.png"
+              src="/images/Team-Page-Image/2024BTH.png"
               height="1000"
               width="700"
             />
@@ -295,7 +295,7 @@ const NewTeamCollage = () => {
             <img
               alt="Cultural Programme"
               className="lazy"
-              src="/images/right-02_15-07-2024.png"
+              src="/images/Team-Page-Image/2024BTH-1.png"
               height="1000"
               width="700"
             />
@@ -307,16 +307,16 @@ const NewTeamCollage = () => {
             <img
               alt="Award & Recognition"
               className="lazy"
-              src="/images/L3.png"
+              src="/images/Team-Page-Image/2024BTH-2.png"
               height="1000"
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:top-[18%]">
             <img
               alt="Cultural Programme"
               className="lazy"
-              src="/images/R4.png"
+              src="/images/Team-Page-Image/2024BTH-3.png"
               height="1000"
               width="700"
             />
@@ -324,7 +324,19 @@ const NewTeamCollage = () => {
         </div>
       </div>
 
-      <div className="common-lb third-lb lazy-image-section">
+      <div className="common-lb fourth-lb lazy-image-section">
+        <div className="img lt">
+          <img
+            alt="Award & Recognition"
+            className="lazy"
+            src="/images/avatar_new_23.png"
+            height="1000"
+            width="700"
+          />
+        </div>
+      </div>
+
+      {/* <div className="common-lb third-lb lazy-image-section">
         <div className=" lt top-speccer title-top-spaccer">
           <div className="icon-title relative inline-block">
             <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]  bottom-spaccer">
@@ -357,7 +369,7 @@ const NewTeamCollage = () => {
           />
         </div>
       </div>
-
+      
       <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt">
           <img
@@ -377,10 +389,10 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="title-middle">
-        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">
+        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:pt-[40px] md:pb-[120px]">
           Bitpastel Townhall 2023
         </h4>
       </div>
@@ -421,7 +433,7 @@ const NewTeamCollage = () => {
             <img
               alt="Glimpse of Townhall"
               className="lazy"
-              src="/images/avatar_new_04.png"
+              src="/images/Team-Page-Image/2024BTH-4.png"
               height="1000"
               width="700"
             />
@@ -433,7 +445,7 @@ const NewTeamCollage = () => {
             <img
               alt="Lunch Break"
               className="lazy"
-              src="/images/avatar_new_05.png"
+              src="/images/Team-Page-Image/2024BTH-6.png"
               height="1000"
               width="700"
             />
@@ -454,7 +466,7 @@ const NewTeamCollage = () => {
             <img
               alt="Award & Recognition"
               className="lazy"
-              src="/images/avatar_new_07.png"
+              src="/images/avatar_new_09.png"
               height="1000"
               width="700"
             />
@@ -469,7 +481,7 @@ const NewTeamCollage = () => {
             />
           </div>
         </div>
-
+        {/* 
         <div className="common-lb fourth-lb lazy-image-section">
           <div className="img lt">
             <img
@@ -489,14 +501,14 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className="title-middle">
+      {/* <div className="title-middle">
         <h4 className="tt text-center text-till title leading-[normal] font-[600] md:py-[40px]">
           Culture at Bitpastel
         </h4>
-      </div>
+      </div> */}
 
       <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt">
@@ -508,14 +520,8 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img rt">
-          <img
-            alt="Cultural Programme"
-            className="lazy"
-            src="/images/avatar_new_12.png"
-            height="1000"
-            width="700"
-          />
+        <div className="img rt md:order-last order-first md:pb-0 pb-[70px]">
+          <h4 className="tt text-till title leading-[normal] font-[600]">Culture at Bitpastel</h4>
         </div>
       </div>
 
@@ -567,11 +573,11 @@ const NewTeamCollage = () => {
         </div>
       </div>
 
-      <div className="title-middle">
+      {/* <div className="title-middle">
         <h4 className="tt text-till title font-[600] leading-[normal] text-center md:py-[40px]">
           Sunday Brunch at Westin
         </h4>
-      </div>
+      </div> */}
 
       <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt">
@@ -583,18 +589,20 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img lt">
-          <img
-            alt="Award & Recognition"
-            className="lazy"
-            src="/images/avatar_new_17.png"
-            height="1000"
-            width="700"
-          />
+        <div className="img lt md:order-last order-first md:pb-0 pb-[70px]">
+          <h4 className="tt text-till title font-[600] leading-[normal]">
+            Sunday Brunch at Westin
+          </h4>
         </div>
       </div>
 
-      <div className="common-lb fourth-lb lazy-image-section">
+      <div className="title-middle">
+        <h4 className="tt text-till title font-[600] leading-[normal] text-center md:pt-[40px] md:mb-[120px]">
+          Bitpastel Townhall 2022
+        </h4>
+      </div>
+
+      {/* <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt top-speccer inline-block w-[auto]">
           <h4 className="tt md:text-start text-center bottom-spaccer title font-[600] leading-[normal] text-till">
             Bitpastel
@@ -619,14 +627,14 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt">
           <img
             alt="Award & Recognition"
             className="lazy"
-            src="/images/avatar_new_19.png"
+            src="/images/avatar_new_23.png"
             height="1000"
             width="700"
           />
@@ -642,6 +650,27 @@ const NewTeamCollage = () => {
         </div>
       </div>
 
+
+ <div className="common-lb fourth-lb lazy-image-section md:pt-[120px] md:pb-[70px]">
+        <div className="img lt md:pb-0 pb-[70px]">
+          <h4 className="tt text-till title font-[600] leading-[normal] ">
+          Bitpastel Townhall 2022
+        </h4>
+        </div>
+
+        <div className="img lt">
+          <img
+            alt="Award & Recognition"
+            className="lazy"
+            src="/images/Team-Page-Image/7.png"
+            height="1000"
+            width="700"
+          />
+        </div>
+      </div>
+
+
+{/* 
       <div className="common-lb fourth-lb lazy-image-section">
         <div className="img lt">
           <img
@@ -682,9 +711,9 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-      </div>
+      </div> 
 
-      <div className="title-middle">
+       <div className="title-middle">
         <h4 className="tt text-center title font-[600] leading-[normal] md:py-[40px] text-till">
           Bitpastel Townhall 2021
         </h4>
@@ -760,7 +789,10 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-      </div>
+      </div> */}
+
+
+
     </section>
   );
 };

@@ -251,11 +251,11 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     className="w-full h-auto object-cover"
                   /> */}
                   <Image
-                    src={'/images/bitpastel_Clientele_5_new.png'}
+                    src={'/images/contact-popup.png'}
                     alt="bitpastel client image"
                     className="w-full h-auto object-cover"
                     width={400}
-                    height={400}
+                    height={300}
                   />
                 </div>
 
