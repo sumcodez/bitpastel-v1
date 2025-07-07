@@ -221,6 +221,9 @@ const BecomePartner = () => {
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
                     placeholder="Mobile number (optional)"
+                    autoComplete="new-text-14"
+                    readOnly
+                    onFocus={(e) => e.target.removeAttribute('readOnly')}
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
@@ -238,6 +241,9 @@ const BecomePartner = () => {
                 <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2]">
                   <div className="flex-1">
                     <textarea
+                      autoComplete="new-text-178"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
                       name="message"
                       placeholder="Your Message"
                       value={formData.message}
