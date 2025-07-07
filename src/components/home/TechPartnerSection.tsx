@@ -6,7 +6,7 @@ const TechPartnerSection = () => {
     <section className="md:pt-[70px] pt-[70px]" id="#partner">
       <div className="mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
-          <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-[auto]">
+          <div className="md:rounded-tr-[40px] md:rounded-br-[40px] rounded-br-[20px] rounded-tr-[20px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-[auto]">
             <Image
               src="/images/person-client.png"
               alt="Team collaboration"
@@ -15,7 +15,7 @@ const TechPartnerSection = () => {
               className="w-full md:h-full h-[280px] md:object-unset object-cover md:object-center object-right"
             />
           </div>
-          <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 rounded-tl-[40px] rounded-bl-[40px] content-center overflow-hidden">
+          <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 md:rounded-tl-[40px] md:rounded-bl-[40px] rounded-bl-[20px] rounded-tl-[20px] content-center overflow-hidden">
             {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}
             <h2 className=" lg:leading-[45px] leading-[normal] font-source font-bold text-dark title  text-title md:mb-8 mb-5 ">
               <span className="font-semibold">Why we are the best </span>

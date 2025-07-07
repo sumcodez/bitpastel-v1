@@ -72,7 +72,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
         {/* Mobile Background */}
         <div
-          className="md:hidden h-[250px] absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="md:hidden h-[220px] absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url("/images/job_details_mob2.jpg")',
           }}

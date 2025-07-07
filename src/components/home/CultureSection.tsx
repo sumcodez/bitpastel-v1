@@ -57,7 +57,7 @@ const CultureSection = () => {
   return (
     <section id='culture' className="md:pt-[90px] pt-[64px] bg-[#ffffff]">
       <div className="container mx-auto px-4">
-        <h2 className="tfont-source font-bold text-center text-title title md:mb-8 mb-4">
+        <h2 className="font-source font-bold text-center text-title title md:mb-8 mb-4">
           Why work with us?
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-10">
@@ -67,7 +67,7 @@ const CultureSection = () => {
               alt="Team collaboration"
               width={695}
               height={537}
-              className="rounded-[40px] w-full xl:h-auto md:h-[100%] h-auto"
+              className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto"
             />
           </div>
           <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 xl:gap-10 md:gap-6 gap-6">
