@@ -708,6 +708,10 @@ textarea::placeholder {
   gap:20px;
 }
 
+a.modal-open svg {
+    fill: var(--primary-teal);
+}
+
 @media (max-width: 767px) {
   .header-logo a svg{
     width: 70px;

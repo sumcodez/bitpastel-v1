@@ -4,8 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import { useState } from 'react';
+import  Modal  from '@/components/Modal';
 const Footer = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
 
   // Helper function to determine if a link is active
@@ -31,7 +33,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="">
+        <>
+    <footer className="footer">
       <div className="desktop-footer bg-primary-dark text-white lg:pt-16 pt-12 lg:pb-6 pb-20 footer">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-[90px] lg:gap-8 mb-8 align-top footer-wrapper">
@@ -481,7 +484,9 @@ const Footer = () => {
           <div
             className={`nav-item flex flex-col items-center ${isActive('/contact') ? 'active' : ''}`}
           >
-            <Link href="/contact" className="flex flex-col items-center">
+            <Link href=""  className={`flex flex-col items-center ${isModalOpen ? 'modal-open' : ''} `}
+            onClick={() => setIsModalOpen(true)}
+            >
               <svg
                 _ngcontent-c8=""
                 fill="none"
@@ -505,6 +510,9 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+    </>
   );
 };
 

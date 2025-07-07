@@ -80,7 +80,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
         {/* Content - Modified to align right */}
         <div className="relative z-10 container mx-auto px-4 md:h-full text-left">
-          <div className="md:h-full content-center mx-auto max-w-[450px] ml-auto md:max-w-[450px] lg:mr-[100px] mr-0  md:pt-[0] pt-[30px]">
+          <div className="md:h-full content-center max-w-[fit-content] md:ml-auto md:max-w-[fit-content] lg:mr-[100px] mr-0  md:pt-[0] pt-[30px]">
             <h1 className=" text-title font-[600] title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-2 md:text-left ">
               <span>{jobTitle}</span>
             </h1>
@@ -93,7 +93,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   alt={benefits[0].alt}
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0 mt-1.5"
+                  className="w-auto mt-1.5"
                 />
                 {/* <p className="text-title font-roboto text-left md:text-[20px]  paragraph font-[400]  whitespace-normal break-words">
                   {benefits[0].text}
@@ -123,7 +123,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   alt={benefits[1].alt}
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0"
+                  className="w-auto"
                 />
                 <p className="md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Experience: {benefits[1].text}
@@ -137,7 +137,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   alt={benefits[2].alt}
                   width={24}
                   height={24}
-                  className="w-auto invert md:invert-0"
+                  className="w-auto"
                 />
                 <p className=" md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Location: {benefits[2].text}

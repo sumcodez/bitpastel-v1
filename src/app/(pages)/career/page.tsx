@@ -9,7 +9,9 @@ const page = () => {
      <div className='relative'>
         <Banner/>
         <JobCard/>
+        <div className='container px-4 mx-auto relative'>
         <JoinTeam/>
+        </div>
         <Common_banner/>
     </div>
     </>

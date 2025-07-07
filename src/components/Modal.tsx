@@ -334,15 +334,22 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
               {/* Right side - Form */}
               <div className="lg:w-[40%] md:w-[50%] w-full ">
                 <div className="md:hidden">
-                  <Image
+                  {/* <Image
                     src={'/images/quote_banner_mob02.png'}
                     alt="bitpastel client image"
                     className="w-full h-auto object-cover"
                     width={400}
                     height={400}
-                  />
+                  /> */}
+
+                  <div className="bg-[#3dcb90] text-primary-white">
+                    <h3 className="title p-4">
+                      Get Your Business Online Today <br />
+                      With <span className="font-bold text-primary-white">Bitpastel</span>
+                    </h3>
+                  </div>
                 </div>
-                <div className="bg-[#fff] md:p-[35px] p-[15px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
+                <div className="bg-[#fff] md:p-[35px] p-[15px] md:shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
                   <h2 className="text-center title font-source mb-4 font-light text-title ">
                     Get a Free Quote
                   </h2>
@@ -515,6 +522,20 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     <a href="tel:+919830566248">IN: +91 9830 566 248</a>
                   </p>
                 </div>
+              </div>
+              <div className="md-hidden absolute top-[10px] right-[10px]">
+                <button onClick={onClose}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#ffffff"
+                    width="20px"
+                    height="20px"
+                    viewBox="-3.5 0 19 19"
+                    className="cf-icon-svg"
+                  >
+                    <path d="M11.383 13.644A1.03 1.03 0 0 1 9.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 1 1-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 1 1 1.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 0 1 1.455 1.456L7.455 9.716z" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>

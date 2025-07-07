@@ -29,7 +29,7 @@ const Banner = () => {
           className="block md:hidden w-full h-[200px]  bg-cover bg-[position:70%_10%] bg-no-repeat"
           style={{
             backgroundImage: `
-                  url('/images/career.png')
+                  url('/images/Career-Mobile.png')
                 `,
           }}
         ></div>
