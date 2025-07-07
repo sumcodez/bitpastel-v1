@@ -111,7 +111,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   //   message: '',
   // });
 
-  const [defaultCountry, setDefaultCountry] = useState<string>("IN");
+  const [defaultCountry, setDefaultCountry] = useState<string>('IN');
   const [isLoading, setIsLoading] = useState(true);
 
   const [formData, setFormData] = useState(initialFormData);
@@ -119,7 +119,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   const [validationErrors, setValidationErrors] = useState({
     service: false,
     fullName: false,
-    email: false
+    email: false,
   });
 
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
@@ -135,7 +135,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
           setDefaultCountry(data.country);
         }
       } catch (error) {
-        console.error("Could not detect country, using default:", error);
+        console.error('Could not detect country, using default:', error);
       } finally {
         setIsLoading(false);
       }
@@ -151,7 +151,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     const errors = {
       service: !formData.service,
       fullName: !formData.fullName,
-      email: !formData.email
+      email: !formData.email,
     };
 
     setValidationErrors(errors);
@@ -162,7 +162,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
     let phoneCode = '';
     let phoneNumber = '';
-    
+
     if (formData.phone) {
       try {
         const parsedNumber = parsePhoneNumber(formData.phone);
@@ -182,7 +182,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
       phone_no: phoneNumber, // Just the number part
       phone_code: phoneCode.replace('+', ''), // Country code without +
       choice: formData.service,
-      message: formData.message
+      message: formData.message,
     };
 
     const formEncoded = new URLSearchParams(payload as any).toString();
@@ -343,7 +343,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   />
                 </div>
                 <div className="bg-[#fff] md:p-[35px] p-[15px]  shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
-                  <h2 className="text-center title font-source mb-4 font-light text-title ">Get a Free Quote</h2>
+                  <h2 className="text-center title font-source mb-4 font-light text-title ">
+                    Get a Free Quote
+                  </h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
                     <div className="space-y-2">
                       {/* Combined "I want" and service selection */}
@@ -398,6 +400,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Full Name */}
                       <div className="pb-1 mt-1 border-b border-gray-200">
                         <input
+                          autoComplete="new-text"
+                          readOnly
+                          onFocus={(e) => e.target.removeAttribute('readOnly')}
                           type="text"
                           placeholder="Full Name"
                           value={formData.fullName}
@@ -413,6 +418,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Email */}
                       <div className="pb-1 mt-1 border-b border-gray-200">
                         <input
+                          autoComplete="new-text-1"
+                          readOnly
+                          onFocus={(e) => e.target.removeAttribute('readOnly')}
                           type="email"
                           placeholder="Email"
                           value={formData.email}
@@ -429,24 +437,21 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </div>
 
                       {/* Mobile Number */}
-                     <div
-              className={`relative flex gap-2 pt-[6px] border-b `}
-            >
-              <PhoneInput
-                international
-                defaultCountry={defaultCountry as any}
-                value={formData.phone}
-                onChange={(value) => handleInputChange('phone', value || '')}
-                placeholder="Mobile number (optional)"
-                className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
-              />
-              {!formData.phone && (
-                <p className="text-white absolute top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none">
-                  Mobile number (optional)
-                </p>
-              )}
-            </div>
-
+                      <div className={`relative flex gap-2 pt-[6px] border-b `}>
+                        <PhoneInput
+                          international
+                          defaultCountry={defaultCountry as any}
+                          value={formData.phone}
+                          onChange={(value) => handleInputChange('phone', value || '')}
+                          placeholder="Mobile number (optional)"
+                          className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                        />
+                        {!formData.phone && (
+                          <p className="text-white absolute top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none">
+                            Mobile number (optional)
+                          </p>
+                        )}
+                      </div>
 
                       {/* Message */}
                       <div className="pb-1 border-b border-gray-200">
@@ -473,9 +478,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       {/* Privacy Policy */}
                       <p className="text-[11px] mt-[3px] text-white text-center">
                         By clicking "Lets Work Together", you agree to our{' '}
-                        <Link href="/privacy-policys" className="text-till"
-                        onClick={onClose}
-                        >
+                        <Link href="/privacy-policys" className="text-till" onClick={onClose}>
                           Privacy Policy
                         </Link>
                       </p>
@@ -491,21 +494,21 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   </form>
                 </div>
                 <div className="flex flex-wrap gap-4 flex-col justify-center pt-6 pb-5 text-center md:hidden">
-                    {/* UK - Visible on all screens */}
-                    <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
-                      <a href="tel:+442081446579">UK: +44 2081 446579</a>
-                    </p>
+                  {/* UK - Visible on all screens */}
+                  <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
+                    <a href="tel:+442081446579">UK: +44 2081 446579</a>
+                  </p>
 
-                    {/* US - Hidden on md, visible only on lg */}
-                    <p className="text-[#099]  text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
-                      <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
-                    </p>
+                  {/* US - Hidden on md, visible only on lg */}
+                  <p className="text-[#099]  text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
+                    <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
+                  </p>
 
-                    {/* IN - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
-                      <a href="tel:+919830566248">IN: +91 9830 566 248</a>
-                    </p>
-                  </div>
+                  {/* IN - Hidden on md, visible only on lg */}
+                  <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
+                    <a href="tel:+919830566248">IN: +91 9830 566 248</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
