@@ -196,10 +196,15 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
   }
 
   return (
-    <div
-      className={`${className ?? ''} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px]`}
-      id="joinTeamForm"
-    >
+    <div className={`${className ?? ''} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px] relative`} id="joinTeamForm">
+      {/* Loading overlay */}
+      {isSubmitting && (
+        <div className="absolute inset-0 bg-transparent bg-opacity-90 flex flex-col items-center justify-center z-10 rounded-lg">
+          <div className="text-white text-xl mb-4 font-semibold">Sending your application...</div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+        </div>
+      )}
+      
       <h2 className="title text-title font-semibold font-source text-center mb-8">
         {title}
       </h2>
@@ -280,12 +285,10 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
 
                 placeholder="Mobile number (optional)"
                 autoComplete="new-text-852"
-                // readOnly
-                // onFocus={(e) => e.target.removeAttribute('readOnly')}
                 className="!border-none gap-[20px] subheading font-roboto w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
               />
               {!formData.phone && (
-                <p className="text-white absolute md:top-[16px] top-[16px] subheading md:left-[130px] left-[110px] whitespace-nowrap font-[100] pointer-events-none">
+                <p className="text-white absolute top-[16px] subheading left-[130px] whitespace-nowrap font-[100] pointer-events-none">
                   Mobile number (optional)
                 </p>
               )}
