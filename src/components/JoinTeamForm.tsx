@@ -1,279 +1,300 @@
-"use client"
-import type React from "react"
-import { useState, useRef, useEffect } from "react"
-import { ChevronDown, Paperclip } from "lucide-react"
-import PhoneInput from "react-phone-number-input"
-import "react-phone-number-input/style.css"
-import Link from "next/link"
-import ReCAPTCHA from "react-google-recaptcha"
+'use client';
+import type React from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDown, Paperclip } from 'lucide-react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import Link from 'next/link';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface JoinTeamProps {
-  title?: string
-  className?: string
-  jobTitle?: string
+  title?: string;
+  className?: string;
+  jobTitle?: string;
 }
 
-export default function JoinTeam({ title = "Join Our Team", className, jobTitle }: JoinTeamProps) {
+export default function JoinTeam({ title = 'Join Our Team', className, jobTitle }: JoinTeamProps) {
   // Form state
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    currentLocation: "",
-    qualification: "",
-    experience: "",
-    noticePeriod: "",
-    referredBy: "",
-    jobTitle: jobTitle || "",
-    job_title: "",
+    name: '',
+    email: '',
+    phone: '',
+    currentLocation: '',
+    qualification: '',
+    experience: '',
+    noticePeriod: '',
+    referredBy: '',
+    jobTitle: jobTitle || '',
+    job_title: '',
     resume: null as File | null,
-  })
+  });
 
-  const [defaultCountry, setDefaultCountry] = useState<string>("IN")
-  const [isLoading, setIsLoading] = useState(true)
-  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false)
-  const [isFormValid, setIsFormValid] = useState(false)
-  const fileInputRef = useRef<HTMLInputElement>(null)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const [errors, setErrors] = useState<{ [key: string]: string }>({})
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [touchedFields, setTouchedFields] = useState<{ [key: string]: boolean }>({})
+  const [defaultCountry, setDefaultCountry] = useState<string>('IN');
+  const [isLoading, setIsLoading] = useState(true);
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [touchedFields, setTouchedFields] = useState<{ [key: string]: boolean }>({});
 
   // Detect user's country based on IP
   useEffect(() => {
     const detectCountry = async () => {
       try {
-        const response = await fetch("https://ipapi.co/json/")
-        const data = await response.json()
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
         if (data.country) {
-          setDefaultCountry(data.country)
+          setDefaultCountry(data.country);
         }
       } catch (error) {
-        console.error("Could not detect country, using default:", error)
+        console.error('Could not detect country, using default:', error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
-    detectCountry()
-  }, [])
+    };
+    detectCountry();
+  }, []);
 
   const validateForm = () => {
-    const newErrors: { [key: string]: string } = {}
+    const newErrors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required."
+      newErrors.name = 'Name is required.';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required."
+      newErrors.email = 'Email is required.';
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Email is invalid."
+      newErrors.email = 'Email is invalid.';
     }
 
     if (!formData.phone) {
-      newErrors.phone = "Phone number is required."
+      newErrors.phone = 'Phone number is required.';
     } else {
-      const numericPhone = formData.phone.replace(/\D/g, "")
+      const numericPhone = formData.phone.replace(/\D/g, '');
       if (numericPhone.length > 0 && numericPhone.length < 8) {
-        newErrors.phone = "Mobile number should be at least 8 digits."
+        newErrors.phone = 'Mobile number should be at least 8 digits.';
       }
     }
 
     if (!formData.currentLocation.trim()) {
-      newErrors.currentLocation = "Current location is required."
+      newErrors.currentLocation = 'Current location is required.';
     }
 
     if (!formData.resume) {
-      newErrors.resume = "Please attach your resume."
+      newErrors.resume = 'Please attach your resume.';
     }
 
-    return newErrors
-  }
+    return newErrors;
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsCountryDropdownOpen(false)
+        setIsCountryDropdownOpen(false);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside)
+    };
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Validate form whenever formData changes, but only show errors for touched fields
   useEffect(() => {
-    const validationErrors = validateForm()
+    const validationErrors = validateForm();
 
     // Only show errors for fields that have been touched
-    const filteredErrors: { [key: string]: string } = {}
+    const filteredErrors: { [key: string]: string } = {};
     Object.keys(validationErrors).forEach((key) => {
       if (touchedFields[key]) {
-        filteredErrors[key] = validationErrors[key]
+        filteredErrors[key] = validationErrors[key];
       }
-    })
+    });
 
-    setErrors(filteredErrors)
-    setIsFormValid(Object.keys(validationErrors).length === 0)
-  }, [formData, touchedFields])
+    setErrors(filteredErrors);
+    setIsFormValid(Object.keys(validationErrors).length === 0);
+  }, [formData, touchedFields]);
 
-  const experienceOptions = ["Fresher", "1 year", "2 years", "3 years", "4 years", "5+ years"]
-  const noticePeriodOptions = ["Immediately", "15 days", "1 month", "2 months", "3 months", "More than 3 months"]
+  const experienceOptions = ['Fresher', '1 year', '2 years', '3 years', '4 years', '5+ years'];
+  const noticePeriodOptions = [
+    'Immediately',
+    '15 days',
+    '1 month',
+    '2 months',
+    '3 months',
+    'More than 3 months',
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Mark field as touched if it had content and now it's empty, or if it has content
-    if (value === "" && formData[name as keyof typeof formData]) {
-      setTouchedFields((prev) => ({ ...prev, [name]: true }))
+    if (value === '' && formData[name as keyof typeof formData]) {
+      setTouchedFields((prev) => ({ ...prev, [name]: true }));
     }
-  }
+  };
 
   const handleInputChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Mark phone field as touched if it becomes empty after having content
-    if (name === "phone" && value === "" && formData.phone) {
-      setTouchedFields((prev) => ({ ...prev, phone: true }))
+    if (name === 'phone' && value === '' && formData.phone) {
+      setTouchedFields((prev) => ({ ...prev, phone: true }));
     }
-  }
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, resume: e.target.files![0] }))
+      setFormData((prev) => ({ ...prev, resume: e.target.files![0] }));
     }
     // Mark resume as touched when file input is used
-    setTouchedFields((prev) => ({ ...prev, resume: true }))
-  }
+    setTouchedFields((prev) => ({ ...prev, resume: true }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const validationErrors = validateForm()
+    e.preventDefault();
+    const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
-      return
+      setErrors(validationErrors);
+      return;
     }
 
-    setErrors({})
+    setErrors({});
     if (!captchaToken) {
-      alert("Please verify that you're not a robot.")
-      return
+      alert("Please verify that you're not a robot.");
+      return;
     }
 
-    setIsSubmitting(true)
-    const formDataToSend = new FormData()
-    formDataToSend.append("name", formData.name)
-    formDataToSend.append("email", formData.email)
-    formDataToSend.append("phone", formData.phone || "")
-    formDataToSend.append("url", window.location.pathname)
-    formDataToSend.append("current_location", formData.currentLocation)
-    formDataToSend.append("qualification", formData.qualification)
-    formDataToSend.append("experience", formData.experience)
-    formDataToSend.append("notice_period", formData.noticePeriod)
-    formDataToSend.append("job_title", formData.jobTitle || "")
-    formDataToSend.append("referred_by", formData.referredBy || "")
+    setIsSubmitting(true);
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone || '');
+    formDataToSend.append('url', window.location.pathname);
+    formDataToSend.append('current_location', formData.currentLocation);
+    formDataToSend.append('qualification', formData.qualification);
+    formDataToSend.append('experience', formData.experience);
+    formDataToSend.append('notice_period', formData.noticePeriod);
+    formDataToSend.append('job_title', formData.jobTitle || '');
+    formDataToSend.append('referred_by', formData.referredBy || '');
     if (formData.resume) {
-      formDataToSend.append("resume", formData.resume)
+      formDataToSend.append('resume', formData.resume);
     }
 
     try {
-      const response = await fetch("https://www.bitpastel.com/api/sendemail.php/", {
-        method: "POST",
+      const response = await fetch('https://www.bitpastel.com/api/sendemail.php/', {
+        method: 'POST',
         body: formDataToSend,
-      })
+      });
       if (response.ok) {
-        setIsSubmitted(true)
+        setIsSubmitted(true);
       } else {
-        console.error("Failed to submit:", response.status)
-        alert("Something went wrong. Please try again.")
+        console.error('Failed to submit:', response.status);
+        alert('Something went wrong. Please try again.');
       }
     } catch (error) {
-      console.error("Network error:", error)
-      alert("Network error. Please check your connection.")
+      console.error('Network error:', error);
+      alert('Network error. Please check your connection.');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   const handleAttachmentClick = () => {
-    fileInputRef.current?.click()
-  }
+    fileInputRef.current?.click();
+  };
 
   if (isLoading) {
-    return <div className="max-w-[800px] mx-auto px-4 p-6 text-center">Loading...</div>
+    return <div className="max-w-[800px] mx-auto px-4 p-6 text-center">Loading...</div>;
   }
 
   if (isSubmitted) {
     return (
-      <div className={`${className ?? ""} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px] text-center`}>
-        <p className="text-[#009999] text-[20px] font-roboto">Thank you {formData.name} for your job application!</p>
+      <div
+        className={`${className ?? ''} max-w-[800px] mx-auto px-4 md:pt-[90px] pt-[70px] text-center`}
+      >
+        <p className="text-[#009999] text-[20px] font-roboto">
+          Thank you {formData.name} for your job application!
+        </p>
       </div>
-    )
+    );
   }
 
   return (
-    <div className={`${className ?? ""} max-w-[800px] mx-auto md:pt-[90px] pt-[70px] relative`} id="joinTeamForm">
+    <div
+      className={`${className ?? ''} max-w-[800px] mx-auto md:pt-[90px] pt-[70px] relative`}
+      id="joinTeamForm"
+    >
       {/* Loading overlay */}
       {isSubmitting && (
         <div className="absolute inset-0 bg-transparent bg-opacity-90 flex flex-col items-center justify-center z-10 rounded-lg">
-        <svg
-          style={{
-            left: "50%",
-            top: "50%",
-            position: "absolute",
-            transform: "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
-          }}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 187.3 93.7"
-          height="150px"
-          width="200px"
-        >
-          <path
-            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="4"
-            fill="none"
-            id="outline"
-            stroke="#009999"
-          />
-          <path
-            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="4"
-            stroke="#009999"
-            fill="none"
-            opacity="0.05"
-            id="outline-bg"
-          />
-        </svg>
+          <svg
+            style={{
+              left: '50%',
+              top: '50%',
+              position: 'absolute',
+              transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+            }}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 187.3 93.7"
+            height="150px"
+            width="200px"
+          >
+            <path
+              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="4"
+              fill="none"
+              id="outline"
+              stroke="#009999"
+            />
+            <path
+              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="4"
+              stroke="#009999"
+              fill="none"
+              opacity="0.05"
+              id="outline-bg"
+            />
+          </svg>
         </div>
       )}
 
       <h2 className="title text-title font-semibold font-source text-center mb-8">{title}</h2>
 
-      <form onSubmit={handleSubmit} className={`space-y-8 ${isSubmitting ? "pointer-events-none opacity-70" : ""}`}>
+      <form
+        onSubmit={handleSubmit}
+        className={`space-y-8 ${isSubmitting ? 'pointer-events-none opacity-70' : ''}`}
+      >
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column */}
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b ${
-                errors.name ? "border-red-500" : formData.name ? "border-[#04ff04]" : "border-gray-300"
+                errors.name
+                  ? 'border-red-500'
+                  : formData.name
+                    ? 'border-[#04ff04]'
+                    : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
                 <input
                   autoComplete="new-text-2"
                   readOnly
-                  onFocus={(e) => e.target.removeAttribute("readOnly")}
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -284,13 +305,19 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
                 />
               </div>
               {errors.name && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">{errors.name}</p>
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.name}
+                </p>
               )}
             </div>
 
             <div
               className={`relative flex gap-2 pt-[6px] border-b ${
-                errors.phone ? "border-red-500" : formData.phone ? "border-[#04ff04]" : "border-gray-300"
+                errors.phone
+                  ? 'border-red-500'
+                  : formData.phone
+                    ? 'border-[#04ff04]'
+                    : 'border-gray-300'
               }`}
             >
               <PhoneInput
@@ -300,19 +327,23 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
                 value={formData.phone}
                 onChange={(value) => {
                   if (!value) {
-                    handleInputChange("phone", "")
-                    return
+                    handleInputChange('phone', '');
+                    return;
                   }
-                  const digitsOnly = value.replace(/\D/g, "")
+                  const digitsOnly = value.replace(/\D/g, '');
                   if (digitsOnly.length <= 15) {
-                    handleInputChange("phone", value)
+                    handleInputChange('phone', value);
                   }
                 }}
                 onKeyDown={(e: React.KeyboardEvent) => {
-                  const digitsOnly = formData.phone.replace(/\D/g, "")
-                  const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"]
-                  if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
-                    e.preventDefault()
+                  const digitsOnly = formData.phone.replace(/\D/g, '');
+                  const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                  if (
+                    digitsOnly.length >= 15 &&
+                    !allowedKeys.includes(e.key) &&
+                    /^\d$/.test(e.key)
+                  ) {
+                    e.preventDefault();
                   }
                 }}
                 placeholder="Mobile number (optional)"
@@ -326,7 +357,9 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
                 </p>
               )}
               {errors.phone && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">{errors.phone}</p>
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.phone}
+                </p>
               )}
             </div>
 
@@ -334,7 +367,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               <input
                 autoComplete="new-text-99"
                 readOnly
-                onFocus={(e) => e.target.removeAttribute("readOnly")}
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="qualification"
                 placeholder="Qualification (Optional)"
@@ -366,7 +399,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               </select>
               <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
                 <span className="text-white subheading font-source font-thin">
-                  {formData.noticePeriod || "Notice Period (Optional)"}
+                  {formData.noticePeriod || 'Notice Period (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
@@ -377,14 +410,18 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
           <div className="space-y-6">
             <div
               className={`flex items-end gap-4 border-b pb- ${
-                errors.email ? "border-red-500" : formData.email ? "border-[#04ff04]" : "border-gray-300"
+                errors.email
+                  ? 'border-red-500'
+                  : formData.email
+                    ? 'border-[#04ff04]'
+                    : 'border-gray-300'
               }`}
             >
               <div className="flex-1">
                 <input
                   autoComplete="new-text-2"
                   readOnly
-                  onFocus={(e) => e.target.removeAttribute("readOnly")}
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
                   type="email"
                   name="email"
                   placeholder="Email Address"
@@ -395,23 +432,25 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
                 />
               </div>
               {errors.email && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">{errors.email}</p>
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.email}
+                </p>
               )}
             </div>
 
             <div
               className={`flex items-end gap-4 border-b !mt-6 ${
                 errors.currentLocation
-                  ? "border-red-500"
+                  ? 'border-red-500'
                   : formData.currentLocation
-                    ? "border-[#04ff04]"
-                    : "border-gray-300"
+                    ? 'border-[#04ff04]'
+                    : 'border-gray-300'
               }`}
             >
               <input
                 autoComplete="new-text-754"
                 readOnly
-                onFocus={(e) => e.target.removeAttribute("readOnly")}
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="currentLocation"
                 placeholder="Current Location"
@@ -421,7 +460,9 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
                 onBlur={() => setTouchedFields((prev) => ({ ...prev, currentLocation: true }))}
               />
               {errors.currentLocation && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">{errors.currentLocation}</p>
+                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                  {errors.currentLocation}
+                </p>
               )}
             </div>
 
@@ -447,7 +488,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               </select>
               <div className="flex justify-between items-center w-full p-2">
                 <span className="text-white subheading font-source font-thin">
-                  {formData.experience || "Years of experience (Optional)"}
+                  {formData.experience || 'Years of experience (Optional)'}
                 </span>
                 <ChevronDown className="h-4 w-4 text-black" />
               </div>
@@ -457,7 +498,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               <input
                 autoComplete="new-text-452"
                 readOnly
-                onFocus={(e) => e.target.removeAttribute("readOnly")}
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
                 name="referredBy"
                 placeholder="Referred By (Optional)"
@@ -481,7 +522,11 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
           />
           <div
             className={`flex items-center gap-3 border-b ${
-              errors.resume ? "border-red-500" : formData.resume ? "border-[#04ff04]" : "border-gray-300"
+              errors.resume
+                ? 'border-red-500'
+                : formData.resume
+                  ? 'border-[#04ff04]'
+                  : 'border-gray-300'
             }`}
           >
             <button
@@ -492,7 +537,9 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
               <Paperclip className="w-5 h-5" />
               <span>Attach your CV/Resume</span>
             </button>
-            {formData.resume && <span className="text-sm text-gray-600">{formData.resume.name}</span>}
+            {formData.resume && (
+              <span className="text-sm text-gray-600">{formData.resume.name}</span>
+            )}
           </div>
           {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
         </div>
@@ -509,7 +556,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
           <button
             type="submit"
             className={`bg-green-btn text-primary-white font-medium py-2 px-28 rounded transition duration-200 text-center ${
-              !isFormValid || !captchaToken ? "opacity-20 cursor-not-allowed" : ""
+              !isFormValid || !captchaToken ? 'opacity-20 cursor-not-allowed' : ''
             }`}
             disabled={!isFormValid || !captchaToken}
           >
@@ -517,7 +564,7 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
           </button>
           {/* Privacy Policy */}
           <p className="text-white text-center font-roboto text-[10px]">
-            By clicking "Send", you agree to our{" "}
+            By clicking "Send", you agree to our{' '}
             <Link href="/privacy-policys" className=" text-till hover:underline">
               Privacy Policy
             </Link>
@@ -525,5 +572,5 @@ export default function JoinTeam({ title = "Join Our Team", className, jobTitle 
         </div>
       </form>
     </div>
-  )
+  );
 }
