@@ -86,7 +86,7 @@
 .team-first-banner .first {
   overflow: hidden;
   position: relative;
-  background: #f5cd47;
+  background: #F5CD47;
   height: 550px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -94,7 +94,7 @@
 .team-first-banner .first .testi-image {
   position: absolute;
   bottom: 0;
-  left: 20%;
+  left: 10%;
   width: 100%;
   max-width: 400px;
   display: block;
@@ -105,8 +105,8 @@
   position: absolute;
   width: 100%;
   max-width: 500px;
-  left: 40%;
-  top: 80px;
+    left: 44%;
+    top: 25%;
 }
 
 .mob-team {
@@ -116,7 +116,7 @@
 .team-first-banner .second {
   margin-top: -50px;
   position: relative;
-  background: #aa83dc;
+  background: #AA83DC;
   height: 550px;
   -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
@@ -134,13 +134,14 @@
   position: absolute;
   width: 100%;
   max-width: 500px;
-  right: 35%;
-  top: 80px;
+  right: 36%;
+  top: 30%;
+  
 }
 .team-first-banner .third .testi-image {
     position: absolute;
     bottom: 0;
-    left: 20%;
+    left: 10%;
     width: 100%;
     max-width: 400px;
     display: block;
@@ -149,15 +150,15 @@
     position: absolute;
     width: 100%;
     max-width: 500px;
-    left: 45%;
-    top: 100px;
+    left: 44%;
+    top: 38%;
 }
 
 
 .team-first-banner .third {
     margin-top: -50px;
     position: relative;
-    background: #ed8376;
+    background: #ED8376;
     height: 550px;
     -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
