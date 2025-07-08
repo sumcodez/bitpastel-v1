@@ -351,7 +351,7 @@ const BecomePartner = () => {
                   )}
                 </div>
                 <button
-                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-50"
+                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
                   type="submit"
                   disabled={isSubmitting || !isFormValid}
                 >

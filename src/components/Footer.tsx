@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import  Modal  from '@/components/Modal';
+import Whatsapp from '@/components/ui/Whatsapp';
 const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
@@ -511,7 +512,7 @@ const Footer = () => {
       </div>
     </footer>
     <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
+    <Whatsapp />
     </>
   );
 };
