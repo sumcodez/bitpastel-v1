@@ -40,15 +40,6 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-[90px] lg:gap-8 mb-8 align-top footer-wrapper">
             <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
-              {/* <Link href="/">
-                <Image
-                  src="/images/Footer-logo.png"
-                  alt="Bitpastel Logo"
-                  width={196}
-                  height={75}
-                  className="h-12 w-auto"
-                />
-              </Link> */}
 
               <Link href="/" legacyBehavior>
                 <a className="inline-block">
@@ -293,6 +284,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+
+
+
+      {/* Mobile Nav */}
       <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
         <div className="footer-mobile-nav flex justify-around items-center py-2 ">
           <div className={`nav-item flex flex-col items-center ${isActive('/') ? 'active' : ''}`}>
@@ -510,6 +506,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+
     </footer>
     <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     <Whatsapp />
