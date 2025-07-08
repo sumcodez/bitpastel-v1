@@ -208,6 +208,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
   };
 
   const handleAttachmentClick = () => {
+    setTouchedFields((prev) => ({ ...prev, resume: true }));
     fileInputRef.current?.click();
   };
 
@@ -522,7 +523,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
           />
           <div
             className={`flex items-center gap-3 border-b ${
-              errors.resume
+              errors.resume && touchedFields.resume
                 ? 'border-red-500'
                 : formData.resume
                   ? 'border-[#04ff04]'
@@ -535,7 +536,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
               className="flex items-center gap-2 pb-[5px] text-white subheading font-source font-thin"
             >
               <Paperclip className="w-5 h-5" />
-              <span>Attach your CV/Resume</span>
+              <span>{formData.resume ? formData.resume.name : 'Attach your CV/Resume'}</span>
             </button>
             {formData.resume && (
               <span className="text-sm text-gray-600">{formData.resume.name}</span>
