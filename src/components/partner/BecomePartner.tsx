@@ -308,6 +308,14 @@ const BecomePartner = () => {
                     defaultCountry={defaultCountry as any}
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
+                    onKeyDown={(e: React.KeyboardEvent) => {
+                      const digitsOnly = formData.phone.replace(/\D/g, '');
+                      const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                      if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
+                    autoComplete='new-text-58564'
                     placeholder="Mobile number (optional)"
                     disabled={isSubmitting}
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
