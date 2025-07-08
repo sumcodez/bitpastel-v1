@@ -73,6 +73,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   useEffect(() => {
     if (open) {
       setIsVisible(true);
+      setFormData(initialFormData);
+      setIsSuccess(false);
       // Small delay to ensure the element is rendered before starting animation
       setTimeout(() => setIsAnimating(true), 10);
     } else {
@@ -125,6 +127,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Detect user's country based on IP
   useEffect(() => {
@@ -202,9 +205,10 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
       if (response.ok) {
         const result = await response.text();
         console.log('Success:', result);
-        alert('Thank you! Your request has been submitted.');
+        setIsSuccess(true);
+        //alert('Thank you! Your request has been submitted.');
         setFormData(initialFormData); // Reset form data
-        onClose();
+        //onClose();
       } else {
         console.error('Failed to submit form:', response.status);
         alert('Oops! Something went wrong. Please try again.');
@@ -393,8 +397,14 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     </h3>
                   </div>
                 </div>
+
+                {/* Form Section */}
                 <div className="bg-[#fff] md:p-[35px] p-[15px] md:shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
-                  <h2 className="text-center title font-source mb-4 font-light text-title ">
+                  {isSuccess ? (
+                    <h2 className='text-center title font-source mb-4 font-light text-title '>Request Sent Successfully'</h2>
+                  ):(
+                    <>
+                    <h2 className="text-center title font-source mb-4 font-light text-title ">
                     Get a Free Quote
                   </h2>
                   <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
@@ -569,6 +579,10 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       </button>
                     </div>
                   </form>
+                
+                </>
+                  )}
+                  
                 </div>
                 <div className="flex flex-wrap gap-4 flex-col justify-center pt-6 pb-5 text-center md:hidden">
                   {/* UK - Visible on all screens */}
