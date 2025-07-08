@@ -245,7 +245,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
         }`}
       >
         {isSubmitting && (
-          <div className="absolute flex items-center justify-center z-50">
+          <div className="absolute inset-0 flex items-center justify-center z-50 bg-transparent">
             <svg
               style={{
                 left: '50%',
