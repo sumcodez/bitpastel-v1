@@ -7,7 +7,7 @@ import * as countryCodesList from 'country-codes-list';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
-import { CircleCheck, CircleCheckBig, Phone } from 'lucide-react';
+import { CircleCheck, CircleCheckBig, Phone, Check } from 'lucide-react';
 
 interface ModalProps {
   open: boolean;
@@ -404,7 +404,11 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   {isSuccess ? (
                     <>
                       <div className="flex flex-col items-center justify-center space-y-6 py-8">
-                        <CircleCheckBig className="mx-auto text-[#009999] w-[86px] h-[86px] bg-transparent" />
+
+                        {/* Green circle with check icon */}
+                        <div className="w-[84px] h-[84px] rounded-full bg-[#00A944] flex items-center justify-center">
+                          <Check className="text-white w-[48px] h-[48px] opacity-100" strokeWidth={3} />
+                        </div>
 
                         <div className="space-y-4 text-center">
                           <p className="text-[#009999] font-[100] text-[16px] font-roboto">
@@ -420,22 +424,40 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           </p>
 
                           <div className="flex flex-col items-center space-y-4">
-                            {/* US Number */}
-                            <a
-                              href="tel:+18724446679"
+                            {/* US Number with custom image */}
+                            <a 
+                              href="tel:+18724446679" 
                               className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
                             >
-                              <Phone className="w-5 h-5" />
-                              <span>US: +1 (872) 444 6679</span>
+                              <Phone className="w-[24px] h-[24px] text-[#009999] fill-current" strokeWidth={0.5}/>
+                              <div className="w-6 h-6 relative">
+                                <Image 
+                                  src="/flags/us.png" 
+                                  alt="US Flag"
+                                  width={26}
+                                  height={26}
+                                  className="object-contain"
+                                />
+                              </div>
+                              <span>+1 (872) 444 6679</span>
                             </a>
-
-                            {/* India Number */}
-                            <a
-                              href="tel:+919830566248"
+                            
+                            {/* India Number with custom image */}
+                            <a 
+                              href="tel:+919830566248" 
                               className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
                             >
-                              <Phone className="w-5 h-5" />
-                              <span>IN: +91 9830 566 248</span>
+                              <Phone className="w-[24px] h-[24px] text-[#009999] fill-current" strokeWidth={0.5}/>
+                              <div className="w-6 h-6 relative">
+                                <Image 
+                                  src="/flags/in.png" 
+                                  alt="India Flag"
+                                  width={26}
+                                  height={26}
+                                  className="object-contain"
+                                />
+                              </div>
+                              <span>+91 9830 566 248</span>
                             </a>
                           </div>
                         </div>
