@@ -79,6 +79,13 @@ button {
 
 
 @layer utilities {
+  .error-text{
+    font-size: 11px;
+    color: red;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+  }
   .text-title{
     color: var(--text-title);
   }

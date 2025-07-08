@@ -281,238 +281,237 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
       >
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column */}
-          <div className="space-y-6">
-            <div
-              className={`flex items-end gap-4 border-b ${
-                errors.name
-                  ? 'border-red-500'
-                  : formData.name
-                    ? 'border-[#04ff04]'
-                    : 'border-gray-300'
-              }`}
-            >
-              <div className="flex-1">
-                <input
-                  autoComplete="new-text-2"
-                  readOnly
-                  onFocus={(e) => e.target.removeAttribute('readOnly')}
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full p-2 text-title subheading font-source font-thin focus:outline-none bg-transparent"
-                  onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
-                />
-              </div>
-              {errors.name && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                  {errors.name}
-                </p>
-              )}
-            </div>
+          {/* <div className="space-y-6"> */}
 
-            <div
-              className={`relative flex gap-2 pt-[6px] border-b ${
-                errors.phone
-                  ? 'border-red-500'
-                  : formData.phone
-                    ? 'border-[#04ff04]'
-                    : 'border-gray-300'
-              }`}
-            >
-              <PhoneInput
-                international
-                defaultCountry={defaultCountry as any}
-                countryCallingCodeEditable={false}
-                value={formData.phone}
-                onChange={(value) => {
-                  if (!value) {
-                    handleInputChange('phone', '');
-                    return;
-                  }
-                  const digitsOnly = value.replace(/\D/g, '');
-                  if (digitsOnly.length <= 15) {
-                    handleInputChange('phone', value);
-                  }
-                }}
-                onKeyDown={(e: React.KeyboardEvent) => {
-                  const digitsOnly = formData.phone.replace(/\D/g, '');
-                  const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-                  if (
-                    digitsOnly.length >= 15 &&
-                    !allowedKeys.includes(e.key) &&
-                    /^\d$/.test(e.key)
-                  ) {
-                    e.preventDefault();
-                  }
-                }}
-                placeholder="Mobile number (optional)"
-                autoComplete="new-text-852"
-                className="!border-none gap-[20px] subheading font-roboto w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
-                onBlur={() => setTouchedFields((prev) => ({ ...prev, phone: true }))}
-              />
-              {!formData.phone && (
-                <p className="text-white absolute top-[16px] subheading left-[130px] whitespace-nowrap font-[100] pointer-events-none">
-                  Mobile number
-                </p>
-              )}
-              {errors.phone && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                  {errors.phone}
-                </p>
-              )}
-            </div>
-
-            <div className="border-b border-[#04ff04]">
+          <div
+            className={`flex items-end gap-4 border-b relative ${
+              errors.name
+                ? 'border-red-500'
+                : formData.name
+                  ? 'border-[#04ff04]'
+                  : 'border-gray-300'
+            }`}
+          >
+            <div className="flex-1">
               <input
-                autoComplete="new-text-99"
+                autoComplete="new-text-2"
                 readOnly
                 onFocus={(e) => e.target.removeAttribute('readOnly')}
                 type="text"
-                name="qualification"
-                placeholder="Qualification (Optional)"
-                value={formData.qualification}
+                name="name"
+                placeholder="Name"
+                value={formData.name}
                 onChange={handleChange}
-                className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
+                className="w-full p-2 text-title subheading font-source font-thin focus:outline-none bg-transparent"
+                onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
               />
             </div>
+            {errors.name && (
+              <p className="error-text whitespace-nowrap">
+                {errors.name}
+              </p>
+            )}
+          </div>
 
-            <div className="relative cursor-pointer group ">
-              <select
-                name="noticePeriod"
-                value={formData.noticePeriod}
+          <div
+            className={`flex items-end gap-4 relative border-b pb- ${
+              errors.email
+                ? 'border-red-500'
+                : formData.email
+                  ? 'border-[#04ff04]'
+                  : 'border-gray-300'
+            }`}
+          >
+            <div className="flex-1">
+              <input
+                autoComplete="new-text-2"
+                readOnly
+                onFocus={(e) => e.target.removeAttribute('readOnly')}
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
                 onChange={handleChange}
-                className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
-              >
-                <option value="" className="text-title subheading font-source font-thin">
-                  Notice Period (Optional)
+                className="w-full p-2 text-title subheading font-source font-thin focus:outline-none bg-transparent"
+                onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
+              />
+            </div>
+            {errors.email && (
+              <p className="error-text whitespace-nowrap">
+                {errors.email}
+              </p>
+            )}
+          </div>
+
+          <div
+            className={`relative flex gap-2 border-b ${
+              errors.phone
+                ? 'border-red-500'
+                : formData.phone
+                  ? 'border-[#04ff04]'
+                  : 'border-gray-300'
+            }`}
+          >
+            <PhoneInput
+              international
+              defaultCountry={defaultCountry as any}
+              countryCallingCodeEditable={false}
+              value={formData.phone}
+              onChange={(value) => {
+                if (!value) {
+                  handleInputChange('phone', '');
+                  return;
+                }
+                const digitsOnly = value.replace(/\D/g, '');
+                if (digitsOnly.length <= 15) {
+                  handleInputChange('phone', value);
+                }
+              }}
+              onKeyDown={(e: React.KeyboardEvent) => {
+                const digitsOnly = formData.phone.replace(/\D/g, '');
+                const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
+                  e.preventDefault();
+                }
+              }}
+              placeholder="Mobile number (optional)"
+              autoComplete="new-text-852"
+              className="!border-none gap-[12px] subheading font-roboto w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+              onBlur={() => setTouchedFields((prev) => ({ ...prev, phone: true }))}
+            />
+            {!formData.phone && (
+              <p className="text-white absolute top-[9px] subheading left-[120px] whitespace-nowrap font-[100] pointer-events-none">
+                Mobile number
+              </p>
+            )}
+            {errors.phone && (
+              <p className="error-text whitespace-nowrap">
+                {errors.phone}
+              </p>
+            )}
+          </div>
+
+          <div
+            className={`flex items-end gap-4 relative border-b ${
+              errors.currentLocation
+                ? 'border-red-500'
+                : formData.currentLocation
+                  ? 'border-[#04ff04]'
+                  : 'border-gray-300'
+            }`}
+          >
+            <input
+              autoComplete="new-text-754"
+              readOnly
+              onFocus={(e) => e.target.removeAttribute('readOnly')}
+              type="text"
+              name="currentLocation"
+              placeholder="Current Location"
+              value={formData.currentLocation}
+              onChange={handleChange}
+              className="flex-1 text-title subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
+              onBlur={() => setTouchedFields((prev) => ({ ...prev, currentLocation: true }))}
+            />
+            {errors.currentLocation && (
+              <p className="error-text whitespace-nowrap">
+                {errors.currentLocation}
+              </p>
+            )}
+          </div>
+
+          <div className="border-b border-[#04ff04] relative">
+            <input
+              autoComplete="new-text-99"
+              readOnly
+              onFocus={(e) => e.target.removeAttribute('readOnly')}
+              type="text"
+              name="qualification"
+              placeholder="Qualification (Optional)"
+              value={formData.qualification}
+              onChange={handleChange}
+              className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
+            />
+          </div>
+          <div className="relative cursor-pointer group border-b border-[#04ff04]">
+            <select
+              name="experience"
+              value={formData.experience}
+              onChange={handleChange}
+              className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+            >
+              <option value="" className="text-title subheading font-source font-thin">
+                Years of experience (Optional)
+              </option>
+              {experienceOptions.map((option, index) => (
+                <option
+                  key={index}
+                  value={option}
+                  className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                >
+                  {option}
                 </option>
-                {noticePeriodOptions.map((option, index) => (
-                  <option
-                    key={index}
-                    value={option}
-                    className="text-title subheading font-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
-                  >
-                    {option}
-                  </option>
-                ))}
-              </select>
-              <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-                <span className="text-white subheading font-source font-thin">
-                  {formData.noticePeriod || 'Notice Period (Optional)'}
-                </span>
-                <ChevronDown className="h-4 w-4 text-black" />
-              </div>
+              ))}
+            </select>
+            <div className="flex justify-between items-center w-full p-2">
+              <span className="text-white subheading font-source font-thin">
+                {formData.experience || 'Years of experience (Optional)'}
+              </span>
+              <ChevronDown className="h-4 w-4 text-black" />
             </div>
           </div>
+
+          <div className="relative cursor-pointer group ">
+            <select
+              name="noticePeriod"
+              value={formData.noticePeriod}
+              onChange={handleChange}
+              className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
+            >
+              <option value="" className="text-title subheading font-source font-thin">
+                Notice Period (Optional)
+              </option>
+              {noticePeriodOptions.map((option, index) => (
+                <option
+                  key={index}
+                  value={option}
+                  className="text-title subheading font-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
+                >
+                  {option}
+                </option>
+              ))}
+            </select>
+            <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
+              <span className="text-white subheading font-source font-thin">
+                {formData.noticePeriod || 'Notice Period (Optional)'}
+              </span>
+              <ChevronDown className="h-4 w-4 text-black" />
+            </div>
+          </div>
+
+          {/* </div> */}
 
           {/* Right Column */}
-          <div className="space-y-6">
-            <div
-              className={`flex items-end gap-4 border-b pb- ${
-                errors.email
-                  ? 'border-red-500'
-                  : formData.email
-                    ? 'border-[#04ff04]'
-                    : 'border-gray-300'
-              }`}
-            >
-              <div className="flex-1">
-                <input
-                  autoComplete="new-text-2"
-                  readOnly
-                  onFocus={(e) => e.target.removeAttribute('readOnly')}
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full p-2 text-title subheading font-source font-thin focus:outline-none bg-transparent"
-                  onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
-                />
-              </div>
-              {errors.email && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                  {errors.email}
-                </p>
-              )}
-            </div>
+          {/* <div className="space-y-6"> */}
 
-            <div
-              className={`flex items-end gap-4 border-b !mt-6 ${
-                errors.currentLocation
-                  ? 'border-red-500'
-                  : formData.currentLocation
-                    ? 'border-[#04ff04]'
-                    : 'border-gray-300'
-              }`}
-            >
-              <input
-                autoComplete="new-text-754"
-                readOnly
-                onFocus={(e) => e.target.removeAttribute('readOnly')}
-                type="text"
-                name="currentLocation"
-                placeholder="Current Location"
-                value={formData.currentLocation}
-                onChange={handleChange}
-                className="flex-1 text-title mt-1.5 subheading p-2 sm:subheading font-source font-thin focus:outline-none bg-transparent"
-                onBlur={() => setTouchedFields((prev) => ({ ...prev, currentLocation: true }))}
-              />
-              {errors.currentLocation && (
-                <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
-                  {errors.currentLocation}
-                </p>
-              )}
-            </div>
 
-            <div className="relative cursor-pointer group border-b border-[#04ff04]">
-              <select
-                name="experience"
-                value={formData.experience}
-                onChange={handleChange}
-                className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
-              >
-                <option value="" className="text-title subheading font-source font-thin">
-                  Years of experience (Optional)
-                </option>
-                {experienceOptions.map((option, index) => (
-                  <option
-                    key={index}
-                    value={option}
-                    className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
-                  >
-                    {option}
-                  </option>
-                ))}
-              </select>
-              <div className="flex justify-between items-center w-full p-2">
-                <span className="text-white subheading font-source font-thin">
-                  {formData.experience || 'Years of experience (Optional)'}
-                </span>
-                <ChevronDown className="h-4 w-4 text-black" />
-              </div>
-            </div>
-
-            <div className="border-b border-[#04ff04]">
-              <input
-                autoComplete="new-text-452"
-                readOnly
-                onFocus={(e) => e.target.removeAttribute('readOnly')}
-                type="text"
-                name="referredBy"
-                placeholder="Referred By (Optional)"
-                value={formData.referredBy}
-                onChange={handleChange}
-                className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
-              />
-            </div>
+          <div className="border-b border-[#04ff04] relative">
+            <input
+              autoComplete="new-text-452"
+              readOnly
+              onFocus={(e) => e.target.removeAttribute('readOnly')}
+              type="text"
+              name="referredBy"
+              placeholder="Referred By (Optional)"
+              value={formData.referredBy}
+              onChange={handleChange}
+              className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
+            />
           </div>
+          {/* </div> */}
         </div>
 
         {/* File input section */}
-        <div className="pt-[10px]">
+        <div className="pt-[10px] relative">
           <input
             type="file"
             name="resume"
@@ -538,11 +537,11 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
               <Paperclip className="w-5 h-5" />
               <span>{formData.resume ? formData.resume.name : 'Attach your CV/Resume'}</span>
             </button>
-            {formData.resume && (
+            {/* {formData.resume && (
               <span className="text-sm text-gray-600">{formData.resume.name}</span>
-            )}
+            )} */}
           </div>
-          {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
+          {errors.resume && <p className="error-text">{errors.resume}</p>}
         </div>
 
         <div className="flex flex-col items-center justify-center md:pt-6 pt-2 gap-2">
