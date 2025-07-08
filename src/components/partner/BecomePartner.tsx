@@ -306,6 +306,7 @@ const BecomePartner = () => {
                   <PhoneInput
                     international
                     defaultCountry={defaultCountry as any}
+                    countryCallingCodeEditable={false}
                     value={formData.phone}
                     onChange={(value) => handlePhoneChange(value)}
                     onKeyDown={(e: React.KeyboardEvent) => {

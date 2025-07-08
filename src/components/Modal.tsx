@@ -448,6 +448,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         <PhoneInput
                           international
                           defaultCountry={defaultCountry as any}
+                          countryCallingCodeEditable={false}
                           value={formData.phone}
                           onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
