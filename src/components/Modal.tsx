@@ -234,7 +234,44 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   if (!isVisible) return null;
 
   if (isLoading) {
-    return <div className="max-w-4xl mx-auto p-6 text-center">Loading...</div>;
+    return <div className="max-w-4xl mx-auto p-6 text-center">
+       <div className="absolute inset-0 flex items-center justify-center z-50">
+            <svg
+              style={{
+                left: '50%',
+                top: '50%',
+                position: 'absolute',
+                transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+              }}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 187.3 93.7"
+              height="150px"
+              width="200px"
+            >
+              <path
+                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                strokeMiterlimit="10"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="4"
+                fill="none"
+                id="outline"
+                stroke="#009999"
+              />
+              <path
+                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                strokeMiterlimit="10"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="4"
+                stroke="#009999"
+                fill="none"
+                opacity="0.05"
+                id="outline-bg"
+              />
+            </svg>
+          </div>
+    </div>;
   }
 
   return (
@@ -403,63 +440,70 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                 <div className="bg-[#fff] md:p-[35px] p-[15px] md:shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
                   {isSuccess ? (
                     <>
-                      <div className="flex flex-col items-center justify-center space-y-6 py-8">
-
+                      <div className="grid grid-cols-1 min-h-[450px] place-items-center justify-between">
                         {/* Green circle with check icon */}
-                        <div className="w-[84px] h-[84px] rounded-full bg-[#00A944] flex items-center justify-center">
-                          <Check className="text-white w-[48px] h-[48px] opacity-100" strokeWidth={3} />
+                        <div className="w-[100px] h-[100px] rounded-full bg-[#00A944] flex items-center justify-center">
+                          <Check
+                            className="text-primary-white w-[60px] h-[60px]"
+                            strokeWidth={3}
+                          />
                         </div>
 
-                        <div className="space-y-4 text-center">
-                          <p className="text-[#009999] font-[100] text-[16px] font-roboto">
+                        <div className=" text-center text-dark">
+                          <p className=" font-[100] paragraph font-roboto">
                             Thanks, you're all set
                           </p>
 
-                          <p className="text-[#009999] font-[100] text-[16px] font-roboto">
+                          <p className="font-[100] paragraph font-roboto">
                             We have received your request and we will get back to you soon
                           </p>
 
-                          <p className="text-[#009999] font-[100] text-[16px] font-roboto pb-4">
+                          
+                        </div>
+                        <div className="flex flex-col items-center space-y-2">
+                          {/* US Number with custom image */}
+                          <p className=" font-[100] text-dark paragraph font-roboto">
                             Please tap below to call us
                           </p>
+                          <a
+                            href="tel:+18724446679"
+                            className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
+                          >
+                            <Phone
+                              className="w-[24px] h-[24px] text-[#009999] fill-current"
+                              strokeWidth={0.5}
+                            />
+                            <div className="w-6 h-6 relative">
+                              <Image
+                                src="/flags/us.png"
+                                alt="US Flag"
+                                width={26}
+                                height={26}
+                                className="object-contain"
+                              />
+                            </div>
+                            <span>+1 (872) 444 6679</span>
+                          </a>
 
-                          <div className="flex flex-col items-center space-y-4">
-                            {/* US Number with custom image */}
-                            <a 
-                              href="tel:+18724446679" 
-                              className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
-                            >
-                              <Phone className="w-[24px] h-[24px] text-[#009999] fill-current" strokeWidth={0.5}/>
-                              <div className="w-6 h-6 relative">
-                                <Image 
-                                  src="/flags/us.png" 
-                                  alt="US Flag"
-                                  width={26}
-                                  height={26}
-                                  className="object-contain"
-                                />
-                              </div>
-                              <span>+1 (872) 444 6679</span>
-                            </a>
-                            
-                            {/* India Number with custom image */}
-                            <a 
-                              href="tel:+919830566248" 
-                              className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
-                            >
-                              <Phone className="w-[24px] h-[24px] text-[#009999] fill-current" strokeWidth={0.5}/>
-                              <div className="w-6 h-6 relative">
-                                <Image 
-                                  src="/flags/in.png" 
-                                  alt="India Flag"
-                                  width={26}
-                                  height={26}
-                                  className="object-contain"
-                                />
-                              </div>
-                              <span>+91 9830 566 248</span>
-                            </a>
-                          </div>
+                          <a
+                            href="tel:+919830566248"
+                            className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
+                          >
+                            <Phone
+                              className="w-[24px] h-[24px] text-[#009999] fill-current"
+                              strokeWidth={0.5}
+                            />
+                            <div className="w-6 h-6 relative">
+                              <Image
+                                src="/flags/in.png"
+                                alt="India Flag"
+                                width={26}
+                                height={26}
+                                className="object-contain"
+                              />
+                            </div>
+                            <span>+91 9830 566 248</span>
+                          </a>
                         </div>
                       </div>
                     </>
@@ -534,7 +578,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                               placeholder="Full Name"
                               value={formData.fullName}
                               onChange={(e) => handleInputChange('fullName', e.target.value)}
-                              className={`w-full focus:outline-none py-2 ${validationErrors.fullName ? 'placeholder-red-500' : ''}`}
+                              className={`w-full focus:outline-none font-[100] py-2 ${validationErrors.fullName ? 'placeholder-red-500' : ''}`}
                             />
 
                             {validationErrors.fullName && (
@@ -554,7 +598,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                               placeholder="Email"
                               value={formData.email}
                               onChange={(e) => handleInputChange('email', e.target.value)}
-                              className={`w-full focus:outline-none py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
+                              className={`w-full focus:outline-none font-[100] py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
                             />
                             {validationErrors.email && (
                               <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
@@ -592,7 +636,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                                   e.preventDefault();
                                 }
                               }}
-                              className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                              className="!border-none gap-[20px] font-[100] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
                             />
                             {!formData.phone && (
                               <p className="text-white z-10 top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none absolute right-0">
@@ -611,7 +655,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                               value={formData.message}
                               onChange={(e) => handleInputChange('message', e.target.value)}
                               rows={2}
-                              className="w-full focus:outline-none resize-none min-h-[60px] py-2"
+                              className="w-full focus:outline-none font-[100] resize-none min-h-[60px] py-2"
                             />
                           </div>
                         </div>
