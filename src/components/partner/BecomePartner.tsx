@@ -261,7 +261,7 @@ const BecomePartner = () => {
                 </div>
               )}
               <form onSubmit={handleSubmit}>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2]">
+                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
                       autoComplete="new-text-4"
@@ -278,10 +278,10 @@ const BecomePartner = () => {
                     />
                   </div>
                   {errors.name && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.name}</span>
+                    <span className="error-text">{errors.name}</span>
                   )}
                 </div>
-                <div className="become-input flex items-start border-b-[1px] border-[#B2B2B2] mt-4">
+                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
                       autoComplete="new-text-3"
@@ -298,11 +298,11 @@ const BecomePartner = () => {
                     />
                   </div>
                   {errors.email && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.email}</span>
+                    <span className="error-text">{errors.email}</span>
                   )}
                 </div>
 
-                <div className={`relative flex gap-2 py-[8px] border-b-[1px] border-[#B2B2B2] mt-4`}>
+                <div className={`relative flex gap-2 py-[4px] border-b-[1px] border-[#B2B2B2]`}>
                   <PhoneInput
                     international
                     defaultCountry={defaultCountry as any}
@@ -313,18 +313,18 @@ const BecomePartner = () => {
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
-                    <p className="text-white subheading absolute md:top-[16px] lg:left-[130px] md:left-[68px] left-[75px] top-[16px] whitespace-nowrap font-[100] pointer-events-none">
+                    <p className="text-white subheading absolute md:top-[12px] lg:left-[130px] md:left-[68px] left-[75px] top-[12px] whitespace-nowrap font-[100] pointer-events-none">
                       Mobile number(Optional)
                     </p>
                   )}
-                  {errors.phone && (
+                  {/* {errors.phone && (
                     <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
                       {errors.phone}
                     </p>
-                  )}
+                  )} */}
                 </div>
 
-                <div className="become-textarea flex items-start border-b-[1px] border-[#B2B2B2] mt-4">
+                <div className="become-textarea flex items-start border-b-[1px] relative border-[#B2B2B2]">
                   <div className="flex-1">
                     <textarea
                       autoComplete="new-text-178"
@@ -339,11 +339,11 @@ const BecomePartner = () => {
                     />
                   </div>
                   {errors.message && (
-                    <span className="text-red-500 text-sm ml-2 mt-2">{errors.message}</span>
+                    <span className="error-text">{errors.message}</span>
                   )}
                 </div>
                 <button
-                  className="form-button mt-[30px] bg-green-btn w-full py-3 rounded disabled:opacity-50"
+                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-50"
                   type="submit"
                   disabled={isSubmitting || !isFormValid}
                 >
