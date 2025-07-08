@@ -529,7 +529,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                               <span className="text-[#212529] font-[100]">I want</span>
                               <span
                                 className={`ml-12 text-[#B2B2B2] font-light ${
-                                  validationErrors.service ? 'text-red-500' : ''
+                                  validationErrors.service ? 'text-red-500' : 'text-[#212529]'
                                 }`}
                               >
                                 {formData.service || 'select*'}
