@@ -7,6 +7,7 @@ import * as countryCodesList from 'country-codes-list';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
+import { CircleCheck, CircleCheckBig, Phone } from 'lucide-react';
 
 interface ModalProps {
   open: boolean;
@@ -401,188 +402,227 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                 {/* Form Section */}
                 <div className="bg-[#fff] md:p-[35px] p-[15px] md:shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
                   {isSuccess ? (
-                    <h2 className='text-center title font-source mb-4 font-light text-title '>Request Sent Successfully'</h2>
-                  ):(
                     <>
-                    <h2 className="text-center title font-source mb-4 font-light text-title ">
-                    Get a Free Quote
-                  </h2>
-                  <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between">
-                    <div className="space-y-2">
-                      {/* Combined "I want" and service selection */}
-                      <div className="relative pb-1 border-b border-gray-200">
-                        <button
-                          type="button"
-                          onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
-                          className={`w-full flex items-center focus:outline-none py-2 px-0 h-auto justify-start ${
-                            validationErrors.service ? 'text-red-500' : ''
-                          }`}
-                        >
-                          <span className="text-[#212529] font-[100]">I want</span>
-                          <span
-                            className={`ml-12 text-[#B2B2B2] font-light ${
-                              validationErrors.service ? 'text-red-500' : ''
-                            }`}
-                          >
-                            {formData.service || 'select*'}
-                          </span>
-                          <ChevronDown
-                            className={`ml-auto mr-[20px] w-4 h-4 text-[#212529] transition-transform ${
-                              isServiceDropdownOpen ? 'rotate-180' : ''
-                            }`}
-                          />
-                        </button>
+                      <div className="flex flex-col items-center justify-center space-y-6 py-8">
+                        <CircleCheckBig className="mx-auto text-[#009999] w-[86px] h-[86px] bg-transparent" />
 
-                        {isServiceDropdownOpen && (
-                          <div className="absolute top-full left-0 right-0 mt-1 bg-[#ffffff] border border-gray-200 rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto">
-                            {services.map((service) => (
-                              <button
-                                key={service}
-                                type="button"
-                                onClick={() => {
-                                  handleInputChange('service', service);
-                                  setIsServiceDropdownOpen(false);
-                                  setValidationErrors((prev) => ({ ...prev, service: false }));
-                                }}
-                                className="w-full p-3 text-left hover:bg-gray-50 transition-colors justify-start"
-                              >
-                                {service}
-                              </button>
-                            ))}
+                        <div className="space-y-4 text-center">
+                          <p className="text-[#009999] font-[100] text-[16px] font-roboto">
+                            Thanks, you're all set
+                          </p>
+
+                          <p className="text-[#009999] font-[100] text-[16px] font-roboto">
+                            We have received your request and we will get back to you soon
+                          </p>
+
+                          <p className="text-[#009999] font-[100] text-[16px] font-roboto pb-4">
+                            Please tap below to call us
+                          </p>
+
+                          <div className="flex flex-col items-center space-y-4">
+                            {/* US Number */}
+                            <a
+                              href="tel:+18724446679"
+                              className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
+                            >
+                              <Phone className="w-5 h-5" />
+                              <span>US: +1 (872) 444 6679</span>
+                            </a>
+
+                            {/* India Number */}
+                            <a
+                              href="tel:+919830566248"
+                              className="flex items-center gap-3 text-[#009999] text-[16px] hover:underline"
+                            >
+                              <Phone className="w-5 h-5" />
+                              <span>IN: +91 9830 566 248</span>
+                            </a>
                           </div>
-                        )}
-
-                        {/* Error Message */}
-                        {validationErrors.service && (
-                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
-                            Please select a service.
-                          </p>
-                        )}
+                        </div>
                       </div>
-
-                      {/* Full Name */}
-                      <div className="pb-1 mt-1 border-b border-gray-200 relative">
-                        <input
-                          autoComplete="new-text"
-                          readOnly
-                          onFocus={(e) => e.target.removeAttribute('readOnly')}
-                          type="text"
-                          placeholder="Full Name"
-                          value={formData.fullName}
-                          onChange={(e) => handleInputChange('fullName', e.target.value)}
-                          className={`w-full focus:outline-none py-2 ${validationErrors.fullName ? 'placeholder-red-500' : ''}`}
-                        />
-
-                        {validationErrors.fullName && (
-                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
-                            Please enter your full name.
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Email */}
-                      <div className="pb-1 mt-1 border-b border-gray-200 relative">
-                        <input
-                          autoComplete="new-text-1"
-                          readOnly
-                          onFocus={(e) => e.target.removeAttribute('readOnly')}
-                          type="email"
-                          placeholder="Email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          className={`w-full focus:outline-none py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
-                        />
-                        {validationErrors.email && (
-                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
-                            {formData.email
-                              ? 'Please enter a valid email.'
-                              : 'Please enter your email.'}
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Mobile Number */}
-                      <div className={`relative flex gap-2 pt-[6px] border-b `}>
-                        <PhoneInput
-                          international
-                          defaultCountry={defaultCountry as any}
-                          countryCallingCodeEditable={false}
-                          value={formData.phone}
-                          onChange={(value) => handleInputChange('phone', value || '')}
-                          placeholder="Mobile number (optional)"
-                          autoComplete="new-text-4"
-                          onKeyDown={(e: React.KeyboardEvent) => {
-                            const digitsOnly = formData.phone.replace(/\D/g, '');
-                            const allowedKeys = [
-                              'Backspace',
-                              'Delete',
-                              'ArrowLeft',
-                              'ArrowRight',
-                              'Tab',
-                            ];
-                            if (
-                              digitsOnly.length >= 15 &&
-                              !allowedKeys.includes(e.key) &&
-                              /^\d$/.test(e.key)
-                            ) {
-                              e.preventDefault();
-                            }
-                          }}
-                          className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
-                        />
-                        {!formData.phone && (
-                          <p className="text-white z-10 top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none absolute right-0">
-                            Mobile number (optional)
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Message */}
-                      <div className="pb-1 border-b border-gray-200">
-                        <textarea
-                          autoComplete="new-text-8"
-                          readOnly
-                          onFocus={(e) => e.target.removeAttribute('readOnly')}
-                          placeholder="Message (optional)"
-                          value={formData.message}
-                          onChange={(e) => handleInputChange('message', e.target.value)}
-                          rows={2}
-                          className="w-full focus:outline-none resize-none min-h-[60px] py-2"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Buttons and Footer - Fixed at bottom */}
-                    <div className=" pt-4">
-                      {/* Submit Button */}
-                      <button
-                        type="submit"
-                        className="w-full btn bg-green-btn text-primary-white transition-colors duration-200"
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="text-center title font-source mb-4 font-light text-title ">
+                        Get a Free Quote
+                      </h2>
+                      <form
+                        onSubmit={handleSubmit}
+                        className="flex flex-col h-full justify-between"
                       >
-                        Lets Work Together
-                      </button>
+                        <div className="space-y-2">
+                          {/* Combined "I want" and service selection */}
+                          <div className="relative pb-1 border-b border-gray-200">
+                            <button
+                              type="button"
+                              onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
+                              className={`w-full flex items-center focus:outline-none py-2 px-0 h-auto justify-start ${
+                                validationErrors.service ? 'text-red-500' : ''
+                              }`}
+                            >
+                              <span className="text-[#212529] font-[100]">I want</span>
+                              <span
+                                className={`ml-12 text-[#B2B2B2] font-light ${
+                                  validationErrors.service ? 'text-red-500' : ''
+                                }`}
+                              >
+                                {formData.service || 'select*'}
+                              </span>
+                              <ChevronDown
+                                className={`ml-auto mr-[20px] w-4 h-4 text-[#212529] transition-transform ${
+                                  isServiceDropdownOpen ? 'rotate-180' : ''
+                                }`}
+                              />
+                            </button>
 
-                      {/* Privacy Policy */}
-                      <p className="text-[11px] mt-[3px] text-white text-center">
-                        By clicking "Lets Work Together", you agree to our{' '}
-                        <Link href="/privacy-policys" className="text-till" onClick={onClose}>
-                          Privacy Policy
-                        </Link>
-                      </p>
+                            {isServiceDropdownOpen && (
+                              <div className="absolute top-full left-0 right-0 mt-1 bg-[#ffffff] border border-gray-200 rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto">
+                                {services.map((service) => (
+                                  <button
+                                    key={service}
+                                    type="button"
+                                    onClick={() => {
+                                      handleInputChange('service', service);
+                                      setIsServiceDropdownOpen(false);
+                                      setValidationErrors((prev) => ({ ...prev, service: false }));
+                                    }}
+                                    className="w-full p-3 text-left hover:bg-gray-50 transition-colors justify-start"
+                                  >
+                                    {service}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
 
-                      {/* Chat Button */}
-                      <button
-                        type="button"
-                        className="w-full text-[#52d09c] mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
-                      >
-                        Chat with Us
-                      </button>
-                    </div>
-                  </form>
-                
-                </>
+                            {/* Error Message */}
+                            {validationErrors.service && (
+                              <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
+                                Please select a service.
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Full Name */}
+                          <div className="pb-1 mt-1 border-b border-gray-200 relative">
+                            <input
+                              autoComplete="new-text"
+                              readOnly
+                              onFocus={(e) => e.target.removeAttribute('readOnly')}
+                              type="text"
+                              placeholder="Full Name"
+                              value={formData.fullName}
+                              onChange={(e) => handleInputChange('fullName', e.target.value)}
+                              className={`w-full focus:outline-none py-2 ${validationErrors.fullName ? 'placeholder-red-500' : ''}`}
+                            />
+
+                            {validationErrors.fullName && (
+                              <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
+                                Please enter your full name.
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Email */}
+                          <div className="pb-1 mt-1 border-b border-gray-200 relative">
+                            <input
+                              autoComplete="new-text-1"
+                              readOnly
+                              onFocus={(e) => e.target.removeAttribute('readOnly')}
+                              type="email"
+                              placeholder="Email"
+                              value={formData.email}
+                              onChange={(e) => handleInputChange('email', e.target.value)}
+                              className={`w-full focus:outline-none py-2 ${validationErrors.email ? 'placeholder-red-500' : ''}`}
+                            />
+                            {validationErrors.email && (
+                              <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
+                                {formData.email
+                                  ? 'Please enter a valid email.'
+                                  : 'Please enter your email.'}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Mobile Number */}
+                          <div className={`relative flex gap-2 pt-[6px] border-b `}>
+                            <PhoneInput
+                              international
+                              defaultCountry={defaultCountry as any}
+                              countryCallingCodeEditable={false}
+                              value={formData.phone}
+                              onChange={(value) => handleInputChange('phone', value || '')}
+                              placeholder="Mobile number (optional)"
+                              autoComplete="new-text-4"
+                              onKeyDown={(e: React.KeyboardEvent) => {
+                                const digitsOnly = formData.phone.replace(/\D/g, '');
+                                const allowedKeys = [
+                                  'Backspace',
+                                  'Delete',
+                                  'ArrowLeft',
+                                  'ArrowRight',
+                                  'Tab',
+                                ];
+                                if (
+                                  digitsOnly.length >= 15 &&
+                                  !allowedKeys.includes(e.key) &&
+                                  /^\d$/.test(e.key)
+                                ) {
+                                  e.preventDefault();
+                                }
+                              }}
+                              className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
+                            />
+                            {!formData.phone && (
+                              <p className="text-white z-10 top-[14px] left-[115px] whitespace-nowrap font-[100] pointer-events-none absolute right-0">
+                                Mobile number (optional)
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Message */}
+                          <div className="pb-1 border-b border-gray-200">
+                            <textarea
+                              autoComplete="new-text-8"
+                              readOnly
+                              onFocus={(e) => e.target.removeAttribute('readOnly')}
+                              placeholder="Message (optional)"
+                              value={formData.message}
+                              onChange={(e) => handleInputChange('message', e.target.value)}
+                              rows={2}
+                              className="w-full focus:outline-none resize-none min-h-[60px] py-2"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Buttons and Footer - Fixed at bottom */}
+                        <div className=" pt-4">
+                          {/* Submit Button */}
+                          <button
+                            type="submit"
+                            className="w-full btn bg-green-btn text-primary-white transition-colors duration-200"
+                          >
+                            Lets Work Together
+                          </button>
+
+                          {/* Privacy Policy */}
+                          <p className="text-[11px] mt-[3px] text-white text-center">
+                            By clicking "Lets Work Together", you agree to our{' '}
+                            <Link href="/privacy-policys" className="text-till" onClick={onClose}>
+                              Privacy Policy
+                            </Link>
+                          </p>
+
+                          {/* Chat Button */}
+                          <button
+                            type="button"
+                            className="w-full text-[#52d09c] mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
+                          >
+                            Chat with Us
+                          </button>
+                        </div>
+                      </form>
+                    </>
                   )}
-                  
                 </div>
                 <div className="flex flex-wrap gap-4 flex-col justify-center pt-6 pb-5 text-center md:hidden">
                   {/* UK - Visible on all screens */}
