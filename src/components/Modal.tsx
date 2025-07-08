@@ -124,6 +124,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Detect user's country based on IP
   useEffect(() => {
@@ -146,6 +147,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    setIsSubmitting(true);
 
     // Basic validation
     const errors = {
@@ -209,6 +212,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     } catch (error) {
       console.error('Network error:', error);
       alert('Network error. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -239,6 +244,45 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
           isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
       >
+        {isSubmitting && (
+          <div className="absolute flex items-center justify-center z-50">
+            <svg
+              style={{
+                left: '50%',
+                top: '50%',
+                position: 'absolute',
+                transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+              }}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 187.3 93.7"
+              height="150px"
+              width="200px"
+            >
+              <path
+                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                strokeMiterlimit="10"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="4"
+                fill="none"
+                id="outline"
+                stroke="#009999"
+              />
+              <path
+                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                strokeMiterlimit="10"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="4"
+                stroke="#009999"
+                fill="none"
+                opacity="0.05"
+                id="outline-bg"
+              />
+            </svg>
+          </div>
+        )}
+
         <div className=" rounded-lg shadow-xl overflow-hidden">
           <div className="md:pt-[30px] md:px-[30px] md:pb-[35px]">
             <div className="flex flex-col md:flex-row gap-6">
@@ -400,7 +444,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
                         {/* Error Message */}
                         {validationErrors.service && (
-                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">Please select a service.</p>
+                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
+                            Please select a service.
+                          </p>
                         )}
                       </div>
 
@@ -418,7 +464,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                         />
 
                         {validationErrors.fullName && (
-                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">Please enter your full name.</p>
+                          <p className="text-xs text-red-500 mt-1 absolute right-0 z-10">
+                            Please enter your full name.
+                          </p>
                         )}
                       </div>
 
@@ -455,8 +503,18 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           autoComplete="new-text-4"
                           onKeyDown={(e: React.KeyboardEvent) => {
                             const digitsOnly = formData.phone.replace(/\D/g, '');
-                            const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-                            if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
+                            const allowedKeys = [
+                              'Backspace',
+                              'Delete',
+                              'ArrowLeft',
+                              'ArrowRight',
+                              'Tab',
+                            ];
+                            if (
+                              digitsOnly.length >= 15 &&
+                              !allowedKeys.includes(e.key) &&
+                              /^\d$/.test(e.key)
+                            ) {
                               e.preventDefault();
                             }
                           }}

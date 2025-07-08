@@ -27,7 +27,7 @@ const BecomePartner = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [touchedFields, setTouchedFields] = useState<{ [key: string]: boolean }>({})
+  const [touchedFields, setTouchedFields] = useState<{ [key: string]: boolean }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState('');
   const [defaultCountry, setDefaultCountry] = useState('IN');
@@ -51,81 +51,81 @@ const BecomePartner = () => {
   }, []);
 
   const validateForm = () => {
-    const newErrors: FormErrors = {}
+    const newErrors: FormErrors = {};
 
     // Name validation (required)
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
+      newErrors.name = 'Name is required';
     }
 
     // Email validation (required)
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email"
+      newErrors.email = 'Please enter a valid email';
     }
 
     // Phone validation (optional - only validate if provided)
     if (formData.phone && !/^\+?[\d\s\-()]{8,20}$/.test(formData.phone)) {
-      newErrors.phone = "Please enter a valid phone number"
+      newErrors.phone = 'Please enter a valid phone number';
     }
 
     // Message is optional - no validation needed
 
-    return newErrors
-  }
+    return newErrors;
+  };
 
   // Validate form whenever formData changes, but only show errors for touched fields
   useEffect(() => {
-    const validationErrors = validateForm()
+    const validationErrors = validateForm();
 
     // Only show errors for fields that have been touched
-    const filteredErrors: FormErrors = {}
+    const filteredErrors: FormErrors = {};
     Object.keys(validationErrors).forEach((key) => {
       if (touchedFields[key]) {
-        filteredErrors[key as keyof FormErrors] = validationErrors[key as keyof FormErrors]
+        filteredErrors[key as keyof FormErrors] = validationErrors[key as keyof FormErrors];
       }
-    })
+    });
 
-    setErrors(filteredErrors)
-  }, [formData, touchedFields])
+    setErrors(filteredErrors);
+  }, [formData, touchedFields]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
 
     // Mark field as touched if it had content and now it's empty
-    if (value === "" && formData[name as keyof FormData]) {
-      setTouchedFields((prev) => ({ ...prev, [name]: true }))
+    if (value === '' && formData[name as keyof FormData]) {
+      setTouchedFields((prev) => ({ ...prev, [name]: true }));
     }
-  }
+  };
 
   const handlePhoneChange = (value?: string) => {
-    setFormData({ ...formData, phone: value || "" })
+    setFormData({ ...formData, phone: value || '' });
 
     // Mark phone field as touched if it becomes empty after having content
     if (!value && formData.phone) {
-      setTouchedFields((prev) => ({ ...prev, phone: true }))
+      setTouchedFields((prev) => ({ ...prev, phone: true }));
     }
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const validationErrors = validateForm()
+    const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
+      setErrors(validationErrors);
       // Mark all fields with errors as touched
-      const touchedUpdate: { [key: string]: boolean } = {}
+      const touchedUpdate: { [key: string]: boolean } = {};
       Object.keys(validationErrors).forEach((key) => {
-        touchedUpdate[key] = true
-      })
-      setTouchedFields((prev) => ({ ...prev, ...touchedUpdate }))
-      return
+        touchedUpdate[key] = true;
+      });
+      setTouchedFields((prev) => ({ ...prev, ...touchedUpdate }));
+      return;
     }
 
-    setIsSubmitting(true)
-    setStatus("")
+    setIsSubmitting(true);
+    setStatus('');
 
     try {
       const response = await fetch('https://www.bitpastel.com/api/partnersSendEmail.php', {
@@ -156,7 +156,8 @@ const BecomePartner = () => {
   };
 
   // Check if form is valid (only required fields: name and email)
-  const isFormValid = formData.name.trim() !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+  const isFormValid =
+    formData.name.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
 
   if (isSuccess) {
     return (
@@ -223,40 +224,40 @@ const BecomePartner = () => {
               {isSubmitting && (
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
                   <div className="text-center">
-          <svg
-          style={{
-            left: "50%",
-            top: "50%",
-            position: "absolute",
-            transform: "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
-          }}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 187.3 93.7"
-          height="150px"
-          width="200px"
-        >
-          <path
-            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="4"
-            fill="none"
-            id="outline"
-            stroke="#009999"
-          />
-          <path
-            d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="4"
-            stroke="#009999"
-            fill="none"
-            opacity="0.05"
-            id="outline-bg"
-          />
-        </svg>
+                    <svg
+                      style={{
+                        left: '50%',
+                        top: '50%',
+                        position: 'absolute',
+                        transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+                      }}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 187.3 93.7"
+                      height="150px"
+                      width="200px"
+                    >
+                      <path
+                        d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeWidth="4"
+                        fill="none"
+                        id="outline"
+                        stroke="#009999"
+                      />
+                      <path
+                        d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeWidth="4"
+                        stroke="#009999"
+                        fill="none"
+                        opacity="0.05"
+                        id="outline-bg"
+                      />
+                    </svg>
                   </div>
                 </div>
               )}
@@ -266,7 +267,7 @@ const BecomePartner = () => {
                     <input
                       autoComplete="new-text-4"
                       readOnly
-                      onFocus={(e) => e.target.removeAttribute("readOnly")}
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
                       type="text"
                       name="name"
                       placeholder="Name"
@@ -277,16 +278,14 @@ const BecomePartner = () => {
                       disabled={isSubmitting}
                     />
                   </div>
-                  {errors.name && (
-                    <span className="error-text">{errors.name}</span>
-                  )}
+                  {errors.name && <span className="error-text">{errors.name}</span>}
                 </div>
                 <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
                   <div className="flex-1">
                     <input
                       autoComplete="new-text-3"
                       readOnly
-                      onFocus={(e) => e.target.removeAttribute("readOnly")}
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
                       type="email"
                       name="email"
                       placeholder="Email Address"
@@ -297,9 +296,7 @@ const BecomePartner = () => {
                       disabled={isSubmitting}
                     />
                   </div>
-                  {errors.email && (
-                    <span className="error-text">{errors.email}</span>
-                  )}
+                  {errors.email && <span className="error-text">{errors.email}</span>}
                 </div>
 
                 <div className={`relative flex gap-2 py-[4px] border-b-[1px] border-[#B2B2B2]`}>
@@ -312,11 +309,15 @@ const BecomePartner = () => {
                     onKeyDown={(e: React.KeyboardEvent) => {
                       const digitsOnly = formData.phone.replace(/\D/g, '');
                       const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-                      if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
+                      if (
+                        digitsOnly.length >= 15 &&
+                        !allowedKeys.includes(e.key) &&
+                        /^\d$/.test(e.key)
+                      ) {
                         e.preventDefault();
                       }
                     }}
-                    autoComplete='new-text-58564'
+                    autoComplete="new-text-58564"
                     placeholder="Mobile number (optional)"
                     disabled={isSubmitting}
                     className="!border-none subheading bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
@@ -347,9 +348,7 @@ const BecomePartner = () => {
                       disabled={isSubmitting}
                     />
                   </div>
-                  {errors.message && (
-                    <span className="error-text">{errors.message}</span>
-                  )}
+                  {errors.message && <span className="error-text">{errors.message}</span>}
                 </div>
                 <button
                   className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
