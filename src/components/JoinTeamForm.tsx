@@ -13,6 +13,95 @@ interface JoinTeamProps {
   jobTitle?: string;
 }
 
+interface CustomSelectProps {
+  options: string[];
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  className?: string;
+}
+
+const CustomSelect: React.FC<CustomSelectProps> = ({ 
+  options, 
+  value, 
+  onChange, 
+  placeholder,
+  className = ''
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleOptionClick = (option: string) => {
+    onChange(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <div 
+      ref={selectRef}
+      className={`relative ${className}`}
+    >
+      <div
+        className={`flex justify-between items-center w-full p-2 border-b ${
+          value ? 'border-[#04ff04]' : 'border-gray-300'
+        } cursor-pointer`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className={`subheading font-source font-thin ${
+          value ? 'text-white' : 'text-white'
+        }`}>
+          {value || placeholder}
+        </span>
+        <ChevronDown className={`h-4 w-4 text-white transition-transform duration-200 ${
+          isOpen ? 'transform rotate-180' : ''
+        }`} />
+      </div>
+      
+      {isOpen && (
+        <div className="absolute z-10 w-full mt-1 bg-[#FFFFFF] shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2),0_4px_5px_0_rgba(0,0,0,0.14),0_1px_10px_0_rgba(0,0,0,0.12)] rounded-md py-1 max-h-100 overflow-auto">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className={`px-4 min-h-[57px] cursor-pointer content-center transition-all duration-300 ${
+                value === option ? 'bg-[rgba(0,0,0,.04)]' : 'hover:bg-[rgba(0,0,0,.04)]'
+              }`}
+              style={{ 
+                opacity: 0,
+                animation: `fadeIn 0.3s ease-in-out forwards`,
+                animationDelay: `${index * 0.05}s`
+              }}
+              onClick={() => handleOptionClick(option)}
+            >
+              <span className="block text-title font-[400] subheading font-source ">
+                {option}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 export default function JoinTeam({ title = 'Join Our Team', className, jobTitle }: JoinTeamProps) {
   // Form state
   const [formData, setFormData] = useState({
@@ -214,41 +303,41 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
 
   if (isLoading) {
     return <div className="max-w-[800px] mx-auto px-4 p-6 text-center"> 
-    <svg
-            style={{
-              left: '50%',
-              top: '50%',
-              position: 'absolute',
-              transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
-            }}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 187.3 93.7"
-            height="150px"
-            width="200px"
-          >
-            <path
-              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-              strokeMiterlimit="10"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="4"
-              fill="none"
-              id="outline"
-              stroke="#009999"
-            />
-            <path
-              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-              strokeMiterlimit="10"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="4"
-              stroke="#009999"
-              fill="none"
-              opacity="0.05"
-              id="outline-bg"
-            />
-          </svg>
-          </div>;
+      <svg
+        style={{
+          left: '50%',
+          top: '50%',
+          position: 'absolute',
+          transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+        }}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 187.3 93.7"
+        height="150px"
+        width="200px"
+      >
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+          strokeMiterlimit="10"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="4"
+          fill="none"
+          id="outline"
+          stroke="#009999"
+        />
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+          strokeMiterlimit="10"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="4"
+          stroke="#009999"
+          fill="none"
+          opacity="0.05"
+          id="outline-bg"
+        />
+      </svg>
+    </div>;
   }
 
   if (isSubmitted) {
@@ -316,8 +405,6 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
       >
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column */}
-          {/* <div className="space-y-6"> */}
-
           <div
             className={`flex items-end gap-4 border-b relative ${
               errors.name
@@ -467,67 +554,22 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
               className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
             />
           </div>
-          <div className="relative cursor-pointer group border-b border-[#04ff04]">
-            <select
-              name="experience"
-              value={formData.experience}
-              onChange={handleChange}
-              className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
-            >
-              <option value="" className="text-title subheading font-source font-thin">
-                Years of experience (Optional)
-              </option>
-              {experienceOptions.map((option, index) => (
-                <option
-                  key={index}
-                  value={option}
-                  className="text-black hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
-                >
-                  {option}
-                </option>
-              ))}
-            </select>
-            <div className="flex justify-between items-center w-full p-2">
-              <span className="text-white subheading font-source font-thin">
-                {formData.experience || 'Years of experience (Optional)'}
-              </span>
-              <ChevronDown className="h-4 w-4 text-black" />
-            </div>
-          </div>
 
-          <div className="relative cursor-pointer group ">
-            <select
-              name="noticePeriod"
-              value={formData.noticePeriod}
-              onChange={handleChange}
-              className="w-full p-2 text-title subheading font-source font-thin appearance-none bg-transparent focus:outline-none cursor-pointer opacity-0 absolute inset-0"
-            >
-              <option value="" className="text-title subheading font-source font-thin">
-                Notice Period (Optional)
-              </option>
-              {noticePeriodOptions.map((option, index) => (
-                <option
-                  key={index}
-                  value={option}
-                  className="text-title subheading font-source font-thin hover:bg-[rgba(0,0,0,0.12)] focus:bg-[rgba(0,0,0,0.12)]"
-                >
-                  {option}
-                </option>
-              ))}
-            </select>
-            <div className="flex justify-between items-center w-full p-2 border-b border-[#04ff04]">
-              <span className="text-white subheading font-source font-thin">
-                {formData.noticePeriod || 'Notice Period (Optional)'}
-              </span>
-              <ChevronDown className="h-4 w-4 text-black" />
-            </div>
-          </div>
+          {/* Custom Select for Experience */}
+          <CustomSelect
+            options={experienceOptions}
+            value={formData.experience}
+            onChange={(value) => setFormData(prev => ({ ...prev, experience: value }))}
+            placeholder="Years of experience (Optional)"
+          />
 
-          {/* </div> */}
-
-          {/* Right Column */}
-          {/* <div className="space-y-6"> */}
-
+          {/* Custom Select for Notice Period */}
+          <CustomSelect
+            options={noticePeriodOptions}
+            value={formData.noticePeriod}
+            onChange={(value) => setFormData(prev => ({ ...prev, noticePeriod: value }))}
+            placeholder="Notice Period (Optional)"
+          />
 
           <div className="border-b border-[#04ff04] relative">
             <input
@@ -542,7 +584,6 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
               className="w-full p-2 text-title subheading font-source font-thin focus:outline-none"
             />
           </div>
-          {/* </div> */}
         </div>
 
         {/* File input section */}
@@ -572,9 +613,6 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
               <Paperclip className="w-5 h-5" />
               <span>{formData.resume ? formData.resume.name : 'Attach your CV/Resume'}</span>
             </button>
-            {/* {formData.resume && (
-              <span className="text-sm text-gray-600">{formData.resume.name}</span>
-            )} */}
           </div>
           {errors.resume && <p className="error-text">{errors.resume}</p>}
         </div>
