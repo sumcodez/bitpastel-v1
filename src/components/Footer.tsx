@@ -312,7 +312,7 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/#services') ? 'active' : ''}`}
+            className={`nav-item flex flex-col items-center ${isActive('/services') ? 'active' : ''}`}
           >
             <Link href="/#services" className="flex flex-col items-center">
               <svg
@@ -334,7 +334,7 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/#stories') ? 'active' : ''}`}
+            className={`nav-item flex flex-col items-center ${isActive('/stories') ? 'active' : ''}`}
           >
             <Link href="/#stories" className="flex flex-col items-center">
               <svg
