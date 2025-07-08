@@ -452,8 +452,13 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           onChange={(value) => handleInputChange('phone', value || '')}
                           placeholder="Mobile number (optional)"
                           autoComplete="new-text-4"
-                          readOnly
-                          onFocus={(e) => e.target.removeAttribute('readOnly')}
+                          onKeyDown={(e: React.KeyboardEvent) => {
+                            const digitsOnly = formData.phone.replace(/\D/g, '');
+                            const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                            if (digitsOnly.length >= 15 && !allowedKeys.includes(e.key) && /^\d$/.test(e.key)) {
+                              e.preventDefault();
+                            }
+                          }}
                           className="!border-none gap-[20px] w-full !p-0 [&>input]:!text-title [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#2A2A2A]"
                         />
                         {!formData.phone && (
