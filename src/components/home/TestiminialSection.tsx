@@ -235,8 +235,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               className={`${testimonial.bgColor} overflow-auto md:rounded-[20px] ${!isMobile ? "testimonial-card-parent" : ""} rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
             >
               <div className="flex-grow">
-                <div className= {`${!isMobile ? 'testimonial-card-content' : ''}`}>
-                  <p className= {`${isMobile ? 'text-[12px] ' : 'text-[13px] line-clamp-3 leading-[23px]'}`}>
+                <div className= {`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
+                  <p className= {`${testimonial.message.trim().length > 317 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] md:line-clamp-3 line-clamp-none'}`}>
                     "{testimonial.message}"
                   </p>
                 </div>
