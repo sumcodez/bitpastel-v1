@@ -683,12 +683,16 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           </p>
 
                           {/* Chat Button */}
-                          <button
+                          <Link
+                          target='_blank'
+                          href={
+            'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
+          }
                             type="button"
-                            className="w-full text-[#52d09c] mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
+                            className="w-full text-[#52d09c] flex justify-center items-center mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
                           >
                             Chat with Us
-                          </button>
+                          </Link>
                         </div>
                       </form>
                     </>
