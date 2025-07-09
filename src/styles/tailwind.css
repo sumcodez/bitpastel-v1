@@ -281,6 +281,12 @@ input:focus-visible{
   z-index: -1;
   overflow: hidden;
 }
+@media screen and (max-width:767px){
+  .modal-container {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+}
 .modal-body {
   padding: 25px 30px;
 }
