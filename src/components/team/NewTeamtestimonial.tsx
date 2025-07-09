@@ -89,7 +89,7 @@ const NewTeamtestimonial = () => {
           ...prev,
           firstPosition: (prev.firstPosition + 1) % testimonialsByPosition.firstPosition.length
         }));
-      }, 6000),
+      }, 20000),
       
       secondPosition: setInterval(() => {
         setCurrentIndices(prev => ({
@@ -98,14 +98,14 @@ const NewTeamtestimonial = () => {
             ? (prev.secondPosition + 1) % testimonialsByPosition.secondPosition.length 
             : 0
         }));
-      }, 6000),
+      }, 20000),
       
       thirdPosition: setInterval(() => {
         setCurrentIndices(prev => ({
           ...prev,
           thirdPosition: (prev.thirdPosition + 1) % testimonialsByPosition.thirdPosition.length
         }));
-      }, 6000)
+      }, 20000)
     };
 
     return () => {
