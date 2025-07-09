@@ -11,14 +11,14 @@ const NewTeamtestimonial = () => {
         name: "Shovan",
         image: "/images/Testimonial-BP/Shovan-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Shovan-testim.png",
-        testimonialMob: "/images/so_text_new.png"
+        testimonialMob: "/images/Testimonial-BP/Shovan-testim.png"
       },
       {
         id: 2,
         name: "Suman",
         image: "/images/Testimonial-BP/Suman-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Suman-testim.png",
-        testimonialMob: "/images/ib_text_new.png"
+        testimonialMob: "/images/Testimonial-BP/Suman-testim.png"
       },
 
       // Can add up to 9 or more for this position
@@ -29,14 +29,14 @@ const NewTeamtestimonial = () => {
         name: "Madhurima",
         image: "/images/Testimonial-BP/Madhu-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Madhu-testim.png",
-        testimonialMob: "/images/jayati_text_mob.png"
+        testimonialMob: "/images/Testimonial-BP/Madhu-testim.png"
       },
       {
         id: 4,
         name: "Nayanika",
         image: "/images/Testimonial-BP/Nayanika-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Nayanika-testim.png",
-        testimonialMob: "/images/jayati_text_mob.png"
+        testimonialMob: "/images/Testimonial-BP/Nayanika-testim.png"
       }
       // Only one testimonial for this position
     ],
@@ -46,14 +46,14 @@ const NewTeamtestimonial = () => {
         name: "Sourav",
         image: "/images/Testimonial-BP/Sourav-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Sourav-testim.png",
-        testimonialMob: "/images/jayati_text_mob.png"
+        testimonialMob: "/images/Testimonial-BP/Sourav-testim.png"
       },
       {
         id: 6,
         name: "Bhaskar",
        image: "/images/Testimonial-BP/Bhaskar-ID.png",
         testimonialDesk: "/images/Testimonial-BP/Bhaskar-testim.png",
-        testimonialMob: "/images/jayati_text_mob.png"
+        testimonialMob: "images/Testimonial-BP/Bhaskar-testim.png"
       },
       // Three testimonials for this position
     ]
@@ -89,7 +89,7 @@ const NewTeamtestimonial = () => {
           ...prev,
           firstPosition: (prev.firstPosition + 1) % testimonialsByPosition.firstPosition.length
         }));
-      }, 6000),
+      }, 6000000),
       
       secondPosition: setInterval(() => {
         setCurrentIndices(prev => ({
@@ -98,14 +98,14 @@ const NewTeamtestimonial = () => {
             ? (prev.secondPosition + 1) % testimonialsByPosition.secondPosition.length 
             : 0
         }));
-      }, 6000),
+      }, 60000000),
       
       thirdPosition: setInterval(() => {
         setCurrentIndices(prev => ({
           ...prev,
           thirdPosition: (prev.thirdPosition + 1) % testimonialsByPosition.thirdPosition.length
         }));
-      }, 6000)
+      }, 60000000)
     };
 
     return () => {
