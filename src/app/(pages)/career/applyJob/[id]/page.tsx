@@ -390,7 +390,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 )}
                 {job.softSkills && (
-                  <div className="flex flex-col md:flex-row gap-4 md:mt-[65px] mt-[30px]">
+                  <div className="flex flex-col md:flex-row gap-8 md:mt-[65px] mt-[30px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">
                         Soft Skills:
@@ -408,7 +408,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </div>
                 )}
                 {job.desiredCandidateProfile && (
-                  <div className="flex flex-col md:flex-row gap-4 md:mt-[65px] mt-[30px]">
+                  <div className="flex flex-col md:flex-row gap-8 md:mt-[65px] mt-[30px]">
                     <div className="md:w-1/3">
                       <h3 className="subheading font-source font-semibold text-title">
                         Desired Candidate Profile:

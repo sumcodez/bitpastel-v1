@@ -87,7 +87,7 @@ export default function Home() {
           <p className="text-title paragraph md:block inline">
             If you don't see any suitable vacancy, send your resume
             <button className="text-accent-green font-medium px-1 hover:text-[#B2B2B2]"
-            onClick={() => scrollToSection('joinTeamForm')}
+            onClick={() => scrollToSection('#joinTeamForm')}
             >
                 here </button>
             and we'll get in touch with you as soon as there is any opening that matches your profile.

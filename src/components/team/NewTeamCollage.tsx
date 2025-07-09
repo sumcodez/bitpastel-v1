@@ -50,7 +50,7 @@ const NewTeamCollage = () => {
 
         <div className="title-middle">
           <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">
-            Bitpastel turns 8
+            Bitpastel Turns 8
           </h4>
         </div>
 

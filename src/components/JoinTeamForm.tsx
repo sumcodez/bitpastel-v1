@@ -50,6 +50,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
   return (
     <div 
+    id='joinTeamForm'
       ref={selectRef}
       className={`relative ${className}`}
     >

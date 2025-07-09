@@ -87,13 +87,13 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
 
             <div className="md:text-primary-white text-title md:text-left text-center mt-[1.8rem]">
               {/* First Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[5px] items-start">
+              <div className="flex gap-4 mb-[5px] items-start">
                 <Image
                   src={benefits[0].icon}
                   alt={benefits[0].alt}
                   width={24}
                   height={24}
-                  className="w-auto mt-1.5"
+                  className="md:w-[20px] md:h-[20px] md:mt-1.5 mt-1 w-[14px] h-[14px]"
                 />
                 {/* <p className="text-title font-roboto text-left md:text-[20px]  paragraph font-[400]  whitespace-normal break-words">
                   {benefits[0].text}
@@ -110,7 +110,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               </div>
 
               {/* Second Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
+              <div className="flex gap-4 mb-[5px] items-center">
                 {/* <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -123,7 +123,7 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
                   alt={benefits[1].alt}
                   width={24}
                   height={24}
-                  className="w-auto"
+                  className="md:w-[20px] md:h-[20px] w-[14px] h-[14px]"
                 />
                 <p className="md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Experience: {benefits[1].text}
@@ -131,13 +131,13 @@ const JobDetailsBanner: React.FC<JobDetailsBannerProps> = ({
               </div>
 
               {/* Third Benefit */}
-              <div className="flex md:gap-4 gap-2 mb-[5px] items-center">
+              <div className="flex gap-4  mb-[5px] items-center">
                 <Image
                   src={benefits[2].icon}
                   alt={benefits[2].alt}
                   width={24}
                   height={24}
-                  className="w-auto"
+                   className="md:w-[20px] md:h-[20px] w-[14px] h-[14px]"
                 />
                 <p className=" md:text-[20px]  paragraph font-[400] text-left text-title font-roboto">
                   Location: {benefits[2].text}
