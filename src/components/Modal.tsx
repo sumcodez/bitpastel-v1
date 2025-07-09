@@ -401,12 +401,12 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   </div>
                   <div className="flex flex-wrap justify-center lg:gap-0 gap-4 pt-6 text-center lg:mr-[-17px]">
                     {/* UK - Visible on all screens */}
-                    <p className="text-[#099] border-r-[1px] md:border-right text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] border-right text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+442081446579">UK: +44 2081 446579</a>
                     </p>
 
                     {/* US - Hidden on md, visible only on lg */}
-                    <p className="text-[#099] md:border-right text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
+                    <p className="text-[#099] border-right text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
                       <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
                     </p>
 

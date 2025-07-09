@@ -506,15 +506,17 @@ input:focus-visible{
 .border-right {
 position: relative;
 }
-.border-right::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 2px;
-    height: 18px;
-    background-color: #B2B2B2;
+@media screen and (min-width:1280px) {
+  .border-right::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 2px;
+      height: 18px;
+      background-color: #B2B2B2;
+  }
 }
 
 
