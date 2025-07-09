@@ -13,6 +13,48 @@
   box-sizing: inherit;
 }
 
+
+[data-aos="animated-up"] {
+  transition-property: transform, opacity;
+
+  @media screen and (min-width: 768px) {
+    transform: translateY(100px);
+    opacity: 0;
+
+    &.aos-animate {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+[data-aos="animated-left"] {
+  transition-property: transform, opacity;
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(100px);
+    opacity: 0;
+
+    &.aos-animate {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+[data-aos="animated-right"] {
+  transition-property: transform, opacity;
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(-100px);
+    opacity: 0;
+
+    &.aos-animate {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+
 /* Header scroll state classes */
 
 .our-services-wrapper > div {
@@ -371,27 +413,27 @@
     .team-first-banner .first .testi-data,
     .team-first-banner .second .testi-data
      {
-        max-width: 180px;
+        max-width: 250px;
         top: 25%;
     }
     .team-first-banner .second,
     .team-first-banner .third,
     .team-first-banner .first
      {
-        height: 210px;
+        height: 280px;
         margin-top: -30px;
     }
         .team-first-banner .first .testi-data {
-        right: 25px;
-        top: 20%;
+        right: 10px;
+        top: 10%;
     }
     .team-first-banner .second .testi-data{
         top: 25%;
-        left:20px;
+        left:10px;
     }
     .team-first-banner .third .testi-data{
         top: 25%;
-        right: 25px;
+        right: 10px;
     }
 }
 
@@ -400,20 +442,20 @@
   .team-first-banner .third .testi-data,
   .team-first-banner .first .testi-data
    {
-    max-width: 170px;
+    max-width: 230px;
   }
   .team-first-banner .second .testi-image,
   .team-first-banner .first .testi-image,
   .team-first-banner .third .testi-image {
-    max-width: 180px;
+    max-width: 170px;
   }
       .team-first-banner .third .testi-data {
-        right: 20px;
+        right: 10px;
         top: 60px;
     }
     .team-first-banner .first .testi-data {
-        right: 20px;
-        top: 60px;
+        right: 10px;
+        top: 30px;
     }
 }
 

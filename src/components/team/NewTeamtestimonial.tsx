@@ -127,21 +127,21 @@ const NewTeamtestimonial = () => {
             alt={`${getCurrentTestimonial('firstPosition').name}'s image`}
             className="testi-image"
             src={getCurrentTestimonial('firstPosition').image}
-            data-aos="fade-up"
+            data-aos="animated-up"
             key={`first-image-${currentIndices.firstPosition}`}
           />
           <img
             alt={`${getCurrentTestimonial('firstPosition').name}'s Testimonial`}
             className="testi-data desk-team"
             src={getCurrentTestimonial('firstPosition').testimonialDesk}
-            data-aos="fade-left"
+            data-aos="animated-left"
             key={`first-desk-${currentIndices.firstPosition}`}
           />
           <img
             alt={`${getCurrentTestimonial('firstPosition').name}'s Testimonial`}
             className="testi-data mob-team"
             src={getCurrentTestimonial('firstPosition').testimonialMob}
-            data-aos="fade-left"
+            data-aos="animated-left"
             key={`first-mob-${currentIndices.firstPosition}`}
           />
         </div>
@@ -153,7 +153,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('secondPosition').name}'s image`}
               className="testi-image"
               src={getCurrentTestimonial('secondPosition').image}
-              data-aos="fade-up"
+              data-aos="animated-up"
               data-aos-delay="100"
               key={`second-image-${currentIndices.secondPosition}`}
             />
@@ -161,7 +161,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('secondPosition').name}'s Testimonial`}
               className="testi-data desk-team"
               src={getCurrentTestimonial('secondPosition').testimonialDesk}
-              data-aos="fade-right"
+              data-aos="animated-right"
               data-aos-delay="100"
               key={`second-desk-${currentIndices.secondPosition}`}
             />
@@ -169,7 +169,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('secondPosition').name}'s Testimonial`}
               className="testi-data mob-team"
               src={getCurrentTestimonial('secondPosition').testimonialMob}
-              data-aos="fade-right"
+              data-aos="animated-right"
               data-aos-delay="100"
               key={`second-mob-${currentIndices.secondPosition}`}
             />
@@ -183,7 +183,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('thirdPosition').name}'s image`}
               className="testi-image"
               src={getCurrentTestimonial('thirdPosition').image}
-              data-aos="fade-up"
+              data-aos="animated-up"
               data-aos-delay="200"
               key={`third-image-${currentIndices.thirdPosition}`}
             />
@@ -191,7 +191,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('thirdPosition').name}'s Testimonial`}
               className="testi-data desk-team"
               src={getCurrentTestimonial('thirdPosition').testimonialDesk}
-              data-aos="fade-left"
+              data-aos="animated-left"
               data-aos-delay="200"
               key={`third-desk-${currentIndices.thirdPosition}`}
             />
@@ -199,7 +199,7 @@ const NewTeamtestimonial = () => {
               alt={`${getCurrentTestimonial('thirdPosition').name}'s Testimonial`}
               className="testi-data mob-team"
               src={getCurrentTestimonial('thirdPosition').testimonialMob}
-              data-aos="fade-left"
+              data-aos="animated-left"
               data-aos-delay="200"
               key={`third-mob-${currentIndices.thirdPosition}`}
             />
