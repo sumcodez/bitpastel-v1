@@ -325,7 +325,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
           </div>
         )}
 
-        <div className=" rounded-lg shadow-xl overflow-hidden">
+        <div className="w-full md:rounded-lg shadow-xl overflow-hidden">
           <div className="md:pt-[30px] md:px-[30px] md:pb-[35px]">
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left side - Image and details */}
