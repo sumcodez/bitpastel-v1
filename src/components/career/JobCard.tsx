@@ -7,14 +7,29 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const router = useRouter();
   
+  // const scrollToSection = (id: string) => {
+  //   const el = document.getElementById(id);
+  //   if (el) {
+  //     setTimeout(() => {
+  //       window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+  //     }, 100);
+  //   }
+  // };
+
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
+    // Remove any # from the id if present
+    const cleanId = id.replace('#', '');
+    const el = document.getElementById(cleanId);
+    
     if (el) {
-      setTimeout(() => {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-      }, 100);
+      // Calculate the position considering any fixed headers
+      const yOffset = -100; // Adjust this value based on your header height
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
  const jobListings = [
     {
       id: "1",
