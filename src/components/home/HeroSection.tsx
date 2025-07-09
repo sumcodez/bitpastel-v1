@@ -9,11 +9,11 @@ const HeroSection = () => {
       <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
         {/* Desktop background image */}
         <div
-          className="hidden md:block absolute inset-0 bg-cover bg-[position:60%_0%] bg-no-repeat"
+          className="hidden md:block absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
           style={{
             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
-            url('/images/img_rectangle_48.png')
+            url('/images/banner_new02.jpg')
           `,
           }}
         ></div>
