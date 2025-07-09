@@ -37,7 +37,7 @@ const TeamBanner = () => {
       ></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:h-full pt-[40px] md:pt-[60px] text-left ">
+      <div className="relative z-10 container mx-auto px-4 md:h-full pt-[40px] md:pb-[0px] pb-[40px] md:pt-[60px] text-left ">
         <div className="md:h-full content-center mx-auto md:max-w-[100%] max-w-[310px]">
           <h1 className="md:text-primary-white text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
             <span>The </span>
