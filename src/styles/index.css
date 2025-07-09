@@ -87,7 +87,7 @@
   overflow: hidden;
   position: relative;
   background: #F5CD47;
-  height: 550px;
+  height: 530px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
@@ -96,7 +96,7 @@
   bottom: 0;
   left: 10%;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   display: block;
   margin: auto;
 }
@@ -105,7 +105,7 @@
   position: absolute;
   width: 100%;
   max-width: 500px;
-    left: 44%;
+    left: 45%;
     top: 25%;
 }
 
@@ -117,7 +117,7 @@
   margin-top: -50px;
   position: relative;
   background: #AA83DC;
-  height: 550px;
+  height: 530px;
   -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
 }
@@ -126,7 +126,7 @@
   bottom: 0;
   right: 10%;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   display: block;
   margin: auto;
 }
@@ -134,7 +134,7 @@
   position: absolute;
   width: 100%;
   max-width: 500px;
-  right: 36%;
+  right: 45%;
   top: 30%;
   
 }
@@ -143,14 +143,14 @@
     bottom: 0;
     left: 10%;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     display: block;
 }
 .team-first-banner .third .testi-data {
     position: absolute;
     width: 100%;
     max-width: 500px;
-    left: 44%;
+    left: 40%;
     top: 38%;
 }
 
@@ -159,7 +159,7 @@
     margin-top: -50px;
     position: relative;
     background: #ED8376;
-    height: 550px;
+    height: 520px;
     -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 }
@@ -263,7 +263,7 @@
     top: 100px;
   }
   .team-first-banner .second .testi-image {
-    right: 10%;
+    right: 5%;
   }
   .team-first-banner .second .testi-data {
     top: 100px;
@@ -276,17 +276,36 @@
     display: block;
   }
   .team-first-banner .first .testi-image {
-    left: 10%;
+    left: 5%;
   }
       .team-first-banner .third .testi-image {
-        left: 10%;
+        left: 5%;
     }
         .team-first-banner .third .testi-data {
         top: 110px;
         left: 45%;
     }
+.team-first-banner .first .testi-image,
+.team-first-banner .second .testi-image,
+.team-first-banner .third .testi-image {
+    max-width: 400px;
 }
-
+.team-first-banner .first .testi-data {
+    max-width: 400px;
+    left: 44%;
+}
+.team-first-banner .second .testi-data {
+    max-width: 400px;
+}
+.team-first-banner .second .testi-data {
+        top: 170px;
+        max-width: 400px;
+    }
+    .team-first-banner .third .testi-data {
+    max-width: 400px;
+    top: 170px;
+}
+}
 @media (max-width: 900px) {
   .team-first-banner .second .testi-data {
     max-width: 350px;
@@ -304,7 +323,7 @@
 
 @media (max-width: 700px) {
   .team-first-banner .first .testi-image {
-    max-width: 180px;
+    max-width: 200px;
     left: 5px;
   }
   .team-first-banner .second .testi-data {
@@ -314,11 +333,11 @@
     top: 40%;
   }
 .team-first-banner .third .testi-image {
-        max-width: 180px;
+        max-width: 200px;
         left: 5px;
     }
   .team-first-banner .second {
-    height: 300px;
+    height: 250px;
     margin-top: -30px;
   }
   .team-first-banner .second .testi-image {
@@ -332,11 +351,11 @@
         left: initial;
     }
         .team-first-banner .third {
-        height: 300px;
+        height: 250px;
         margin-top: -30px;
     }
     .team-first-banner .first {
-        height: 300px;
+        height: 250px;
     }
         .team-first-banner .first .testi-data {
         max-width: 180px;
@@ -346,6 +365,26 @@
     }
 
   }
+
+  @media (max-width: 540px) {
+    .team-first-banner .third .testi-data,
+    .team-first-banner .first .testi-data,
+    .team-first-banner .second .testi-data
+     {
+        max-width: 150px;
+    }
+    .team-first-banner .second,
+    .team-first-banner .third,
+    .team-first-banner .first
+     {
+        height: 210px;
+        margin-top: -30px;
+    }
+        .team-first-banner .first .testi-data {
+        right: 25px;
+        top: 30%;
+    }
+}
 
 @media (max-width: 350px) {
   .team-first-banner .second .testi-data {
