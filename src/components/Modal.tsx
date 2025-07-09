@@ -164,6 +164,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     setValidationErrors(errors);
 
     if (Object.values(errors).some(Boolean)) {
+      setIsSubmitting(false);
       return; // Don't submit if any errors
     }
 
