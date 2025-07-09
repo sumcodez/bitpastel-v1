@@ -427,12 +427,12 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 )}
               </div>
               {/* Apply Div */}
-              <div className="md:pt-[90px] pt-[70px]" ref={formRef} id="applicationForm">
+              <div className="md:pt-[90px] pt-[30px]" ref={formRef} id="applicationForm">
                 {jobWithForm.includes(job.id) ? (
                   <JoinTeam title="Apply Now" jobTitle={job.title} />
                 ) : jobWithFormAndButton.includes(job.id) ? (
                   <>
-                    <div className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-16 pt-14">
+                    <div className="flex flex-col sm:flex-row gap-10 justify-center items-center md:mb-16 mb-[0px] md:pt-14 pt-[30px]">
                       <button
                         className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
                         onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
@@ -448,11 +448,11 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                         Apply Now
                       </button>
                     </div>
-                    <JoinTeam title="Apply Now" className="pt-14" jobTitle={job.title} />
+                    <JoinTeam title="Apply Now" className="md:pt-14 pt-[30px]" jobTitle={job.title} />
                   </>
                 ) : jobWithOneButtonAndForm.includes(job.id) ? (
                   <>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:pt-[90px] pt-[70px]">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center md:mb-16 mb-[30px] md:pt-[90px] pt-[30px]">
                       <button
                         className="ripple-btn min-h-[40px] md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
                         onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
@@ -460,7 +460,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                         Apply Now
                       </button>
                     </div>
-                    <JoinTeam title="Apply Now" className="pt-8" jobTitle={job.title} />
+                    <JoinTeam title="Apply Now" className=" md:pt-8 pt-[30px]" jobTitle={job.title} />
                   </>
                 ) : (
                   <div className="flex justify-center">

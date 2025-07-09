@@ -40,7 +40,7 @@ const CtaSection = () => {
           {/* Content */}
           <div className="relative px-[16px] md:pt-[65px] md:pb-[75px] pt-[40px] pb-[0px] md:text-left text-center lg:px-[60px] md:bg-transparent text-title">
             <div className="lg:max-w-[520px] md:max-w-[480px] max-w-full">
-              <h2 className="font-bold font-source md:text-primary-white title text-title md:mb-4 mb-4 md:leading-[45px] leading-[normal]">
+              <h2 className="font-bold font-source md:text-primary-white title text-title md:mb-4 mb-4 md:leading-[45px] md:p-0 px-[20px] leading-[normal]">
                 Discover the digital 
                 < span className='md:block inline md:pl-0 pl-[5px]'>possibilities we can help you </span>
                 <span className='md:block inline md:pl-0 pl-[5px]'> unlock for your business!</span>

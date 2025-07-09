@@ -70,7 +70,7 @@ const NewTeamtestimonial = () => {
     const initAOS = async () => {
       const AOS = (await import('aos')).default as {
         init: (options?: any) => void;
-        refresh: () => void;
+        // refresh: () => void;
       };
       AOS.init({
         duration: 800,
