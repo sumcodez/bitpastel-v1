@@ -119,7 +119,7 @@ const NewTeamtestimonial = () => {
   };
 
   return (
-    <section className="relative overflow-hidden md:pt-[100px] pt-[70px]">
+    <section className="relative overflow-hidden">
       <div className="team-first-banner mx-auto">
         {/* First Position */}
         <div className="first relative">
