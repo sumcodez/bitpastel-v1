@@ -677,7 +677,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           {/* Privacy Policy */}
                           <p className="text-[11px] mt-[3px] text-white text-center">
                             By clicking "Lets Work Together", you agree to our{' '}
-                            <Link href="/privacy-policys" className="text-till" onClick={onClose}>
+                            <Link href="/privacy-policys" target='_blank' className="text-till">
                               Privacy Policy
                             </Link>
                           </p>
