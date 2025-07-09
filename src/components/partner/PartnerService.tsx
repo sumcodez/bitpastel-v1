@@ -32,7 +32,7 @@ const PartnerService = () => {
                 stroke-width="4"
               ></path>
             </svg>
-            <h3 className="font-source md:font-[600] text-white  subheading lg:min-h-[unset] md:pt-[25px] md:pb-[20px] pt-[15px] pb-[10px] md:min-h-[100px]">
+            <h3 className="font-source font-[600] text-white  subheading lg:min-h-[unset] md:pt-[25px] md:pb-[20px] pt-[15px] pb-[10px] md:min-h-[100px]">
               Shopify Development
             </h3>
             <p className="text-white font-roboto font-[300]  ">

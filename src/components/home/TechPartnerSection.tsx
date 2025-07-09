@@ -17,7 +17,7 @@ const TechPartnerSection = () => {
           </div>
           <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 md:rounded-tl-[40px] md:rounded-bl-[40px] rounded-bl-[20px] rounded-tl-[20px] content-center overflow-hidden">
             {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}
-            <h2 className=" lg:leading-[45px] leading-[normal] font-source font-bold text-dark title  text-title md:mb-8 mb-5 ">
+            <h2 className=" lg:leading-[45px] leading-[normal] font-source font-[600] text-dark title  text-title md:mb-8 mb-5 ">
               <span className="font-semibold">Why we are the best </span>
               <br />
               <span className="font-black text-accent-green">Tech Partner</span>

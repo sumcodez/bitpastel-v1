@@ -225,7 +225,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section id="stories" className="md:pt-[90px] pt-[55px]">
       <div className="container mx-auto px-4">
-        <h2 className="font-source font-bold text-center text-title title md:mb-8 mb-3">Stories</h2>
+        <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">Stories</h2>
 
         {/* <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title"> */}
         <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
