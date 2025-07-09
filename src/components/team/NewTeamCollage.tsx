@@ -651,7 +651,7 @@ const NewTeamCollage = () => {
       </div>
 
 
- <div className="common-lb fourth-lb lazy-image-section md:pt-[120px] md:pb-[70px]">
+ <div className="common-lb fourth-lb lazy-image-section ">
         <div className="img lt md:pb-0 pb-[70px]">
           <h4 className="tt text-till title font-[600] leading-[normal] ">
           Bitpastel Townhall 2021
