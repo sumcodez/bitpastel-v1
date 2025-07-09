@@ -6,14 +6,14 @@ import Common_banner from '@/components/ui/Common_banner'
 const page = () => {
   return (
     <>
-     <div className='relative'>
+      <div className='relative'>
         <Banner/>
         <JobCard/>
         <div className='container px-4 mx-auto relative'>
         <JoinTeam/>
         </div>
         <Common_banner/>
-    </div>
+      </div>
     </>
   )
 }
