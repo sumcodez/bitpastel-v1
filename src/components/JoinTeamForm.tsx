@@ -486,7 +486,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
                   return;
                 }
                 const digitsOnly = value.replace(/\D/g, '');
-                if (digitsOnly.length <= 15) {
+                if (digitsOnly.length <= 17) {
                   handleInputChange('phone', value);
                 }
               }}
@@ -639,7 +639,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
           {/* Privacy Policy */}
           <p className="text-white text-center font-roboto text-[10px]">
             By clicking "Send", you agree to our{' '}
-            <Link href="/privacy-policys" className=" text-till hover:underline">
+            <Link href="/privacy-policys" target='_blank' className=" text-till hover:underline">
               Privacy Policy
             </Link>
           </p>

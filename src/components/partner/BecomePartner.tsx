@@ -310,7 +310,7 @@ const BecomePartner = () => {
                       const digitsOnly = formData.phone.replace(/\D/g, '');
                       const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
                       if (
-                        digitsOnly.length >= 15 &&
+                        digitsOnly.length >= 17 &&
                         !allowedKeys.includes(e.key) &&
                         /^\d$/.test(e.key)
                       ) {
