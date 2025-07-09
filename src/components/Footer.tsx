@@ -381,7 +381,7 @@ const Footer = () => {
                   stroke-width="1.5"
                 ></path>
               </svg>
-              <span className={`text-[11px] mt-1 `}>Team</span>
+              <span className={`text-[11px] mt-1 `}>Culture</span>
             </Link>
           </div>
           <div
