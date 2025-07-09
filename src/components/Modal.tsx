@@ -429,7 +429,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                   /> */}
 
                   <div className="bg-[#3dcb90] text-primary-white">
-                    <h3 className="title p-4">
+                    <h3 className="title md:p-4 p-2 ">
                       Get Your Business Online Today <br />
                       With <span className="font-bold text-primary-white">Bitpastel</span>
                     </h3>
@@ -509,16 +509,16 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     </>
                   ) : (
                     <>
-                      <h2 className="text-center title font-source mb-4 font-light text-title ">
+                      <h2 className="text-center title font-source md:mb-4 mb-3 font-light text-title ">
                         Get a Free Quote
                       </h2>
                       <form
                         onSubmit={handleSubmit}
                         className="flex flex-col h-full justify-between"
                       >
-                        <div className="space-y-2">
+                        <div className="md:space-y-2">
                           {/* Combined "I want" and service selection */}
-                          <div className="relative pb-1 border-b border-gray-200">
+                          <div className="relative md:pb-1 border-b border-gray-200">
                             <button
                               type="button"
                               onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
@@ -573,7 +573,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           </div>
 
                           {/* Full Name */}
-                          <div className="pb-1 mt-1 border-b border-gray-200 relative">
+                          <div className="md:pb-1 md:mt-1 border-b border-gray-200 relative">
                             <input
                               autoComplete="new-text"
                               readOnly
@@ -593,7 +593,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           </div>
 
                           {/* Email */}
-                          <div className="pb-1 mt-1 border-b border-gray-200 relative">
+                          <div className="md:pb-1 md:mt-1 border-b border-gray-200 relative">
                             <input
                               autoComplete="new-text-1"
                               readOnly
@@ -650,7 +650,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           </div>
 
                           {/* Message */}
-                          <div className="pb-1 border-b border-gray-200">
+                          <div className="md:pb-1 border-b border-gray-200">
                             <textarea
                               autoComplete="new-text-8"
                               readOnly
@@ -659,7 +659,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                               value={formData.message}
                               onChange={(e) => handleInputChange('message', e.target.value)}
                               rows={2}
-                              className="w-full focus:outline-none font-[100] resize-none min-h-[60px] py-2"
+                              className="w-full focus:outline-none font-[100] resize-none md:min-h-[60px] md:py-2"
                             />
                           </div>
                         </div>
@@ -698,7 +698,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                     </>
                   )}
                 </div>
-                <div className="flex flex-wrap gap-4 flex-col justify-center pt-6 pb-5 text-center md:hidden">
+                <div className="flex flex-wrap md:gap-4 gap-2 flex-col justify-center md:pt-6 pt-0 pb-2 md:pb-5 text-center md:hidden">
                   {/* UK - Visible on all screens */}
                   <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
                     <a href="tel:+442081446579">UK: +44 2081 446579</a>
