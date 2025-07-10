@@ -228,14 +228,12 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">Stories</h2>
 
         {/* <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title"> */}
-        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
+        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full stories-inner text-title">
           {visibleTestimonials.map((testimonial) => (
-           <div
-      key={testimonial.id}
-      className={`${testimonial.bgColor} overflow-hidden md:rounded-[20px] ${
-        !isMobile ? "testimonial-card-parent" : ""
-      } rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col mb-8 md:mb-0 break-inside-avoid`}
-    >
+            <div
+              key={testimonial.id}
+              className={`${testimonial.bgColor} overflow-hidden md:rounded-[20px] ${!isMobile ? "testimonial-card-parent" : ""} rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
+            >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
                   <p className= {`lg:line-clamp-3 line-clamp-none ${testimonial.message.trim().length > 270 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] '}`}>

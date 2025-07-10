@@ -407,6 +407,10 @@ input:focus-visible{
   height: 70px;
   transition: all 3s ease;
 } */
+
+.stories-inner div:nth-child(4){
+  margin-top: 0 !important;
+}
  
 @media screen and (max-width:1280px) and (min-width:991px) {
   .testimonial-card-parent:hover .testimonial-card-content p.collabsile-small
@@ -427,21 +431,6 @@ input:focus-visible{
   }
 }
 
- @supports (-webkit-touch-callout: none) {
-    .columns-1.md\:columns-2 {
-      column-gap: 2rem;
-    }
-    
-    .columns-1.md\:columns-2 > * {
-      margin-bottom: 2rem;
-    }
-    
-    .break-inside-avoid {
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-    }
-  }
 
  .testimonial-card-parent .testimonial-card-content p
     {
