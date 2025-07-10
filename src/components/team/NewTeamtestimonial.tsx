@@ -145,7 +145,7 @@ const NewTeamtestimonial = () => {
         (prev[2] + 1) % testimonials.length
       ]);
       setAnimationKey(prev => prev + 1);
-    }, 10000); // Same interval for all strips
+    }, 60000); // Same interval for all strips
 
     return () => clearInterval(interval);
   }, [testimonials.length]);

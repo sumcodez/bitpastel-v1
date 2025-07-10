@@ -291,7 +291,9 @@
     
 }
 
-
+  .testi-image {
+    margin-bottom: -90px !important;
+  }
 @media screen and (max-width: 1023px) {
     .title-middle p, .tx-till {
         font-weight: 700 !important;
@@ -317,6 +319,7 @@
   .mob-team {
     display: block;
   }
+
   .team-first-banner .first .testi-image {
     left: 5%;
   }
