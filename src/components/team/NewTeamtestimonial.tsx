@@ -31,9 +31,9 @@ const NewTeamtestimonial = () => {
       name: "Suman",
       image: "/images/Testimonial-BP/suman-profile.png",
       testimonialDesk: "/images/Testimonial-BP/suman-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/Suman-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/Suman-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/Suman-testim-right.png"
+      testimonialMob: "/images/Testimonial-BP/suman-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/suman-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/suman-testim-right.png"
     },
     {
       id: 3,
