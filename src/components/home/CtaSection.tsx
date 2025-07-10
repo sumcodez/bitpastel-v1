@@ -25,7 +25,7 @@ const CtaSection = () => {
             className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
                        bg-[position:73%_10%] rounded-bl-[20px] ml-4 rounded-tl-[20px]"
             style={{
-              backgroundImage: "url('/images/CTA Photo.webp')"
+              backgroundImage: "url('/images/CTA mobile.png')"
             }}
           ></div>
 
