@@ -417,6 +417,28 @@ input:focus-visible{
   }
 }
 
+@media screen and (max-width:1024px){
+  #culture ul li{
+    position: relative;
+}
+#culture ul li::before{
+        top: 7px;
+        left: -30px;
+        width: 6px;
+        height: 6px;
+        content: "";
+        position: absolute;
+        background: #2a2a2a;
+}
+
+}
+@media screen and (max-width:767px){
+    #culture ul li::before {
+        top: 6px;
+        left: -26px;
+    }
+
+}
  
 @media screen and (max-width:1280px) and (min-width:991px) {
   .testimonial-card-parent:hover .testimonial-card-content p.collabsile-small

@@ -11,7 +11,7 @@ const whatsapp = () => {
             'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
           }
         >
-          <Image src={'/images/whatsapp_dropshadow.png'} width={55} height={55} alt="whatsapp" />
+          <Image src={'/images/Chat Bubble.svg'} width={55} height={55} alt="whatsapp" />
         </Link>
       </div>
     </>
