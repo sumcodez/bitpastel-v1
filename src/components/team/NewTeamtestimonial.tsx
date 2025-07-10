@@ -11,6 +11,7 @@ interface Testimonial {
   testimonialMob: string;
   rightImage?: boolean;
   rightSideTestimonial?: string;
+  rightSideTestimonialMob?: string;
 }
 
 const NewTeamtestimonial = () => {
@@ -19,50 +20,92 @@ const NewTeamtestimonial = () => {
     {
       id: 1,
       name: "Shovan",
-      image: "/images/Testimonial-BP/Shovan-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Shovan-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Shovan-testim.png",
-      rightSideTestimonial: "/flags/shovan_testim.png"
+      image: "/images/Testimonial-BP/shovan-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/Shovan-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/Shovan-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/Shovan-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/Shovan-testim-right.png"
     },
     {
       id: 2,
       name: "Suman",
-      image: "/images/Testimonial-BP/Suman-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Suman-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Suman-testim.png",
-      rightSideTestimonial: "/flags/suman_testim.png"
+      image: "/images/Testimonial-BP/suman-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/suman-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/Suman-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/Suman-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/Suman-testim-right.png"
     },
     {
       id: 3,
       name: "Madhurima",
-      image: "/images/Testimonial-BP/Madhu-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Madhu-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Madhu-testim.png",
-      rightSideTestimonial: "/flags/madhurima_testim.png"
+      image: "/images/Testimonial-BP/madhurima-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/madhurima-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/madhurima-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/madhurima-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/madhurima-testim-right.png"
     },
     {
       id: 4,
       name: "Bhaskar",
-      image: "/images/Testimonial-BP/Bhaskar-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Bhaskar-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Bhaskar-testim.png",
-      rightSideTestimonial: "/flags/bhaskar_testim.png"
+      image: "/images/Testimonial-BP/bhaskar-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/bhaskar-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/bhaskar-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/bhaskar-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/bhaskar-testim-right.png"
     },
     {
       id: 5,
       name: "Nayanika",
-      image: "/images/Testimonial-BP/Nayanika-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Nayanika-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Nayanika-testim.png",
-      rightSideTestimonial: "/flags/nayanika_testim.png"
+      image: "/images/Testimonial-BP/nayanika-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/nayanika-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/nayanika-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/nayanika-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/nayanika-testim-right.png"
     },
     {
       id: 6,
       name: "Sourav",
-      image: "/images/Testimonial-BP/Sourav-ID.png",
-      testimonialDesk: "/images/Testimonial-BP/Sourav-testim.png",
-      testimonialMob: "/images/Testimonial-BP/Sourav-testim.png",
-      rightSideTestimonial: "/flags/sourav_testim.png"
+      image: "/images/Testimonial-BP/sourav-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/sourav-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/sourav-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/sourav-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/sourav-testim-right.png"
+    },
+    {
+      id: 7,
+      name: "Adity",
+      image: "/images/Testimonial-BP/adity-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/adity-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/adity-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/adity-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/adity-testim-right.png"
+    },
+    {
+      id: 8,
+      name: "Mousumi",
+      image: "/images/Testimonial-BP/mousumi-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/mousumi-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/mousumi-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/mousumi-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/mousumi-testim-right.png"
+    },
+    {
+      id: 9,
+      name: "Bony",
+      image: "/images/Testimonial-BP/bony-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/bony-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/bony-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/bony-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/bony-testim-right.png"
+    },
+    {
+      id: 10,
+      name: "Sneha",
+      image: "/images/Testimonial-BP/sneha-profile.png",
+      testimonialDesk: "/images/Testimonial-BP/sneha-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/sneha-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/sneha-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/sneha-testim-right.png"
     }
   ];
 
@@ -160,7 +203,7 @@ const NewTeamtestimonial = () => {
           <img
             alt={`${currentStrip2.name}'s Testimonial`}
             className={`testi-data mob-team `}
-            src={currentStrip2.rightSideTestimonial}
+            src={currentStrip2.rightSideTestimonialMob}
             data-aos="animated-right"
            data-aos-duration="800" data-aos-delay="200"
           />
