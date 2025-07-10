@@ -630,3 +630,7 @@
   }
   
 }
+
+.left{
+  transform: rotateX('-180deg');
+}

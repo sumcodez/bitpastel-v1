@@ -18,6 +18,13 @@ const HeroSection = () => {
           }}
         ></div>
 
+         {/* style={{
+            backgroundImage: `
+               linear-gradient(82deg, rgba(0, 0, 0, 0.7) 6%, rgba(0, 0, 0, 0) 30%),
+               url('/images/banner_new02.jpg')
+            `,
+          }} */}
+
         {/* Mobile background image on top */}
         <div
           className="block md:hidden w-full h-[220px] bg-cover bg-[position:76%_10%] bg-no-repeat"
