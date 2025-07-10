@@ -28,8 +28,8 @@ const ShopifyStoreSection = () => {
             <Image
               src="/images/shopify_client_image.webp"
               alt="Team working together"
-              width={571}
-              height={398}
+              width={1200}
+              height={800}
               className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto object-contain object-center md:object-cover md:object-[30%] xl:object-contain xl:object-center"
             />
           </div>
