@@ -20,9 +20,9 @@ const ShopifyStoreSection = () => {
               <br />
               stores to help you provide the best customer experience!
             </p>
-            <button className="btn font-roboto h-auto  font-[400] bg-green-btn">
+            {/* <button className="btn font-roboto h-auto  font-[400] bg-green-btn">
               Explore Our Portfolio
-            </button>
+            </button> */}
           </div>
           <div className="lg:w-1/2 lg:py-[11px] lg:pr-[11px] md:p-[11px]  w-full lg:order-last order-first xl:h-auto md:h-[-webkit-fill-available] h-auto">
             <Image
