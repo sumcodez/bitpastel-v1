@@ -236,7 +236,7 @@ const [showMore, setShowMore] = useState(false);
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
-                  <p className= {`lg:line-clamp-3 line-clamp-none ${testimonial.message.trim().length > 270 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] '}`}>
+                  <p className= {`lg:line-clamp-3 line-clamp-none ${testimonial.message.trim().length > 260 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] '}`}>
                     "{testimonial.message}"
                   </p>
                 </div>
