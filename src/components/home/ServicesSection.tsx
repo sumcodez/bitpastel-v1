@@ -38,9 +38,9 @@ const ServicesSection = () => {
       description: 'Boost efficiency and automate workflows with intelligent apps',
       icon: '/images/AI icon 1.svg',
       mobileIcon:'/images/ai-icon-yellow.png',
-      bgColor: ' bg-primary-yellow-light',
-      bgcolorCollapsed:'#fcf4d7',
-      mobileTextColor: " text-[rgba(240,198,56,1)]",
+      bgColor: '  bg-primary-green-light',
+      bgcolorCollapsed:'#d8f5e9',
+      mobileTextColor: " text-[rgba(62,203,144,1)]",
     },
     {
       id: 'shopify',
@@ -48,9 +48,9 @@ const ServicesSection = () => {
       description: 'Customised Shopify Plus design, development, and app solutions',
       icon: '/images/img_hugeiconsshopify.svg',
       mobileIcon:'/images/shopify-green-icon.png',
-      bgColor: 'bg-primary-green-light',
-      bgcolorCollapsed: '#d8f5e9',
-      mobileTextColor: "text-[rgba(62,203,144,1)]",
+      bgColor: 'bg-primary-yellow-light',
+      bgcolorCollapsed: '#fcf4d7',
+      mobileTextColor: "text-[rgba(240,198,56,1)]",
       
     },
     {
