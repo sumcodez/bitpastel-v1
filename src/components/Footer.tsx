@@ -164,9 +164,11 @@ const Footer = () => {
                         Home
                       </Link>
                     </div>
-                    <div className="block text-[13px]">
-                      <Link href="#" className="hover:text-gray-300 transition-colors">
-                        Portfolio
+                    <div className="block text-[13px]"
+                    // onClick={() => scrollToSection('culture')}
+                    >
+                      <Link href="/#culture" className="hover:text-gray-300 transition-colors">
+                       About
                       </Link>
                     </div>
                     <div className="block text-[13px]">

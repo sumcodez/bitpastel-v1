@@ -25,7 +25,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'CEO, Maniére De Voir, UK | Forbes 30 Under 30',
     message:
       "Ayan and his team are superstars, they interpret suggestions well and propose even better and more efficient alternatives, the team's work is to a very high standard and turn around time is much faster than a UK equivalent",
-    image: '/images/img_image_56x56.png',
+    image: '/images/Reece_W.jpg',
     bgColor: 'bg-[#9FDDEE]',
   },
   {
@@ -34,7 +34,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'Director, RareBoots4U, UK',
     message:
       "As soon as I came into contact with Ayan and his Bitpastel team, I felt in safe hands. What impressed me most is Ayan’s level of communication. In the past I have experienced slow turnaround times and lack of communication but with Ayan and his team I genuinely felt like I was their only client and the attention to detail is impeccable. I highly recommend them",
-    image: '/images/img_image_56x53.png',
+    image: '/images/cameron_01.jpg',
     bgColor: 'bg-[#FFEA97]',
   },
   {
@@ -43,7 +43,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'Business Strategy & Operations Leader, USA',
     message:
       "Bitpastel has been a delight to work with! They take the time to truly understand the requirements and provide expert opinion on design, development, and implementation. The team is also very detail oriented and communicate extremely well. Everything is timely, effective, and well done. I keep going back to them to build new things because there is no one else I would rather work with.",
-    image: '/images/img_image_1.png',
+    image: '/images/Honey_P.jpg',
     bgColor: 'bg-[#FFA1AA]',
   },
   {
@@ -52,7 +52,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'International Director & Co-founder, Food for Life Global, USA',
     message:
       'Ayan and his team were excellent to work with. He was a great communicator, took the time to understand my needs and always delivered as promised. I will hire him again in the future.',
-    image: '/images/img_image_51x56.png',
+    image: '/images/Paul_R_T.jpg',
     bgColor: 'bg-[#82EAB3]',
   },
   {
@@ -61,7 +61,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'Marketing Manager, Jax Brands, Canada',
     message:
       "Ayan and the Bitpastel team are a reliable and dedicated group. Whenever I reach out to the team about back-end or front-end tasks that need to be completed, they're not only quick to respond but I can rely on their turnaround time. Since partnering with them, my mind has been at ease knowing that they will get the job done so that I can focus on other tasks. It has been a pleasure working with them!",
-    image: '/images/img_image_2.png',
+    image: '/images/david.jpg',
     bgColor: 'bg-[#9FDDEE]',
   },
   {
@@ -70,7 +70,7 @@ const defaultTestimonials: Testimonial[] = [
     title: 'Managing Shareholder, The Law Office of Josiah Young, USA',
     message:
       'Ayan and his team were very helpful, responsive and knowledgeable. This contract has been completed but I will continue to work with Ayan. I would recommend his services to anyone looking to build a website or improve their online presence. The design was very clean. Ayan was also a pleasure to work with and made the process of completing this task much easier.',
-    image: '/images/img_image_3.png',
+    image: '/images/Josiah_Y.jpg',
     bgColor: 'bg-[#FFEA97]',
   },
   {

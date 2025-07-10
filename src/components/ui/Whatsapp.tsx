@@ -6,6 +6,7 @@ const whatsapp = () => {
     <>
       <div className="fixed bottom-[146px] right-[27px] z-50">
         <Link
+          target="_blank"
           href={
             'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
           }
