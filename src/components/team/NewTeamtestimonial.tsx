@@ -21,10 +21,10 @@ const NewTeamtestimonial = () => {
       id: 1,
       name: "Shovan",
       image: "/images/Testimonial-BP/shovan-profile.png",
-      testimonialDesk: "/images/Testimonial-BP/Shovan-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/Shovan-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/Shovan-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/Shovan-testim-right.png"
+      testimonialDesk: "/images/Testimonial-BP/shovan-testim-left.png",
+      testimonialMob: "/images/Testimonial-BP/shovan-testim-left.png",
+      rightSideTestimonial: "/images/Testimonial-BP/shovan-testim-right.png",
+      rightSideTestimonialMob: "/images/Testimonial-BP/shovan-testim-right.png"
     },
     {
       id: 2,
