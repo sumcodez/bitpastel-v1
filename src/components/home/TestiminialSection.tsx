@@ -197,7 +197,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+const [showMore, setShowMore] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
@@ -228,7 +228,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">Stories</h2>
 
         {/* <div className="flex flex-col md:grid md:grid-cols-2 gap-[23px] w-full text-title"> */}
-        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full stories-inner text-title">
+        <div className={`columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full ${showMore ? 'expanded' : 'stories-inner'} text-title `} >
           {visibleTestimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -261,7 +261,10 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         {hasMoreTestimonials && (
           <div className="flex justify-center md:mt-8 mt-7">
             <button
-              onClick={loadMoreTestimonials}
+                onClick={() => {
+            setShowMore(!showMore);
+            loadMoreTestimonials();
+          }}
               disabled={isAnimating}
               className={`group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn ${
                 isAnimating ? 'opacity-70 cursor-not-allowed' : ''
