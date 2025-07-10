@@ -122,10 +122,15 @@ const NewTeamtestimonial = () => {
   };
 
   // State for current testimonial index for each strip
-  const [currentIndices, setCurrentIndices] = useState<number[]>(getRandomIndices());
-  // State to trigger animations
+  const [currentIndices, setCurrentIndices] = useState<number[] | null>(null);
   const [animationKey, setAnimationKey] = useState(0);
 
+  // Run on client after hydration
+  useEffect(() => {
+    setCurrentIndices(getRandomIndices());
+  }, []);
+
+  // AOS init
   useEffect(() => {
     const initAOS = async () => {
       const AOS = (await import('aos')).default;
@@ -136,25 +141,29 @@ const NewTeamtestimonial = () => {
       });
     };
     initAOS();
+  }, []);
 
-    // Single interval for all strips
+  // Animation interval (only start when currentIndices are ready)
+  useEffect(() => {
+    if (!currentIndices) return;
+
     const interval = setInterval(() => {
-      setCurrentIndices(prev => [
-        (prev[0] + 1) % testimonials.length,
-        (prev[1] + 1) % testimonials.length,
-        (prev[2] + 1) % testimonials.length
-      ]);
+      setCurrentIndices(getRandomIndices());
       setAnimationKey(prev => prev + 1);
-    }, 60000); // Same interval for all strips
+    }, 10000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [currentIndices]);
 
   // Get current testimonials for each strip
-  const currentStrip1 = testimonials[currentIndices[0]];
-  const currentStrip2 = testimonials[currentIndices[1]];
-  const currentStrip3 = testimonials[currentIndices[2]];
+  const currentStrip1 = currentIndices ? testimonials[currentIndices[0]] : null;
+  const currentStrip2 = currentIndices ? testimonials[currentIndices[1]] : null;
+  const currentStrip3 = currentIndices ? testimonials[currentIndices[2]] : null;
   
+
+  if (!currentStrip1 || !currentStrip2 || !currentStrip3) {
+    return null;
+  }
 
   return (
     <section className="relative overflow-hidden" key={animationKey}>
