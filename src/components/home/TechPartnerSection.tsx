@@ -21,7 +21,7 @@ const TechPartnerSection = () => {
             <h2 className=" lg:leading-[45px] leading-[normal] font-source font-[600] text-dark title  text-title md:mb-8 mb-5 ">
               <span className="font-semibold">Why we are the best </span>
               <br />
-              <span className="font-black text-accent-green">Tech Partner</span>
+              <span className="font-[600] text-accent-green">Tech Partner</span>
               <span className="font-semibold"> out there</span>
             </h2>
             <div className="md:space-y-4 space-y-2 leading-[1] text-title ">

@@ -332,18 +332,18 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
               {/* Left side - Image and details */}
               <div className="lg:w-[60%] md:w-[50%] md:flex md:flex-col hidden">
                 <div className="mb-3">
-                  {/* <img
-                    src="/images/bitpastel_Clientele_5_new.png"
+                  <img
+                    src="/images/Form image.png"
                     alt="bitpastel client image"
-                    className="w-full h-auto object-cover"
-                  /> */}
-                  <Image
-                    src={'/images/modal-new-img-desktop.png'}
+                    className="w-full h-auto object-cover "
+                  />
+                  {/* <Image
+                    src={'/images/Form image.png'}
                     alt="bitpastel client image"
                     className="w-full h-auto object-cover "
                     width={400}
                     height={300}
-                  />
+                  /> */}
                 </div>
 
                 <div className="modal-details mt-auto">

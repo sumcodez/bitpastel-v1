@@ -16,7 +16,7 @@ const CtaSection = () => {
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
                        md:bg-[position:50%_65%]"
             style={{
-              backgroundImage: "url('/images/discover_new_img.jpg')"
+              backgroundImage: "url('/images/CTA Photo.webp')"
             }}
           ></div>
 
@@ -25,7 +25,7 @@ const CtaSection = () => {
             className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
                        bg-[position:73%_10%] rounded-bl-[20px] ml-4 rounded-tl-[20px]"
             style={{
-              backgroundImage: "url('/images/Contact-us.png')"
+              backgroundImage: "url('/images/CTA Photo.webp')"
             }}
           ></div>
 
