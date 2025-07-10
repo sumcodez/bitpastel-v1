@@ -440,53 +440,65 @@ input:focus-visible{
 
 }
  
-@media screen and (max-width:1280px) and (min-width:991px) {
-  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-small
-   {
-    max-height: 500px; 
-    padding-bottom: 20px;
-    opacity: 1;
-    display: block;
-  }
-}
-@media screen and (max-width:991px) and (min-width:767px) {
-  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-extra-small
-   {
-    max-height: 500px; 
-    padding-bottom: 20px;
-    opacity: 1;
-    display: block;
-  }
-}
-
-
- .testimonial-card-parent .testimonial-card-content p
-    {
-    transition: 
-      max-height 2s ease,
-      padding 0.7s ease,
-      opacity 1.5s ease;
-  }
-  
-
 @media screen and (min-width:1280px) {
-  .testimonial-card-parent .testimonial-card-content p.collabsile-lg
-    {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-lg {
     max-height: 70px;
     overflow: hidden;
     opacity: 1;
     padding-bottom: 0;
+    transition: 
+      max-height 2s ease 3s, /* 3s delay for max-height */
+      padding 0.7s ease 3s,   /* 3s delay for padding */
+      opacity 1.5s ease 3s;    /* 3s delay for opacity */
   }
   
-  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-lg
-   {
+  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-lg {
     max-height: 500px; 
     padding-bottom: 20px;
     opacity: 1;
     display: block;
+    transition-delay: 0s; /* No delay when hovering */
   }
 }
 
+@media screen and (max-width:1280px) and (min-width:991px) {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-small {
+    transition: 
+      max-height 2s ease 3s,
+      padding 0.7s ease 3s,
+      opacity 1.5s ease 3s;
+  }
+  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-small {
+    max-height: 500px; 
+    padding-bottom: 20px;
+    opacity: 1;
+    display: block;
+    transition-delay: 0s;
+  }
+}
+
+@media screen and (max-width:991px) and (min-width:767px) {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-extra-small {
+    transition: 
+      max-height 2s ease 3s,
+      padding 0.7s ease 3s,
+      opacity 1.5s ease 3s;
+  }
+  .testimonial-card-parent:hover .testimonial-card-content p.collabsile-extra-small {
+    max-height: 500px; 
+    padding-bottom: 20px;
+    opacity: 1;
+    display: block;
+    transition-delay: 0s;
+  }
+}
+
+.testimonial-card-parent .testimonial-card-content p {
+    transition: 
+      max-height 2s ease 3s,
+      padding 0.7s ease 3s,
+      opacity 1.5s ease 3s;
+}
 
 
 .partner-refer-list:last-child {
