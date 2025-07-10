@@ -62,13 +62,14 @@ const CultureSection = () => {
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-10">
           <div className="xl:h-[auto] md:h-[100%]">
-            <Image
+            {/* <Image
               src="/images/img_rectangle_51.png"
               alt="Team collaboration"
               width={695}
               height={537}
               className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto"
-            />
+            /> */}
+            <img src="/images/img_rectangle_51.png" alt="Team collaboration" className='md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto' />
           </div>
           <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 xl:gap-10 md:gap-6 gap-6">
             {features.map((feature, index) => (

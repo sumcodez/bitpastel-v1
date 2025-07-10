@@ -12,8 +12,8 @@ interface Testimonial {
 }
 
 const NewTeamtestimonial = () => {
-  // Single array for all testimonials
-  const testimonials: Testimonial[] = [
+  // Three separate arrays for each strip
+  const strip1Testimonials: Testimonial[] = [
     {
       id: 1,
       name: "Shovan",
@@ -58,8 +58,99 @@ const NewTeamtestimonial = () => {
     }
   ];
 
-  // State for current testimonial index
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const strip2Testimonials: Testimonial[] = [
+     {
+      id: 1,
+      name: "Madhurima",
+      image: "/images/Testimonial-BP/Madhu-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Madhu-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Madhu-testim.png",
+    },
+    {
+      id: 2,
+      name: "Sourav",
+      image: "/images/Testimonial-BP/Sourav-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Sourav-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Sourav-testim.png",
+    },
+     {
+      id: 3,
+      name: "Nayanika",
+      image: "/images/Testimonial-BP/Nayanika-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Nayanika-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Nayanika-testim.png",
+    },
+     {
+      id: 4,
+      name: "Shovan",
+      image: "/images/Testimonial-BP/Shovan-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Shovan-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Shovan-testim.png",
+    },
+    {
+      id: 5,
+      name: "Bhaskar",
+      image: "/images/Testimonial-BP/Bhaskar-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Bhaskar-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Bhaskar-testim.png",
+    },
+    {
+      id: 6,
+      name: "Suman",
+      image: "/images/Testimonial-BP/Suman-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Suman-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Suman-testim.png",
+    },
+  ];
+
+  const strip3Testimonials: Testimonial[] = [
+    {
+      id: 1,
+      name: "Bhaskar",
+      image: "/images/Testimonial-BP/Bhaskar-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Bhaskar-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Bhaskar-testim.png",
+    },
+    {
+      id: 2,
+      name: "Madhurima",
+      image: "/images/Testimonial-BP/Madhu-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Madhu-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Madhu-testim.png",
+    },
+     {
+      id: 3,
+      name: "Sourav",
+      image: "/images/Testimonial-BP/Sourav-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Sourav-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Sourav-testim.png",
+    },
+     {
+      id: 4,
+      name: "Suman",
+      image: "/images/Testimonial-BP/Suman-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Suman-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Suman-testim.png",
+    },
+    {
+      id: 5,
+      name: "Shovan",
+      image: "/images/Testimonial-BP/Shovan-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Shovan-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Shovan-testim.png",
+    },
+   
+    {
+      id: 6,
+      name: "Nayanika",
+      image: "/images/Testimonial-BP/Nayanika-ID.png",
+      testimonialDesk: "/images/Testimonial-BP/Nayanika-testim.png",
+      testimonialMob: "/images/Testimonial-BP/Nayanika-testim.png",
+    }
+  ];
+
+// State for current testimonial index for each strip
+  const [currentIndices, setCurrentIndices] = useState<number[]>([0, 0, 0]);
   // State to trigger animations
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -74,27 +165,32 @@ const NewTeamtestimonial = () => {
     };
     initAOS();
 
+    // Single interval for all strips
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % testimonials.length);
+      setCurrentIndices(prev => [
+        (prev[0] + 1) % strip1Testimonials.length,
+        (prev[1] + 1) % strip2Testimonials.length,
+        (prev[2] + 1) % strip3Testimonials.length
+      ]);
       setAnimationKey(prev => prev + 1);
-    }, 10000);
+    }, 10000); // Same interval for all strips
 
     return () => clearInterval(interval);
   }, []);
 
-  // Get current testimonials for each strip by offsetting from the currentIndex
-  const currentStrip1 = testimonials[currentIndex % testimonials.length];
-  const currentStrip2 = testimonials[(currentIndex + 1) % testimonials.length];
-  const currentStrip3 = testimonials[(currentIndex + 2) % testimonials.length];
+  // Get current testimonials for each strip
+  const currentStrip1 = strip1Testimonials[currentIndices[0]];
+  const currentStrip2 = strip2Testimonials[currentIndices[1]];
+  const currentStrip3 = strip3Testimonials[currentIndices[2]];
 
   return (
     <section className="relative overflow-hidden" key={animationKey}>
       <div className="team-first-banner mx-auto">
         {/* First strip */}
-        <div className="first relative">
+        <div className="first relative other-element">
           <img
             alt={`${currentStrip1.name}'s image`}
-            className="testi-image other-element"
+            className="testi-image"
             src={currentStrip1.image}
             data-aos="fade-up"
             data-aos-duration="800"
@@ -116,10 +212,10 @@ const NewTeamtestimonial = () => {
         </div>
 
         {/* Second strip */}
-        <div className="second relative">
+        <div className="second  other-element2 relative">
           <img
             alt={`${currentStrip2.name}'s image`}
-            className="testi-image other-element2"
+            className="testi-image "
             src={currentStrip2.image}
             data-aos="fade-up"
             data-aos-duration="800" data-aos-anchor="other-element"
