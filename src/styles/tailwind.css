@@ -427,6 +427,22 @@ input:focus-visible{
   }
 }
 
+ @supports (-webkit-touch-callout: none) {
+    .columns-1.md\:columns-2 {
+      column-gap: 2rem;
+    }
+    
+    .columns-1.md\:columns-2 > * {
+      margin-bottom: 2rem;
+    }
+    
+    .break-inside-avoid {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+
  .testimonial-card-parent .testimonial-card-content p
     {
     transition: 
