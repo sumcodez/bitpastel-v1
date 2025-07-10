@@ -408,9 +408,12 @@ input:focus-visible{
   transition: all 3s ease;
 } */
 
-.stories-inner div:nth-child(4){
-  margin-top: 0 !important;
+@media screen and (min-width:767px) {
+  .stories-inner div:nth-child(4){
+    margin-top: 0 !important;
+  }
 }
+
  
 @media screen and (max-width:1280px) and (min-width:991px) {
   .testimonial-card-parent:hover .testimonial-card-content p.collabsile-small
