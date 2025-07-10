@@ -430,7 +430,7 @@ input:focus-visible{
  .testimonial-card-parent .testimonial-card-content p
     {
     transition: 
-      max-height 1.5s ease,
+      max-height 2s ease,
       padding 0.7s ease,
       opacity 1.5s ease;
   }
