@@ -26,7 +26,7 @@ const ShopifyStoreSection = () => {
           </div>
           <div className="lg:w-1/2 lg:py-[11px] lg:pr-[11px] md:p-[11px]  w-full lg:order-last order-first xl:h-auto md:h-[-webkit-fill-available] h-auto">
             <Image
-              src="/images/shopify_client_image.jpg"
+              src="/images/shopify_client_image.webp"
               alt="Team working together"
               width={571}
               height={398}
