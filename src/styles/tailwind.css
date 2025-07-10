@@ -427,6 +427,14 @@ input:focus-visible{
   }
 }
 
+ .testimonial-card-parent .testimonial-card-content p
+    {
+    transition: 
+      max-height 1.2s ease,
+      padding 0.5s ease,
+      opacity 1.2s ease;
+  }
+  
 
 @media screen and (min-width:1280px) {
   .testimonial-card-parent .testimonial-card-content p.collabsile-lg
@@ -435,10 +443,6 @@ input:focus-visible{
     overflow: hidden;
     opacity: 1;
     padding-bottom: 0;
-    transition: 
-      max-height 0.5s ease,
-      padding 0.5s ease,
-      opacity 0.5s ease;
   }
   
   .testimonial-card-parent:hover .testimonial-card-content p.collabsile-lg
