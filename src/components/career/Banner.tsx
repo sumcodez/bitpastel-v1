@@ -10,6 +10,8 @@ const Banner = () => {
       }, 100);
     }
   };
+
+  
   return (
     <div>
       <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">

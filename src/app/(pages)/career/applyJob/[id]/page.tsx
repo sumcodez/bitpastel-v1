@@ -36,7 +36,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     const el = document.getElementById(id);
     if (el) {
       setTimeout(() => {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth'});
       }, 100);
     }
   };
