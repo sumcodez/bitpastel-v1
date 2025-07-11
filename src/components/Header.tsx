@@ -171,7 +171,7 @@ const Header = () => {
                 Culture
               </Link> */}
               <Link
-                href="/team"
+                href="/culture"
                 className={`${shouldApplyScrolledStyle ? 'text-title' : 'text-primary-white'} hover:text-accent-green transition-colors`}
               >
                 Culture
