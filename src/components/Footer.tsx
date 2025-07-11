@@ -363,9 +363,9 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/team') ? 'active' : ''}`}
+            className={`nav-item flex flex-col items-center ${isActive('/culture') ? 'active' : ''}`}
           >
-            <Link href="/team" className="flex flex-col items-center">
+            <Link href="/culture" className="flex flex-col items-center">
               <svg
                 _ngcontent-c8=""
                 fill="none"
