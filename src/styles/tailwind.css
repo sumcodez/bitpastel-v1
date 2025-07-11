@@ -501,6 +501,17 @@ input:focus-visible{
 }
 
 
+  .nav-item.current svg {
+  fill: var(--primary-teal);
+}
+  .nav-item.current svg path d{
+  fill: var(--primary-teal);
+}
+.nav-item.current span {
+  color: var(--primary-teal);
+}
+
+
 .partner-refer-list:last-child {
     border-bottom: 0;
     padding-bottom: 0;
@@ -533,19 +544,6 @@ input:focus-visible{
   .title-middle {
     padding-top: 40px;
   }
-
-
-
-  .nav-item.current svg {
-  fill: var(--primary-teal);
-}
-  .nav-item.current svg path d{
-  fill: var(--primary-teal);
-}
-.nav-item.current span {
-  color: var(--primary-teal);
-}
-
 
 
   .title-spaccer {
