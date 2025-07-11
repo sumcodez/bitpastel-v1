@@ -23,7 +23,7 @@ const Header = () => {
   const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage
 
   // Improved scroll to section function
-  const scrollToSection = useCallback((sectionId: string, offset = 80) => {
+  const scrollToSection = useCallback((sectionId: string, offset = 40) => {
     const element = document.getElementById(sectionId)
     if (element) {
       const elementPosition = element.getBoundingClientRect().top

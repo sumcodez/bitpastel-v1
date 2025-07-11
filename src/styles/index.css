@@ -622,11 +622,11 @@
   }
 }
 .common-banner {
-  background: url('/images/common-banner.png');
+  background: url('/images/Web.png');
 }
 @media screen and (max-width:767px) {
   .common-banner {
-    background: url('/images/icon-bottom.webp');
+    background: url('/images/Mobile.png');
     padding-top: 20px !important;
     background-position: unset !important;
   }

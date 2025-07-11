@@ -5,7 +5,6 @@ const Common_banner = () => {
     <section 
     className="bg-no-repeat common-banner bg-cover md:bg-top bg-left md:min-h-[360px] md:max-h-[360px] min-h-[180px] max-h-[180px] pt-[45px]"
     >
-      
     </section>
   )
 }
