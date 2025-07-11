@@ -15,6 +15,8 @@ interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
 }
 
+
+
 const defaultTestimonials: Testimonial[] = [
   {
     id: '1',
@@ -23,7 +25,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "Ayan and his team are superstars, they interpret suggestions well and propose even better and more efficient alternatives, the team's work is to a very high standard and turn around time is much faster than a UK equivalent",
     image: '/images/Reece_W.jpg',
-    bgColor: 'bg-[#9FDDEE]',
+    bgColor: 'bg-[#FFA1AA]',
   },
   {
     id: '2',
@@ -32,7 +34,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'As soon as I came into contact with Ayan and his Bitpastel team, I felt in safe hands. What impressed me most is Ayan’s level of communication. In the past I have experienced slow turnaround times and lack of communication but with Ayan and his team I genuinely felt like I was their only client and the attention to detail is impeccable. I highly recommend them',
     image: '/images/cameron_01.jpg',
-    bgColor: 'bg-[#FFEA97]',
+    bgColor: 'bg-[#82EAB3]',
   },
   {
     id: '3',
@@ -50,7 +52,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Ayan and his team were excellent to work with. He was a great communicator, took the time to understand my needs and always delivered as promised. I will hire him again in the future.',
     image: '/images/Paul_R_T.jpg',
-    bgColor: 'bg-[#82EAB3]',
+    bgColor: 'bg-[#FFEA97]',
   },
   {
     id: '5',
@@ -77,7 +79,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'The entire team did a great job and will definitely hire again for future projects. They delivered exactly what they promised on time and on budget. The attention to detail was perfect as was the constant communication. We are happy we finally found a great team to work with',
     image: '/images/Doug_A.jpg',
-    bgColor: 'bg-[#FFEA97]',
+    bgColor: 'bg-[#82EAB3]',
   },
   {
     id: '8',
@@ -86,7 +88,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "The people at Bitpastel are professionals, the SRS (Software Requirement Specification) that the team is working on is the exact translation of my insights and idea's about the app. Bitpastel gives me the guarantee that the app will be all I wanted it to be, and more... I highly recommend them for your next project",
     image: '/images/Anthony.jpg',
-    bgColor: 'bg-[#82EAB3]',
+    bgColor: 'bg-[#FFA1AA]',
   },
   {
     id: '9',
@@ -95,7 +97,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been doing custom HubSpot COS development for us and our expectations have been consistently exceeded. There is always a great turnaround on project requests and they are available for talking through upcoming work and ready to take on new challenges.',
     image: '/images/Brandon_P.jpg',
-    bgColor: ' bg-[#FFA1AA]',
+    bgColor: 'bg-[#82EAB3]',
   },
   {
     id: '10',
@@ -113,7 +115,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Ayan is a sharp individual and showed a very good ability to quickly understand our brief and get his team to deliver according to our specification. I recommend',
     image: '/images/Charles_F.jpg',
-    bgColor: 'bg-[#FFA1AA]',
+    bgColor: 'bg-[#FFEA97]',
   },
   {
     id: '12',
@@ -122,7 +124,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel is an ambitious design & development team. They take good care of the client and have a professional attitude. What I really appreciate is that work is done quickly and without delays which is very important for a long-term business relationship. I really like their way to communicate',
     image: '/images/Alf_B.jpeg',
-    bgColor: 'bg-[#82EAB3]',
+    bgColor: 'bg-[#9FDDEE]',
   },
 ];
 
@@ -130,24 +132,13 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
 
-  // ✅ Mobile bg color cycle (4 colors)
-const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#82EAB3]', 'bg-[#FFEA97]', 'bg-[#9FDDEE]'];
-
-// ✅ Generate mobile-specific testimonials with repeating 4-color pattern for first few
-const mobileTestimonials = defaultTestimonials.map((t, i) => ({
-  ...t,
-  bgColor: i < 3 ? mobileBgColors[i % mobileBgColors.length] : t.bgColor, // override first 3
-}));
-
-
   const [isMobile, setIsMobile] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
   const [initialCount, setInitialCount] = useState(6);
-const currentTestimonials = isMobile ? mobileTestimonials : testimonials; // ✅ use different array for mobile
-const initialTestimonials = currentTestimonials.slice(0, initialCount);  // ✅ adjusted source
-const extraTestimonials = currentTestimonials.slice(6);                  // ✅ adjusted source
+  const initialTestimonials = testimonials.slice(0, initialCount);
 
+  const extraTestimonials = testimonials.slice(6);
 
   useEffect(() => {
     const handleResize = () => {
@@ -171,7 +162,7 @@ const extraTestimonials = currentTestimonials.slice(6);                  // ✅ 
         <div className={`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
           <p
             className={`lg:line-clamp-3 line-clamp-none ${
-              testimonial.message.trim().length > 260 ? 'collabsile-lg' : ''
+              testimonial.message.trim().length > 290 ? 'collabsile-lg' : ''
             } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : ''} ${
               testimonial.message.trim().length > 90 ? 'collabsile-extra-small' : ''
             } ${isMobile ? 'text-[12px]' : 'text-[13px] leading-[23px]'}`}
