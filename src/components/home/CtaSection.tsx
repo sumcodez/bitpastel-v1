@@ -16,7 +16,7 @@ const CtaSection = () => {
             className="hidden md:block w-full md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
                        md:bg-[position:50%_65%]"
             style={{
-              backgroundImage: "url('/images/CTA Photo.webp')"
+              backgroundImage: "url('/images/CTA.webp')"
             }}
           ></div>
 
@@ -25,17 +25,17 @@ const CtaSection = () => {
             className="md:hidden block w-full min-h-[310px] md:absolute md:inset-0 bg-cover bg-no-repeat md:h-auto 
                        bg-[position:73%_10%] rounded-bl-[20px] ml-4 rounded-tl-[20px]"
             style={{
-              backgroundImage: "url('/images/CTA mobile.png')"
+              backgroundImage: "url('/images/mobile cta.webp')"
             }}
           ></div>
 
           {/* Gradient Overlay only for desktop */}
-          <div 
+          {/* <div 
             className="hidden md:block absolute inset-0"
             style={{
               background: "linear-gradient(270deg, rgba(0, 0, 0, 0) 41.14%, rgba(0, 0, 0, 0.65) 72.12%)"
             }}
-          ></div>
+          ></div> */}
 
           {/* Content */}
           <div className="relative px-[16px] md:pt-[65px] md:pb-[75px] pt-[40px] pb-[0px] md:text-left text-center lg:px-[60px] md:bg-transparent text-title">

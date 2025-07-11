@@ -10,6 +10,7 @@ import Whatsapp from '@/components/ui/Whatsapp';
 const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
+  const [currentTab, setCurrentTab] = useState<string>('home');
 
   // Helper function to determine if a link is active
   const isActive = (href: string) => {
@@ -293,7 +294,7 @@ const Footer = () => {
       {/* Mobile Nav */}
       <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
         <div className="footer-mobile-nav flex justify-around items-center py-2 ">
-          <div className={`nav-item flex flex-col items-center ${isActive('/') ? 'active' : ''}`}>
+          <div onClick={() => setCurrentTab('home')} className={`nav-item flex flex-col items-center ${currentTab === 'home' ? 'current' : ''}`}>
             <Link href="/" className="flex flex-col items-center">
               <svg
                 _ngcontent-c8=""
@@ -314,7 +315,8 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/services') ? 'active' : ''}`}
+            onClick={() => setCurrentTab('services')}
+            className={`nav-item flex flex-col items-center ${currentTab === 'services' ? 'current' : ''}`}
           >
             <Link href="/#services" className="flex flex-col items-center">
               <svg
@@ -336,7 +338,8 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/stories') ? 'active' : ''}`}
+            onClick={() => setCurrentTab('stories')}
+            className={`nav-item flex flex-col items-center ${currentTab === 'stories' ? 'current' : ''}`}
           >
             <Link href="/#stories" className="flex flex-col items-center">
               <svg
@@ -363,7 +366,8 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/culture') ? 'active' : ''}`}
+            onClick={() => setCurrentTab('culture')}
+            className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}
           >
             <Link href="/culture" className="flex flex-col items-center">
               <svg
@@ -387,7 +391,8 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/careers') ? 'active' : ''}`}
+            onClick={() => setCurrentTab('career')}
+            className={`nav-item flex flex-col items-center ${currentTab === 'career' ? 'current' : ''}`}
           >
             <Link href="/career" className="flex flex-col items-center">
               <svg
@@ -481,7 +486,8 @@ const Footer = () => {
             </Link>
           </div>
           <div
-            className={`nav-item flex flex-col items-center ${isActive('/contact') ? 'active' : ''}`}
+            onClick={() => setCurrentTab('contact')}
+            className={`nav-item flex flex-col items-center ${currentTab === 'contact' ? 'current' : ''}`}
           >
             <Link href=""  className={`flex flex-col items-center ${isModalOpen ? 'modal-open' : ''} `}
             onClick={() => setIsModalOpen(true)}

@@ -77,7 +77,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'The entire team did a great job and will definitely hire again for future projects. They delivered exactly what they promised on time and on budget. The attention to detail was perfect as was the constant communication. We are happy we finally found a great team to work with',
     image: '/images/Doug_A.jpg',
-    bgColor: 'bg-[#FFA1AA]',
+    bgColor: 'bg-[#FFEA97]',
   },
   {
     id: '8',
@@ -95,7 +95,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been doing custom HubSpot COS development for us and our expectations have been consistently exceeded. There is always a great turnaround on project requests and they are available for talking through upcoming work and ready to take on new challenges.',
     image: '/images/Brandon_P.jpg',
-    bgColor: 'bg-[#FFEA97]',
+    bgColor: ' bg-[#FFA1AA]',
   },
   {
     id: '10',

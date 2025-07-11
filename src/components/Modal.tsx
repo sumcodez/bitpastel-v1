@@ -76,14 +76,17 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
       setIsVisible(true);
       setFormData(initialFormData);
       setIsSuccess(false);
-      // Small delay to ensure the element is rendered before starting animation
       setTimeout(() => setIsAnimating(true), 10);
     } else {
       setIsAnimating(false);
-      // Wait for animation to complete before hiding
-      setTimeout(() => setIsVisible(false), 200);
+      setTimeout(() => {
+        setIsVisible(false);
+        setIsServiceDropdownOpen(false);
+        setIsCountryDropdownOpen(false);
+      }, 200);
     }
   }, [open]);
+
 
   const handleClose = () => {
     onClose();
