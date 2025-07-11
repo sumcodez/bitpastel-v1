@@ -132,13 +132,23 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
 
+  //Mobile bg color cycle (4 colors)
+  const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#82EAB3]', 'bg-[#FFEA97]', 'bg-[#9FDDEE]'];
+
+  //Generate mobile-specific testimonials with repeating 4-color pattern for first few
+  const mobileTestimonials = defaultTestimonials.map((t, i) => ({
+    ...t,
+    bgColor: i < 3 ? mobileBgColors[i % mobileBgColors.length] : t.bgColor, // override first 3
+  }));
+
   const [isMobile, setIsMobile] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
   const [initialCount, setInitialCount] = useState(6);
-  const initialTestimonials = testimonials.slice(0, initialCount);
 
-  const extraTestimonials = testimonials.slice(6);
+  const currentTestimonials = isMobile ? mobileTestimonials : testimonials; //different array for mobile
+  const initialTestimonials = currentTestimonials.slice(0, initialCount);
+  const extraTestimonials = currentTestimonials.slice(6);   
 
   useEffect(() => {
     const handleResize = () => {
