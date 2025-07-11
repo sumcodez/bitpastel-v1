@@ -424,11 +424,12 @@ input:focus-visible{
 #culture ul li::before{
         top: 7px;
         left: -30px;
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
         content: "";
         position: absolute;
         background: #2a2a2a;
+        border-radius: 50%;
 }
 
 }

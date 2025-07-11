@@ -2,7 +2,7 @@ const NewTeamCollage = () => {
   return (
     <section className="life-at-bitpastel team-image-wrapper max-w-[1600px] mx-auto md:pt-[100px] pt-[70px]" id="team">
       <div className="">
-        <div className="common-lb third-lb lazy-image-section">
+        {/* <div className="common-lb third-lb lazy-image-section">
           <div className=" lt top-speccer md:mb-0 mb-[50px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
@@ -11,6 +11,37 @@ const NewTeamCollage = () => {
             </div>
           </div>
           <div className="img rt">
+            <img
+              alt="Cultural Programme"
+              className="lazy"
+              src="/images/Team-Page-Image/2024BTH-19.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+        </div> */}
+
+
+        {/* 2024BTH-21.png */}
+
+ <div className="">
+          <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:py-[40px]">
+            Escape Rooms
+          </h4>
+        </div>
+
+
+ <div className="common-lb fourth-lb">
+          <div className="img lt">
+            <img
+              alt="Award & Recognition"
+              className="lazy"
+              src="/images/Team-Page-Image/2024BTH-21.png"
+              height="1000"
+              width="700"
+            />
+          </div>
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
