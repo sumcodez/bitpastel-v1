@@ -220,7 +220,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 
 
         {/* Buttons */}
-        {extraTestimonials.length > 0 && (
+        {/* {extraTestimonials.length > 0 && (
           <div className="flex justify-center md:mt-8 mt-7 space-x-4">
             {!showMore ? (
               <button
@@ -232,16 +232,29 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             ) : (
               <button
                 onClick={() => {
-  setShowMore(false);
-  document.getElementById('stories')?.scrollIntoView({ behavior: 'smooth' });
-}}
+                  setShowMore(false);
+                  document.getElementById('stories')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
               >
                 <span>Show Less</span>
               </button>
             )}
           </div>
-        )}
+        )} */}
+
+
+        {/* Buttons */}
+{extraTestimonials.length > 0 && !showMore && (
+  <div className="flex justify-center md:mt-8 mt-7 space-x-4">
+    <button
+      onClick={() => setShowMore(true)}
+      className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
+    >
+      <span>Explore more stories</span>
+    </button>
+  </div>
+)}
 
       </div>
     </section>
