@@ -16,9 +16,9 @@ const ShopifyStoreSection = () => {
             {/* <p className="text-[16px] leading-[26px] text-title md:leading-relaxed mb-8"> */}
             <p className="text-[16px] leading-[26px] md:p-0 px-[10px] text-title md:leading-relaxed">
               We have helped 100+ brands grow from scratch to $1M GMV.
-              <br className='md:block hidden' />
+              <span className='md:block inline md:pl-0 pl-[5px]' />
               At Bitpastel studio, we build differentiated, fast, and scalable online
-              <br className='md:block hidden' />
+              <span className='md:block inline md:pl-0 pl-[5px]' />
               stores to help you provide the best customer experience!
             </p>
             {/* <button className="btn font-roboto h-auto  font-[400] bg-green-btn">
