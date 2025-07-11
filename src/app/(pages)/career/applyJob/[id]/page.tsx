@@ -31,6 +31,15 @@ export default function JobDetail({ params }: { params: { id: string } }) {
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+      }, 100);
+    }
+  };
   // Mock data - replace with your actual data fetching
   const jobListings: JobListing[] = [
     {
@@ -427,7 +436,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 )}
               </div>
               {/* Apply Div */}
-              <div className="md:pt-[90px] pt-[30px]" ref={formRef} id="applicationForm">
+              {/* <div className="md:pt-[90px] pt-[30px]" ref={formRef} id="applicationForm">
                 {jobWithForm.includes(job.id) ? (
                   <JoinTeam title="Apply Now" jobTitle={job.title} />
                 ) : jobWithFormAndButton.includes(job.id) ? (
@@ -464,6 +473,65 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                   </>
                 ) : (
                   <div className="flex justify-center">
+                    <button
+                      className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors"
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                        window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
+                      }
+                    >
+                      Apply via Naukri.com
+                    </button>
+                  </div>
+                )}
+              </div> */}
+
+
+
+              {/* Apply Div */}
+              <div className="md:pt-[90px] pt-[30px]" ref={formRef}>
+                {jobWithForm.includes(job.id) ? (
+                  <div className='' id='applicationForm'>
+                    <JoinTeam title="Apply Now" jobTitle={job.title} />
+                  </div>
+                  // <JoinTeam title="Apply Now" jobTitle={job.title} />
+                ) : jobWithFormAndButton.includes(job.id) ? (
+                  <>
+                    <div className="flex flex-col sm:flex-row gap-10 justify-center items-center md:mb-16 mb-[0px] md:pt-14 pt-[30px]">
+                      <button
+                        className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                          window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
+                        }
+                      >
+                        Apply via Naukri.com
+                      </button>
+                      <button
+                        className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
+                        onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Apply Now
+                      </button>
+                    </div>
+                    <div className="join-team-section" id='applicationForm'>
+                      <JoinTeam title="Apply Now" className="md:pt-14 pt-[30px]" jobTitle={job.title} />
+                    </div>
+                  </>
+                ) : jobWithOneButtonAndForm.includes(job.id) ? (
+                  <>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center md:mb-16 mb-[30px] md:pt-[90px] pt-[30px]">
+                      <button
+                        className="ripple-btn min-h-[40px] md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
+                        onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Apply Now
+                      </button>
+                    </div>
+                    <div className="join-team-section" id='applicationForm'>
+                      <JoinTeam title="Apply Now" className="md:pt-8 pt-[30px]" jobTitle={job.title} />
+                    </div>
+                  </>
+                ) : (
+                  <div className="button-section flex justify-center">
                     <button
                       className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors"
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
