@@ -86,7 +86,7 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt order-first md:order-last md:py-0 py-[70px] relative md:top-[-120px]">
+          <div className=" rt order-first md:order-last md:py-0 py-[70px] relative md:top-[-280px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Ice Breaker - Coffee
@@ -97,7 +97,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="common-lb third-lb lazy-image-section relative md:top-[-120px]">
+        <div className="common-lb third-lb lazy-image-section relative md:top-[-280px]">
           <div className=" lt top-speccer md:pt-[70px] md:pb-[0px] py-[40px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
@@ -118,7 +118,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="common-lb third-lb lazy-image-section relative md:top-[-120px]">
+        <div className="common-lb third-lb lazy-image-section relative md:top-[-280px]">
           <div className="img lt">
             <img
               alt="Cultural Programme"
@@ -140,7 +140,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="pt-[60px] lg:mt-[-200px] md:mt-[-120px] md:mb-[90px]">
+        <div className="pt-[60px] lg:mt-[-300px] md:mt-[-120px] md:mb-[90px]">
           <h4 className="tt text-center title  leading-[normal] text-till font-[600]">
             Birthday Celebration at Office
           </h4>
@@ -312,7 +312,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt md:top-[18%]">
+          <div className="img rt">
             <img
               alt="Cultural Programme"
               className="lazy"

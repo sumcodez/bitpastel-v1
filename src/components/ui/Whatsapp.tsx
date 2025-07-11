@@ -4,7 +4,7 @@ import Image from 'next/image';
 const whatsapp = () => {
   return (
     <>
-      <div className="fixed bottom-[146px] right-[27px] z-50">
+      <div className="fixed bottom-[146px] right-[26px] z-50">
         <Link
           target="_blank"
           href={

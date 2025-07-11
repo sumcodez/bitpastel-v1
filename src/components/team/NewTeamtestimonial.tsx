@@ -131,7 +131,7 @@ const NewTeamtestimonial = () => {
         duration: 400,
         easing: 'ease-in-out',
         once: true,
-        offset: 100,
+        offset: 120,
         delay: 0
       });
     };
