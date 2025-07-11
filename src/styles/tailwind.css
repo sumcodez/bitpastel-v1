@@ -534,16 +534,19 @@ input:focus-visible{
     padding-top: 40px;
   }
 
+
+
   .nav-item.current svg {
   fill: var(--primary-teal);
 }
-
   .nav-item.current svg path d{
   fill: var(--primary-teal);
 }
 .nav-item.current span {
   color: var(--primary-teal);
 }
+
+
 
   .title-spaccer {
     padding: 40px 20px 0;
