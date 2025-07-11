@@ -194,13 +194,13 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">Stories</h2>
 
         {/* Initial Testimonials */}
-        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mb-8 mx-auto w-full text-title">
+        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
           {initialTestimonials.map(renderTestimonialCard)}
         </div>
 
         {/* Extra Testimonials (only shown when showMore is true) */}
         {showMore && (
-          <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
+          <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-8 mx-auto w-full text-title">
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}
