@@ -531,7 +531,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                     </div>
                   </>
                 ) : (
-                  <div className="button-section flex justify-center">
+                  <div className="button-section flex justify-center" id='applicationForm'>
                     <button
                       className="ripple-btn md:ml-[32px] min-w-[280px] bg-green-btn text-primary-white font-medium py-3 px-6 rounded-md transition-colors"
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
