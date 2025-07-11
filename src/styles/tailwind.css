@@ -444,7 +444,7 @@ input:focus-visible{
 
 
 
-/* @media screen and (min-width:1280px) {
+@media screen and (min-width:1280px) {
   .testimonial-card-parent .testimonial-card-content p.collabsile-lg {
     max-height: 70px;
     overflow: hidden;
@@ -508,12 +508,17 @@ input:focus-visible{
       transition-delay:  1s;
 }
 
- */
 
 
- 
 
 
+
+/* @media screen and (max-width:430px){
+  .whatspp-bubble{
+  bottom: 300px !important;
+  }
+} */
+  
 
 
 
