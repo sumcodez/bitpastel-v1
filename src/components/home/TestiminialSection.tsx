@@ -133,7 +133,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 }) => {
 
   //Mobile bg color cycle (4 colors)
-  const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#82EAB3]', 'bg-[#FFEA97]', 'bg-[#9FDDEE]'];
+  const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#FFEA97]', 'bg-[#82EAB3]', 'bg-[#9FDDEE]'];
 
   //Generate mobile-specific testimonials with repeating 4-color pattern for first few
   const mobileTestimonials = defaultTestimonials.map((t, i) => ({
