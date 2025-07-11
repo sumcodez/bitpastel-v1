@@ -138,8 +138,6 @@ const orderedTestimonials: Testimonial[] = [
   },
 ];
 
-
-
 const defaultTestimonials: Testimonial[] = [
   {
     id: '1',
@@ -254,14 +252,13 @@ const defaultTestimonials: Testimonial[] = [
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
-
   //Mobile bg color cycle (4 colors)
   const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#FFEA97]', 'bg-[#82EAB3]', 'bg-[#9FDDEE]'];
 
-  //Generate mobile-specific testimonials with repeating 4-color pattern for first few
   const mobileTestimonials = orderedTestimonials.map((t, i) => ({
     ...t,
-    bgColor: i < 3 ? mobileBgColors[i % mobileBgColors.length] : t.bgColor, // override first 3
+    // Only apply mobile color if bgColor doesn't exist
+    bgColor: t.bgColor || mobileBgColors[i % mobileBgColors.length],
   }));
 
   const [isMobile, setIsMobile] = useState(false);
@@ -269,9 +266,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 
   const [initialCount, setInitialCount] = useState(6);
 
-  const currentTestimonials = isMobile ? mobileTestimonials : testimonials; //different array for mobile
+  const currentTestimonials = isMobile ? mobileTestimonials : testimonials;
   const initialTestimonials = currentTestimonials.slice(0, initialCount);
-  const extraTestimonials = currentTestimonials.slice(6);   
+  const extraTestimonials = currentTestimonials.slice(initialCount); // Dynamic slice
 
   useEffect(() => {
     const handleResize = () => {
@@ -327,7 +324,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section id="stories" className="md:pt-[90px] pt-[55px]">
       <div className="container mx-auto px-4">
-        <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">Stories</h2>
+        <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">
+          Stories
+        </h2>
 
         {/* Initial Testimonials */}
         <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
@@ -340,7 +339,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}
-
 
         {/* Buttons */}
         {/* {extraTestimonials.length > 0 && (
@@ -366,23 +364,20 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           </div>
         )} */}
 
-
         {/* Buttons */}
-{extraTestimonials.length > 0 && !showMore && (
-  <div className="flex justify-center md:mt-8 mt-7 space-x-4">
-    <button
-      onClick={() => setShowMore(true)}
-      className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
-    >
-      <span>Explore more stories</span>
-    </button>
-  </div>
-)}
-
+        {extraTestimonials.length > 0 && !showMore && (
+          <div className="flex justify-center md:mt-8 mt-7 space-x-4">
+            <button
+              onClick={() => setShowMore(true)}
+              className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
+            >
+              <span>Explore more stories</span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
 };
-
 
 export default TestimonialsSection;
