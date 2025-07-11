@@ -17,7 +17,7 @@ const NewTeamtestimonial = () => {
     {
       id: 1,
       name: "Shovan",
-      image: "/images/Testimonial-BP/shovan-profile.png",
+      image: "/images/Testimonial-BP/Shovan-Profile.webp",
       testimonialDesk: "/images/Testimonial-BP/shovan-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/shovan-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/shovan-testim-right.png",
@@ -26,7 +26,7 @@ const NewTeamtestimonial = () => {
     {
       id: 2,
       name: "Suman",
-      image: "/images/Testimonial-BP/suman-profile.png",
+      image: "/images/Testimonial-BP/Suman-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/suman-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/suman-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/suman-testim-right.png",
@@ -35,7 +35,7 @@ const NewTeamtestimonial = () => {
     {
       id: 3,
       name: "Madhurima",
-      image: "/images/Testimonial-BP/madhurima-profile.png",
+      image: "/images/Testimonial-BP/madhurima-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/madhurima-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/madhurima-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/madhurima-testim-right.png",
@@ -44,7 +44,7 @@ const NewTeamtestimonial = () => {
     {
       id: 4,
       name: "Bhaskar",
-      image: "/images/Testimonial-BP/bhaskar-profile.png",
+      image: "/images/Testimonial-BP/Bhaskar-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/bhaskar-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/bhaskar-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/bhaskar-testim-right.png",
@@ -53,7 +53,7 @@ const NewTeamtestimonial = () => {
     {
       id: 5,
       name: "Nayanika",
-      image: "/images/Testimonial-BP/nayanika-profile.png",
+      image: "/images/Testimonial-BP/Nayanika-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/nayanika-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/nayanika-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/nayanika-testim-right.png",
@@ -62,7 +62,7 @@ const NewTeamtestimonial = () => {
     {
       id: 6,
       name: "Sourav",
-      image: "/images/Testimonial-BP/sourav-profile.png",
+      image: "/images/Testimonial-BP/Sourav-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/sourav-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/sourav-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/sourav-testim-right.png",
@@ -71,7 +71,7 @@ const NewTeamtestimonial = () => {
     {
       id: 7,
       name: "Adity",
-      image: "/images/Testimonial-BP/adity-profile.png",
+      image: "/images/Testimonial-BP/Aditi-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/adity-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/adity-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/adity-testim-right.png",
@@ -80,7 +80,7 @@ const NewTeamtestimonial = () => {
     {
       id: 8,
       name: "Mousumi",
-      image: "/images/Testimonial-BP/mousumi-profile.png",
+      image: "/images/Testimonial-BP/Mousumi-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/mousumi-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/mousumi-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/mousumi-testim-right.png",
@@ -89,7 +89,7 @@ const NewTeamtestimonial = () => {
     {
       id: 9,
       name: "Bony",
-      image: "/images/Testimonial-BP/bony-profile.png",
+      image: "/images/Testimonial-BP/Bony-profile.webp",
       testimonialDesk: "/images/Testimonial-BP/bony-testim-left.png",
       testimonialMob: "/images/Testimonial-BP/bony-testim-left.png",
       rightSideTestimonial: "/images/Testimonial-BP/bony-testim-right.png",
