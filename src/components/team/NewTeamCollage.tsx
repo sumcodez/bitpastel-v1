@@ -37,7 +37,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -64,7 +64,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -86,7 +86,7 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt order-first md:order-last md:py-0 py-[70px] relative md:top-[-280px]">
+          <div className=" rt order-first md:order-last md:py-0 py-[40px] relative md:top-[-280px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Ice Breaker - Coffee
@@ -129,7 +129,7 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt order-first md:order-last top-speccer relative md:top-[-90px] md:py-0 py-[70px]">
+          <div className=" rt order-first md:order-last top-speccer relative md:top-[-90px] md:py-0 py-[40px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600]">
                 Ethnic Day Celebration
@@ -140,7 +140,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="pt-[60px] lg:mt-[-300px] md:mt-[-120px] md:mb-[90px]">
+        <div className=" pt-[30px] lg:mt-[-300px] md:mt-[-120px] md:mb-[90px]">
           <h4 className="tt text-center title  leading-[normal] text-till font-[600]">
             Birthday Celebration at Office
           </h4>
@@ -156,7 +156,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -185,7 +185,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -207,7 +207,7 @@ const NewTeamCollage = () => {
             />
           </div>
 
-          <div className=" rt order-first md:order-last top-speccer md:py-0 py-[70px]">
+          <div className=" rt order-first md:order-last top-speccer md:py-0 py-[40px]">
             <div className="icon-title relative inline-block">
               <h4 className="tt md:text-start text-center text-till title leading-[normal] font-[600] ">
                 Team Meetup
@@ -218,7 +218,7 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-[60%_40%] place-items-center grid-cols-1 md:py-[70px] lazy-image-section">
+        <div className="grid md:grid-cols-[60%_40%] place-items-center grid-cols-1 md:py-[80px] py-[40px] lazy-image-section">
           <div className="img lt">
             <img
               alt="Award & Recognition"
@@ -228,7 +228,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt md:order-last order-first md:pt-0 md:pb-0 pt-[50px] pb-[70px]">
+          <div className="img rt md:order-last order-first md:pt-0 md:pb-0 pt-[30px] pb-[50px]">
             <div className="icon-title md:inline-block">
               <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 leading-[normal] font-[600]">
                 Bitpastel
@@ -249,7 +249,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -270,7 +270,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -291,7 +291,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -312,7 +312,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -391,8 +391,8 @@ const NewTeamCollage = () => {
         </div>
       </div> */}
 
-      <div className="title-middle">
-        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:pt-[40px] md:pb-[120px]">
+      <div className="">
+        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:pt-[20px] md:pb-[80px]">
           Bitpastel Townhall 2023
         </h4>
       </div>
@@ -408,7 +408,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Speech by Honorable CEO"
               className="lazy"
@@ -429,7 +429,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Glimpse of Townhall"
               className="lazy"
@@ -450,7 +450,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Award & Recognition"
               className="lazy"
@@ -471,7 +471,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt">
+          <div className="img rt md:mt-0 mt-[-40px]">
             <img
               alt="Cultural Programme"
               className="lazy"
@@ -525,7 +525,7 @@ const NewTeamCollage = () => {
         </div>
       </div>
 
-      <div className="common-lb fourth-lb lazy-image-section">
+      <div className="common-lb fourth-lb lazy-image-section md:mt-[-200px]">
         <div className="img lt top-speccer inline-block">
           <h4 className="tt md:text-start text-center text-till title  leading-[normal] font-[600] bottom-spaccer">
             Year-end
@@ -562,7 +562,7 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img lt">
+        <div className="img lt md:mt-0 mt-[-40px]">
           <img
             alt="Award & Recognition"
             className="lazy"
@@ -597,7 +597,7 @@ const NewTeamCollage = () => {
       </div>
 
       <div className="title-middle">
-        <h4 className="tt text-till title font-[600] leading-[normal] text-center md:pt-[40px] md:mb-[120px]">
+        <h4 className="tt text-till title font-[600] leading-[normal] text-center md:pt-[20px] md:mb-[80px]">
           Bitpastel Townhall 2022
         </h4>
       </div>
@@ -639,7 +639,7 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img lt">
+        <div className="img lt md:mt-0 mt-[-40px]">
           <img
             alt="Award & Recognition"
             className="lazy"
@@ -652,7 +652,7 @@ const NewTeamCollage = () => {
 
 
  <div className="common-lb fourth-lb lazy-image-section ">
-        <div className="img lt md:pb-0 pb-[70px]">
+        <div className="img lt md:pb-0 pb-[20px]">
           <h4 className="tt text-till title font-[600] leading-[normal] ">
           Bitpastel Townhall 2021
         </h4>

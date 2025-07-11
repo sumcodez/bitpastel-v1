@@ -521,7 +521,7 @@ input:focus-visible{
   }
   .life-at-bitpastel .common-lb.fourth-lb,
   .spacer-top {
-    margin-top: 70px;
+    margin-top: 40px;
   }
   .title-top-spaccer {
     padding-top: 45px;
@@ -531,10 +531,10 @@ input:focus-visible{
     text-align: center !important;
   }
   .title-middle {
-    padding-top: 70px;
+    padding-top: 40px;
   }
   .title-spaccer {
-    padding: 70px 20px 0;
+    padding: 40px 20px 0;
   }
   .title-top-spaccer .icon-title img {
     width: 30px !important;

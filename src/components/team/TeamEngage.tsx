@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 const TeamEngage = () => {
   const router = useRouter();
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <section className="md:py-[100px] py-[70px]">
       <div className="mx-auto">
@@ -35,7 +45,7 @@ const TeamEngage = () => {
                 Visit our <Link className="inline-block underline text-[#009999]" href='/career'> Careers </Link> page to find out about
                 open positions.
               </p>
-              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" onClick={() => router.push('/career')}>
+              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" onClick={() => scrollToSection('#jobCards')}>
                 Find Opportunities
               </button>
             </div>
