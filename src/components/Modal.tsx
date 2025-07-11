@@ -87,7 +87,6 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
     }
   }, [open]);
 
-
   const handleClose = () => {
     onClose();
   };
@@ -238,44 +237,46 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
   if (!isVisible) return null;
 
   if (isLoading) {
-    return <div className="max-w-4xl mx-auto p-6 text-center">
-       <div className="absolute inset-0 flex items-center justify-center z-50">
-            <svg
-              style={{
-                left: '50%',
-                top: '50%',
-                position: 'absolute',
-                transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
-              }}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 187.3 93.7"
-              height="150px"
-              width="200px"
-            >
-              <path
-                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-                strokeMiterlimit="10"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="4"
-                fill="none"
-                id="outline"
-                stroke="#009999"
-              />
-              <path
-                d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-                strokeMiterlimit="10"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="4"
-                stroke="#009999"
-                fill="none"
-                opacity="0.05"
-                id="outline-bg"
-              />
-            </svg>
-          </div>
-    </div>;
+    return (
+      <div className="max-w-4xl mx-auto p-6 text-center">
+        <div className="absolute inset-0 flex items-center justify-center z-50">
+          <svg
+            style={{
+              left: '50%',
+              top: '50%',
+              position: 'absolute',
+              transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
+            }}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 187.3 93.7"
+            height="150px"
+            width="200px"
+          >
+            <path
+              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="4"
+              fill="none"
+              id="outline"
+              stroke="#009999"
+            />
+            <path
+              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="4"
+              stroke="#009999"
+              fill="none"
+              opacity="0.05"
+              id="outline-bg"
+            />
+          </svg>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -447,10 +448,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                       <div className="grid grid-cols-1 min-h-[450px] place-items-center justify-between">
                         {/* Green circle with check icon */}
                         <div className="w-[100px] h-[100px] rounded-full bg-[#00A944] flex items-center justify-center">
-                          <Check
-                            className="text-primary-white w-[60px] h-[60px]"
-                            strokeWidth={3}
-                          />
+                          <Check className="text-primary-white w-[60px] h-[60px]" strokeWidth={3} />
                         </div>
 
                         <div className=" text-center text-dark">
@@ -461,8 +459,6 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           <p className="font-[100] paragraph font-roboto">
                             We have received your request and we will get back to you soon
                           </p>
-
-                          
                         </div>
                         <div className="flex flex-col items-center space-y-2">
                           {/* US Number with custom image */}
@@ -536,8 +532,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                                   validationErrors.service
                                     ? 'text-red-500'
                                     : formData.service
-                                    ? 'text-[#212529]'
-                                    : 'text-[#B2B2B2]'
+                                      ? 'text-[#212529]'
+                                      : 'text-[#B2B2B2]'
                                 }`}
                               >
                                 {formData.service || 'select*'}
@@ -681,17 +677,17 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
                           {/* Privacy Policy */}
                           <p className="text-[11px] mt-[3px] text-white text-center">
                             By clicking "Lets Work Together", you agree to our{' '}
-                            <Link href="/privacy-policy" target='_blank' className="text-till">
+                            <Link href="/privacy-policy" target="_blank" className="text-till">
                               Privacy Policy
                             </Link>
                           </p>
 
                           {/* Chat Button */}
                           <Link
-                          target='_blank'
-                          href={
-            'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
-          }
+                            target="_blank"
+                            href={
+                              'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
+                            }
                             type="button"
                             className="w-full text-[#52d09c] flex justify-center items-center mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
                           >
