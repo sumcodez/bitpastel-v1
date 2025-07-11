@@ -253,7 +253,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 
         {/* Extra Testimonials (only shown when showMore is true) */}
         {showMore && (
-          <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-4 mx-auto w-full text-title">
+          <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-8 mx-auto w-full text-title">
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}
