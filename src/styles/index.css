@@ -129,7 +129,7 @@
   overflow: hidden;
   position: relative;
   background: #F5CD47;
-  height: 450px;
+  height: 420px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
@@ -201,7 +201,7 @@
     margin-top: -50px;
     position: relative;
     background: #ED8376;
-    height: 450px;
+    height: 420px;
     -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 }
