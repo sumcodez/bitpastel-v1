@@ -128,7 +128,7 @@ const NewTeamtestimonial = () => {
     const initAOS = async () => {
       const AOS = (await import('aos')).default;
       AOS.init({
-        duration: 400,
+        duration: 600,
         easing: 'ease-in-out',
         once: true,
         offset: 120,
@@ -167,7 +167,7 @@ const NewTeamtestimonial = () => {
             className="testi-image"
             src={currentStrip1.image}
             data-aos="animated-up"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor-placement="top-bottom"
           />
           <img
@@ -175,7 +175,7 @@ const NewTeamtestimonial = () => {
             className="testi-data desk-team"
             src={currentStrip1.testimonialDesk}
             data-aos="animated-left"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".first .testi-image"
           />
           <img
@@ -183,7 +183,7 @@ const NewTeamtestimonial = () => {
             className="testi-data mob-team"
             src={currentStrip1.testimonialMob}
             data-aos="animated-left"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".first .testi-image"
           />
         </div>
@@ -195,7 +195,7 @@ const NewTeamtestimonial = () => {
             className="testi-image"
             src={currentStrip2.image}
             data-aos="animated-up"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor-placement="top-bottom"
           />
           <img
@@ -203,7 +203,7 @@ const NewTeamtestimonial = () => {
             className="testi-data desk-team"
             src={currentStrip2.rightSideTestimonial}
             data-aos="animated-right"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".second .testi-image"
           />
           <img
@@ -211,7 +211,7 @@ const NewTeamtestimonial = () => {
             className="testi-data mob-team"
             src={currentStrip2.rightSideTestimonialMob}
             data-aos="animated-right"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".second .testi-image"
           />
         </div>
@@ -223,7 +223,7 @@ const NewTeamtestimonial = () => {
             className="testi-image"
             src={currentStrip3.image}
             data-aos="animated-up"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor-placement="top-bottom"
           />
           <img
@@ -231,7 +231,7 @@ const NewTeamtestimonial = () => {
             className="testi-data desk-team"
             src={currentStrip3.testimonialDesk}
             data-aos="animated-left"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".third .testi-image"
           />
           <img
@@ -239,7 +239,7 @@ const NewTeamtestimonial = () => {
             className="testi-data mob-team"
             src={currentStrip3.testimonialMob}
             data-aos="animated-left"
-            data-aos-duration="400"
+            data-aos-duration="600"
             data-aos-anchor=".third .testi-image"
           />
         </div>
