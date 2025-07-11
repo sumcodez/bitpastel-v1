@@ -441,16 +441,19 @@ input:focus-visible{
 
 }
  
-@media screen and (min-width:1280px) {
+
+
+
+/* @media screen and (min-width:1280px) {
   .testimonial-card-parent .testimonial-card-content p.collabsile-lg {
     max-height: 70px;
     overflow: hidden;
     opacity: 1;
     padding-bottom: 0;
     transition: 
-      max-height 3s ease, /* 3s delay for max-height */
-      padding 0.7s ease ,   /* 3s delay for padding */
-      opacity 1.5s ease;    /* 3s delay for opacity */
+      max-height 3s ease,
+      padding 1s ease ,  
+      opacity 1.5s ease;    
       transition-delay: max-height 1s;
   }
   
@@ -459,7 +462,7 @@ input:focus-visible{
     padding-bottom: 20px;
     opacity: 1;
     display: block;
-    transition-delay: 0s; /* No delay when hovering */
+    transition-delay: 0s; 
   }
 }
 
@@ -502,8 +505,13 @@ input:focus-visible{
       max-height 5s ease,
       padding 0.7s ease ,
       opacity 1.5s ease;
-      transition-delay: max-height 1s;
+      transition-delay:  1s;
 }
+
+ */
+
+
+
 
 
   .nav-item.current svg {
