@@ -283,7 +283,7 @@ const Footer = () => {
             <div className="pt-6 lg:block hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)" }}>
               <p className="text-center lg:text-[13px] text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{" "}
-                <Link href="/privacy-policys">Privacy Policy</Link>
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </p>
             </div>
           </div>
