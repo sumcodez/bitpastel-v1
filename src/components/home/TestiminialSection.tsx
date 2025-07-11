@@ -1,6 +1,3 @@
-
-
-
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -198,27 +195,63 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 const [showMore, setShowMore] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      const count = mobile ? 3 : 6;
-      setInitialShowCount(count);
-      setVisibleTestimonials(testimonials.slice(0, count));
-    };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [testimonials]);
+
+useEffect(() => {
+  const mobile = window.innerWidth < 768;
+  setIsMobile(mobile);
+  const count = mobile ? 3 : 6;
+  setInitialShowCount(count);
+  setVisibleTestimonials(testimonials.slice(0, count)); // ✅ initialize once
+}, []); // ← run only once on mount
+
+useEffect(() => {
+  const handleResize = () => {
+    const mobile = window.innerWidth < 768;
+    setIsMobile(mobile);
+    setInitialShowCount(mobile ? 3 : 6);
+  };
+
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const mobile = window.innerWidth < 768;
+  //     setIsMobile(mobile);
+  //     const count = mobile ? 3 : 6;
+  //     setInitialShowCount(count);
+  //     setVisibleTestimonials(testimonials.slice(0, count));
+  //   };
+
+  //   handleResize();
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, [testimonials]);
+
+  // const loadMoreTestimonials = () => {
+  //   if (isAnimating) return;
+  //   setIsAnimating(true);
+  //   setVisibleTestimonials(testimonials);
+  //   setIsAnimating(false);
+  //   setShowAll(true);
+  // };
 
   const loadMoreTestimonials = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setVisibleTestimonials(testimonials);
+
+    setVisibleTestimonials(prev => {
+      const remaining = testimonials.slice(prev.length);
+      return [...prev, ...remaining];
+    });
+
     setIsAnimating(false);
     setShowAll(true);
   };
+
 
   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
 
@@ -236,7 +269,7 @@ const [showMore, setShowMore] = useState(false);
             >
               <div className="flex-grow">
                 <div className= {`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
-                  <p className= {`lg:line-clamp-3 line-clamp-none ${testimonial.message.trim().length > 260 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] '}`}>
+                  <p className= {`lg:line-clamp-3 line-clamp-none ${testimonial.message.trim().length > 290 ? 'collabsile-lg' : "" } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : "" } ${testimonial.message.trim().length > 90 ? "collabsile-extra-small" :""} ${isMobile ? 'text-[12px] ' : 'text-[13px] leading-[23px] '}`}>
                     "{testimonial.message}"
                   </p>
                 </div>

@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
@@ -9,13 +8,11 @@ interface Testimonial {
   image: string;
   testimonialDesk: string;
   testimonialMob: string;
-  rightImage?: boolean;
   rightSideTestimonial?: string;
   rightSideTestimonialMob?: string;
 }
 
 const NewTeamtestimonial = () => {
-  // Single array for all testimonials
   const testimonials: Testimonial[] = [
     {
       id: 1,
@@ -109,7 +106,6 @@ const NewTeamtestimonial = () => {
     }
   ];
 
-  // Function to get 3 unique random indices
   const getRandomIndices = (): number[] => {
     const indices: number[] = [];
     while (indices.length < 3) {
@@ -121,45 +117,41 @@ const NewTeamtestimonial = () => {
     return indices;
   };
 
-  // State for current testimonial index for each strip
   const [currentIndices, setCurrentIndices] = useState<number[] | null>(null);
   const [animationKey, setAnimationKey] = useState(0);
 
-  // Run on client after hydration
   useEffect(() => {
     setCurrentIndices(getRandomIndices());
   }, []);
 
-  // AOS init
   useEffect(() => {
     const initAOS = async () => {
       const AOS = (await import('aos')).default;
       AOS.init({
-        duration: 800,
+        duration: 400,
         easing: 'ease-in-out',
-        once: true
+        once: true,
+        offset: 100,
+        delay: 0
       });
     };
     initAOS();
   }, []);
 
-  // Animation interval (only start when currentIndices are ready)
   useEffect(() => {
     if (!currentIndices) return;
 
     const interval = setInterval(() => {
       setCurrentIndices(getRandomIndices());
       setAnimationKey(prev => prev + 1);
-    }, 10000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [currentIndices]);
 
-  // Get current testimonials for each strip
   const currentStrip1 = currentIndices ? testimonials[currentIndices[0]] : null;
   const currentStrip2 = currentIndices ? testimonials[currentIndices[1]] : null;
   const currentStrip3 = currentIndices ? testimonials[currentIndices[2]] : null;
-  
 
   if (!currentStrip1 || !currentStrip2 || !currentStrip3) {
     return null;
@@ -172,24 +164,27 @@ const NewTeamtestimonial = () => {
         <div className="first relative">
           <img
             alt={`${currentStrip1.name}'s image`}
-            className="testi-image other-element"
+            className="testi-image"
             src={currentStrip1.image}
-            data-aos="fade-up"
-            data-aos-duration="800"
+            data-aos="animated-up"
+            data-aos-duration="400"
+            data-aos-anchor-placement="top-bottom"
           />
           <img
             alt={`${currentStrip1.name}'s Testimonial`}
-            className={`testi-data desk-team`}
+            className="testi-data desk-team"
             src={currentStrip1.testimonialDesk}
             data-aos="animated-left"
-            data-aos-duration="800" data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".first .testi-image"
           />
           <img
             alt={`${currentStrip1.name}'s Testimonial`}
-            className={`testi-data mob-team`}
+            className="testi-data mob-team"
             src={currentStrip1.testimonialMob}
             data-aos="animated-left"
-            data-aos-duration="800" data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".first .testi-image"
           />
         </div>
 
@@ -197,24 +192,27 @@ const NewTeamtestimonial = () => {
         <div className="second relative">
           <img
             alt={`${currentStrip2.name}'s image`}
-            className="testi-image other-element2"
+            className="testi-image"
             src={currentStrip2.image}
-            data-aos="fade-up"
-            data-aos-duration="800" data-aos-anchor="other-element"
+            data-aos="animated-up"
+            data-aos-duration="400"
+            data-aos-anchor-placement="top-bottom"
           />
           <img
             alt={`${currentStrip2.name}'s Testimonial`}
-            className={`testi-data desk-team `}
+            className="testi-data desk-team"
             src={currentStrip2.rightSideTestimonial}
             data-aos="animated-right"
-            data-aos-duration="800" data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".second .testi-image"
           />
           <img
             alt={`${currentStrip2.name}'s Testimonial`}
-            className={`testi-data mob-team `}
+            className="testi-data mob-team"
             src={currentStrip2.rightSideTestimonialMob}
             data-aos="animated-right"
-           data-aos-duration="800" data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".second .testi-image"
           />
         </div>
 
@@ -224,25 +222,25 @@ const NewTeamtestimonial = () => {
             alt={`${currentStrip3.name}'s image`}
             className="testi-image"
             src={currentStrip3.image}
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-anchor="other-element2"
+            data-aos="animated-up"
+            data-aos-duration="400"
+            data-aos-anchor-placement="top-bottom"
           />
           <img
             alt={`${currentStrip3.name}'s Testimonial`}
-            className={`testi-data desk-team `}
+            className="testi-data desk-team"
             src={currentStrip3.testimonialDesk}
             data-aos="animated-left"
-             data-aos-duration="800" 
-            data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".third .testi-image"
           />
           <img
             alt={`${currentStrip3.name}'s Testimonial`}
-            className={`testi-data mob-team`}
+            className="testi-data mob-team"
             src={currentStrip3.testimonialMob}
             data-aos="animated-left"
-             data-aos-duration="800" 
-            data-aos-delay="200"
+            data-aos-duration="400"
+            data-aos-anchor=".third .testi-image"
           />
         </div>
       </div>
