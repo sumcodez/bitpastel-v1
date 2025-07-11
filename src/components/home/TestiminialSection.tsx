@@ -126,74 +126,21 @@ const defaultTestimonials: Testimonial[] = [
   },
 ];
 
-// const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
-//   testimonials = defaultTestimonials,
-// }) => {
-//   const [showAll, setShowAll] = useState(false);
-//   const [initialShowCount, setInitialShowCount] = useState(6);
-//   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
-//   const [animatingItems, setAnimatingItems] = useState<Set<string>>(new Set());
-//   const [isAnimating, setIsAnimating] = useState(false);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       const isMobile = window.innerWidth < 768;
-//       const count = isMobile ? 3 : 6;
-//       setInitialShowCount(count);
-//       setVisibleTestimonials(testimonials.slice(0, count));
-//     };
-
-//     handleResize();
-//     window.addEventListener('resize', handleResize);
-//     return () => window.removeEventListener('resize', handleResize);
-//   }, [testimonials]);
-
-//   const loadMoreTestimonials = () => {
-//     if (isAnimating) return;
-//     setIsAnimating(true);
-
-//     // Show all testimonials with animation
-//     const newItems = testimonials.slice(visibleTestimonials.length);
-
-//     newItems.forEach((testimonial, index) => {
-//       setTimeout(() => {
-//         setVisibleTestimonials(prev => [...prev, testimonial]);
-
-//         setAnimatingItems(prev => {
-//           const newSet = new Set(prev);
-//           newSet.add(testimonial.id);
-//           return newSet;
-//         });
-
-//         setTimeout(() => {
-//           setAnimatingItems(prev => {
-//             const newSet = new Set(prev);
-//             newSet.delete(testimonial.id);
-//             return newSet;
-//           });
-//           if (index === newItems.length - 1) {
-//             setIsAnimating(false);
-//             setShowAll(true);
-//           }
-//         }, 300);
-//       }, index * 150);
-//     });
-//   };
-
-//   const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
-
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
-  const initialTestimonials = testimonials.slice(0, 6);
+  const [initialCount, setInitialCount] = useState(6);
+  const initialTestimonials = testimonials.slice(0, initialCount);
+
   const extraTestimonials = testimonials.slice(6);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      setInitialCount(window.innerWidth < 768 ? 3 : 6);
     };
 
     handleResize();
@@ -258,17 +205,31 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           </div>
         )}
 
-        {/* Button */}
-        {!showMore && extraTestimonials.length > 0 && (
-          <div className="flex justify-center md:mt-8 mt-7">
-            <button
-              onClick={() => setShowMore(true)}
-              className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
-            >
-              <span>Explore more stories</span>
-            </button>
+
+        {/* Buttons */}
+        {extraTestimonials.length > 0 && (
+          <div className="flex justify-center md:mt-8 mt-7 space-x-4">
+            {!showMore ? (
+              <button
+                onClick={() => setShowMore(true)}
+                className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
+              >
+                <span>Explore more stories</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+  setShowMore(false);
+  document.getElementById('stories')?.scrollIntoView({ behavior: 'smooth' });
+}}
+                className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
+              >
+                <span>Show Less</span>
+              </button>
+            )}
           </div>
         )}
+
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 const NewTeamCollage = () => {
   return (
-    <section className="life-at-bitpastel team-image-wrapper md:pt-[100px] pt-[70px]" id="team">
+    <section className="life-at-bitpastel team-image-wrapper max-w-[1600px] mx-auto md:pt-[100px] pt-[70px]" id="team">
       <div className="">
         <div className="common-lb third-lb lazy-image-section">
           <div className=" lt top-speccer md:mb-0 mb-[50px]">
@@ -118,11 +118,11 @@ const NewTeamCollage = () => {
           </div>
         </div>
 
-        <div className="common-lb third-lb lazy-image-section relative md:top-[-280px]">
+        <div className="grid place-items-center md:grid-cols-[55%_45%] grid-cols-1 third-lb lazy-image-section relative md:top-[-280px]">
           <div className="img lt">
             <img
               alt="Cultural Programme"
-              className="lazy"
+              className="lazy md:w-full"
               src="/images/Team-Page-Image/2-left.png"
               height="1000"
               width="700"
@@ -525,7 +525,7 @@ const NewTeamCollage = () => {
         </div>
       </div>
 
-      <div className="common-lb fourth-lb lazy-image-section md:mt-[-200px]">
+      <div className="common-lb fourth-lb lazy-image-section md:mt-[-260px]">
         <div className="img lt top-speccer inline-block">
           <h4 className="tt md:text-start text-center text-till title  leading-[normal] font-[600] bottom-spaccer">
             Year-end
