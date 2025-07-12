@@ -38,7 +38,7 @@ const ServicesSection = () => {
     {
       id: 'ai',
       title: 'Artificial Intelligence',
-      description: 'Boost efficiency and automate workflows with intelligent apps',
+      description: 'Smart AI agents and solutions driving automation, insight, and innovation',
       icon: '/images/AI icon 1.svg',
       bgColor: '  bg-primary-green-light',
       bgcolorCollapsed:'#fcf4d7',
@@ -47,7 +47,7 @@ const ServicesSection = () => {
     {
       id: 'shopify',
       title: 'Shopify Plus',
-      description: 'Customised Shopify Plus design, development, and app solutions',
+      description: 'Scalable Shopify Plus stores tailored for high-growth e-commerce brands',
       icon: '/images/img_hugeiconsshopify.svg',
       bgColor: 'bg-primary-yellow-light',
       bgcolorCollapsed: '#d8f5e9',
@@ -57,7 +57,7 @@ const ServicesSection = () => {
     {
       id: 'web',
       title: 'Web Development',
-      description: 'Custom websites built with React, Angular, PHP, WordPress, Webflow',
+      description: 'Robust, responsive web apps built for performance and user experience',
       icon: '/images/img_icoutlinelaptop.svg',
       bgColor: 'bg-primary-coral-light',
       bgcolorCollapsed:'#fde3e5',
@@ -66,7 +66,7 @@ const ServicesSection = () => {
     {
       id: 'design',
       title: 'Design & Creatives',
-      description: 'Crafting creative visuals for marketing and brand identity',
+      description: 'Engaging, user-focused designs that bring your vision to life',
       icon: '/images/img_iconoirdesignnib.svg',
       bgColor: 'bg-primary-yellow-light',
       bgcolorCollapsed:'#fcf4d7',
@@ -75,7 +75,7 @@ const ServicesSection = () => {
     {
       id: 'ecommerce',
       title: 'E-commerce',
-      description: 'Bespoke e-commerce platforms that fuel your brand’s expansion',
+      description: 'End-to-end e-commerce solutions for seamless shopping and sales growth',
       icon: '/images/img_bicartplus.svg',
       bgColor: 'bg-primary-coral-light',
       bgcolorCollapsed:'#fde3e5',
@@ -84,7 +84,7 @@ const ServicesSection = () => {
     {
       id: 'saas',
       title: 'Custom SaaS Development',
-      description: 'Flexible SaaS Applications focused on achieving your business vision',
+      description: 'Tailored SaaS platforms that solve real problems and scale faster',
       icon: '/images/img_lineiconscloudiot2.svg',
       bgColor: 'bg-primary-green-light',
       bgcolorCollapsed:'#d8f5e9',
