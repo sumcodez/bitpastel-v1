@@ -1,0 +1,128 @@
+import React from 'react';
+
+const NewRefer = () => {
+  return (
+    <section className="partner-refer-area relative py-[77px]">
+      <div className="container mx-auto px-4">
+        {/* Icon & Heading Section (Above) */}
+        <div className="flex flex-col items-center text-center mb-12">
+          <div className="partner-refer-circle mb-4">
+            <svg
+              fill="none"
+              height="68"
+              viewBox="0 0 68 68"
+              width="68"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.15 33.8958C16.15 33.8958 16.209 33.8956 16.235 33.8951C16.261 33.8954 16.32 33.8958 16.32 33.8958V33.8946C17.17 33.88 25.1078 33.7261 27.5903 32.8576C27.9009 32.749 28.4076 32.3218 28.5212 32.0545C28.9032 31.1554 28.9647 28.7507 28.7764 24.8975C28.5102 19.4505 26.4856 16.9612 25.2239 15.928C23.5144 19.1825 20.1014 21.4025 16.17 21.4025C12.2621 21.4025 8.86683 19.209 7.14728 15.9861C5.8784 17.0452 3.90419 19.5383 3.64188 24.9041C3.45352 28.7574 3.52883 31.1586 3.91099 32.0579C4.02455 32.3252 4.54152 32.7507 4.85211 32.8593C7.33462 33.7277 15.13 33.88 16.15 33.8944V33.8958Z"
+                fill="white"
+              ></path>
+              <path
+                d="M16.1693 18.4844C20.4373 18.4844 23.8972 15.0246 23.8972 10.7566C23.8972 6.4886 20.4373 3.02872 16.1693 3.02872C11.9013 3.02872 8.44147 6.4886 8.44147 10.7566C8.44147 15.0246 11.9013 18.4844 16.1693 18.4844Z"
+                fill="white"
+              ></path>
+              <path
+                d="M46.6726 16.8874C46.3277 16.8864 46.1086 16.8827 46.0627 16.875C45.7298 16.8195 45.3823 16.9075 45.042 16.8982C44.2537 16.8766 43.6264 17.1945 43.2799 17.9945C42.9415 18.776 43.1434 19.4866 43.6162 20.135C45.0008 22.0344 46.3819 23.9368 47.7644 25.8385C48.5678 26.9436 49.3646 28.0544 50.1763 29.1521C50.5828 29.7015 51.0766 29.9831 51.5905 29.9989C52.0948 29.9831 52.5976 29.7017 53.0041 29.1521C53.8158 28.0544 54.6123 26.9436 55.4157 25.8385C56.798 23.9368 58.1791 22.0345 59.5637 20.135C60.0365 19.4866 60.2383 18.7758 59.8998 17.9945C59.5533 17.1945 58.926 16.8766 58.1378 16.8982C57.7974 16.9075 57.4506 16.8196 57.1176 16.875C57.0564 16.8852 56.6844 16.8885 56.1139 16.8876C54.1409 11.1214 49.379 5.7397 36.4276 7.15444C36.4276 7.15444 34.7209 7.34841 34.8986 8.69651C35.0266 9.66823 36.5129 10.3459 38.3491 10.3895C41.5459 10.4657 44.9238 12.6629 46.6726 16.8874Z"
+                fill="white"
+              ></path>
+              <path
+                d="M64.312 55.8312C64.0458 50.3843 62.0224 47.895 60.7607 46.8617C59.0512 50.1162 55.6387 52.3362 51.7075 52.3362C47.7995 52.3362 44.4045 50.1427 42.6849 46.9198C41.416 47.9789 39.442 50.472 39.1797 55.8379C38.9913 59.6911 39.0668 62.0923 39.4488 62.9916C39.5624 63.2589 40.0754 63.6844 40.386 63.793C42.8685 64.6615 50.66 64.8139 51.68 64.8283V64.8295C51.68 64.8295 51.7389 64.8293 51.765 64.8288C51.791 64.8292 51.85 64.8295 51.85 64.8295V64.8283C52.7 64.8137 60.6418 64.6598 63.1244 63.7913C63.4349 63.6827 63.9438 63.2555 64.0571 62.9882C64.4393 62.0891 64.5003 59.6846 64.312 55.8312Z"
+                fill="white"
+              ></path>
+              <path
+                d="M51.7074 49.4183C55.9753 49.4183 59.4352 45.9584 59.4352 41.6905C59.4352 37.4225 55.9753 33.9626 51.7074 33.9626C47.4394 33.9626 43.9795 37.4225 43.9795 41.6905C43.9795 45.9584 47.4394 49.4183 51.7074 49.4183Z"
+                fill="white"
+              ></path>
+              <path
+                d="M29.2678 57.4688C26.071 57.3927 22.6929 55.1954 20.9443 50.9709C21.2892 50.972 21.5084 50.9757 21.5543 50.9833C21.8871 51.0389 22.2346 50.9509 22.5749 50.9602C23.3632 50.9818 23.9905 50.6639 24.337 49.8639C24.6755 49.0824 24.4735 48.3718 24.0007 47.7234C22.6161 45.824 21.235 43.9215 19.8526 42.0199C19.0491 40.9148 18.2524 39.804 17.4406 38.7063C17.0341 38.1568 16.5403 37.8753 16.0264 37.8595C15.5222 37.8753 15.0193 38.1567 14.6128 38.7063C13.8011 39.804 13.0046 40.9148 12.2012 42.0199C10.8189 43.9215 9.43802 45.8238 8.0532 47.7234C7.58043 48.3718 7.37864 49.0826 7.71711 49.8639C8.06357 50.6639 8.69087 50.9818 9.47916 50.9602C9.8195 50.9509 10.1663 51.0388 10.4993 50.9833C10.5605 50.9731 10.9325 50.9697 11.503 50.9708C13.476 56.737 18.2379 62.1187 31.1894 60.7039C31.1894 60.7039 32.896 60.51 32.7183 59.1619C32.5902 58.1901 31.1038 57.5125 29.2678 57.4688Z"
+                fill="white"
+              ></path>
+            </svg>
+          </div>
+          <h2 className="font-source title font-[600] text-3xl text-title mb-2">Refer & Earn</h2>
+          <p className="font-roboto text-gray-600 max-w-lg mx-auto">
+            If you think we are good, please share your experience when you refer.
+          </p>
+        </div>
+
+        {/* Content Below (Grid Layout) */}
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 font-source">
+          {/* Left Column (if needed) */}
+          <div className="space-y-8">
+            {/* Example content block */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="font-semibold text-xl mb-2">How It Works</h3>
+              <p className="text-gray-600">
+                Share your referral link with friends and earn rewards when they sign up.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Referral Steps */}
+          <div className="space-y-8">
+            {[
+              {
+                icon: (
+                  <svg
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Icon path */}
+                  </svg>
+                ),
+                title: "Set it up!",
+                description: "Help set the stage by setting up a conference call or an email"
+              },
+              {
+                icon: (
+                  <svg
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Icon path */}
+                  </svg>
+                ),
+                title: "Help us finalize",
+                description: "We may need some help in finalizing the project"
+              },
+              {
+                icon: (
+                  <svg
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Icon path */}
+                  </svg>
+                ),
+                title: "Keep earning rewards",
+                description: "Start collecting rewards as soon as the project generates revenue"
+              }
+            ].map((item, index) => (
+              <div key={index} className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-md">
+                <div className="flex-shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-gray-600 mt-1">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default NewRefer;

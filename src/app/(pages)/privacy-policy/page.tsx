@@ -40,11 +40,11 @@ const PrivacyPolicy = () => {
               <ul className="list-none pl-5 space-y-2">
                 <li>
                   <span className="font-semibold">We collect information directly from you: </span> 
-                  We collect information directly from you when you when you fill out any forms on our website. 
+                  We collect information directly from you when you fill out any forms on our website. 
                   We also collect information if you ask us a question through phone or email.
                 </li>
                 <li>
-                  <span className="font-semibold">We collect information from you passively:</span> 
+                  <span className="font-semibold">We collect information from you passively: </span> 
                   We use tracking tools like Google Analytics, Google Webmaster, browser cookies and web beacons for collecting information about your usage of our website.
                 </li>
                 <li>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
                   Or, we might also share information when we are investigating potential fraud.
                 </li>
                 <li>
-                  <span className="font-semibold">We may share information with any successor to all or part of our business: </span> 
+                  <span className="font-semibold">We may share information with any successor to all or part of our busines: </span> 
                   For example, if part of our business is sold we may give our customer list as part of that transaction.
                 </li>
                 <li>

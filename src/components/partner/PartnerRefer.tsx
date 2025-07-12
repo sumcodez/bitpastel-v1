@@ -54,6 +54,7 @@ const PartnerRefer = () => {
               </p>
             </div>
           </div>
+
           <div className="px-[15px]">
             <div className="partner-referlist-area">
               <div className="partner-refer-list">
