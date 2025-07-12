@@ -186,7 +186,7 @@ const Footer = () => {
                       </div>
                       <div className="block text-[13px]">
                         <Link
-                          href="/#culture"
+                          href="/#team"
                           onClick={(e) => handleSectionClick(e, "culture")}
                           className="hover:text-gray-300 transition-colors"
                         >
