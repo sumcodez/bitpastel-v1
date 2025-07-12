@@ -276,7 +276,7 @@ const Footer = () => {
                   <br />
                   All Rights Reserved
                   <span className="px-2">|</span>
-                  <a href="/privacy">Privacy Policy</a>
+                  <a href="/privacy-policy">Privacy Policy</a>
                 </p>
               </div>
             </div>
