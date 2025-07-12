@@ -215,7 +215,7 @@ const Footer = () => {
                   </div>
                   <div className="lg:ml-auto">
                     <div className="space-y-4 text-[13px]">
-                      <Link href="/team" className="block hover:text-gray-300 transition-colors">
+                      <Link href="/culture" className="block hover:text-gray-300 transition-colors">
                         Culture
                       </Link>
                       <Link
