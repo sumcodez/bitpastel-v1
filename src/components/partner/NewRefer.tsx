@@ -43,7 +43,7 @@ const NewRefer = () => {
             </svg>
           </div>
           <div>
-          <h2 className="font-source title font-[600] mb-2">Refer & Earn</h2>
+          <h2 className="font-source title font-[600] md:py-0 py-[10px] text-title">Refer & Earn</h2>
           <p className="font-roboto text-gray-600 max-w-lg md:max-w-[300px]">
             If you think we are good, please share your experience when you refer.
           </p>

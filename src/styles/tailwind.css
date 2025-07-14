@@ -815,7 +815,7 @@ textarea::placeholder {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 .become-partner-circle svg {
   position: relative;

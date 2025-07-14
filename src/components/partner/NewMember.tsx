@@ -195,7 +195,7 @@ const BecomePartner = () => {
       <div className="grid lg:grid-cols-1 md:grid-cols-2">
         {/* Icon & Heading Section (Above) */}
         <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center md:mb-12">
-          <div className="mb-4 become-partner-circle">
+          <div className="mt-0 become-partner-circle">
             <svg
               fill="none"
               height="64"
@@ -211,7 +211,7 @@ const BecomePartner = () => {
           </div>
 
           <div>
-          <h2 className=" font-[600] text-3xl text-title mb-2 font-source title text-title">Become a Partner</h2>
+          <h2 className=" font-[600] text-3xl text-title font-source title md:py-0 py-[10px] text-title">Become a Partner</h2>
           </div>
 
         </div>
