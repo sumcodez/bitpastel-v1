@@ -320,9 +320,12 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
       onClick={handleOverlayClick}
     >
       <div
-        className={`relative modal-container w-full max-w-4xl mx-4 transform transition-all duration-500 ${
-          isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
-        }`}
+        // className={`relative modal-container w-full max-w-4xl mx-4 transform transition-all duration-500 ${
+        //   isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
+        // }`}
+          className={`relative modal-container w-full max-w-4xl mx-4 transition-opacity duration-300 ${
+    isAnimating ? 'opacity-100' : 'opacity-0'
+  }`}
       >
         {children}
 
