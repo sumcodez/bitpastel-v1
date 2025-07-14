@@ -328,7 +328,7 @@
     }
         .team-first-banner .third .testi-data {
         top: 110px;
-        left: 45%;
+        left: 50%;
     }
 .team-first-banner .first .testi-image,
 .team-first-banner .second .testi-image,
@@ -337,7 +337,7 @@
 }
 .team-first-banner .first .testi-data {
     max-width: 400px;
-    left: 44%;
+    left: 50%;
 }
 .team-first-banner .second .testi-data {
     max-width: 400px;
@@ -354,15 +354,15 @@
 @media (max-width: 900px) {
   .team-first-banner .second .testi-data {
     max-width: 350px;
-    right: 50%;
+    right: 52%;
   }
       .team-first-banner .third .testi-data {
         max-width: 350px;
-        left: 50%;
+        left: 52%;
     }
         .team-first-banner .first .testi-data {
         max-width: 350px;
-        left: 50%;
+        left: 52%;
     }
 }
 
