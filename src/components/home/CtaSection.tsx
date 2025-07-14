@@ -4,7 +4,13 @@ import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react';
 import Modal from '@/components/Modal';
-const CtaSection = () => {
+
+
+interface HerSectionProps {
+  openModal?: () => void;
+}
+
+const CtaSection: React.FC<HerSectionProps> = ({ openModal}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   return (
      <>
@@ -51,7 +57,8 @@ const CtaSection = () => {
                 are eager to know about your business.
               </p>
               <button className="btn leading-normal bg-green-btn md:w-auto font-roboto"
-              onClick={() => setIsModalOpen(true)}
+                // onClick={() => setIsModalOpen(true)}
+                onClick={openModal}
               >
                 Contact Us
               </button>

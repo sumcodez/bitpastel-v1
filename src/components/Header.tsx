@@ -15,6 +15,10 @@ const Header = () => {
   const isHomePage = pathname === "/"
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  useEffect(() => {
+    setIsModalOpen(false)
+  },[pathname])
+
   // Check if current page is the career apply page
   const isCareerApplyPage =
     pathname.startsWith("/career/applyJob/") || pathname.startsWith("/partner") || pathname.startsWith("/privacy")
@@ -192,7 +196,8 @@ const Header = () => {
               </Link>
               <button
                 className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
-                onClick={() => setIsModalOpen(true)}
+                // onClick={() => setIsModalOpen(true)}
+                onClick={() => router.push('/free-quote', { scroll: false })}
               >
                 Chat with Us
               </button>
@@ -200,7 +205,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Modal open={isModalOpen} onClose={() => router.push('/', { scroll: false })} />
     </>
   )
 }

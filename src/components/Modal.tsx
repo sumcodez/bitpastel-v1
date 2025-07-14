@@ -8,10 +8,12 @@ import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
 import { CircleCheck, CircleCheckBig, Phone, Check } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface ModalProps {
   open: boolean;
   onClose: () => void;
+  children?: React.ReactNode;
 }
 
 interface ContactModalProps {
@@ -67,17 +69,45 @@ const countryCodes1 = Object.entries(myCountryCodesObject)
   })
   .filter(Boolean);
 
-const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  const router = useRouter();
+  const path = usePathname();
+
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
+
+    // useEffect(() => {
+    //   if (!isMounted) return;
+      
+    //   if (open && path !== '/free-quote') {
+    //     router.push('/free-quote', { scroll: false });
+    //   } else if (!open && path === '/free-quote') {
+    //     router.push('/', { scroll: false });
+    //   }
+    // }, [open, path, router, isMounted]);
 
   useEffect(() => {
     if (open) {
+      // if (path !== '/free-quote') {
+      //   router.replace('/free-quote', {scroll: false});
+      // }
+      //router.push('/free-quote', {scroll: false});
       setIsVisible(true);
       setFormData(initialFormData);
       setIsSuccess(false);
       setTimeout(() => setIsAnimating(true), 10);
     } else {
+      // if (path !== '/') {
+      //   router.replace('/', {scroll: false});
+      // }
+      //router.push('/', {scroll: false});
       setIsAnimating(false);
       setTimeout(() => {
         setIsVisible(false);
@@ -89,6 +119,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
 
   const handleClose = () => {
     onClose();
+    if (path === '/free-quote') {
+      router.replace('/', { scroll: false });
+    }
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
@@ -291,6 +324,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose }) => {
           isAnimating ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
       >
+        {children}
+
         {isSubmitting && (
           <div className="absolute inset-0 flex items-center justify-center z-50">
             <svg

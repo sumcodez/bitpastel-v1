@@ -2,7 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import Modal from '@/components/Modal';
-const HeroSection = () => {
+
+
+interface HerSectionProps {
+  openModal?: () => void;
+}
+
+
+
+const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
@@ -72,7 +80,8 @@ const HeroSection = () => {
 
             <button
               className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
-              onClick={() => setIsModalOpen(true)}
+              // onClick={() => setIsModalOpen(true)}
+              onClick={openModal}
             >
               Let’s Work Together
             </button>
