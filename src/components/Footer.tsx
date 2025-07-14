@@ -255,10 +255,10 @@ const Footer = () => {
                         Clientele
                       </Link>
                       <Link href="/careers" className="block hover:text-gray-300 transition-colors">
-                        careers
+                        Careers
                       </Link>
                       <Link
-                        href="/partner"
+                        href="/partners"
                         className="block hover:text-gray-300 transition-colors cursor-pointer"
                       >
                         Partners
