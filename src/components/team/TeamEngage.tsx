@@ -42,7 +42,7 @@ const TeamEngage = () => {
                 view for creating equal opportunities for all our employees.
               </p>
               <p className="md:leading-[30px] leading-[30px] text-title">
-                Visit our <Link className="inline-block underline text-[#009999]" href='/career'> Careers </Link> page to find out about
+                Visit our <Link className="inline-block underline text-[#009999]" href='/careers'> Careers </Link> page to find out about
                 open positions.
               </p>
               <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" onClick={() => scrollToSection('#jobCards')}>
