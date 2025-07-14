@@ -1,107 +1,107 @@
-"use client"
+'use client';
 
-import type React from "react"
-import { useState, useEffect, useCallback } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import Modal from "@/components/Modal"
-import Whatsapp from "@/components/ui/Whatsapp"
+import type React from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import Modal from '@/components/Modal';
+import Whatsapp from '@/components/ui/Whatsapp';
 
 const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentTab, setCurrentTab] = useState<string>("home")
-  const [pendingScroll, setPendingScroll] = useState<string | null>(null)
-  const pathname = usePathname()
-  const router = useRouter()
-  const isHomePage = pathname === "/"
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentTab, setCurrentTab] = useState<string>('home');
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === '/';
 
   // Helper function to determine if a link is active
   const isActive = (href: string) => {
     // Handle root path
-    if (href === "/" && pathname === "/") return true
+    if (href === '/' && pathname === '/') return true;
     // Handle hash links (e.g., #services, #stories)
-    if (href.includes("#")) {
-      const section = href.split("#")[1]
-      return pathname.includes(`#${section}`)
+    if (href.includes('#')) {
+      const section = href.split('#')[1];
+      return pathname.includes(`#${section}`);
     }
     // Handle regular page routes
-    return pathname === href || pathname.startsWith(href + "/")
-  }
+    return pathname === href || pathname.startsWith(href + '/');
+  };
 
   // Improved scroll to section function
   const scrollToSection = useCallback((sectionId: string, offset = 40) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth",
-      })
+        behavior: 'smooth',
+      });
 
       // Update URL hash
-      window.history.pushState(null, "", `#${sectionId}`)
-      setPendingScroll(null)
+      window.history.pushState(null, '', `#${sectionId}`);
+      setPendingScroll(null);
     }
-  }, [])
+  }, []);
 
   // Handle pending scroll when navigating to homepage
   useEffect(() => {
     if (isHomePage && pendingScroll) {
       // Use a longer timeout to ensure the page is fully loaded
       const timeoutId = setTimeout(() => {
-        scrollToSection(pendingScroll)
-      }, 300)
+        scrollToSection(pendingScroll);
+      }, 300);
 
-      return () => clearTimeout(timeoutId)
+      return () => clearTimeout(timeoutId);
     }
-  }, [isHomePage, pendingScroll, scrollToSection])
+  }, [isHomePage, pendingScroll, scrollToSection]);
 
   // Handle hash on page load
   useEffect(() => {
     if (isHomePage) {
-      const hash = window.location.hash
+      const hash = window.location.hash;
       if (hash) {
-        const sectionId = hash.substring(1)
+        const sectionId = hash.substring(1);
         // Delay to ensure DOM is ready
         const timeoutId = setTimeout(() => {
-          scrollToSection(sectionId)
-        }, 100)
+          scrollToSection(sectionId);
+        }, 100);
 
-        return () => clearTimeout(timeoutId)
+        return () => clearTimeout(timeoutId);
       }
     }
-  }, [isHomePage, scrollToSection])
+  }, [isHomePage, scrollToSection]);
 
   // Handle link clicks for section navigation
   const handleSectionClick = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!isHomePage) {
       // Set pending scroll and navigate to homepage
-      setPendingScroll(sectionId)
-      router.push("/")
+      setPendingScroll(sectionId);
+      router.push('/');
     } else {
       // Already on homepage, scroll directly
-      scrollToSection(sectionId)
+      scrollToSection(sectionId);
     }
-  }
+  };
 
   // Handle mobile nav clicks
   const handleMobileNavClick = (tabName: string, sectionId?: string) => {
-    setCurrentTab(tabName)
+    setCurrentTab(tabName);
 
     if (sectionId) {
       if (!isHomePage) {
-        setPendingScroll(sectionId)
-        router.push("/")
+        setPendingScroll(sectionId);
+        router.push('/');
       } else {
-        scrollToSection(sectionId)
+        scrollToSection(sectionId);
       }
     }
-  }
+  };
 
   return (
     <>
@@ -150,21 +150,50 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="hidden lg:block">
-                  <p className="mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US</p>
+                  <p className="mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">
+                    CONNECT WITH US
+                  </p>
                   <div className="flex lg:space-x-4 space-x-6 pt-2 lg:pt-0 social-media-wrapper">
                     <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                      <a href="https://www.facebook.com/bitpastel" target="_blank" rel="noopener noreferrer">
-                        <Image src="/images/img_basilfacebooksolid.svg" alt="Facebook" width={16} height={16} />
+                      <a
+                        href="https://www.facebook.com/bitpastel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src="/images/img_basilfacebooksolid.svg"
+                          alt="Facebook"
+                          width={16}
+                          height={16}
+                        />
                       </a>
                     </div>
                     <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                      <a href="https://www.instagram.com/bitpastel.ai/" target="_blank" rel="noopener noreferrer">
-                        <Image src="/images/img_mingcuteinstagramfill.svg" alt="Instagram" width={16} height={16} />
+                      <a
+                        href="https://www.instagram.com/bitpastel.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src="/images/img_mingcuteinstagramfill.svg"
+                          alt="Instagram"
+                          width={16}
+                          height={16}
+                        />
                       </a>
                     </div>
                     <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                      <a href="https://www.linkedin.com/company/bitpastel" target="_blank" rel="noopener noreferrer">
-                        <Image src="/images/img_uillinkedin.svg" alt="LinkedIn" width={16} height={16} />
+                      <a
+                        href="https://www.linkedin.com/company/bitpastel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src="/images/img_uillinkedin.svg"
+                          alt="LinkedIn"
+                          width={16}
+                          height={16}
+                        />
                       </a>
                     </div>
                   </div>
@@ -187,7 +216,7 @@ const Footer = () => {
                       <div className="block text-[13px]">
                         <Link
                           href="/#team"
-                          onClick={(e) => handleSectionClick(e, "culture")}
+                          onClick={(e) => handleSectionClick(e, 'culture')}
                           className="hover:text-gray-300 transition-colors"
                         >
                           About
@@ -196,7 +225,7 @@ const Footer = () => {
                       <div className="block text-[13px]">
                         <Link
                           href="/#services"
-                          onClick={(e) => handleSectionClick(e, "services")}
+                          onClick={(e) => handleSectionClick(e, 'services')}
                           className="hover:text-gray-300 transition-colors"
                         >
                           Services
@@ -205,7 +234,7 @@ const Footer = () => {
                       <div className="block text-[13px]">
                         <Link
                           href="/#stories"
-                          onClick={(e) => handleSectionClick(e, "stories")}
+                          onClick={(e) => handleSectionClick(e, 'stories')}
                           className="hover:text-gray-300 transition-colors"
                         >
                           Stories
@@ -220,7 +249,7 @@ const Footer = () => {
                       </Link>
                       <Link
                         href="/#client"
-                        onClick={(e) => handleSectionClick(e, "client")}
+                        onClick={(e) => handleSectionClick(e, 'client')}
                         className="block hover:text-gray-300 transition-colors cursor-pointer"
                       >
                         Clientele
@@ -228,7 +257,10 @@ const Footer = () => {
                       <Link href="/career" className="block hover:text-gray-300 transition-colors">
                         Careers
                       </Link>
-                      <Link href="/partner" className="block hover:text-gray-300 transition-colors cursor-pointer">
+                      <Link
+                        href="/partner"
+                        className="block hover:text-gray-300 transition-colors cursor-pointer"
+                      >
                         Partners
                       </Link>
                     </div>
@@ -236,26 +268,57 @@ const Footer = () => {
                 </div>
               </div>
               <div className="text-[13px] lg:space-y-0 space-y-4 lg:ml-auto col-start-1 lg:col-span-1 lg:col-start-auto">
-                <p className="lg:hidden block mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">CONNECT WITH US</p>
+                <p className="lg:hidden block mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">
+                  CONNECT WITH US
+                </p>
                 <div className="lg:hidden flex space-x-4 pt-2 lg:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                    <a href="https://www.facebook.com/bitpastel" target="_blank" rel="noopener noreferrer">
-                      <Image src="/images/img_basilfacebooksolid.svg" alt="Facebook" width={16} height={16} />
+                    <a
+                      href="https://www.facebook.com/bitpastel"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="/images/img_basilfacebooksolid.svg"
+                        alt="Facebook"
+                        width={16}
+                        height={16}
+                      />
                     </a>
                   </div>
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                    <a href="https://www.instagram.com/bitpastel.ai/" target="_blank" rel="noopener noreferrer">
-                      <Image src="/images/img_mingcuteinstagramfill.svg" alt="Instagram" width={16} height={16} />
+                    <a
+                      href="https://www.instagram.com/bitpastel.ai/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="/images/img_mingcuteinstagramfill.svg"
+                        alt="Instagram"
+                        width={16}
+                        height={16}
+                      />
                     </a>
                   </div>
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
-                    <a href="https://www.linkedin.com/company/bitpastel" target="_blank" rel="noopener noreferrer">
-                      <Image src="/images/img_uillinkedin.svg" alt="LinkedIn" width={16} height={16} />
+                    <a
+                      href="https://www.linkedin.com/company/bitpastel"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="/images/img_uillinkedin.svg"
+                        alt="LinkedIn"
+                        width={16}
+                        height={16}
+                      />
                     </a>
                   </div>
                 </div>
                 <div>
-                  <p className="hidden lg:block h-[50px] type-footer leading-[1] text-[13px]">INFORMATION</p>
+                  <p className="hidden lg:block h-[50px] type-footer leading-[1] text-[13px]">
+                    INFORMATION
+                  </p>
                   <div className="lg:block hidden mt-0 space-y-4">
                     <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                       <span>US: +1 (872) 444 6679</span>
@@ -280,9 +343,12 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="pt-6 lg:block hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)" }}>
+            <div
+              className="pt-6 lg:block hidden"
+              style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
+            >
               <p className="text-center lg:text-[13px] text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
-                Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{" "}
+                Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
                 <Link href="/privacy-policy">Privacy Policy</Link>
               </p>
             </div>
@@ -292,10 +358,14 @@ const Footer = () => {
         <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
             <div
-              onClick={() => handleMobileNavClick("home")}
-              className={`nav-item flex flex-col items-center ${currentTab === "home" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('home')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'home' ? 'current' : ''}`}
             >
-              <Link href="/" onClick={() => setPendingScroll(null)} className="flex flex-col items-center">
+              <Link
+                href="/"
+                onClick={() => setPendingScroll(null)}
+                className="flex flex-col items-center"
+              >
                 <svg fill="none" height="20" viewBox="0 0 24 21" width="20" className="">
                   <path
                     d="M9.6 13.3382H9.35V13.5882V20.75H3.85V11.1176V10.8676H3.6H0.637691L12 0.340803L23.3623 10.8676H20.4H20.15V11.1176V20.75H14.65V13.5882V13.3382H14.4H9.6Z"
@@ -307,12 +377,12 @@ const Footer = () => {
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick("services", "services")}
-              className={`nav-item flex flex-col items-center ${currentTab === "services" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('services', 'services')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'services' ? 'current' : ''}`}
             >
               <Link
                 href="/#services"
-                onClick={(e) => handleSectionClick(e, "services")}
+                onClick={(e) => handleSectionClick(e, 'services')}
                 className="flex flex-col items-center"
               >
                 <svg fill="none" height="20" viewBox="0 0 21 21" width="20" className="">
@@ -325,38 +395,53 @@ const Footer = () => {
                 <span className="text-[11px] mt-1">Services</span>
               </Link>
             </div>
+
             <div
-              onClick={() => handleMobileNavClick("stories", "stories")}
-              className={`nav-item flex flex-col items-center ${currentTab === "stories" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('stories', 'stories')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'stories' ? 'current' : ''}`}
             >
               <Link
                 href="/#stories"
-                onClick={(e) => handleSectionClick(e, "stories")}
+                onClick={(e) => handleSectionClick(e, 'stories')}
                 className="flex flex-col items-center"
               >
-                <svg
-                  xmlSpace="preserve"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className=""
-                >
-                  <path
-                    d="M5.184 19.249a1.03 1.03 0 0 1-.124-.007c-.651-.071-.864-.79-.869-1.452a153.58 153.58 0 0 1-.002-1.516v-.383c-.433-.132-.87-.275-1.206-.509-1.247-.866-1.889-2.045-1.905-3.53-.02-1.909-.019-4.191-.001-6.413.018-2.158 1.594-3.753 3.746-4.086.199-.028.414-.043.679-.043 3.002-.002 6.005-.004 9.007-.001 2.115.002 3.894 1.283 4.329 3.33.061.285.093.819.094 1.152.007 1.942.005 3.902 0 5.922-.003 1.048-.331 2.08-.966 2.854-.636.776-1.436 1.178-2.458 1.378-.315.061-.774.04-1.036.041-.66.003-1.331.003-1.979.003-.681 0-1.385 0-2.077.004-.015 0-.05.01-.067.021-1.318.872-2.61 1.734-4.144 2.76-.172.115-.684.475-1.021.475zm5.709-16.988-5.391.003c-.215 0-.384.011-.533.034-1.681.259-2.865 1.615-2.879 3.295-.019 2.215-.018 4.217.002 6.12.012 1.158.514 2.089 1.493 2.769.326.227.714.389 1.186.496l.371.084v.58l-.001.634c-.001.494-.001 1.005.002 1.507.001.126.048.28.264.304a.148.148 0 0 0 .021.001c.06 0 .136-.033.245-.106a920.783 920.783 0 0 1 4.148-2.763c.171-.113.385-.178.588-.179.694-.003 1.399-.004 2.081-.004.648 0 1.317 0 1.975-.003.218-.001.473-.008.71-.054 1.633-.318 2.734-1.661 2.738-3.342.005-2.018.004-4.026-.003-5.966a3.63 3.63 0 0 0-.072-.736c-.339-1.596-1.679-2.67-3.333-2.672-1.202-.002-2.407-.002-3.612-.002z"
-                    fill="#008B8B"
-                  />
-                  <path
-                    d="M10.003 6.591c-1.722 0-3.444.002-5.166-.001-.644-.001-1.072-.53-.853-1.053.133-.318.402-.481.772-.514.067-.006.135-.003.203-.003 3.363 0 6.725-.001 10.088.002.147 0 .302.008.441.047.404.112.637.475.576.866-.056.36-.414.647-.834.653-.481.007-.963.002-1.444.002l-3.783.001zM8.262 9.043c-1.143 0-2.286.003-3.429-.001-.609-.003-1.011-.452-.879-.967.083-.322.4-.566.769-.589.054-.003.109-.004.163-.004h6.797c.509 0 .852.234.937.631.101.472-.272.91-.806.925-.496.014-.993.005-1.49.005H8.262zm1.056 1.67c0 .432-.35.782-.782.782H4.711a.782.782 0 1 1 0-1.564h3.825c.432 0 .782.35.782.782z"
-                    fill="#008B8B"
-                  />
-                </svg>
+                {currentTab === 'stories' ? (
+                  // ✅ Active SVG
+
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m5.031 14.583-1.478 1.479q-.316.315-.727.143a.62.62 0 0 1-.41-.618V3.756q0-.564.389-.952t.95-.388h12.488q.563 0 .951.388.39.389.389.952v9.487q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zm.718-2.791h5.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-5.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159"
+                      fill="#099"
+                    />
+                  </svg>
+                ) : (
+                  // 🚫 Inactive SVG
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m5.031 14.583-1.478 1.479q-.316.316-.727.144-.41-.17-.41-.62V3.756q0-.563.389-.95.389-.39.95-.39h12.488q.563 0 .951.39.39.387.389.95v9.488q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zM4.583 13.5h11.66a.25.25 0 0 0 .176-.08.25.25 0 0 0 .08-.176V3.757a.24.24 0 0 0-.08-.177.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.177V14.59zm1.166-1.708h5.5a.526.526 0 0 0 .542-.537.53.53 0 0 0-.156-.388.52.52 0 0 0-.386-.159h-5.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159"
+                      fill="#099"
+                    />
+                  </svg>
+                )}
                 <span className="text-[11px] mt-1">Stories</span>
               </Link>
             </div>
+
             <div
-              onClick={() => handleMobileNavClick("culture")}
-              className={`nav-item flex flex-col items-center ${currentTab === "culture" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('culture')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}
             >
               <Link href="/culture" className="flex flex-col items-center">
                 <svg
@@ -378,52 +463,59 @@ const Footer = () => {
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick("career")}
-              className={`nav-item flex flex-col items-center ${currentTab === "career" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('career')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'career' ? 'current' : ''}`}
             >
-              <Link href="/career" className="flex flex-col items-center">
-                <svg
-                  xmlSpace="preserve"
-                  enableBackground="new 0 0 40 40"
-                  height="24px"
-                  id="Layer_1"
-                  version="1.1"
-                  viewBox="0 0 40 40"
-                  width="24px"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ng-star-inserted"
-                >
-                  <g>
+              <Link
+                href="/career"
+                className="flex flex-col items-center"
+                onClick={() => handleMobileNavClick('career')}
+              >
+                {currentTab === 'career' ? (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
-                      d="M-108.89-148.45c-0.683-1.322-1.774-2.043-3.27-2.069c-1.535-0.026-3.07-0.006-4.606-0.006         c-0.133,0-0.267,0-0.449,0c0-0.153,0-0.283,0-0.413c0-1.105,0.006-2.211-0.002-3.316c-0.013-1.999-1.637-3.637-3.631-3.641         c-4.36-0.008-8.72-0.008-13.081,0c-1.993,0.004-3.62,1.644-3.631,3.641c-0.007,1.226-0.001,2.453-0.001,3.729         c-0.152,0-0.282,0-0.412,0c-1.498,0-2.997-0.001-4.495,0c-1.887,0.002-3.295,1.127-3.726,2.973         c-0.01,0.044-0.045,0.081-0.068,0.122c0,7.078,0,14.156,0,21.234c0.078,0.284,0.115,0.367,0.174,0.549         c0.487,1.5,1.898,2.543,3.476,2.544c10.15,0.003,20.299,0.004,30.449,0c1.705-0.001,3.165-1.153,3.575-2.837         c0.022-0.048,0.059-0.152,0.074-0.256c0-7.078,0-14.156,0-21.234C-108.636-147.771-108.724-148.13-108.89-148.45z          M-134.441-156.342c0.201-0.048,0.412-0.08,0.619-0.08c4.287-0.005,8.573-0.006,12.86-0.001c1.036,0.001,1.882,0.623,2.17,1.565         c0.017,0.056,0.018,0.117,0.029,0.191c-5.75,0-11.484,0-17.217,0C-135.965-155.421-135.174-156.166-134.441-156.342z          M-109.986-139.137c0,4.03,0,8.06,0,12.089c0,1.565-0.907,2.475-2.466,2.475c-9.952,0-19.903,0-29.855,0         c-1.582,0-2.481-0.905-2.481-2.496c0-4.018,0-8.035,0-12.053c0-0.132,0-0.265,0-0.439c1.141,0.345,2.241,0.676,3.34,1.01         c4.56,1.383,9.119,2.769,13.683,4.138c0.25,0.075,0.563,0.057,0.817-0.019c5.535-1.664,11.065-3.343,16.596-5.018         c0.104-0.031,0.21-0.057,0.366-0.099C-109.986-139.381-109.986-139.259-109.986-139.137z M-109.986-141.112         c-1.349,0.408-2.684,0.81-4.018,1.214c-4.338,1.315-8.675,2.633-13.015,3.941c-0.187,0.056-0.417,0.084-0.598,0.03         c-5.711-1.717-11.418-3.447-17.171-5.188c0-0.122,0-0.252,0-0.382c0-1.708-0.001-3.416,0-5.124c0.001-1.513,0.92-2.431,2.435-2.431         c3.846-0.001,7.691,0,11.537-0.001c0.513,0,0.82-0.246,0.849-0.669c0.033-0.479-0.276-0.799-0.79-0.8         c-1.61-0.004-3.219-0.001-4.829-0.001c-0.147,0-0.294,0-0.472,0c0-0.875,0-1.739,0-2.63c5.768,0,11.547,0,17.355,0         c0,0.881,0,1.737,0,2.63c-0.148,0-0.279,0-0.411,0c-1.573,0-3.145,0-4.718,0c-0.635,0-0.975,0.262-0.969,0.745         c0.006,0.479,0.342,0.727,0.987,0.727c3.784,0,7.569,0,11.353,0c1.565,0,2.474,0.906,2.474,2.466c0.001,1.696,0,3.391,0,5.087         C-109.986-141.378-109.986-141.256-109.986-141.112z"
-                      fill="#008B8B"
+                      d="M9 12.5v-2h2v2zM7.5 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.177-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zM3.755 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952v-3.201h5.5v.871q0 .286.192.479a.65.65 0 0 0 .478.191h2.827q.286 0 .478-.191a.65.65 0 0 0 .192-.479v-.871h5.5v3.201q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zm-1.34-5.625V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v4.202h-5.5v-.871a.65.65 0 0 0-.192-.479.65.65 0 0 0-.478-.191H8.586a.65.65 0 0 0-.478.191.65.65 0 0 0-.192.479v.871z"
+                      fill="#099"
                     />
+                  </svg>
+                ) : (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
-                      d="M-123.926-145.362c-2.307-0.003-4.615-0.003-6.922,0c-0.535,0.001-0.811,0.28-0.812,0.82         c-0.003,1.117-0.003,2.234,0,3.351c0.001,0.563,0.272,0.837,0.832,0.838c1.141,0.003,2.283,0.001,3.424,0.001         c1.154,0,2.307,0.002,3.461-0.001c0.558-0.001,0.83-0.276,0.831-0.839c0.003-1.117,0.003-2.234,0-3.351         C-123.115-145.083-123.39-145.362-123.926-145.362z M-124.592-141.853c-1.854,0-3.701,0-5.573,0c0-0.661,0-1.328,0-2.017         c1.85,0,3.697,0,5.573,0C-124.592-143.181-124.592-142.531-124.592-141.853z"
-                      fill="#008B8B"
+                      d="M3.756 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v8.487q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zM7.499 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.176-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zm9 6.625h-4.416v.871q0 .286-.192.479a.65.65 0 0 1-.478.191H8.586a.65.65 0 0 1-.478-.191.65.65 0 0 1-.192-.479v-.871H3.499v3.201q0 .097.08.177.081.08.177.08h12.487a.24.24 0 0 0 .176-.08.24.24 0 0 0 .08-.177zM9 12.5h2v-2H9zm-5.5-1.542h4.417v-.871q0-.287.192-.479a.65.65 0 0 1 .478-.191h2.827q.286 0 .478.191a.65.65 0 0 1 .192.479v.871H16.5V6.756a.24.24 0 0 0-.08-.176.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176z"
+                      fill="#099"
                     />
-                    <path
-                      d="M-127.363-149.053c0.406-0.007,0.711-0.314,0.716-0.723c0.006-0.426-0.306-0.746-0.728-0.748         c-0.414-0.001-0.748,0.33-0.744,0.741C-128.115-149.373-127.777-149.047-127.363-149.053z"
-                      fill="#008B8B"
-                    />
-                  </g>
-                  <path
-                    d="M39.447,14.585c0,6.069,0,12.138,0,18.207c-0.082,0.295-0.151,0.594-0.25,0.883       c-0.692,2.02-2.518,3.285-4.751,3.285c-9.401,0.002-18.802,0.001-28.203,0.001c-0.112,0-0.224-0.001-0.336-0.006       c-2.04-0.094-3.749-1.361-4.415-3.28c-0.1-0.288-0.168-0.588-0.25-0.883c0-6.069,0-12.138,0-18.207       c0.027-0.092,0.066-0.183,0.079-0.277c0.352-2.544,2.764-4.778,5.335-4.864c1.85-0.062,3.704-0.034,5.556-0.047       c0.143-0.001,0.286-0.012,0.452-0.02c0-1.122-0.004-2.202,0.001-3.281c0.008-1.732,1.206-2.975,2.944-2.986       c3.158-0.021,6.316-0.021,9.474,0c1.738,0.012,2.935,1.254,2.944,2.986c0.005,0.957,0.001,1.915,0.001,2.872       c0,0.133,0,0.266,0,0.43c0.194,0,0.342,0,0.489,0c1.604,0,3.208-0.011,4.811,0.002c2.592,0.021,4.496,1.171,5.609,3.529       C39.18,13.447,39.28,14.031,39.447,14.585z M37.204,21.718c-0.504,0.191-0.942,0.41-1.406,0.525       c-3.476,0.864-6.958,1.708-10.438,2.556c-0.772,0.188-0.773,0.184-0.798,0.976c-0.054,1.709-1.138,2.761-2.848,2.762       c-0.982,0.001-1.964,0.005-2.947-0.002c-0.833-0.006-1.511-0.344-2.045-0.982c-0.531-0.634-0.629-1.39-0.588-2.173       c0.017-0.316-0.101-0.425-0.39-0.494c-2.76-0.665-5.517-1.338-8.273-2.018c-1.07-0.264-2.137-0.542-3.2-0.834       c-0.264-0.072-0.506-0.223-0.785-0.35c0,3.505-0.006,6.961,0.006,10.417c0.002,0.58,0.172,1.124,0.544,1.592       c0.589,0.742,1.37,1,2.294,0.999c7.161-0.009,14.323-0.005,21.484-0.005c2.188,0,4.376-0.004,6.565,0.002       c0.65,0.002,1.257-0.112,1.786-0.516c0.753-0.575,1.039-1.362,1.038-2.281c-0.001-3.27,0-6.54,0-9.81       C37.204,21.964,37.204,21.844,37.204,21.718z M24.554,22.634c0.075,0,0.114,0.007,0.148-0.001c3.54-0.865,7.084-1.716,10.618-2.608       c1.029-0.26,1.686-0.983,1.813-2.043c0.1-0.834,0.069-1.687,0.067-2.531c-0.005-2.201-1.588-3.78-3.784-3.785       c-1.952-0.004-3.904-0.001-5.856-0.001c-6.764,0-13.528-0.002-20.292,0.001c-2.013,0.001-3.537,1.314-3.741,3.307       c-0.094,0.922-0.077,1.867-0.004,2.793c0.096,1.235,0.825,2.02,2.028,2.315c3.419,0.838,6.841,1.668,10.261,2.5       c0.101,0.025,0.203,0.041,0.308,0.062c0.217-1.827,1.609-2.633,3.052-2.545c0.892,0.054,1.791-0.016,2.685,0.022       c0.4,0.017,0.823,0.098,1.185,0.262C23.977,20.81,24.456,21.59,24.554,22.634z M25.747,9.378c0.01-0.131,0.024-0.228,0.024-0.325       c0.002-0.957,0.004-1.914,0-2.871c-0.003-0.616-0.186-0.805-0.798-0.806c-3.082-0.003-6.164-0.003-9.246,0       c-0.629,0.001-0.807,0.189-0.809,0.833c-0.003,0.92,0.015,1.84-0.009,2.759c-0.009,0.344,0.092,0.438,0.435,0.436       c3.33-0.012,6.661-0.007,9.991-0.008C25.467,9.397,25.6,9.385,25.747,9.378z M18.396,24.335c0,0.485,0.008,0.97-0.003,1.455       c-0.007,0.326,0.143,0.499,0.459,0.502c0.995,0.008,1.99,0.007,2.985,0c0.29-0.002,0.459-0.147,0.457-0.464       c-0.005-0.995-0.006-1.99,0.001-2.985c0.002-0.335-0.168-0.483-0.476-0.485c-0.982-0.006-1.965-0.006-2.947,0       c-0.335,0.002-0.488,0.178-0.479,0.522C18.407,23.365,18.396,23.85,18.396,24.335z"
-                    fill="#008B8B"
-                  />
-                </svg>
+                  </svg>
+                )}
                 <span className="text-[11px] mt-1">Careers</span>
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick("contact")}
-              className={`nav-item flex flex-col items-center ${currentTab === "contact" ? "current" : ""}`}
+              onClick={() => handleMobileNavClick('contact')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'contact' ? 'current' : ''}`}
             >
               <button
-                className={`flex flex-col items-center ${isModalOpen ? "modal-open" : ""}`}
+                className={`flex flex-col items-center ${isModalOpen ? 'modal-open' : ''}`}
                 onClick={() => setIsModalOpen(true)}
               >
-                <svg fill="none" height="20" viewBox="0 0 23 23" width="20" className="ng-star-inserted">
+                <svg
+                  fill="none"
+                  height="20"
+                  viewBox="0 0 23 23"
+                  width="20"
+                  className="ng-star-inserted"
+                >
                   <path
                     d="M21.9577 16.7225V19.8839C21.9589 20.1774 21.8988 20.4679 21.7812 20.7368C21.6637 21.0057 21.4912 21.247 21.275 21.4454C21.0587 21.6438 20.8034 21.7949 20.5254 21.8889C20.2474 21.9829 19.9528 22.0179 19.6605 21.9914C16.4178 21.6391 13.303 20.5311 10.5664 18.7563C8.02024 17.1384 5.86158 14.9798 4.24367 12.4336C2.46275 9.68454 1.35445 6.55458 1.00855 3.29735C0.98222 3.00594 1.01685 2.71225 1.11024 2.43496C1.20364 2.15767 1.35374 1.90287 1.551 1.68677C1.74827 1.47067 1.98837 1.29802 2.25601 1.1798C2.52366 1.06157 2.81299 1.00038 3.10558 1.0001H6.26693C6.77833 0.995069 7.27412 1.17617 7.66188 1.50964C8.04964 1.84311 8.30292 2.30621 8.37449 2.81261C8.50792 3.82431 8.75538 4.81767 9.11214 5.77374C9.25392 6.15091 9.2846 6.56082 9.20056 6.9549C9.11651 7.34898 8.92126 7.71071 8.63794 7.99722L7.29963 9.33552C8.79975 11.9737 10.9841 14.1581 13.6223 15.6582L14.9606 14.3199C15.2471 14.0366 15.6089 13.8413 16.0029 13.7573C16.397 13.6732 16.8069 13.7039 17.1841 13.8457C18.1402 14.2025 19.1335 14.4499 20.1452 14.5834C20.6571 14.6556 21.1246 14.9134 21.4588 15.3078C21.793 15.7022 21.9706 16.2057 21.9577 16.7225Z"
                     stroke="#008B8B"
@@ -441,7 +533,7 @@ const Footer = () => {
       <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Whatsapp />
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
