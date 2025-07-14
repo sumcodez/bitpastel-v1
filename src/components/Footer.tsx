@@ -254,8 +254,8 @@ const Footer = () => {
                       >
                         Clientele
                       </Link>
-                      <Link href="/career" className="block hover:text-gray-300 transition-colors">
-                        Careers
+                      <Link href="/careers" className="block hover:text-gray-300 transition-colors">
+                        careers
                       </Link>
                       <Link
                         href="/partner"
@@ -463,15 +463,15 @@ const Footer = () => {
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick('career')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'career' ? 'current' : ''}`}
+              onClick={() => handleMobileNavClick('careers')}
+              className={`nav-item flex flex-col items-center ${currentTab === 'careers' ? 'current' : ''}`}
             >
               <Link
-                href="/career"
+                href="/careers"
                 className="flex flex-col items-center"
-                onClick={() => handleMobileNavClick('career')}
+                onClick={() => handleMobileNavClick('careers')}
               >
-                {currentTab === 'career' ? (
+                {currentTab === 'careers' ? (
                   <svg
                     width="20"
                     height="20"
@@ -498,7 +498,7 @@ const Footer = () => {
                     />
                   </svg>
                 )}
-                <span className="text-[11px] mt-1">Careers</span>
+                <span className="text-[11px] mt-1">careers</span>
               </Link>
             </div>
             <div
