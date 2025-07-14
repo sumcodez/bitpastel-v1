@@ -160,7 +160,7 @@ const BecomePartner = () => {
 
   if (isSuccess) {
     return (
-      <section className="become-partner-area md:pt-[77px] pt-[55px]" id="become-a-partner">
+      <section className="become-partner-area md:py-[77px] py-[55px]" id="become-a-partner">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-1 grid-cols-1 font-source">
             <div className="">
