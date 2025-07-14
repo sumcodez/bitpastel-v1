@@ -4,17 +4,19 @@ import NewRefer from './NewRefer';
 
 function NewIntegrated() {
   return (
-    <div className="flex flex-col md:flex-row gap-8 p-4">
+    <div className='relative parent-container'>
+    <div className="container px-4 lg:gap-8 mx-auto flex flex-col lg:flex-row">
       {/* First Column - NewMember */}
-      <div className="flex-1">
+      <div className="lg:flex-1">
         <NewRefer />
       </div>
       
       {/* Second Column - NewRefer */}
-      <div className="flex-1">
+      <div className="lg:flex-1">
         <NewMember />
       </div>
     </div>
+        </div>
   );
 }
 

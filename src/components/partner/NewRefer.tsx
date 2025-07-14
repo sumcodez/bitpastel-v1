@@ -2,10 +2,12 @@ import React from 'react';
 
 const NewRefer = () => {
   return (
+    // <section className="partner-refer-area relative">
     <section className="partner-refer-area relative py-[77px]">
-      <div className="container mx-auto px-4">
+      <div className="md:px-0 px-0 grid lg:grid-cols-1 md:grid-cols-2">
+      {/* <div className="container mx-auto px-4"> */}
         {/* Icon & Heading Section (Above) */}
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="lg:grid lg:grid-cols-[auto_1fr] flex flex-col md:text-left text-center lg:gap-[30px] gap-0 md:items-start items-center mb-12">
           <div className="partner-refer-circle mb-4">
             <svg
               fill="none"
@@ -40,14 +42,16 @@ const NewRefer = () => {
               ></path>
             </svg>
           </div>
-          <h2 className="font-source title font-[600] text-3xl text-title mb-2">Refer & Earn</h2>
-          <p className="font-roboto text-gray-600 max-w-lg mx-auto">
+          <div>
+          <h2 className="font-source title font-[600] mb-2">Refer & Earn</h2>
+          <p className="font-roboto text-gray-600 max-w-lg md:max-w-[300px]">
             If you think we are good, please share your experience when you refer.
           </p>
+          </div>
         </div>
 
         {/* Content Below - Single Column List */}
-        <div className="px-[15px]">
+        <div className="">
           <div className="partner-referlist-area space-y-8">
             <div className="partner-refer-list flex items-start gap-4">
               <svg

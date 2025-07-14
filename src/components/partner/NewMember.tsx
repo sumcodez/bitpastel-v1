@@ -160,10 +160,12 @@ const BecomePartner = () => {
 
   if (isSuccess) {
     return (
-      <section className="become-partner-area py-[77px]" id="become-a-partner">
-        <div className="container mx-auto px-4">
+      <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
+      {/* <section className="become-partner-area py-[77px]" id="become-a-partner"> */}
+        <div className="px-4">
+        {/* <div className="container mx-auto px-4"> */}
           {/* Success Message - Icon & Heading Above */}
-          <div className="flex flex-col items-center text-center mb-12">
+          <div className="flex flex-col items-center text-center md:mb-12">
             <div className="mb-4">
               <svg
                 fill="none"
@@ -189,11 +191,11 @@ const BecomePartner = () => {
   }
 
   return (
-    <section className="become-partner-area py-[77px]" id="become-a-partner">
-      <div className="container mx-auto px-4">
+    <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
+      <div className="grid lg:grid-cols-1 md:grid-cols-2">
         {/* Icon & Heading Section (Above) */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <div className="mb-4">
+        <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 md:items-start items-center md:mb-12">
+          <div className="mb-4 become-partner-circle">
             <svg
               fill="none"
               height="64"
@@ -207,14 +209,15 @@ const BecomePartner = () => {
               />
             </svg>
           </div>
-          <h2 className="font-source title font-[600] text-3xl text-title mb-2">Become a Partner</h2>
-          <p className="text-gray-400 max-w-lg mx-auto">
-            Fill out the form below and we'll get back to you soon.
-          </p>
+
+          <div>
+          <h2 className=" font-[600] text-3xl text-title mb-2 font-source title text-title">Become a Partner</h2>
+          </div>
+
         </div>
 
         {/* Form Section (Below) */}
-        <div className="max-w-2xl mx-auto bg-[#1a1a1a] p-8 rounded-lg relative">
+        <div className="become-partner-form-area w-full mx-auto bg-[#1a1a1a] p-6 rounded-lg relative min-h-[400px]">
           {isSubmitting && (
             <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
               <div className="text-center">
@@ -256,76 +259,112 @@ const BecomePartner = () => {
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
-                className="w-full bg-transparent border-b border-[#B2B2B2] py-2 text-white placeholder-[#B2B2B2] focus:outline-none"
-                disabled={isSubmitting}
-                required
-              />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-            </div>
+              <form onSubmit={handleSubmit}>
+                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
+                  <div className="flex-1">
+                    <input
+                      autoComplete="new-text-4"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  {errors.name && <span className="error-text">{errors.name}</span>}
+                </div>
+                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
+                  <div className="flex-1">
+                    <input
+                      autoComplete="new-text-3"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  {errors.email && <span className="error-text">{errors.email}</span>}
+                </div>
 
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
-                className="w-full bg-transparent border-b border-[#B2B2B2] py-2 text-white placeholder-[#B2B2B2] focus:outline-none"
-                disabled={isSubmitting}
-                required
-              />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-            </div>
+                <div className={`relative flex gap-2 py-[4px] border-b-[1px] border-[#B2B2B2]`}>
+                  <PhoneInput
+                    international
+                    defaultCountry={defaultCountry as any}
+                    countryCallingCodeEditable={false}
+                    value={formData.phone}
+                    onChange={(value) => handlePhoneChange(value)}
+                    onKeyDown={(e: React.KeyboardEvent) => {
+                      const digitsOnly = formData.phone.replace(/\D/g, '');
+                      const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                      if (
+                        digitsOnly.length >= 17 &&
+                        !allowedKeys.includes(e.key) &&
+                        /^\d$/.test(e.key)
+                      ) {
+                        e.preventDefault();
+                      }
+                    }}
+                    autoComplete="new-text-58564"
+                    placeholder="Mobile number (optional)"
+                    disabled={isSubmitting}
+                    className="!border-none lg:text-[16px] bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
+                  />
+                  {!formData.phone && (
+                    <p className="text-white lg:text-[16px] absolute md:top-[12px] lg:left-[130px] md:left-[68px] left-[75px] top-[12px] whitespace-nowrap font-[100] pointer-events-none">
+                      Mobile number(Optional)
+                    </p>
+                  )}
+                  {/* {errors.phone && (
+                    <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
+                      {errors.phone}
+                    </p>
+                  )} */}
+                </div>
 
-            <div>
-              <PhoneInput
-                international
-                defaultCountry={defaultCountry as any}
-                countryCallingCodeEditable={false}
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                placeholder="Mobile number (optional)"
-                disabled={isSubmitting}
-                className="w-full bg-transparent border-b border-[#B2B2B2] [&>input]:bg-transparent [&>input]:text-white [&>input]:placeholder-[#B2B2B2] [&>input]:focus:outline-none [&>input]:py-2"
-              />
-              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-            </div>
-
-            <div>
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-[#B2B2B2] py-2 text-white placeholder-[#B2B2B2] focus:outline-none min-h-[100px]"
-                disabled={isSubmitting}
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting || !isFormValid}
-              className={`w-full py-3 rounded-md ${isFormValid ? 'bg-green-btn text-white' : 'bg-gray-500 text-gray-300 cursor-not-allowed'}`}
-            >
-              {isSubmitting ? 'Submitting...' : 'Submit'}
-            </button>
-
-            {status && (
-              <p className={`text-center ${status.includes('wrong') ? 'text-red-500' : 'text-green-500'}`}>
-                {status}
-              </p>
-            )}
-          </form>
+                <div className="become-textarea flex items-start border-b-[1px] relative border-[#B2B2B2]">
+                  <div className="flex-1">
+                    <textarea
+                      autoComplete="new-text-178"
+                      readOnly
+                      onFocus={(e) => e.target.removeAttribute('readOnly')}
+                      name="message"
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="subheading bg-transparent w-full"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  {errors.message && <span className="error-text">{errors.message}</span>}
+                </div>
+                <button
+                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
+                  type="submit"
+                  disabled={isSubmitting || !isFormValid}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+                {status && (
+                  <p
+                    className={`mt-3 text-center ${
+                      status.includes('Success') ? 'text-green-500' : 'text-red-500'
+                    }`}
+                  >
+                    {status}
+                  </p>
+                )}
+              </form>
         </div>
       </div>
     </section>

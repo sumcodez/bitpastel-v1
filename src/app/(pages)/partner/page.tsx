@@ -9,9 +9,9 @@ const page = () => {
     <div>
       <PartnerHero/>
       <PartnerService/>
-      <PartnerRefer/>
-      <BecomePartner/>
-      {/* <NewIntegrated/> */}
+      {/* <PartnerRefer/> */}
+      <NewIntegrated/>
+      {/* <BecomePartner/> */}
     </div>
   )
 }
