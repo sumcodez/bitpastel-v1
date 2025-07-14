@@ -2,7 +2,7 @@ import React from 'react';
 
 const PartnerService = () => {
   return (
-    <section className="partner-service-area relative bg-[#282828] md:pt-[77px] md:pb-[87px] py-[50px]">
+    <section className="partner-service-area overflow-hidden relative bg-[#282828] md:pt-[77px] md:pb-[87px] py-[50px]">
       <div className="container px-4 mx-auto">
         <h2 className="font-roboto text-white md:text-[35px] text-[23px] md:pb-0 pb-[15px] leading-[normal] md:text-left text-center md:max-w-[unset] max-w-[300px] md:mx-0 mx-auto font-[600]">
           Is there anyone from your circle who may need our services?

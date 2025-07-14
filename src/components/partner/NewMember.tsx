@@ -165,7 +165,7 @@ const BecomePartner = () => {
         <div className="px-4">
         {/* <div className="container mx-auto px-4"> */}
           {/* Success Message - Icon & Heading Above */}
-          <div className="flex flex-col items-center text-center md:mb-12">
+          <div className="flex flex-col items-center text-center md:mb-10">
             <div className="mb-4">
               <svg
                 fill="none"
@@ -194,7 +194,7 @@ const BecomePartner = () => {
     <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
       <div className="grid lg:grid-cols-1 md:grid-cols-2">
         {/* Icon & Heading Section (Above) */}
-        <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center md:mb-12">
+        <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center md:mb-10">
           <div className="mt-0 become-partner-circle">
             <svg
               fill="none"
@@ -297,7 +297,7 @@ const BecomePartner = () => {
                   {errors.email && <span className="error-text">{errors.email}</span>}
                 </div>
 
-                <div className={`relative flex gap-2 py-[4px] border-b-[1px] border-[#B2B2B2]`}>
+                <div className={`relative flex gap-2 py-[7px] border-b-[1px] border-[#B2B2B2]`}>
                   <PhoneInput
                     international
                     defaultCountry={defaultCountry as any}

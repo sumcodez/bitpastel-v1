@@ -744,7 +744,7 @@ textarea::placeholder {
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
-  padding-bottom: 20px;
+  padding-bottom: 3px;
 }
 .partner-refer-area p {
   color: #2a2a2a;
@@ -755,7 +755,7 @@ textarea::placeholder {
 }
 .partner-refer-list {
   border-bottom: 1px solid #ddd;
-  padding: 25px 0 15px 60px;
+  padding: 0px 0 15px 60px;
   position: relative;
 }
 .partner-refer-list:first-child svg {
@@ -765,7 +765,8 @@ textarea::placeholder {
 .partner-refer-list svg {
   position: absolute;
   left: 0;
-  top: 22px;
+  top: 0;
+  width: 35px;
 }
 .become-partner-area {
   /* padding: 52px 0; */
