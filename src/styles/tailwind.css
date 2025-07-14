@@ -792,10 +792,13 @@ textarea::placeholder {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: calc(50%);
+    height: 560px;
     left: 0;
     z-index: -1;
   }
+  .become-partner-form-area {
+    padding: 20px 25px 25px;
+}
 }
 @media screen and (max-width: 767px) {
   .parent-container::before {
@@ -804,7 +807,7 @@ textarea::placeholder {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: calc(50% + 20px);
+    height: 630px;
     left: 0;
     z-index: -1;
   }

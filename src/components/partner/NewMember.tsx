@@ -160,30 +160,37 @@ const BecomePartner = () => {
 
   if (isSuccess) {
     return (
-      <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
-      {/* <section className="become-partner-area py-[77px]" id="become-a-partner"> */}
-        <div className="px-4">
-        {/* <div className="container mx-auto px-4"> */}
-          {/* Success Message - Icon & Heading Above */}
-          <div className="flex flex-col items-center text-center md:mb-10">
-            <div className="mb-4">
-              <svg
-                fill="none"
-                height="64"
-                viewBox="0 0 80 64"
-                width="80"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M68 31.0002V31.4127L76.7125 22.7002C79.45 19.9627 79.45 15.5377 76.7125 12.8002L66.95 3.05019C64.2125 0.312695 59.7875 0.312695 57.05 3.05019L52.0375 8.06269C51.7 8.02519 51.35 8.00019 51 8.00019H37C32.3625 8.00019 28.55 11.5002 28.05 16.0002H28V31.0002C28 33.7627 30.2375 36.0002 33 36.0002C35.7625 36.0002 38 33.7627 38 31.0002V20.0002H58C63.525 20.0002 68 24.4752 68 30.0002V31.0002ZM42 24.0002V31.0002C42 35.9752 37.975 40.0002 33 40.0002C28.025 40.0002 24 35.9752 24 31.0002V16.1752C19.5125 16.9502 15.775 20.2127 14.5 24.7002L12.4375 31.9002L3.2875 41.0502C0.55 43.7877 0.55 48.2127 3.2875 50.9502L13.05 60.7127C15.7875 63.4502 20.2125 63.4502 22.95 60.7127L27.6625 56.0002C27.775 56.0002 27.8875 56.0127 28 56.0127H48C51.3125 56.0127 54 53.3252 54 50.0127C54 49.3127 53.875 48.6377 53.6625 48.0127H54C57.3125 48.0127 60 45.3252 60 42.0127C60 40.4127 59.375 38.9627 58.35 37.8877C61.5625 37.2627 63.9875 34.4377 64 31.0377V30.9877C63.9875 27.1377 60.8625 24.0127 57 24.0127H42V24.0002Z"
-                  fill="white"
-                />
-              </svg>
+      <section className="become-partner-area md:pt-[77px] pt-[55px]" id="become-a-partner">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-1 grid-cols-1 font-source">
+            <div className="">
+              <div className="become-partner-title-area flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center">
+                <div className="become-partner-circle md:mb-10">
+                  <svg
+                    fill="none"
+                    height="64"
+                    viewBox="0 0 80 64"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68 31.0002V31.4127L76.7125 22.7002C79.45 19.9627 79.45 15.5377 76.7125 12.8002L66.95 3.05019C64.2125 0.312695 59.7875 0.312695 57.05 3.05019L52.0375 8.06269C51.7 8.02519 51.35 8.00019 51 8.00019H37C32.3625 8.00019 28.55 11.5002 28.05 16.0002H28V31.0002C28 33.7627 30.2375 36.0002 33 36.0002C35.7625 36.0002 38 33.7627 38 31.0002V20.0002H58C63.525 20.0002 68 24.4752 68 30.0002V31.0002ZM42 24.0002V31.0002C42 35.9752 37.975 40.0002 33 40.0002C28.025 40.0002 24 35.9752 24 31.0002V16.1752C19.5125 16.9502 15.775 20.2127 14.5 24.7002L12.4375 31.9002L3.2875 41.0502C0.55 43.7877 0.55 48.2127 3.2875 50.9502L13.05 60.7127C15.7875 63.4502 20.2125 63.4502 22.95 60.7127L27.6625 56.0002C27.775 56.0002 27.8875 56.0127 28 56.0127H48C51.3125 56.0127 54 53.3252 54 50.0127C54 49.3127 53.875 48.6377 53.6625 48.0127H54C57.3125 48.0127 60 45.3252 60 42.0127C60 40.4127 59.375 38.9627 58.35 37.8877C61.5625 37.2627 63.9875 34.4377 64 31.0377V30.9877C63.9875 27.1377 60.8625 24.0127 57 24.0127H42V24.0002Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div>
+                <h2 className="font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-0 text-title">Become a Partner</h2>
+                </div>
+              </div>
             </div>
-            <h2 className="font-source title font-[600] text-3xl text-title mb-2">Become a Partner</h2>
-            <p className="text-white max-w-lg mx-auto">
-              Thank you for connecting with us! We'll get back to you soon.
-            </p>
+            <div className="">
+              <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg h-full min-h-[400px] flex items-center justify-center">
+                <div className="text-white p-6 text-center rounded w-full">
+                  <p className="subheading font-[700] font-source">Thank You for connecting with us!</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -211,7 +218,7 @@ const BecomePartner = () => {
           </div>
 
           <div>
-          <h2 className=" font-[600] text-3xl text-title font-source title md:py-0 py-[10px] text-title">Become a Partner</h2>
+          <h2 className=" font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-0 text-title">Become a Partner</h2>
           </div>
 
         </div>

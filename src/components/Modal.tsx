@@ -314,7 +314,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay transition-opacity duration-500 ${
-        isAnimating ? 'opacity-100' : 'opacity-0'
+        isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
       }`}
       onClick={handleOverlayClick}
     >
