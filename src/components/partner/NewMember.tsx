@@ -165,7 +165,7 @@ const BecomePartner = () => {
           <div className="grid md:grid-cols-1 grid-cols-1 font-source">
             <div className="">
               <div className="become-partner-title-area flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center">
-                <div className="become-partner-circle md:mb-10">
+                <div className="become-partner-circle">
                   <svg
                     fill="none"
                     height="64"
@@ -179,12 +179,12 @@ const BecomePartner = () => {
                     />
                   </svg>
                 </div>
-                <div>
-                <h2 className="font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-0 text-title">Become a Partner</h2>
+                <div className=''>
+                <h2 className="font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] text-title py-[15px]">Become a Partner</h2>
                 </div>
               </div>
             </div>
-            <div className="">
+            <div className="md:mt-10 mt-0">
               <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg h-full min-h-[400px] flex items-center justify-center">
                 <div className="text-white text-center rounded w-full">
                   <p className="subheading font-[700] font-source">Thank You for connecting with us!</p>
@@ -218,7 +218,7 @@ const BecomePartner = () => {
           </div>
 
           <div>
-          <h2 className=" font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-0 text-title">Become a Partner</h2>
+          <h2 className=" font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-[15px] text-title">Become a Partner</h2>
           </div>
 
         </div>
@@ -328,7 +328,7 @@ const BecomePartner = () => {
                     className="!border-none lg:text-[16px] bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
                   />
                   {!formData.phone && (
-                    <p className="text-white lg:text-[16px] absolute md:top-[12px] lg:left-[130px] md:left-[68px] left-[75px] top-[12px] whitespace-nowrap font-[100] pointer-events-none">
+                    <p className="text-white lg:text-[16px] absolute md:top-[15px] lg:left-[100px] md:left-[68px] left-[75px] top-[12px] whitespace-nowrap font-[100] pointer-events-none">
                       Mobile number(Optional)
                     </p>
                   )}
