@@ -87,7 +87,7 @@ export default function Home() {
   };
   
   const handleApplyClick = (id: string) => {
-    router.push(`career/applyJob/${id}`); // Navigate to job detail page
+    router.push(`careers/applyJob/${id}`); // Navigate to job detail page
   };
 
   return (

@@ -332,7 +332,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
     return notFound();
   }
   const handleBackButtonClick = () => {
-    router.push('/career');
+    router.push('/careers');
   };
   const customBenefits = [
     {
