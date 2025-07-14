@@ -83,7 +83,7 @@ const Header = () => {
       // Use a longer timeout to ensure the page is fully loaded
       const timeoutId = setTimeout(() => {
         scrollToSection(pendingScroll)
-      }, 300)
+      }, 100)
 
       return () => clearTimeout(timeoutId)
     }
