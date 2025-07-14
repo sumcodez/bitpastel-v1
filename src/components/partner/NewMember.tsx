@@ -194,7 +194,7 @@ const BecomePartner = () => {
     <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
       <div className="grid lg:grid-cols-1 md:grid-cols-2">
         {/* Icon & Heading Section (Above) */}
-        <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 md:items-start items-center md:mb-12">
+        <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center md:mb-12">
           <div className="mb-4 become-partner-circle">
             <svg
               fill="none"
