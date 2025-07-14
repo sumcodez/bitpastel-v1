@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 interface Testimonial {
@@ -248,27 +248,24 @@ const defaultTestimonials: Testimonial[] = [
     bgColor: 'bg-[#9FDDEE]',
   },
 ];
-
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
-  //Mobile bg color cycle (4 colors)
   const mobileBgColors = ['bg-[#FFA1AA]', 'bg-[#FFEA97]', 'bg-[#82EAB3]', 'bg-[#9FDDEE]'];
-
   const mobileTestimonials = orderedTestimonials.map((t, i) => ({
     ...t,
-    // Only apply mobile color if bgColor doesn't exist
     bgColor: t.bgColor || mobileBgColors[i % mobileBgColors.length],
   }));
 
   const [isMobile, setIsMobile] = useState(false);
   const [showMore, setShowMore] = useState(false);
-
   const [initialCount, setInitialCount] = useState(6);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentTestimonials = isMobile ? mobileTestimonials : testimonials;
   const initialTestimonials = currentTestimonials.slice(0, initialCount);
-  const extraTestimonials = currentTestimonials.slice(initialCount); // Dynamic slice
+  const extraTestimonials = currentTestimonials.slice(initialCount);
 
   useEffect(() => {
     const handleResize = () => {
@@ -281,17 +278,43 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleMouseEnter = (id: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setHoveredCard(id);
+  };
+
+  const handleMouseLeave = (id: string) => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredCard(null);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const renderTestimonialCard = (testimonial: Testimonial) => (
     <div
       key={testimonial.id}
       className={`${testimonial.bgColor} break-inside-avoid overflow-hidden md:rounded-[20px] ${
         !isMobile ? 'testimonial-card-parent' : ''
-      } rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col`}
+      } rounded-[10px] md:px-12 px-6 py-6 text-[rgba(33,37,41,1)] flex flex-col ${
+        hoveredCard === testimonial.id ? 'open' : ''
+      }`}
+      onMouseEnter={() => handleMouseEnter(testimonial.id)}
+      onMouseLeave={() => handleMouseLeave(testimonial.id)}
     >
       <div className="flex-grow">
         <div className={`${!isMobile ? 'testimonial-card-content min-h-[70px]' : ''}`}>
           <p
-            className={`lg:line-clamp-3 line-clamp-none ${
+            className={`md:line-clamp-3 line-clamp-none ${
               testimonial.message.trim().length > 290 ? 'collabsile-lg' : ''
             } ${testimonial.message.trim().length > 189 ? 'collabsile-small' : ''} ${
               testimonial.message.trim().length > 90 ? 'collabsile-extra-small' : ''
@@ -328,43 +351,16 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           Stories
         </h2>
 
-        {/* Initial Testimonials */}
         <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
           {initialTestimonials.map(renderTestimonialCard)}
         </div>
 
-        {/* Extra Testimonials (only shown when showMore is true) */}
         {showMore && (
           <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-4 mx-auto w-full text-title">
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}
 
-        {/* Buttons */}
-        {/* {extraTestimonials.length > 0 && (
-          <div className="flex justify-center md:mt-8 mt-7 space-x-4">
-            {!showMore ? (
-              <button
-                onClick={() => setShowMore(true)}
-                className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
-              >
-                <span>Explore more stories</span>
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  setShowMore(false);
-                  document.getElementById('stories')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
-              >
-                <span>Show Less</span>
-              </button>
-            )}
-          </div>
-        )} */}
-
-        {/* Buttons */}
         {extraTestimonials.length > 0 && !showMore && (
           <div className="flex justify-center md:mt-8 mt-7 space-x-4">
             <button

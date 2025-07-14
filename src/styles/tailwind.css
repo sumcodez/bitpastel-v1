@@ -444,7 +444,7 @@ input:focus-visible{
 
 
 
-@media screen and (min-width:1280px) {
+/* @media screen and (min-width:1280px) {
   .testimonial-card-parent .testimonial-card-content p.collabsile-lg {
     max-height: 70px;
     overflow: hidden;
@@ -507,9 +507,76 @@ input:focus-visible{
       opacity 1.5s ease;
       transition-delay:  1s;
 }
+ */
 
 
 
+.testimonial-card-parent .testimonial-card-content p {
+  transition: all 1s ease;
+}
+
+.testimonial-card-parent.open .testimonial-card-content p {
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  display: block;
+  overflow: visible;
+}
+
+ 
+@media screen and (min-width:1280px) {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-lg {
+    max-height: 70px;
+    overflow: hidden;
+    opacity: 1;
+    padding-bottom: 0;
+    transition: 
+      max-height 3s ease,
+      padding 1s ease ,  
+      opacity 1.5s ease;    
+  }
+  
+  
+  .testimonial-card-parent.open .testimonial-card-content p.collabsile-lg {
+    max-height: 500px; 
+    padding-bottom: 20px;
+    opacity: 1;
+    transition-delay: 0s; 
+  }
+}
+
+@media screen and (max-width:1280px) and (min-width:991px) {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-small {
+    max-height: 70px;
+    overflow: hidden;
+   transition: 
+      max-height 3s ease,
+      padding 1s ease ,  
+      opacity 1.5s ease;    
+  }
+  .testimonial-card-parent.open .testimonial-card-content p.collabsile-small {
+    max-height: 500px; 
+    padding-bottom: 20px;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+}
+
+@media screen and (max-width:991px) and (min-width:767px) {
+  .testimonial-card-parent .testimonial-card-content p.collabsile-extra-small {
+    max-height: 70px;
+    overflow: hidden;
+   transition: 
+      max-height 3s ease,
+      padding 1s ease ,  
+      opacity 1.5s ease;    
+  }
+  .testimonial-card-parent.open .testimonial-card-content p.collabsile-extra-small {
+    max-height: 500px; 
+    padding-bottom: 20px;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+}
 
 
 
