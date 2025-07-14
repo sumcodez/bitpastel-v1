@@ -222,6 +222,14 @@ const Footer = () => {
                           About
                         </Link>
                       </div>
+                      {/* <div className="block text-[13px]">
+                        <Link
+                          href="/portfolio"
+                          className="hover:text-gray-300 transition-colors"
+                        >
+                          Portfolio
+                        </Link>
+                      </div> */}
                       <div className="block text-[13px]">
                         <Link
                           href="/#services"
