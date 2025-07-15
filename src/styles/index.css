@@ -735,7 +735,11 @@ height: 300px;
 }
 @media screen and (max-width:540px) {
       .testimonial-second {
-        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 86%);
+        margin-top: -20px;
+    }
+    .testimonial-first{
+      height: 230px;
     }
   .testimonial{
     padding: 0 20px;
@@ -753,7 +757,13 @@ height: 300px;
   max-width: 210px;
   margin-right: -70px;
 }
-.testimonial .testimonial-data{
+.testimonial-first .testimonial-data{
+  margin-top: 20px;
+  margin-bottom: auto;
+}
+.testimonial-third .testimonial-data,
+.testimonial-second .testimonial-data
+{
     margin-bottom: auto;
     margin-top: 100px;
 }
