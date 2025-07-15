@@ -46,7 +46,7 @@ const ServicesSection = () => {
     },
     {
       id: 'shopify',
-      title: 'Shopify Plus',
+      title: 'Shopify Plus Development',
       description: 'Scalable Shopify Plus stores tailored for high-growth e-commerce brands',
       icon: '/images/img_hugeiconsshopify.svg',
       bgColor: 'bg-primary-yellow-light',
@@ -74,7 +74,7 @@ const ServicesSection = () => {
     },
     {
       id: 'ecommerce',
-      title: 'E-commerce',
+      title: 'E-commerce Development',
       description: 'End-to-end e-commerce solutions for seamless shopping and sales growth',
       icon: '/images/img_bicartplus.svg',
       bgColor: 'bg-primary-coral-light',
@@ -106,7 +106,7 @@ const ServicesSection = () => {
     },
     {
       id: 'shopify',
-      title: 'Shopify Plus',
+      title: 'Shopify Plus Development',
       description: 'Scalable Shopify Plus stores tailored for high-growth e-commerce brands',
       icon: '/images/shopify-green-icon.svg',
       bgColor: 'bg-primary-green-light',
@@ -144,7 +144,7 @@ const ServicesSection = () => {
     },
     {
       id: 'ecommerce',
-      title: 'E-commerce',
+      title: 'E-commerce Development',
       description: 'End-to-end e-commerce solutions for seamless shopping and sales growth',
       icon: '/images/img_bicartplus.svg',
       bgColor: 'bg-primary-coral-light',
@@ -161,7 +161,7 @@ const servicesData = isMobile ? servicesMobile : services;
 
             <section id="services" className="md:pt-[90px] pt-[60px]">
               <div className="container mx-auto px-4 overflow-hidden">
-                <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">Our Services</h2>
+                <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">Our Services</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
 
                   {servicesData.map((service, index) => (
@@ -183,7 +183,7 @@ const servicesData = isMobile ? servicesMobile : services;
                         <Image src={service.icon} alt={service.title} width={36} height={36}/>
 
                       </div>
-                      <h3 className={` subheading font-bold md:text-title md:mb-1 mb-0 md:h-auto h-[60px] md:leading-[normal] leading-[23px] content-center ${service.mobileTextColor}`}>{service.title}</h3>
+                      <h3 className={`font-[500] md:font-bold md:text-title md:mb-1 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[23px] md:px-0 px-[40px]  content-center ${service.mobileTextColor}`}>{service.title}</h3>
                       <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title">
                         {service.description}
                       </p>
