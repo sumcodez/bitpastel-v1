@@ -735,17 +735,18 @@ height: 300px;
 }
 @media screen and (max-width:540px) {
       .testimonial-second {
-        clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 86%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
         margin-top: -20px;
     }
-    .testimonial-first{
-      height: 230px;
+        .testimonial-first, .testimonial-third {
+        margin-top: -20px;
     }
   .testimonial{
     padding: 0 20px;
+    height: 230px;
   }
    .testimonial .testimonial-person-image{
-    max-width: 200px;
+    max-width: 190px;
   }
 .testimonial-first .testimonial-data,
 .testimonial-third .testimonial-data
@@ -765,7 +766,7 @@ height: 300px;
 .testimonial-second .testimonial-data
 {
     margin-bottom: auto;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 }
 @media screen and (max-width:376px) {
