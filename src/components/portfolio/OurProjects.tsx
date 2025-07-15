@@ -106,23 +106,19 @@ const OurProjects = () => {
   };
 
   return (
-    <section id="services" className="md:pt-[90px] pt-[60px] bg-gray-50">
+    <section id="ourProjects" className="md:pt-[90px] pt-[60px] ">
       <div className="container mx-auto px-4 overflow-hidden">
-        <h2 className="font-[600] font-source text-center text-3xl text-gray-800 md:mb-0 mb-3 title">
+        <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">
           Industries We've Transformed
         </h2>
-        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-          Explore our portfolio of successful projects across various industries
-        </p>
-
         <div className="project-cards-inner">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="project-card"
               >
-                <div className="project-image overflow-hidden relative">
+                <div className="project-image relative">
                   {/* <Image
                     src={project.images[0]}
                     alt={`${project.title} Project Image`}
@@ -132,12 +128,11 @@ const OurProjects = () => {
                   /> */}
                   <img src={project.images[0]} alt="Project Image" className="w-full h-full object-cover" />
                 </div>
-                <div className="p-4">
+                <div className="p-4 text-center">
                   <h3 className="text-title subheading">{project.title}</h3>
-                  {/* <p className="text-gray-600 text-sm mb-4 line-clamp-2">{project.description}</p> */}
                   <button
                     onClick={() => openModal(project)}
-                    className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors duration-300"
+                    className="min-w-[96px] card-button rounded-[4px] bg-green-btn text-primary-white py-2 px-5  w-auto mx-auto"
                   >
                     View Project
                   </button>
