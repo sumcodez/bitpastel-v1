@@ -43,13 +43,13 @@ const ChevronDown = ({ className }: { className?: string }) => (
 );
 
 const services = [
-  'Web Development',
-  'Mobile App Development',
-  'E-commerce Solutions',
-  'Digital Marketing',
-  'UI/UX Design',
+  'Shopify Store',
+  'Website',
+  'Mobile App',
   'Custom Software',
-  'Other',
+  'E-commerce Site',
+  'UI/UX Design',
+  'Digital Marketing',
 ];
 
 const myCountryCodesObject = countryCodesList.customList(
