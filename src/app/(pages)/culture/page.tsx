@@ -7,15 +7,18 @@ import NewTeamtestimonial from '@/components/team/NewTeamtestimonial'
 import NewTeamCollage from '@/components/team/NewTeamCollage'
 import Common_banner from '@/components/ui/Common_banner'
 import TeamCollageNew from '@/components/team/TeamCollageNew'
+import TeamTestimonialNew from '@/components/team/TeamTestimonialNew'
 
 const page = () => {
   return (
     <>
     <div className='relative'>
       <TeamBanner/>
-      <NewTeamtestimonial/>
+      <TeamTestimonialNew/>
+      {/* <NewTeamtestimonial/> */}
       {/* <NewTeamCollage/> */}
       <TeamCollageNew/>
+
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}
      <TeamEngage/>
