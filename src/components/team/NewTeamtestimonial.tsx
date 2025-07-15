@@ -17,93 +17,75 @@ const NewTeamtestimonial = () => {
     {
       id: 1,
       name: "Shovan",
-      image: "/images/Testimonial-BP/Shovan-Profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/shovan-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/shovan-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/shovan-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/shovan-testim-right.png"
+      image: "/images/Testimonial Section/Images/Shovan.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/right.png"
     },
     {
       id: 2,
       name: "Suman",
-      image: "/images/Testimonial-BP/Suman-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/suman-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/suman-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/suman-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/suman-testim-right.png"
+      image: "/images/Testimonial Section/Images/Suman.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/right.png"
     },
     {
       id: 3,
-      name: "Madhurima",
-      image: "/images/Testimonial-BP/madhurima-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/madhurima-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/madhurima-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/madhurima-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/madhurima-testim-right.png"
+      name: "Ibrahim",
+      image: "/images/Testimonial Section/Images/Ibrahim.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png"
     },
     {
       id: 4,
-      name: "Bhaskar",
-      image: "/images/Testimonial-BP/Bhaskar-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/bhaskar-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/bhaskar-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/bhaskar-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/bhaskar-testim-right.png"
+      name: "Sneha",
+      image: "/images/Testimonial Section/Images/sneha.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/right.png"
     },
     {
       id: 5,
-      name: "Nayanika",
-      image: "/images/Testimonial-BP/Nayanika-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/nayanika-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/nayanika-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/nayanika-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/nayanika-testim-right.png"
+      name: "Sourav",
+      image: "/images/Testimonial Section/Images/Sourav.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/right.png"
     },
     {
       id: 6,
-      name: "Sourav",
-      image: "/images/Testimonial-BP/Sourav-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/sourav-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/sourav-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/sourav-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/sourav-testim-right.png"
+      name: "Aditi",
+      image: "/images/Testimonial Section/Images/Aditi.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/right.png"
     },
     {
       id: 7,
-      name: "Adity",
-      image: "/images/Testimonial-BP/Aditi-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/adity-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/adity-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/adity-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/adity-testim-right.png"
+      name: "Mousumi",
+      image: "/images/Testimonial Section/Images/Mousumi.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png"
     },
     {
       id: 8,
-      name: "Mousumi",
-      image: "/images/Testimonial-BP/Mousumi-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/mousumi-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/mousumi-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/mousumi-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/mousumi-testim-right.png"
-    },
-    {
-      id: 9,
       name: "Bony",
-      image: "/images/Testimonial-BP/Bony-profile.webp",
-      testimonialDesk: "/images/Testimonial-BP/bony-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/bony-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/bony-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/bony-testim-right.png"
+      image: "/images/Testimonial Section/Images/Bony.png",
+      testimonialDesk: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
+      testimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
+      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/right.png"
     },
-    {
-      id: 10,
-      name: "Sneha",
-      image: "/images/Testimonial-BP/sneha-profile.png",
-      testimonialDesk: "/images/Testimonial-BP/sneha-testim-left.png",
-      testimonialMob: "/images/Testimonial-BP/sneha-testim-left.png",
-      rightSideTestimonial: "/images/Testimonial-BP/sneha-testim-right.png",
-      rightSideTestimonialMob: "/images/Testimonial-BP/sneha-testim-right.png"
-    }
   ];
 
   const getRandomIndices = (): number[] => {
