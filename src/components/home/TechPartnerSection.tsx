@@ -25,7 +25,7 @@ const TechPartnerSection = () => {
               <span className="font-semibold"> out there</span>
             </h2>
             <div className="md:space-y-4 space-y-2 leading-[1] text-title ">
-              <div className="flex md:gap-4 gap-2 align-middle">
+              <div className="flex md:gap-4 gap-2 items-start">
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
                   alt="Check"
@@ -45,7 +45,7 @@ const TechPartnerSection = () => {
                 </p>
               </div>
 
-              <div className="flex md:gap-4 gap-2 align-middle">
+              <div className="flex md:gap-4 gap-2 items-start">
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
                   alt="Check"
@@ -62,7 +62,7 @@ const TechPartnerSection = () => {
                 />
                 <p className="font-[400] font-roboto text-title ">Fast turn-around time</p>
               </div>
-              <div className="flex md:gap-4 gap-2 align-middle">
+              <div className="flex md:gap-4 gap-2 items-start">
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
                   alt="Check"
@@ -81,7 +81,7 @@ const TechPartnerSection = () => {
                   Multi-layered Quality Assurance
                 </p>
               </div>
-              <div className="flex md:gap-4 gap-2 align-middle">
+              <div className="flex md:gap-4 gap-2 items-start">
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
                   alt="Check"
@@ -100,7 +100,7 @@ const TechPartnerSection = () => {
                   Idea, Confidentiality & Data Protection
                 </p>
               </div>
-              <div className="flex md:gap-4 gap-2 align-middle">
+              <div className="flex md:gap-4 gap-2 items-start">
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
                   alt="Check"
