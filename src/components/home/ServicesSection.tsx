@@ -183,7 +183,7 @@ const servicesData = isMobile ? servicesMobile : services;
                         <Image src={service.icon} alt={service.title} width={36} height={36}/>
 
                       </div>
-                      <h3 className={`font-[500] md:font-bold md:text-title md:mb-1 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[23px] md:px-0 px-[17px]  content-center ${service.mobileTextColor}`}>{service.title}</h3>
+                      <h3 className={`font-[500] md:font-bold md:text-title md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px]  content-center ${service.mobileTextColor}`}>{service.title}</h3>
                       <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title">
                         {service.description}
                       </p>
