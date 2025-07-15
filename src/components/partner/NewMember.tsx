@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import config from '../../../config';
 
 type FormData = {
   name: string;
@@ -127,7 +128,7 @@ const BecomePartner = () => {
     setStatus('');
 
     try {
-      const response = await fetch('https://www.bitpastel.com/api/partnersSendEmail.php', {
+      const response = await fetch(`${config.API_BASE_URL}/partnersSendEmail.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

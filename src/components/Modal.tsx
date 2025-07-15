@@ -9,6 +9,7 @@ import 'react-phone-number-input/style.css';
 import Link from 'next/link';
 import { CircleCheck, CircleCheckBig, Phone, Check } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
+import config from '../../config';
 
 interface ModalProps {
   open: boolean;
@@ -230,7 +231,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
     const formEncoded = new URLSearchParams(payload as any).toString();
 
     try {
-      const response = await fetch('https://www.bitpastel.com/api/quote.php', {
+      const response = await fetch(`${config.API_BASE_URL}/quote.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

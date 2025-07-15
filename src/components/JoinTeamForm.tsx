@@ -6,6 +6,7 @@ import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
 import ReCAPTCHA from 'react-google-recaptcha';
+import config from '../../config';
 
 interface JoinTeamProps {
   title?: string;
@@ -279,7 +280,7 @@ export default function JoinTeam({ title = 'Join Our Team', className, jobTitle 
     }
 
     try {
-      const response = await fetch('https://www.bitpastel.com/api/sendemail.php/', {
+      const response = await fetch(`${config.API_BASE_URL}/sendemail.php/`, {
         method: 'POST',
         body: formDataToSend,
       });
