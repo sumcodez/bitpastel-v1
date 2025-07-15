@@ -6,13 +6,16 @@ import TeamEngage from '@/components/team/TeamEngage'
 import NewTeamtestimonial from '@/components/team/NewTeamtestimonial'
 import NewTeamCollage from '@/components/team/NewTeamCollage'
 import Common_banner from '@/components/ui/Common_banner'
+import TeamCollageNew from '@/components/team/TeamCollageNew'
+
 const page = () => {
   return (
     <>
     <div className='relative'>
       <TeamBanner/>
       <NewTeamtestimonial/>
-      <NewTeamCollage/>
+      {/* <NewTeamCollage/> */}
+      <TeamCollageNew/>
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}
      <TeamEngage/>

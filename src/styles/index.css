@@ -177,7 +177,7 @@
   width: 100%;
   max-width: 500px;
   right: 45%;
-  top: 30%;
+  top: 22%;
   
 }
 .team-first-banner .third .testi-image {
@@ -632,4 +632,18 @@
     background-position: unset !important;
   }
   
+}
+
+/* =================new team page collage design ================ */
+.team-members img{
+  border-radius: 20px;
+  /* max-height: 410px; */
+  /* max-width: 600px; */
+  object-fit: cover;
+}
+.team-members .team-collage{
+  padding-top: 90px;
+}
+.team-members .team-collage h2{
+  padding-bottom: 20px;
 }
