@@ -56,8 +56,9 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
 
             <div className="md:text-primary-white text-title md:text-left text-center">
               {[
-                'Explore our handpicked work',
-                'Each project reflects our passion, precision, and pursuit of impact.',
+                'High-Performance Solutions',
+                'Design That Connects',
+                'End-to-End Expertise'
               ].map((text, idx) => (
                 <div key={idx} className="flex md:gap-4 gap-2 mb-[5px] items-center">
                   <Image
@@ -79,13 +80,13 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
               ))}
             </div>
 
-            <button
+            {/* <button
               className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
               // onClick={() => setIsModalOpen(true)}
               onClick={openModal}
             >
               Let’s Work Together
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
