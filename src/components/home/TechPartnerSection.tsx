@@ -38,7 +38,7 @@ const TechPartnerSection = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block md:w-[auto]"
+                  className="w-auto md:hidden mt-[-4px] block md:w-[auto]"
                 />
                 <p className="font-[400] font-roboto text-title paragraph">
                   Perfectly managed worry-free delivery
@@ -58,7 +58,7 @@ const TechPartnerSection = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block md:w-[auto]"
+                  className="w-auto md:hidden mt-[-4px] block md:w-[auto]"
                 />
                 <p className="font-[400] font-roboto text-title ">Fast turn-around time</p>
               </div>
@@ -75,7 +75,7 @@ const TechPartnerSection = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block md:w-[auto]"
+                  className="w-auto md:hidden mt-[-4px] block md:w-[auto]"
                 />
                 <p className="font-[400] font-roboto text-title ">
                   Multi-layered Quality Assurance
@@ -94,7 +94,7 @@ const TechPartnerSection = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block md:w-[auto]"
+                  className="w-auto md:hidden mt-[-4px] block md:w-[auto]"
                 />
                 <p className="font-[400] font-roboto text-title ">
                   Idea, Confidentiality & Data Protection
@@ -113,7 +113,7 @@ const TechPartnerSection = () => {
                   alt="Check"
                   width={24}
                   height={24}
-                  className="w-auto md:hidden block md:w-[auto]"
+                  className="w-auto md:hidden block mt-[-4px] md:w-[auto]"
                 />
                 <p className="font-[400] font-roboto text-title ">30 days free maintenance</p>
               </div>

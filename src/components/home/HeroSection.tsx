@@ -71,7 +71,7 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
                     alt="Check"
                     width={24}
                     height={24}
-                    className="w-auto md:hidden block"
+                    className="md:hidden block w-[20px]"
                   />
                   <p className="  md:text-[20px]  paragraph font-[400] font-roboto">{text}</p>
                 </div>
