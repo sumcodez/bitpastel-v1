@@ -1054,6 +1054,19 @@ a.modal-open svg {
   }
 }
 
+@media screen and (max-width:391px) {
+.whatspp-bubble{
+    bottom: 40%;
+}
+ 
+}
+@media screen and (max-width:380px) {
+.whatspp-bubble{
+    bottom: 24%;
+}
+ 
+}
+
 /* .swiper-slide{
   max-width: 500px;
   margin-left: auto;

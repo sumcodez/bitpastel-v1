@@ -24,14 +24,11 @@ const OurProjects = () => {
       id: 1,
       title: 'BAEE',
       images: [
-        '/images/project/Baee.png',
-        '/images/project/Baee2.png',
-        '/images/project/Baee3.png',
-        '/images/project/Baee4.png',
-        '/images/project/Baee4.png',
-        '/images/project/Baee4.png',
-        '/images/project/Baee4.png',
-        '/images/project/Baee4.png',
+        '/images/project/Baee/Baee_mockup_V01.png',
+        '/images/project/Baee/Baee_mockup_V02.png',
+        '/images/project/Baee/Baee_mockup_V03.png',
+        '/images/project/Baee/Baee_mockup_V04.png',
+
       ],
       description:
         'A comprehensive e-learning platform with AI-powered recommendations and interactive courses.',
@@ -40,9 +37,7 @@ const OurProjects = () => {
       id: 2,
       title: 'HealthTrack Pro',
       images: [
-        '/images/project/Health1.png',
-        '/images/project/Health2.png',
-        '/images/project/Health3.png',
+        '/images/project/Gatsby/gatsby_mockup_V03_A.jpg',
       ],
       description:
         'Healthcare management system for hospitals with patient tracking and appointment scheduling.',
@@ -128,7 +123,7 @@ const OurProjects = () => {
                   /> */}
                   <img src={project.images[0]} alt="Project Image" className="w-full h-full object-cover" />
                 </div>
-                <div className="p-4 text-center">
+                <div className="text-center py-8">
                   <h3 className="text-title subheading">{project.title}</h3>
                   <button
                     onClick={() => openModal(project)}
