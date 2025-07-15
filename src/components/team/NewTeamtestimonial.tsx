@@ -20,7 +20,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Shovan.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Shovan Kar/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/right.png"
     },
     {
@@ -29,7 +29,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Suman.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Suman Naskar/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/right.png"
     },
     {
@@ -38,7 +38,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Ibrahim.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png"
     },
     {
@@ -47,7 +47,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/sneha.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/sneha mondal/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/right.png"
     },
     {
@@ -56,7 +56,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Sourav.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Sourav Saha/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/right.png"
     },
     {
@@ -65,7 +65,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Aditi.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Aditi sau/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/right.png"
     },
     {
@@ -74,7 +74,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Mousumi.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png"
     },
     {
@@ -83,7 +83,7 @@ const NewTeamtestimonial = () => {
       image: "/images/Testimonial Section/Images/Bony.png",
       testimonialDesk: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
       testimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
+      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/bony malakar/right.png",
       rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/right.png"
     },
   ];
