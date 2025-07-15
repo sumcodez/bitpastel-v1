@@ -128,7 +128,7 @@
 .team-first-banner .first {
   overflow: hidden;
   position: relative;
-  background: #F5CD47;
+  background: #FFEA97;
   height: 420px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -158,7 +158,7 @@
 .team-first-banner .second {
   margin-top: -50px;
   position: relative;
-  background: #AA83DC;
+  background: #BEA1E4;
   height: 450px;
   -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
@@ -200,7 +200,7 @@
 .team-first-banner .third {
     margin-top: -50px;
     position: relative;
-    background: #ED8376;
+    background: #F1A197;
     height: 420px;
     -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
@@ -416,7 +416,7 @@
     .team-first-banner .first .testi-data,
     .team-first-banner .second .testi-data
      {
-        max-width: 250px;
+        max-width: 220px;
         top: 25%;
     }
     .team-first-banner .second,

@@ -126,7 +126,7 @@ const NewTeamtestimonial = () => {
     const interval = setInterval(() => {
       setCurrentIndices(getRandomIndices());
       setAnimationKey(prev => prev + 1);
-    }, 9000);
+    }, 900000);
 
     return () => clearInterval(interval);
   }, [currentIndices]);
