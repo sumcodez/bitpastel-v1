@@ -347,7 +347,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section id="stories" className="md:pt-[90px] pt-[55px]">
       <div className="container mx-auto px-4">
-        <h2 className="font-source font-[600] text-center text-title title md:mb-8 mb-3">
+        <h2 className="font-source md:font-[600] font-[700] text-center text-title title md:mb-8 mb-3">
           Stories
         </h2>
 
