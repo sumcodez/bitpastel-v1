@@ -1060,6 +1060,17 @@ a.modal-open svg {
 }
 }
 
+@media screen and (max-width: 767px) {
+    .life-at-bitpastel .common-lb {
+        grid-template-columns: 1fr !important;
+    }
+        .life-at-bitpastel .common-lb.fourth-lb, .spacer-top {
+        margin-top: 40px;
+    }
+        .title-middle {
+        padding-top: 40px;
+    }
+}
 /* .swiper-slide{
   max-width: 500px;
   margin-left: auto;

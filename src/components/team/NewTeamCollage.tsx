@@ -259,7 +259,7 @@ const NewTeamCollage = () => {
               width="700"
             />
           </div>
-          <div className="img rt md:order-last order-first md:pt-0 md:pb-0 pt-[30px] pb-[50px]">
+          <div className="img rt md:order-last order-first md:pt-0 md:pb-0 pt-[0px] pb-[50px]">
             <div className="icon-title md:inline-block">
               <h2 className="tt txt-start title md:text-left text-center text-till md:mb-0 leading-[normal] font-[600]">
                 Bitpastel
@@ -423,7 +423,7 @@ const NewTeamCollage = () => {
       </div> */}
 
       <div className="">
-        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:pt-[20px] md:pb-[80px]">
+        <h4 className="tt text-center title  leading-[normal] text-till font-[600] md:pt-[20px] pt-[40px] md:pb-[80px]">
           Bitpastel Townhall 2023
         </h4>
       </div>
@@ -551,14 +551,14 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img rt md:order-last order-first md:pb-0 pb-[70px]">
+        <div className="img rt md:order-last order-first md:pb-0 pb-[30px] ">
           <h4 className="tt text-till title leading-[normal] font-[600]">Culture at Bitpastel</h4>
         </div>
       </div>
 
       <div className="common-lb fourth-lb lazy-image-section lg:mt-[-260px] md:mt-[-70px]">
         <div className="img lt top-speccer inline-block">
-          <h4 className="tt md:text-start text-center text-till title  leading-[normal] font-[600] bottom-spaccer">
+          <h4 className="tt md:text-start text-center text-till title  leading-[normal] font-[600] bottom-spaccer md:mb-0 mb-[40px]">
             Year-end
             <br />
             Celebration 2022
@@ -620,7 +620,7 @@ const NewTeamCollage = () => {
             width="700"
           />
         </div>
-        <div className="img lt md:order-last order-first md:pb-0 pb-[70px]">
+        <div className="img lt md:order-last order-first md:pb-0 pt-[40px] pb-[40px]">
           <h4 className="tt text-till title font-[600] leading-[normal]">
             Sunday Brunch at Westin
           </h4>
