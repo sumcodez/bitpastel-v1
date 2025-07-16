@@ -653,6 +653,9 @@
   .team-members .team-collage h2{
     text-align: center;
   }
+  .team-members .team-collage{
+  padding-top: 40px;
+}
 }
 /* ===================team page testimonial new design=============== */
 .testimonial{
