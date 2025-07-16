@@ -110,7 +110,17 @@ const Footer = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-[90px] lg:gap-8 mb-8 align-top footer-wrapper">
               <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
-                <Link href="/" onClick={() => setPendingScroll(null)}>
+                <Link href="/" onClick={(e) => {
+                  if (isHomePage) {
+                    e.preventDefault();
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  } else {
+                    setPendingScroll(null);
+                  }
+                }}>
                   <Image
                     src="/images/Footer-logo.png"
                     alt="Bitpastel Logo"
@@ -205,9 +215,19 @@ const Footer = () => {
                   <div className="">
                     <div className="space-y-4 text-[13px]">
                       <div className="block text-[13px]">
-                        <Link
+                         <Link
                           href="/"
-                          onClick={() => setPendingScroll(null)}
+                          onClick={(e) => {
+                            if (isHomePage) {
+                              e.preventDefault();
+                              window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                              });
+                            } else {
+                              setPendingScroll(null);
+                            }
+                          }}
                           className="hover:text-gray-300 transition-colors"
                         >
                           Home
@@ -371,7 +391,17 @@ const Footer = () => {
             >
               <Link
                 href="/"
-                onClick={() => setPendingScroll(null)}
+                onClick={(e) => {
+                  if (isHomePage) {
+                    e.preventDefault();
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  } else {
+                    setPendingScroll(null);
+                  }
+                }}
                 className="flex flex-col items-center"
               >
                 <svg fill="none" height="20" viewBox="0 0 24 21" width="20" className="">
@@ -481,8 +511,8 @@ const Footer = () => {
               >
                 {currentTab === 'careers' ? (
                   <svg
-                    width="20"
-                    height="20"
+                    width="24"
+                    height="24"
                     viewBox="0 0 20 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -494,8 +524,8 @@ const Footer = () => {
                   </svg>
                 ) : (
                   <svg
-                    width="20"
-                    height="20"
+                    width="24"
+                    height="24"
                     viewBox="0 0 20 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
