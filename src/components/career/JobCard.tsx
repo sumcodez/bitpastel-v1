@@ -1,8 +1,9 @@
 'use client';
 import Card from '@/components/ui/Card';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-
+import { useSearchParams } from 'next/navigation';
 
 export default function Home() {
   const router = useRouter();
@@ -90,8 +91,49 @@ export default function Home() {
     router.push(`careers/applyJob/${id}`); // Navigate to job detail page
   };
 
+
+
+
+  useEffect(() => {
+    const handleHashScroll = () => {
+      // Check if there's a hash in the URL
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        const element = document.getElementById(hash);
+        
+        if (element) {
+          // First scroll to top to ensure consistent behavior
+          window.scrollTo(0, 0);
+          
+          // Calculate position with offset (adjust -100 for your header height)
+          const yOffset = -0;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          
+          // Smooth scroll to the element after a small delay
+          setTimeout(() => {
+            window.scrollTo({
+              top: y,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    };
+
+    // Initial scroll handling
+    handleHashScroll();
+
+    // Also handle hash changes if they occur without page reload
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, []);
+
+
+
+
+
   return (
-    <div className="min-h-screen md:pt-[90px] pt-[70px]" id='#jobCards'>
+    <div className="min-h-screen md:pt-[90px] pt-[70px]" id='jobCards'>
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-[30px]">

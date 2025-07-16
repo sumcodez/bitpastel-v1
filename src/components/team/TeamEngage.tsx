@@ -3,35 +3,32 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+
 const TeamEngage = () => {
   const router = useRouter();
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      setTimeout(() => {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-      }, 100);
-    }
+
+ const handleFindOpportunities = () => {
+    // Navigate to careers page with a query parameter
+    router.push('/careers/#jobCards');
   };
 
   return (
     <section className="md:py-[100px] py-[70px]">
       <div className="mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="rounded-tr-[40px] rounded-br-[40px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-[auto]">
-                      <Image
-                        src="/images/team_member_banner.webp"
-                        alt="Team collaboration"
-                        width={711}
-                        height={406}
-                        className="w-full md:h-[440px] h-[280px] md:object-unset object-cover md:object-[50%_17%] object-right"
-                      />
-                   
+            <Image
+              src="/images/team_member_banner.webp"
+              alt="Team collaboration"
+              width={711}
+              height={406}
+              className="w-full md:h-[440px] h-[280px] md:object-unset object-cover md:object-[50%_17%] object-right"
+              priority
+            />
           </div>
           <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:pl-[80px] md:pl-[60px] md:pr-[40px] py-8 px-8 rounded-tl-[40px] rounded-bl-[40px] content-center overflow-hidden">
-            {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}
-            <h2 className=" md:leading-[40px] leading-[normal] font-source md:font-[600] font-bold title title text-title md:mb-[20px] mb-4">
+            <h2 className="md:leading-[40px] leading-[normal] font-source md:font-[600] font-bold title title text-title md:mb-[20px] mb-4">
               Work on awesome Ideas &
               <br />
               Technologies
@@ -42,10 +39,13 @@ const TeamEngage = () => {
                 view for creating equal opportunities for all our employees.
               </p>
               <p className="md:leading-[30px] leading-[30px] text-title">
-                Visit our <Link className="inline-block underline text-[#009999]" href='/careers'> Careers </Link> page to find out about
+                Visit our <Link className="inline-block underline text-[#009999]" href='/careers'>Careers</Link> page to find out about
                 open positions.
               </p>
-              <button className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" onClick={() => scrollToSection('#jobCards')}>
+              <button 
+                className="btn font-inter mt-6 h-auto font-[400] bg-green-btn" 
+               onClick={handleFindOpportunities}
+              >
                 Find Opportunities
               </button>
             </div>

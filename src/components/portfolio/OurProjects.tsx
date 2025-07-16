@@ -121,9 +121,9 @@ const OurProjects = () => {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   /> */}
-                  <img src={project.images[0]} alt="Project Image" className="w-full h-full object-cover" />
+                  <img src={project.images[0]} alt="Project Image" className="w-full object-cover" />
                 </div>
-                <div className="text-center py-8">
+                <div className="text-center py-10">
                   <h3 className="text-title subheading">{project.title}</h3>
                   <button
                     onClick={() => openModal(project)}
