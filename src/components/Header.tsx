@@ -21,7 +21,7 @@ const Header = () => {
 
   // Check if current page is the career apply page
   const isCareerApplyPage =
-    pathname.startsWith("/career/applyJob/") || pathname.startsWith("/partner") || pathname.startsWith("/privacy")
+    pathname.startsWith("/careers/applyJob/") || pathname.startsWith("/partner") || pathname.startsWith("/privacy")
 
   // Combine scrolled state with career apply page check
   const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage
