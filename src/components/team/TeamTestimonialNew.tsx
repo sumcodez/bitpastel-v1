@@ -153,7 +153,7 @@ const TeamTestimonialNew = () => {
   const currentStrip3 = testimonials[currentIndices[2]];
 
   return (
-    <section key={animationKey}>
+    <section key={animationKey} className='md:pt-0 pt-[40px]'>
       <div className="testimonial testimonial-first">
         <img
           alt={`${currentStrip1.name}'s image`}
