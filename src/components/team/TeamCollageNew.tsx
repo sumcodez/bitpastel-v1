@@ -139,22 +139,22 @@ const TeamCollageNew = () => {
           <h2 className="text-title title font-[600]">Birthday Day Celebration at Office</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-1.webp"
+              src="/images/new-team-images/new/birthday-celeb-office-1.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-2.webp"
+              src="/images/new-team-images/new/birthday-celeb-office-2.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-1.webp"
+              src="/images/new-team-images/new/birthday-celeb-office-3.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-2.webp"
+              src="/images/new-team-images/new/birthday-celeb-office-4.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
@@ -167,22 +167,22 @@ const TeamCollageNew = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-1.webp"
+              src="/images/new-team-images/new/work-anniversary-celeb-2024-1.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-2.webp"
+              src="/images/new-team-images/new/work-anniversary-celeb-2024-2.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-1.webp"
+              src="/images/new-team-images/new/work-anniversary-celeb-2024-3.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
             <img
-              src="/images/new-team-images/new/ethnic-day-celeb-2.webp"
+              src="/images/new-team-images/new/work-anniversary-celeb-2024-4.webp"
               alt="Christmas Celebration at Office 2024 with team members"
               className="w-full"
             />
@@ -205,12 +205,6 @@ const TeamCollageNew = () => {
           </div>
         </div>
 
-
-
-
-
-        
-
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Bitpastel Townhall 2024</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
@@ -232,7 +226,7 @@ const TeamCollageNew = () => {
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2024-4.webp"
               alt="Bitpastel Townhall 2024 cover"
@@ -270,14 +264,14 @@ const TeamCollageNew = () => {
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2024-10.webp"
               alt="Bitpastel Townhall 2024 cover"
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2024-11.webp"
               alt="Bitpastel Townhall cake cuting with team members"
@@ -299,7 +293,7 @@ const TeamCollageNew = () => {
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2024-15.webp"
               alt="Bitpastel Townhall 2024 CEO Speech"
@@ -307,16 +301,6 @@ const TeamCollageNew = () => {
             />
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
 
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Bitpastel Townhall 2023</h2>
@@ -339,7 +323,7 @@ const TeamCollageNew = () => {
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-4.webp"
               alt="Bitpastel Townhall 2024 cover"
@@ -381,20 +365,20 @@ const TeamCollageNew = () => {
               alt="Bitpastel Townhall 2024 cover"
               className="w-full"
             />
-             <img
+            <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-11.webp"
               alt="Bitpastel Townhall cake cuting with team members"
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-12.webp"
               alt="Bitpastel Townhall 2024 CEO Speech"
               className="w-full"
             />
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-13.webp"
               alt="Bitpastel Townhall 2024 cover"
@@ -409,15 +393,149 @@ const TeamCollageNew = () => {
               src="/images/new-team-images/new/bitpastel-townhall-2023-15.webp"
               alt="Bitpastel Townhall 2024 CEO Speech"
               className="w-full"
-              />
+            />
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-16.webp"
               alt="Bitpastel Townhall 2024 CEO Speech"
               className="w-full"
-              />
-              </div>
-         
+            />
+          </div>
         </div>
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Culture at Bitpastel</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img
+              src="/images/new-team-images/new/culture-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/culture-2.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Year-end Celebration 2022</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/year-end-celeb-2022-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/year-end-celeb-2022-2.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/year-end-celeb-2022-3.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img
+              src="/images/new-team-images/new/year-end-celeb-2022-4.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/year-end-celeb-2022-5.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+
+
+
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Sunday Brunch at Westin</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img
+              src="/images/new-team-images/new/sunday-brunch-westin-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/sunday-brunch-westin-2.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+
+
+
+
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Bitpastel Townhall 2022</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2022-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2022-2.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2022-3.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2022-4.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Bitpastel Townhall 2021</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2021-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2021-2.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+
 
 
 
