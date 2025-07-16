@@ -56,9 +56,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       className={`relative ${className}`}
     >
       <div
-        className={`flex justify-between items-center w-full p-2 border-b ${
-          value ? 'border-[#04ff04]' : 'border-gray-300'
-        } cursor-pointer`}
+        className={`flex justify-between items-center w-full p-2 border-b border-[#04ff04] cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`subheading font-source font-thin ${
