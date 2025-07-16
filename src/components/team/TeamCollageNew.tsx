@@ -205,6 +205,12 @@ const TeamCollageNew = () => {
           </div>
         </div>
 
+
+
+
+
+        
+
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Bitpastel Townhall 2024</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
@@ -301,6 +307,122 @@ const TeamCollageNew = () => {
             />
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div className="team-collage">
+          <h2 className="text-title title font-[600]">Bitpastel Townhall 2023</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-1.webp"
+              alt="Bitpastel Townhall 2023 cover"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-2.webp"
+              alt="Bitpastel Townhall cake cuting with team members"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-3.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+            />
+          </div>
+           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-4.webp"
+              alt="Bitpastel Townhall 2024 cover"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-5.webp"
+              alt="Bitpastel Townhall cake cuting with team members"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-6.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-7.webp"
+              alt="Bitpastel Townhall 2024 cover"
+              className="w-full"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-8.webp"
+              alt="Bitpastel Townhall cake cuting with team members"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-9.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-10.webp"
+              alt="Bitpastel Townhall 2024 cover"
+              className="w-full"
+            />
+             <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-11.webp"
+              alt="Bitpastel Townhall cake cuting with team members"
+              className="w-full"
+            />
+          </div>
+           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-12.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+            />
+          </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-13.webp"
+              alt="Bitpastel Townhall 2024 cover"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-14.webp"
+              alt="Bitpastel Townhall cake cuting with team members"
+              className="w-full"
+            />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-15.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+              />
+            <img
+              src="/images/new-team-images/new/bitpastel-townhall-2023-16.webp"
+              alt="Bitpastel Townhall 2024 CEO Speech"
+              className="w-full"
+              />
+              </div>
+         
+        </div>
+
+
+
+
+
       </div>
     </section>
   );
