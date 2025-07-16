@@ -351,12 +351,12 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           Stories
         </h2>
 
-        <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title">
+        <div className={`columns-1 md:columns-2 desktop-testimonials gap-8 md:space-y-8 space-y-6 mx-auto w-full text-title ${showMore ? 'mb-4' : 'mb-0'}`}>
           {initialTestimonials.map(renderTestimonialCard)}
         </div>
 
         {showMore && (
-          <div className="columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-4 mx-auto w-full text-title">
+          <div className={`columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-8 mx-auto w-full text-title `}>
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}

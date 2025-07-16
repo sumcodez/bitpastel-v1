@@ -225,7 +225,7 @@ const BecomePartner = () => {
         </div>
 
         {/* Form Section (Below) */}
-        <div className="become-partner-form-area w-full mx-auto bg-[#1a1a1a] p-6 rounded-lg relative min-h-[400px]">
+        <div className="become-partner-form-area w-full mx-auto bg-[#1a1a1a] p-6 rounded-lg relative md:min-h-[400px]">
           {isSubmitting && (
             <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
               <div className="text-center">
@@ -357,7 +357,7 @@ const BecomePartner = () => {
                   {errors.message && <span className="error-text">{errors.message}</span>}
                 </div>
                 <button
-                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
+                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] md:w-auto w-full text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
                   type="submit"
                   disabled={isSubmitting || !isFormValid}
                 >
