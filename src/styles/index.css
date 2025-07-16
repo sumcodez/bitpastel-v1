@@ -649,6 +649,11 @@
   padding-bottom: 20px;
 }
 
+@media screen and (max-width:767px) {
+  .team-members .team-collage h2{
+    text-align: center;
+  }
+}
 /* ===================team page testimonial new design=============== */
 .testimonial{
   display: flex;
