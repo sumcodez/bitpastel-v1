@@ -17,6 +17,10 @@ const Footer = () => {
   const isHomePage = pathname === '/';
   const isNavigating = useRef(false)
 
+    useEffect(() => {
+      setIsModalOpen(false)
+    },[pathname])
+
       const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
       e.preventDefault()
       if (isNavigating.current) return
@@ -568,7 +572,7 @@ const Footer = () => {
             >
               <button
                 className={`flex flex-col items-center ${isModalOpen ? 'modal-open' : ''}`}
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => router.push('/free-quote', { scroll: false })}
               >
                 <svg
                   fill="none"
@@ -591,7 +595,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Modal open={isModalOpen} onClose={() => router.push('/', { scroll: false })} />
       <Whatsapp />
     </>
   );
