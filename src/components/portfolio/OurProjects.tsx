@@ -107,7 +107,7 @@ const OurProjects = () => {
           Industries We've Transformed
         </h2>
         <div className="project-cards-inner">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-[100px] gap-10">
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -123,8 +123,8 @@ const OurProjects = () => {
                   /> */}
                   <img src={project.images[0]} alt="Project Image" className="w-full object-cover" />
                 </div>
-                <div className="text-center py-10">
-                  <h3 className="text-title subheading">{project.title}</h3>
+                <div className="text-center pt-12 pb-16">
+                  <h3 className="text-title subheading font-source font-[700]">{project.title}</h3>
                   <button
                     onClick={() => openModal(project)}
                     className="min-w-[96px] card-button rounded-[4px] bg-green-btn text-primary-white py-2 px-5  w-auto mx-auto"
@@ -195,8 +195,10 @@ const OurProjects = () => {
                 <p className="text-title text-center">{currentProject.description}</p>
               </div>
 
-              {/* Thumbs Gallery with Navigation */}
-              <div className="mt-2 bg-gray-50 p-2 rounded-lg relative">
+              {/* Thumbs Swiper */} 
+              
+
+              <div className="mt-2 p-2 rounded-lg relative">
                 <Swiper
                   modules={[FreeMode, Navigation, Thumbs]}
                   onSwiper={setThumbsSwiper}
@@ -258,6 +260,8 @@ const OurProjects = () => {
                   </>
                 )}
               </div>
+
+
             </div>
           </div>
         </div>
