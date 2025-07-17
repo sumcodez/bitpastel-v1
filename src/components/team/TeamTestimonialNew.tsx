@@ -131,7 +131,7 @@ const TeamTestimonialNew = () => {
     const interval = setInterval(() => {
       setCurrentIndices(getRandomIndices());
       setAnimationKey(prev => prev + 1);
-    }, 90000000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [currentIndices]);
@@ -159,15 +159,17 @@ const TeamTestimonialNew = () => {
           alt={`${currentStrip1.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip1.image}
-          data-aos="fade-up"
-          data-aos-duration="600"
+            data-aos="animated-up"
+            data-aos-duration="600"
+            data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip1.name}'s Testimonial`}
           className="testimonial-data"
           src={currentStrip1.testimonialDesk}
-          data-aos="fade-right"
-          data-aos-duration="600"
+         data-aos="animated-left"
+            data-aos-duration="600"
+            data-aos-anchor=".testimonial-first .testimonial-person-image"
         />
       </div>
       <div className="testimonial testimonial-second">
@@ -175,15 +177,17 @@ const TeamTestimonialNew = () => {
           alt={`${currentStrip2.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip2.image}
-          data-aos="fade-up"
-          data-aos-duration="600"
+           data-aos="animated-up"
+            data-aos-duration="600"
+            data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip2.name}'s Testimonial`}
           className="testimonial-data"
           src={currentStrip2.rightSideTestimonial}
-          data-aos="fade-left"
-          data-aos-duration="600"
+         data-aos="animated-right"
+            data-aos-duration="600"
+            data-aos-anchor=".testimonial-second .testimonial-person-image"
         />
       </div>
       <div className="testimonial testimonial-third">
@@ -191,15 +195,17 @@ const TeamTestimonialNew = () => {
           alt={`${currentStrip3.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip3.image}
-          data-aos="fade-up"
-          data-aos-duration="600"
+           data-aos="animated-up"
+            data-aos-duration="600"
+            data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip3.name}'s Testimonial`}
           className="testimonial-data"
           src={currentStrip3.testimonialMob}
-          data-aos="fade-right"
-          data-aos-duration="600"
+         data-aos="animated-left"
+            data-aos-duration="600"
+            data-aos-anchor=".testimonial-third .testimonial-person-image"
         />
       </div>
     </section>
