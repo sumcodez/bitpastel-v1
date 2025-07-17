@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Link from 'next/link';
 import { Navigation, Pagination, Thumbs, FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
@@ -13,80 +14,65 @@ import Image from 'next/image';
 type Project = {
   id: number;
   title: string;
+  category: string;
   images: string[];
-  description: string;
+  hoverImage?: string;
+  link: string
 };
 
 const OurProjects = () => {
-  // Complete projects array with multiple images for each project
   const projects: Project[] = [
     {
       id: 1,
-      title: 'BAEE',
+      title: 'MVD',
+      category: "Fashion",
+      link:"https://www.manieredevoir.com/",
       images: [
-        '/images/project/Baee/Baee_mockup_V01.png',
-        '/images/project/Baee/Baee_mockup_V02.png',
-        '/images/project/Baee/Baee_mockup_V03.png',
-        '/images/project/Baee/Baee_mockup_V04.png',
-
+        '/images/project/MDV/mdv_mockup_V04D.webp',
+        '/images/project/MDV/mdv_mockup_V04C.webp',
+        '/images/project/MDV/mdv_mockup_V04B.webp',
+        '/images/project/MDV/mdv_mockup_V04A.webp',
       ],
-      description:
-        'A comprehensive e-learning platform with AI-powered recommendations and interactive courses.',
+      hoverImage: '/images/project/MDV/mdv_mockup_V04C.webp'
     },
     {
       id: 2,
-      title: 'HealthTrack Pro',
+      title: 'Circulr',
+      category: "Sunglasses & Eye Frames",
+      link:"https://circulr.co/",
       images: [
-        '/images/project/Gatsby/gatsby_mockup_V03_A.jpg',
+        '/images/project/Circulr/circulr_mockup_V03A.webp',
+        '/images/project/Circulr/circulr_mockup_V03B.webp',
       ],
-      description:
-        'Healthcare management system for hospitals with patient tracking and appointment scheduling.',
-    },
-    {
-      id: 3,
-      title: 'SmartRetail',
-      images: [
-        '/images/project/Retail1.png',
-        '/images/project/Retail2.png',
-        '/images/project/Retail3.png',
-        '/images/project/Retail4.png',
-      ],
-      description:
-        'Inventory management and POS system with real-time analytics for retail businesses.',
-    },
-    {
-      id: 4,
-      title: 'FinWise',
-      images: ['/images/project/Finance1.png', '/images/project/Finance2.png'],
-      description: 'Personal finance app with budgeting tools and investment tracking.',
-    },
-    {
-      id: 5,
-      title: 'LogiChain',
-      images: [
-        '/images/project/Logistics1.png',
-        '/images/project/Logistics2.png',
-        '/images/project/Logistics3.png',
-      ],
-      description:
-        'Supply chain management solution with route optimization and real-time tracking.',
-    },
-    {
-      id: 6,
-      title: 'GreenEnergy',
-      images: [
-        '/images/project/Energy1.png',
-        '/images/project/Energy2.png',
-        '/images/project/Energy3.png',
-      ],
-      description: 'Monitoring system for renewable energy plants with performance analytics.',
+      hoverImage: '/images/project/Circulr/circulr_mockup_V03B.webp'
     },
   ];
 
+  const allCategories: string[] = projects.map((project: Project) => project.category);
+  const uniqueCategories: string[] = Array.from(new Set(allCategories));
+  const categories: string[] = ["All", ...uniqueCategories];
+
+  const [activeCategory, setActiveCategory] = useState<string>("All");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [currentProject, setCurrentProject] = useState<Project | null>(null);
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [activeThumbIndex, setActiveThumbIndex] = useState<number>(0);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+
+  // Filter projects based on active category
+  const filteredProjects: Project[] = activeCategory === "All" 
+    ? projects 
+    : projects.filter((project: Project) => project.category === activeCategory);
+
+  // Handle category changes with animation
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 300); // Match this duration with your CSS transition duration
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
 
   const openModal = (project: Project) => {
     setCurrentProject(project);
@@ -101,52 +87,108 @@ const OurProjects = () => {
   };
 
   return (
-    <section id="ourProjects" className="md:pt-[90px] pt-[60px] ">
+    <section id="ourProjects" className="md:pt-[90px] pt-[60px]">
+
       <div className="container mx-auto px-4 overflow-hidden">
-        <h2 className=" font-[600] font-source text-center text-title md:mb-0 mb-3 title">
+        <h2 className="font-[700] font-source text-center text-title md:mb-0 mb-3 slide-up">
           Industries We've Transformed
         </h2>
+        
+        {/* Category Tabs */}
+        <ul className="nav-tabs nav slide-up font-source pt-[80px]">
+          {categories.map((category: string) => (
+            <li className='nav-item font-source subheading'>
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 nav-link subheading transition-colors ${
+                activeCategory === category
+                ? 'active-category text-accent-green'
+                : ''
+                }`}
+                >
+              {category}
+            </button>
+              </li>
+          ))}
+        </ul>
+
+        {/* Projects Grid */}
         <div className="project-cards-inner">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-[100px] gap-10">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="project-card"
-              >
-                <div className="project-image relative">
-                  {/* <Image
-                    src={project.images[0]}
-                    alt={`${project.title} Project Image`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  /> */}
-                  <img src={project.images[0]} alt="Project Image" className="w-full object-cover" />
+          {filteredProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-[50px] pb-[120px] gap-10">
+              {filteredProjects.map((project: Project, index: number) => (
+                <div 
+                  key={project.id}
+                  className={`project-card ${isTransitioning ? 'opacity-0' : 'opacity-100 slide-up'}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onMouseEnter={() => setHoveredProject(project.id)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  <div className="project-image relative h-[300px] overflow-hidden">
+                    <div className="absolute inset-0">
+                      <div className={`absolute inset-0 image-transition ${
+                        hoveredProject === project.id && project.hoverImage ? 'opacity-0' : 'opacity-100'
+                      }`}>
+                        <Image 
+                          src={project.images[0]} 
+                          alt={`${project.title} cover image`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                      {project.hoverImage && (
+                        <div className={`absolute inset-0 image-transition ${
+                          hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                        }`}>
+                          <Image 
+                            src={project.hoverImage} 
+                            alt={`${project.title} hover image`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-center pt-12 pb-16">
+                   <Link href={project.link} className="">
+                      <h3 className="text-title subheading font-source font-[700] hover:text-green-600 transition-colors">
+                        {project.title}
+                      </h3>
+                    </Link>
+                    <button
+                      onClick={() => openModal(project)}
+                      className="min-w-[96px] card-button rounded-[4px] bg-green-btn text-primary-white py-2 px-5 w-auto mx-auto hover:bg-opacity-90 transition-opacity button-hover"
+                    >
+                      View Project
+                    </button>
+                  </div>
                 </div>
-                <div className="text-center pt-12 pb-16">
-                  <h3 className="text-title subheading font-source font-[700]">{project.title}</h3>
-                  <button
-                    onClick={() => openModal(project)}
-                    className="min-w-[96px] card-button rounded-[4px] bg-green-btn text-primary-white py-2 px-5  w-auto mx-auto"
-                  >
-                    View Project
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className={`py-20 text-center text-gray-500 ${isTransitioning ? 'opacity-0' : 'opacity-100 slide-up'}`}>
+              No projects found in this category
+            </div>
+          )}
         </div>
       </div>
 
       {/* Modal with Swiper and Thumbs */}
       {isModalOpen && currentProject && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] flex flex-col">
+          <div className={`bg-white rounded-lg max-w-6xl w-full max-h-[90vh] flex flex-col scale-in`}>
             <div className="flex justify-between items-center border-b p-4">
-              <h3 className="text-2xl font-bold text-gray-800">{currentProject.title}</h3>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">{currentProject.title}</h3>
+                <p className="text-gray-600">{currentProject.category}</p>
+              </div>
               <button
                 onClick={closeModal}
-                className="text-gray-500 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100"
+                className="text-gray-500 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100 transition-colors button-hover"
                 aria-label="Close modal"
               >
                 <svg
@@ -168,100 +210,65 @@ const OurProjects = () => {
 
             <div className="flex-grow p-4 overflow-auto">
               {/* Main Swiper */}
-              <div className="mb-4 max-h-[300px] rounded-lg">
+              <div className="mb-4 h-[400px] rounded-lg">
                 <Swiper
                   modules={[Navigation, Thumbs]}
                   navigation
-                  // pagination={{ clickable: true }}
-                  thumbs={{ swiper: thumbsSwiper }}
+                  thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                   spaceBetween={10}
-                  effect={'flip'}
                   className="h-full"
                   onSlideChange={(swiper) => setActiveThumbIndex(swiper.activeIndex)}
                 >
-                  {currentProject.images.map((image, index) => (
+                  {currentProject.images.map((image: string, index: number) => (
                     <SwiperSlide key={index}>
-                      <div className="flex justify-center items-center max-h-[400px] max-w-[400px] m-auto relative">
-                        <img src={image} alt={`${currentProject.title} - ${index + 1}`} className="object-contain" />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-
-              {/* Project Description */}
-              <div className="my-4">
-                {/* <h4 className="text-lg font-semibold text-gray-800 mb-2">Project Details</h4> */}
-                <p className="text-title text-center">{currentProject.description}</p>
-              </div>
-
-              {/* Thumbs Swiper */} 
-              
-
-              <div className="mt-2 p-2 rounded-lg relative">
-                <Swiper
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  onSwiper={setThumbsSwiper}
-                  spaceBetween={8}
-                  slidesPerView={Math.min(currentProject.images.length, 4)}
-                  freeMode={true}
-                  watchSlidesProgress={true}
-                  className="thumbs-gallery"
-                  navigation={{
-                    nextEl: '.thumb-next-button',
-                    prevEl: '.thumb-prev-button',
-                  }}
-                  breakpoints={{
-                    640: {
-                      slidesPerView: Math.min(currentProject.images.length, 3),
-                    },
-                    768: {
-                      slidesPerView: Math.min(currentProject.images.length, 4),
-                    },
-                    1024: {
-                      slidesPerView: Math.min(currentProject.images.length, 5),
-                    },
-                  }}
-                >
-                  {currentProject.images.map((image, index) => (
-                    <SwiperSlide key={index} className="cursor-pointer">
-                      <div 
-                        className={`flex justify-center items-center h-20 bg-white rounded border overflow-hidden relative transition-opacity duration-200 ${
-                          activeThumbIndex === index 
-                            ? 'opacity-100 border-green-500 border-2' 
-                            : 'opacity-50 border-gray-200'
-                        }`}
-                      >
+                      <div className="flex justify-center items-center h-full w-full relative">
                         <Image
                           src={image}
-                          alt={`Thumb ${index + 1}`}
+                          alt={`${currentProject.title} - ${index + 1}`}
                           fill
-                          className="object-cover"
-                          sizes="100px"
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                
-                {/* Custom navigation buttons for thumbs */}
-                {currentProject.images.length > 4 && (
-                  <>
-                    <button className="thumb-prev-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-100 ml-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </button>
-                    <button className="thumb-next-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-100 mr-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </button>
-                  </>
-                )}
               </div>
 
-
+              {/* Thumbs Swiper */}
+              {currentProject.images.length > 1 && (
+                <div className="mt-2 p-2 rounded-lg relative">
+                  <Swiper
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    onSwiper={setThumbsSwiper}
+                    spaceBetween={8}
+                    slidesPerView={Math.min(currentProject.images.length, 4)}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    className="thumbs-gallery"
+                  >
+                    {currentProject.images.map((image: string, index: number) => (
+                      <SwiperSlide key={index} className="cursor-pointer">
+                        <div 
+                          className={`flex justify-center items-center h-20 bg-white rounded border overflow-hidden relative transition-all duration-200 thumb-hover ${
+                            activeThumbIndex === index 
+                              ? 'opacity-100 border-green-500 border-2' 
+                              : 'opacity-50 border-gray-200'
+                          }`}
+                        >
+                          <Image
+                            src={image}
+                            alt={`Thumb ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="100px"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              )}
             </div>
           </div>
         </div>

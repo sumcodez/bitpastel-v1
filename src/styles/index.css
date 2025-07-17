@@ -711,7 +711,7 @@ margin-top:0 !important;
     position: relative;
     background: #BEA1E4;
     height: 435px;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 86%);
     flex-direction: row-reverse;
   }
   .testimonial-third{
@@ -834,3 +834,82 @@ height: 300px;
 .project-card h3{
 padding-bottom:20px;
 }
+
+
+/* ====================partner page animation and design=============== */
+
+
+.nav-tabs {
+    border-bottom: 1px solid #00A974 !important;
+}
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+.nav-tabs .nav-link.active-category {
+    background-color: #fff;
+    border-color: #00A974 #00A974 #fff !important;
+    font-weight: 700;
+    min-width: 110px;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+        .fade-in {
+          opacity: 0;
+          animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+          to { opacity: 1; }
+        }
+        .slide-up {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: slideUp 0.5s ease-out forwards;
+        }
+        @keyframes slideUp {
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .scale-in {
+          animation: scaleIn 0.3s ease-out forwards;
+        }
+        @keyframes scaleIn {
+          from { transform: scale(0.95); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+        .image-transition {
+          transition: opacity 0.3s ease-in-out;
+        }
+        .project-card {
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .button-hover {
+          transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .button-hover:hover {
+          transform: scale(1.05);
+        }
+        .button-hover:active {
+          transform: scale(0.95);
+        }
+        .thumb-hover {
+          transition: transform 0.2s ease;
+        }
+        .thumb-hover:hover {
+          transform: scale(1.05);
+        }
