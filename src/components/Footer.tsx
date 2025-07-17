@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -15,6 +15,16 @@ const Footer = () => {
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === '/';
+  const isNavigating = useRef(false)
+
+      const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
+      e.preventDefault()
+      if (isNavigating.current) return
+      isNavigating.current = true
+      router.push(path)
+      isNavigating.current = false
+    }, [router])
+
 
   // Helper function to determine if a link is active
   const isActive = (href: string) => {
@@ -272,7 +282,11 @@ const Footer = () => {
                   </div>
                   <div className="lg:ml-auto">
                     <div className="space-y-4 text-[13px]">
-                      <Link href="/culture" className="block hover:text-gray-300 transition-colors">
+                      <Link 
+                     
+                      href="/culture"
+                onClick={(e) => handleNavigation("/culture", e)}
+                      className="block hover:text-gray-300 transition-colors">
                         Culture
                       </Link>
                       <Link
@@ -282,11 +296,17 @@ const Footer = () => {
                       >
                         Clientele
                       </Link>
-                      <Link href="/careers" className="block hover:text-gray-300 transition-colors">
+                      <Link 
+                      
+                      href="/careers"
+                onClick={(e) => handleNavigation("/careers", e)}
+                      
+                      className="block hover:text-gray-300 transition-colors">
                         Careers
                       </Link>
                       <Link
                         href="/partners"
+                        onClick={(e) => handleNavigation("/partners", e)}
                         className="block hover:text-gray-300 transition-colors cursor-pointer"
                       >
                         Partners
@@ -481,7 +501,10 @@ const Footer = () => {
               onClick={() => handleMobileNavClick('culture')}
               className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}
             >
-              <Link href="/culture" className="flex flex-col items-center">
+              <Link 
+              href="/culture"
+                onClick={(e) => handleNavigation("/culture", e)}
+                 className="flex flex-col items-center">
                 <svg
                   fill="none"
                   height="24"

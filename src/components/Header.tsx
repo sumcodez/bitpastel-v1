@@ -1,13 +1,14 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Modal from "@/components/Modal"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+const isNavigating = useRef(false)
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const [pendingScroll, setPendingScroll] = useState<string | null>(null)
   const pathname = usePathname()
@@ -15,9 +16,18 @@ const Header = () => {
   const isHomePage = pathname === "/"
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+
   useEffect(() => {
     setIsModalOpen(false)
   },[pathname])
+
+    const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
+    e.preventDefault()
+    if (isNavigating.current) return
+    isNavigating.current = true
+    router.push(path)
+    isNavigating.current = false
+  }, [router])
 
   // Check if current page is the career apply page
   const isCareerApplyPage =
@@ -190,6 +200,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/culture"
+                onClick={(e) => handleNavigation("/culture", e)}
                 className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
               >
                 Culture

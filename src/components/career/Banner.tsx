@@ -2,15 +2,31 @@
 import React from 'react';
 import Image from 'next/image';
 const Banner = () => {
-  const scrollToSection = (id: string) => {
+const scrollToSection = (id: string) => {
+    // Try multiple approaches for better compatibility
     const el = document.getElementById(id);
     if (el) {
+      const yOffset = -0; // Adjust this if needed
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      
+      // Fallback if smooth scroll isn't working
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        window.scrollTo(0, y);
+      }
+    } else {
+      console.warn(`Element with id ${id} not found`);
+      // Optional: Wait for dynamic content and try again
       setTimeout(() => {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-      }, 100);
+        const retryEl = document.getElementById(id);
+        if (retryEl) {
+          const y = retryEl.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 500);
     }
   };
-
   
   return (
     <div>
@@ -74,7 +90,7 @@ const Banner = () => {
 
             <button
               className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
-              onClick={() => scrollToSection('#jobCards')}
+              onClick={() => scrollToSection('jobCards')}
             >
               Explore Opportunities
             </button>

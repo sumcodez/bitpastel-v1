@@ -24,7 +24,7 @@ export default function Home() {
     
     if (el) {
       // Calculate the position considering any fixed headers
-      const yOffset = -100; // Adjust this value based on your header height
+      const yOffset = -40; // Adjust this value based on your header height
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       
       window.scrollTo({ top: y, behavior: 'smooth' });

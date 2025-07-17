@@ -2,10 +2,20 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 const TeamEngage = () => {
   const router = useRouter();
+   const isNavigating = useRef(false)
+  
+        const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
+        e.preventDefault()
+        if (isNavigating.current) return
+        isNavigating.current = true
+        router.push(path)
+        isNavigating.current = false
+      }, [router])
 
 
  const handleFindOpportunities = () => {
@@ -39,7 +49,12 @@ const TeamEngage = () => {
                 view for creating equal opportunities for all our employees.
               </p>
               <p className="md:leading-[30px] leading-[30px] text-title">
-                Visit our <Link className="inline-block underline text-[#009999]" href='/careers'>Careers</Link> page to find out about
+                Visit our <Link className="inline-block underline text-[#009999]" 
+                
+                 href="/careers"
+                onClick={(e) => handleNavigation("/careers", e)}
+                
+                >Careers</Link> page to find out about
                 open positions.
               </p>
               <button 
