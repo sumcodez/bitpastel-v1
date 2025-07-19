@@ -94,6 +94,7 @@ export default function InstagramCarousel({ images, className }: InstagramCarous
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
             // width: `${images.length * 100}%`,
+            width: `${100}%`,
           }}
         >
           {images.map((image, index) => (
