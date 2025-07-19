@@ -22,14 +22,14 @@ const page = () => {
       {/* <MobileTeamCollage/> */}
 
       {/* Show only on mobile */}
-      {/* <div className="block md:hidden">
+      <div className="block md:hidden">
         <MobileTeamCollage />
-      </div> */}
+      </div>
 
       {/* Show only on desktop */}
-      {/* <div className="hidden md:block"> */}
+      <div className="hidden md:block">
         <TeamCollageNew />
-      {/* </div> */}
+      </div>
 
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}

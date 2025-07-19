@@ -668,10 +668,12 @@ margin-top:0 !important;
 .team-members .team-collage h2.title{
   padding-bottom: 20px;
 }
-
+.team-members-mobile .team-collage h2.title{
+  padding-bottom: 0 ! important;
+}
 @media screen and (max-width:767px) {
   .team-members .team-collage h2{
-    text-align: center;
+    /* text-align: center; */
   }
   .team-members .team-collage{
   padding-top: 40px;

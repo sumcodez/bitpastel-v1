@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -14,24 +15,23 @@ function MobileTeamCollage() {
   ];
 
   return (
-    <section className="relative">
-      <div className="team-collage px-4 container mx-auto">
-        <h2 className="text-title title font-[600] mb-4">Escape Rooms</h2>
-        
+    <section className="relative team-members team-members-mobile">
+      <div className="team-collage"> 
         <div className="relative">
-          <Swiper
-            spaceBetween={8}
-            slidesPerView={1}
-            centeredSlides={true}
+         <Swiper
+            modules={[Pagination]}
+            navigation
             pagination={{ clickable: true }}
-            className="relative"
+            spaceBetween={20}
+            slidesPerView={1}
+            className="team-swiper"
           >
             {sampleImages.map((image, index) => (
               <SwiperSlide key={index}>
                   <img 
                     src={image} 
                     alt={`Team member ${index + 1}`} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                   />
               </SwiperSlide>
             ))}
@@ -41,6 +41,11 @@ function MobileTeamCollage() {
           </Swiper>
           
         </div>
+        <div className='px-8'>
+                <h2 className="text-title title text-left font-[600] leading-[normal]">Escape Rooms</h2>
+                <p className='text-left'>#Mysteryrooms #Officefuntime</p>
+        </div>
+
       </div>
     </section>
   );
