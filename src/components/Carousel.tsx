@@ -83,7 +83,7 @@ export default function InstagramCarousel({ images, className }: InstagramCarous
       {/* Main carousel container */}
       <div
         ref={carouselRef}
-        className="relative aspect-square overflow-hidden bg-black"
+        className="relative"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -93,7 +93,7 @@ export default function InstagramCarousel({ images, className }: InstagramCarous
           className="flex transition-transform duration-300 ease-out h-full"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            width: `${images.length * 100}%`,
+            // width: `${images.length * 100}%`,
           }}
         >
           {images.map((image, index) => (
@@ -101,6 +101,7 @@ export default function InstagramCarousel({ images, className }: InstagramCarous
               <Image
                 src={image}
                 alt={`Image ${index + 1}`}
+                fill
                 priority={index === 0}
               />
             </div>
