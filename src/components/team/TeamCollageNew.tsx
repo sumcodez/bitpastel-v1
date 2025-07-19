@@ -2,10 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 const TeamCollageNew = () => {
   return (
-    <section className="team-members" id='OurTeam'>
+    <section className="team-members" id="OurTeam">
       <div className="container mx-auto px-4">
         <div className="team-collage">
-          <h2 className="text-title title font-[600]">Escape Rooms</h2>
+          <h2 className="subheading title font-[700]">Escape Rooms</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/escape_room_img-1.webp"
@@ -418,12 +418,6 @@ const TeamCollageNew = () => {
           </div>
         </div>
 
-
-
-
-
-
-
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Year-end Celebration 2022</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
@@ -459,10 +453,6 @@ const TeamCollageNew = () => {
           </div>
         </div>
 
-
-
-
-
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Sunday Brunch at Westin</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -478,11 +468,6 @@ const TeamCollageNew = () => {
             />
           </div>
         </div>
-
-
-
-
-
 
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Bitpastel Townhall 2022</h2>
@@ -510,15 +495,6 @@ const TeamCollageNew = () => {
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
         <div className="team-collage">
           <h2 className="text-title title font-[600]">Bitpastel Townhall 2021</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -534,13 +510,6 @@ const TeamCollageNew = () => {
             />
           </div>
         </div>
-
-
-
-
-
-
-
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import NewTeamCollage from '@/components/team/NewTeamCollage'
 import Common_banner from '@/components/ui/Common_banner'
 import TeamCollageNew from '@/components/team/TeamCollageNew'
 import TeamTestimonialNew from '@/components/team/TeamTestimonialNew'
+import MobileTeamCollage from '@/components/team/MobileTeamCollage'
 
 const page = () => {
   return (
@@ -17,7 +18,18 @@ const page = () => {
       <TeamTestimonialNew/>
       {/* <NewTeamtestimonial/> */}
       {/* <NewTeamCollage/> */}
-      <TeamCollageNew/>
+      {/* <TeamCollageNew/> */}
+      {/* <MobileTeamCollage/> */}
+
+      {/* Show only on mobile */}
+      <div className="block md:hidden">
+        <MobileTeamCollage />
+      </div>
+
+      {/* Show only on desktop */}
+      <div className="hidden md:block">
+        <TeamCollageNew />
+      </div>
 
      {/* <TeamTestimonials/> */}
      {/* <TeamCollage/> */}
