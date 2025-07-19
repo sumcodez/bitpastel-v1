@@ -1071,3 +1071,46 @@ a.modal-open svg {
         padding-top: 40px;
     }
 }
+
+.team-collage .swiper-pagination {
+    position: unset !important;
+    text-align: center;
+    transition: opacity .3s;
+    transform: translateZ(0);
+    z-index: 10;
+}
+
+/* Change bullet colors */
+.team-collage .swiper-pagination-bullet {
+    background: #DDDDDD !important; /* Red color */
+    opacity: 1 !important;
+}
+
+.team-collage .swiper-pagination-bullet-active {
+    background: #00a974 !important; /* Red color for active bullet */
+    transform: scale(1.2); /* Optional: Makes active bullet slightly larger */
+}
+
+.team-members-mob img{
+  /* border-radius: 20px; */
+  /* max-height: 410px; */
+  /* max-width: 600px; */
+  object-fit: cover;
+}
+.team-members-mob .team-collage{
+  padding-top: 70px;
+}
+.team-members-mob .team-collage h2.title{
+  padding-bottom: 20px;
+}
+.team-members-mobile .team-collage h2.title{
+  padding-bottom: 0 ! important;
+}
+@media screen and (max-width:767px) {
+  .team-members-mob .team-collage h2{
+    /* text-align: center; */
+  }
+  .team-members-mob .team-collage{
+  padding-top: 40px;
+}
+}
