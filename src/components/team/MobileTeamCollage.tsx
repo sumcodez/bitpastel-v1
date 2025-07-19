@@ -20,7 +20,6 @@ function MobileTeamCollage() {
         <div className="relative">
          <Swiper
             modules={[Pagination]}
-            navigation
             pagination={{ clickable: true }}
             spaceBetween={20}
             slidesPerView={1}
