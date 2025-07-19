@@ -101,7 +101,6 @@ export default function InstagramCarousel({ images, className }: InstagramCarous
               <Image
                 src={image}
                 alt={`Image ${index + 1}`}
-                fill
                 className="w-full h-full object-cover"
                 priority={index === 0}
               />
