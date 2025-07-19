@@ -54,7 +54,7 @@ function MobileTeamCollage() {
 
   const teamMeetUp = [
     '/Team page slicing/Team meet up/1.webp',
-    '/Team page slicing/Team meet up/2.webp',
+    '/Team page slicing/Team meet up/2 (1).webp',
   ]
 
   const bitpastelTownhall2024 = [
