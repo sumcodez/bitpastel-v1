@@ -29,8 +29,8 @@ function MobileTeamCollage() {
   ]
 
   const icebreakers = [
-    '/Team page slicing/Ice Breaker - Coffee /1 (1).webp',
-    '/Team page slicing/Ice Breaker - Coffee /2.webp',
+    '/Team page slicing/Ice Breaker - Coffee/1.webp',
+    '/Team page slicing/Ice Breaker - Coffee/2.webp',
   ]
 
   const ethnicDay = [
@@ -39,10 +39,10 @@ function MobileTeamCollage() {
   ]
 
   const birthdayCelebration = [
-    '/Team page slicing/Birthday celebration/1.webp',
-    '/Team page slicing/Birthday celebration/2.webp',
-    '/Team page slicing/Birthday celebration/3.webp',
-    '/Team page slicing/Birthday celebration/4.webp',
+    '/Team page slicing/Birthdday celebration/1.webp',
+    '/Team page slicing/Birthdday celebration/2.webp',
+    '/Team page slicing/Birthdday celebration/3.webp',
+    '/Team page slicing/Birthdday celebration/4.webp',
   ]
 
   const workAniversary = [
@@ -265,7 +265,7 @@ function MobileTeamCollage() {
           >
             {birthdayCelebration.map((image, index) => (
               <SwiperSlide key={index}>
-                <img src={image} alt={`Team member ${index + 1}`} className="w-full h-full" />
+                <img src={image} alt={`Birthday ${index + 1}`} className="w-full h-full" />
               </SwiperSlide>
             ))}
 
