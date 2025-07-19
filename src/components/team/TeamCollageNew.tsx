@@ -39,7 +39,7 @@ const TeamCollageNew: React.FC = () => {
             modules={[Navigation, Pagination]}
             navigation
             pagination={{ clickable: true }}
-            spaceBetween={10}
+            spaceBetween={8}
             slidesPerView={1}
             className="team-swiper"
           >
