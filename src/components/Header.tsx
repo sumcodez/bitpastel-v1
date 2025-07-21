@@ -188,16 +188,15 @@ const isNavigating = useRef(false)
               </svg>
             </Link>
             <nav className="hidden lg:flex space-x-8 items-center">
-              <Link
-                href="/#services"
+              <button
                 onClick={(e) => handleLinkClick(e, "services")}
                 className={getLinkClass("services")}
               >
                 Services
-              </Link>
-              <Link href="/#stories" onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
+              </button>
+              <button  onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
                 Stories
-              </Link>
+              </button>
               <Link
                 href="/culture"
                 onClick={(e) => handleNavigation("/culture", e)}
