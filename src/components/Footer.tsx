@@ -556,7 +556,7 @@ const Footer = () => {
                     />
                   </svg>
                 )}
-                <span className="text-[11px] mt-1">careers</span>
+                <span className="text-[11px] mt-1">Careers</span>
               </Link>
             </div>
             <div
