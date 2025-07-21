@@ -52,7 +52,7 @@ const TeamEngage = () => {
                 Visit our <Link className="inline-block underline text-[#009999]" 
                 
                  href="/careers"
-                onClick={(e) => handleNavigation("/careers", e)}
+                // onClick={(e) => handleNavigation("/careers", e)}
                 
                 >Careers</Link> page to find out about
                 open positions.

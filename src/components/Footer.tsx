@@ -248,13 +248,12 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div className="block text-[13px]">
-                        <Link
-                          href="/#team"
+                        <button
                           onClick={(e) => handleSectionClick(e, 'culture')}
-                          className="hover:text-gray-300 transition-colors"
+                          className="hover:text-gray-300 text-[13px] transition-colors"
                         >
                           About
-                        </Link>
+                        </button>
                       </div>
                       {/* <div className="block text-[13px]">
                         <Link
@@ -265,22 +264,20 @@ const Footer = () => {
                         </Link>
                       </div> */}
                       <div className="block text-[13px]">
-                        <Link
-                          href="/#services"
+                        <button
                           onClick={(e) => handleSectionClick(e, 'services')}
-                          className="hover:text-gray-300 transition-colors"
+                          className="hover:text-gray-300 text-[13px] transition-colors"
                         >
                           Services
-                        </Link>
+                        </button>
                       </div>
                       <div className="block text-[13px]">
-                        <Link
-                          href="/#stories"
+                        <button
                           onClick={(e) => handleSectionClick(e, 'stories')}
-                          className="hover:text-gray-300 transition-colors"
+                          className="hover:text-gray-300 text-[13px] transition-colors"
                         >
                           Stories
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -289,28 +286,26 @@ const Footer = () => {
                       <Link 
                      
                       href="/culture"
-                onClick={(e) => handleNavigation("/culture", e)}
+                
                       className="block hover:text-gray-300 transition-colors">
                         Culture
                       </Link>
-                      <Link
-                        href="/#client"
+                      <button
                         onClick={(e) => handleSectionClick(e, 'client')}
-                        className="block hover:text-gray-300 transition-colors cursor-pointer"
+                        className="block hover:text-gray-300 text-[13px] transition-colors cursor-pointer"
                       >
                         Clientele
-                      </Link>
+                      </button>
                       <Link 
                       
                       href="/careers"
-                onClick={(e) => handleNavigation("/careers", e)}
+                // onClick={(e) => handleNavigation("/careers", e)}
                       
                       className="block hover:text-gray-300 transition-colors">
                         Careers
                       </Link>
                       <Link
                         href="/partners"
-                        onClick={(e) => handleNavigation("/partners", e)}
                         className="block hover:text-gray-300 transition-colors cursor-pointer"
                       >
                         Partners
@@ -410,7 +405,7 @@ const Footer = () => {
         <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
             <div
-              onClick={() => handleMobileNavClick('home')}
+              // onClick={() => handleMobileNavClick('home')}
               className={`nav-item flex flex-col items-center ${currentTab === 'home' ? 'current' : ''}`}
             >
               <Link
@@ -439,11 +434,10 @@ const Footer = () => {
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick('services', 'services')}
+              // onClick={() => handleMobileNavClick('services', 'services')}
               className={`nav-item flex flex-col items-center ${currentTab === 'services' ? 'current' : ''}`}
             >
-              <Link
-                href="/#services"
+              <button
                 onClick={(e) => handleSectionClick(e, 'services')}
                 className="flex flex-col items-center"
               >
@@ -455,15 +449,14 @@ const Footer = () => {
                   />
                 </svg>
                 <span className="text-[11px] mt-1">Services</span>
-              </Link>
+              </button>
             </div>
 
             <div
-              onClick={() => handleMobileNavClick('stories', 'stories')}
+              // onClick={() => handleMobileNavClick('stories', 'stories')}
               className={`nav-item flex flex-col items-center ${currentTab === 'stories' ? 'current' : ''}`}
             >
-              <Link
-                href="/#stories"
+              <button
                 onClick={(e) => handleSectionClick(e, 'stories')}
                 className="flex flex-col items-center"
               >
@@ -498,16 +491,16 @@ const Footer = () => {
                   </svg>
                 )}
                 <span className="text-[11px] mt-1">Stories</span>
-              </Link>
+              </button>
             </div>
 
             <div
-              onClick={() => handleMobileNavClick('culture')}
+              // onClick={() => handleMobileNavClick('culture')}
               className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}
             >
               <Link 
               href="/culture"
-                onClick={(e) => handleNavigation("/culture", e)}
+                // onClick={(e) => handleNavigation("/culture", e)}
                  className="flex flex-col items-center">
                 <svg
                   fill="none"
@@ -528,13 +521,13 @@ const Footer = () => {
               </Link>
             </div>
             <div
-              onClick={() => handleMobileNavClick('careers')}
+              // onClick={() => handleMobileNavClick('careers')}
               className={`nav-item flex flex-col items-center ${currentTab === 'careers' ? 'current' : ''}`}
             >
               <Link
                 href="/careers"
                 className="flex flex-col items-center"
-                onClick={() => handleMobileNavClick('careers')}
+                // onClick={() => handleMobileNavClick('careers')}
               >
                 {currentTab === 'careers' ? (
                   <svg
