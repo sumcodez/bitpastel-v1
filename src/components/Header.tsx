@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState, useEffect, useCallback, useRef } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -8,20 +7,25 @@ import Modal from "@/components/Modal"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-const isNavigating = useRef(false)
+  const isNavigating = useRef(false)
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const [pendingScroll, setPendingScroll] = useState<string | null>(null)
   const pathname = usePathname()
   const router = useRouter()
   const isHomePage = pathname === "/"
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false) // Add mounted state
 
+  useEffect(() => {
+    setIsMounted(true) // Set mounted when component mounts on client
+    return () => setIsMounted(false)
+  }, [])
 
   useEffect(() => {
     setIsModalOpen(false)
-  },[pathname])
+  }, [pathname])
 
-    const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
+  const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
     e.preventDefault()
     if (isNavigating.current) return
     isNavigating.current = true
@@ -29,15 +33,16 @@ const isNavigating = useRef(false)
     isNavigating.current = false
   }, [router])
 
-  // Check if current page is the career apply page
   const isCareerApplyPage =
-    pathname.startsWith("/careers/applyJob/") || pathname.startsWith("/partner") || pathname.startsWith("/privacy")
+    pathname.startsWith("/careers/applyJob/") || 
+    pathname.startsWith("/partner") || 
+    pathname.startsWith("/privacy")
 
-  // Combine scrolled state with career apply page check
   const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage
 
-  // Improved scroll to section function
   const scrollToSection = useCallback((sectionId: string, offset = 40) => {
+    if (typeof window === 'undefined') return // Skip on server
+    
     const element = document.getElementById(sectionId)
     if (element) {
       const elementPosition = element.getBoundingClientRect().top
@@ -48,15 +53,15 @@ const isNavigating = useRef(false)
         behavior: "smooth",
       })
 
-      // Update URL hash and active section
       window.history.pushState(null, "", `#${sectionId}`)
       setActiveSection(sectionId)
       setPendingScroll(null)
     }
   }, [])
 
-  // Handle scroll and active section highlight
   useEffect(() => {
+    if (typeof window === 'undefined') return // Skip on server
+    
     const handleScroll = () => {
       const scrollTop = window.scrollY
       setIsScrolled(scrollTop > 50)
@@ -71,7 +76,6 @@ const isNavigating = useRef(false)
           const top = rect.top
           const bottom = rect.bottom
 
-          // Check if section is in viewport (with some offset)
           if (top <= 100 && bottom >= 100) {
             currentSection = section
             break
@@ -87,10 +91,8 @@ const isNavigating = useRef(false)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle pending scroll when navigating to homepage
   useEffect(() => {
     if (isHomePage && pendingScroll) {
-      // Use a longer timeout to ensure the page is fully loaded
       const timeoutId = setTimeout(() => {
         scrollToSection(pendingScroll)
       }, 100)
@@ -99,13 +101,11 @@ const isNavigating = useRef(false)
     }
   }, [isHomePage, pendingScroll, scrollToSection])
 
-  // Handle hash on page load
   useEffect(() => {
-    if (isHomePage) {
+    if (isHomePage && typeof window !== 'undefined') {
       const hash = window.location.hash
       if (hash) {
         const sectionId = hash.substring(1)
-        // Delay to ensure DOM is ready
         const timeoutId = setTimeout(() => {
           scrollToSection(sectionId)
         }, 100)
@@ -115,16 +115,13 @@ const isNavigating = useRef(false)
     }
   }, [isHomePage, scrollToSection])
 
-  // Handle link clicks
   const handleLinkClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault()
 
     if (!isHomePage) {
-      // Set pending scroll and navigate to homepage
       setPendingScroll(sectionId)
       router.push("/")
     } else {
-      // Already on homepage, scroll directly
       scrollToSection(sectionId)
     }
   }
@@ -135,7 +132,8 @@ const isNavigating = useRef(false)
     } hover:text-accent-green`
   }
 
-  const logoSrc = shouldApplyScrolledStyle ? "#009999" : "#ffffff"
+  // Only render logo color based on client-side state
+  const logoSrc = isMounted ? (shouldApplyScrolledStyle ? "#009999" : "#ffffff") : "#ffffff"
 
   return (
     <>
@@ -187,31 +185,32 @@ const isNavigating = useRef(false)
                 />
               </svg>
             </Link>
-            <nav className="hidden lg:flex space-x-8 items-center">
-              <button
-                onClick={(e) => handleLinkClick(e, "services")}
-                className={getLinkClass("services")}
-              >
-                Services
-              </button>
-              <button  onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
-                Stories
-              </button>
-              <Link
-                href="/culture"
-                onClick={(e) => handleNavigation("/culture", e)}
-                className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
-              >
-                Culture
-              </Link>
-              <button
-                className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
-                // onClick={() => setIsModalOpen(true)}
-                onClick={() => router.push('/free-quote', { scroll: false })}
-              >
-                Chat with Us
-              </button>
-            </nav>
+            {isMounted && ( // Only render nav after mounting
+              <nav className="hidden lg:flex space-x-8 items-center">
+                <button
+                  onClick={(e) => handleLinkClick(e, "services")}
+                  className={getLinkClass("services")}
+                >
+                  Services
+                </button>
+                <button onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
+                  Stories
+                </button>
+                <Link
+                  href="/culture"
+                  onClick={(e) => handleNavigation("/culture", e)}
+                  className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
+                >
+                  Culture
+                </Link>
+                <button
+                  className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
+                  onClick={() => router.push('/free-quote', { scroll: false })}
+                >
+                  Chat with Us
+                </button>
+              </nav>
+            )}
           </div>
         </div>
       </header>

@@ -12,39 +12,40 @@ const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [pendingScroll, setPendingScroll] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false); // Track client-side rendering
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === '/';
-  const isNavigating = useRef(false)
+  const isNavigating = useRef(false);
 
-    useEffect(() => {
-      setIsModalOpen(false)
-    },[pathname])
+  useEffect(() => {
+    setIsClient(true); // Set to true when component mounts on client
+  }, []);
 
-      const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
-      e.preventDefault()
-      if (isNavigating.current) return
-      isNavigating.current = true
-      router.push(path)
-      isNavigating.current = false
-    }, [router])
+  useEffect(() => {
+    setIsModalOpen(false);
+  }, [pathname]);
 
+  const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isNavigating.current) return;
+    isNavigating.current = true;
+    router.push(path);
+    isNavigating.current = false;
+  }, [router]);
 
-  // Helper function to determine if a link is active
   const isActive = (href: string) => {
-    // Handle root path
     if (href === '/' && pathname === '/') return true;
-    // Handle hash links (e.g., #services, #stories)
     if (href.includes('#')) {
       const section = href.split('#')[1];
       return pathname.includes(`#${section}`);
     }
-    // Handle regular page routes
     return pathname === href || pathname.startsWith(href + '/');
   };
 
-  // Improved scroll to section function
   const scrollToSection = useCallback((sectionId: string, offset = 40) => {
+    if (!isClient) return; // Don't run on server
+    
     const element = document.getElementById(sectionId);
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
@@ -55,31 +56,26 @@ const Footer = () => {
         behavior: 'smooth',
       });
 
-      // Update URL hash
       window.history.pushState(null, '', `#${sectionId}`);
       setPendingScroll(null);
     }
-  }, []);
+  }, [isClient]);
 
-  // Handle pending scroll when navigating to homepage
   useEffect(() => {
-    if (isHomePage && pendingScroll) {
-      // Use a longer timeout to ensure the page is fully loaded
+    if (isHomePage && pendingScroll && isClient) {
       const timeoutId = setTimeout(() => {
         scrollToSection(pendingScroll);
       }, 100);
 
       return () => clearTimeout(timeoutId);
     }
-  }, [isHomePage, pendingScroll, scrollToSection]);
+  }, [isHomePage, pendingScroll, scrollToSection, isClient]);
 
-  // Handle hash on page load
   useEffect(() => {
-    if (isHomePage) {
+    if (isHomePage && isClient) {
       const hash = window.location.hash;
       if (hash) {
         const sectionId = hash.substring(1);
-        // Delay to ensure DOM is ready
         const timeoutId = setTimeout(() => {
           scrollToSection(sectionId);
         }, 100);
@@ -87,23 +83,19 @@ const Footer = () => {
         return () => clearTimeout(timeoutId);
       }
     }
-  }, [isHomePage, scrollToSection]);
+  }, [isHomePage, scrollToSection, isClient]);
 
-  // Handle link clicks for section navigation
   const handleSectionClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
 
     if (!isHomePage) {
-      // Set pending scroll and navigate to homepage
       setPendingScroll(sectionId);
       router.push('/');
-    } else {
-      // Already on homepage, scroll directly
+    } else if (isClient) {
       scrollToSection(sectionId);
     }
   };
 
-  // Handle mobile nav clicks
   const handleMobileNavClick = (tabName: string, sectionId?: string) => {
     setCurrentTab(tabName);
 
@@ -111,10 +103,54 @@ const Footer = () => {
       if (!isHomePage) {
         setPendingScroll(sectionId);
         router.push('/');
-      } else {
+      } else if (isClient) {
         scrollToSection(sectionId);
       }
     }
+  };
+
+  // Helper component to ensure consistent SVG rendering
+  const CareersIcon = ({ active }: { active: boolean }) => {
+    if (active) {
+      return (
+        <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 12.5v-2h2v2zM7.5 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.177-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zM3.755 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952v-3.201h5.5v.871q0 .286.192.479a.65.65 0 0 0 .478.191h2.827q.286 0 .478-.191a.65.65 0 0 0 .192-.479v-.871h5.5v3.201q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zm-1.34-5.625V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v4.202h-5.5v-.871a.65.65 0 0 0-.192-.479.65.65 0 0 0-.478-.191H8.586a.65.65 0 0 0-.478.191.65.65 0 0 0-.192.479v.871z"
+            fill="#099"
+          />
+        </svg>
+      );
+    }
+    return (
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.756 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v8.487q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zM7.499 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.176-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zm9 6.625h-4.416v.871q0 .286-.192.479a.65.65 0 0 1-.478.191H8.586a.65.65 0 0 1-.478-.191.65.65 0 0 1-.192-.479v-.871H3.499v3.201q0 .097.08.177.081.08.177.08h12.487a.24.24 0 0 0 .176-.08.24.24 0 0 0 .08-.177zM9 12.5h2v-2H9zm-5.5-1.542h4.417v-.871q0-.287.192-.479a.65.65 0 0 1 .478-.191h2.827q.286 0 .478.191a.65.65 0 0 1 .192.479v.871H16.5V6.756a.24.24 0 0 0-.08-.176.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176z"
+          fill="#099"
+        />
+      </svg>
+    );
+  };
+
+  // Helper component for Stories icon
+  const StoriesIcon = ({ active }: { active: boolean }) => {
+    if (active) {
+      return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m5.031 14.583-1.478 1.479q-.316.315-.727.143a.62.62 0 0 1-.41-.618V3.756q0-.564.389-.952t.95-.388h12.488q.563 0 .951.388.39.389.389.952v9.487q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zm.718-2.791h5.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-5.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159"
+            fill="#099"
+          />
+        </svg>
+      );
+    }
+    return (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="m5.031 14.583-1.478 1.479q-.316.316-.727.144-.41-.17-.41-.62V3.756q0-.563.389-.95.389-.39.95-.39h12.488q.563 0 .951.39.39.387.389.95v9.488q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zM4.583 13.5h11.66a.25.25 0 0 0 .176-.08.25.25 0 0 0 .08-.176V3.757a.24.24 0 0 0-.08-.177.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.177V14.59zm1.166-1.708h5.5a.526.526 0 0 0 .542-.537.53.53 0 0 0-.156-.388.52.52 0 0 0-.386-.159h-5.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159"
+          fill="#099"
+        />
+      </svg>
+    );
   };
 
   return (
@@ -407,14 +443,12 @@ const Footer = () => {
         {/* Mobile Nav */}
         <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
-            <div
-              // onClick={() => handleMobileNavClick('home')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'home' ? 'current' : ''}`}
-            >
+            {/* Home */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'home' ? 'current' : ''}`}>
               <Link
                 href="/"
                 onClick={(e) => {
-                  if (isHomePage) {
+                  if (isHomePage && isClient) {
                     e.preventDefault();
                     window.scrollTo({
                       top: 0,
@@ -436,10 +470,9 @@ const Footer = () => {
                 <span className="text-[11px] mt-1">Home</span>
               </Link>
             </div>
-            <div
-              // onClick={() => handleMobileNavClick('services', 'services')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'services' ? 'current' : ''}`}
-            >
+
+            {/* Services */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'services' ? 'current' : ''}`}>
               <button
                 onClick={(e) => handleSectionClick(e, 'services')}
                 className="flex flex-col items-center"
@@ -455,56 +488,23 @@ const Footer = () => {
               </button>
             </div>
 
-            <div
-              // onClick={() => handleMobileNavClick('stories', 'stories')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'stories' ? 'current' : ''}`}
-            >
+            {/* Stories */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'stories' ? 'current' : ''}`}>
               <button
                 onClick={(e) => handleSectionClick(e, 'stories')}
                 className="flex flex-col items-center"
               >
-                {currentTab === 'stories' ? (
-                  // ✅ Active SVG
-
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m5.031 14.583-1.478 1.479q-.316.315-.727.143a.62.62 0 0 1-.41-.618V3.756q0-.564.389-.952t.95-.388h12.488q.563 0 .951.388.39.389.389.952v9.487q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zm.718-2.791h5.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-5.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159m0-2.75h8.5a.53.53 0 0 0 .386-.155.52.52 0 0 0 .156-.383.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.53.53 0 0 0-.385.155.52.52 0 0 0-.156.383q0 .228.156.387a.52.52 0 0 0 .385.159"
-                      fill="#099"
-                    />
-                  </svg>
-                ) : (
-                  // 🚫 Inactive SVG
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m5.031 14.583-1.478 1.479q-.316.316-.727.144-.41-.17-.41-.62V3.756q0-.563.389-.95.389-.39.95-.39h12.488q.563 0 .951.39.39.387.389.95v9.488q0 .563-.389.95a1.3 1.3 0 0 1-.951.39zM4.583 13.5h11.66a.25.25 0 0 0 .176-.08.25.25 0 0 0 .08-.176V3.757a.24.24 0 0 0-.08-.177.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.177V14.59zm1.166-1.708h5.5a.526.526 0 0 0 .542-.537.53.53 0 0 0-.156-.388.52.52 0 0 0-.386-.159h-5.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159m0-2.75h8.5a.526.526 0 0 0 .542-.538.53.53 0 0 0-.156-.387.52.52 0 0 0-.386-.159h-8.5a.526.526 0 0 0-.541.538q0 .228.155.387a.52.52 0 0 0 .386.159"
-                      fill="#099"
-                    />
-                  </svg>
-                )}
+                <StoriesIcon active={currentTab === 'stories'} />
                 <span className="text-[11px] mt-1">Stories</span>
               </button>
             </div>
 
-            <div
-              // onClick={() => handleMobileNavClick('culture')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}
-            >
+            {/* Culture */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'culture' ? 'current' : ''}`}>
               <Link 
-              href="/culture"
-                // onClick={(e) => handleNavigation("/culture", e)}
-                 className="flex flex-col items-center">
+                href="/culture"
+                className="flex flex-col items-center"
+              >
                 <svg
                   fill="none"
                   height="24"
@@ -523,49 +523,20 @@ const Footer = () => {
                 <span className="text-[11px] mt-1">Culture</span>
               </Link>
             </div>
-            <div
-              // onClick={() => handleMobileNavClick('careers')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'careers' ? 'current' : ''}`}
-            >
+
+            {/* Careers */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'careers' ? 'current' : ''}`}>
               <Link
                 href="/careers"
                 className="flex flex-col items-center"
-                // onClick={() => handleMobileNavClick('careers')}
               >
-                {currentTab === 'careers' ? (
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 12.5v-2h2v2zM7.5 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.177-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zM3.755 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952v-3.201h5.5v.871q0 .286.192.479a.65.65 0 0 0 .478.191h2.827q.286 0 .478-.191a.65.65 0 0 0 .192-.479v-.871h5.5v3.201q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zm-1.34-5.625V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v4.202h-5.5v-.871a.65.65 0 0 0-.192-.479.65.65 0 0 0-.478-.191H8.586a.65.65 0 0 0-.478.191.65.65 0 0 0-.192.479v.871z"
-                      fill="#099"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.756 16.583q-.562 0-.951-.388a1.3 1.3 0 0 1-.389-.952V6.756q0-.563.389-.95.389-.39.95-.39h2.661V4.17q0-.565.389-.95a1.3 1.3 0 0 1 .95-.386h4.488q.563 0 .951.389.39.389.389.951v1.244h2.66q.563 0 .951.388.39.39.389.951v8.487q0 .564-.389.952a1.3 1.3 0 0 1-.951.388zM7.499 5.417h5V4.173a.25.25 0 0 0-.08-.176.24.24 0 0 0-.176-.08H7.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176zm9 6.625h-4.416v.871q0 .286-.192.479a.65.65 0 0 1-.478.191H8.586a.65.65 0 0 1-.478-.191.65.65 0 0 1-.192-.479v-.871H3.499v3.201q0 .097.08.177.081.08.177.08h12.487a.24.24 0 0 0 .176-.08.24.24 0 0 0 .08-.177zM9 12.5h2v-2H9zm-5.5-1.542h4.417v-.871q0-.287.192-.479a.65.65 0 0 1 .478-.191h2.827q.286 0 .478.191a.65.65 0 0 1 .192.479v.871H16.5V6.756a.24.24 0 0 0-.08-.176.24.24 0 0 0-.176-.08H3.756a.25.25 0 0 0-.176.08.25.25 0 0 0-.08.176z"
-                      fill="#099"
-                    />
-                  </svg>
-                )}
+                <CareersIcon active={currentTab === 'careers'} />
                 <span className="text-[11px] mt-1">Careers</span>
               </Link>
             </div>
-            <div
-              onClick={() => handleMobileNavClick('contact')}
-              className={`nav-item flex flex-col items-center ${currentTab === 'contact' ? 'current' : ''}`}
-            >
+
+            {/* Contact */}
+            <div className={`nav-item flex flex-col items-center ${currentTab === 'contact' ? 'current' : ''}`}>
               <button
                 className={`flex flex-col items-center ${isModalOpen ? 'modal-open' : ''}`}
                 onClick={() => router.push('/free-quote', { scroll: false })}
