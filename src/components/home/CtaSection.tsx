@@ -2,8 +2,9 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '@/components/Modal';
+import { useRouter, usePathname } from 'next/navigation';
 
 
 interface HerSectionProps {
@@ -12,6 +13,16 @@ interface HerSectionProps {
 
 const CtaSection: React.FC<HerSectionProps> = ({ openModal}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
+
+    // Handle modal state based on route
+    useEffect(() => {
+      if (pathname !== '/free-quote') {
+        setIsModalOpen(false);
+      }
+    }, [pathname]);
+
   return (
      <>
     <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
@@ -58,7 +69,7 @@ const CtaSection: React.FC<HerSectionProps> = ({ openModal}) => {
               </p>
               <button className="btn leading-normal bg-green-btn md:w-auto font-roboto"
                 // onClick={() => setIsModalOpen(true)}
-                onClick={openModal}
+                onClick={() => router.push('/free-quote', { scroll: false })}
               >
                 Contact Us
               </button>
