@@ -290,11 +290,11 @@ const Footer = () => {
                       className="block hover:text-gray-300 transition-colors">
                         Culture
                       </Link>
-                      <div className='block text-[13px]'>
+                      <div className='hover:text-gray-300 text-[13px] transition-colors'>
 
                       <button
                         onClick={(e) => handleSectionClick(e, 'client')}
-                        className="block hover:text-gray-300 text-[13px] transition-colors cursor-pointer"
+                        className="block hover:text-gray-300 text-[13px] mx-auto transition-colors cursor-pointer"
                         >
                         Clientele
                       </button>
