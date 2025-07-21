@@ -8,121 +8,121 @@ import 'swiper/css/pagination';
 
 function MobileTeamCollage() {
   const sampleImages = [
-    '/Team page slicing/Escape room/1.webp',
-    '/Team page slicing/Escape room/2.webp',
-    '/Team page slicing/Escape room/3.webp',
-    '/Team page slicing/Escape room/4.webp',
+    '/images/new-team-images/team-image-mobile/Escape room/1.webp',
+    '/images/new-team-images/team-image-mobile/Escape room/2.webp',
+    '/images/new-team-images/team-image-mobile/Escape room/3.webp',
+    '/images/new-team-images/team-image-mobile/Escape room/4.webp',
   ];
 
   const interactive = [
-    '/Team page slicing/Interactive Team session/1.webp',
-    '/Team page slicing/Interactive Team session/2 (1).webp',
-    '/Team page slicing/Interactive Team session/3.webp',
-    '/Team page slicing/Interactive Team session/4.webp',
+    '/images/new-team-images/team-image-mobile/Interactive Team session/1.webp',
+    '/images/new-team-images/team-image-mobile/Interactive Team session/2 (1).webp',
+    '/images/new-team-images/team-image-mobile/Interactive Team session/3.webp',
+    '/images/new-team-images/team-image-mobile/Interactive Team session/4.webp',
   ]
 
   const bitpastelTurns = [
-    '/Team page slicing/Bitpastel Turns 8/1.webp',
-    '/Team page slicing/Bitpastel Turns 8/2.webp',
-    '/Team page slicing/Bitpastel Turns 8/3 (1).webp',
-    '/Team page slicing/Bitpastel Turns 8/4.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel Turns 8/1.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel Turns 8/2.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel Turns 8/3 (1).webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel Turns 8/4.webp',
   ]
 
   const icebreakers = [
-    '/Team page slicing/Ice Breaker - Coffee/1.webp',
-    '/Team page slicing/Ice Breaker - Coffee/2.webp',
+    '/images/new-team-images/team-image-mobile/Ice Breaker - Coffee/1.webp',
+    '/images/new-team-images/team-image-mobile/Ice Breaker - Coffee/2.webp',
   ]
 
   const ethnicDay = [
-    '/Team page slicing/Ethnic day/1.webp',
-    '/Team page slicing/Ethnic day/2.webp',
+    '/images/new-team-images/team-image-mobile/Ethnic day/1.webp',
+    '/images/new-team-images/team-image-mobile/Ethnic day/2.webp',
   ]
 
   const birthdayCelebration = [
-    '/Team page slicing/Birthdday celebration/1.webp',
-    '/Team page slicing/Birthdday celebration/2.webp',
-    '/Team page slicing/Birthdday celebration/3.webp',
-    '/Team page slicing/Birthdday celebration/4.webp',
+    '/images/new-team-images/team-image-mobile/Birthdday celebration/1.webp',
+    '/images/new-team-images/team-image-mobile/Birthdday celebration/2.webp',
+    '/images/new-team-images/team-image-mobile/Birthdday celebration/3.webp',
+    '/images/new-team-images/team-image-mobile/Birthdday celebration/4.webp',
   ]
 
   const workAniversary = [
-    '/Team page slicing/Work anniversary celeb 2024/1 (1).webp',
-    '/Team page slicing/Work anniversary celeb 2024/2.webp',
-    '/Team page slicing/Work anniversary celeb 2024/3.webp',
-    '/Team page slicing/Work anniversary celeb 2024/4.webp',
+    '/images/new-team-images/team-image-mobile/Work anniversary celeb 2024/1 (1).webp',
+    '/images/new-team-images/team-image-mobile/Work anniversary celeb 2024/2.webp',
+    '/images/new-team-images/team-image-mobile/Work anniversary celeb 2024/3.webp',
+    '/images/new-team-images/team-image-mobile/Work anniversary celeb 2024/4.webp',
   ]
 
   const teamMeetUp = [
-    '/Team page slicing/Team meet up/1.webp',
-    '/Team page slicing/Team meet up/2 (1).webp',
+    '/images/new-team-images/team-image-mobile/Team meet up/1.webp',
+    '/images/new-team-images/team-image-mobile/Team meet up/2 (1).webp',
   ]
 
   const bitpastelTownhall2024 = [
-    '/Team page slicing/Bitpastel townhall 2024/1 (1).webp',
-    '/Team page slicing/Bitpastel townhall 2024/2.webp',
-    '/Team page slicing/Bitpastel townhall 2024/3.webp',
-    '/Team page slicing/Bitpastel townhall 2024/4.webp',
-    '/Team page slicing/Bitpastel townhall 2024/5.webp',
-    '/Team page slicing/Bitpastel townhall 2024/6.webp',
-    '/Team page slicing/Bitpastel townhall 2024/7.webp',
-    '/Team page slicing/Bitpastel townhall 2024/8.webp',
-    '/Team page slicing/Bitpastel townhall 2024/9.webp',
-    '/Team page slicing/Bitpastel townhall 2024/10.webp',
-    '/Team page slicing/Bitpastel townhall 2024/11.webp',
-    '/Team page slicing/Bitpastel townhall 2024/12.webp',
-    '/Team page slicing/Bitpastel townhall 2024/13.webp',
-    '/Team page slicing/Bitpastel townhall 2024/14.webp',
-    '/Team page slicing/Bitpastel townhall 2024/15.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/1 (1).webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/2.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/3.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/4.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/5.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/6.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/7.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/8.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/9.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/10.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/11.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/12.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/13.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/14.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall 2024/15.webp',
   ]
 
 
   const bitpastelTownhall2023 = [
-       '/Team page slicing/Bitpastel townhall2023/1.webp',
-    '/Team page slicing/Bitpastel townhall2023/2.webp',
-    '/Team page slicing/Bitpastel townhall2023/3.webp',
-    '/Team page slicing/Bitpastel townhall2023/4.webp',
-    '/Team page slicing/Bitpastel townhall2023/5.webp',
-    '/Team page slicing/Bitpastel townhall2023/6.webp',
-    '/Team page slicing/Bitpastel townhall2023/7.webp',
-    '/Team page slicing/Bitpastel townhall2023/8.webp',
-    '/Team page slicing/Bitpastel townhall2023/9.webp',
-    '/Team page slicing/Bitpastel townhall2023/10.webp',
-    '/Team page slicing/Bitpastel townhall2023/11.webp',
-    '/Team page slicing/Bitpastel townhall2023/12.webp',
-    '/Team page slicing/Bitpastel townhall2023/13.webp',
-    '/Team page slicing/Bitpastel townhall2023/14.webp',
-    '/Team page slicing/Bitpastel townhall2023/15.webp',
-    '/Team page slicing/Bitpastel townhall2023/16.webp',
+       '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/1.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/2.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/3.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/4.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/5.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/6.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/7.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/8.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/9.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/10.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/11.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/12.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/13.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/14.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/15.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel townhall2023/16.webp',
   ]
 
   const bitpastelTownhall2022 = [
-    '/Team page slicing/Bitpastel town hall 2021/1.webp',
-    '/Team page slicing/Bitpastel town hall 2021/2.webp',
-    '/Team page slicing/Bitpastel town hall 2021/3.webp',
-    '/Team page slicing/Bitpastel town hall 2021/4.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/1.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/2.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/3.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/4.webp',
   ]
 
   const bitpastelTownhall2021 = [
-    '/Team page slicing/Bitpastel town hall 2021/1.webp',
-    '/Team page slicing/Bitpastel town hall 2021/2.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/1.webp',
+    '/images/new-team-images/team-image-mobile/Bitpastel town hall 2021/2.webp',
   ]
 
   const cultureAtBitpastel = [
-    '/Team page slicing/Culture at Bitpastel/1 (1).webp',
-    '/Team page slicing/Culture at Bitpastel/2.webp',
+    '/images/new-team-images/team-image-mobile/Culture at Bitpastel/1 (1).webp',
+    '/images/new-team-images/team-image-mobile/Culture at Bitpastel/2.webp',
   ]
 
   const yearEndCelebration = [
-    '/Team page slicing/Year end celeb 2022/1.webp',
-    '/Team page slicing/Year end celeb 2022/2.webp',
-    '/Team page slicing/Year end celeb 2022/3.webp',
-    '/Team page slicing/Year end celeb 2022/4.webp',
-    '/Team page slicing/Year end celeb 2022/5.webp',
+    '/images/new-team-images/team-image-mobile/Year end celeb 2022/1.webp',
+    '/images/new-team-images/team-image-mobile/Year end celeb 2022/2.webp',
+    '/images/new-team-images/team-image-mobile/Year end celeb 2022/3.webp',
+    '/images/new-team-images/team-image-mobile/Year end celeb 2022/4.webp',
+    '/images/new-team-images/team-image-mobile/Year end celeb 2022/5.webp',
   ]
 
   const sundayBrunchAtWestin = [
-    '/Team page slicing/Sunday brunch/1.webp',
-    '/Team page slicing/Sunday brunch/2.webp',
+    '/images/new-team-images/team-image-mobile/Sunday brunch/1.webp',
+    '/images/new-team-images/team-image-mobile/Sunday brunch/2.webp',
   ]
 
   return (
