@@ -126,7 +126,7 @@ function MobileTeamCollage() {
   ]
 
   return (
-    <section className="relative team-members-mob team-members-mobile">
+    <section className="relative team-members-mob team-members-mobile" id="OurTeam">
       <div className="team-collage">
         <div className="relative">
           <Swiper
