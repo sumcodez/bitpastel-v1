@@ -148,8 +148,8 @@ const Footer = () => {
         />
       </svg>
     );
-  };
-
+  }
+  
   // Helper component for Stories icon
   const StoriesIcon = ({ active }: { active: boolean }) => {
     if (active) {

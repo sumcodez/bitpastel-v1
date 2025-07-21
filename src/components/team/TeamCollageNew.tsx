@@ -5,7 +5,7 @@ const TeamCollageNew = () => {
     <section className="team-members" id="OurTeam">
       <div className="container mx-auto px-4">
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Escape Rooms</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Escape Rooms</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/escape_room_img-1.webp"
@@ -31,7 +31,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Interactive Team Mission</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Interactive Team Mission</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/jenga_puzzle-play-1.webp"
@@ -57,7 +57,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Bitpastel turns 8</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Bitpastel turns 8</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-turn-8-1.webp"
@@ -88,7 +88,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Ice Breaker - Coffee Evening</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Ice Breaker - Coffee Evening</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/ice-breaker-coffee-1.webp"
@@ -104,7 +104,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Christmas Celebration at Office 2024</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Christmas Celebration at Office 2024</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/christmas-celebration-at-office-2024-1.webp"
@@ -120,7 +120,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Ethnic Day Celebration at Office 2024</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Ethnic Day Celebration at Office 2024</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/ethnic-day-celeb-1.webp"
@@ -136,7 +136,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Birthday Day Celebration at Office</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Birthday Day Celebration at Office</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/birthday-celeb-office-1.webp"
@@ -162,7 +162,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="text-title title font-[600]">
+          <h2 className="text-[20px] font-[700] pb-4">
             Work Anniversary Celebration at Office 2024
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -190,7 +190,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Team Meetup #Movie #Coffee</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Team Meetup #Movie #Coffee</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
             <img
               src="/images/new-team-images/new/team-meetup-1.webp"
@@ -206,7 +206,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Bitpastel Townhall 2024</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2024</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2024-1.webp"
@@ -303,7 +303,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Bitpastel Townhall 2023</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2023</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2023-1.webp"
@@ -403,7 +403,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Culture at Bitpastel</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Culture at Bitpastel</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/culture-1.webp"
@@ -419,7 +419,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Year-end Celebration 2022</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Year-end Celebration 2022</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <img
               src="/images/new-team-images/new/year-end-celeb-2022-1.webp"
@@ -454,7 +454,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Sunday Brunch at Westin</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Sunday Brunch at Westin</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/sunday-brunch-westin-1.webp"
@@ -470,7 +470,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Bitpastel Townhall 2022</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2022</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2022-1.webp"
@@ -496,7 +496,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="subheading title font-[700]">Bitpastel Townhall 2021</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2021</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <img
               src="/images/new-team-images/new/bitpastel-townhall-2021-1.webp"
