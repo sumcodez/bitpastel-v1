@@ -9,6 +9,7 @@ import Modal from '@/components/Modal';
 import Whatsapp from '@/components/ui/Whatsapp';
 
 const Footer = () => {
+  const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useEffect : () => {};
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [pendingScroll, setPendingScroll] = useState<string | null>(null);
@@ -354,7 +355,17 @@ const Footer = () => {
                   </div>
                   <div className="lg:ml-auto">
                     <div className="space-y-4 text-[13px]">
-                      <Link href="/culture" className="block hover:text-gray-300 transition-colors">
+                      <Link
+                        href="/culture"
+                        onClick={(e) => {
+                          if (pathname === '/culture') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                          setCurrentTab('culture');
+                        }}
+                        className="block hover:text-gray-300 transition-colors"
+                      >
                         Culture
                       </Link>
                       <div className="hover:text-gray-300 text-[13px] transition-colors">
@@ -367,6 +378,13 @@ const Footer = () => {
                       </div>
                       <Link
                         href="/careers"
+                        onClick={(e) => {
+                          if (pathname === '/careers') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                          setCurrentTab('careers');
+                        }}
                         // onClick={(e) => handleNavigation("/careers", e)}
 
                         className="block hover:text-gray-300 transition-colors"
@@ -375,6 +393,12 @@ const Footer = () => {
                       </Link>
                       <Link
                         href="/partners"
+                        onClick={(e) => {
+                          if (pathname === '/partners') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                        }}
                         className="block hover:text-gray-300 transition-colors cursor-pointer"
                       >
                         Partners
@@ -559,7 +583,13 @@ const Footer = () => {
             >
               <Link
                 href="/culture"
-                onClick={() => setCurrentTab('culture')}
+                onClick={(e) => {
+                  if (pathname === '/culture') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                  setCurrentTab('culture');
+                }}
                 className="flex flex-col items-center"
               >
                 <svg
@@ -589,7 +619,13 @@ const Footer = () => {
             >
               <Link
                 href="/careers"
-                onClick={() => setCurrentTab('careers')}
+                onClick={(e) => {
+                  if (pathname === '/careers') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                  setCurrentTab('careers');
+                }}
                 className="flex flex-col items-center"
               >
                 <CareersIcon active={pathname.startsWith('/careers')} />
