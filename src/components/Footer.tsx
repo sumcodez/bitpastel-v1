@@ -154,9 +154,9 @@ const Footer = () => {
     if (active) {
       return (
         <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -169,9 +169,9 @@ const Footer = () => {
     }
     return (
       <svg
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -496,7 +496,7 @@ const Footer = () => {
                 }}
                 className="flex flex-col items-center"
               >
-                <svg fill="none" height="20" viewBox="0 0 24 21" width="20" className="">
+                <svg fill="none" height="24" viewBox="0 0 24 21" width="24" className="">
                   <path
                     d="M9.6 13.3382H9.35V13.5882V20.75H3.85V11.1176V10.8676H3.6H0.637691L12 0.340803L23.3623 10.8676H20.4H20.15V11.1176V20.75H14.65V13.5882V13.3382H14.4H9.6Z"
                     stroke={
@@ -607,9 +607,9 @@ const Footer = () => {
               >
                 <svg
                   fill="none"
-                  height="20"
+                  height="24"
                   viewBox="0 0 23 23"
-                  width="20"
+                  width="24"
                   className="ng-star-inserted"
                 >
                   <path
