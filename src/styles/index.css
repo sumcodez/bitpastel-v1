@@ -944,3 +944,13 @@ padding-bottom:20px;
           }
           
         } */
+
+
+        .nav-item.current span {
+  color: #008B8B;
+  font-weight: bold;
+}
+
+.nav-item.current svg path {
+  fill: #008B8B;
+}
