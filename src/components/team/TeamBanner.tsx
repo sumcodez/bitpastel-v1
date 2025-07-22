@@ -3,15 +3,15 @@ import React from 'react';
 import Image from 'next/image';
 
 const TeamBanner = () => {
-const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string) => {
     // Try multiple approaches for better compatibility
     const el = document.getElementById(id);
     if (el) {
       const yOffset = -0; // Adjust this if needed
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
+
       window.scrollTo({ top: y, behavior: 'smooth' });
-      
+
       // Fallback if smooth scroll isn't working
       if (!('scrollBehavior' in document.documentElement.style)) {
         window.scrollTo(0, y);
@@ -28,7 +28,6 @@ const scrollToSection = (id: string) => {
       }, 500);
     }
   };
-
 
   return (
     <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
@@ -48,9 +47,18 @@ const scrollToSection = (id: string) => {
       <div
         className="block md:hidden w-full  h-[310px]  bg-cover bg-[position:59%_10%]"
         style={{
-          backgroundImage: `
-            url('/images/team-banner-mobile.png')
+         backgroundImage: `
+
+         linear-gradient(359.17deg, rgba(0, 0, 0, 0) 42.84%, rgba(0, 0, 0, 0.6) 120.15%),
+         linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+         url(/images/team-banner-mobile.png);
+         
           `,
+          //   backgroundImage: `
+          //  linear-gradient(359.17deg, rgba(0, 0, 0, 0) 42.84%, rgba(0, 0, 0, 0.6) 120.15%),
+          //  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+          //  url(/images/team-banner-mobile.png);
+          //   `,
         }}
       ></div>
 
