@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import Banner from '@/components/career/Banner'
 import JobCard from '@/components/career/JobCard'

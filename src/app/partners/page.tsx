@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import PartnerHero from '@/components/partner/PartnerHero'
 import PartnerService from '@/components/partner/PartnerService'

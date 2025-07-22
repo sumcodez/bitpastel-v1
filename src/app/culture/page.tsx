@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import TeamTestimonials from '@/components/team/TeamTestimonials';
 import TeamCollage from '@/components/team/TeamCollage';
