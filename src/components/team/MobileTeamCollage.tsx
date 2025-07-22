@@ -205,7 +205,7 @@ const MobileTeamCollage: React.FC = () => {
 
   const cristmasCelebration: string[] = [
     '/images/new-team-images/Team page slicing/Christmas celeb 2024/1.webp',
-    '/images/new-team-images/Team page slicing/Christmas celeb 0/2.webp',
+    '/images/new-team-images/Team page slicing/Christmas celeb 2024/2.webp',
   ];
 
   const ethnicDay: string[] = [
