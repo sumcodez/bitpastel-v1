@@ -36,7 +36,7 @@ const TeamBanner = () => {
         className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `
-            linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%),
+            linear-gradient(286.17deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 65.15%),
             linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('/images/team_banner.jpg')
           `,
@@ -52,7 +52,7 @@ const TeamBanner = () => {
          linear-gradient(359.17deg, rgba(0, 0, 0, 0) 42.84%, rgba(0, 0, 0, 0.6) 120.15%),
          linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
          url(/images/team-banner-mobile.png);
-         
+
           `,
           //   backgroundImage: `
           //  linear-gradient(359.17deg, rgba(0, 0, 0, 0) 42.84%, rgba(0, 0, 0, 0.6) 120.15%),
