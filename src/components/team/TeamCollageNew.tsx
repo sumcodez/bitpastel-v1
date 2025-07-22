@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 const TeamCollageNew = () => {
   return (
-    <section className="team-members" id="OurTeam">
+    <section className="team-members">
       <div className="container mx-auto px-4">
         <div className="team-collage">
           <h2 className="text-[20px] font-[700] pb-4">Escape Rooms</h2>
