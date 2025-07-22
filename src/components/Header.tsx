@@ -1,151 +1,180 @@
-"use client"
+'use client';
 
-import { useState, useEffect, useCallback, useRef } from "react"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import Modal from "@/components/Modal"
+import { useState, useEffect, useCallback, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import Modal from '@/components/Modal';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const isNavigating = useRef(false)
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [pendingScroll, setPendingScroll] = useState<string | null>(null)
-  const pathname = usePathname()
-  const router = useRouter()
-  const isHomePage = pathname === "/"
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isMounted, setIsMounted] = useState(false) // Add mounted state
+  const [isScrolled, setIsScrolled] = useState(false);
+  const isNavigating = useRef(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === '/';
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // Add mounted state
 
   useEffect(() => {
-    setIsMounted(true) // Set mounted when component mounts on client
-    return () => setIsMounted(false)
-  }, [])
+    setIsMounted(true); // Set mounted when component mounts on client
+    return () => setIsMounted(false);
+  }, []);
 
   useEffect(() => {
-    setIsModalOpen(false)
-  }, [pathname])
+    setIsModalOpen(false);
+  }, [pathname]);
 
-  const handleNavigation = useCallback((path: string, e: React.MouseEvent) => {
-    e.preventDefault()
-    if (isNavigating.current) return
-    isNavigating.current = true
-    router.push(path)
-    isNavigating.current = false
-  }, [router])
+  const handleNavigation = useCallback(
+    (path: string, e: React.MouseEvent) => {
+      e.preventDefault();
+      if (isNavigating.current) return;
+      isNavigating.current = true;
+      router.push(path);
+      isNavigating.current = false;
+    },
+    [router]
+  );
 
   const isCareerApplyPage =
-    pathname.startsWith("/careers/applyJob/") || 
-    pathname.startsWith("/partner") || 
-    pathname.startsWith("/privacy")
+    pathname.startsWith('/careers/applyJob/') ||
+    pathname.startsWith('/partner') ||
+    pathname.startsWith('/privacy');
 
-  const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage
+  const shouldApplyScrolledStyle = isScrolled || isCareerApplyPage;
 
   const scrollToSection = useCallback((sectionId: string, offset = 40) => {
-    if (typeof window === 'undefined') return // Skip on server
-    
-    const element = document.getElementById(sectionId)
+    if (typeof window === 'undefined') return; // Skip on server
+
+    const element = document.getElementById(sectionId);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth",
-      })
+        behavior: 'smooth',
+      });
 
-      window.history.pushState(null, "", `#${sectionId}`)
-      setActiveSection(sectionId)
-      setPendingScroll(null)
+      window.history.pushState(null, '', `#${sectionId}`);
+      setActiveSection(sectionId);
+      setPendingScroll(null);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return // Skip on server
-    
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 50)
+    if (typeof window === 'undefined') return; // Skip on server
 
-      const sections = ["services", "stories"]
-      let currentSection = null
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+
+      const sections = ['services', 'stories'];
+      let currentSection = null;
 
       for (const section of sections) {
-        const el = document.getElementById(section)
+        const el = document.getElementById(section);
         if (el) {
-          const rect = el.getBoundingClientRect()
-          const top = rect.top
-          const bottom = rect.bottom
+          const rect = el.getBoundingClientRect();
+          const top = rect.top;
+          const bottom = rect.bottom;
 
           if (top <= 100 && bottom >= 100) {
-            currentSection = section
-            break
+            currentSection = section;
+            break;
           }
         }
       }
 
-      setActiveSection(currentSection)
-    }
+      setActiveSection(currentSection);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isHomePage && pendingScroll) {
       const timeoutId = setTimeout(() => {
-        scrollToSection(pendingScroll)
-      }, 100)
+        scrollToSection(pendingScroll);
+      }, 100);
 
-      return () => clearTimeout(timeoutId)
+      return () => clearTimeout(timeoutId);
     }
-  }, [isHomePage, pendingScroll, scrollToSection])
+  }, [isHomePage, pendingScroll, scrollToSection]);
 
   useEffect(() => {
     if (isHomePage && typeof window !== 'undefined') {
-      const hash = window.location.hash
+      const hash = window.location.hash;
       if (hash) {
-        const sectionId = hash.substring(1)
+        const sectionId = hash.substring(1);
         const timeoutId = setTimeout(() => {
-          scrollToSection(sectionId)
-        }, 100)
+          scrollToSection(sectionId);
+        }, 100);
 
-        return () => clearTimeout(timeoutId)
+        return () => clearTimeout(timeoutId);
       }
     }
-  }, [isHomePage, scrollToSection])
+  }, [isHomePage, scrollToSection]);
 
   const handleLinkClick = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!isHomePage) {
-      setPendingScroll(sectionId)
-      router.push("/")
+      setPendingScroll(sectionId);
+      router.push('/');
     } else {
-      scrollToSection(sectionId)
+      scrollToSection(sectionId);
     }
-  }
+  };
 
   const getLinkClass = (section: string) => {
     return `transition-colors duration-200 ${
-      activeSection === section ? "text-accent-green" : shouldApplyScrolledStyle ? "text-title" : "text-primary-white"
-    } hover:text-accent-green`
-  }
+      activeSection === section
+        ? 'text-accent-green'
+        : shouldApplyScrolledStyle
+          ? 'text-title'
+          : 'text-primary-white'
+    } hover:text-accent-green`;
+  };
 
   // Only render logo color based on client-side state
-  const logoSrc = isMounted ? (shouldApplyScrolledStyle ? "#009999" : "#ffffff") : "#ffffff"
+  const logoSrc = isMounted ? (shouldApplyScrolledStyle ? '#009999' : '#ffffff') : '#ffffff';
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
-          shouldApplyScrolledStyle ? "bg-[#ffffff] border-b border-[#f5f5f5]" : "bg-transparent border-transparent"
+          shouldApplyScrolledStyle
+            ? 'bg-[#ffffff] border-b border-[#f5f5f5]'
+            : 'bg-transparent border-transparent'
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex lg:justify-between justify-center header-logo items-center">
-            <Link href="/" onClick={() => setPendingScroll(null)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="70" viewBox="0 0 1846 516" fill="none">
+            <Link
+              href="/"
+              onClick={(e) => {
+                if (isHomePage) {
+                  e.preventDefault();
+                  window.history.pushState({}, '', '/');
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                  });
+                } else {
+                  setPendingScroll(null);
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="120"
+                height="70"
+                viewBox="0 0 1846 516"
+                fill="none"
+              >
                 <path
                   d="M259.356 256.861C259.356 328.406 200.819 385.859 128.19 385.859C96.7534 385.859 68.0274 373.393 45.8054 354.422L0.276367 385.859V1.03394H45.8054V164.721C68.0274 144.124 96.2124 131.117 128.19 131.117C200.819 131.116 259.356 185.316 259.356 256.861ZM45.8054 256.861C45.8054 301.848 81.5774 337.621 128.19 337.621C173.718 337.621 210.033 301.849 210.033 256.861C210.033 212.417 173.718 179.896 128.19 179.896C81.5784 179.896 45.8054 212.417 45.8054 256.861Z"
                   fill={logoSrc}
@@ -188,18 +217,26 @@ const Header = () => {
             {isMounted && ( // Only render nav after mounting
               <nav className="hidden lg:flex space-x-8 items-center">
                 <button
-                  onClick={(e) => handleLinkClick(e, "services")}
-                  className={getLinkClass("services")}
+                  onClick={(e) => handleLinkClick(e, 'services')}
+                  className={getLinkClass('services')}
                 >
                   Services
                 </button>
-                <button onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
+                <button
+                  onClick={(e) => handleLinkClick(e, 'stories')}
+                  className={getLinkClass('stories')}
+                >
                   Stories
                 </button>
                 <Link
                   href="/culture"
-                  onClick={(e) => handleNavigation("/culture", e)}
-                  className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
+                  onClick={(e) => {
+                    if (pathname === '/culture') {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`${shouldApplyScrolledStyle ? 'text-title' : 'text-primary-white'} hover:text-accent-green transition-colors duration-200`}
                 >
                   Culture
                 </Link>
@@ -216,7 +253,7 @@ const Header = () => {
       </header>
       <Modal open={isModalOpen} onClose={() => router.push('/', { scroll: false })} />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
