@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -135,9 +135,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -159,10 +161,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -184,10 +188,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -210,10 +216,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -238,9 +246,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -267,9 +277,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -292,9 +304,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -317,9 +331,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -342,9 +358,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -366,10 +384,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -391,10 +411,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -418,9 +440,11 @@ function MobileTeamCollage() {
        <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -443,10 +467,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -471,9 +497,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -497,9 +525,11 @@ function MobileTeamCollage() {
       <div className="team-collage">
         <div className="relative">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
@@ -521,10 +551,12 @@ function MobileTeamCollage() {
 
       <div className="team-collage">
         <div className="relative">
-          <Swiper
-            modules={[Pagination]}
+           <Swiper
+            modules={[Pagination, Mousewheel, Keyboard]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            cssMode={true}
+            spaceBetween={8}
+            keyboard={true}
             slidesPerView={1}
             className="team-swiper"
           >
