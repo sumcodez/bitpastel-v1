@@ -1,8 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const TeamBanner = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const scrollToSection = (id: string) => {
     // Try multiple approaches for better compatibility
     const el = document.getElementById(id);
@@ -32,22 +38,24 @@ const TeamBanner = () => {
   return (
     <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
       {/* Desktop background image */}
-      <div
-        className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `
+      {isClient && (
+        <div
+          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `
             linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%),
             linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('/images/team_banner.jpg')
           `,
-        }}
-      ></div>
+          }}
+        ></div>
+      )}
 
       {/* Mobile background image on top */}
       <div
         className="block md:hidden w-full  h-[310px]  bg-cover bg-[position:59%_10%]"
         style={{
-         backgroundImage: `
+          backgroundImage: `
          
          linear-gradient(359.17deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 120.15%),
          linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
@@ -85,6 +93,7 @@ const TeamBanner = () => {
                   width={24}
                   height={24}
                   className="w-auto md:block hidden"
+                  priority
                 />
                 <Image
                   src="/images/img_materialsymbolscheckrounded_teal_300.svg"
