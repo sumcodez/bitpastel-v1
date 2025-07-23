@@ -366,7 +366,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         )}
 
         {extraTestimonials.length > 0 && !showMore && (
-          <div className="flex justify-center md:mt-8 mt-7 space-x-4">
+          <div className="flex justify-center md:mt-8 mt-6 space-x-4">
             <button
               onClick={() => setShowMore(true)}
               className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
