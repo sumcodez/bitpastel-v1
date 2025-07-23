@@ -843,9 +843,9 @@ padding-bottom:20px;
 /* ====================partner page animation and design=============== */
 
 
-.nav-tabs {
+/* .nav-tabs {
     border-bottom: 1px solid #00A974 !important;
-}
+} */
 .nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -977,3 +977,48 @@ padding-bottom:20px;
   
     }
   }
+
+
+  /* For WebKit browsers (Chrome, Safari, Edge) */
+
+
+  
+  @media screen and (min-width:1024px) {
+    .nav-tabs .nav-link{
+      border-bottom: 1px solid #00A974 !important;
+    }
+    .nav {
+      padding-bottom: 12px;
+      position: relative;
+  }
+
+
+.nav::-webkit-scrollbar {
+    height: 4px; /* Adjust scrollbar height */
+}
+
+.nav::-webkit-scrollbar-track {
+    background: transparent; /* Hide track */
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background: #b2b2b2; 
+    border-radius: 2px; 
+}
+
+.nav::-webkit-scrollbar-button {
+    display: none; /* Hide arrows */
+}
+}
+@media screen and (max-width:1024px) {
+  .nav-tabs .nav-link.active-category {
+    border-color: #00A974 #00A974 #00A974 !important;
+}
+.nav-tabs .nav-link{
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.nav-tabs .nav-link.active-category {
+    min-width: auto;
+}
+}
