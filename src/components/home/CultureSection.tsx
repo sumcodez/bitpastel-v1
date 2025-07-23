@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const CultureSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleClick = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -60,7 +60,7 @@ const CultureSection = () => {
         <h2 className="font-source md:font-[600] font-[700] text-center text-title title md:mb-8 mb-4">
           Why work with us?
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-8">
           <div className="xl:h-[auto] md:h-[100%]">
             <img
               src="/images/img_rectangle_51.jpg"
@@ -68,7 +68,7 @@ const CultureSection = () => {
               className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto"
             />
           </div>
-          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 xl:gap-10 md:gap-6 gap-6">
+          <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 xl:gap-10 md:gap-6 gap-4">
             {features.map((feature, index) => (
               <div
                 key={feature.id}
@@ -96,7 +96,7 @@ const CultureSection = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className={`transition-all duration-300 ease-in-out ${activeIndex === index ? 'rotate-180' : 'rotate-0'}`}
+                      className={`transition-all duration-300 ease-in-out ${activeIndex === index ? 'rotate-0 ' : 'rotate-180'}`}
                     >
                       <path
                         d="M11.9463 8.7625L19.6618 16.4778C19.8091 16.6253 19.9863 16.698 20.1933 16.696C20.4005 16.6942 20.5777 16.6195 20.725 16.472C20.8725 16.3247 20.9463 16.1474 20.9463 15.9403C20.9463 15.7333 20.8725 15.556 20.725 15.4085L13.0828 7.772C12.9213 7.6105 12.7412 7.49259 12.5425 7.41826C12.3437 7.34392 12.145 7.30675 11.9463 7.30675C11.7476 7.30675 11.5489 7.34392 11.35 7.41826C11.1514 7.49259 10.9713 7.6105 10.8098 7.772L3.16754 15.4145C3.02004 15.5618 2.94729 15.7381 2.94929 15.9433C2.95112 16.1484 3.02579 16.3247 3.17329 16.472C3.32062 16.6195 3.49787 16.6933 3.70504 16.6933C3.91204 16.6933 4.08929 16.6195 4.23679 16.472L11.9463 8.7625Z"
