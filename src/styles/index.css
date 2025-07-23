@@ -954,3 +954,27 @@ padding-bottom:20px;
 .nav-item.current svg path {
   fill: #008B8B;
 }
+
+
+/* ===================whatsapp icon ================ */
+
+
+@media only screen and (device-width: 393px) and (device-height: 852px){
+  .whatspp-bubble {
+    bottom: 350px !important;
+  }
+}
+
+
+@media only screen and (device-width: 390px) and (device-height: 844px) {
+    .whatspp-bubble {
+        bottom: 340px !important;
+    }
+}
+
+
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+    .whatspp-bubble {
+        bottom: 305px !important;
+    }
+}
