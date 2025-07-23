@@ -959,3 +959,21 @@ padding-bottom:20px;
   margin-left: auto !important;
 }
 
+@media screen and (max-width:767px) {
+  #culture .work-with-us-features .relative:nth-child(1) ul li::before {
+      background: #3ECB90;
+
+  }
+  #culture .work-with-us-features .relative:nth-child(2) ul li::before {
+    background: #F0C638;
+    
+  }
+  #culture .work-with-us-features .relative:nth-child(3) ul li::before {
+    background: #55B8D0;
+
+    }
+  #culture .work-with-us-features .relative:nth-child(4) ul li::before {
+        background: #F5747E;
+  
+    }
+  }
