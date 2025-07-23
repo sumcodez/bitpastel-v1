@@ -11,6 +11,10 @@ interface Testimonial {
   bgColor: string;
 }
 
+
+// bg-[#CEEEF6] 
+
+
 interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
 }
@@ -24,7 +28,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       "Ayan and his team are superstars, they interpret suggestions well and propose even better and more efficient alternatives, the team's work is to a very high standard and turn around time is much faster than a UK equivalent",
     image: '/images/Reece_W.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   // 2. Paul R. Turner
   {
@@ -44,7 +48,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       'As soon as I came into contact with Ayan and his Bitpastel team, I felt in safe hands. What impressed me most is Ayan’s level of communication. In the past I have experienced slow turnaround times and lack of communication but with Ayan and his team I genuinely felt like I was their only client and the attention to detail is impeccable. I highly recommend them',
     image: '/images/cameron_01.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   // 4. David Jones
   {
@@ -54,7 +58,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       "Ayan and the Bitpastel team are a reliable and dedicated group. Whenever I reach out to the team about back-end or front-end tasks that need to be completed, they're not only quick to respond but I can rely on their turnaround time. Since partnering with them, my mind has been at ease knowing that they will get the job done so that I can focus on other tasks. It has been a pleasure working with them!",
     image: '/images/david.jpg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
   // 5. Honey Patel
   {
@@ -64,7 +68,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been a delight to work with! They take the time to truly understand the requirements and provide expert opinion on design, development, and implementation. The team is also very detail oriented and communicate extremely well. Everything is timely, effective, and well done. I keep going back to them to build new things because there is no one else I would rather work with.',
     image: '/images/Honey_P.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   // 6. Josiah M. Young
   {
@@ -84,7 +88,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       'The entire team did a great job and will definitely hire again for future projects. They delivered exactly what they promised on time and on budget. The attention to detail was perfect as was the constant communication. We are happy we finally found a great team to work with',
     image: '/images/Doug_A.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   // 8. Dan Miller
   {
@@ -94,7 +98,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       "We have worked with Bitpastel now for over 2 years and we've been really happy with the level of service and development work we have had done. They now manage all of our technology needs on an ongoing basis and nothing ever seems to be an issue with our requirements. Work is completed on time and to the highest quality that meets our expectations.",
     image: '/images/Dan_M.jpg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
   // 9. Anthony Deketelaere
   {
@@ -104,7 +108,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       "The people at Bitpastel are professionals, the SRS (Software Requirement Specification) that the team is working on is the exact translation of my insights and idea's about the app. Bitpastel gives me the guarantee that the app will be all I wanted it to be, and more... I highly recommend them for your next project",
     image: '/images/Anthony.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   // 10. Charles Fried
   {
@@ -124,7 +128,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been doing custom HubSpot COS development for us and our expectations have been consistently exceeded. There is always a great turnaround on project requests and they are available for talking through upcoming work and ready to take on new challenges.',
     image: '/images/Brandon_P.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   // 12. Alf Bergin
   {
@@ -134,7 +138,7 @@ const orderedTestimonials: Testimonial[] = [
     message:
       'Bitpastel is an ambitious design & development team. They take good care of the client and have a professional attitude. What I really appreciate is that work is done quickly and without delays which is very important for a long-term business relationship. I really like their way to communicate',
     image: '/images/Alf_B.jpeg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
 ];
 
@@ -146,7 +150,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "Ayan and his team are superstars, they interpret suggestions well and propose even better and more efficient alternatives, the team's work is to a very high standard and turn around time is much faster than a UK equivalent",
     image: '/images/Reece_W.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   {
     id: '2',
@@ -155,7 +159,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'As soon as I came into contact with Ayan and his Bitpastel team, I felt in safe hands. What impressed me most is Ayan’s level of communication. In the past I have experienced slow turnaround times and lack of communication but with Ayan and his team I genuinely felt like I was their only client and the attention to detail is impeccable. I highly recommend them',
     image: '/images/cameron_01.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   {
     id: '3',
@@ -164,7 +168,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been a delight to work with! They take the time to truly understand the requirements and provide expert opinion on design, development, and implementation. The team is also very detail oriented and communicate extremely well. Everything is timely, effective, and well done. I keep going back to them to build new things because there is no one else I would rather work with.',
     image: '/images/Honey_P.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   {
     id: '4',
@@ -182,7 +186,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "Ayan and the Bitpastel team are a reliable and dedicated group. Whenever I reach out to the team about back-end or front-end tasks that need to be completed, they're not only quick to respond but I can rely on their turnaround time. Since partnering with them, my mind has been at ease knowing that they will get the job done so that I can focus on other tasks. It has been a pleasure working with them!",
     image: '/images/david.jpg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
   {
     id: '6',
@@ -200,7 +204,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'The entire team did a great job and will definitely hire again for future projects. They delivered exactly what they promised on time and on budget. The attention to detail was perfect as was the constant communication. We are happy we finally found a great team to work with',
     image: '/images/Doug_A.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   {
     id: '8',
@@ -209,7 +213,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "The people at Bitpastel are professionals, the SRS (Software Requirement Specification) that the team is working on is the exact translation of my insights and idea's about the app. Bitpastel gives me the guarantee that the app will be all I wanted it to be, and more... I highly recommend them for your next project",
     image: '/images/Anthony.jpg',
-    bgColor: 'bg-[#FDE3E5]',
+    bgColor: 'bg-[#CEEEF6]',
   },
   {
     id: '9',
@@ -218,7 +222,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel has been doing custom HubSpot COS development for us and our expectations have been consistently exceeded. There is always a great turnaround on project requests and they are available for talking through upcoming work and ready to take on new challenges.',
     image: '/images/Brandon_P.jpg',
-    bgColor: 'bg-[#D8F5E9]',
+    bgColor: 'bg-[#FDE3E5]',
   },
   {
     id: '10',
@@ -227,7 +231,7 @@ const defaultTestimonials: Testimonial[] = [
     message:
       "We have worked with Bitpastel now for over 2 years and we've been really happy with the level of service and development work we have had done. They now manage all of our technology needs on an ongoing basis and nothing ever seems to be an issue with our requirements. Work is completed on time and to the highest quality that meets our expectations.",
     image: '/images/Dan_M.jpg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
   {
     id: '11',
@@ -245,13 +249,13 @@ const defaultTestimonials: Testimonial[] = [
     message:
       'Bitpastel is an ambitious design & development team. They take good care of the client and have a professional attitude. What I really appreciate is that work is done quickly and without delays which is very important for a long-term business relationship. I really like their way to communicate',
     image: '/images/Alf_B.jpeg',
-    bgColor: 'bg-[#CEEEF6]',
+    bgColor: 'bg-[#D8F5E9]',
   },
 ];
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   testimonials = defaultTestimonials,
 }) => {
-  const mobileBgColors = ['bg-[#FDE3E5]', 'bg-[#FCF4D7]', 'bg-[#D8F5E9]', 'bg-[#CEEEF6]'];
+  const mobileBgColors = ['bg-[#CEEEF6]', 'bg-[#FCF4D7]', 'bg-[#FDE3E5]', 'bg-[#CEEEF6]'];
   const mobileTestimonials = orderedTestimonials.map((t, i) => ({
     ...t,
     bgColor: t.bgColor || mobileBgColors[i % mobileBgColors.length],
