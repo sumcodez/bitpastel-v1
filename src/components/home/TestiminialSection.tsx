@@ -360,13 +360,13 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         </div>
 
         {showMore && (
-          <div className={`columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-8 mx-auto w-full text-title `}>
+          <div className={`columns-1 md:columns-2 gap-8 md:space-y-8 space-y-6 mt-6 mx-auto w-full text-title `}>
             {extraTestimonials.map(renderTestimonialCard)}
           </div>
         )}
 
         {extraTestimonials.length > 0 && !showMore && (
-          <div className="flex justify-center md:mt-8 mt-6 space-x-4">
+          <div className="flex justify-center md:mt-8 mt-7 space-x-4">
             <button
               onClick={() => setShowMore(true)}
               className="group flex btn items-center space-x-3 transition-all duration-300 focus:outline-none font-roboto h-auto font-[400] bg-green-btn"
