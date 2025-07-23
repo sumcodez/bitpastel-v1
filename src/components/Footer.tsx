@@ -495,8 +495,6 @@ const Footer = () => {
           </div>
         </div>
         {/* Mobile Nav */}
-        {/* Mobile Nav */}
-        {/* Mobile Nav */}
         <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
             {/* Home */}
@@ -545,7 +543,7 @@ const Footer = () => {
                   handleSectionClick(e, 'services');
                   setCurrentTab('services');
                 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center gap-1"
               >
                 <svg fill="none" height="20" viewBox="0 0 21 21" width="20" className="">
                   <path
