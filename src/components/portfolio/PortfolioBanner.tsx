@@ -38,6 +38,8 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
           className="block md:hidden w-full h-[310px] bg-cover bg-[position:58%_10%] bg-no-repeat"
           style={{
             backgroundImage: `
+             linear-gradient(359.17deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 120.15%),
+                  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('/images/portfolio-banner.jpg')
           `,
           }}
