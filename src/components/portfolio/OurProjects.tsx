@@ -308,7 +308,7 @@ const OurProjects = () => {
   };
 
   return (
-    <section id="ourProjects" className="md:pt-[90px] pt-[60px]">
+    <section id="ourProjects" className="md:pt-[90px] pt-[50px]">
 
       <div className="container mx-auto px-4 overflow-hidden">
         <h2 className="font-[700] font-source text-center text-title md:mb-0 mb-3 slide-up">
@@ -316,7 +316,7 @@ const OurProjects = () => {
         </h2>
         
         {/* Category Tabs */}
-        <ul className="nav-tabs nav slide-up font-source pt-[80px]">
+        <ul className="nav-tabs nav slide-up font-source md:pt-[80px] pt-[20px]">
           {categories.map((category: string) => (
             <li className='nav-item font-source subheading'>
             <button
@@ -337,7 +337,7 @@ const OurProjects = () => {
         {/* Projects Grid */}
         <div className="project-cards-inner">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-[50px] pb-[120px] gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:pt-[50px] pt-[20px] pb-[120px] gap-10">
               {filteredProjects.map((project: Project, index: number) => (
                 <div 
                   key={project.id}
