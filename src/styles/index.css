@@ -594,7 +594,8 @@
   } */
 
   .mobile-none img {
-    width: 40px;
+    width: 45px;
+    height: 45px;
   }
   .work-with-us-features .mobile-none {
     display: none;
