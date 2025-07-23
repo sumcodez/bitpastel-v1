@@ -1021,4 +1021,7 @@ padding-bottom:20px;
 .nav-tabs .nav-link.active-category {
     min-width: auto;
 }
+ .nav {
+      padding-bottom: 12px;
+  }
 }
