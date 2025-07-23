@@ -570,12 +570,6 @@ input:focus-visible {
   }
 }
 
-/* @media screen and (max-width:430px){
-  .whatspp-bubble{
-  bottom: 300px !important;
-  }
-} */
-
 .nav-item.current svg {
   fill: var(--primary-teal);
 }
@@ -1054,11 +1048,7 @@ a.modal-open svg {
   }
 }
 
-@media screen and (max-width:391px) {
-.whatspp-bubble{
-    bottom: 24%;
-}
-}
+
 
 @media screen and (max-width: 767px) {
     .life-at-bitpastel .common-lb {

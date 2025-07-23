@@ -955,10 +955,13 @@ padding-bottom:20px;
   fill: #008B8B;
 }
 
+#culture .arrow-icon{
+  margin-left: auto !important;
+}
 
 /* ===================whatsapp icon ================ */
 
-
+/* 
 @media only screen and (device-width: 393px) and (device-height: 852px){
   .whatspp-bubble {
     bottom: 350px !important;
@@ -977,4 +980,4 @@ padding-bottom:20px;
     .whatspp-bubble {
         bottom: 305px !important;
     }
-}
+} */
