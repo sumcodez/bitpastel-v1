@@ -117,7 +117,7 @@ const CultureSection = () => {
                     {feature.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="leading-[normal] font-roboto text-[16px] mb-2"
+                        className="leading-[normal] font-roboto text-[13px] mb-2"
                       >
                         {item}
                       </li>

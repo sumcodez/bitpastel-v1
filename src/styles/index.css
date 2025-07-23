@@ -979,8 +979,6 @@ padding-bottom:20px;
   }
 
 
-  /* For WebKit browsers (Chrome, Safari, Edge) */
-
 
   
   @media screen and (min-width:1024px) {
@@ -1007,9 +1005,10 @@ padding-bottom:20px;
 }
 
 .nav::-webkit-scrollbar-button {
-    display: none; /* Hide arrows */
+    display: none; 
 }
 }
+
 @media screen and (max-width:1024px) {
   .nav-tabs .nav-link.active-category {
     border-color: #00A974 #00A974 #00A974 !important;
