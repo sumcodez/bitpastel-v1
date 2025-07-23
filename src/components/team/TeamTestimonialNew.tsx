@@ -16,75 +16,76 @@ const TeamTestimonialNew = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Shovan",
-      image: "/images/Testimonial Section/Images/Shovan.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Shovan Kar/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Shovan Kar/right.png"
+      name: 'Shovan',
+      image: '/images/Testimonial Section/Images/Shovan.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Shovan Kar/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Shovan Kar/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Shovan Kar/right.png',
+      rightSideTestimonialMob:
+        '/images/Testimonial Section/Chat boxes/Shovan Kar/mobile-right.webp',
     },
     {
       id: 2,
-      name: "Suman",
-      image: "/images/Testimonial Section/Images/Suman.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Suman Naskar/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Suman Naskar/right.png"
+      name: 'Suman',
+      image: '/images/Testimonial Section/Images/Suman.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Suman Naskar/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Suman Naskar/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Suman Naskar/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/Suman Naskar/right.png',
     },
     {
       id: 3,
-      name: "Ibrahim",
-      image: "/images/Testimonial Section/Images/Ibrahim.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png"
+      name: 'Ibrahim',
+      image: '/images/Testimonial Section/Images/Ibrahim.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Md Ibrahim/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/Md Ibrahim/right.png',
     },
     {
       id: 4,
-      name: "Sneha",
-      image: "/images/Testimonial Section/Images/sneha.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/sneha mondal/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/sneha mondal/right.png"
+      name: 'Sneha',
+      image: '/images/Testimonial Section/Images/sneha.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/sneha mondal/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/sneha mondal/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/sneha mondal/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/sneha mondal/right.png',
     },
     {
       id: 5,
-      name: "Sourav",
-      image: "/images/Testimonial Section/Images/Sourav.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Sourav Saha/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Sourav Saha/right.png"
+      name: 'Sourav',
+      image: '/images/Testimonial Section/Images/Sourav.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Sourav Saha/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Sourav Saha/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Sourav Saha/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/Sourav Saha/right.png',
     },
     {
       id: 6,
-      name: "Aditi",
-      image: "/images/Testimonial Section/Images/Aditi.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Aditi sau/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Aditi sau/right.png"
+      name: 'Aditi',
+      image: '/images/Testimonial Section/Images/Aditi.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Aditi sau/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Aditi sau/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Aditi sau/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/Aditi sau/right.png',
     },
     {
       id: 7,
-      name: "Mousumi",
-      image: "/images/Testimonial Section/Images/Mousumi.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png"
+      name: 'Mousumi',
+      image: '/images/Testimonial Section/Images/Mousumi.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.png',
     },
     {
       id: 8,
-      name: "Bony",
-      image: "/images/Testimonial Section/Images/Bony.png",
-      testimonialDesk: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
-      testimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/left.png",
-      rightSideTestimonial: "/images/Testimonial Section/Chat boxes/bony malakar/right.png",
-      rightSideTestimonialMob: "/images/Testimonial Section/Chat boxes/bony malakar/right.png"
+      name: 'Bony',
+      image: '/images/Testimonial Section/Images/Bony.png',
+      testimonialDesk: '/images/Testimonial Section/Chat boxes/bony malakar/left.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes/bony malakar/left.png',
+      rightSideTestimonial: '/images/Testimonial Section/Chat boxes/bony malakar/right.png',
+      rightSideTestimonialMob: '/images/Testimonial Section/Chat boxes/bony malakar/right.png',
     },
   ];
 
@@ -115,11 +116,11 @@ const TeamTestimonialNew = () => {
         easing: 'ease-in-out',
         once: true, // Changed to false to allow multiple animations
         offset: 120,
-        delay: 0
+        delay: 0,
       });
       setAosInitialized(true);
     };
-    
+
     if (!aosInitialized) {
       initAOS();
     }
@@ -130,7 +131,7 @@ const TeamTestimonialNew = () => {
 
     const interval = setInterval(() => {
       setCurrentIndices(getRandomIndices());
-      setAnimationKey(prev => prev + 1);
+      setAnimationKey((prev) => prev + 1);
     }, 30000);
 
     return () => clearInterval(interval);
@@ -153,23 +154,31 @@ const TeamTestimonialNew = () => {
   const currentStrip3 = testimonials[currentIndices[2]];
 
   return (
-    <section key={animationKey} className='md:pt-0 pt-[40px]'>
+    <section key={animationKey} className="md:pt-0 pt-[40px]">
       <div className="testimonial testimonial-first">
         <img
           alt={`${currentStrip1.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip1.image}
-            data-aos="animated-up"
-            data-aos-duration="600"
-            data-aos-anchor-placement="top-bottom"
+          data-aos="animated-up"
+          data-aos-duration="600"
+          data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip1.name}'s Testimonial`}
-          className="testimonial-data"
+          className="testimonial-data md:block hidden"
           src={currentStrip1.testimonialDesk}
-         data-aos="animated-left"
-            data-aos-duration="600"
-            data-aos-anchor=".testimonial-first .testimonial-person-image"
+          data-aos="animated-left"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-first .testimonial-person-image"
+        />
+        <img
+          alt={`${currentStrip1.name}'s Testimonial`}
+          className="testimonial-data md:hidden block"
+          src={currentStrip1.testimonialMob}
+          data-aos="animated-left"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-first .testimonial-person-image"
         />
       </div>
       <div className="testimonial testimonial-second">
@@ -177,17 +186,25 @@ const TeamTestimonialNew = () => {
           alt={`${currentStrip2.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip2.image}
-           data-aos="animated-up"
-            data-aos-duration="600"
-            data-aos-anchor-placement="top-bottom"
+          data-aos="animated-up"
+          data-aos-duration="600"
+          data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip2.name}'s Testimonial`}
-          className="testimonial-data"
+          className="testimonial-data md:block hidden"
           src={currentStrip2.rightSideTestimonial}
-         data-aos="animated-right"
-            data-aos-duration="600"
-            data-aos-anchor=".testimonial-second .testimonial-person-image"
+          data-aos="animated-right"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-second .testimonial-person-image"
+        />
+        <img
+          alt={`${currentStrip2.name}'s Testimonial`}
+          className="testimonial-data md:hidden block"
+          src={currentStrip2.rightSideTestimonialMob}
+          data-aos="animated-right"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-second .testimonial-person-image"
         />
       </div>
       <div className="testimonial testimonial-third">
@@ -195,21 +212,29 @@ const TeamTestimonialNew = () => {
           alt={`${currentStrip3.name}'s image`}
           className="testimonial-person-image"
           src={currentStrip3.image}
-           data-aos="animated-up"
-            data-aos-duration="600"
-            data-aos-anchor-placement="top-bottom"
+          data-aos="animated-up"
+          data-aos-duration="600"
+          data-aos-anchor-placement="top-bottom"
         />
         <img
           alt={`${currentStrip3.name}'s Testimonial`}
-          className="testimonial-data"
+          className="testimonial-data md:block hidden"
+          src={currentStrip3.testimonialDesk}
+          data-aos="animated-left"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-third .testimonial-person-image"
+        />
+        <img
+          alt={`${currentStrip3.name}'s Testimonial`}
+          className="testimonial-data md:hidden block"
           src={currentStrip3.testimonialMob}
-         data-aos="animated-left"
-            data-aos-duration="600"
-            data-aos-anchor=".testimonial-third .testimonial-person-image"
+          data-aos="animated-left"
+          data-aos-duration="600"
+          data-aos-anchor=".testimonial-third .testimonial-person-image"
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default TeamTestimonialNew;
