@@ -334,7 +334,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           alt={testimonial.name}
           width={56}
           height={56}
-          className="rounded-full object-cover md:h-[56px] md:w-[56px] w-[30px] h-[30px]"
+          className="rounded-full object-cover md:h-[56px] md:w-[56px] w-[40px] h-[40px]"
         />
         <div>
           <h4 className={`font-[600] ${isMobile ? 'text-[12px]' : 'paragraph'} font-source`}>
