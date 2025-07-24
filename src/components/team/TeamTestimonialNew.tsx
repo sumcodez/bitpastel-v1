@@ -17,7 +17,7 @@ const TeamTestimonialNew = () => {
     {
       id: 1,
       name: 'Shovan',
-      image: '/images/Testimonial Section/Images/Shovan.png',
+      image: '/images/Testimonial Section/Images/Shovan.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Shovan Kar/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Shovan Kar/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Shovan Kar/right.webp',
@@ -27,7 +27,7 @@ const TeamTestimonialNew = () => {
     {
       id: 2,
       name: 'Suman',
-      image: '/images/Testimonial Section/Images/Suman.png',
+      image: '/images/Testimonial Section/Images/Suman.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Suman Naskar/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Suman Naskar/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Suman Naskar/right.webp',
@@ -36,7 +36,7 @@ const TeamTestimonialNew = () => {
     {
       id: 3,
       name: 'Ibrahim',
-      image: '/images/Testimonial Section/Images/Ibrahim.png',
+      image: '/images/Testimonial Section/Images/Ibrahim.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Md Ibrahim/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Md Ibrahim/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Md Ibrahim/right.webp',
@@ -45,7 +45,7 @@ const TeamTestimonialNew = () => {
     {
       id: 4,
       name: 'Sneha',
-      image: '/images/Testimonial Section/Images/sneha.png',
+      image: '/images/Testimonial Section/Images/sneha.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/sneha mondal/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/sneha mondal/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/sneha mondal/right.webp',
@@ -54,7 +54,7 @@ const TeamTestimonialNew = () => {
     {
       id: 5,
       name: 'Sourav',
-      image: '/images/Testimonial Section/Images/Sourav.png',
+      image: '/images/Testimonial Section/Images/Sourav.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Sourav Saha/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Sourav Saha/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Sourav Saha/right.webp',
@@ -63,7 +63,7 @@ const TeamTestimonialNew = () => {
     {
       id: 6,
       name: 'Aditi',
-      image: '/images/Testimonial Section/Images/Aditi.png',
+      image: '/images/Testimonial Section/Images/Aditi.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Aditi sau/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Aditi sau/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Aditi sau/right.webp',
@@ -72,7 +72,7 @@ const TeamTestimonialNew = () => {
     {
       id: 7,
       name: 'Mousumi',
-      image: '/images/Testimonial Section/Images/Mousumi.png',
+      image: '/images/Testimonial Section/Images/Mousumi.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Mousumi sengupta/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Mousumi sengupta/right.webp',
@@ -81,7 +81,7 @@ const TeamTestimonialNew = () => {
     {
       id: 8,
       name: 'Bony',
-      image: '/images/Testimonial Section/Images/Bony.png',
+      image: '/images/Testimonial Section/Images/Bony.webp',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/bony malakar/left.webp',
       testimonialMob: '/images/Testimonial Section/Chat boxes mobile/bony malakar/left.webp',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/bony malakar/right.webp',
