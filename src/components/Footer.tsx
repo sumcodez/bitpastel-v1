@@ -148,8 +148,8 @@ const Footer = () => {
         />
       </svg>
     );
-  }
-  
+  };
+
   // Helper component for Stories icon
   const StoriesIcon = ({ active }: { active: boolean }) => {
     if (active) {
@@ -187,9 +187,9 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <div className="desktop-footer bg-primary-dark text-white lg:pt-16 pt-12 lg:pb-6 pb-20 footer">
+        <div className="desktop-footer bg-primary-dark text-white lg:pt-16 pt-10 lg:pb-6 pb-16 footer">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[90px] lg:gap-8 mb-8 align-top footer-wrapper">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[60px] lg:gap-8 mb-8 align-top footer-wrapper">
               <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
                 <Link
                   href="/"
@@ -211,10 +211,10 @@ const Footer = () => {
                     alt="Bitpastel Logo"
                     width={196}
                     height={75}
-                    className="h-12 w-auto"
+                    className="h-12 w-auto lg:block hidden"
                   />
                 </Link>
-                <p className="lg:hidden leading-[1] block lg:mt-0 mt-8 h-[40px] lg:pb-6 pb-2 type-footer text-[13px]">
+                <p className="lg:hidden leading-[1] block lg:mt-0 mt-0 h-[35px] lg:pb-6 type-footer text-[13px]">
                   INFORMATION
                 </p>
                 <div className="text-[13px] lg:mb-0 mb-[1rem] leading-relaxed block">
@@ -295,8 +295,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="lg:max-w-[300px] mx-auto w-full">
-                <p className="h-[50px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
-                <div className="grid grid-cols-2">
+                <p className="lg:h-[50px] h-[32px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
+
+                <div className="lg:grid grid-cols-2 hidden">
                   <div className="">
                     <div className="space-y-4 text-[13px]">
                       <div className="block text-[13px]">
@@ -406,12 +407,122 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
+                <div className="lg:hidden mx-auto max-w-[450px]">
+                  <div className='grid grid-cols-4 gap-[5px] items-center'>
+                    <div className="block text-[13px]">
+                      <Link
+                        href="/"
+                        onClick={(e) => {
+                          if (isHomePage && isClient) {
+                            e.preventDefault();
+                            window.history.pushState({}, '', '/');
+                            window.scrollTo({
+                              top: 0,
+                              behavior: 'smooth',
+                            });
+                          } else {
+                            setPendingScroll(null);
+                          }
+                        }}
+                        className="hover:text-gray-300 transition-colors ml-[-5px]"
+                      >
+                        Home
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <button
+                        onClick={(e) => handleSectionClick(e, 'culture')}
+                        className="hover:text-gray-300 text-[13px] ml-[-12px] transition-colors"
+                      >
+                        About
+                      </button>
+                    </div>
+                    {/* <div className="block text-[13px]">
+                        <Link
+                          href="/portfolio"
+                          className="hover:text-gray-300 transition-colors"
+                        >
+                          Portfolio
+                        </Link>
+                      </div> */}
+                    <div className="block text-[13px]">
+                      <button
+                        onClick={(e) => handleSectionClick(e, 'services')}
+                        className="hover:text-gray-300 text-[13px] transition-colors"
+                      >
+                        Services
+                      </button>
+                    </div>
+                    <div className="block text-[13px]">
+                      <button
+                        onClick={(e) => handleSectionClick(e, 'stories')}
+                        className="hover:text-gray-300 ml-[-10px] text-[13px] transition-colors"
+                      >
+                        Stories
+                      </button>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link
+                        href="/culture"
+                        onClick={(e) => {
+                          if (pathname === '/culture') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                          setCurrentTab('culture');
+                        }}
+                        className="block hover:text-gray-300 transition-colors"
+                      >
+                        Culture
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <button
+                        onClick={(e) => handleSectionClick(e, 'client')}
+                        className="block hover:text-gray-300 text-[13px] mx-auto transition-colors cursor-pointer"
+                      >
+                        Clientele
+                      </button>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link
+                        href="/careers"
+                        onClick={(e) => {
+                          if (pathname === '/careers') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                          setCurrentTab('careers');
+                        }}
+                        // onClick={(e) => handleNavigation("/careers", e)}
+
+                        className="block hover:text-gray-300 ml-[-5px] transition-colors"
+                      >
+                        Careers
+                      </Link>
+                    </div>
+                    <div className="block text-[13px]">
+                      <Link
+                        href="/partners"
+                        onClick={(e) => {
+                          if (pathname === '/partners') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                        }}
+                        className="block hover:text-gray-300 transition-colors cursor-pointer"
+                      >
+                        Partners
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="text-[13px] lg:space-y-0 space-y-4 lg:ml-auto col-start-1 lg:col-span-1 lg:col-start-auto">
-                <p className="lg:hidden block mt-6 text-[13px] lg:pb-6 pb-2 type-footer leading-[1]">
+                <p className="lg:hidden block mt-0 text-[13px] lg:pb-6 pb-0 type-footer leading-[1]">
                   CONNECT WITH US
                 </p>
-                <div className="lg:hidden flex space-x-4 pt-2 lg:pt-0 social-media-wrapper">
+                <div className="lg:hidden flex gap-[30px]  pt-2 lg:pt-0 social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a
                       href="https://www.facebook.com/bitpastel"
@@ -456,7 +567,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="hidden lg:block h-[50px] type-footer leading-[1] text-[13px]">
+                  <p className="hidden lg:block lg:h-[50px] h-[32px] type-footer leading-[1] text-[13px]">
                     INFORMATION
                   </p>
                   <div className="lg:block hidden mt-0 space-y-4">

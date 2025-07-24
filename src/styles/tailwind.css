@@ -968,6 +968,7 @@ a.modal-open svg {
   }
   .become-partner-form-area {
     margin-top: 20px;
+    overflow: hidden;
   }
   .become-partner-circle svg {
     width: 50px;
