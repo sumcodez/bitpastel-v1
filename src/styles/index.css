@@ -747,7 +747,7 @@ height: 370px;
 
 @media only screen and (device-width: 1024px) and (device-height:1366px) {
 .testimonial .testimonial-person-image {
-        max-width: 340px;
+        max-width: 350px;
     }
     .testimonial .testimonial-data {
         max-width: 460px;
