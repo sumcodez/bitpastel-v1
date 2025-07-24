@@ -19,10 +19,10 @@ const TeamTestimonialNew = () => {
       name: 'Shovan',
       image: '/images/Testimonial Section/Images/Shovan.png',
       testimonialDesk: '/images/Testimonial Section/Chat boxes/Shovan Kar/left.png',
-      testimonialMob: '/images/Testimonial Section/Chat boxes/Shovan Kar/shovan-left-mob.png',
+      testimonialMob: '/images/Testimonial Section/Chat boxes mobile/Shovan Kar/left.png',
       rightSideTestimonial: '/images/Testimonial Section/Chat boxes/Shovan Kar/right.png',
       rightSideTestimonialMob:
-        '/images/Testimonial Section/Chat boxes/Shovan Kar/shovan-right-mob.webp',
+        '/images/Testimonial Section/Chat boxes mobile/Shovan Kar/right.webp',
     },
     {
       id: 2,
