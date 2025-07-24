@@ -810,6 +810,21 @@ height: 300px;
 }
 @media screen and (max-width:376px) {
    .testimonial .testimonial-person-image{
+    max-width: 185px;
+  }
+  .testimonial .testimonial-data{
+  max-width: 185px;
+}
+    .testimonial-first .testimonial-data, .testimonial-third .testimonial-data {
+        margin-left: -45px;
+    }
+        .testimonial-second .testimonial-data {
+        margin-right: -45px;
+    }
+}
+
+@media screen and (max-width:370px) {
+   .testimonial .testimonial-person-image{
     max-width: 170px;
   }
   .testimonial .testimonial-data{
