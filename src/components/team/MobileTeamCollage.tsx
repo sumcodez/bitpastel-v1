@@ -379,7 +379,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">Escape Rooms</h2>
-          <p className="text-left text-[12px] text-white">#Mysteryrooms #Officefuntime</p>
+          <p className="text-left text-[12px] text-white">#MysteryRooms #CanYouEscape #RealLifeEscapeExperience</p>
         </div>
       </div>
 
@@ -421,7 +421,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Interactive Team Mission
           </h2>
-          <p className="text-left text-[12px] text-white">#officegames #Interacivegames</p>
+          <p className="text-left text-[12px] text-white">#TeamBuilding  #BlockByBlock</p>
         </div>
       </div>
 
@@ -440,7 +440,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">Bitpastel Turns 8</h2>
-          <p className="text-left text-[12px] text-white">#team #teamouting</p>
+          <p className="text-left text-[12px] text-white">#TeamGoals #MilestoneMoment</p>
         </div>
       </div>
 
@@ -458,7 +458,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Ice Breaker - Coffe Evening
           </h2>
-          <p className="text-left text-[12px] text-white">#Coffeetime #employee_interactions</p>
+          <p className="text-left text-[12px] text-white">#CoffeeAndConversations #BrewingConnections</p>
         </div>
       </div>
 
@@ -476,7 +476,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Christmas Celebration at Office 2024
           </h2>
-          <p className="text-left text-[12px] text-white">#Christmas_celebration #festival</p>
+          <p className="text-left text-[12px] text-white">#ChristmasCelebration #FestiveVibes</p>
         </div>
       </div>
 
@@ -494,7 +494,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Ethnic Day Celebration at Office 2024
           </h2>
-          <p className="text-left text-[12px] text-white">#Traditionalwear #ethnic_wear</p>
+          <p className="text-left text-[12px] text-white">#BitpastelEthnicDay #TraditionMeetsStyle</p>
         </div>
       </div>
 
@@ -512,7 +512,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Birthday Celebration at Office
           </h2>
-          <p className="text-left text-[12px] text-white">#birthday #office_celebrations</p>
+          <p className="text-left text-[12px] text-white">#BirthdayCheers #CakeTime</p>
         </div>
       </div>
 
@@ -530,7 +530,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Work Aniversary Celebration at Office 2024
           </h2>
-          <p className="text-left text-[12px] text-white">#office_culture #cake_cutting</p>
+          <p className="text-left text-[12px] text-white">#CelebratingSuccess #CheersToYears</p>
         </div>
       </div>
 
@@ -546,7 +546,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">Team Meetup</h2>
-          <p className="text-left text-[12px] text-white">#Group_Lunch #Team</p>
+          <p className="text-left text-[12px] text-white">#LunchWithColleagues #CheersToYears</p>
         </div>
       </div>
 
@@ -564,7 +564,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Bitpastel Townhall 2024
           </h2>
-          <p className="text-left text-[12px] text-white">#Townhall #office_culture</p>
+          <p className="text-left text-[12px] text-white">#BuildingTheFuture #TogetherWeGrow</p>
         </div>
       </div>
 
@@ -582,7 +582,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Bitpastel Townhall 2023
           </h2>
-          <p className="text-left text-[12px] text-white">#6th_year #celebration</p>
+          <p className="text-left text-[12px] text-white">#OurJourney2023 #TownhallHighlights</p>
         </div>
       </div>
 
@@ -600,7 +600,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Culture at Bitpastel
           </h2>
-          <p className="text-left text-[12px] text-white">#team #teamwork</p>
+          <p className="text-left text-[12px] text-white">#CultureDriven #ThrivingAtWork</p>
         </div>
       </div>
 
@@ -618,7 +618,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Year-end Celebration 2022
           </h2>
-          <p className="text-left text-[12px] text-white ">#Movie #Officefun</p>
+          <p className="text-left text-[12px] text-white ">#BitpastelMovieMoments #BuildingStrongerTeams</p>
         </div>
       </div>
 
@@ -636,7 +636,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Sunday Brunch at Westin
           </h2>
-          <p className="text-left text-[12px] text-white">#brunch #westin_hotel</p>
+          <p className="text-left text-[12px] text-white">#WeekendWithTeam #WestinBrunch</p>
         </div>
       </div>
 
@@ -654,7 +654,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Bitpastel Townhall 2022
           </h2>
-          <p className="text-left text-[12px] text-white">#Townhall22 #awards</p>
+          <p className="text-left text-[12px] text-white">#Townhall2022 #VisionAndValues</p>
         </div>
       </div>
 
@@ -672,7 +672,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Bitpastel Townhall 2021
           </h2>
-          <p className="text-left text-[12px] text-white">#townhall #Officefuntime</p>
+          <p className="text-left text-[12px] text-white">#Milestones2021 #FoundationsOfGrowth</p>
         </div>
       </div>
 
