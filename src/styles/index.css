@@ -550,7 +550,7 @@
 
   .collapsible-element {
     width: calc(100% + 30px);
-    visibility: visible;
+    visibility: hidden;
     height: 100%;
     position: absolute;
     top: 0;
@@ -566,6 +566,7 @@
 /* Odd children (1, 3, 5, 7...) */
 .our-services-wrapper .card-element.active:nth-child(odd) .collapsible-element {
   left: calc(100% - 14px) !important;
+  visibility: visible;
   padding-left: 30px;
   z-index: 1;
 }
@@ -573,6 +574,7 @@
 /* Even children (2, 4, 6, 8...) */
 .our-services-wrapper .card-element.active:nth-child(even) .collapsible-element {
   left: calc(-100% - 16px) !important;
+  visibility: visible;
   z-index: 1;
   padding-right: 30px;
 }
@@ -595,7 +597,7 @@
 
   .mobile-none img {
     width: 45px;
-    height: 45px;
+    /* height: 45px; */
   }
   .work-with-us-features .mobile-none {
     display: none;

@@ -295,7 +295,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="lg:max-w-[300px] mx-auto w-full">
-                <p className="lg:h-[50px] h-[32px] type-footer leading-[1] text-[13px]">QUICK LINKS</p>
+                <p className="lg:h-[50px] h-[32px] type-footer leading-[1] text-[13px]">
+                  QUICK LINKS
+                </p>
 
                 <div className="lg:grid grid-cols-2 hidden">
                   <div className="">
@@ -408,7 +410,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="lg:hidden mx-auto max-w-[450px]">
-                  <div className='grid grid-cols-4 gap-[5px] items-center'>
+                  <div className="grid grid-cols-4 gap-[5px] items-center">
                     <div className="block text-[13px]">
                       <Link
                         href="/"
