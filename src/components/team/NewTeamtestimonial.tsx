@@ -142,7 +142,7 @@ const NewTeamtestimonial = () => {
   return (
     <section className="relative overflow-hidden" key={animationKey}>
       <div className="team-first-banner mx-auto">
-        {/* First strip */}
+        
         <div className="first relative">
           <img
             alt={`${currentStrip1.name}'s image`}
@@ -170,7 +170,7 @@ const NewTeamtestimonial = () => {
           />
         </div>
 
-        {/* Second strip */}
+        
         <div className="second relative">
           <img
             alt={`${currentStrip2.name}'s image`}
@@ -198,7 +198,7 @@ const NewTeamtestimonial = () => {
           />
         </div>
 
-        {/* Third strip */}
+       
         <div className="third relative">
           <img
             alt={`${currentStrip3.name}'s image`}
@@ -225,6 +225,7 @@ const NewTeamtestimonial = () => {
             data-aos-anchor=".third .testi-image"
           />
         </div>
+
       </div>
     </section>
   );

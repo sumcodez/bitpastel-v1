@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Image from 'next/image';
 const TeamTestimonials = () => {
   return (
-    <section className='md:pt-0 pt-14'>
+    <section className="md:pt-0 pt-14">
       <div className="bg-[rgba(85,184,208,1)]">
         <div className="container px-4 mx-auto">
           <div className="flex items-center md:flex-row flex-col ">
