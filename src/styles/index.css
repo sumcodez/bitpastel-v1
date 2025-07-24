@@ -721,6 +721,9 @@ margin-top:0 !important;
       padding-top: 40px;
 }
 
+
+
+
 @media screen and (max-width:1024px) {
   .testimonial{
     gap:5%;
@@ -739,8 +742,17 @@ margin-top:0 !important;
 .testimonial-second{
 height: 370px;
   margin-top: -30px;
-
 }
+}
+
+@media only screen and (device-width: 1024px) and (device-height:1366px) {
+.testimonial .testimonial-person-image {
+        max-width: 340px;
+    }
+    .testimonial .testimonial-data {
+        max-width: 460px;
+    }
+
 }
 
 
