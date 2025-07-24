@@ -421,7 +421,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
             Interactive Team Mission
           </h2>
-          <p className="text-left text-[12px] text-white">#TeamBuilding  #BlockByBlock</p>
+          <p className="text-left text-[12px] text-white">#TeamBuilding #BlockByBlock</p>
         </div>
       </div>
 
@@ -456,7 +456,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
-            Ice Breaker - Coffe Evening
+            Ice Breaker - Coffee Evening
           </h2>
           <p className="text-left text-[12px] text-white">#CoffeeAndConversations #BrewingConnections</p>
         </div>
@@ -528,7 +528,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">
-            Work Aniversary Celebration at Office 2024
+            Work Anniversary Celebration at Office 2024
           </h2>
           <p className="text-left text-[12px] text-white">#CelebratingSuccess #CheersToYears</p>
         </div>
@@ -546,7 +546,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
         </div>
         <div className="px-8">
           <h2 className="text-[16px] text-left font-[700] leading-[normal]">Team Meetup</h2>
-          <p className="text-left text-[12px] text-white">#LunchWithColleagues #CheersToYears</p>
+          <p className="text-left text-[12px] text-white">#LunchWithColleagues #TeamBonding</p>
         </div>
       </div>
 
