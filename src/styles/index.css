@@ -765,16 +765,16 @@ height: 300px;
 }
 @media screen and (max-width:540px) {
       .testimonial-second {
-         clip-path: polygon(0 13%, 100% 0, 100% 100%, 0 85%);
+         clip-path: polygon(0 13%, 100% 0, 100% 100%, 0 87%);
         margin-top: -20px;
     }
     .testimonial-first,
 .testimonial-third{
-  margin-top: -25px;
+  margin-top: -20px;
 }
   .testimonial{
     padding: 0 20px;
-    height: 230px;
+    height: 200px;
   }
    .testimonial .testimonial-person-image{
     max-width: 170px;
@@ -782,60 +782,56 @@ height: 300px;
 .testimonial-first .testimonial-data,
 .testimonial-third .testimonial-data
 {
-  max-width: 200px;
-  margin-left: -40px;
+  max-width: 180px;
+  margin-left: 0px;
 }
 .testimonial-second .testimonial-data{
-  max-width: 200px;
-  margin-right: -40px;
+  max-width: 180px;
+  margin-right: 0px;
 }
 .testimonial-first .testimonial-data{
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: auto;
 }
-.testimonial-third,
 .testimonial-second {
-  height: 260px;
+  height: 220px;
 }
 .testimonial-second .testimonial-data
 {
     margin-bottom: auto;
-    margin-top: 45px;
+    margin-top: 35px;
 }
 .testimonial-third .testimonial-data
 {
     margin-bottom: auto;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 }
 @media screen and (max-width:376px) {
-   .testimonial .testimonial-person-image{
-    max-width: 185px;
-  }
-  .testimonial .testimonial-data{
-  max-width: 185px;
-}
     .testimonial-first .testimonial-data, .testimonial-third .testimonial-data {
-        margin-left: -45px;
+        margin-left: -20px;
     }
         .testimonial-second .testimonial-data {
-        margin-right: -45px;
+        margin-right: -20px;
     }
 }
 
-@media screen and (max-width:370px) {
-   .testimonial .testimonial-person-image{
-    max-width: 170px;
-  }
-  .testimonial .testimonial-data{
-  max-width: 170px;
-}
-    .testimonial-first .testimonial-data, .testimonial-third .testimonial-data {
-        margin-left: -64px;
+@media screen and (max-width:350px) {
+  .testimonial-first .testimonial-data, .testimonial-third .testimonial-data {
+        margin-left: -25px;
     }
         .testimonial-second .testimonial-data {
-        margin-right: -60px;
+        margin-right: -25px;
     }
+      .testimonial .testimonial-person-image{
+    max-width: 150px;
+  }
+.testimonial-first .testimonial-data,
+.testimonial-second .testimonial-data,
+.testimonial-third .testimonial-data
+{
+  max-width: 150px;
+}
 }
 
 
