@@ -12,9 +12,6 @@ interface Testimonial {
 }
 
 
-// bg-[#CEEEF6] 
-
-
 interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
 }

@@ -161,7 +161,10 @@ const BecomePartner = () => {
 
   if (isSuccess) {
     return (
-      <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
+      <section
+        className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]"
+        id="become-a-partner"
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-1 grid-cols-1 font-source">
             <div className="">
@@ -180,15 +183,19 @@ const BecomePartner = () => {
                     />
                   </svg>
                 </div>
-                <div className=''>
-                <h2 className="font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] text-title py-[15px]">Become a Partner</h2>
+                <div className="">
+                  <h2 className="font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] text-title py-[15px]">
+                    Become a Partner
+                  </h2>
                 </div>
               </div>
             </div>
             <div className="md:mt-10 mt-0">
               <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg h-full min-h-[400px] flex items-center justify-center">
                 <div className="text-white text-center rounded w-full">
-                  <p className="subheading font-[700] font-source">Thank You for connecting with us!</p>
+                  <p className="subheading font-[700] font-source">
+                    Thank You for connecting with us!
+                  </p>
                 </div>
               </div>
             </div>
@@ -199,7 +206,10 @@ const BecomePartner = () => {
   }
 
   return (
-    <section className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]" id="become-a-partner">
+    <section
+      className="become-partner-area lg:max-w-[500px] max-w-full mx-auto md:py-[77px] py-[55px]"
+      id="become-a-partner"
+    >
       <div className="grid lg:grid-cols-1 md:grid-cols-2">
         {/* Icon & Heading Section (Above) */}
         <div className="flex-col flex lg:grid lg:grid-cols-[auto_1fr] md:text-left  text-center lg:gap-[30px] gap-0 lg:items-center md:items-start items-center md:mb-10">
@@ -219,9 +229,10 @@ const BecomePartner = () => {
           </div>
 
           <div>
-          <h2 className=" font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-[15px] text-title">Become a Partner</h2>
+            <h2 className=" font-[600] text-3xl text-title font-source title lg:py-[0] md:py-[25px] py-[15px] text-title">
+              Become a Partner
+            </h2>
           </div>
-
         </div>
 
         {/* Form Section (Below) */}
@@ -266,113 +277,113 @@ const BecomePartner = () => {
               </div>
             </div>
           )}
-          
-              <form onSubmit={handleSubmit}>
-                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
-                  <div className="flex-1">
-                    <input
-                      autoComplete="new-text-4"
-                      readOnly
-                      onFocus={(e) => e.target.removeAttribute('readOnly')}
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
-                      className="subheading bg-transparent w-full"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  {errors.name && <span className="error-text">{errors.name}</span>}
-                </div>
-                <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
-                  <div className="flex-1">
-                    <input
-                      autoComplete="new-text-3"
-                      readOnly
-                      onFocus={(e) => e.target.removeAttribute('readOnly')}
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
-                      className="subheading bg-transparent w-full"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  {errors.email && <span className="error-text">{errors.email}</span>}
-                </div>
 
-                <div className={`relative flex gap-2 py-[7px] border-b-[1px] border-[#B2B2B2]`}>
-                  <PhoneInput
-                    international
-                    defaultCountry={defaultCountry as any}
-                    countryCallingCodeEditable={false}
-                    value={formData.phone}
-                    onChange={(value) => handlePhoneChange(value)}
-                    onKeyDown={(e: React.KeyboardEvent) => {
-                      const digitsOnly = formData.phone.replace(/\D/g, '');
-                      const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-                      if (
-                        digitsOnly.length >= 17 &&
-                        !allowedKeys.includes(e.key) &&
-                        /^\d$/.test(e.key)
-                      ) {
-                        e.preventDefault();
-                      }
-                    }}
-                    autoComplete="new-text-58564"
-                    placeholder="Mobile number (optional)"
-                    disabled={isSubmitting}
-                    className="!border-none lg:text-[16px] bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
-                  />
-                  {!formData.phone && (
-                    <p className="text-white lg:text-[16px] absolute md:top-[15px] lg:left-[100px] md:left-[68px] left-[75px] top-[12px] whitespace-nowrap font-[100] pointer-events-none">
-                      Mobile number(Optional)
-                    </p>
-                  )}
-                  {/* {errors.phone && (
+          <form onSubmit={handleSubmit}>
+            <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
+              <div className="flex-1">
+                <input
+                  autoComplete="new-text-4"
+                  readOnly
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  onBlur={() => setTouchedFields((prev) => ({ ...prev, name: true }))}
+                  className="subheading bg-transparent w-full"
+                  disabled={isSubmitting}
+                />
+              </div>
+              {errors.name && <span className="error-text">{errors.name}</span>}
+            </div>
+            <div className="become-input flex items-start border-b-[1px] relative border-[#B2B2B2]">
+              <div className="flex-1">
+                <input
+                  autoComplete="new-text-3"
+                  readOnly
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={() => setTouchedFields((prev) => ({ ...prev, email: true }))}
+                  className="subheading bg-transparent w-full"
+                  disabled={isSubmitting}
+                />
+              </div>
+              {errors.email && <span className="error-text">{errors.email}</span>}
+            </div>
+
+            <div className={`relative flex gap-2 py-[7px] border-b-[1px] border-[#B2B2B2]`}>
+              <PhoneInput
+                international
+                defaultCountry={defaultCountry as any}
+                countryCallingCodeEditable={false}
+                value={formData.phone}
+                onChange={(value) => handlePhoneChange(value)}
+                onKeyDown={(e: React.KeyboardEvent) => {
+                  const digitsOnly = formData.phone.replace(/\D/g, '');
+                  const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+                  if (
+                    digitsOnly.length >= 17 &&
+                    !allowedKeys.includes(e.key) &&
+                    /^\d$/.test(e.key)
+                  ) {
+                    e.preventDefault();
+                  }
+                }}
+                autoComplete="new-text-58564"
+                placeholder="Mobile number (optional)"
+                disabled={isSubmitting}
+                className="!border-none lg:text-[16px] bg-transparent font-roboto lg:gap-[25px] md:gap-0 gap-[5px] w-full !p-0 [&>input]:!text-[#ffffff] [&>input]:!subheading [&>input]:font-source [&>input]:font-thin [&>input]:focus:!outline-none [&>input]:!py-2 [&>input]:!flex-1 [&>input]:placeholder-[#B2B2B2]"
+              />
+              {!formData.phone && (
+                <p className="text-white lg:text-[16px] absolute md:top-[15px] lg:left-[100px] md:left-[68px] left-[75px] top-[16px] whitespace-nowrap font-[100] pointer-events-none">
+                  Mobile number(Optional)
+                </p>
+              )}
+              {/* {errors.phone && (
                     <p className="text-red-500 text-xs sm:text-sm whitespace-nowrap mb-[2px]">
                       {errors.phone}
                     </p>
                   )} */}
-                </div>
+            </div>
 
-                <div className="become-textarea flex items-start border-b-[1px] relative border-[#B2B2B2]">
-                  <div className="flex-1">
-                    <textarea
-                      autoComplete="new-text-178"
-                      readOnly
-                      onFocus={(e) => e.target.removeAttribute('readOnly')}
-                      name="message"
-                      placeholder="Your Message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="subheading bg-transparent w-full"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  {errors.message && <span className="error-text">{errors.message}</span>}
-                </div>
-                <button
-                  className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] md:w-auto w-full text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
-                  type="submit"
-                  disabled={isSubmitting || !isFormValid}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
-                </button>
-                {status && (
-                  <p
-                    className={`mt-3 text-center ${
-                      status.includes('Success') ? 'text-green-500' : 'text-red-500'
-                    }`}
-                  >
-                    {status}
-                  </p>
-                )}
-              </form>
+            <div className="become-textarea flex items-start border-b-[1px] relative border-[#B2B2B2]">
+              <div className="flex-1">
+                <textarea
+                  autoComplete="new-text-178"
+                  readOnly
+                  onFocus={(e) => e.target.removeAttribute('readOnly')}
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="subheading bg-transparent w-full"
+                  disabled={isSubmitting}
+                />
+              </div>
+              {errors.message && <span className="error-text">{errors.message}</span>}
+            </div>
+            <button
+              className="mt-[30px] bg-green-btn px-[20px] min-w-[140px] md:w-auto w-full text-primary-white min-h-[40px] rounded disabled:opacity-[0.65]"
+              type="submit"
+              disabled={isSubmitting || !isFormValid}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+            {status && (
+              <p
+                className={`mt-3 text-center ${
+                  status.includes('Success') ? 'text-green-500' : 'text-red-500'
+                }`}
+              >
+                {status}
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </section>

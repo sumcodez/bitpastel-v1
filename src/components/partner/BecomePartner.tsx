@@ -186,7 +186,9 @@ const BecomePartner = () => {
             <div className="px-[15px]">
               <div className="become-partner-form-area bg-[#1a1a1a] p-6 rounded-lg h-full min-h-[400px] flex items-center justify-center">
                 <div className="text-white p-6 text-center rounded w-full">
-                  <p className="subheading font-[700] font-source">Thank You for connecting with us!</p>
+                  <p className="subheading font-[700] font-source">
+                    Thank You for connecting with us!
+                  </p>
                 </div>
               </div>
             </div>
