@@ -777,17 +777,17 @@ height: 300px;
     height: 230px;
   }
    .testimonial .testimonial-person-image{
-    max-width: 200px;
+    max-width: 170px;
   }
 .testimonial-first .testimonial-data,
 .testimonial-third .testimonial-data
 {
-  max-width: 210px;
-  margin-left: -70px;
+  max-width: 200px;
+  margin-left: -40px;
 }
 .testimonial-second .testimonial-data{
-  max-width: 210px;
-  margin-right: -70px;
+  max-width: 200px;
+  margin-right: -40px;
 }
 .testimonial-first .testimonial-data{
   margin-top: 20px;
@@ -797,20 +797,30 @@ height: 300px;
 .testimonial-second {
   height: 260px;
 }
-.testimonial-third .testimonial-data,
 .testimonial-second .testimonial-data
 {
     margin-bottom: auto;
-    margin-top: 50px;
+    margin-top: 45px;
+}
+.testimonial-third .testimonial-data
+{
+    margin-bottom: auto;
+    margin-top: 60px;
 }
 }
 @media screen and (max-width:376px) {
    .testimonial .testimonial-person-image{
-    max-width: 200px;
+    max-width: 170px;
   }
   .testimonial .testimonial-data{
-  max-width: 200px;
+  max-width: 170px;
 }
+    .testimonial-first .testimonial-data, .testimonial-third .testimonial-data {
+        margin-left: -64px;
+    }
+        .testimonial-second .testimonial-data {
+        margin-right: -60px;
+    }
 }
 
 
