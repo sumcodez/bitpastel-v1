@@ -214,7 +214,7 @@ const Footer = () => {
                     className="h-12 w-auto lg:block hidden"
                   />
                 </Link>
-                <p className="lg:hidden leading-[1] block lg:mt-0 mt-0 h-[35px] lg:pb-6 type-footer text-[13px]">
+                <p className="lg:hidden leading-[1] block lg:mt-0 mt-0 h-[32px] lg:pb-6 type-footer text-[13px]">
                   INFORMATION
                 </p>
                 <div className="text-[13px] lg:mb-0 mb-[1rem] leading-relaxed block">
@@ -522,7 +522,7 @@ const Footer = () => {
                 <p className="lg:hidden block mt-0 text-[13px] lg:pb-6 pb-0 type-footer leading-[1]">
                   CONNECT WITH US
                 </p>
-                <div className="lg:hidden flex gap-[30px]  pt-2 lg:pt-0 social-media-wrapper">
+                <div className="lg:hidden flex gap-[30px] pt-[5px] social-media-wrapper">
                   <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center hover:bg-primary-teal transition-background-color cursor-pointer">
                     <a
                       href="https://www.facebook.com/bitpastel"
