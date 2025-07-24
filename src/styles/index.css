@@ -782,12 +782,12 @@ height: 300px;
 .testimonial-first .testimonial-data,
 .testimonial-third .testimonial-data
 {
-  max-width: 180px;
-  margin-left: 0px;
+  max-width: 170px;
+  margin-left: -10px;
 }
 .testimonial-second .testimonial-data{
-  max-width: 180px;
-  margin-right: 0px;
+  max-width: 170px;
+  margin-right: -10px;
 }
 .testimonial-first .testimonial-data{
   margin-top: 15px;
@@ -824,13 +824,13 @@ height: 300px;
         margin-right: -25px;
     }
       .testimonial .testimonial-person-image{
-    max-width: 150px;
+    max-width: 160px;
   }
 .testimonial-first .testimonial-data,
 .testimonial-second .testimonial-data,
 .testimonial-third .testimonial-data
 {
-  max-width: 150px;
+  max-width: 140px;
 }
 }
 
