@@ -32,7 +32,7 @@ const Banner = () => {
     <div>
       <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
         <div
-          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="hidden md:block absolute inset-0 bg-cover career-bg-desktop bg-center bg-no-repeat"
           style={{
             backgroundImage: `
                   linear-gradient(286.17deg, rgba(0, 0, 0, 0) 43.84%, rgba(0, 0, 0, 0.6) 65.15%),
