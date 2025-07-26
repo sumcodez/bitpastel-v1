@@ -497,14 +497,14 @@ export default function JobDetail({ params }: { params: { id: string } }) {
                 ) : jobWithFormAndButton.includes(job.id) ? (
                   <>
                     <div className="flex flex-col sm:flex-row gap-10 justify-center items-center md:mb-16 mb-[0px] md:pt-14 pt-[30px]">
-                      <button
+                      {/* <button
                         className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
                         onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                           window.open(`${job.naukriLink}`, '_blank', 'noopener,noreferrer')
                         }
                       >
                         Apply via Naukri.com
-                      </button>
+                      </button> */}
                       <button
                         className="ripple-btn min-h-[40px] min-w-[280px] bg-green-btn text-primary-white paragraph font-source py-3 px-6 rounded-md transition-colors"
                         onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}

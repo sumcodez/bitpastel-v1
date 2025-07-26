@@ -1,48 +1,37 @@
-// hooks/useIsInViewport.ts
-import { useState, useEffect, useRef, useCallback } from 'react';
+// hooks/useViewportCenter.ts
+'use client';
 
-const useIsInViewport = () => {
-  const [isInViewport, setIsInViewport] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+import { useEffect, useState } from 'react';
 
-  const checkVisibility = useCallback(() => {
-    if (!ref.current) return false;
-    
-    const rect = ref.current.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const windowWidth = window.innerWidth;
-    
-    // Check if element is centered in viewport
-    const isVisible = (
-      rect.top <= windowHeight * 0.6 &&
-      rect.bottom >= windowHeight * 0.4 &&
-      rect.left <= windowWidth * 0.6 &&
-      rect.right >= windowWidth * 0.4
-    );
-    
-    setIsInViewport(isVisible);
-    return isVisible;
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      checkVisibility();
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    
-    // Initial check
-    const timer = setTimeout(checkVisibility, 100);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-      clearTimeout(timer);
-    };
-  }, [checkVisibility]);
-
-  return [ref, isInViewport] as const;
+type ViewportCenter = {
+  x: number;
+  y: number;
 };
 
-export default useIsInViewport;
+export default function useViewportCenter(): ViewportCenter {
+  const [center, setCenter] = useState<ViewportCenter>({
+    x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0,
+    y: typeof window !== 'undefined' ? window.innerHeight / 2 : 0,
+  });
+
+  useEffect(() => {
+    const updateCenter = () => {
+      setCenter({
+        x: window.scrollX + window.innerWidth / 2,
+        y: window.scrollY + window.innerHeight / 2,
+      });
+    };
+
+    updateCenter(); // Initial update
+
+    window.addEventListener('resize', updateCenter);
+    window.addEventListener('scroll', updateCenter, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', updateCenter);
+      window.removeEventListener('scroll', updateCenter);
+    };
+  }, []);
+
+  return center;
+}

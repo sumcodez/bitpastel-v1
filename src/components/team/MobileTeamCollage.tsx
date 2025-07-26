@@ -9,7 +9,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { InstagramCarousel, CarouselItem } from './InstaMobile';
 
-function MobileTeamCollage() {
+const MobileTeamCollage: React.FC = () => {
 
 const sampleImages:CarouselItem[] = [
   { id: '1', type: 'image', src: '/images/new-team-images/Team page slicing/Escape room/1.webp', alt: 'Escape Room 1' },
@@ -118,6 +118,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
   { id: '2', type: 'image', src: '/images/new-team-images/Team page slicing/Sunday brunch/2.webp', alt: 'Sunday Brunch at Westin 2' },
 ];
 
+
   return (
     <section className="relative team-members-mob team-members-mobile" id="OurTeam">
 
@@ -138,6 +139,7 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <p className="text-left text-[12px] text-white">#MysteryRooms #CanYouEscape #RealLifeEscapeExperience</p>
         </div>
       </div>
+
 
       <div className="team-collage">
         <div className="relative">
