@@ -118,11 +118,10 @@ const sundayBrunchAtWestin:CarouselItem[] = [
   { id: '2', type: 'image', src: '/images/new-team-images/Team page slicing/Sunday brunch/2.webp', alt: 'Sunday Brunch at Westin 2' },
 ];
 
-
-
   return (
     <section className="relative team-members-mob team-members-mobile" id="OurTeam">
-      
+
+
       <div className="team-collage">
         <div className="relative">
           <InstagramCarousel
@@ -139,30 +138,6 @@ const sundayBrunchAtWestin:CarouselItem[] = [
           <p className="text-left text-[12px] text-white">#MysteryRooms #CanYouEscape #RealLifeEscapeExperience</p>
         </div>
       </div>
-
-
-
-      {/* <div className="team-collage">
-        <div className="relative">
-          <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            spaceBetween={20}
-            slidesPerView={1}
-            className="team-swiper"
-          >
-            {sampleImages.map((image, index) => (
-              <SwiperSlide key={index}>
-                <img src={image} alt={`Team member ${index + 1}`} className="w-full h-full" />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <div className="px-8">
-          <h2 className="text-[16px] text-left font-[700] leading-[normal]">Escape Rooms</h2>
-          <p className="text-left text-[12px] text-white">#Mysteryrooms #Officefuntime</p>
-        </div>
-      </div> */}
 
       <div className="team-collage">
         <div className="relative">
