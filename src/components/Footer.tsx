@@ -583,17 +583,25 @@ const Footer = () => {
                     INFORMATION
                   </p>
                   <div className="lg:block hidden mt-0 space-y-4">
-                    <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
+                    <a className="block text-[13px]" href="tel:+1 (872) 444 6679"
+                    target='_blank'
+                    >
                       <span>US: +1 (872) 444 6679</span>
                     </a>
                     {/* <a className="block text-[13px]" href="tel:+44 2081 446579"> */}
-                    <a className="block text-[13px]" href='https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'>
+                    <a className="block text-[13px]" 
+                    target='_blank'
+                    href='https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'>
                       <span>UK: +44 2081 446579</span>
                     </a>
-                    <a className="block text-[13px]" href="tel:+91 9830 566 248">
+                    <a className="block text-[13px]" href="tel:+91 9830 566 248"
+                    target='_blank'
+                    >
                       <span>IN: +91 9830 566 248</span>
                     </a>
-                    <a className="mt-4 block text-[13px]" href="mailto:connect@bitpastel.com">
+                    <a className="mt-4 block text-[13px]" href="mailto:connect@bitpastel.com"
+                    target='_blank'
+                    >
                       <span>connect@bitpastel.com</span>
                     </a>
                   </div>
