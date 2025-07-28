@@ -37,7 +37,7 @@ const WhatsAppBubble = () => {
         prefetch
         rel="noopener noreferrer"
         href={
-          'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
+          'https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
         }
       >
         <svg
