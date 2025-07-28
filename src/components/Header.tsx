@@ -282,7 +282,9 @@ const Header = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex lg:justify-between justify-center header-logo items-center">
-            <Link href="/" onClick={handleLogoClick}>
+            <Link href="/"
+            prefetch={true}
+            onClick={handleLogoClick}>
               <Logo logoColor={logoColor} />
             </Link>
             
@@ -300,6 +302,7 @@ const Header = () => {
                 Stories
               </button>
               <Link
+              prefetch={true}
                 href="/culture"
                 onClick={handleCultureClick}
                 className={`${shouldApplyScrolledStyle ? 'text-title' : 'text-primary-white'} hover:text-accent-green transition-colors duration-200`}
