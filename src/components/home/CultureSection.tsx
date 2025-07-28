@@ -63,7 +63,7 @@ const CultureSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-8">
           <div className="xl:h-[auto] md:h-[100%]">
             <img
-              src="/images/img_rectangle_51.jpg"
+              src="/images/img_rectangle_51.webp"
               alt="Team collaboration"
               className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto"
             />

@@ -14,7 +14,7 @@ const TechPartnerSection = () => {
               height={406}
               className="w-full md:h-full h-[280px] md:object-unset object-cover md:object-center object-right"
             /> */}
-            <img src="/images/person-client.png" alt="Team collaboration" className="w-full md:h-full h-[280px] md:object-unset object-cover md:object-center object-right"/>
+            <img src="/images/person-client.webp" alt="Team collaboration" className="w-full md:h-full h-[280px] md:object-unset object-cover md:object-center object-right"/>
           </div>
           <div className="lg:ml-0 md:ml-4 ml-4 bg-primary-mint lg:p-12 md:p-12 py-10 px-6 md:rounded-tl-[40px] md:rounded-bl-[40px] rounded-bl-[20px] rounded-tl-[20px] content-center overflow-hidden">
             {/* <div className="lg:w-1/2 bg-primary-mint rounded-[40px] p-12"> */}
