@@ -756,7 +756,7 @@ const InstagramCarousel = ({
       </div>
 
       {showDots && items.length > slidesToShow && (
-        <div className="flex justify-center gap-1.5 py-4 h-[20px]">
+        <div className="flex justify-center items-center gap-1.5 py-4 h-[20px]">
           {Array.from({ length: Math.ceil(items.length / slidesToScroll) }, (_, index) => {
             const dotIndex = index * slidesToScroll;
             const isActive = currentIndex >= dotIndex && 
