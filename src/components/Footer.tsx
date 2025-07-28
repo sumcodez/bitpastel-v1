@@ -193,6 +193,7 @@ const Footer = () => {
               <div className="lg:space-y-3 col-start-1 lg:col-span-1 lg:col-start-auto">
                 <Link
                   href="/"
+                  prefetch={true}
                   onClick={(e) => {
                     if (isHomePage && isClient) {
                       e.preventDefault();
@@ -304,6 +305,7 @@ const Footer = () => {
                     <div className="space-y-4 text-[13px]">
                       <div className="block text-[13px]">
                         <Link
+                        prefetch={true}
                           href="/"
                           onClick={(e) => {
                             if (isHomePage && isClient) {
@@ -359,6 +361,7 @@ const Footer = () => {
                   <div className="lg:ml-auto">
                     <div className="space-y-4 text-[13px]">
                       <Link
+                        prefetch={true}
                         href="/culture"
                         onClick={(e) => {
                           if (pathname === '/culture') {
@@ -380,6 +383,7 @@ const Footer = () => {
                         </button>
                       </div>
                       <Link
+                      prefetch={true}
                         href="/careers"
                         onClick={(e) => {
                           if (pathname === '/careers') {
@@ -395,6 +399,7 @@ const Footer = () => {
                         Careers
                       </Link>
                       <Link
+                      prefetch={true}
                         href="/partners"
                         onClick={(e) => {
                           if (pathname === '/partners') {
@@ -413,6 +418,7 @@ const Footer = () => {
                   <div className="grid grid-cols-4 gap-[5px] items-center">
                     <div className="block text-[13px]">
                       <Link
+                      prefetch={true}
                         href="/"
                         onClick={(e) => {
                           if (isHomePage && isClient) {
@@ -465,6 +471,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
+                      prefetch={true}
                         href="/culture"
                         onClick={(e) => {
                           if (pathname === '/culture') {
@@ -488,6 +495,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
+                      prefetch={true}
                         href="/careers"
                         onClick={(e) => {
                           if (pathname === '/careers') {
@@ -505,6 +513,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
+                      prefetch={true}
                         href="/partners"
                         onClick={(e) => {
                           if (pathname === '/partners') {
@@ -602,7 +611,7 @@ const Footer = () => {
             >
               <p className="text-center lg:text-[13px] text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
-                <Link href="/privacy-policy">Privacy Policy</Link>
+                <Link prefetch={true} href="/privacy-policy">Privacy Policy</Link>
               </p>
             </div>
           </div>
@@ -615,6 +624,7 @@ const Footer = () => {
               className={`nav-item flex flex-col items-center ${pathname === '/' && isClient && !window.location.hash ? 'current' : ''}`}
             >
               <Link
+              prefetch={true}
                 href="/"
                 onClick={(e) => {
                   if (isHomePage && isClient) {
@@ -703,6 +713,7 @@ const Footer = () => {
               className={`nav-item flex flex-col items-center ${pathname.startsWith('/culture') ? 'current' : ''}`}
             >
               <Link
+              prefetch={true}
                 href="/culture"
                 onClick={(e) => {
                   if (pathname === '/culture') {
@@ -739,6 +750,7 @@ const Footer = () => {
               className={`nav-item flex flex-col items-center ${pathname.startsWith('/careers') ? 'current' : ''}`}
             >
               <Link
+              prefetch={true}
                 href="/careers"
                 onClick={(e) => {
                   if (pathname === '/careers') {
