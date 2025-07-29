@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+// import Header from '@/components/Header';
+// import Footer from '@/components/Footer';
 import '../styles/index.css';
+import HeaderOptimized from '@/components/optimizedHeader/OptimizedHeader';
+import FooterOptimized from '@/components/optimizedFooter/OptimizedFooter';
 
 export const viewport = {
   width: 'device-width',
@@ -10,13 +12,12 @@ export const viewport = {
 
 export const metadata = {
   title: ' Bitpastel - Shopify Plus Development Agency | E-commerce Development',
-  description: 'Bitpastel is a software development company that specializes in Shopify Plus Development, E-commerce Development, Mobile Apps, Websites, Web Services, UI Design & Custom Software Systems for startups & enterprises',
+  description:
+    'Bitpastel is a software development company that specializes in Shopify Plus Development, E-commerce Development, Mobile Apps, Websites, Web Services, UI Design & Custom Software Systems for startups & enterprises',
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }
-    ],
+    icon: [{ url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }],
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -25,15 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-         <head>
+      <head>
         <meta name="robots" content="noindex,nofollow" />
       </head>
       <body>
-        <Header />
+        <HeaderOptimized />
         {children}
-        <Footer />
-</body>
+        <FooterOptimized />
+      </body>
     </html>
   );
 }

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@dhiwise/component-tagger": "^1.0.9",
+    "@next/bundle-analyzer": "^15.4.4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/swiper": "^6.0.0",
     "aos": "^2.3.4",
@@ -36,7 +37,8 @@
     "postcss": "8.4.8",
     "prettier": "^3.5.3",
     "tailwindcss": "3.4.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack-bundle-analyzer": "^4.10.2"
   },
   "description": "A modern Next.js 14 application built with TypeScript and Tailwind CSS.",
   "main": "postcss.config.js",

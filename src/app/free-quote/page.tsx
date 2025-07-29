@@ -1,18 +1,8 @@
-'use client';
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import HomePage from '../home/page';
+import FreeQuoteOptimized from '@/components/free-quote/optimized-freeQuote/OptimizedFreeQuote'
+import React from 'react'
 
-const FreeQuote: React.FC = () => {
-  const router = useRouter();
-
-  const handleClose = () => {
-    router.push('/', { scroll: false });
-  };
-
+export default function page() {
   return (
-    <HomePage forceModalOpen={true} onModalClose={handleClose} />
-  );
-};
-
-export default FreeQuote;
+    <FreeQuoteOptimized />
+  )
+}

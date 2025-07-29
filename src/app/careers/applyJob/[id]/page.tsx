@@ -1,9 +1,16 @@
 'use client';
 import { notFound, useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
-import JoinTeam from '@/components/JoinTeamForm';
-import JobDetailsBanner from '@/components/career/JobDetailsBanner';
-import Common_banner from '@/components/ui/Common_banner';
+// import JoinTeam from '@/components/JoinTeamForm';
+// import JobDetailsBanner from '@/components/career/JobDetailsBanner';
+// import Common_banner from '@/components/ui/Common_banner';
+
+import dynamic from 'next/dynamic';
+
+// Dynamically import components that might be heavy
+const JoinTeam = dynamic(() => import('@/components/JoinTeamForm'));
+const JobDetailsBanner = dynamic(() => import('@/components/career/JobDetailsBanner'));
+const Common_banner = dynamic(() => import('@/components/ui/Common_banner'));
 
 interface JobListing {
   id: string;

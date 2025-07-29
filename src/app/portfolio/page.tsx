@@ -1,14 +1,8 @@
-
+import PortfolioOptimized from '@/components/portfolio/optimizedPortfolio/OptimizedPortfolio'
 import React from 'react'
-import PortfolioBanner from '@/components/portfolio/PortfolioBanner'
-import OurProjects from '@/components/portfolio/OurProjects'
-const page = () => {
+
+export default function page() {
   return (
-    <div>
-      <PortfolioBanner/>
-      <OurProjects/>
-    </div>
+    <PortfolioOptimized />
   )
 }
-
-export default page
