@@ -1,5 +1,5 @@
 {
-  "name": "palash_s_application",
+  "name": "bitpastel_ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -42,6 +42,6 @@
   },
   "description": "A modern Next.js 14 application built with TypeScript and Tailwind CSS.",
   "main": "postcss.config.js",
-  "author": "",
+  "author": "Bitpastel",
   "license": "ISC"
 }
