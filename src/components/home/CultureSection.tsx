@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const CultureSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -61,13 +60,21 @@ const CultureSection = () => {
           Why work with us?
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-8">
-          <div className="xl:h-[auto] md:h-[100%]">
-            <img
-              src="/images/img_rectangle_51.webp"
-              alt="Team collaboration"
-              className="md:rounded-[40px] rounded-[20px] w-full xl:h-auto md:h-[100%] h-auto"
-            />
+          {/* Fixed Image Container - Maintains original height behavior */}
+          <div className="w-full md:h-full h-auto">
+            <div className="relative w-full h-full md:rounded-[40px] rounded-[20px] overflow-hidden">
+              <Image
+                src="/images/img_rectangle_51.webp"
+                alt="Team collaboration"
+                width={1200}  // Actual image width
+                height={800}   // Actual image height
+                quality={100}
+                className="w-full md:h-full h-auto"
+                priority
+              />
+            </div>
           </div>
+          
           <div className="work-with-us-features grid grid-cols-1 md:grid-cols-1 xl:gap-10 md:gap-6 gap-4">
             {features.map((feature, index) => (
               <div
@@ -84,12 +91,15 @@ const CultureSection = () => {
                     alt={feature.title}
                     width={24}
                     height={24}
+                    quality={100}
                     className=""
                   />
-                  <h3 className={`font-bold font-source text-title subheading leading-[1] ${feature.mobileTextColor} md:text-inherit`}>
+                  <h3
+                    className={`font-bold font-source text-title subheading leading-[1] ${feature.mobileTextColor} md:text-inherit`}
+                  >
                     {feature.title}
                   </h3>
-                  <span className='md:hidden block arrow-icon'>
+                  <span className="md:hidden block arrow-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -105,34 +115,29 @@ const CultureSection = () => {
                     </svg>
                   </span>
                 </div>
-                
+
                 {/* Mobile Accordion Content (hidden on desktop) */}
-                <div className="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
+                <div
+                  className="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
                   style={{
                     maxHeight: activeIndex === index ? '200px' : '0',
-                    opacity: activeIndex === index ? 1 : 0
+                    opacity: activeIndex === index ? 1 : 0,
                   }}
                 >
                   <ul className="pl-[36px] text-title mt-4">
                     {feature.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="leading-[normal] font-roboto text-[13px] mb-2"
-                      >
+                      <li key={itemIndex} className="leading-[normal] font-roboto text-[13px] mb-2">
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Desktop Static Content (hidden on mobile) */}
                 <div className="hidden md:block">
                   <ul className="lg:pl-[57px] md:pl-[41px] text-title">
                     {feature.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="leading-[1] font-roboto text-[16px] md:mb-3"
-                      >
+                      <li key={itemIndex} className="leading-[1] font-roboto text-[16px] md:mb-3">
                         {item}
                       </li>
                     ))}

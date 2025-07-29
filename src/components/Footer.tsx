@@ -235,8 +235,11 @@ const Footer = () => {
                   <a className="block text-[13px]" href="tel:+1 (872) 444 6679">
                     <span>US: +1 (872) 444 6679</span>
                   </a>
-                  <a className="block text-[13px]" href='https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'>
-                  {/* <a className="block text-[13px]" href="tel:+44 2081 446579"> */}
+                  <a
+                    className="block text-[13px]"
+                    href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                  >
+                    {/* <a className="block text-[13px]" href="tel:+44 2081 446579"> */}
                     <span>UK: +44 2081 446579</span>
                   </a>
                   <a className="block text-[13px]" href="tel:+91 9830 566 248">
@@ -306,7 +309,7 @@ const Footer = () => {
                     <div className="space-y-4 text-[13px]">
                       <div className="block text-[13px]">
                         <Link
-                        prefetch={true}
+                          prefetch={true}
                           href="/"
                           onClick={(e) => {
                             if (isHomePage && isClient) {
@@ -384,7 +387,7 @@ const Footer = () => {
                         </button>
                       </div>
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/careers"
                         onClick={(e) => {
                           if (pathname === '/careers') {
@@ -400,7 +403,7 @@ const Footer = () => {
                         Careers
                       </Link>
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/partners"
                         onClick={(e) => {
                           if (pathname === '/partners') {
@@ -419,7 +422,7 @@ const Footer = () => {
                   <div className="grid grid-cols-4 gap-[5px] items-center">
                     <div className="block text-[13px]">
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/"
                         onClick={(e) => {
                           if (isHomePage && isClient) {
@@ -472,7 +475,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/culture"
                         onClick={(e) => {
                           if (pathname === '/culture') {
@@ -496,7 +499,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/careers"
                         onClick={(e) => {
                           if (pathname === '/careers') {
@@ -514,7 +517,7 @@ const Footer = () => {
                     </div>
                     <div className="block text-[13px]">
                       <Link
-                      prefetch={true}
+                        prefetch={true}
                         href="/partners"
                         onClick={(e) => {
                           if (pathname === '/partners') {
@@ -583,24 +586,24 @@ const Footer = () => {
                     INFORMATION
                   </p>
                   <div className="lg:block hidden mt-0 space-y-4">
-                    <a className="block text-[13px]" href="tel:+1 (872) 444 6679"
-                    target='_blank'
-                    >
+                    <a className="block text-[13px]" href="tel:+1 (872) 444 6679" target="_blank">
                       <span>US: +1 (872) 444 6679</span>
                     </a>
                     {/* <a className="block text-[13px]" href="tel:+44 2081 446579"> */}
-                    <a className="block text-[13px]" 
-                    target='_blank'
-                    href='https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'>
+                    <a
+                      className="block text-[13px]"
+                      target="_blank"
+                      href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                    >
                       <span>UK: +44 2081 446579</span>
                     </a>
-                    <a className="block text-[13px]" href="tel:+91 9830 566 248"
-                    target='_blank'
-                    >
+                    <a className="block text-[13px]" href="tel:+91 9830 566 248" target="_blank">
                       <span>IN: +91 9830 566 248</span>
                     </a>
-                    <a className="mt-4 block text-[13px]" href="mailto:connect@bitpastel.com"
-                    target='_blank'
+                    <a
+                      className="mt-4 block text-[13px]"
+                      href="mailto:connect@bitpastel.com"
+                      target="_blank"
                     >
                       <span>connect@bitpastel.com</span>
                     </a>
@@ -611,7 +614,9 @@ const Footer = () => {
                   <br />
                   All Rights Reserved
                   <span className="px-2">|</span>
-                  <Link prefetch={true} href="/privacy-policy">Privacy Policy</Link>
+                  <Link prefetch={true} href="/privacy-policy">
+                    Privacy Policy
+                  </Link>
                 </p>
               </div>
             </div>
@@ -621,7 +626,9 @@ const Footer = () => {
             >
               <p className="text-center lg:text-[13px] text-[13px] font-roboto font-[300] lg:max-w-[100%] max-w-[80%] mx-auto">
                 Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved |{' '}
-                <Link prefetch={true} href="/privacy-policy">Privacy Policy</Link>
+                <Link prefetch={true} href="/privacy-policy">
+                  Privacy Policy
+                </Link>
               </p>
             </div>
           </div>
@@ -634,7 +641,7 @@ const Footer = () => {
               className={`nav-item flex flex-col items-center ${pathname === '/' && isClient && !window.location.hash ? 'current' : ''}`}
             >
               <Link
-              prefetch={true}
+                prefetch={true}
                 href="/"
                 onClick={(e) => {
                   if (isHomePage && isClient) {
@@ -667,63 +674,65 @@ const Footer = () => {
               </Link>
             </div>
 
+            {/* Services */}
+            <div
+              className={`nav-item flex flex-col items-center ${
+                isHomePage && isClient && window.location.hash === '#services' ? 'current' : ''
+              }`}
+            >
+              <button
+                onClick={(e) => {
+                  handleSectionClick(e, 'services');
+                  setCurrentTab('services');
+                }}
+                className="flex flex-col items-center gap-1"
+              >
+                <svg fill="none" height="20" viewBox="0 0 21 21" width="20" className="">
+                  <path
+                    d="M17.7693 11.494L17.7526 11.633L17.8624 11.7199L20.0543 13.4524L20.0543 13.4524L20.0593 13.4563C20.1627 13.5337 20.1963 13.6691 20.1229 13.8026L18.0241 17.4362L18.0241 17.4362L18.0221 17.4398C17.9524 17.5652 17.8101 17.6114 17.6892 17.5649C17.6888 17.5648 17.6884 17.5646 17.6881 17.5645L15.0788 16.5155L14.9476 16.4628L14.8348 16.5481C14.311 16.9441 13.7391 17.2868 13.1192 17.5398L12.9863 17.594L12.9662 17.7362L12.5724 20.5187L12.5722 20.5187L12.5712 20.5289C12.5589 20.6517 12.4544 20.75 12.3081 20.75H8.10809C7.97586 20.75 7.86228 20.6621 7.82951 20.5108L7.43688 17.7362L7.41676 17.594L7.28382 17.5398C6.66319 17.2865 6.10467 16.9568 5.56898 16.5486L5.456 16.4626L5.32422 16.5155L2.72031 17.5623C2.58309 17.6052 2.44453 17.5542 2.38101 17.4398L2.38104 17.4398L2.37895 17.4362L0.281622 13.8052C0.219213 13.6833 0.252532 13.5302 0.34897 13.4522L2.56573 11.7208L2.68202 11.6299L2.6587 11.4843C2.60846 11.1703 2.58309 10.8291 2.58309 10.5C2.58309 10.1767 2.62051 9.83648 2.67183 9.51575L2.69514 9.37005L2.57886 9.27923L0.360732 7.54673L0.360762 7.54669L0.356844 7.54375C0.253522 7.46626 0.219906 7.33095 0.293255 7.19738L2.39208 3.56379L2.39211 3.56381L2.39413 3.56016C2.46376 3.43483 2.60605 3.38865 2.727 3.43507L5.33735 4.48446L5.46856 4.53721L5.58137 4.45191C6.10516 4.05588 6.67707 3.71322 7.29694 3.46021L7.42988 3.40595L7.45 3.26378L7.84359 0.482435C7.86535 0.339958 7.97252 0.25 8.10809 0.25H12.3081C12.4514 0.25 12.5651 0.34759 12.5857 0.482495C12.5858 0.482775 12.5858 0.483055 12.5859 0.483335L12.9793 3.26378L12.9994 3.40595L13.1324 3.46021C13.753 3.71353 14.3115 4.04322 14.8472 4.45136L14.9602 4.53744L15.092 4.48446L17.6959 3.43766C17.8331 3.39479 17.9717 3.44583 18.0352 3.56016L18.0351 3.56018L18.0372 3.56379L20.1346 7.1948C20.197 7.3167 20.1637 7.46982 20.0672 7.54777C20.0669 7.54803 20.0666 7.54828 20.0663 7.54853L17.8505 9.27923L17.7342 9.37005L17.7575 9.51575C17.8078 9.82998 17.8331 10.158 17.8331 10.5C17.8331 10.8421 17.8078 11.1731 17.7693 11.494ZM6.02059 10.5C6.02059 12.8037 7.9044 14.6875 10.2081 14.6875C12.5118 14.6875 14.3956 12.8037 14.3956 10.5C14.3956 8.1963 12.5118 6.3125 10.2081 6.3125C7.9044 6.3125 6.02059 8.1963 6.02059 10.5Z"
+                    stroke={
+                      isHomePage && isClient && window.location.hash === '#services'
+                        ? '#008B8B'
+                        : '#008B8B'
+                    }
+                    strokeWidth="1.5"
+                    fill={
+                      isHomePage && isClient && window.location.hash === '#services'
+                        ? '#008B8B'
+                        : 'none'
+                    }
+                  />
+                </svg>
+                <span className="text-[11px] mt-1">Services</span>
+              </button>
+            </div>
 
-
-{/* Services */}
-<div
-  className={`nav-item flex flex-col items-center ${
-    isHomePage && isClient && window.location.hash === '#services' ? 'current' : ''
-  }`}
->
-  <button
-    onClick={(e) => {
-      handleSectionClick(e, 'services');
-      setCurrentTab('services');
-    }}
-    className="flex flex-col items-center gap-1"
-  >
-    <svg fill="none" height="20" viewBox="0 0 21 21" width="20" className="">
-      <path
-        d="M17.7693 11.494L17.7526 11.633L17.8624 11.7199L20.0543 13.4524L20.0543 13.4524L20.0593 13.4563C20.1627 13.5337 20.1963 13.6691 20.1229 13.8026L18.0241 17.4362L18.0241 17.4362L18.0221 17.4398C17.9524 17.5652 17.8101 17.6114 17.6892 17.5649C17.6888 17.5648 17.6884 17.5646 17.6881 17.5645L15.0788 16.5155L14.9476 16.4628L14.8348 16.5481C14.311 16.9441 13.7391 17.2868 13.1192 17.5398L12.9863 17.594L12.9662 17.7362L12.5724 20.5187L12.5722 20.5187L12.5712 20.5289C12.5589 20.6517 12.4544 20.75 12.3081 20.75H8.10809C7.97586 20.75 7.86228 20.6621 7.82951 20.5108L7.43688 17.7362L7.41676 17.594L7.28382 17.5398C6.66319 17.2865 6.10467 16.9568 5.56898 16.5486L5.456 16.4626L5.32422 16.5155L2.72031 17.5623C2.58309 17.6052 2.44453 17.5542 2.38101 17.4398L2.38104 17.4398L2.37895 17.4362L0.281622 13.8052C0.219213 13.6833 0.252532 13.5302 0.34897 13.4522L2.56573 11.7208L2.68202 11.6299L2.6587 11.4843C2.60846 11.1703 2.58309 10.8291 2.58309 10.5C2.58309 10.1767 2.62051 9.83648 2.67183 9.51575L2.69514 9.37005L2.57886 9.27923L0.360732 7.54673L0.360762 7.54669L0.356844 7.54375C0.253522 7.46626 0.219906 7.33095 0.293255 7.19738L2.39208 3.56379L2.39211 3.56381L2.39413 3.56016C2.46376 3.43483 2.60605 3.38865 2.727 3.43507L5.33735 4.48446L5.46856 4.53721L5.58137 4.45191C6.10516 4.05588 6.67707 3.71322 7.29694 3.46021L7.42988 3.40595L7.45 3.26378L7.84359 0.482435C7.86535 0.339958 7.97252 0.25 8.10809 0.25H12.3081C12.4514 0.25 12.5651 0.34759 12.5857 0.482495C12.5858 0.482775 12.5858 0.483055 12.5859 0.483335L12.9793 3.26378L12.9994 3.40595L13.1324 3.46021C13.753 3.71353 14.3115 4.04322 14.8472 4.45136L14.9602 4.53744L15.092 4.48446L17.6959 3.43766C17.8331 3.39479 17.9717 3.44583 18.0352 3.56016L18.0351 3.56018L18.0372 3.56379L20.1346 7.1948C20.197 7.3167 20.1637 7.46982 20.0672 7.54777C20.0669 7.54803 20.0666 7.54828 20.0663 7.54853L17.8505 9.27923L17.7342 9.37005L17.7575 9.51575C17.8078 9.82998 17.8331 10.158 17.8331 10.5C17.8331 10.8421 17.8078 11.1731 17.7693 11.494ZM6.02059 10.5C6.02059 12.8037 7.9044 14.6875 10.2081 14.6875C12.5118 14.6875 14.3956 12.8037 14.3956 10.5C14.3956 8.1963 12.5118 6.3125 10.2081 6.3125C7.9044 6.3125 6.02059 8.1963 6.02059 10.5Z"
-        stroke={
-          isHomePage && isClient && window.location.hash === '#services' ? '#008B8B' : '#008B8B'
-        }
-        strokeWidth="1.5"
-        fill={
-          isHomePage && isClient && window.location.hash === '#services' ? '#008B8B' : 'none'
-        }
-      />
-    </svg>
-    <span className="text-[11px] mt-1">Services</span>
-  </button>
-</div>
-
-{/* Stories */}
-<div
-  className={`nav-item flex flex-col items-center ${
-    isHomePage && isClient && window.location.hash === '#stories' ? 'current' : ''
-  }`}
->
-  <button
-    onClick={(e) => {
-      handleSectionClick(e, 'stories');
-      setCurrentTab('stories');
-    }}
-    className="flex flex-col items-center"
-  >
-    <StoriesIcon active={isHomePage && isClient && window.location.hash === '#stories'} />
-    <span className="text-[11px] mt-1">Stories</span>
-  </button>
-</div>
-
-
+            {/* Stories */}
+            <div
+              className={`nav-item flex flex-col items-center ${
+                isHomePage && isClient && window.location.hash === '#stories' ? 'current' : ''
+              }`}
+            >
+              <button
+                onClick={(e) => {
+                  handleSectionClick(e, 'stories');
+                  setCurrentTab('stories');
+                }}
+                className="flex flex-col items-center"
+              >
+                <StoriesIcon
+                  active={isHomePage && isClient && window.location.hash === '#stories'}
+                />
+                <span className="text-[11px] mt-1">Stories</span>
+              </button>
+            </div>
 
             {/* Culture */}
             <div
               className={`nav-item flex flex-col items-center ${pathname.startsWith('/culture') ? 'current' : ''}`}
             >
               <Link
-              prefetch={true}
+                prefetch={true}
                 href="/culture"
                 onClick={(e) => {
                   if (pathname === '/culture') {
@@ -760,7 +769,7 @@ const Footer = () => {
               className={`nav-item flex flex-col items-center ${pathname.startsWith('/careers') ? 'current' : ''}`}
             >
               <Link
-              prefetch={true}
+                prefetch={true}
                 href="/careers"
                 onClick={(e) => {
                   if (pathname === '/careers') {

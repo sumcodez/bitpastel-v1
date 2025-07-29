@@ -2,16 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import Modal from '@/components/Modal';
-
+import Link from 'next/link';
 
 interface HerSectionProps {
   openModal?: () => void;
 }
 
-
-
 const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       <section className="relative lg:h-lvh md:h-[686px] h-auto overflow-hidden">
@@ -77,18 +75,29 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
                 </div>
               ))}
             </div>
-
-            <button
+             <div>
+              <Link
+              prefetch={true}
+              className='btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] inline-block font-roboto content-center'
+              href="/free-quote" 
+                scroll={false}
+              >
+                Let’s Work Together
+              </Link>
+               
+             </div>
+            {/* <button
               className="btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] font-roboto"
               // onClick={() => setIsModalOpen(true)}
               onClick={openModal}
             >
               Let’s Work Together
-            </button>
+            </button> */}
+            
           </div>
         </div>
       </section>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {/* <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
     </>
   );
 };

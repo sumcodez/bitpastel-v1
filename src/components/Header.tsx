@@ -293,17 +293,27 @@ const Header = () => {
               >
                 Culture
               </Link>
-              <button
+
+               <Link
+               prefetch={true}
+               className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
+               href="/free-quote" 
+               scroll={false}
+               >
+               Chat with Us
+               </Link>
+
+              {/* <button
                 className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
                 onClick={handleChatClick}
               >
                 Chat with Us
-              </button>
+              </button> */}
             </nav>
           </div>
         </div>
       </header>
-      <Modal open={isModalOpen} onClose={() => handleNavigation("/")} />
+      {/* <Modal open={isModalOpen} onClose={() => handleNavigation("/")} /> */}
     </>
   )
 }
