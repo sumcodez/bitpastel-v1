@@ -266,7 +266,7 @@ const TeamCollageNew = () => {
         </div>
 
         <div className="team-collage">
-          <h2 className="text-[20px] font-[700] pb-4">Team Meetup #Movie #Coffee</h2>
+          <h2 className="text-[20px] font-[700] pb-4">Team Meetup</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
             <Image
               src="/images/new-team-images/new/team-meetup-1.webp"
