@@ -787,7 +787,7 @@
 
 
 "use client"
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -1024,7 +1024,10 @@ const InstagramCarousel = ({
   slidesToScroll = 1,
   className,
 }: CarouselProps) => {
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
+  const [isSwiping, setIsSwiping] = useState(false);
 
   const {
     currentIndex,
@@ -1044,7 +1047,59 @@ const InstagramCarousel = ({
     infinite,
     slidesToShow,
     slidesToScroll,
-  })
+  });
+
+  const touchOffset = useMemo(() => {
+    return touchStartX !== null && touchCurrentX !== null 
+      ? touchCurrentX - touchStartX 
+      : 0;
+  }, [touchStartX, touchCurrentX]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (isTransitioning) return;
+    pauseAutoPlay();
+    const touch = e.touches[0];
+    setTouchStartX(touch.clientX);
+    setTouchCurrentX(touch.clientX);
+    setIsSwiping(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isSwiping || touchStartX === null) return;
+    const touch = e.touches[0];
+    setTouchCurrentX(touch.clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchCurrentX === null) {
+      resetTouch();
+      return;
+    }
+
+    const containerWidth = carouselRef.current?.offsetWidth || 0;
+    const diff = touchCurrentX - touchStartX;
+    const threshold = containerWidth * 0.1;
+
+    if (diff < -threshold) {
+      nextSlide();
+    } else if (diff > threshold) {
+      prevSlide();
+    }
+
+    resetTouch();
+    resumeAutoPlay();
+  };
+
+  const handleTouchCancel = () => {
+    resetTouch();
+    resumeAutoPlay();
+  };
+
+  const resetTouch = () => {
+    setIsSwiping(false);
+    setTouchStartX(null);
+    setTouchCurrentX(null);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -1076,7 +1131,7 @@ const InstagramCarousel = ({
   const maxIndex = Math.max(0, items.length - slidesToShow)
 
   return (
-    <div
+   <div
       ref={carouselRef}
       className={cn("relative w-full overflow-hidden", className)}
       onMouseEnter={pauseAutoPlay}
@@ -1085,7 +1140,16 @@ const InstagramCarousel = ({
       <div className="relative w-full h-full overflow-hidden">
         <div
           className="flex transition-transform duration-300 ease-out h-full"
-          style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
+          style={{
+            transform: isSwiping
+              ? `translateX(calc(${-currentIndex * (100 / slidesToShow)}% + ${touchOffset}px))`
+              : `translateX(${-currentIndex * (100 / slidesToShow)}%)`,
+            transition: isSwiping ? 'none' : 'transform 300ms ease-out',
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
         >
           {items.map((item) => (
             <div
