@@ -1,13 +1,14 @@
 "use client"
-
+import type { ReactElement } from "react"
 import type React from "react"
 
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import Modal from "@/components/Modal"
+// import Modal from "@/components/Modal" // Modal is commented out in the original code, so keep it commented.
 
 // Memoized Logo Component to prevent re-renders
+// Using React.memo for explicit component memoization
 const Logo = ({ logoColor }: { logoColor: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="120" height="70" viewBox="0 0 1846 516" fill="none">
     <path
@@ -54,10 +55,8 @@ const Logo = ({ logoColor }: { logoColor: string }) => (
 const throttle = (func: Function, delay: number) => {
   let timeoutId: NodeJS.Timeout | null = null
   let lastExecTime = 0
-
   return (...args: any[]) => {
     const currentTime = Date.now()
-
     if (currentTime - lastExecTime > delay) {
       func(...args)
       lastExecTime = currentTime
@@ -74,12 +73,11 @@ const throttle = (func: Function, delay: number) => {
   }
 }
 
-const Header = () => {
+const Header = (): ReactElement => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const [pendingScroll, setPendingScroll] = useState<string | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
   const pathname = usePathname()
   const router = useRouter()
 
@@ -105,7 +103,6 @@ const Header = () => {
   const handleNavigation = useCallback(
     (path: string, e?: React.MouseEvent) => {
       if (e) e.preventDefault()
-
       // Immediate navigation without blocking
       router.push(path)
     },
@@ -115,17 +112,14 @@ const Header = () => {
   // Optimized scroll to section
   const scrollToSection = useCallback((sectionId: string, offset = 40) => {
     if (typeof window === "undefined") return
-
     const element = document.getElementById(sectionId)
     if (element) {
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
-
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       })
-
       window.history.pushState(null, "", `#${sectionId}`)
       setActiveSection(sectionId)
       setPendingScroll(null)
@@ -138,13 +132,10 @@ const Header = () => {
       throttle(() => {
         const scrollTop = window.scrollY
         setIsScrolled(scrollTop > 50)
-
         // Only check sections if on home page
         if (!isHomePage) return
-
         const sections = ["services", "stories"]
         let currentSection = null
-
         for (const section of sections) {
           const el = document.getElementById(section)
           if (el) {
@@ -155,7 +146,6 @@ const Header = () => {
             }
           }
         }
-
         setActiveSection(currentSection)
       }, 16), // ~60fps throttling
     [isHomePage],
@@ -164,10 +154,8 @@ const Header = () => {
   // Scroll event listener with passive option for better performance
   useEffect(() => {
     if (typeof window === "undefined") return
-
     window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll() // Initial call
-
     return () => window.removeEventListener("scroll", handleScroll)
   }, [handleScroll])
 
@@ -177,11 +165,9 @@ const Header = () => {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current)
       }
-
       scrollTimeoutRef.current = setTimeout(() => {
         scrollToSection(pendingScroll)
       }, 100)
-
       return () => {
         if (scrollTimeoutRef.current) {
           clearTimeout(scrollTimeoutRef.current)
@@ -203,7 +189,7 @@ const Header = () => {
     }
   }, [isHomePage, scrollToSection])
 
-  // Optimized link click handler
+  // Optimized link click handler for services/stories (scroll to section)
   const handleLinkClick = useCallback(
     (e: React.MouseEvent, sectionId: string) => {
       e.preventDefault()
@@ -245,22 +231,7 @@ const Header = () => {
     [isHomePage, handleNavigation],
   )
 
-  // Optimized culture page navigation - removed unnecessary checks
-  const handleCultureClick = useCallback(
-    (e: React.MouseEvent) => {
-      e.preventDefault()
-
-      if (pathname === "/culture") {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      } else {
-        // Direct navigation without additional logic
-        router.push("/culture")
-      }
-    },
-    [pathname, router],
-  )
-
-  // Handle chat button click
+  // Handle chat button click (keeping it as per original code, though it's commented out in JSX)
   const handleChatClick = useCallback(() => {
     handleNavigation("/free-quote")
   }, [handleNavigation])
@@ -277,7 +248,6 @@ const Header = () => {
             <Link href="/" prefetch={true} onClick={handleLogoClick}>
               <Logo logoColor={logoColor} />
             </Link>
-
             <nav className="hidden lg:flex space-x-8 items-center">
               <button onClick={(e) => handleLinkClick(e, "services")} className={getLinkClass("services")}>
                 Services
@@ -288,21 +258,18 @@ const Header = () => {
               <Link
                 prefetch={true}
                 href="/culture"
-                onClick={handleCultureClick}
                 className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
               >
                 Culture
               </Link>
-
-               <Link
-               prefetch={true}
-               className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
-               href="/free-quote" 
-               scroll={false}
-               >
-               Chat with Us
-               </Link>
-
+              <Link
+                prefetch={true}
+                className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
+                href="/free-quote"
+                scroll={false}
+              >
+                Chat with Us
+              </Link>
               {/* <button
                 className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
                 onClick={handleChatClick}
