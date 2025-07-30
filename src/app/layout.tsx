@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/index.css';
 import HeaderOptimized from '@/components/optimizedHeader/OptimizedHeader';
 import FooterOptimized from '@/components/optimizedFooter/OptimizedFooter';
-
+// import LoadingBar from '@/components/ui/loading_bar';
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -30,9 +30,11 @@ export default function RootLayout({
         <meta name="robots" content="noindex,nofollow" />
       </head>
       <body>
+        {/* <LoadingBar> */}
         <HeaderOptimized />
         {children}
         <FooterOptimized />
+        {/* </LoadingBar> */}
       </body>
     </html>
   );

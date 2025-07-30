@@ -1,15 +1,13 @@
 'use client';
 import React from 'react';
-// import TeamTestimonials from '@/components/team/TeamTestimonials';
-// import TeamCollage from '@/components/team/TeamCollage';
+import { lazy, Suspense } from "react"
 import TeamBanner from '@/components/team/TeamBanner';
 import TeamEngage from '@/components/team/TeamEngage';
-// import NewTeamtestimonial from '@/components/team/NewTeamtestimonial';
-// import NewTeamCollage from '@/components/team/NewTeamCollage';
-// import Common_banner from '@/components/ui/Common_banner';
-import TeamCollageNew from '@/components/team/TeamCollageNew';
+// import TeamCollageNew from '@/components/team/TeamCollageNew';
 import TeamTestimonialNew from '@/components/team/TeamTestimonialNew';
-import MobileTeamCollage from '@/components/team/MobileTeamCollage';
+// import MobileTeamCollage from '@/components/team/MobileTeamCollage';
+const LazyMobileTeamCollage = lazy(() => import("@/components/team/MobileTeamCollage"))
+const LazyTeamCollageNew = lazy(() => import("@/components/team/TeamCollageNew"))
 import { useState, useEffect } from 'react';
 
 const page = () => {
@@ -83,13 +81,17 @@ const page = () => {
         {/* <MobileTeamCollage/> */}
 
         {/* Show only on mobile */}
-        <div id="OurTeam">
-          <div className="block md:hidden">
-            <MobileTeamCollage />
-          </div>
-          <div className="hidden md:block">
-            <TeamCollageNew />
-          </div>
+       <div id="OurTeam">
+          <Suspense fallback={<div className="flex justify-center items-center h-48 text-lg">Loading Team...</div>}>
+            {/* Show only on mobile */}
+            <div className="block md:hidden">
+              <LazyMobileTeamCollage />
+            </div>
+            {/* Show only on desktop */}
+            <div className="hidden md:block">
+              <LazyTeamCollageNew />
+            </div>
+          </Suspense>
         </div>
 
         {/* <TeamTestimonials/> */}
