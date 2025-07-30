@@ -1451,7 +1451,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                           <Link
                             target="_blank"
                             href={
-                              'https://api.whatsapp.com/send/?phone=919830566248&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
+                              'https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
                             }
                             type="button"
                             className="w-full text-[#52d09c] flex justify-center items-center mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
