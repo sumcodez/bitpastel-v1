@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const FooterOptimized = dynamic(() => import("../Footer"), {
+const FooterOptimized = dynamic(() => import("@/components/Footer"), {
     ssr: false,
 });
 

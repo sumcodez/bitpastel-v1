@@ -40,10 +40,15 @@
 //   );
 // }
 
+
+
+
 import React from 'react';
 import '../styles/index.css';
 import HeaderOptimized from '@/components/optimizedHeader/OptimizedHeader';
 import FooterOptimized from '@/components/optimizedFooter/OptimizedFooter';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const viewport = {
   width: 'device-width',
@@ -79,17 +84,7 @@ export default function RootLayout({
           {children}
         </main>
         <FooterOptimized />
-        
-        {/* Global Scripts can be added here */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              document.addEventListener('DOMContentLoaded', function() {
-                // Any global initialization scripts
-              });
-            `,
-          }}
-        /> */}
+
       </body>
     </html>
   );

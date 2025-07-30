@@ -31,7 +31,7 @@ const page = () => {
   
   return (
     <>
-    {isLoading && (
+    {/* {isLoading && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
           <svg
             style={{
@@ -68,7 +68,7 @@ const page = () => {
             />
           </svg>
         </div>
-      )}
+      )} */}
       
       <div className='relative'>
         <Banner/>
@@ -78,6 +78,7 @@ const page = () => {
         </div>
         <Common_banner/>
       </div>
+      
     </>
   )
 }
