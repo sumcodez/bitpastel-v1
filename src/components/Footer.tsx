@@ -19,6 +19,32 @@ const Footer = () => {
   const isHomePage = pathname === '/';
   const isNavigating = useRef(false);
 
+    const [isVisible, setIsVisible] = useState(false);
+    const [timer, setTimer] = useState<NodeJS.Timeout | number | null>(null);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        // Show the bubble
+        setIsVisible(true);
+        if (timer) {
+          clearTimeout(timer);
+        }
+  
+        // Hide the bubble after scrolling stops (2 seconds)
+        setTimer(setTimeout(() => {
+          setIsVisible(false);
+        }, 2000));
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        if (timer) clearTimeout(timer);
+      };
+    }, [timer]);
+
+
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -634,7 +660,11 @@ const Footer = () => {
           </div>
         </div>
         {/* Mobile Nav */}
-        <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
+
+
+         {
+          isVisible ?
+           <div className="root-mobile-nav fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
             {/* Home */}
             <div
@@ -814,6 +844,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        : ""
+         }
+       
+
+
+
       </footer>
       <Modal open={isModalOpen} onClose={() => router.push('/', { scroll: false })} />
       <Whatsapp />
