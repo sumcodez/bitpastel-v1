@@ -7,6 +7,10 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Modal from "@/components/Modal"
 
+
+export const dynamic = 'force-static'
+export const revalidate = 3600
+
 // Memoized Logo Component to prevent re-renders
 const Logo = ({ logoColor }: { logoColor: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="120" height="70" viewBox="0 0 1846 516" fill="none">

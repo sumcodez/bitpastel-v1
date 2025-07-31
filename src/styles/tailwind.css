@@ -1049,8 +1049,6 @@ a.modal-open svg {
   }
 }
 
-
-
 @media screen and (max-width: 767px) {
     .life-at-bitpastel .common-lb {
         grid-template-columns: 1fr !important;
