@@ -49,6 +49,7 @@ import HeaderOptimized from '@/components/optimizedHeader/OptimizedHeader';
 import FooterOptimized from '@/components/optimizedFooter/OptimizedFooter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
 
 export const viewport = {
   width: 'device-width',
@@ -57,13 +58,12 @@ export const viewport = {
   userScalable: false,
 };
 
-export const metadata = {
+export const metadata:Metadata = {
   title: 'Bitpastel - Shopify Plus Development Agency | E-commerce Development',
   description: 'Bitpastel is a software development company that specializes in Shopify Plus Development, E-commerce Development, Mobile Apps, Websites, Web Services, UI Design & Custom Software Systems for startups & enterprises',
   icons: {
     icon: [{ url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }],
     shortcut: ['/favicon.ico'],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
   robots: {
     index: false,
@@ -84,7 +84,6 @@ export default function RootLayout({
           {children}
         </main>
         <FooterOptimized />
-
       </body>
     </html>
   );

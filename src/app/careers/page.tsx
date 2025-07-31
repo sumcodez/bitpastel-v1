@@ -12,6 +12,7 @@
 import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 
+
 // Dynamically import components with loading states
 const Banner = dynamic(() => import('@/components/career/Banner'), {
   loading: () => <div className="h-96 bg-gray-50 animate-pulse" />
