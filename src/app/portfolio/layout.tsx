@@ -2,8 +2,8 @@
  
  import { Metadata } from 'next';
 export const metadata: Metadata = {
- title: 'Partnership Program | Bitpastel - Collaborate for E-commerce Success',
-  description: 'Join Bitpastel as a partner and unlock new business opportunities in Shopify Plus development, e-commerce solutions, and digital transformation services. Grow together with our technology partnership program.',
+ title: 'Bitpastel Portfolio – Innovative Shopify Plus & E-commerce Solutions',
+  description: 'Explore Bitpastel’s portfolio showcasing cutting-edge Shopify Plus stores, custom e-commerce solutions, and digital transformation success stories. See how we help businesses thrive online.',
   icons: {
     icon: [{ url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }],
     shortcut: ['/favicon.ico'],
