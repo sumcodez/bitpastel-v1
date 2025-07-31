@@ -288,7 +288,7 @@ const Header = () => {
               <Link
                 prefetch={true}
                 href="/culture"
-                onClick={handleCultureClick}
+                // onClick={handleCultureClick}
                 className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
                   ${pathname === "/culture" ? "text-accent-green" : ""
                   }
