@@ -806,7 +806,7 @@ const Footer = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="1.5"
-                    fill="none"
+                    fill={pathname === '/free-quote' ? '#008B8B' : `none`}
                   />
                 </svg>
                 <span className="text-[11px] mt-1">Contact</span>
