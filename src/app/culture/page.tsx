@@ -48,7 +48,9 @@ export default function TeamPage() {
         
         {/* Desktop version - only loaded when needed */}
         <div className="hidden md:block">
-          <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse"></div>}>
+          <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse">
+            
+          </div>}>
             <TeamCollageNew />
           </Suspense>
         </div>
