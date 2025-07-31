@@ -17,7 +17,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter, usePathname } from 'next/navigation';
-
 interface HomePageProps {
   forceModalOpen?: boolean;
   onModalClose?: () => void;
@@ -54,6 +53,7 @@ const Modal = dynamic(() => import('@/components/Modal'), {
 });
 
 const HomePage: React.FC<HomePageProps> = ({ forceModalOpen = false, onModalClose }) => {
+  
   const [isModalOpen, setIsModalOpen] = useState<boolean>(forceModalOpen);
   const router = useRouter();
   const pathname = usePathname();
@@ -63,11 +63,12 @@ const HomePage: React.FC<HomePageProps> = ({ forceModalOpen = false, onModalClos
   }, [forceModalOpen]);
 
   const openModal = () => {
-    if (pathname !== '/free-quote') {
-      router.push('/free-quote', { scroll: false });
+    if (pathname !== "/free-quote") {
+      router.prefetch("/free-quote")
+      router.push("/free-quote", { scroll: false })
     }
-    setIsModalOpen(true);
-  };
+    setIsModalOpen(true)
+  }
 
   const handleModalClose = () => {
     setIsModalOpen(false);

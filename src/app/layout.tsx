@@ -51,6 +51,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
+export const dynamic = 'force-static'
+export const revalidate = 3600
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
