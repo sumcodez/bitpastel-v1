@@ -856,8 +856,8 @@ margin-top:0 !important;
 }
 .category-tabs-swiper {
   position: unset !important;
-  margin-left: 50px !important;
-  margin-right: 50px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
 }
 
 .project-image:hover .hover-bg-project {
@@ -922,11 +922,12 @@ margin-top:0 !important;
   cursor: pointer;
   width: 30px;
   height: 30px;
-  place-items: center;
+  /* place-items: center; */
   align-content: center;
 }
 .swiper-arrow-right {
   right: 0px;
+  place-items: end;
 }
 .swiper-arrow-left {
   left: 0px;

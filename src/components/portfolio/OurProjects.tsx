@@ -308,7 +308,7 @@ const OurProjects = () => {
 
             <div className="flex-grow p-4 overflow-auto">
               {/* Main Swiper */}
-              <div className="mb-4 md:h-[350px] h-[300px] carousel-image md:rounded-[20px] rounded-[10px]">
+              <div className="md:h-[350px] h-[300px] carousel-image md:rounded-[20px] rounded-[10px]">
                 <Swiper
                   modules={[Navigation, Thumbs]}
                   navigation={{
@@ -372,7 +372,7 @@ const OurProjects = () => {
               {/* Thumbs Swiper */}
               {/* Thumbs Swiper */}
               {currentProject.images.length > 1 && (
-                <div className="mt-2 md:rounded-[20px] rounded-[10px] thumbnail-slider relative">
+                <div className="mt-6 md:rounded-[20px] rounded-[10px] thumbnail-slider relative">
                   <Swiper
                     modules={[FreeMode, Navigation, Thumbs]}
                     navigation={{
@@ -399,7 +399,7 @@ const OurProjects = () => {
                         className="lg:!w-[25%] md:!w-[33.33333%] !w-[50%] cursor-pointer"
                       >
                         <div
-                          className={`flex justify-center items-center h-20 bg-white md:rounded-[20px] rounded-[10px] overflow-hidden relative transition-all duration-200 thumb-hover ${
+                          className={`flex justify-center items-center h-20 bg-white rounded-[10px] overflow-hidden relative transition-all duration-200 thumb-hover ${
                             activeThumbIndex === index ? 'active-slide' : ''
                           }`}
                         >
