@@ -1030,6 +1030,9 @@ margin-top:0 !important;
   {
     display: none;
   }
+  .project-card {
+  border-radius: 10px;
+}
 }
 
 .nav-item.current span {

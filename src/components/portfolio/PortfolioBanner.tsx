@@ -55,8 +55,9 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
             <h1 className="md:text-primary-white text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ">
               {/* <span>Crafting </span>
               <span className="font-bold lg:inline md:block inline">Digital Solutions</span> */}
-              <span className="block"> Where Vision Meets Execution</span>
-              <span className="block"> Explore Our Best Work</span>
+              <span className="block"> Building Digital Experiences</span>
+              <span className="block">That Drive Growth</span>
+               
                
             </h1>
 
