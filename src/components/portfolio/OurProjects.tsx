@@ -235,7 +235,7 @@ const OurProjects = () => {
                           </h3>
                           <button
                             onClick={() => openModal(project)}
-                            className="text-center block text-accent-green font-source font-[700] underline uppercase"
+                            className="text-center block text-accent-green font-source font-[700] uppercase"
                           >
                             View Project
                           </button>
