@@ -23,6 +23,7 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
           style={{
             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
             url('/images/portfolio-banner.jpg')
           `,
           }}
@@ -40,12 +41,13 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
           className="block md:hidden w-full h-[310px] bg-cover bg-[position:58%_10%] bg-no-repeat"
           style={{
             backgroundImage: `
-             linear-gradient(359.17deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 120.15%),
+            linear-gradient(359.17deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 120.15%),
                   linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('/images/portfolio-banner.jpg')
           `,
           }}
         ></div>
+
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 md:h-full pt-[40px] md:pt-[60px] text-left ">
@@ -58,7 +60,7 @@ const PortfolioBanner: React.FC<HerSectionProps> = ({ openModal}) => {
                
             </h1>
 
-            <div className="md:text-primary-white text-title md:text-left text-center">
+            <div className="md:text-primary-white text-title md:text-left text-center md:p-0 pl-[25px]">
               {[
                 'High-Performance Solutions',
                 'Design That Connects',

@@ -212,7 +212,7 @@ const OurProjects = () => {
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
-                  <div className="project-image relative h-[450px] overflow-hidden rounded-[20px]">
+                  <div className="project-image relative md:h-[450px] h-[250px] overflow-hidden rounded-[20px]">
                     {/* Default image - always present */}
                     <Image
                       src={project.images[0]}
@@ -229,7 +229,7 @@ const OurProjects = () => {
                       <div
                         className={`absolute hover-bg-project top-0 left-0 w-full h-full opacity-0 transition-all duration-300 bg-[${project.hoverBg}]`}
                       >
-                        <div className='place-items-center h-full content-center text-hover-element'>
+                        <div className="place-items-center h-full content-center text-hover-element">
                           <h3 className="text-title title font-source font-[400]">
                             {project.title}
                           </h3>
@@ -270,8 +270,14 @@ const OurProjects = () => {
 
       {/* Modal with Swiper and Thumbs */}
       {isModalOpen && currentProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] flex flex-col scale-in">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+        onClick={(e) => {
+      if (e.target === e.currentTarget) {
+        closeModal();
+      }
+    }}
+        >
+          <div className="bg-white rounded-[20px] max-w-3xl w-full max-h-[90vh] flex flex-col scale-in">
             <div className="flex justify-between items-center border-b p-4">
               <div>
                 <h3 className="text-title title font-bold">{currentProject.title}</h3>
@@ -301,10 +307,13 @@ const OurProjects = () => {
 
             <div className="flex-grow p-4 overflow-auto">
               {/* Main Swiper */}
-              <div className="mb-4 h-[400px] rounded-lg">
+              <div className="mb-4 md:h-[350px] h-[300px] carousel-image rounded-[20px]">
                 <Swiper
                   modules={[Navigation, Thumbs]}
-                  navigation
+                  navigation={{
+                    nextEl: '.swiper-arrow-image-right',
+                    prevEl: '.swiper-arrow-image-left',
+                  }}
                   thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                   spaceBetween={10}
                   className="h-full"
@@ -324,42 +333,121 @@ const OurProjects = () => {
                       </div>
                     </SwiperSlide>
                   ))}
+                  <div className="arrow-icon-image swiper-arrow-image-left">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="20"
+                      viewBox="0 0 11 16"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M1.30371 8.88874L8.37496 15.96L10.1425 14.1925L3.95496 8.00499L10.1425 1.81749L8.37496 0.0499878L1.30371 7.12124C1.06937 7.35565 0.937723 7.67353 0.937723 8.00499C0.937723 8.33644 1.06937 8.65433 1.30371 8.88874Z"
+                        fill="#2A2A2A"
+                      />
+                    </svg>
+                  </div>
+                  <div className="arrow-icon-image swiper-arrow-image-right">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="20"
+                      viewBox="0 0 11 16"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M9.69617 8.88874L2.62492 15.96L0.857422 14.1925L7.04492 8.00499L0.857422 1.81749L2.62492 0.0499878L9.69617 7.12124C9.93051 7.35565 10.0622 7.67353 10.0622 8.00499C10.0622 8.33644 9.93051 8.65433 9.69617 8.88874Z"
+                        fill="#2A2A2A"
+                      />
+                    </svg>
+                  </div>
                 </Swiper>
               </div>
 
               {/* Thumbs Swiper */}
-              {currentProject.images.length > 1 && (
-                <div className="mt-2 p-2 rounded-lg thumbnail-slider relative">
-                  <Swiper
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    onSwiper={setThumbsSwiper}
-                    spaceBetween={10}
-                    slidesPerView={Math.min(currentProject.images.length, 4)}
-                    freeMode={true}
-                    watchSlidesProgress={true}
-                    className="thumbs-gallery"
-                  >
-                    {currentProject.images.map((image: string, index: number) => (
-                      <SwiperSlide key={index} className="cursor-pointer">
-                        <div
-                          className={`flex justify-center items-center h-20 bg-white rounded overflow-hidden relative transition-all duration-200 thumb-hover ${
-                            activeThumbIndex === index ? 'active-slide ring-2 ring-blue-500' : ''
-                          }`}
-                        >
-                          <Image
-                            src={image}
-                            alt={`Thumb ${index + 1}`}
-                            fill
-                            quality={100}
-                            className="object-cover"
-                            sizes="100px"
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-              )}
+{/* Thumbs Swiper */}
+{currentProject.images.length > 1 && (
+  <div className="mt-2 rounded-[20px] thumbnail-slider relative">
+    <Swiper
+      modules={[FreeMode, Navigation, Thumbs]}
+      navigation={{
+        nextEl: '.swiper-arrow-thubnail-right',
+        prevEl: '.swiper-arrow-thubnail-left',
+      }}
+      onSwiper={setThumbsSwiper}
+      slidesPerView={'auto'}
+      freeMode={true}
+      watchSlidesProgress={true}
+      className="thumbs-gallery"
+      breakpoints={{
+        640: {
+          spaceBetween: 10,
+        },
+        768: {
+          spaceBetween: 15,
+        },
+      }}
+    >
+      {currentProject.images.map((image: string, index: number) => (
+        <SwiperSlide 
+          key={index} 
+          className="lg:!w-[25%] md:!w-[33.33333%] !w-[50%] cursor-pointer"
+        >
+          <div
+            className={`flex justify-center items-center h-20 bg-white rounded overflow-hidden relative transition-all duration-200 thumb-hover ${
+              activeThumbIndex === index ? 'active-slide' : ''
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`Thumb ${index + 1}`}
+              fill
+              quality={100}
+              className="object-cover"
+              sizes="100px"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+      <div className="arrow-icon-image swiper-arrow-thubnail-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="16"
+          viewBox="0 0 11 16"
+          fill="none"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M1.30371 8.88874L8.37496 15.96L10.1425 14.1925L3.95496 8.00499L10.1425 1.81749L8.37496 0.0499878L1.30371 7.12124C1.06937 7.35565 0.937723 7.67353 0.937723 8.00499C0.937723 8.33644 1.06937 8.65433 1.30371 8.88874Z"
+            fill="#2A2A2A"
+          />
+        </svg>
+      </div>
+      <div className="arrow-icon-image swiper-arrow-thubnail-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="16"
+          viewBox="0 0 11 16"
+          fill="none"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M9.69617 8.88874L2.62492 15.96L0.857422 14.1925L7.04492 8.00499L0.857422 1.81749L2.62492 0.0499878L9.69617 7.12124C9.93051 7.35565 10.0622 7.67353 10.0622 8.00499C10.0622 8.33644 9.93051 8.65433 9.69617 8.88874Z"
+            fill="#2A2A2A"
+          />
+        </svg>
+      </div>
+    </Swiper>
+  </div>
+)}
             </div>
           </div>
         </div>
