@@ -70,7 +70,7 @@ const OurProjects = () => {
       category: 'Motion-capture hardware and software',
       link: 'https://store.rokoko.com/',
       images: ['/images/projects/rokoko/1.webp'],
-      hoverBg: '#CEEEF6',
+      hoverBg: '#FCF4D7',
     },
     {
       id: 7,
@@ -78,7 +78,7 @@ const OurProjects = () => {
       category: 'Jewellery',
       link: 'https://lovinitydiamond.com',
       images: ['/images/projects/lovinity/1.webp'],
-      hoverBg: '#FCF4D7',
+      hoverBg: '#FDE3E5',
     },
     {
       id: 8,
@@ -86,7 +86,7 @@ const OurProjects = () => {
       category: 'Sim & Top-ups',
       link: 'https://jznmarket.com/',
       images: ['/images/projects/jzn/1.webp'],
-      hoverBg: '#FDE3E5',
+      hoverBg: '#CEEEF6',
     },
   ];
 
