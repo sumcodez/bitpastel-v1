@@ -1029,48 +1029,6 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 
   if (!isVisible) return null;
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="max-w-4xl mx-auto p-6 text-center">
-  //       <div className="fixed inset-0 flex items-center justify-center z-50">
-  //         <svg
-  //           style={{
-  //             left: '50%',
-  //             top: '50%',
-  //             position: 'absolute',
-  //             transform: 'translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)',
-  //           }}
-  //           preserveAspectRatio="xMidYMid meet"
-  //           viewBox="0 0 187.3 93.7"
-  //           height="150px"
-  //           width="200px"
-  //         >
-  //           <path
-  //             d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-  //             strokeMiterlimit="10"
-  //             strokeLinejoin="round"
-  //             strokeLinecap="round"
-  //             strokeWidth="4"
-  //             fill="none"
-  //             id="outline"
-  //             stroke="#009999"
-  //           />
-  //           <path
-  //             d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
-  //             strokeMiterlimit="10"
-  //             strokeLinejoin="round"
-  //             strokeLinecap="round"
-  //             strokeWidth="4"
-  //             stroke="#009999"
-  //             fill="none"
-  //             opacity="0.05"
-  //             id="outline-bg"
-  //           />
-  //         </svg>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div
@@ -1194,7 +1152,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                   </div>
                   <div className="flex flex-wrap justify-center lg:gap-0 gap-4 pt-6 text-center lg:mr-[-17px]">
                     <p className="text-[#099] border-right text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
-                      <a href="tel:+442081446579">UK: +44 2081 446579</a>
+                      <a target='_blank' href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0">UK: +44 2081 446579</a>
                     </p>
 
                     <p className="text-[#099] border-right text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
@@ -1465,7 +1423,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                 </div>
                 <div className="flex flex-wrap md:gap-4 gap-2 flex-col justify-center md:pt-6 pt-0 pb-2 md:pb-5 text-center md:hidden">
                   <p className="text-[#099] text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
-                    <a href="tel:+442081446579">UK: +44 2081 446579</a>
+                    <a target='_blank' href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0">UK: +44 2081 446579</a>
                   </p>
 
                   <p className="text-[#099]  text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
