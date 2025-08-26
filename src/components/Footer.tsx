@@ -237,10 +237,12 @@ const Footer = () => {
                   </a>
                   <a
                     className="block text-[13px]"
-                    href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                    // href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                    href="https://api.whatsapp.com/send/?phone=447469539191&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
                   >
                     {/* <a className="block text-[13px]" href="tel:+44 2081 446579"> */}
-                    <span>UK: +44 2081 446579</span>
+                    {/* <span>UK: +44 2081 446579</span> */}
+                    <span>UK: +44 7469 539191</span>
                   </a>
                   <a className="block text-[13px]" href="tel:+91 9830 566 248">
                     <span>IN: +91 9830 566 248</span>
@@ -593,9 +595,12 @@ const Footer = () => {
                     <a
                       className="block text-[13px]"
                       target="_blank"
-                      href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                      // href="https://api.whatsapp.com/send/?phone=442081446579&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
+                      href="https://api.whatsapp.com/send/?phone=447469539191&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0"
                     >
-                      <span>UK: +44 2081 446579</span>
+                      {/* <span>UK: +44 2081 446579</span> */}
+                      <span>UK: +44 7469 539191</span>
+                      
                     </a>
                     <a className="block text-[13px]" href="tel:+91 9830 566 248" target="_blank">
                       <span>IN: +91 9830 566 248</span>
