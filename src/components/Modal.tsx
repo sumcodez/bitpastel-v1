@@ -777,14 +777,6 @@
 
 // export default Modal;
 
-
-
-
-
-
-
-
-
 'use client';
 
 import type React from 'react';
@@ -877,7 +869,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   const detectCountry = async () => {
     if (detectionActive.current) return;
     detectionActive.current = true;
-    
+
     try {
       const response = await fetch('https://ipapi.co/json/');
       const data = await response.json();
@@ -897,7 +889,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
       setFormData(initialFormData);
       setIsSuccess(false);
       setTimeout(() => setIsAnimating(true), 10);
-      
+
       // Call detectCountry directly when modal opens
       if (!detectionActive.current) {
         setIsLoading(true);
@@ -1029,7 +1021,6 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 
   if (!isVisible) return null;
 
-
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay duration-500 ${
@@ -1083,91 +1074,22 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
           </div>
         )}
 
-        <div className="w-full md:rounded-lg shadow-xl overflow-hidden">
-          <div className="md:pt-[30px] md:px-[30px] md:pb-[35px]">
-            <div className="flex flex-col md:flex-row gap-6">
-              {/* Left side - Image and details */}
-              <div className="lg:w-[60%] md:w-[50%] md:flex md:flex-col hidden">
-                <div className="mb-3">
+        <div className="w-full md:rounded-[20px] h-full shadow-xl overflow-hidden">
+          <div className="p-[10px] h-full">
+            <div className="flex flex-col md:flex-row gap-6 h-full">
+              {/* Left side - Image and details */} 
+              <div className="lg:w-[50%] md:w-[50%] md:flex md:flex-col hidden h-full">
+                <div className="h-full rounded-[10px] overflow-hidden">
                   <img
-                    src="/images/Form image.png"
+                    src="/images/free_quote_new_img.jpg"
                     alt="bitpastel client image"
-                    className="w-full h-auto object-cover "
+                    className="w-full h-full object-cover "
                   />
-                </div>
-
-                <div className="modal-details mt-auto">
-                  <h2 className="subheading font-bold md:mb-10 mb-6 text-title font-source">
-                    Satisfied Client Worldwide
-                  </h2>
-
-                  <div className="grid lg:grid-cols-4 md:grid-cols-2 md:gap-6 lg:px-[50px]">
-                    <div className="text-center">
-                      <Image
-                        src="/images/img_fasolidusers.svg"
-                        alt="modal-1"
-                        width={30}
-                        height={30}
-                        className="mx-auto mb-2 h-[30px]"
-                      />
-                      <h6 className="text-[#099]">900</h6>
-                      <p className="text-[#212529] text-[13px]">Clients</p>
-                    </div>
-
-                    <div className="text-center">
-                      <Image
-                        src="/images/Bulb.svg"
-                        alt="modal-2"
-                        width={30}
-                        height={30}
-                        className="mx-auto mb-2 h-[30px]"
-                      />
-                      <h6 className="text-[#099]">1400+</h6>
-                      <p className="text-[#212529] text-[13px]">Projects</p>
-                    </div>
-
-                    <div className="text-center ">
-                      <Image
-                        src="/images/img_group.svg"
-                        alt="modal-2"
-                        width={30}
-                        height={30}
-                        className="mx-auto mb-2 h-[30px]"
-                      />
-                      <h6 className="text-[#099]">50M</h6>
-                      <p className="text-[#212529] text-[13px]">Lines of Code</p>
-                    </div>
-
-                    <div className="text-center">
-                      <Image
-                        src="/images/img_tdesignlocationfilled.svg"
-                        alt="modal-2"
-                        width={30}
-                        height={30}
-                        className="mx-auto mb-2 h-[30px]"
-                      />
-                      <h6 className="text-[#099]">32</h6>
-                      <p className="text-[#212529] text-[13px]">Countries</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center lg:gap-0 gap-4 pt-6 text-center lg:mr-[-17px]">
-                    <p className="text-[#099] border-right text-[14px] w-full md:w-full lg:w-1/3 flex justify-center mb-2 lg:mb-0">
-                      {/* <a target='_blank' href="https://api.whatsapp.com/send/?phone=447469539191&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0">UK: +44 7469 539191</a> */}
-                      <a href="tel:+447469539191">UK: +44 7469 539191</a>
-                    </p>
-
-                    <p className="text-[#099] border-right text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center mb-2 lg:mb-0">
-                      <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
-                    </p>
-
-                    <p className="text-[#099] text-[14px] w-full lg:w-1/3 md:w-full lg:flex justify-center">
-                      <a href="tel:+919830566248">IN: +91 9830 566 248</a>
-                    </p>
-                  </div>
+                  
                 </div>
               </div>
               {/* Right side - Form */}
-              <div className="lg:w-[40%] md:w-[50%] w-full ">
+              <div className="lg:w-[50%] md:w-[50%] w-full ">
                 <div className="md:hidden">
                   <div className="bg-[#3dcb90] text-primary-white">
                     <h3 className="title md:p-4 p-2 ">
@@ -1178,7 +1100,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                 </div>
 
                 {/* Form Section */}
-                <div className="bg-[#fff] md:p-[35px] p-[15px] md:shadow-[1px_-2px_20px_rgba(0,0,0,0.1),0_12px_24px_rgba(0,0,0,0.12)]">
+                <div className="bg-[#fff] form-area">
                   {isSuccess ? (
                     <>
                       <div className="grid grid-cols-1 min-h-[450px] place-items-center justify-between">
@@ -1243,7 +1165,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                     </>
                   ) : (
                     <>
-                      <h2 className="text-center title font-source md:mb-4 mb-3 font-light text-title ">
+                      <h2 className="text-center title font-source md:mb-4 mb-3 font-light text-title free-quote-title">
                         Get a Free Quote
                       </h2>
                       <form
@@ -1387,7 +1309,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                               value={formData.message}
                               onChange={(e) => handleInputChange('message', e.target.value)}
                               rows={2}
-                              className="w-full focus:outline-none font-[100] resize-none md:min-h-[60px] md:py-2"
+                              className="w-full focus:outline-none font-[100] resize-none md:min-h-[70px] md:py-2"
                             />
                           </div>
                         </div>
@@ -1400,9 +1322,9 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                             Lets Work Together
                           </button>
 
-                          <p className="text-[11px] mt-[3px] text-white text-center">
+                          <p className="text-[11px] mt-[10px] text-[#3B3B3D] text-center">
                             By clicking "Lets Work Together", you agree to our{' '}
-                            <Link href="/privacy-policy" target="_blank" className="text-till">
+                            <Link href="/privacy-policy" target="_blank" className="hover:underline hover:text-[#3ECB90]">
                               Privacy Policy
                             </Link>
                           </p>
@@ -1413,10 +1335,15 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                               'https://api.whatsapp.com/send/?phone=447469539191&text=Hey...+I+would+like+to+have+a+quick+chat+with+you.&type=phone_number&app_absent=0'
                             }
                             type="button"
-                            className="w-full text-[#52d09c] flex justify-center items-center mt-5 border-[1px] h-[40px] rounded-[4px] border-[#52d09c] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
+                            className="w-full font-[600] text-[#3ECB90] flex justify-center items-center mt-5 border-[2px] h-[40px] rounded-[5px] border-[#00A974] hover:bg-green-btn hover:text-primary-white transition-all duration-300"
                           >
                             Chat with Us
                           </Link>
+                          <p className='text-center text-[12px] pt-[15px]'>
+                            <a href="tel:+447469539191">UK: +44 7469 539191</a>
+                            <span> | </span>
+                            <a href="tel:+18724446679">US: +1 (872) 444 6679</a>
+                          </p>
                         </div>
                       </form>
                     </>
@@ -1439,14 +1366,14 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                 </div>
               </div>
               <div className="md-hidden absolute top-[10px] right-[10px]">
-                <button onClick={onClose}>
+                <button onClick={onClose} className='btn-close-modal'>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="#ffffff"
+                    fill="#55B8D0"
                     width="20px"
                     height="20px"
                     viewBox="-3.5 0 19 19"
-                    className="cf-icon-svg"
+                    className="cf-icon-svg p-[2px]"
                   >
                     <path d="M11.383 13.644A1.03 1.03 0 0 1 9.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 1 1-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 1 1 1.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 0 1 1.455 1.456L7.455 9.716z" />
                   </svg>
