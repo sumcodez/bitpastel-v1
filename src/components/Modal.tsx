@@ -1191,7 +1191,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                                       : 'text-[#B2B2B2]'
                                 }`}
                               >
-                                {formData.service || 'select*'}
+                                {formData.service || 'Select*'}
                               </span>
                               <ChevronDown
                                 className={`ml-auto mr-[20px] w-4 h-4 text-[#212529] transition-transform ${
