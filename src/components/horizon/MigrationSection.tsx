@@ -90,7 +90,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                         </div>
 
                     </div>
-                    <div className='absolute top-[50%] left-[0px]  translate-y-[-50%]'>
+                    <div className='absolute top-[54%] left-[0px]  translate-y-[-50%]'>
                         <Image src="/images/migration-border.svg" alt="theme-audit" width={2000} height={8} />
                     </div>
                 </div>
