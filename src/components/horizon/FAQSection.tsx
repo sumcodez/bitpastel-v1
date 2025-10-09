@@ -27,14 +27,14 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
             title: 'Where do you provide services?',
             description: "Horizon is optimized for speed, design flexibility, and conversions-helping your store perform better on all fronts.",
             iconPlus: 'images/AccordionPlus.svg',
-            iconMinus: 'images/Accordionminus.svg',
+            iconMinus: 'images/AccordionMinus.svg',
         },
         {
             id: 'accoridon2',
             title: 'Can you migrate from any Shopify theme (free or paid)?',
             description: " Yes, we can migrate from both free and premium themes into Horizon.",
             iconPlus: 'images/AccordionPlus.svg',
-            iconMinus: 'images/Accordionminus.svg',
+            iconMinus: 'images/AccordionMinus.svg',
         }
         ,
         {
@@ -42,14 +42,14 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
             title: 'How long does the migration process take?',
             description: "Typically 3-4 weeks, depending on complexity and customisations.",
             iconPlus: 'images/AccordionPlus.svg',
-            iconMinus: 'images/Accordionminus.svg',
+            iconMinus: 'images/AccordionMinus.svg',
         },
         {
             id: 'accoridon3',
             title: 'Do I need new apps when switching to Horizon?',
             description: "Not always. We review your current apps and ensure compatibility or suggest better alternatives.",
             iconPlus: 'images/AccordionPlus.svg',
-            iconMinus: 'images/Accordionminus.svg',
+            iconMinus: 'images/AccordionMinus.svg',
         }
     ]
     const faqData = FAQSection;
