@@ -1611,3 +1611,9 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 
 
 }
+.btn-hover:hover 
+{
+  background: linear-gradient(90deg, #22577A 0%, #44B3A1 100%);
+  border: 0.8px solid #FFFFFF;
+  color: #FFFFFF !important;
+}

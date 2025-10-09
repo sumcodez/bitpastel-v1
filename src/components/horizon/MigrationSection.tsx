@@ -95,7 +95,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                     </div>
                 </div>
             </section>
-            {/* <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
+            
         </>
     );
 };

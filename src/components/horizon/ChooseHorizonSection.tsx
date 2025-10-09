@@ -81,14 +81,14 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
         <>
             <section id="Advantages" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title text-[#111827]">
                         Why Choose Horizon for Your Store?
                     </h2>
                     <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
 
-                    <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
+                    <h4 className="md:font-[500] ] font-[500] font-source text-center text-[18px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#6B7280]">
                         Horizon isn’t just another Shopify theme—it’s built for speed, scalability, and conversions. Whether you’re running a startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.
                     </h4>
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2  mx-auto our-services-wrapper ">
@@ -108,11 +108,11 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                         <Image src={service.icon} alt={service.title} width={60} height={60} />
                                     </div>
                                     <h3
-                                        className={`font-[500] md:font-bold md:text-title md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px]  content-center ${service.mobileTextColor}`}
+                                        className={`font-[500] md:font-bold md:text-title md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px] text-[#111827] content-center ${service.mobileTextColor}`}
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title">
+                                    <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title text-[#6B7280]">
                                         {service.description}
                                     </p>
                                 </div>
