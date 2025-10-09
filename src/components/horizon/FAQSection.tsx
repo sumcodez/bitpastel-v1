@@ -91,7 +91,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                             <img
                                                 src={
                                                     isActive
-                                                        ? '/images/Accordionminus.svg'
+                                                        ? '/images/AccordionMinus.svg'
                                                         : '/images/AccordionPlus.svg'
                                                 }
                                                 alt={isActive ? 'Collapse' : 'Expand'}
