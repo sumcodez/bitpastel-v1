@@ -1395,7 +1395,7 @@ a.unfilled_button {
 
 .ai-powered-green-gradient {
   height: 3px;
-  background: linear-gradient(90deg, #22587A 0%, #C7FACD 36.06%, #56CC99 70.19%, #39a3a605 100%);
+  background: linear-gradient(90deg, #22587A 0%, #C7FACD 36.06%, #56CC99 70.19%, #39a2a6 100%);
   width: 23%;
 }
 
@@ -1508,7 +1508,7 @@ a.unfilled_button {
 }
 
 .accordion-item-title {
-  font-family: Source Sans Pro !important ;
+  font-family: Source Sans Pro !important;
   font-weight: 600 !important;
   font-style: SemiBold;
   font-size: 18px !important;
@@ -1516,7 +1516,7 @@ a.unfilled_button {
   line-height: 30px;
   letter-spacing: -1%;
   width: 100%;
- 
+
 }
 
 .accordion-item.szh-accordion__item--expanded h3 button {
@@ -1534,18 +1534,80 @@ a.unfilled_button {
   padding: 0px 20px 20px 20px;
   transition: all 0.3s ease-in-out;
 }
-.szh-accordion__item-content
-{
+
+.szh-accordion__item-content {
   transition: all 0.3s ease-in-out;
 }
+
 .accordion-item.szh-accordion__item--expanded h3,
 .accordion-item.szh-accordion__item--expanded .szh-accordion__item-panel {
   color: #FFFFFF;
 }
-.accordion > div 
-{
+
+.accordion>div {
   border-radius: 10px !important;
 }
+
 span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters {
-    margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.migration-box-shadow {
+  box-shadow: 1px 1px 14px 0px #0000001C;
+
+}
+
+.migration-title {
+  font-family: Source Sans Pro;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #111827;
+
+}
+
+.migration-subtitle {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #454A53;
+  margin-bottom: 10px;
+}
+
+
+
+.migration-number {
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 48px;
+  letter-spacing: -3%;
+  text-align: center;
+  vertical-align: middle;
+  color: #56CC99;
+  margin-top: 40px;
+}
+
+.flex-col-reverse .migration-number {
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.ai-powered-green-gradient.heading-bottom {
+  width: 132px;
+  background: linear-gradient(90deg, #22587A 0%, #C7FACD 36.06%, #56CC99 70.19%, #39A3A6 100%);
+
+
 }

@@ -80,10 +80,14 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
     return (
         <>
             <section id="Advantages" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
-                <div className="container mx-auto px-4 overflow-hidden">
+                <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
                         Why Choose Horizon for Your Store?
                     </h2>
+                    <div className="flex justify-center items-center mb-[30px]">
+                        <div className="ai-powered-green-gradient heading-bottom"></div>
+                    </div>
+
                     <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
                         Horizon isn’t just another Shopify theme—it’s built for speed, scalability, and conversions. Whether you’re running a startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.
                     </h4>

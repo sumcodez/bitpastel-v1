@@ -40,10 +40,13 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
     return (
         <>
             <section id="services" className="">
-                <div className="container mx-auto px-4 overflow-hidden">
+                <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
                         Why Partner with Bitpastel?
                     </h2>
+                     <div className="flex justify-center items-center mb-[30px]">
+                        <div className="ai-powered-green-gradient heading-bottom"></div>
+                    </div>
                     <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
                         We don’t just migrate your store, we transform it into a high-performing Shopify experience
                     </h4>

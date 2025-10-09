@@ -62,10 +62,13 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
     return (
         <>
             <section id="services" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
-                <div className="container mx-auto px-4 overflow-hidden">
+                <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
                         Frequently Asked Questions
                     </h2>
+                     <div className="flex justify-center items-center mb-[30px]">
+                        <div className="ai-powered-green-gradient heading-bottom"></div>
+                    </div>
                     <div className="max-w-[940px] mx-auto accordion md:mt-[40px] mt-[20px]">
                         {faqData.map((item, index) => {
                             const isActive = expanded === index;

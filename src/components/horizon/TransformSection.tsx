@@ -10,7 +10,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
     return (
         <>
             <section id="Advantages" className="relative  overflow-hidden md:pb-[90px] pb-[60px]">
-                <div className="relative z-10 container  mx-auto px-4 md:pt-[60px] pt-[60px] md:pb-[90px] pb-[60px]  text-left ">
+                <div className="relative z-10 container  mx-auto px-4 md:pt-[50px] pt-[50px] md:pb-[50px] pb-[50px]  text-left ">
                     <div
                         className="hidden md:block absolute inset-0 bg-cover rounded-[20px]  bg-[position:60%_20%] bg-no-repeat z-[-1]"
                         style={{

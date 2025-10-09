@@ -18,7 +18,7 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
           `,
                     }}
                 ></div>
-                <div className="relative z-10 container mx-auto px-4 md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px] text-left ">
+                <div className="relative z-10 container mx-auto px-4 md:pt-[50px] pt-[50px] md:pb-[50px] pb-[50px] text-left ">
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         <div className='flex justify-center items-left flex-col'>
                             <h1 className="md:text-primary-white text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-left ai-powered-title">
