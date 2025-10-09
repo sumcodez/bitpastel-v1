@@ -16,7 +16,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
                         style={{
                             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
-            url('/images/banner_landing_image.jpg')
+            url('/images/transformsectionbackground.svg')
           `,
                         }}
                     ></div>
@@ -37,7 +37,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
 
                             <div className='flex justify-start items-center gap-2'>
                                 <button
-                                    className="btn leading-normal bg-white-btn bg-green-text md:w-auto w-[100%] mt-[15px] font-roboto"
+                                    className="btn leading-normal bg-white-btn bg-green-text md:w-auto w-[100%] mt-[15px] font-roboto btn-hover"
                                     // onClick={() => setIsModalOpen(true)}
                                     onClick={openModal}
                                 >
@@ -59,7 +59,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
 
                         </div>
                         <div className='flex justify-center align-middle'>
-                            <img src="/images/Ai_powered_Image.svg" alt="Ai_powered_Image" width={430} height={460} />
+                            <img src="/images/transformmain.svg" alt="transformmain" width={430} height={460} />
                         </div>
                     </div>
                 </div>

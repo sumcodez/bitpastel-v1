@@ -1485,11 +1485,8 @@ a.unfilled_button {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
-}
-
-.flexible-card-button:hover {
-  background-color: #22577A;
-  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .accordion-item {
@@ -1614,6 +1611,6 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 .btn-hover:hover 
 {
   background: linear-gradient(90deg, #22577A 0%, #44B3A1 100%);
-  border: 0.8px solid #FFFFFF;
+  border: 0.8px solid #FFFFFF !important;
   color: #FFFFFF !important;
 }

@@ -68,7 +68,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
             id: 'futureproof',
             title: 'Free & Future-Proof',
             description: 'It’s free and fully aligned with Shopify’s Online Store 2.0',
-            icon: '/images/AdvantagesIcon/Free & Future-Proof.svg',
+            icon: '/images/AdvantagesIcon/Free&FutureProof.svg',
             bgColor: ' ',
             bgcolorCollapsed: '#fcf4d7',
             mobileTextColor: ' text-[rgba(240,198,56,1)]',
@@ -88,8 +88,13 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
 
-                    <h4 className="md:font-[500] ] font-[500] font-source text-center text-[18px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#6B7280]">
-                        Horizon isn’t just another Shopify theme—it’s built for speed, scalability, and conversions. Whether you’re running a startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.
+                    <h4 className="md:font-[500] font-[500] font-source text-center text-[18px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#6B7280]">
+                        <span className="text-[#111827]">
+                            <span className="block text-[#6B7280] font-[500]">
+                                Horizon isn’t just another Shopify theme—it’s built for speed, scalability, and conversions. Whether you’re running a 
+                            </span>
+                            <span className='text-[#6B7280] font-[500]'>startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.</span>
+                        </span>
                     </h4>
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2  mx-auto our-services-wrapper ">
                         {AdvantagesData.map((service, index) => (
@@ -112,7 +117,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-title text-[#6B7280]">
+                                    <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-[#6B7280] w-[215px] leading-[20px]">
                                         {service.description}
                                     </p>
                                 </div>

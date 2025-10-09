@@ -112,7 +112,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                     <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
                         Every store has unique needs. That’s why we offer tailored migration packages to help you move to Horizon with the right balance of customization, performance, and AI-powered enhancements
                     </h4>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper ">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
                         {
                             FlexibleMigrationData.map((item, idx) => (
                                 <div className='partner-card-item flexible-card-item flex flex-col justify-center items-start '>
@@ -148,8 +148,8 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                                         </div>
 
                                     </div>
-                                    <div className="flex justify-center items-center w-full" >
-                                        <button type='button' className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description flexible-card-button" >
+                                    <div className="flex justify-center items-center w-full mt-[20px]" >
+                                        <button type='button' className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description flexible-card-button btn-hover" >
                                             {item.button}
                                         </button>
                                     </div>
