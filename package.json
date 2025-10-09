@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@dhiwise/component-tagger": "^1.0.9",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.4",
     "@next/bundle-analyzer": "^15.4.4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/swiper": "^6.0.0",

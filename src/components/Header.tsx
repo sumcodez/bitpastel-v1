@@ -272,9 +272,9 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
+        className={`fixed top-0 left-0 right-0 z-50  transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
           shouldApplyScrolledStyle ? "bg-[#ffffff] border-b border-[#f5f5f5]" : "bg-transparent border-transparent"
-        }`}
+        }${pathname === "/horizon" && shouldApplyScrolledStyle ? " header-horizon" : ""}`}
       >
         <div className="container mx-auto px-4">
           <div className="flex lg:justify-between justify-center header-logo items-center">
@@ -283,17 +283,17 @@ const Header = () => {
             </Link>
 
             <nav className="hidden lg:flex space-x-8 items-center">
-              <button onClick={(e) => handleLinkClick(e, "services")} className={getLinkClass("services")}>
+              <button onClick={(e) => handleLinkClick(e, "services")} className={`${getLinkClass("services")} ${pathname === "/horizon" ? "hidden" : ""}`}>
                 Services
               </button>
-              <button onClick={(e) => handleLinkClick(e, "stories")} className={getLinkClass("stories")}>
+              <button onClick={(e) => handleLinkClick(e, "stories")} className={`${getLinkClass("stories")} ${pathname === "/horizon" ? "hidden" : ""}`}>
                 Stories
               </button>
               <Link
                 prefetch={true}
                 href="/culture"
                 onClick={handleCultureClick}
-                className={`${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
+                className={`${pathname === "/horizon" ? "hidden" : ""} ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
                   ${pathname === "/culture" ? "text-accent-green" : ""
                   }
                   `
@@ -304,7 +304,7 @@ const Header = () => {
 
                <Link
                prefetch={true}
-               className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
+               className={`bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200 ${pathname === "/horizon" ? "unfilled_button" : ""}`}
                href="/free-quote" 
                scroll={false}
                >
