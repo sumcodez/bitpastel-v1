@@ -1485,7 +1485,7 @@ a.unfilled_button {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
-  margin-left: 10px;
+  margin-left: 10px;    
   margin-right: 10px;
 }
 
