@@ -63,7 +63,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
         <>
             <section id="services" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-[36px] text-[#111827] md:mb-0 mb-3">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[32px] lg:text-[36px] text-[#111827] md:mb-0 mb-3">
                         Frequently Asked Questions
                     </h2>
                      <div className="flex justify-center items-center mb-[30px]">
@@ -123,7 +123,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                     </AccordionSummary>
 
                                     <AccordionDetails>
-                                        <Typography className="" sx={{
+                                        <Typography className="md:text-[16px] lg:text-[18px]" sx={{
                                             color: isActive ? '#fff' : '#000',
                                             fontSize: '18px',
                                             lineHeight: '26px',
