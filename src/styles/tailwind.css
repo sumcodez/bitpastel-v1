@@ -1664,3 +1664,20 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   color: #FFFFFF !important;
   font-weight: 600 !important;
 }
+.text-white-color:after {
+    display      : block;
+    content      : '';
+    border-bottom: solid 2px #fff;
+    transform    : scaleX(0);
+    transition   : transform 300ms ease-in-out;
+}
+.text-white-color:hover:after {
+    transform: scaleX(1);
+}
+.text-accent-green-horizon:after {
+    display      : block;
+    content      : '';
+    border-bottom: solid 2px #fff;
+    transform    : scaleX(1);
+    transition   : transform 300ms ease-in-out;
+}
