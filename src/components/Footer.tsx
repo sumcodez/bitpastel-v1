@@ -9,7 +9,7 @@ import Modal from '@/components/Modal';
 import Whatsapp from '@/components/ui/Whatsapp';
 
 const Footer = () => {
-  const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useEffect : () => {};
+  const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useEffect : () => { };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [pendingScroll, setPendingScroll] = useState<string | null>(null);
@@ -600,7 +600,7 @@ const Footer = () => {
                     </a>
                     <a className="block text-[13px]" href="tel:+44 7469 539191" target="_blank">
                       <span>UK: +44 7469 539191</span>
-                     </a>
+                    </a>
                     {/* <a
                       className="block text-[13px]"
                       target="_blank"
@@ -649,7 +649,7 @@ const Footer = () => {
         </div>
         {/* Mobile Nav */}
 
-           <div className="root-mobile-nav animated-up fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
+        <div className="root-mobile-nav animated-up fixed bottom-0 left-0 right-0 bg-white text-teal-600 shadow-lg lg:hidden z-50">
           <div className="footer-mobile-nav flex justify-around items-center py-2">
             {/* Home */}
             <div
@@ -691,9 +691,8 @@ const Footer = () => {
 
             {/* Services */}
             <div
-              className={`nav-item flex flex-col items-center ${
-                isHomePage && isClient && window.location.hash === '#services' ? 'current' : ''
-              }`}
+              className={`nav-item flex flex-col items-center ${isHomePage && isClient && window.location.hash === '#services' ? 'current' : ''
+                }`}
             >
               <button
                 onClick={(e) => {
@@ -724,9 +723,8 @@ const Footer = () => {
 
             {/* Stories */}
             <div
-              className={`nav-item flex flex-col items-center ${
-                isHomePage && isClient && window.location.hash === '#stories' ? 'current' : ''
-              }`}
+              className={`nav-item flex flex-col items-center ${isHomePage && isClient && window.location.hash === '#stories' ? 'current' : ''
+                }`}
             >
               <button
                 onClick={(e) => {
@@ -799,7 +797,42 @@ const Footer = () => {
                 <span className="text-[11px] mt-1">Careers</span>
               </Link>
             </div>
-
+            {/* Horizon */}
+            <div
+              className={`nav-item flex flex-col items-center ${pathname.startsWith('/culture') ? 'current' : ''}`}
+            >
+              <Link
+                prefetch={true}
+                href="/culture"
+                onClick={(e) => {
+                  if (pathname === '/horizon') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                  setCurrentTab('culture');
+                }}
+                className="flex flex-col items-center"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="#008B8B"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  className="ng-star-inserted"
+                >
+                  <path
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    stroke={pathname.startsWith('/horizon') ? '#008B8B' : '#008B8B'}
+                    fill={pathname.startsWith('/horizon') ? '#008B8B' : 'none'}
+                  />
+                </svg>
+                <span className="text-[11px] mt-1">Horizon</span>
+              </Link>
+            </div>
             {/* Contact */}
             <div className={`nav-item flex flex-col items-center`}>
               <button

@@ -224,9 +224,8 @@ const Header = () => {
   // Memoized link class generator
   const getLinkClass = useCallback(
     (section: string) => {
-      return `transition-colors duration-200 ${
-        activeSection === section ? "text-accent-green" : shouldApplyScrolledStyle ? "text-title" : "text-primary-white"
-      } hover:text-accent-green`
+      return `transition-colors duration-200 ${activeSection === section ? "text-accent-green" : shouldApplyScrolledStyle ? "text-title" : "text-primary-white"
+        } hover:text-accent-green`
     },
     [activeSection, shouldApplyScrolledStyle],
   )
@@ -263,6 +262,19 @@ const Header = () => {
     },
     [pathname, router],
   )
+    const handleHorizonClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault()
+
+      if (pathname === "/horizon") {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      } else {
+        // Direct navigation without additional logic
+        router.push("/horizon")
+      }
+    },
+    [pathname, router],
+  )
 
   // Handle chat button click
   const handleChatClick = useCallback(() => {
@@ -272,9 +284,8 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50  transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${
-          shouldApplyScrolledStyle ? "bg-[#ffffff] border-b border-[#f5f5f5]" : "bg-transparent border-transparent"
-        }${pathname === "/horizon" && shouldApplyScrolledStyle ? " header-horizon" : ""}`}
+        className={`fixed top-0 left-0 right-0 z-50  transition-[background] md:h-[70px] h-[50px] border-b content-center duration-200 ${shouldApplyScrolledStyle ? "bg-[#ffffff] border-b border-[#f5f5f5]" : "bg-transparent border-transparent"
+          }${pathname === "/horizon" && shouldApplyScrolledStyle ? " header-horizon" : ""}`}
       >
         <div className="container mx-auto px-4">
           <div className="flex lg:justify-between justify-center header-logo items-center">
@@ -283,17 +294,17 @@ const Header = () => {
             </Link>
 
             <nav className="hidden lg:flex space-x-8 items-center">
-              <button onClick={(e) => handleLinkClick(e, "services")} className={`${getLinkClass("services")} ${pathname === "/horizon" ? "hidden" : ""}`}>
+              <button onClick={(e) => handleLinkClick(e, "services")} className={`${getLinkClass("services")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
                 Services
               </button>
-              <button onClick={(e) => handleLinkClick(e, "stories")} className={`${getLinkClass("stories")} ${pathname === "/horizon" ? "hidden" : ""}`}>
+              <button onClick={(e) => handleLinkClick(e, "stories")} className={`${getLinkClass("stories")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
                 Stories
               </button>
               <Link
                 prefetch={true}
                 href="/culture"
                 onClick={handleCultureClick}
-                className={`${pathname === "/horizon" ? "hidden" : ""} ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
+                className={`${pathname === "/horizon" ? "text-white-color" : ""} ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
                   ${pathname === "/culture" ? "text-accent-green" : ""
                   }
                   `
@@ -301,15 +312,23 @@ const Header = () => {
               >
                 Culture
               </Link>
-
-               <Link
-               prefetch={true}
-               className={`bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200 ${pathname === "/horizon" ? "unfilled_button" : ""}`}
-               href="/free-quote" 
-               scroll={false}
-               >
-               Chat with Us
-               </Link>
+              <Link
+                prefetch={true}
+                href="/horizon"
+                onClick={handleHorizonClick}
+                className={`${pathname === "/horizon" ? "text-accent-green-horizon" : ""
+                  }  ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
+              >
+                Horizon
+              </Link>
+              <Link
+                prefetch={true}
+                className={`bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200 ${pathname === "/horizon" ? "unfilled_button" : ""}`}
+                href="/free-quote"
+                scroll={false}
+              >
+                Chat with Us
+              </Link>
 
               {/* <button
                 className="bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200"
