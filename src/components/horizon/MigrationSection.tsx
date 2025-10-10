@@ -13,14 +13,14 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
     return (
         <>
             <section id="Advantages" className="md:pt-[90px] pt-[60px] ">
-                <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                <div className="container w-[1200px] mx-auto px-4 overflow-hidden relative">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center text-[36px] md:mb-0 mb-3 text-[#111827]">
                         Effortless Migration Powered by Bitpastel
                     </h2>
                     <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
-                    <div className="grid grid-cols-5 md:grid-cols-5 gap-8">
+                    <div className="grid grid-cols-5 md:grid-cols-5 gap-4">
                         <div className='flex justify-center items-center flex-col mb-[120px]'>
                             <div className='flex justify-center items-center flex-col'>
                                 <h3 className='migration-title'>Theme Audit</h3>

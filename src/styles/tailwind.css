@@ -1404,33 +1404,6 @@ a.unfilled_button {
   max-width: none;
 }
 
-.partner-card-item h3 {
-  font-family: Source Sans Pro;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 20px;
-  leading-trim: NONE;
-  line-height: 58px;
-  letter-spacing: -3%;
-  text-align: center;
-  vertical-align: middle;
-  color: #111827;
-
-}
-
-.partner-card-item p {
-  font-family: Roboto;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
-  leading-trim: NONE;
-  line-height: 20px;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #454A53;
-
-}
-
 .partner-card-item-bg {
   height: 115px;
   width: 100%;
@@ -1484,10 +1457,9 @@ a.unfilled_button {
 
 .accordion-item-title {
   font-family: Source Sans Pro !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   font-style: SemiBold;
-  font-size: 18px !important;
-  leading-trim: NONE;
+  font-size: 20px !important;
   line-height: 30px;
   letter-spacing: -1%;
   width: 100%;
@@ -1524,6 +1496,7 @@ a.unfilled_button {
 
 span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters {
   margin-bottom: 0px !important;
+  margin-top: 6px !important;
 }
 
 .migration-box-shadow {
@@ -1620,4 +1593,8 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 {
   top: unset;
   bottom: 0;
+}
+.flexible-card-item:last-child > .partner-card-item-bg > h3
+{
+  color: #FFFFFF;
 }

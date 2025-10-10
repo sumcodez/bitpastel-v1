@@ -63,7 +63,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
         <>
             <section id="services" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center text-[36px] text-[#111827] md:mb-0 mb-3">
                         Frequently Asked Questions
                     </h2>
                      <div className="flex justify-center items-center mb-[30px]">
@@ -77,6 +77,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                 <Accordion
                                     key={item.id}
                                     expanded={expanded === index}
+                                    defaultExpanded={index === 0}
                                     onChange={handleChange(index)}
                                     sx={{
                                         borderRadius: '10px',
@@ -110,10 +111,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                     >
                                         <Typography
                                             component="span"
-                                            className="accordion-item-title"
+                                            className="accordion-item-title text-[20px] font-[700] font-source"
                                             sx={{
-                                                color: isActive ? '#fff' : '#000',
+                                                color: isActive ? '#fff' : '#111827',
                                                 marginBottom: isActive ? '0px' : '0px 0px 0px 10px',
+                                                marginTop: isActive ? '6px' : '0px 0px 0px 10px',
                                             }}
                                         >
                                             {item.title}
@@ -123,7 +125,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                     <AccordionDetails>
                                         <Typography className="" sx={{
                                             color: isActive ? '#fff' : '#000',
-
+                                            fontSize: '18px',
+                                            lineHeight: '26px',
+                                            width: '75%',
                                         }}>
                                             {item.description}
                                         </Typography>

@@ -41,13 +41,13 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
         <>
             <section id="services" className="">
                 <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center text-[36px] md:mb-0 mb-3 c">
                         Why Partner with Bitpastel?
                     </h2>
                      <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
-                    <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
+                    <h4 className="md:font-[500] font-[500] font-source text-center text-[18px] leading-[20px] w-200 md:mb-6 mb-4 description text-[#4B5563]">
                         We don’t just migrate your store, we transform it into a high-performing Shopify experience
                     </h4>
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
@@ -55,8 +55,8 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
                             PartnerData.map((item) => (
                                 <div className='partner-card-item flex flex-col justify-center items-center'>
                                     <Image src={item.icon} alt={item.title} width={340} height={323} className='radius-[20px]' />
-                                    <h3 className='font-[600] font-source text-[20px] leading-[30px] text-title'>{item.title}</h3>
-                                    <p className='font-[400] font-source text-[16px] leading-[20px] text-description'>{item.description}</p>
+                                    <h3 className='font-[700] font-source text-[20px] leading-[58px] text-[#111827]'>{item.title}</h3>
+                                    <p className='font-[400] font-source text-[16px] leading-[20px] text-[#4B5563] letter-spacing-[0%] px-[50px] text-center'>{item.description}</p>
                                 </div>
                             ))
                         }

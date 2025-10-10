@@ -103,16 +103,18 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
         <>
             <section id="services" className="md:pt-[90px] pt-[60px] ">
                 <div className="container mx-auto px-4 overflow-hidden relative">
-                    <h2 className=" md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                    <h2 className=" md:font-[600] font-[700] font-source text-center text-[36px] text-[#111827] md:mb-0 mb-3">
                         Flexible Horizon Migration Packages
                     </h2>
                      <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
-                    <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
-                        Every store has unique needs. That’s why we offer tailored migration packages to help you move to Horizon with the right balance of customization, performance, and AI-powered enhancements
+                    <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-6 mb-4 description">
+                         
+                        <span className="block text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Every store has unique needs. That’s why we offer tailored migration packages to help you move to</span>
+                        <span className="block text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Horizon with the right balance of customization, performance, and AI-powered enhancements</span>
                     </h4>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper w-[1200px] mx-auto">
                         {
                             FlexibleMigrationData.map((item, idx) => (
                                 <div className='partner-card-item flexible-card-item flex flex-col justify-center items-start '>
@@ -120,7 +122,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                                         backgroundImage: `url(${item.backgroundimage})`,
                                     }}>
 
-                                        <h3 className="md:font-[600] font-[700] font-source text-center text-title md:mb-0 mb-3 title">
+                                        <h3 className="md:font-[600] font-[600] font-source text-center text-[25px] md:mb-0 mb-3 text-[#111827]">
                                             {item.title}
                                         </h3>
                                     </div>
@@ -137,7 +139,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                                                             width={24}
                                                             height={24}
                                                             className="block w-[20px] " />
-                                                        <p className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description">
+                                                        <p className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#1E1E1E]">
                                                             {item.text}
                                                         </p>
                                                     </div>
