@@ -88,12 +88,12 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
 
-                    <h4 className="md:font-[500] font-[500] font-source text-center text-[18px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#6B7280]">
-                        <span className="text-[#111827]">
-                            <span className="block text-[#6B7280] font-[500]">
+                    <h4 className="md:font-[500] font-[500] font-roboto text-center text-[18px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#6B7280]">
+                        <span className="text-[#111827] leading-[24px]">
+                            <span className="block text-[#6B7280] font-[400] font-roboto">
                                 Horizon isn’t just another Shopify theme—it’s built for speed, scalability, and conversions. Whether you’re running a 
                             </span>
-                            <span className='text-[#6B7280] font-[500]'>startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.</span>
+                            <span className='text-[#6B7280] font-[400] font-roboto'>startup store or scaling to enterprise level, Horizon ensures your brand looks modern, loads faster, and converts better.</span>
                         </span>
                     </h4>
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2  mx-auto our-services-wrapper ">
@@ -103,9 +103,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                 onClick={() => setActiveIndex(index)}
                                 // className="text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer py-10"
                                 className={`card-element relative card-element-Horizon text-center transition-shadow duration-300m md:min-w-[275px] min-w-[unset] cursor-pointer md:py-8 pt:0 pb-8 md:bg-transparent ${service.bgColor} md:rounded rounded-[10px] md:min-h-full min-h-[160px]
-                        ${activeIndex === index ? 'active' : ''}
-                        `}
-                            >
+                                ${activeIndex === index ? 'active' : ''}`}>
                                 <div className="">
                                     <div
                                         className={`${service.bgColor} mobile-bg-transparent flex items-center justify-center mx-auto md:mb-6 mb-4`}
@@ -113,11 +111,11 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                         <Image src={service.icon} alt={service.title} width={60} height={60} />
                                     </div>
                                     <h3
-                                        className={`font-[500] md:font-bold md:text-title md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px] text-[#111827] content-center ${service.mobileTextColor}`}
+                                        className={`font-[500] font-source md:font-bold  md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px] text-[#111827] content-center`}
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="-relaxed paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-[#6B7280] w-[215px] leading-[20px]">
+                                    <p className="-relaxed font-roboto paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-[#6B7280] w-[220px] leading-[20px] font-[400]">
                                         {service.description}
                                     </p>
                                 </div>

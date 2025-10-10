@@ -16,7 +16,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
                         style={{
                             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
-            url('/images/transformsectionbackground.svg')
+            url('/images/transformsectionbackground.png')
           `,
                         }}
                     ></div>
@@ -59,7 +59,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
 
                         </div>
                         <div className='flex justify-center align-middle'>
-                            <img src="/images/transformmain.svg" alt="transformmain" width={430} height={460} />
+                            <img src="/images/transformmain.png" alt="transformmain" width={430} height={460} />
                         </div>
                     </div>
                 </div>

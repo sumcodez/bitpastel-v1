@@ -1339,17 +1339,6 @@ a.unfilled_button {
   border-bottom: none ! important;
 }
 
-.card-element-Horizon::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 60%;
-  background: linear-gradient(90deg, rgba(199, 250, 205, 0.42) 0%, rgba(34, 88, 122, 0.42) 0.01%, rgba(86, 204, 153, 0.42) 70.19%, rgba(57, 163, 166, 0.42) 100%);
-  /* Tailwind's gray-200 */
-}
-
 .card-element-Horizon::before {
   content: '';
   position: absolute;
@@ -1360,16 +1349,7 @@ a.unfilled_button {
   background: linear-gradient(90deg, rgba(199, 250, 205, 0.42) 0%, rgba(34, 88, 122, 0.42) 0.01%, rgba(86, 204, 153, 0.42) 70.19%, rgba(57, 163, 166, 0.42) 100%);
 }
 
-.card-element-Horizon:last-child::after,
-.card-element-Horizon:nth-child(3)::after {
-  background: none;
-}
 
-.card-element-Horizon:nth-child(1)::after,
-.card-element-Horizon:nth-child(2)::after {
-  bottom: 0;
-  top: unset;
-}
 
 .card-element-Horizon:nth-child(4)::before,
 .card-element-Horizon:nth-child(5)::before,
@@ -1408,7 +1388,7 @@ a.unfilled_button {
   line-height: 26px;
   letter-spacing: 0%;
   color: #FFFFFF;
-  margin: 15px 0;
+  margin: 20px 0px 15px 0;
 }
 
 .partner-card-item {
@@ -1495,13 +1475,11 @@ a.unfilled_button {
   margin: 10px 10px;
   box-shadow: 1px 1px 14px 0px #0000001C;
   transition: all 0.3s ease-in-out;
-
 }
 
 .accordion-item.szh-accordion__item--expanded {
   background: linear-gradient(120.42deg, #22587A 9.08%, #56CC99 88.27%);
   transition: all 0.3s ease-in-out;
-
 }
 
 .accordion-item-title {
@@ -1513,7 +1491,6 @@ a.unfilled_button {
   line-height: 30px;
   letter-spacing: -1%;
   width: 100%;
-
 }
 
 .accordion-item.szh-accordion__item--expanded h3 button {
@@ -1613,4 +1590,34 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   background: linear-gradient(90deg, #22577A 0%, #44B3A1 100%);
   border: 0.8px solid #FFFFFF !important;
   color: #FFFFFF !important;
+}
+
+
+.card-element-Horizon:nth-child(1)::after,
+.card-element-Horizon:nth-child(4)::after
+{
+    content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.7px;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(199, 250, 205, 0.42) 0%, rgba(34, 88, 122, 0.42) 0.01%, rgba(86, 204, 153, 0.42) 70.19%, rgba(57, 163, 166, 0.42) 100%);
+}
+.card-element-Horizon:nth-child(2)::after,
+.card-element-Horizon:nth-child(5)::after
+{
+    content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(199, 250, 205, 0.42) 0%, rgba(34, 88, 122, 0.42) 0.01%, rgba(86, 204, 153, 0.42) 70.19%, rgba(57, 163, 166, 0.42) 100%);
+}
+.card-element-Horizon:nth-child(1)::after,
+.card-element-Horizon:nth-child(2)::after
+{
+  top: unset;
+  bottom: 0;
 }

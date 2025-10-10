@@ -15,28 +15,11 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
       <section className="relative lg:h-lvh md:h-[686px]  h-auto overflow-hidden">
         {/* Desktop background image */}
         <div
-          className="hidden md:block absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
+          className="md:block absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
           style={{
             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
             url('/images/banner_landing_image.jpg')
-          `,
-          }}
-        ></div>
-
-         {/* style={{
-            backgroundImage: `
-               linear-gradient(82deg, rgba(0, 0, 0, 0.7) 6%, rgba(0, 0, 0, 0) 30%),
-               url('/images/banner_new02.jpg')
-            `,
-          }} */}
-
-        {/* Mobile background image on top */}
-        <div
-          className="block md:hidden w-full h-[310px] bg-cover bg-[position:55%_10%] bg-no-repeat"
-          style={{
-            backgroundImage: `
-            url('/images/banner-for-mobile.jpg')
           `,
           }}
         ></div>
@@ -52,7 +35,7 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
               
             </h1>
             <h4 className="md:text-primary-white horizon-subtitle text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center md:text-center ">
-              <span className='block'>Bitpastel helps you migrate and customise your store on Shopify’s Horizon theme with zero hassle.</span>
+              <span className='block'>Bitpastel helps you migrate and customise your store on Shopify’s Horizon</span>
               <span>theme with zero hassle.</span>
             </h4>
 
