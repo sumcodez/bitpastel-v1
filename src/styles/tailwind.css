@@ -1289,8 +1289,13 @@ a.unfilled_button {
   background-color: transparent !important;
   color: #fff !important;
   border: 1px solid #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
-
+.unfilled_button:hover {
+  background: linear-gradient(90deg, #22577A 0%, #44B3A1 100%);
+  border: 0.8px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
 .bg-transparent-btn {
   border: 1px solid #FFFFFF;
   border-radius: 5px;
@@ -1650,34 +1655,37 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   }
 }
 
-.text-white-color
-{
+.text-white-color {
   color: #FFFFFF !important;
   transition: all 0.3s ease;
 }
-.text-white-color:hover
-{
+
+.text-white-color:hover {
   font-weight: 600 !important;
 }
-.text-accent-green-horizon
-{
+
+.text-accent-green-horizon {
   color: #FFFFFF !important;
   font-weight: 600 !important;
 }
+
 .text-white-color:after {
-    display      : block;
-    content      : '';
-    border-bottom: solid 2px #fff;
-    transform    : scaleX(0);
-    transition   : transform 300ms ease-in-out;
+  display: block;
+  content: '';
+  border-bottom: solid 2px #fff;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
 }
+
 .text-white-color:hover:after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
+
 .text-accent-green-horizon:after {
-    display      : block;
-    content      : '';
-    border-bottom: solid 2px #fff;
-    transform    : scaleX(1);
-    transition   : transform 300ms ease-in-out;
+  display: block;
+  content: '';
+  border-bottom: solid 2px #fff;
+  transform: scaleX(1);
+  transition: transform 300ms ease-in-out;
 }
+
