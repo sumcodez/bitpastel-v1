@@ -114,7 +114,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                         <span className="block md:text-[16px] lg:text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Every store has unique needs. That’s why we offer tailored migration packages to help you move to</span>
                         <span className="block md:text-[16px] lg:text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Horizon with the right balance of customization, performance, and AI-powered enhancements</span>
                     </h4>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 mx-auto our-services-wrapper md:w-[auto] lg:w-[1200px] mx-auto">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 mx-auto our-services-wrapper md:w-[auto] lg:w-[1200px] mx-auto horizon-our-services-wrapper">
                         {
                             FlexibleMigrationData.map((item, idx) => (
                                 <div className='partner-card-item flexible-card-item flex flex-col justify-center items-start '>

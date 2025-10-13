@@ -107,7 +107,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                         {AdvantagesData.map((service, index) => (
                             <div
                                 key={service.id}
-                                onClick={() => setActiveIndex(index)}
+                               
                                 // className="text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer py-10"
                                 className={`card-element relative card-element-Horizon text-center transition-shadow duration-300m md:min-w-[275px] min-w-[unset] cursor-pointer md:py-8 pt:0 pb-8 md:bg-transparent ${service.bgColor} md:rounded rounded-[10px] md:min-h-full min-h-[160px]
                                 ${activeIndex === index ? 'active' : ''}`}>
@@ -118,7 +118,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                         <Image src={service.icon} alt={service.title} width={60} height={60} />
                                     </div>
                                     <h3
-                                        className={`font-[500] font-source md:font-bold  md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[18px] lg:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px] text-[#111827] content-center`}
+                                        className={`font-[500] font-source md:font-bold  md:mb-2 mb-0 md:h-auto h-[60px] md:leading-[normal] md:text-[18px] lg:text-[20px] text-[16px] leading-[20px] md:px-0 px-[17px] text-[#111827] content-center responsive-h3`}
                                     >
                                         {service.title}
                                     </h3>

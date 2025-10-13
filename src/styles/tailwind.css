@@ -1688,7 +1688,10 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   transform: scaleX(1);
   transition: transform 300ms ease-in-out;
 }
-
+.partner-card-item img 
+{
+  border-radius: 20px;
+}
 @media (max-width:767px) 
 {
   .horizon-subtitle
@@ -1718,7 +1721,7 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   }
   .responsive-subtitle
   {
-    font-size: 16px ;
+    font-size: 16px !important;
     line-height: 22px ;
   }
   .responsive-subtitle span span
@@ -1728,10 +1731,55 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   .horizon-title
   {
     color: #FFFFFF !important;
+    font-size: 23px;
+    line-height: 30px;
   }
   .horizon-our-services-wrapper p 
   {
     display: block !important;
     font-size: 16px;
+    margin-bottom: 0px;
   }
+  .responsive-h3
+  {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+  .horinzon-logo-area
+  {
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+  .ai-powered-green-gradient
+  {
+    margin: 0 auto;
+  }
+  .ai-subtitle-description
+  {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #FFFFFF !important;
+    text-align: left;
+  }
+  .horizon-ai-powered-wrapper
+  {
+    grid-template-columns: 1fr;
+    row-gap: 0px;
+  }
+  .horinzon-logo-area-small
+  {
+    justify-content: center;
+  }
+  .transform-section .horizon-title
+  {
+    text-align: center;
+  }
+  .transform-section
+  {
+    padding-bottom: 0px;
+  }
+  .transform-section .background-image
+  {
+    border-radius: 0px;
+  } 
 }

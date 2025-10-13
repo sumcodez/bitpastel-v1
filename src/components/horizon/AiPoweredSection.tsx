@@ -10,7 +10,7 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
         <>
             <section id="Advantages" className="relative h-auto overflow-hidden">
                 <div
-                    className="hidden md:block absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
+                    className=" absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
                     style={{
                         backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
@@ -22,9 +22,9 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
                     <div className='grid md:grid-cols-1 lg:grid-cols-2  gap-8'>
                         <div className='flex justify-center items-left flex-col'>
                             <h1 className="md:text-primary-white text-title title md:leading-[40px] font-source leading-[normal] md:mb-2 mb-3 text-center md:text-left ai-powered-title">
-                                <span className="block text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px]">AI-Powered Selling </span>
-                                <span className=" text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px]">with </span>
-                                <span className="bold text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px]">  Horizon + Bitpastel</span>
+                                <span className="block text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px] horizon-title">AI-Powered Selling </span>
+                                <span className=" text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px] horizon-title">with </span>
+                                <span className="bold text-[38px] md:text-[32px] lg:text-[36px] leading-[48px] md:leading-[40px] horizon-title">  Horizon + Bitpastel</span>
                             </h1>
                             <div className="ai-powered-green-gradient"></div>
                             <h4 className='ai-powered-subtitle'>
@@ -54,7 +54,7 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
                                             height={24}
                                             className="md:hidden block w-[20px]"
                                         />
-                                        <p className="paragraph font-[400]   md:text-[16px] lg:text-[18px] font-roboto">{text}</p>
+                                        <p className="paragraph font-[400]   md:text-[16px] lg:text-[18px] font-roboto ai-subtitle-description">{text}</p>
                                     </div>
                                 ))}
                             </div>

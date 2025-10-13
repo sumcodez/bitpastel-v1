@@ -111,7 +111,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                     >
                                         <Typography
                                             component="span"
-                                            className="accordion-item-title text-[20px] font-[700] font-source"
+                                            className="accordion-item-title text-[20px] font-[700] font-source responsive-h3"
                                             sx={{
                                                 color: isActive ? '#fff' : '#111827',
                                                 marginBottom: isActive ? '0px' : '0px 0px 0px 10px',
@@ -123,7 +123,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                     </AccordionSummary>
 
                                     <AccordionDetails>
-                                        <Typography className="md:text-[16px] lg:text-[18px]" sx={{
+                                        <Typography className="md:text-[16px] lg:text-[18px] responsive-subtitle" sx={{
                                             color: isActive ? '#fff' : '#000',
                                             fontSize: '18px',
                                             lineHeight: '26px',

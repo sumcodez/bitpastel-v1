@@ -50,7 +50,7 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
                     <h4 className="md:font-[500] font-[500] font-source text-center md:text-[16px] lg:text-[18px] leading-[20px] w-200 md:mb-6 mb-4 description text-[#4B5563]">
                         We don’t just migrate your store, we transform it into a high-performing Shopify experience
                     </h4>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-x-4 gap-y-4 mx-auto our-services-wrapper horizon-ai-powered-wrapper horizon-our-services-wrapper">
                         {
                             PartnerData.map((item) => (
                                 <div className='partner-card-item flex flex-col justify-center items-center'>

@@ -9,10 +9,10 @@ interface TransformSectionProps {
 const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
     return (
         <>
-            <section id="Advantages" className="relative  overflow-hidden md:pb-[90px] pb-[60px]">
+            <section id="Advantages" className="relative  overflow-hidden md:pb-[90px] pb-[60px] transform-section">
                 <div className="relative z-10 container  mx-auto px-4 md:pt-[50px] pt-[50px] md:pb-[50px] pb-[50px]  text-left ">
                     <div
-                        className="hidden md:block absolute inset-0 bg-cover rounded-[20px]  bg-[position:60%_20%] bg-no-repeat z-[-1]"
+                        className="absolute inset-0 bg-cover rounded-[20px]  bg-[position:60%_20%] bg-no-repeat z-[-1] background-image"
                         style={{
                             backgroundImage: `
             linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
@@ -23,10 +23,10 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
 
                     <div className='grid  md:grid-cols-1 lg:grid-cols-2 gap-8'>
                         <div className="md:h-full content-center mx-auto md:max-w-[100%] max-w-[310px]">
-                            <div className="flex md:justify-center lg:justify-start items-center mb-3">
+                            <div className="flex md:justify-center lg:justify-start items-center mb-3 horinzon-logo-area-small">
                                 <img src="/images/horizon_logo.png" alt="Horizon logo" width={146} height={60} />
                             </div>
-                            <h1 className="md:text-primary-white md:text-[32px] lg:text-[36px] lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 md:text-center lg:text-start  ">
+                            <h1 className="md:text-primary-white md:text-[32px] lg:text-[36px] lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 md:text-center lg:text-start  horizon-title ">
                                 <span className='block'>Ready to Transform</span>
                                 <span>Your Shopify Store with Horizon?</span>
                             </h1>
