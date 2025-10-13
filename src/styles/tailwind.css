@@ -1689,3 +1689,49 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   transition: transform 300ms ease-in-out;
 }
 
+@media (max-width:767px) 
+{
+  .horizon-subtitle
+  {
+    font-size: 16px ;
+    color: #FFFFFF !important;
+    line-height: 20px !important;
+  }  
+  .hero-btn-area
+  {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-btn-area button
+  {
+    width: 100%;
+    margin-top: 0px;
+  }
+  .hero-btn-area button:last-child
+  {
+    margin-bottom: 25px;
+  }
+  .responsive-h2
+  {
+    font-size: 23px ;
+    line-height: 30px ;
+  }
+  .responsive-subtitle
+  {
+    font-size: 16px ;
+    line-height: 22px ;
+  }
+  .responsive-subtitle span span
+  {
+    display: inline;
+  }
+  .horizon-title
+  {
+    color: #FFFFFF !important;
+  }
+  .horizon-our-services-wrapper p 
+  {
+    display: block !important;
+    font-size: 16px;
+  }
+}

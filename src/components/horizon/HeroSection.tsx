@@ -30,7 +30,7 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
             <div className="flex justify-center items-center mb-[90px] ml-[2%]">
               <img src="/images/horizon_logo.png" alt="Horizon logo" width={535} height={220}/>
             </div>
-            <h1 className="md:text-primary-white md:text-center md:text-[32px] lg:text-[38px] text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center ">
+            <h1 className="md:text-primary-white md:text-center md:text-[32px] lg:text-[38px] text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center horizon-title">
               <span>Migrate Seamlessly to  </span> <span className='font-[700]'>Shopify Horizon</span>
               
             </h1>
@@ -39,7 +39,7 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
               <span>theme with zero hassle.</span>
             </h4>
 
-            <div className='flex justify-center items-center gap-4'>
+            <div className='flex justify-center items-center gap-4 hero-btn-area'>
               <button
                 className="btn leading-normal bg-white-btn bg-green-text md:w-auto w-[100%] mt-[15px] font-roboto btn-hover"
                 // onClick={() => setIsModalOpen(true)}
