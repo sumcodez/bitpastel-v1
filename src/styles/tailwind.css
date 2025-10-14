@@ -1531,10 +1531,13 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   letter-spacing: 0%;
   text-align: center;
   color: #454A53;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-
+.flex-col-reverse .migration-title
+{
+  margin-top: 20px;
+}
 
 .migration-number {
   font-family: Source Sans Pro;
@@ -1552,7 +1555,7 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 
 .flex-col-reverse .migration-number {
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 .ai-powered-green-gradient.heading-bottom {

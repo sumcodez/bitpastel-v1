@@ -21,9 +21,9 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
                     <div className="grid grid-cols-5 md:grid-cols-5 gap-4 md:gap-0">
-                        <div className='flex justify-center items-center flex-col mb-[120px]'>
+                        <div className='flex justify-start items-center flex-col mb-[120px]'>
                             <div className='flex justify-center items-center flex-col'>
-                                <h3 className='migration-title md:text-[14px] lg:text-[16px]'>Theme Audit</h3>
+                                <h3 className='migration-title md:text-[14px] lg:text-[18px]'>Theme Audit</h3>
                                 <p className='migration-subtitle'>Review your existing setup</p>
                             </div>
 
@@ -35,9 +35,9 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             </div>
                             <span className='migration-number'>01.</span>
                         </div>
-                        <div className='flex justify-center items-center flex-col-reverse md:mt-[150px] lg:mt-[10px] '>
+                        <div className='flex justify-end items-center flex-col-reverse md:mt-[90px]  '>
                             <div className='flex justify-center items-center flex-col'>
-                                <h3 className='migration-title  md:text-[14px] lg:text-[16px]'>Strategy & Planning</h3>
+                                <h3 className='migration-title  md:text-[14px] lg:text-[18px]'>Strategy & Planning</h3>
                                 <p className='migration-subtitle'>Map features to Horizon</p>
                             </div>
 
@@ -49,9 +49,9 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             </div>
                             <span className='migration-number'>02.</span>
                         </div>
-                        <div className='flex justify-center items-center flex-col mb-[120px]'>
+                        <div className='flex justify-start items-center flex-col mb-[120px]'>
                             <div className='flex justify-center items-center flex-col'>
-                                <h3 className='migration-title  md:text-[14px] lg:text-[16px]'>Migration & Customisation</h3>
+                                <h3 className='migration-title  md:text-[14px] lg:text-[18px]'>Migration & Customisation</h3>
                                 <p className='migration-subtitle'> Move design, products, and apps seamlessly</p>
                             </div>
                             <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
@@ -62,9 +62,9 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             </div>
                             <span className='migration-number'>03.</span>
                         </div>
-                        <div className='flex justify-center items-center flex-col-reverse md:mt-[160px] lg:mt-[10px] '>
-                            <div className='flex justify-center items-center flex-col'>
-                                <h3 className='migration-title  md:text-[14px] lg:text-[16px]'>AI Integration</h3>
+                        <div className='flex justify-end items-center flex-col-reverse md:mt-[90px]'>
+                            <div className='flex justify-start items-center flex-col'>
+                                <h3 className='migration-title  md:text-[14px] lg:text-[18px]'>AI Integration</h3>
                                 <p className='migration-subtitle'>Add personalisation and automation</p>
                             </div>
                             <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
@@ -75,9 +75,9 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             </div>
                             <span className='migration-number'>04.</span>
                         </div>
-                        <div className='flex justify-center items-center flex-col mb-[120px]'>
+                        <div className='flex justify-start items-center flex-col mb-[120px]'>
                             <div className='flex justify-center items-center flex-col'>
-                                <h3 className='migration-title  md:text-[14px] lg:text-[16px]' >Testing & launch</h3>
+                                <h3 className='migration-title  md:text-[14px] lg:text-[18px]' >Testing & launch</h3>
                                 <p className='migration-subtitle'>Ensure smooth performance and conversions</p>
                             </div>
                             <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>

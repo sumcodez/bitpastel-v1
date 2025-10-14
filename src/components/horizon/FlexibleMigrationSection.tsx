@@ -109,7 +109,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                      <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>
                     </div>
-                    <h4 className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-6 mb-4 description">
+                    <h4 className="md:font-[500] font-[500] font-roboto text-center text-[16px] leading-[20px] w-200 md:mb-6 mb-4 description">
                          
                         <span className="block md:text-[16px] lg:text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Every store has unique needs. That’s why we offer tailored migration packages to help you move to</span>
                         <span className="block md:text-[16px] lg:text-[18px] font-[500] leading-[20px] description text-[#4B5563]">Horizon with the right balance of customization, performance, and AI-powered enhancements</span>
