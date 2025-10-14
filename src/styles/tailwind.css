@@ -1291,11 +1291,13 @@ a.unfilled_button {
   border: 1px solid #FFFFFF;
   transition: all 0.3s ease-in-out;
 }
+
 .unfilled_button:hover {
   background: linear-gradient(90deg, #22577A 0%, #44B3A1 100%);
   border: 0.8px solid #FFFFFF !important;
   color: #FFFFFF !important;
 }
+
 .bg-transparent-btn {
   border: 1px solid #FFFFFF;
   border-radius: 5px;
@@ -1688,98 +1690,139 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   transform: scaleX(1);
   transition: transform 300ms ease-in-out;
 }
-.partner-card-item img 
-{
+
+.partner-card-item img {
   border-radius: 20px;
 }
-@media (max-width:767px) 
-{
-  .horizon-subtitle
-  {
-    font-size: 16px ;
+
+.migration-section-mobile {
+  display: none;
+}
+
+@media (max-width:767px) {
+  .horizon-subtitle {
+    font-size: 16px;
     color: #FFFFFF !important;
     line-height: 20px !important;
-  }  
-  .hero-btn-area
-  {
+  }
+
+  .hero-btn-area {
     flex-wrap: wrap;
     gap: 10px;
   }
-  .hero-btn-area button
-  {
+
+  .hero-btn-area button {
     width: 100%;
     margin-top: 0px;
   }
-  .hero-btn-area button:last-child
-  {
+
+  .hero-btn-area button:last-child {
     margin-bottom: 25px;
   }
-  .responsive-h2
-  {
-    font-size: 23px ;
-    line-height: 30px ;
+
+  .responsive-h2 {
+    font-size: 23px;
+    line-height: 30px;
   }
-  .responsive-subtitle
-  {
+
+  .responsive-subtitle {
     font-size: 16px !important;
-    line-height: 22px ;
+    line-height: 22px;
   }
-  .responsive-subtitle span span
-  {
+
+  .responsive-subtitle span span {
     display: inline;
   }
-  .horizon-title
-  {
+
+  .horizon-title {
     color: #FFFFFF !important;
     font-size: 23px;
     line-height: 30px;
   }
-  .horizon-our-services-wrapper p 
-  {
+
+  .horizon-our-services-wrapper p {
     display: block !important;
     font-size: 16px;
     margin-bottom: 0px;
   }
-  .responsive-h3
-  {
+
+  .responsive-h3 {
     font-size: 18px !important;
     font-weight: 600 !important;
   }
-  .horinzon-logo-area
-  {
+
+  .horinzon-logo-area {
     margin-bottom: 30px;
     margin-top: 40px;
   }
-  .ai-powered-green-gradient
-  {
+
+  .ai-powered-green-gradient {
     margin: 0 auto;
   }
-  .ai-subtitle-description
-  {
+
+  .ai-subtitle-description {
     font-size: 16px !important;
     line-height: 22px !important;
     color: #FFFFFF !important;
     text-align: left;
   }
-  .horizon-ai-powered-wrapper
-  {
+
+  .horizon-ai-powered-wrapper {
     grid-template-columns: 1fr;
     row-gap: 0px;
   }
-  .horinzon-logo-area-small
-  {
+
+  .horinzon-logo-area-small {
     justify-content: center;
   }
-  .transform-section .horizon-title
-  {
+
+  .transform-section .horizon-title {
     text-align: center;
   }
-  .transform-section
-  {
+
+  .transform-section {
     padding-bottom: 0px;
   }
-  .transform-section .background-image
-  {
+
+  .transform-section .background-image {
     border-radius: 0px;
-  } 
+  }
+
+  .migration-section {
+    display: none;
+  }
+
+  .migration-section-mobile {
+    display: block;
+  }
+  .migration-section-item
+  {
+    flex-direction: row-reverse;
+    gap: 0px;
+  }
+  .migration-section-item:nth-child(2),
+  .migration-section-item:nth-child(4)
+  {
+    flex-direction: row;
+  }
+  .flex-col-reverse .migration-number
+  {
+    margin-bottom: 0px;
+  }
+  .rotate-class
+  {
+    transform: rotate(-90deg);
+  }
+  .grid-gap-class
+  {
+    gap: 6.3em;
+  }
+  .migration-title, .migration-subtitle
+  {
+    text-align: left;
+  }
+  .rotate-class-rotate
+  {
+    transform: rotate(90deg);
+  }
 }
