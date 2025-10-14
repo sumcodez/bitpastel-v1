@@ -803,13 +803,13 @@ const Footer = () => {
             >
               <Link
                 prefetch={true}
-                href="/culture"
+                href="/horizon"
                 onClick={(e) => {
                   if (pathname === '/horizon') {
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }
-                  setCurrentTab('culture');
+                  setCurrentTab('horizon');
                 }}
                 className="flex flex-col items-center"
               >
