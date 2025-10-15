@@ -30,7 +30,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
                                 <span className='block'>Ready to Transform</span>
                                 <span>Your Shopify Store with Horizon?</span>
                             </h1>
-                            <h4 className="md:text-primary-white horizon-subtitle md:text-[18px] lg:text-[24px] lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4  md:text-center lg:text-start ">
+                            <h4 className="md:text-primary-white horizon-subtitle md:text-[16px] lg:text-[18px] lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4  md:text-center lg:text-start ">
                                 <span className='block'>Let Bitpastel handle your migration, customisation,</span>
                                 <span> and AI integration-so you can focus on growth.</span>
                             </h4>

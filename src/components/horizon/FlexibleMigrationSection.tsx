@@ -27,19 +27,19 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             description: [
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'For small to mid-sized stores.'
+                    text: 'For small to mid-sized stores'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Core theme migration.'
+                    text: 'Core theme migration'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Basic customisation (colors, fonts, branding).'
+                    text: 'Basic customisation (colors, fonts, branding)'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Performance check & mobile optimisation.'
+                    text: 'Performance check & mobile optimisation'
                 }
             ],
             icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
@@ -52,19 +52,19 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             description: [
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Includes everything in Basic.'
+                    text: 'ncludes everything in Basic'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Advanced design customisation.'
+                    text: 'Advanced design customisation'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'App integrations & compatibility checks.'
+                    text: 'App integrations & compatibility checks'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'Enhanced SEO setup.'
+                    text: 'Enhanced SEO setup'
                 }
             ],
             icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
@@ -82,7 +82,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
-                    text: 'AI personalisation & product recommendations.'
+                    text: 'AI personalisation & recommendations.'
                 },
                 {
                     icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
@@ -117,7 +117,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 mx-auto our-services-wrapper md:w-[auto] lg:w-[1200px] mx-auto horizon-our-services-wrapper">
                         {
                             FlexibleMigrationData.map((item, idx) => (
-                                <div className='partner-card-item flexible-card-item flex flex-col justify-center items-start '>
+                                <div className='partner-card-item flexible-card-item flex flex-col justify-between items-start '>
                                     <div className='partner-card-item-bg' style={{
                                         backgroundImage: `url(${item.backgroundimage})`,
                                     }}>
