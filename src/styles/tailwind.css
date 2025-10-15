@@ -1534,8 +1534,7 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   margin-bottom: 20px;
 }
 
-.flex-col-reverse .migration-title
-{
+.flex-col-reverse .migration-title {
   margin-top: 20px;
 }
 
@@ -1703,11 +1702,58 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 .migration-section-mobile {
   display: none;
 }
-.chooseImage img
-{
+
+.chooseImage img {
   height: 60px;
   width: 60px;
 }
+
+@media (max-width: 1199px) {
+  .horizon-our-services-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+  }
+
+  .transform-section .background-image {
+    border-radius: 0px;
+  }
+
+  .transform-section {
+    padding-bottom: 0px !important;
+  }
+
+  .migration-box-shadow {
+    height: 80px !important;
+    width: 80px !important;
+  }
+
+  .migration-box-shadow img {
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  .migration-title {
+    line-height: 22px !important;
+
+  }
+
+  .migration-number-1 {
+    margin-top: 80px !important;
+  }
+
+}
+
+@media (max-width:991px) {
+
+  .migration-middle-line {
+    top: 61% !important;
+  }
+
+  .flex-col-reverse {
+    margin-top: 130px !important;
+  }
+}
+
 @media (max-width:767px) {
   .horizon-subtitle {
     font-size: 16px;
@@ -1789,13 +1835,9 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
     text-align: center;
   }
 
-  .transform-section {
-    padding-bottom: 0px;
-  }
 
-  .transform-section .background-image {
-    border-radius: 0px;
-  }
+
+
 
   .migration-section {
     display: none;
@@ -1804,34 +1846,35 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
   .migration-section-mobile {
     display: block;
   }
-  .migration-section-item
-  {
+
+  .migration-section-item {
     flex-direction: row-reverse;
     gap: 0px;
   }
+
   .migration-section-item:nth-child(2),
-  .migration-section-item:nth-child(4)
-  {
+  .migration-section-item:nth-child(4) {
     flex-direction: row;
   }
-  .flex-col-reverse .migration-number
-  {
+
+  .flex-col-reverse .migration-number {
     margin-bottom: 0px;
   }
-  .rotate-class
-  {
+
+  .rotate-class {
     transform: rotate(-90deg);
   }
-  .grid-gap-class
-  {
+
+  .grid-gap-class {
     gap: 6.3em;
   }
-  .migration-title, .migration-subtitle
-  {
+
+  .migration-title,
+  .migration-subtitle {
     text-align: left;
   }
-  .rotate-class-rotate
-  {
+
+  .rotate-class-rotate {
     transform: rotate(90deg);
   }
 }

@@ -33,7 +33,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             <div>
                                 <Image src="/images/migrationline1.svg" alt="theme-audit" width={8} height={40} />
                             </div>
-                            <span className='migration-number'>01.</span>
+                            <span className='migration-number migration-number-1'>01.</span>
                         </div>
                         <div className='flex justify-end items-center flex-col-reverse md:mt-[90px]  '>
                             <div className='flex justify-center items-center flex-col'>
