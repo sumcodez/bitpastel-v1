@@ -1696,6 +1696,8 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 
 .partner-card-item img {
   border-radius: 20px;
+  max-height: 323px;
+  height: 100%;
 }
 
 .migration-section-mobile {

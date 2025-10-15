@@ -44,7 +44,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             ],
             icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
             backgroundimage: '/images/FlexibleMigration01.svg',
-            button: 'Get Started'
+            button: 'Start with Basic'
         },
         {
             id: 'advancedmigration',
