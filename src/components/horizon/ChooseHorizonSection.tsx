@@ -103,7 +103,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                             </span>
                         </span>
                     </h4>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2  mx-auto our-services-wrapper horizon-our-services-wrapper">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2  mx-auto our-services-wrapper horizon-our-services-wrapper mobile-horizon">
                         {AdvantagesData.map((service, index) => (
                             <div
                                 key={service.id}

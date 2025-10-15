@@ -1755,24 +1755,34 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 }
 
 @media (max-width:767px) {
+
+
   .horizon-our-services-wrapper {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
     width: 100% !important;
   }
+
+  .mobile-horizon {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+  }
+
   .flex-col-reverse {
     margin-top: 0px !important;
-}
-.migration-middle-line {
+  }
+
+  .migration-middle-line {
     top: 10% !important;
-}
-.migration-title
-{
-  font-size: 16px;
-}
-.migration-subtitle {
+  }
+
+  .migration-title {
+    font-size: 16px;
+  }
+
+  .migration-subtitle {
     font-size: 14px;
 
-}
+  }
 
   .horizon-subtitle {
     font-size: 16px;
