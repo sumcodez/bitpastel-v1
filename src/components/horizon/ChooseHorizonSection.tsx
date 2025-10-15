@@ -111,9 +111,9 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                 // className="text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer py-10"
                                 className={`card-element relative card-element-Horizon text-center transition-shadow duration-300m md:min-w-[275px] min-w-[unset] cursor-pointer md:py-8 pt:0 pb-8 md:bg-transparent ${service.bgColor} md:rounded rounded-[10px] md:min-h-full min-h-[160px]
                                 ${activeIndex === index ? 'active' : ''}`}>
-                                <div className="">
+                                <div className="flex flex-col justify-start items-center h-full ">
                                     <div
-                                        className={`${service.bgColor} mobile-bg-transparent flex items-center justify-center mx-auto md:mb-6 mb-4`}
+                                        className={`${service.bgColor} mobile-bg-transparent flex items-center justify-center mx-auto md:mb-6 mb-4 chooseImage`}
                                     >
                                         <Image src={service.icon} alt={service.title} width={60} height={60} />
                                     </div>
@@ -122,18 +122,11 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="-relaxed font-roboto paragraph md:max-w-[275px] max-w-[unset] w-full mx-auto text-[#6B7280] w-[220px] leading-[20px] font-[400]">
+                                    <p className="-relaxed font-roboto paragraph md:max-w-[220px] max-w-[unset] w-full mx-auto text-[#6B7280] w-[220px] leading-[20px] font-[400]">
                                         {service.description}
                                     </p>
                                 </div>
-                                <div
-                                    className={`collapsible-element text-left content-center${activeIndex === index ? 'active' : ''}`}
-                                    style={{ background: service.bgcolorCollapsed }}
-                                >
-                                    <p className="paragraph text-title text-[16px] leading-[20px]">
-                                        {service.description}
-                                    </p>
-                                </div>
+                                
 
                                 {/* <div className='mobile-block'>
                            <h3 className={` font-bold ${service.mobileTextColor} mb-3 font-source leading-[20px]`}>{service.title}</h3>

@@ -1703,7 +1703,11 @@ span.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters
 .migration-section-mobile {
   display: none;
 }
-
+.chooseImage img
+{
+  height: 60px;
+  width: 60px;
+}
 @media (max-width:767px) {
   .horizon-subtitle {
     font-size: 16px;
