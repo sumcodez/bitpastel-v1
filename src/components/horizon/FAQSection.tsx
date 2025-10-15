@@ -128,6 +128,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
                                             fontSize: '18px',
                                             lineHeight: '26px',
                                             width: '75%',
+                                            fontFamily: 'Roboto',
                                         }}>
                                             {item.description}
                                         </Typography>

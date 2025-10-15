@@ -139,7 +139,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
                                                             width={24}
                                                             height={24}
                                                             className="block w-[20px] " />
-                                                        <p className="md:font-[500] font-[500] font-source text-left text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#1E1E1E]">
+                                                        <p className="md:font-[400] font-[400] font-roboto text-left text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description text-[#1E1E1E]">
                                                             {item.text}
                                                         </p>
                                                     </div>
