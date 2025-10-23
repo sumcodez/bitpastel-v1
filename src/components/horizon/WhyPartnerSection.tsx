@@ -58,7 +58,7 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
                                         <Image src={item.icon} alt={item.title} width={340} height={323} className='radius-[20px]' />
                                     </div>
 
-                                    <h3 className='font-[700] font-source md:text-[18px] lg:text-[20px] md:leading-[40px] lg:leading-[58px] text-[#111827]'>{item.title}</h3>
+                                    <h3 className='font-[700] font-source md:text-[18px] lg:text-[20px] md:leading-[40px] lg:leading-[40px] text-[#111827]'>{item.title}</h3>
                                     <p className='font-[400] font-roboto text-[16px] leading-[20px] text-[#4B5563] letter-spacing-[0%] px-[50px] text-center'>{item.description}</p>
                                 </div>
                             ))

@@ -95,7 +95,11 @@ const Header = () => {
     [pathname],
   )
   const shouldApplyScrolledStyle = useMemo(() => isScrolled || isCareerApplyPage, [isScrolled, isCareerApplyPage])
-  const logoColor = useMemo(() => (shouldApplyScrolledStyle ? "#009999" : "#ffffff"), [shouldApplyScrolledStyle])
+  // Force logo color to white on the /horizon page; otherwise use scrolled style
+  const logoColor = useMemo(() => {
+    if (pathname === "/horizon") return "#ffffff"
+    return shouldApplyScrolledStyle ? "#009999" : "#ffffff"
+  }, [pathname, shouldApplyScrolledStyle])
 
   // Refs for navigation and scroll handling
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)

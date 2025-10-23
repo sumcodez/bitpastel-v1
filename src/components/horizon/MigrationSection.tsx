@@ -12,7 +12,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
     // const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
-            <section id="Advantages" className="md:pt-[90px] pt-[60px] migration-section ">
+            <section id="Advantages" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px] migration-section ">
                 <div className="container w-[1200px] mx-auto px-4 overflow-hidden relative md:px-[30px] mx-auto">
                     <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[28px] lg:text-[36px]  md:mb-0 mb-3 text-[#111827]">
                         Effortless Migration Powered by Bitpastel
@@ -75,7 +75,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                             </div>
                             <span className='migration-number'>04.</span>
                         </div>
-                        <div className='flex justify-start items-center flex-col mb-[120px]'>
+                        <div className='flex justify-start items-center flex-col mb-[120px] lg:mt-[-20px]  lg:ml-[55px]'>
                             <div className='flex justify-center items-center flex-col'>
                                 <h3 className='migration-title  md:text-[14px] lg:text-[18px]' >Testing & launch</h3>
                                 <p className='migration-subtitle'>Ensure smooth performance and conversions</p>

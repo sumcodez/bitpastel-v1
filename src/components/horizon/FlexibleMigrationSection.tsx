@@ -26,23 +26,23 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             title: 'Basic Migration',
             description: [
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'For small to mid-sized stores'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Core theme migration'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Basic customisation (colors, fonts, branding)'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Performance check & mobile optimisation'
                 }
             ],
-            icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+            icon: '/images/horizon-tick-icon.svg',
             backgroundimage: '/images/FlexibleMigration01.svg',
             button: 'Start with Basic'
         },
@@ -51,23 +51,23 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             title: 'Advanced Migration',
             description: [
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'ncludes everything in Basic'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Advanced design customisation'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'App integrations & compatibility checks'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Enhanced SEO setup'
                 }
             ],
-            icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+            icon: '/images/horizon-tick-icon.svg',
             backgroundimage: '/images/FlexibleMigration02.svg',
             button: 'Upgrade to Advanced'
         }
@@ -77,23 +77,23 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             title: 'Premium Migration',
             description: [
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Includes everything in Advanced.'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'AI personalisation & recommendations.'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Dynamic content & automation setup.'
                 },
                 {
-                    icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+                    icon: '/images/horizon-tick-icon.svg',
                     text: 'Ongoing optimisation support.'
                 }
             ],
-            icon: '/images/img_materialsymbolscheckrounded_teal_300.svg',
+            icon: '/images/horizon-tick-icon.svg',
             backgroundimage: '/images/FlexibleMigration03.svg',
             button: 'Go Premium'
         }
