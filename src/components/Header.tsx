@@ -316,7 +316,7 @@ const Header = () => {
               >
                 Culture
               </Link>
-              <Link
+              {/* <Link
                 prefetch={true}
                 href="/horizon"
                 onClick={handleHorizonClick}
@@ -324,7 +324,7 @@ const Header = () => {
                   }  ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200`}
               >
                 Horizon
-              </Link>
+              </Link> */}
               <Link
                 prefetch={true}
                 className={`bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200 ${pathname === "/horizon" ? "unfilled_button" : ""}`}

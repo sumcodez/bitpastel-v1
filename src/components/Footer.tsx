@@ -798,7 +798,7 @@ const Footer = () => {
               </Link>
             </div>
             {/* Horizon */}
-            <div
+            {/* <div
               className={`nav-item flex flex-col items-center ${pathname.startsWith('/culture') ? 'current' : ''}`}
             >
               <Link
@@ -832,7 +832,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-[11px] mt-1">Horizon</span>
               </Link>
-            </div>
+            </div> */}
             {/* Contact */}
             <div className={`nav-item flex flex-col items-center`}>
               <button
