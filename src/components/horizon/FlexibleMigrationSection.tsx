@@ -52,7 +52,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             description: [
                 {
                     icon: '/images/horizon-tick-icon.svg',
-                    text: 'ncludes everything in Basic'
+                    text: 'Includes everything in Basic'
                 },
                 {
                     icon: '/images/horizon-tick-icon.svg',
