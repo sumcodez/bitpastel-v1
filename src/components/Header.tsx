@@ -228,8 +228,7 @@ const Header = () => {
   // Memoized link class generator
   const getLinkClass = useCallback(
     (section: string) => {
-      return `transition-colors duration-200 ${activeSection === section ? "text-accent-green" : shouldApplyScrolledStyle ? "text-title" : "text-primary-white"
-        } hover:text-accent-green`
+      return `transition-colors duration-200 ${ shouldApplyScrolledStyle ? "text-accent-black" : ""}`
     },
     [activeSection, shouldApplyScrolledStyle],
   )
@@ -298,18 +297,18 @@ const Header = () => {
             </Link>
 
             <nav className="hidden lg:flex space-x-8 items-center">
-              <button onClick={(e) => handleLinkClick(e, "services")} className={` hover-active-btn ${getLinkClass("services")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
+              <button onClick={(e) => handleLinkClick(e, "services")} className={` text-accent-white ${getLinkClass("services")} ${pathname === "/horizon" ? "horizon-nav-menu" : ""} ${activeSection === "services" ? "page-selected" :""}`}>
                 Services
               </button>
-              <button onClick={(e) => handleLinkClick(e, "stories")} className={`${getLinkClass("stories")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
+              <button onClick={(e) => handleLinkClick(e, "stories")} className={` text-accent-white ${getLinkClass("stories")} ${pathname === "/horizon" ? "horizon-nav-menu" : ""} ${activeSection === "stories" ? "page-selected" :""}`}>
                 Stories
               </button>
               <Link
                 prefetch={true}
                 href="/culture"
                 onClick={handleCultureClick}
-                className={`${pathname === "/horizon" ? "text-white-color" : ""} ${shouldApplyScrolledStyle ? "header-text-title" : "text-primary-white"}  transition-colors duration-200
-                  ${pathname === "/culture" ? "text-white-color" : ""
+                className={`text-accent-white ${pathname === "/horizon" ? "horizon-nav-menu" : ""} ${shouldApplyScrolledStyle ? "text-accent-black" : "text-primary-white"}  transition-colors duration-200
+                  ${pathname === "/culture" ? "page-selected" : "" 
                   }
                   `
                 }
