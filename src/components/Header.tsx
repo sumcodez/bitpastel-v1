@@ -298,7 +298,7 @@ const Header = () => {
             </Link>
 
             <nav className="hidden lg:flex space-x-8 items-center">
-              <button onClick={(e) => handleLinkClick(e, "services")} className={`${getLinkClass("services")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
+              <button onClick={(e) => handleLinkClick(e, "services")} className={` hover-active-btn ${getLinkClass("services")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
                 Services
               </button>
               <button onClick={(e) => handleLinkClick(e, "stories")} className={`${getLinkClass("stories")} ${pathname === "/horizon" ? "text-white-color" : ""}`}>
@@ -308,8 +308,8 @@ const Header = () => {
                 prefetch={true}
                 href="/culture"
                 onClick={handleCultureClick}
-                className={`${pathname === "/horizon" ? "text-white-color" : ""} ${shouldApplyScrolledStyle ? "text-title" : "text-primary-white"} hover:text-accent-green transition-colors duration-200
-                  ${pathname === "/culture" ? "text-accent-green" : ""
+                className={`${pathname === "/horizon" ? "text-white-color" : ""} ${shouldApplyScrolledStyle ? "header-text-title" : "text-primary-white"}  transition-colors duration-200
+                  ${pathname === "/culture" ? "text-white-color" : ""
                   }
                   `
                 }

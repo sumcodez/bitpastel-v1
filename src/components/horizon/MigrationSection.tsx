@@ -27,7 +27,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <p className='migration-subtitle'>Review your existing setup</p>
                             </div>
 
-                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#FFF] migration-box-shadow'>
                                 <Image src="/images/migration1.svg" alt="theme-audit" width={50} height={50} />
                             </div>
                             <div>
@@ -41,7 +41,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <p className='migration-subtitle'>Map features to Horizon</p>
                             </div>
 
-                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#FFF] migration-box-shadow'>
                                 <Image src="/images/migration2.svg" alt="theme-audit" width={50} height={50} />
                             </div>
                             <div>
@@ -54,7 +54,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <h3 className='migration-title  md:text-[14px] lg:text-[18px]'>Migration & Customisation</h3>
                                 <p className='migration-subtitle'> Move design, products, and apps seamlessly</p>
                             </div>
-                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#FFF] migration-box-shadow'>
                                 <Image src="/images/migration3.svg" alt="theme-audit" width={50} height={50} />
                             </div>
                             <div>
@@ -67,7 +67,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <h3 className='migration-title  md:text-[14px] lg:text-[18px]'>AI Integration</h3>
                                 <p className='migration-subtitle'>Add personalisation and automation</p>
                             </div>
-                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#FFF] migration-box-shadow'>
                                 <Image src="/images/migration4.svg" alt="theme-audit" width={50} height={50} />
                             </div>
                             <div>
@@ -80,7 +80,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <h3 className='migration-title  md:text-[14px] lg:text-[18px]' >Testing & launch</h3>
                                 <p className='migration-subtitle'>Ensure smooth performance and conversions</p>
                             </div>
-                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                            <div className='flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#FFF] migration-box-shadow'>
                                 <Image src="/images/migration5.svg" alt="theme-audit" width={50} height={50} />
                             </div>
                             <div>
@@ -114,7 +114,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                     <Image src="/images/migrationline1.svg" alt="theme-audit" width={8} height={40} className='rotate-class' />
                                     <span className='migration-number mb-0'>01.</span>
                                 </div>
-                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#FFF] migration-box-shadow'>
                                     <Image src="/images/migration1.svg" alt="theme-audit" width={40} height={40} />
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                 <p className='migration-subtitle'>Map features to Horizon</p>
                             </div>
                             <div className='flex item-center flex-row-reverse gap-6'>
-                                 <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                                 <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#FFF] migration-box-shadow'>
                                     <Image src="/images/migration2.svg" alt="theme-audit" width={40} height={40} />
                                 </div>
                                 <div className='flex flex-col-reverse justify-center items-center'>
@@ -151,7 +151,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                     <Image src="/images/migrationline1.svg" alt="theme-audit" width={8} height={40} className='rotate-class' />
                                     <span className='migration-number mb-0'>03.</span>
                                 </div>
-                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#FFF] migration-box-shadow'>
                                     <Image src="/images/migration3.svg" alt="theme-audit" width={40} height={40} />
                                 </div>
                             </div>
@@ -169,7 +169,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                     <Image src="/images/migrationline1.svg" alt="theme-audit" width={8} height={40} className='rotate-class-rotate' />
                                     <span className='migration-number mb-0'>04.</span>
                                 </div>
-                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#FFF] migration-box-shadow'>
                                     <Image src="/images/migration4.svg" alt="theme-audit" width={40} height={40} />
                                 </div>
                             </div>
@@ -187,7 +187,7 @@ const MigrationSection: React.FC<MigrationSectionProps> = ({ openModal }) => {
                                     <Image src="/images/migrationline1.svg" alt="theme-audit" width={8} height={40} className='rotate-class' />
                                     <span className='migration-number mb-0'>05.</span>
                                 </div>
-                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#F7F7F7] migration-box-shadow'>
+                                <div className='flex justify-center items-center w-[90px] h-[90px] rounded-full bg-[#FFF] migration-box-shadow'>
                                     <Image src="/images/migration5.svg" alt="theme-audit" width={40} height={40} />
                                 </div>
                             </div>

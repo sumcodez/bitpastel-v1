@@ -54,7 +54,7 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
                         {
                             PartnerData.map((item) => (
                                 <div className='partner-card-item flex flex-col justify-start  items-center'>
-                                    <div className=' w-full h-[323px]'>
+                                    <div className=' w-full h-[323px] mb-2'>
                                         <Image src={item.icon} alt={item.title} width={340} height={323} className='radius-[20px]' />
                                     </div>
 

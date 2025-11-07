@@ -34,10 +34,10 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
                             </h4>
                             <div className="md:text-primary-white text-title md:text-left text-center">
                                 {[
-                                    'Smart product recommendations and upsells.',
-                                    'Personalised shopping journeys for every customer.',
-                                    'Dynamic content adjustments based on user behaviour.',
-                                    'AI-driven insights to improve conversion rates.',
+                                    'Smart product recommendations and upsells',
+                                    'Personalised shopping journeys for every customer',
+                                    'Dynamic content adjustments based on user behaviour',
+                                    'AI-driven insights to improve conversion rates',
                                 ].map((text, idx) => (
                                     <div key={idx} className="flex md:gap-4 gap-2 mb-[5px] items-center">
                                         <Image

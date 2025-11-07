@@ -78,19 +78,19 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
             description: [
                 {
                     icon: '/images/horizon-tick-icon.svg',
-                    text: 'Includes everything in Advanced.'
+                    text: 'Includes everything in Advanced'
                 },
                 {
                     icon: '/images/horizon-tick-icon.svg',
-                    text: 'AI personalisation & recommendations.'
+                    text: 'AI personalisation & recommendations'
                 },
                 {
                     icon: '/images/horizon-tick-icon.svg',
-                    text: 'Dynamic content & automation setup.'
+                    text: 'Dynamic content & automation setup'
                 },
                 {
                     icon: '/images/horizon-tick-icon.svg',
-                    text: 'Ongoing optimisation support.'
+                    text: 'Ongoing optimisation support'
                 }
             ],
             icon: '/images/horizon-tick-icon.svg',
