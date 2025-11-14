@@ -58,7 +58,8 @@ const CultureSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="font-source md:font-[600] font-[700] text-center text-title title md:mb-8 mb-4">
           {/* Why work with us? */}
-          Our Commitment to You
+          {/* Our Commitment to You */}
+          The Value We Bring
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] md:grid-cols-1 items-center md:gap-12 gap-8">
           {/* Fixed Image Container - Maintains original height behavior */}
