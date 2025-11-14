@@ -54,7 +54,7 @@ import ShopifyImage from '../../../public/images/shopify_X_bitpastel.svg';
 import ShopifyImageMobile from '../../../public/images/shopify_x_bitpastel_mobile.svg';
 import ShopifyClientImage from '../../../public/images/shopify_client_image1.webp';
 import ShopifyClientImage2 from '../../../public/images/shopify_client_image2.webp';
-import ShopifyClientImage3 from '../../../public/images/shopify_client_image3.webp';
+import ShopifyClientImage3 from '../../../public/images/shopify_client_image3-1.webp';
 //import Button from '@/components/ui/Button';
 const ShopifyStoreSection = () => {
   const [isMobile, setIsMobile] = useState(false);

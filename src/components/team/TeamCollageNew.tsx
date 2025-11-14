@@ -84,8 +84,20 @@ import BirthdayCelebrationNew20255 from "../../../public/images/new-team-images/
 import BirthdayCelebrationNew20256 from "../../../public/images/new-team-images/BirthdayCelebrationNew2025(6).png";
 import IceBreaker20251 from "../../../public/images/new-team-images/IceBreaker20251.png";
 import IceBreaker20252 from "../../../public/images/new-team-images/IceBreaker20252.png";
-
-
+import CultureAtBitpastel1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/culture at bitpastel/Frame 59.webp"; 
+import CultureAtBitpastel2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/culture at bitpastel/Frame 60.webp"; 
+import SundayBranchAtwestin1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/sunday brunch at westin/Frame 67.webp";
+import SundayBranchAtwestin2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/sunday brunch at westin/Frame 68.webp";
+import NewTownhall2021_1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2021/Frame 73.webp";
+import NewTownhall2021_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2021/Frame 73.webp";
+import NewTownhall2022_1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 69.webp";
+import NewTownhall2022_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 70.webp";
+import NewTownhall2022_3 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 71.webp";
+import NewTownhall2022_4 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 72.webp";
+import NewTownhall2023_1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 50.webp";
+import NewTownhall2023_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 51.webp";
+import NewTownhall2023_3 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 52.webp";
+import NewTownhall2023_4 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 53.webp";
 const TeamCollageNew = () => {
   return (
     <section className="team-members">
@@ -788,7 +800,7 @@ const TeamCollageNew = () => {
           <h2 className="text-[20px] font-[700] pb-4">Culture at Bitpastel</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <Image
-              src={Culture1}
+              src={CultureAtBitpastel1}
               alt="Bitpastel Townhall 2023 cover"
               width={1200}
               height={900}
@@ -796,7 +808,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={Culture2}
+              src={CultureAtBitpastel2}
               alt="Bitpastel Townhall 2023 cover"
               width={1200}
               height={900}
@@ -860,7 +872,7 @@ const TeamCollageNew = () => {
           <h2 className="text-[20px] font-[700] pb-4">Sunday Brunch at Westin</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <Image
-              src={Westin1}
+              src={SundayBranchAtwestin1}
               alt="Sunday Brunch at Westin with team members"
               width={1200}
               height={900}
@@ -868,7 +880,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={Westin2}
+              src={SundayBranchAtwestin2}
               alt="Sunday Brunch at Westin with team members"
               width={1200}
               height={900}
@@ -882,7 +894,7 @@ const TeamCollageNew = () => {
           <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2022</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <Image
-              src={TownHall20221}
+              src={NewTownhall2022_1}
               alt="Bitpastel Townhall 2022 with team members"
               width={1200}
               height={900}
@@ -890,7 +902,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={TownHall20222}
+              src={NewTownhall2022_2}
               alt="Bitpastel Townhall 2022 with team members"
               width={1200}
               height={900}
@@ -898,7 +910,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={TownHall20223}
+              src={NewTownhall2022_3}
               alt="Bitpastel Townhall 2022 with team members"
               width={1200}
               height={900}
@@ -906,7 +918,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={TownHall20224}
+              src={NewTownhall2022_4}
               alt="Bitpastel Townhall 2022 with team members"
               width={1200}
               height={900}
@@ -920,7 +932,7 @@ const TeamCollageNew = () => {
           <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2021</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <Image
-              src={TownHall20211}
+              src={NewTownhall2021_1}
               alt="Bitpastel Townhall 2021 with team members"
               width={1200}
               height={900}
@@ -928,7 +940,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={TownHall20212}
+              src={NewTownhall2021_2}
               alt="Bitpastel Townhall 2021 with team members"
               width={1200}
               height={900}
