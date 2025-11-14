@@ -3,7 +3,7 @@ import Image from 'next/image';
 //import Button from '@/components/ui/Button';
 const TechPartnerSection = () => {
   return (
-    <section className="md:pt-[70px] pt-[70px]" id="#partner">
+    <section className="md:pt-[105px] pt-[70px]" id="#partner">
       <div className="mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
           <div className="md:rounded-tr-[40px] md:rounded-br-[40px] rounded-br-[20px] rounded-tr-[20px] overflow-hidden lg:mr-0 md:mr-4 mr-4 min-h-[15rem] md:min-h-[auto]">

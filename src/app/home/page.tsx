@@ -81,20 +81,21 @@ const HomePage: React.FC<HomePageProps> = ({ forceModalOpen = false, onModalClos
         <HeroSection openModal={openModal} />
       </Suspense>
 
+
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
         <ServicesSection />
       </Suspense>
 
-      <Suspense fallback={<div className="h-64 bg-gray-50 animate-pulse" />}>
-        <TechPartnerSection />
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <ShopifyStoreSection />
       </Suspense>
 
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
         <SatisfiedClientSection />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-        <ShopifyStoreSection />
+      <Suspense fallback={<div className="h-64 bg-gray-50 animate-pulse" />}>
+        <TechPartnerSection />
       </Suspense>
 
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
