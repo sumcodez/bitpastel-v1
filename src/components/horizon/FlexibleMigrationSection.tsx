@@ -151,9 +151,9 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
 
                                     </div>
                                     <div className="flex justify-center items-center w-full mt-[20px]" >
-                                        <button type='button' className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description flexible-card-button btn-hover" >
+                                        <a  href='https://calendly.com/ayanh/meet-ayan' target='_blank'  className="md:font-[500] font-[500] font-source text-center text-[16px] leading-[20px] w-200 md:mb-0 mb-3 description flexible-card-button btn-hover" >
                                             {item.button}
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             ))
