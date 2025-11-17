@@ -61,7 +61,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ openModal }) => {
         };
     return (
         <>
-            <section id="services" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
+            <section id="services" className="md:pt-[70px] pt-[40px] md:pb-[90px] pb-[60px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[32px] lg:text-[36px] text-[#111827] md:mb-0 mb-3">
                         Frequently Asked Questions

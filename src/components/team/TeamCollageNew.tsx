@@ -94,10 +94,22 @@ import NewTownhall2022_1 from "../../../public/images/new-team-images/Team page 
 import NewTownhall2022_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 70.webp";
 import NewTownhall2022_3 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 71.webp";
 import NewTownhall2022_4 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2022/Frame 72.webp";
-import NewTownhall2023_1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 50.webp";
-import NewTownhall2023_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 51.webp";
-import NewTownhall2023_3 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 52.webp";
-import NewTownhall2023_4 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 53.webp";
+import NewTownhall2023_1 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 52.webp";
+import NewTownhall2023_2 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 50.webp";
+import NewTownhall2023_3 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 51.webp";
+import NewTownhall2023_4 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 55.webp";
+import NewTownhall2023_5 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 54.webp";
+import NewTownhall2023_6 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 55.webp";
+import NewTownhall2023_7 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 56.webp";
+import NewTownhall2023_8 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 57.webp";
+import NewTownhall2023_9 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 58.webp";
+import NewTownhall2023_10 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 80.webp";
+import NewTownhall2023_11 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 81.webp";
+import NewTownhall2023_12 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 82.webp";
+import NewTownhall2023_13 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 83.webp";
+import NewTownhall2023_14 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 84.webp";
+import NewTownhall2023_15 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 85.webp";
+import NewTownhall2023_16 from "../../../public/images/new-team-images/Team page slicing/cultures page new/townhall 2023/Frame 86.webp";
 const TeamCollageNew = () => {
   return (
     <section className="team-members">
@@ -652,7 +664,7 @@ const TeamCollageNew = () => {
           <h2 className="text-[20px] font-[700] pb-4">Bitpastel Townhall 2023</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <Image
-              src={TownHall20231}
+              src={NewTownhall2023_1}
               alt="Bitpastel Townhall 2023 cover"
               width={1200}
               height={900}
@@ -662,7 +674,7 @@ const TeamCollageNew = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <Image
-              src={TownHall20232}
+              src={NewTownhall2023_2}
               alt="Bitpastel Townhall cake cutting with team members"
               width={1200}
               height={900}
@@ -670,7 +682,7 @@ const TeamCollageNew = () => {
               className="w-full object-cover"
             />
             <Image
-              src={TownHall20233}
+              src={NewTownhall2023_3}
               alt="Bitpastel Townhall 2024 CEO Speech"
               width={1200}
               height={900}
@@ -680,7 +692,7 @@ const TeamCollageNew = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-1 mb-2">
             <Image
-              src={TownHall20234}
+              src={NewTownhall2023_4}
               alt="Bitpastel Townhall 2024 cover"
               width={1200}
               height={900}

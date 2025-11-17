@@ -39,7 +39,7 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
     const PartnerData = PartnerSection;
     return (
         <>
-            <section id="services" className=" md:pt-[60px] lg:pt-[0px]">
+            <section id="services" className="lg:pt-[0px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[32px] lg:text-[36px] md:mb-0 mb-3 c">
                         Why Partner with Bitpastel?

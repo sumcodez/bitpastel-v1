@@ -13,7 +13,6 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
                     className=" absolute inset-0 bg-cover bg-[position:60%_20%] bg-no-repeat"
                     style={{
                         backgroundImage: `
-            linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
             url('/images/ai-poweredbackground.png')
           `,
                     }}
