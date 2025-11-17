@@ -51,10 +51,6 @@ const HomePage: React.FC<HomePageProps> = ({ forceModalOpen = false, onModalClos
   }, [forceModalOpen]);
 
   const openModal = () => {
-    if (pathname !== "/free-quote") {
-      router.prefetch("/free-quote")
-      router.push("/free-quote", { scroll: false })
-    }
     setIsModalOpen(true)
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,6 +7,9 @@ interface HerSectionProps {
 }
 
 const CtaSection: React.FC<HerSectionProps> = ({ openModal }) => {
+
+
+
   return (
     <section className="md:pb-[106px] md:pt-[106px] py-[70px] cta-section">
       <div className="container mx-auto px-4">
@@ -50,9 +53,10 @@ const CtaSection: React.FC<HerSectionProps> = ({ openModal }) => {
               </p>
               <Link 
                 prefetch={true}
-                href="/free-quote" 
+                href="#"
                 scroll={false}
                 className="btn leading-normal bg-green-btn md:w-auto font-roboto inline-block text-center content-center"
+                onClick={openModal}
               >
                 Contact Us
               </Link>

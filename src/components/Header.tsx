@@ -77,8 +77,12 @@ const throttle = (func: Function, delay: number) => {
     }
   }
 }
+interface HomePageProps {
+  forceModalOpen?: boolean;
+  onModalClose?: () => void;
+}
 
-const Header = () => {
+const Header: React.FC<HomePageProps> = ({ forceModalOpen = false, onModalClose }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const [pendingScroll, setPendingScroll] = useState<string | null>(null)
@@ -281,9 +285,12 @@ const Header = () => {
 
   // Handle chat button click
   const handleChatClick = useCallback(() => {
-    handleNavigation("/free-quote")
-  }, [handleNavigation])
-
+    setIsModalOpen(true)
+  }, [])
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    onModalClose?.();
+  };
   return (
     <>
       <header
@@ -327,8 +334,9 @@ const Header = () => {
               <Link
                 prefetch={true}
                 className={`bg-green-btn px-5 text-primary-white py-2 rounded hover:bg-opacity-90 transition-all duration-200 ${pathname === "/horizon" ? "unfilled_button" : ""}`}
-                href="/free-quote"
+                href="#"
                 scroll={false}
+                onClick={(e) => { e.preventDefault(); handleChatClick(); }}
               >
                 Chat with Us
               </Link>
@@ -343,7 +351,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {/* <Modal open={isModalOpen} onClose={() => handleNavigation("/")} /> */}
+      <Modal open={isModalOpen} onClose={handleModalClose} />
     </>
   )
 }

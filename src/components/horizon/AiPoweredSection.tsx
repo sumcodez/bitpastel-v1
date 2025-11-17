@@ -59,7 +59,7 @@ const AiPoweredSection: React.FC<AiPoweredSectionProps> = ({ openModal }) => {
                             </div>
                         </div>
                         <div className='flex justify-center align-middle'>
-                            <img src="/images/Ai_powered_Image.svg" alt="Ai_powered_Image" width={430} height={460} />
+                            <img src="/images/Ai_powered_Image.webp" alt="Ai_powered_Image" width={430} height={460} />
                         </div>
                     </div>
                 </div>

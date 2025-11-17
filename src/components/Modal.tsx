@@ -908,9 +908,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 
   const handleClose = () => {
     onClose();
-    if (path === '/free-quote') {
-      router.replace('/', { scroll: false });
-    }
+   
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {

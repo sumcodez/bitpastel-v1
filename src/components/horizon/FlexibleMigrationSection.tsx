@@ -101,7 +101,7 @@ const FlexibleMigrationSection: React.FC<FlexibleMigrationSectionProps> = ({ ope
     const FlexibleMigrationData = FlexibleMigrationSection;
     return (
         <>
-            <section id="services" className="md:pt-[70px] pt-[40px] ">
+            <section id="flexible-horizon" className="md:pt-[70px] pt-[40px] ">
                 <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[32px] lg:text-[36px] text-[#111827] md:mb-0 mb-3">
                         Flexible Horizon Migration Packages

@@ -44,15 +44,18 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal }) => {
             <div className="flex justify-center items-center gap-4 hero-btn-area">
               <button
                 className="btn leading-normal bg-white-btn bg-green-text md:w-auto w-[100%] mt-[15px] font-roboto btn-hover"
-                // onClick={() => setIsModalOpen(true)}
-                onClick={openModal}
+                onClick={() => {
+                  const element = document.getElementById('flexible-horizon');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Get Started with Horizon
               </button>
               <button
                 className="btn leading-normal bg-transparent-btn md:w-auto w-[100%] mt-[15px] font-roboto btn-hover"
-                // onClick={() => setIsModalOpen(true)}
-                onClick={openModal}
+                onClick={() => window.open('https://calendly.com/ayanh/meet-ayan', '_blank')}
               >
                 Book Free Consultation
               </button>

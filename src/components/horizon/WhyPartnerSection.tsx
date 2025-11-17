@@ -18,9 +18,9 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
     const PartnerSection: PartnerSection[] = [
         {
             id: 'shopify',
-            title: 'Shopify Partner',
+            title: 'Powering 200+ Shopify Stores',
             description: 'Edit once, update everywhere with deep nesting and reusable blocks',
-            icon: '/images/shopifypartner.png',
+            icon: '/images/shopifypartner.webp',
         },
         {
             id: 'theme',
@@ -33,7 +33,7 @@ const WhyPartnerSection: React.FC<WhyPartnerSectionProps> = ({ openModal }) => {
             id: 'ai',
             title: 'AI-Powered Shopify Development',
             description: 'Smarter stores, better sales',
-            icon: '/images/Ai-Powered-Partner.png',
+            icon: '/images/Ai-Powered-Partner.webp',
         }
     ]
     const PartnerData = PartnerSection;

@@ -38,7 +38,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
                                 <button
                                     className="btn leading-normal bg-white-btn bg-green-text md:w-auto w-[100%] mt-[15px] font-roboto btn-hover"
                                     // onClick={() => setIsModalOpen(true)}
-                                    onClick={openModal}
+                                    onClick={() => window.open('https://calendly.com/ayanh/meet-ayan', '_blank')}
                                 >
                                   Book Free Consultation
                                 </button>
@@ -58,7 +58,7 @@ const TransformSection: React.FC<TransformSectionProps> = ({ openModal }) => {
 
                         </div>
                         <div className='flex justify-center align-middle'>
-                            <img src="/images/transformmain.png" alt="transformmain" width={430} height={460} />
+                            <img src="/images/transformmain.webp" alt="transformmain" width={430} height={460} />
                         </div>
                     </div>
                 </div>

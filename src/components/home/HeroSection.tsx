@@ -79,8 +79,9 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal}) => {
               <Link
               prefetch={true}
               className='btn leading-normal bg-green-btn md:w-auto w-[100%] mt-[15px] inline-block font-roboto content-center'
-              href="/free-quote" 
-                scroll={false}
+              href="#" 
+              scroll={false}
+              onClick={openModal}
               >
                 Let’s Work Together
               </Link>
