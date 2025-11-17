@@ -82,7 +82,7 @@ const ChooseHorizonSection: React.FC<ChooseHorizonSectionProps> = ({ openModal }
             <section id="Advantages" className="md:pt-[90px] pt-[60px] md:pb-[90px] pb-[60px]">
                 <div className="container mx-auto px-4 overflow-hidden relative">
                     <h2 className=" md:font-[600] font-[700] font-source text-center md:text-[28px] lg:text-[36px]  md:mb-0 mb-3 text-[#111827] responsive-h2">
-                        Why Choose Horizon for Your Store?
+                        Why choose Horizon for your store?
                     </h2>
                     <div className="flex justify-center items-center mb-[30px]">
                         <div className="ai-powered-green-gradient heading-bottom"></div>

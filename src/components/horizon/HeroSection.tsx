@@ -31,7 +31,7 @@ const HeroSection: React.FC<HerSectionProps> = ({ openModal }) => {
               <img src="/images/horizon_logo.png" alt="Horizon logo" width={535} height={220} />
             </div>
             <h1 className="md:text-primary-white md:text-center md:text-[32px] lg:text-[38px] text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center horizon-title">
-              <span>Migrate Seamlessly to </span>{' '}
+              <span>Migrate seamlessly to </span>{' '}
               <span className="font-[700]">Shopify Horizon</span>
             </h1>
             <h4 className=" md:text-center md:text-[16px] lg:text-[18px] md:text-primary-white horizon-subtitle text-title title lg:leading-[40px] font-source leading-[normal] md:mb-5 mb-4 text-center">
